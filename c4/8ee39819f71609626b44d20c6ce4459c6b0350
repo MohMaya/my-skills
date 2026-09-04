@@ -1,0 +1,41 @@
+.gitignore
+  s_39c939cb8a058b::t_1d23a1642e533a 1-3
+AGENTS.md
+  s_39c939cb8a058b::t_bba7fdff777567 1-88
+STANDARDS/Core/Code.md
+  s_39c939cb8a058b::t_b1b2f8b5fe737d 1-95
+STANDARDS/Core/Execution.md
+  s_39c939cb8a058b::t_87ca31fab593c3 1-74
+STANDARDS/Core/Prose.md
+  s_39c939cb8a058b::t_5e5e826f45adc9 1-34
+STANDARDS/Product/Architecture.md
+  s_39c939cb8a058b::t_993100ef4f6ef3 1-68
+STANDARDS/Skills/Routing.md
+  s_39c939cb8a058b::t_cc2e5d94b3f232 1-71
+STANDARDS/Workflow/Delivery.md
+  s_39c939cb8a058b::t_f125433008ffdd 1-77
+STANDARDS/Workflow/Git.md
+  s_39c939cb8a058b::t_afe316e535baba 1-76
+STANDARDS/Workflow/Notion.md
+  s_39c939cb8a058b::t_03044f29d9013e 1-17
+skills/house-voice/SKILL.md
+  s_39c939cb8a058b::t_6616b9dbe1e58c 1-111
+sync.sh
+  s_39c939cb8a058b::t_cc1909ad8705b8 1-115
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "c48ee39819f71609626b44d20c6ce4459c6b0350",
+  "prompts": {},
+  "sessions": {
+    "s_39c939cb8a058b": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a06dd6-aa4b-75c1-b307-4fd0cc47f624",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Shivanshu Chaudhary <shivanshuchaudhary97@gmail.com>"
+    }
+  }
+}
