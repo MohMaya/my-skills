@@ -1,0 +1,77 @@
+# Workflow/Delivery.md
+
+Load for CI/CD, runtime safety, observability, rollback, feature flags, and delivery gates.
+
+## Pipeline baseline
+
+Every production path should have these stages:
+
+1. format or lint
+2. static checks or type checks
+3. tests
+4. security scan
+5. build
+6. deploy gate
+
+Failing quality gates block merge or deploy.
+
+## Pre-commit minimum
+
+Canonical for every stack. Before a commit: lint clean, types clean where the stack has them, fast tests or smoke checks green, boundaries intact. Stack files add only their own checks on top.
+
+## Observability baseline
+
+### Logging
+
+- structured logs
+- consistent levels
+- request or trace identifiers
+- operation name and duration where it matters
+- never log secrets or PII
+
+### Metrics
+
+Minimum runtime metrics:
+- request count
+- error count
+- latency distribution
+- resource saturation
+
+### Error tracking
+
+Unhandled exceptions should land in a central error tracker with enough context to debug the failure.
+
+## Rollback policy
+
+Use the project's rollback runbook and authorized incident response scope. Before deployment, establish thresholds from its service objectives and baseline. Error spikes, latency regressions, critical failures, and threatened data integrity require immediate assessment. Execute rollback when the runbook or user authorizes it; otherwise surface the evidence and proposed action.
+
+Rules:
+- rollback should be one command or one obvious platform action
+- schema changes must be backward-compatible with the previous app version
+- do not treat destructive migration rollback as routine
+
+## Feature flags
+
+Use flags for:
+- risky rollouts
+- incomplete but mergeable work
+- percentage or allowlist rollouts
+
+Rules:
+- every flag has an owner
+- every flag has an expiry date
+- cleanup is tracked work
+- flag checks live in service or application logic, not presentation
+
+## Caching
+
+Cache only when the consistency tradeoff is acceptable.
+
+Rules:
+- choose invalidation and expiry from the data's consistency requirements; document the tolerated staleness
+- safe cache-miss behavior
+- cache logic lives in service or data layers, with one named owner per cache
+
+## ADR linkage
+
+If delivery or rollout constraints force a durable change in architecture, ADR triggers are in `Core/Planning.md` and the template is in `Core/Documents.md`.
