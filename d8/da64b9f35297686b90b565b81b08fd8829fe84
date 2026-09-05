@@ -1,0 +1,49 @@
+skills/docx/SKILL.md
+  s_ce996e593f939c::t_c61517166017a6 3
+skills/golang-dependency-injection/SKILL.md
+  s_ce996e593f939c::t_dbfe2403247e7f 3
+skills/golang-gopls/SKILL.md
+  s_ce996e593f939c::t_69131c293e99be 3
+skills/golang-naming/SKILL.md
+  s_ce996e593f939c::t_7aaa8fc3c043f4 3
+skills/golang-observability/SKILL.md
+  s_ce996e593f939c::t_32224cc9847e63 3
+skills/golang-performance/SKILL.md
+  s_ce996e593f939c::t_dca2fada9a39e4 3
+skills/golang-pkg-go-dev/SKILL.md
+  s_ce996e593f939c::t_eeb4070564d150 3
+skills/golang-refactoring/SKILL.md
+  s_ce996e593f939c::t_e227dc273b9961 3
+skills/golang-samber-lo/SKILL.md
+  s_ce996e593f939c::t_8810afa22e3175 3
+skills/golang-spf13-cobra/SKILL.md
+  s_ce996e593f939c::t_6995ae19444bd0 3
+skills/golang-spf13-viper/SKILL.md
+  s_ce996e593f939c::t_bfc9762549ac93 3
+skills/imagegen-frontend-mobile/SKILL.md
+  s_ce996e593f939c::t_e533f2d0c2a7c7 3
+skills/imagegen-frontend-web/SKILL.md
+  s_ce996e593f939c::t_d910b4d18574b0 3
+skills/pptx/SKILL.md
+  s_ce996e593f939c::t_fbc3abd95deed9 3
+skills/supabase-postgres-best-practices/SKILL.md
+  s_ce996e593f939c::t_e6a8474be7ac8d 3
+skills/xlsx/SKILL.md
+  s_ce996e593f939c::t_b430135afa2e99 3
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "d8da64b9f35297686b90b565b81b08fd8829fe84",
+  "prompts": {},
+  "sessions": {
+    "s_ce996e593f939c": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a07396-c0e5-7d23-bc7f-a75791e35d83",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Shivanshu Chaudhary <shivanshuchaudhary97@gmail.com>"
+    }
+  }
+}
