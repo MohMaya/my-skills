@@ -1,0 +1,19 @@
+sync.sh
+  s_ce996e593f939c::t_9a247f7cf4822d 77
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "c9237bc553d77941045eec092d27985f264e9fcd",
+  "prompts": {},
+  "sessions": {
+    "s_ce996e593f939c": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a07396-c0e5-7d23-bc7f-a75791e35d83",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Shivanshu Chaudhary <shivanshuchaudhary97@gmail.com>"
+    }
+  }
+}
