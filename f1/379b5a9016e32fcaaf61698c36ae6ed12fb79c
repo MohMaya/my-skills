@@ -1,0 +1,49 @@
+AGENTS.md
+  s_ce996e593f939c::t_1b5e17e9fcb6bf 8,10,12-17,19,21-28,32,34-40,42,44,46-53,55,57,59,61,63,65-69,71
+STANDARDS/Core/Code.md
+  s_ce996e593f939c::t_9e734619677fc9 74
+STANDARDS/Core/Documents.md
+  s_ce996e593f939c::t_4285a3ec38f631 5,9,11,25,62,72,85
+STANDARDS/Core/Execution.md
+  s_ce996e593f939c::t_ca635821bd32ff 3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35
+STANDARDS/Core/Planning.md
+  s_ce996e593f939c::t_11eb343eb922a1 3,9,13
+STANDARDS/Core/Prose.md
+  s_ce996e593f939c::t_eca672208e785b 34-38
+STANDARDS/INDEX.md
+  s_ce996e593f939c::t_e7ab34aa0f89c7 10,17-19,29,31,43
+STANDARDS/Skills/Routing.md
+  s_ce996e593f939c::t_a4f34c36a14493 3,11-12,14-17,54,70-71
+STANDARDS/Workflow/Delivery.md
+  s_ce996e593f939c::t_a56f2fce1141b3 20
+skills/caveman-commit/SKILL.md
+  s_ce996e593f939c::t_23b397bd53b941 3,6,11,19-20,61
+skills/caveman/SKILL.md
+  s_ce996e593f939c::t_e82aec73665981 3,6,8,10,14,16-20,22,24,26,28,30,32
+skills/code-review/SKILL.md
+  s_ce996e593f939c::t_c3fb982e3c0089 3,6,11,13,19,21,23,29-33,59-61,63,69,75,79
+skills/diagnosing-bugs/SKILL.md
+  s_ce996e593f939c::t_0a563b385cb99a 3,8,16,20,22,32,37,47,51,55,57,59,63-64,66,70,84,88,96,114-115,134,138
+skills/full-output-enforcement/SKILL.md
+  s_ce996e593f939c::t_6c1a342b05171f 3,6,8,10,12,14,16,18
+skills/grilling/SKILL.md
+  s_ce996e593f939c::t_3c1c2813d282d8 3,6,8,10,12,14,16
+skills/shiv-code-gate/SKILL.md
+  s_ce996e593f939c::t_a5fcccba9e1df6 3,6-47
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "f1379b5a9016e32fcaaf61698c36ae6ed12fb79c",
+  "prompts": {},
+  "sessions": {
+    "s_ce996e593f939c": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a07396-c0e5-7d23-bc7f-a75791e35d83",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Shivanshu Chaudhary <shivanshuchaudhary97@gmail.com>"
+    }
+  }
+}
