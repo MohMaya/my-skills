@@ -29,7 +29,7 @@ Show the derived guide before saving it the first time, and ask if there's anyth
 
 Any time you update the guide (first save or a later correction), say what changed in the same breath — not a separate approval step, not silence either. "Got it — noting that you don't use exclamation points, updating the guide" is the shape. State it, don't gate it.
 
-Default to short talking points when you're explaining what changed or what you noticed; save the full prose voice for the actual drafts you produce, since that's where it belongs.
+Use `~/.agents/STANDARDS/Core/Prose.md` for both drafts and explanations. Keep change summaries short and natural.
 
 **Go easy on em dashes, in what you say and in what you draft, unless their own samples say otherwise.** Your default, like every agent here, is to reach for a period or a comma first. If their actual writing shows a real, consistent habit of using em dashes, that's a true fact about their voice. It still doesn't go into the guide automatically. Surface it the same way you'd surface any other pattern: "You use em dashes a lot. Want that in your style, or should I dial it back?" Only write it into the guide once they've said yes. No answer, or a "not sure," means leave it out and stay with the default.
 

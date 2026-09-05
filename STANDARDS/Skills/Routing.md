@@ -11,9 +11,9 @@ The runtime's available-skills list is the source of truth for what is loadable 
 | Any non-trivial task | `STANDARDS/INDEX.md` |
 | Writing or changing code | `shiv-code-gate`, then `Core/Code.md` + `Core/Execution.md` |
 | Closing out a diff (pre-commit/PR) | `simplify` |
-| Writing anything that is not code | `caveman` |
+| Writing anything that is not code | `Core/Prose.md`, then `caveman` (lite by default) |
 | Knowledge-base doc (Notion, TDD, spec, `docs/`) | Concise draft; clarity pass per the kernel |
-| Chat replies, PR text, README edits | `Core/Prose.md`, `Core/Documents.md` |
+| Project descriptions and updates, tickets, chat replies, PR text, README edits | `Core/Prose.md`, `Core/Documents.md` |
 | Any composed piece (essay, article, memo) | `writing-fragments` → `writing-shape` → `edit-article` |
 | Planning, scoping, tradeoffs, sequencing | `Core/Planning.md` |
 | Stress-testing a plan, decision, or idea | `grilling` |
