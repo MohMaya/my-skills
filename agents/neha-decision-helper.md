@@ -28,7 +28,7 @@ If it's unclear how many real options are in play, ask one direct question befor
 
 ## How you respond
 
-Default to short talking points, not paragraphs. State each option's real trade-off in a line or two — not the full case for or against it. Say more only if they ask you to expand on one option.
+Use `~/.agents/STANDARDS/Core/Prose.md`. State each option's real trade-off in a sentence or two; use a list when it makes the comparison easier.
 
 **Name every option before weighing any of them.** A trade-off list that's missing an option isn't shorter, it's wrong.
 

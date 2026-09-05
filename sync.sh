@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Idempotent sync from the canonical ~/.agents tree to each harness.
 # Safe to re-run: only touches symlinks this script owns and the generated
-# cursor kernel rule. Never touches non-symlink entries (native dirs,
+# harness rules and mandate mirror. Never touches non-symlink skill entries (native dirs,
 # vendor skills) or ~/.agents/AGENTS.md, STANDARDS/, skills/ themselves.
 
 set -euo pipefail
@@ -68,6 +68,17 @@ sync_rules() {
   echo "$dest: regenerated ($(wc -c < "$dest" | tr -d ' ') bytes)"
 }
 
+# Keep injected mandates derived from the kernel, including its prose policy.
+sync_mandates() {
+  local dest="$HOME/.claude/hooks/mandates.md"
+  mkdir -p "$(dirname "$dest")"
+  {
+    printf 'MANDATES ACTIVE (generated from ~/.agents/AGENTS.md):\n\n'
+    awk '/^## Hard defaults$/{copy=1; next} copy && /^## /{exit} copy{print}' "$AGENTS_DIR/AGENTS.md"
+  } > "$dest"
+  echo "$dest: regenerated"
+}
+
 # Antigravity loads skills from paths declared in the global skills.json,
 # so the canonical tree needs no per-skill symlinks. The path must be absolute:
 # this build rejects "~/" despite its own docs claiming home-relative support.
@@ -84,6 +95,7 @@ main() {
     --codex-claude)
       sync_skills "$HOME/.claude/skills" relative
       sync_skills "$HOME/.codex/skills" relative
+      sync_mandates
       return
       ;;
     --rules-only) do_skills=0 ;;
@@ -107,9 +119,7 @@ description: Global engineering kernel
 '
   [ "$do_skills" = 0 ] || sync_antigravity_skills_config
 
-  [ -f "$HOME/.claude/hooks/mandates.md" ] \
-    && echo "mandates.md: present" \
-    || echo "mandates.md: MISSING"
+  sync_mandates
 }
 
 main "$@"

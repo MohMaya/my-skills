@@ -4,6 +4,24 @@ Load when creating or rewriting documents humans will read.
 
 Shapes and targets only. Length discipline and the writing pipeline are the kernel's; tone is `Core/Prose.md`.
 
+## Project update
+
+Use two or three short paragraphs, usually 100–180 words; write less when enough.
+
+1. Current state: what is complete and what that enables.
+2. Remaining work: the blocker or dependency, its owner when known, and its impact.
+3. Next step: the concrete action and supported timing, including any missed target.
+
+Use only the parts the facts support. Keep implementation details in linked tickets or designs. A draft stays a draft until publication is authorized.
+
+## Project description
+
+Write for executive readers. Use a few short paragraphs, usually 80–150 words, covering the outcome, launch scope, and what completion means. Name a dependency only when it changes the delivery picture. Tickets own implementation and acceptance detail; linked designs own architecture and research.
+
+## Tickets and technical writeups
+
+Use the same plain-English register. Include contracts, edge cases, dependencies, and verification that the implementer needs. Detail follows the task and audience; the short project-update shape is not a limit on technical accuracy.
+
 ## Implementation plan
 
 Use for multi-step execution work.
