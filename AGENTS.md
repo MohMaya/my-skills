@@ -58,8 +58,6 @@ Delegate substantial independent concerns when the runtime supports it. Keep sma
 
 Use the configured model unless the user or project selects another available model. Old prompt model names are not an availability contract.
 
-`agents/` contains the optional Manthan roster for Berd. Load a role only for Manthan or an explicit request. Verify its project facts and tools. Role files do not register native subagents.
-
 ## Precedence and trust
 
 1. Platform instructions, security, and approval policy.
