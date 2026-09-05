@@ -2,7 +2,7 @@
 
 Load when creating or rewriting documents humans will read.
 
-Shapes and targets only. Length discipline and the writing pipeline are the kernel's; tone is `Core/Prose.md`.
+Use these shapes when the requested document benefits from them. Targets are guidance, not minimum lengths. A template or user-specified format takes precedence. Tone is owned by `Core/Prose.md`.
 
 ## Project update
 
@@ -24,9 +24,9 @@ Use the same plain-English register. Include contracts, edge cases, dependencies
 
 ## Implementation plan
 
-Use for multi-step execution work.
+Use when an implementation plan is a requested deliverable or coordinates substantial work.
 
-Required sections:
+Suggested sections:
 - Summary
 - Key changes
 - Test plan
@@ -40,7 +40,7 @@ Target:
 
 Use when the change crosses boundaries or introduces a durable pattern.
 
-Required sections:
+Suggested sections:
 - Problem
 - Constraints
 - Proposal
@@ -77,7 +77,7 @@ Store ADRs under `docs/decisions/`.
 
 Use for recommendations, positioning, or internal argument.
 
-Required shape:
+Suggested shape:
 - claim first
 - reasoning second
 - recommendation or next move last
@@ -87,7 +87,7 @@ Target:
 
 ## PR body
 
-Required shape:
+Suggested shape:
 - first line in the tracker format from `Workflow/Git.md`
 - short summary
 - concrete changes
@@ -100,7 +100,7 @@ Do not turn a PR into an essay.
 
 Use for docs, comments, or replies where someone needs to understand a system.
 
-Required shape:
+Suggested shape:
 - what it is
 - why it exists
 - how it behaves

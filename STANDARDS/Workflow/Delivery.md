@@ -17,7 +17,7 @@ Failing quality gates block merge or deploy.
 
 ## Pre-commit minimum
 
-Canonical for every stack. Before a commit: lint clean, types clean where the stack has them, fast tests or smoke checks green, boundaries intact. Stack files add only their own checks on top.
+Run repository-required checks and the checks relevant to the changed behavior before committing. Use the existing lint, type, test, or smoke checks as applicable. Stack files supply domain-specific requirements. A prose-only edit needs no unrelated application build unless CI requires it.
 
 ## Observability baseline
 

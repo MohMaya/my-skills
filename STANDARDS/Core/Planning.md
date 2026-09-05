@@ -1,16 +1,16 @@
 # Core/Planning.md
 
-Load before multi-step work, cross-layer changes, new features, migrations, and irreversible decisions.
+Load when consequential choices, cross-layer changes, or uncertain scope need an explicit plan.
 
 ## What planning is for
 
 Planning is how you avoid spending hours implementing the wrong shape of the right idea.
 
-The output is not a brainstorm. It is a decision-ready spec that another strong engineer could implement without having to invent the missing half.
+Match planning detail to uncertainty and risk. Routine authorized work can use a short local plan. Write an implementation-ready spec when the task requires one.
 
 ## Minimum plan shape
 
-Every non-trivial plan should answer:
+Use the following questions to resolve consequential uncertainty. They are not mandatory headings or a requirement to invent alternatives:
 
 1. Objective -- what done looks like
 2. Constraints -- stack, compatibility, security, time, data, rollout

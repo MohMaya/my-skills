@@ -71,7 +71,7 @@ One implementation means a concrete type. To keep an interface, name the second 
 
 ## Bloat detector
 
-Run the interrogate-before-write checklist in `Core/Execution.md` over every artifact in the diff.
+Use the artifact questions in `Core/Execution.md` when a proposed addition has unclear purpose or ownership.
 
 Speculative scaffolding -- IDs, roles, tables, helpers, hooks added "so we can use them later" -- is the most expensive kind of bloat because it looks responsible. Defer it until a real caller exists.
 

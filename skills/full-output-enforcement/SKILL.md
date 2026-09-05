@@ -1,49 +1,18 @@
 ---
 name: full-output-enforcement
-description: Overrides default LLM truncation behavior. Enforces complete code generation, bans placeholder patterns, and handles token-limit splits cleanly. Apply to any task requiring exhaustive, unabridged output.
+description: Deliver complete files or multi-part artifacts when the user explicitly requests full, exhaustive, or unabridged output.
 ---
 
-# Full-Output Enforcement
+# Complete output
 
-## Baseline
+Deliver every requested artifact at the requested level of completeness. A request for a full implementation requires working code, not a skeleton or instructions for finishing it.
 
-Treat every task as production-critical. A partial output is a broken output. Do not optimize for brevity — optimize for completeness. If the user asks for a full file, deliver the full file. If the user asks for 5 components, deliver 5 components. No exceptions.
+Do not substitute placeholders, omitted sections, or one example for requested content. Preserve legitimate syntax and existing TODOs when they are not substitutes for unfinished work.
 
-## Banned Output Patterns
+Track requested deliverables through completion and verification. Incorporate user corrections without silently dropping earlier requirements.
 
-The following patterns are hard failures. Never produce them:
+For large outputs, write complete files in the workspace when available, verify them, and provide links with a concise final response. Follow an explicit request for inline output.
 
-**In code blocks:** `// ...`, `// rest of code`, `// implement here`, `// TODO`, `/* ... */`, `// similar to above`, `// continue pattern`, `// add more as needed`, bare `...` standing in for omitted code
+Continue through supported context compaction without requesting a new user turn. If a real limit prevents completion, state exactly what is complete and what remains.
 
-**In prose:** "Let me know if you want me to continue", "I can provide more details if needed", "for brevity", "the rest follows the same pattern", "similarly for the remaining", "and so on" (when replacing actual content), "I'll leave that as an exercise"
-
-**Structural shortcuts:** Outputting a skeleton when the request was for a full implementation. Showing the first and last section while skipping the middle. Replacing repeated logic with one example and a description. Describing what code should do instead of writing it.
-
-## Execution Process
-
-1. **Scope** — Read the full request. Count how many distinct deliverables are expected (files, functions, sections, answers). Lock that number.
-2. **Build** — Generate every deliverable completely. No partial drafts, no "you can extend this later."
-3. **Cross-check** — Before output, re-read the original request. Compare your deliverable count against the scope count. If anything is missing, add it before responding.
-
-## Handling Long Outputs
-
-When a response approaches the token limit:
-
-- Do not compress remaining sections to squeeze them in.
-- Do not skip ahead to a conclusion.
-- Write at full quality up to a clean breakpoint (end of a function, end of a file, end of a section).
-- End with:
-
-```
-[PAUSED — X of Y complete. Send "continue" to resume from: next section name]
-```
-
-On "continue", pick up exactly where you stopped. No recap, no repetition.
-
-## Quick Check
-
-Before finalizing any response, verify:
-- No banned patterns from the list above appear anywhere in the output
-- Every item the user requested is present and finished
-- Code blocks contain actual runnable code, not descriptions of what code would do
-- Nothing was shortened to save space
+Completeness follows the user's scope. It does not authorize unrelated work, external actions, or removal of approval boundaries.

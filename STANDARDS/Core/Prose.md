@@ -35,4 +35,8 @@ Distinguish implemented, deployed, and verified. A completed foundation does not
 
 An explicitly selected genre skill may refine this default register. Accuracy and higher-priority instructions still govern.
 
-Anything with a byline -- published writing, internal takes and memos, manifestos, pitches, design docs -- runs the writing pipeline in `Skills/Routing.md` by default, not on request. Registers come from the kernel's Voice section. Legal, compliance, and institutional copy are the only opt-outs.
+For substantial composed pieces, use the relevant writing stage in `Skills/Routing.md`. Small edits need only the guidance that affects them. Registers come from the kernel's Voice section.
+
+## Technical documentation
+
+Use ASD-STE100 principles for technical documentation: active voice, approved word senses, and one instruction per sentence. Keep procedural sentences within 20 words and descriptive sentences within 25 words.
