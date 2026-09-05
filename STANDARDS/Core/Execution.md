@@ -1,74 +1,35 @@
 # Core/Execution.md
 
-Load for day-to-day execution, especially when stack, process, or verification is unclear.
+Use this guidance when execution scope, verification, or completion is unclear.
 
-## Discovery order
+## Discovery
 
-Before changing anything:
+Read the instructions and implementation that govern the requested change. Inspect callers, configuration, and dependencies when they affect the decision.
 
-1. Read the user request closely.
-2. Read the local code or docs that already own the concern.
-3. Check repo truth: lockfiles, CI, config, existing patterns.
-4. Load what `Skills/Routing.md` routes for the task.
-5. Then edit.
+Use targeted searches before broad repository exploration. Load additional standards or skill references only when they answer a live question.
 
-Do not ask the user for facts you can discover locally.
+## Before adding an artifact
 
-## Interrogate before you write
+For a new function, type, table, role, helper, or document, establish its current purpose and caller. Check whether existing code can absorb the need.
 
-For each new artifact you are about to add -- function, type, table, column, role, repo, helper, test, migration row, config field -- answer these in one line each. If you cannot, do not write it.
+For a trust boundary, establish the legitimate entry path and required validation. Keep separate responsibilities under clear ownership.
 
-1. Purpose. What real behavior does this enable? Not "supports future X." Today.
-2. Caller. Who invokes this? Show the actual call site or the request that triggered the need.
-3. Authentication / entry path, if it crosses a trust boundary. How does a caller legitimately reach this? If the answer involves "we will figure out later how it gets called," stop.
-4. Conflation check. Is this trying to serve two distinct purposes (system vs human, internal vs external, read vs write)? Split or pick one.
-5. Deletion test. If I leave this out, what fails, and how loudly? If nothing fails, leave it out.
-6. Smallest shape. Could this be a plain value, a column, or a function instead of a class, table, or subsystem?
+Omit artifacts whose removal would not affect the requested outcome. Keep routine reasoning local; explain material choices to the user.
 
-This is the same interrogation a strong reviewer will run on the diff. Running it before you write saves the round trip.
+## Execution and verification
 
-## Ask vs proceed
+Follow the kernel's scope and authorization contract. Resolve ordinary implementation choices and continue through fixes within that scope.
 
-Ask when the architecture could fork in multiple valid ways, the choice crosses more than one layer, a wrong guess costs an hour of rework, or you are about to delete or replace significant existing behavior. Otherwise proceed and state the assumption.
+Choose verification from the changed behavior and repository requirements. Use a reproducing test for a bug when practical. Use inspection or a focused manual check when that better fits the change.
 
-## TDD and execution order
+Check test configuration before assuming fixtures are disposable or services are isolated. A label such as local does not establish production safety.
 
-If the repo has tests, use the loop:
+Run affected checks after relevant edits. Broaden or repeat them when new evidence warrants it. Fix failures caused by the change and report unrelated failures.
 
-1. Write or identify the failing test.
-2. Make the smallest change that passes.
-3. Refactor with tests still green.
+## Completion
 
-If the repo does not test that layer today, do not bolt on a new framework without cause. Follow the local pattern and pick verification by shape:
+Compare the result with the user's requested artifacts and delivery actions. Check changed references, observable behavior, and material failure modes.
 
-- pure function → unit test
-- handler or endpoint → one integration test asserting status plus persisted state
-- neither → paste the manual command and its output into the PR body
+An implementation awaiting requested validation or delivery is unfinished. Continue until the authorized outcome is complete or a concrete blocker requires input.
 
-Default build order:
-- contract first when the repo is contract-led
-- otherwise core inward to outward: model, service, view
-
-## History and checkpoints
-
-Commit discipline is the kernel's. Outside a git repo, hold the same rule: never mix unrelated concerns in one edit pass.
-
-## Verification before "done"
-
-Do not claim completion until you have checked:
-
-- the behavior changed for the intended reason
-- tests or equivalent verification passed
-- errors are explicit
-- no new boundary violations appeared
-- no stale references remain in docs you touched
-
-## Stop conditions
-
-Stop and surface it when:
-- you hit a real blocker
-- the task depends on a missing secret, service, or repo
-- an instruction conflict remains material after applying the precedence rules
-- repeated verification failures show the plan is wrong
-
-Do not push through by guessing.
+Report what changed, the relevant verification, and any remaining limitation. Do not present static instruction checks as measured improvements in agent performance.

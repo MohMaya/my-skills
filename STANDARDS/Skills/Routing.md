@@ -1,6 +1,6 @@
 # Skills/Routing.md
 
-The single router: situation → what to load, plus the installed inventory. The kernel owns the mandates (always-on skills, the grilling gate, the subtractive pass, the prose pipeline); this file does not restate them.
+Use this router when specialist guidance would improve the task. The active runtime provides the installed inventory. Load the matching entry, not the entire tree.
 
 The runtime's available-skills list is the source of truth for what is loadable right now. Never route to a skill you cannot see in the runtime or verify on disk; use `find-skills` only when available.
 
@@ -8,13 +8,13 @@ The runtime's available-skills list is the source of truth for what is loadable 
 
 | Task | Load |
 | ---- | ---- |
-| Any non-trivial task | `STANDARDS/INDEX.md` |
-| Writing or changing code | `shiv-code-gate`, then `Core/Code.md` + `Core/Execution.md` |
+| Unclear standards ownership or conflicting doctrine | `STANDARDS/INDEX.md` |
+| Writing or changing code | `shiv-code-gate`; `Core/Code.md` for quality and layer rules; `Core/Execution.md` when execution is unclear |
 | Closing out a diff (pre-commit/PR) | `simplify` |
-| Writing anything that is not code | `Core/Prose.md`, then `caveman` (lite by default) |
-| Knowledge-base doc (Notion, TDD, spec, `docs/`) | Concise draft; clarity pass per the kernel |
-| Project descriptions and updates, tickets, chat replies, PR text, README edits | `Core/Prose.md`, `Core/Documents.md` |
-| Any composed piece (essay, article, memo) | `writing-fragments` → `writing-shape` → `edit-article` |
+| Requested chat compression | `caveman` |
+| Substantial knowledge-base document | `Core/Documents.md`; a clarity pass before delivery |
+| Human-facing output: chat, trackers, documents, or agents | `Core/Prose.md`; `Core/Documents.md` for audience-appropriate document shapes |
+| Essay, article, or memo | Select `writing-fragments`, `writing-shape`, or `edit-article` for the current stage |
 | Planning, scoping, tradeoffs, sequencing | `Core/Planning.md` |
 | Stress-testing a plan, decision, or idea | `grilling` |
 | Grilling touches module shape or boundaries | `codebase-design` for the structural questions |
@@ -51,7 +51,7 @@ The runtime's available-skills list is the source of truth for what is loadable 
 | Vercel cost or perf | `vercel-optimize` |
 | Mobile (Expo / React Native) | `expo-native-ui`, `expo-router`; ship via `eas-workflows`, `eas-app-stores` |
 | LLM features | `ai-sdk` (TS), `claude-api` (Anthropic specifics) |
-| New UI, screens, or design direction | `design-taste-frontend` (mandatory taste pass); `high-end-visual-design` for premium surfaces |
+| New UI, screens, or design direction | `design-taste-frontend`; `high-end-visual-design` for premium surfaces |
 | Figma design → code | `figma:figma-design-to-code`; `extract-design-system` to formalize tokens first |
 | Code or description → Figma | `figma:figma-generate-design` (screens), `figma:figma-generate-library` (design system); `figma:figma-use` before any `use_figma` call |
 | UI polish and motion | `emil-design-eng`, `apple-design`, `web-design-guidelines` |
@@ -67,5 +67,5 @@ Routes name preferred skills, not guaranteed installations. The active runtime a
 
 ## Invocation contract
 
-- Prefer the smallest useful set: one process skill, one domain skill, one polish skill if needed. No overlapping loads.
-- Apply the kernel's availability fallback when a routed skill is missing. Load only skills that improve the current task.
+- Select skills that resolve a current need. Avoid overlapping guidance and prerequisite chains for routine work.
+- Read only references relevant to the chosen workflow. Preserve specialized procedures when correctness or safety depends on their sequence.
