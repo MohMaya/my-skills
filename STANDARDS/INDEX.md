@@ -30,7 +30,7 @@ One concern, one owner. If two files start teaching the same thing, the tree is 
 - Code quality, layering, tests, comment policy, mocks only at IO edges, N+1 -- `Core/Code.md`.
 - Execution guidance: targeted discovery, artifact purpose, and verification -- `Core/Execution.md`.
 - Planning quality and ADR triggers -- `Core/Planning.md`.
-- Default tone -- `Core/Prose.md`.
+- Writing voice and editorial review for every output -- `write-like-shiv`; loading and operator communication -- `Core/Prose.md`.
 - Document shapes, including the ADR template -- `Core/Documents.md`.
 - Reading list behind the kernel's discipline -- `Core/Craft.md`.
 - Commit format, branch naming, PR bar, merge policy -- `Workflow/Git.md`.

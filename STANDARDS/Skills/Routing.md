@@ -1,6 +1,6 @@
 # Skills/Routing.md
 
-Use this router when specialist guidance would improve the task. The active runtime provides the installed inventory. Load the matching entry, not the entire tree.
+Apply `write-like-shiv` whenever writing or revising anything. Read `~/.agents/skills/write-like-shiv/SKILL.md` and its relevant surface reference before drafting, including short replies and progress updates. Use this router for additional specialist guidance. The active runtime provides the installed inventory. Load the matching entry, not the entire tree.
 
 The runtime's available-skills list is the source of truth for what is loadable right now. Never route to a skill you cannot see in the runtime or verify on disk; use `find-skills` only when available.
 
@@ -13,7 +13,7 @@ The runtime's available-skills list is the source of truth for what is loadable 
 | Closing out a diff (pre-commit/PR) | `simplify` |
 | Requested chat compression | `caveman` |
 | Substantial knowledge-base document | `Core/Documents.md`; a clarity pass before delivery |
-| Human-facing output: chat, trackers, documents, or agents | `Core/Prose.md`; `Core/Documents.md` for audience-appropriate document shapes |
+| Any writing or revision: chat, updates, trackers, documents, comments, commits, PRs, product copy, or agents | `write-like-shiv` and its relevant surface reference; `Core/Prose.md`; `Core/Documents.md` when document shapes help |
 | Essay, article, or memo | Select `writing-fragments`, `writing-shape`, or `edit-article` for the current stage |
 | Planning, scoping, tradeoffs, sequencing | `Core/Planning.md` |
 | Stress-testing a plan, decision, or idea | `grilling` |
@@ -67,5 +67,5 @@ Routes name preferred skills, not guaranteed installations. The active runtime a
 
 ## Invocation contract
 
-- Select skills that resolve a current need. Avoid overlapping guidance and prerequisite chains for routine work.
+- Always apply `write-like-shiv` for writing. Select additional skills that resolve a current need. Avoid overlapping guidance and prerequisite chains for routine work.
 - Read only references relevant to the chosen workflow. Preserve specialized procedures when correctness or safety depends on their sequence.

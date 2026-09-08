@@ -1,0 +1,14 @@
+interface:
+  display_name: Write Like Shiv
+  short_description: Write with Shiv’s clarity, judgment, and range
+  default_prompt: Use $write-like-shiv to turn these notes into a clear piece for
+    the intended reader.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

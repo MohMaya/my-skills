@@ -2,7 +2,7 @@
 
 Load when creating or rewriting documents humans will read.
 
-Use these shapes when the requested document benefits from them. Targets are guidance, not minimum lengths. A template or user-specified format takes precedence. Tone is owned by `Core/Prose.md`.
+Use these shapes when the requested document benefits from them. Targets are guidance, not minimum lengths. A template or user-specified format takes precedence. Apply `write-like-shiv` to every document; it owns voice and editorial review. `Core/Prose.md` supplies loading and operator guidance.
 
 ## Project update
 
