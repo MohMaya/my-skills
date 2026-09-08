@@ -459,13 +459,14 @@
       "updatedAt": "2026-08-18T18:55:07.350Z"
     },
     "humanizer": {
-      "source": "softaworks/agent-toolkit",
+      "source": "blader/humanizer",
       "sourceType": "github",
-      "sourceUrl": "https://github.com/softaworks/agent-toolkit.git",
-      "skillPath": "skills/humanizer/SKILL.md",
-      "skillFolderHash": "004c1998fffe4d5cd4535123d65cf9fb1a107b64",
+      "sourceUrl": "https://github.com/blader/humanizer.git",
+      "skillPath": "SKILL.md",
+      "skillFolderHash": "9862685f575c65a8247f90369951df1b3416e3d6",
+      "pluginName": "humanizer",
       "installedAt": "2026-05-03T17:07:14.078Z",
-      "updatedAt": "2026-05-03T17:07:14.078Z"
+      "updatedAt": "2026-09-08T20:32:16.775Z"
     },
     "image": {
       "source": "vercel-labs/json-render",
@@ -2450,6 +2451,15 @@
       "skillFolderHash": "b32508a8a7d62c07d32d7c5cff84d357719def7f",
       "installedAt": "2026-09-04T19:16:57.510Z",
       "updatedAt": "2026-09-04T19:16:57.510Z"
+    },
+    "i-have-adhd": {
+      "source": "ayghri/i-have-adhd",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/ayghri/i-have-adhd.git",
+      "skillPath": "skills/i-have-adhd/SKILL.md",
+      "skillFolderHash": "871e88cbe9b167670c170c53c8173c68609a2ae9",
+      "installedAt": "2026-09-08T20:21:03.806Z",
+      "updatedAt": "2026-09-08T20:21:03.806Z"
     }
   },
   "dismissed": {
@@ -2457,14 +2467,13 @@
   },
   "lastSelectedAgents": [
     "amp",
-    "antigravity",
-    "antigravity-cli",
     "cline",
     "codex",
     "cursor",
-    "deepagents",
+    "droid",
     "gemini-cli",
     "github-copilot",
+    "kilo",
     "kimi-code-cli",
     "opencode",
     "warp",

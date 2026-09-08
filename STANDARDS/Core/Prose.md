@@ -14,7 +14,11 @@ Distinguish implemented, deployed, and verified. A completed foundation does not
 
 Current user direction and required formats govern. Preserve quotations, identifiers, code semantics, and exact technical terminology. Specialist writing skills refine the relevant surface while `write-like-shiv` supplies the shared voice and review pass.
 
-Use the skill's editorial review for every output. Run its local `scripts/voice_check.py` for substantial saved prose when Python is available. Resolve findings in context; diagnostic statistics do not prove voice fidelity.
+Use `humanizer` when requested or when prose needs an edit for AI-sounding patterns. Preserve facts, uncertainty, quotations, code, and required formats. When embedded in another writing workflow, return the final text.
+
+Activate `i-have-adhd` only when the user explicitly invokes it. The mode persists until `stop adhd mode` or `normal mode`. Installation alone leaves it inactive. Apply its action-first formatting within task and harness requirements. Base estimates on evidence.
+
+Use `write-like-shiv` for editorial review of every output. Run its local `scripts/voice_check.py` for substantial saved prose when Python is available. Resolve findings in context; diagnostic statistics do not prove voice fidelity.
 
 ## Technical documentation
 

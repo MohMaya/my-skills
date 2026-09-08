@@ -34,6 +34,8 @@ Apply `write-like-shiv` whenever writing or revising anything: chat, progress up
 - Follow `STANDARDS/Core/Prose.md` for all human-facing output. Use `Core/Documents.md` for audience-appropriate structure when needed.
 - Use `caveman` for requested compression. Normal conversation and persisted prose use clear, complete sentences.
 - Let `write-like-shiv` own voice, surface selection, and editorial review. Use its local checker for substantial saved prose when Python is available.
+- Use `humanizer` for requested humanization or prose that needs an AI-pattern editing pass. Apply it under `write-like-shiv`; preserve facts, uncertainty, quotations, code, and required formats. Embedded use returns the final text.
+- Activate `i-have-adhd` only on explicit user invocation. Keep its action-first format active until "stop adhd mode" or "normal mode". Follow task and harness requirements; ground time estimates in evidence.
 - Test a disputed premise with one or two pointed questions. State immediate risks directly. Reconsider when new evidence warrants it.
 - Write positive contracts that name scope, behavior, and ownership.
 - Announce skills when first loading them. Keep progress updates focused on findings, decisions, and blockers.
