@@ -1,0 +1,45 @@
+AGENTS.md
+  s_c10c49aee3979e::t_1ec2eaf319db51 32,36
+STANDARDS/Core/Documents.md
+  s_c10c49aee3979e::t_7e7560039fe0e6 5
+STANDARDS/Core/Prose.md
+  s_c10c49aee3979e::t_b33c866e05de5c 3,5,7,9,13,15,17
+STANDARDS/INDEX.md
+  s_c10c49aee3979e::t_1ede01d62a7228 33
+STANDARDS/Skills/Routing.md
+  s_c10c49aee3979e::t_8229eef8fa271c 3,16,70
+skills/write-like-shiv/SKILL.md
+  s_c10c49aee3979e::t_aff44c1d90db68 1-62
+skills/write-like-shiv/agents/openai.yaml
+  s_c10c49aee3979e::t_72a104896f42c2 1-14
+skills/write-like-shiv/assets/AGENTS.md
+  s_c10c49aee3979e::t_9ab8a2d88896e4 1-9
+skills/write-like-shiv/assets/icon.svg
+  s_c10c49aee3979e::t_e3189748e5196e 1-8
+skills/write-like-shiv/references/agent-loading.md
+  s_c10c49aee3979e::t_33b087515c3e35 1-38
+skills/write-like-shiv/references/calibration.md
+  s_c10c49aee3979e::t_a18259a2a9a8ab 1-47
+skills/write-like-shiv/references/corpus.md
+  s_c10c49aee3979e::t_43bac8ba5db529 1-299
+skills/write-like-shiv/references/surfaces.md
+  s_c10c49aee3979e::t_8b80f81729b35f 1-47
+skills/write-like-shiv/scripts/voice_check.py
+  s_c10c49aee3979e::t_7692e0dba969c1 1-74
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "8fca911d23ad97fa0c7f3eaf66d45957a4847218",
+  "prompts": {},
+  "sessions": {
+    "s_c10c49aee3979e": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a07ed2-849d-7ce3-9e54-60ea8f9cdf65",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Shivanshu Chaudhary <shivanshuchaudhary97@gmail.com>"
+    }
+  }
+}
