@@ -2781,6 +2781,15 @@
       "skillFolderHash": "7015cdf68913dac5b8c16e132551936b7c7916cf",
       "installedAt": "2026-09-10T13:44:34.987Z",
       "updatedAt": "2026-09-10T13:44:34.987Z"
+    },
+    "ui-toolkit-web": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "partner-built/zoom-plugin/skills/ui-toolkit/SKILL.md",
+      "skillFolderHash": "54aaf40e316f39068b5383cbe867a12f035be033",
+      "installedAt": "2026-09-09T16:52:37.601Z",
+      "updatedAt": "2026-09-09T16:52:37.601Z"
     }
   },
   "dismissed": {
