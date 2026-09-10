@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Idempotent sync from the canonical ~/.agents tree to each harness.
 # Safe to re-run: only touches symlinks this script owns and the generated
-# harness rules and mandate mirror. Never touches non-symlink skill entries (native dirs,
+# harness rules, Gemini CLI kernel import, and mandate mirror. Never touches non-symlink skill entries (native dirs,
 # vendor skills) or ~/.agents/AGENTS.md, STANDARDS/, skills/ themselves.
 
 set -euo pipefail
@@ -90,7 +90,7 @@ sync_antigravity_skills_config() {
 }
 
 main() {
-  local do_skills=1
+  local do_skills=1 gemini_context="$HOME/.gemini/GEMINI.md"
   case "${1:-}" in
     --codex-claude)
       sync_skills "$HOME/.claude/skills" relative
@@ -118,6 +118,11 @@ alwaysApply: true
 description: Global engineering kernel
 '
   [ "$do_skills" = 0 ] || sync_antigravity_skills_config
+
+  if ! grep -Fxq "@$AGENTS_DIR/AGENTS.md" "$gemini_context" 2>/dev/null; then
+    printf '\n@%s/AGENTS.md\n' "$AGENTS_DIR" >> "$gemini_context"
+  fi
+  echo "$gemini_context: kernel import present"
 
   sync_mandates
 }

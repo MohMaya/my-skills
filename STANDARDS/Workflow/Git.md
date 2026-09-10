@@ -45,6 +45,8 @@ Optional body:
 
 ## Pull requests
 
+Apply `i-have-adhd` to PR bodies by default. Use plain English to describe the problem, what changes for the reader, and how the change was checked. Include technical terms when they help review; explain unfamiliar terms and preserve exact identifiers, required templates, and line counts. PR bodies follow the everyday communication rules in `Core/Prose.md`.
+
 Minimum bar:
 - self-contained change
 - tests or equivalent verification

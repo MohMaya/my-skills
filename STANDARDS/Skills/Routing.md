@@ -13,7 +13,7 @@ The runtime's available-skills list is the source of truth for what is loadable 
 | Closing out a diff (pre-commit/PR) | `simplify` |
 | Requested chat compression | `caveman` |
 | Requested humanization or prose with AI-sounding patterns | `humanizer`; `write-like-shiv` owns voice |
-| Explicit user invocation of ADHD mode | `i-have-adhd`; active until `stop adhd mode` or `normal mode` |
+| Everyday communication, including chat, Linear tickets, PR bodies, and delegated-agent output | `i-have-adhd` by default in every session; plain English; `Core/Prose.md` defines prose-artifact exceptions and session overrides |
 | Substantial knowledge-base document | `Core/Documents.md`; a clarity pass before delivery |
 | Any writing or revision: chat, updates, trackers, documents, comments, commits, PRs, product copy, or agents | `write-like-shiv` and its relevant surface reference; `Core/Prose.md`; `Core/Documents.md` when document shapes help |
 | Essay, article, or memo | Select `writing-fragments`, `writing-shape`, or `edit-article` for the current stage |
