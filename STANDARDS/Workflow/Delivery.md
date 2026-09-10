@@ -19,6 +19,12 @@ Failing quality gates block merge or deploy.
 
 Run repository-required checks and the checks relevant to the changed behavior before committing. Use the existing lint, type, test, or smoke checks as applicable. Stack files supply domain-specific requirements. A prose-only edit needs no unrelated application build unless CI requires it.
 
+## Security review skills
+
+Use `commit-security-scan` for a scoped diff, `threat-model-generation` for trust boundaries, and `vulnerability-validation` to investigate a concrete finding. `security-review` combines these workflows when a broader review is requested. Reuse the repository's canonical threat model. Assess attacker access, data flow, and deployed controls from evidence; a file type, UUID, CLI, or environment-variable source alone establishes neither safety nor exploitability.
+
+Keep findings in the requested review surface. Creating threat-model files, posting comments or issues, committing generated artifacts, and running exploit demonstrations follow the authorized task scope. Confirm the target environment and permitted effects before an active exploit test. Keep credentials and captured sensitive data out of reports.
+
 ## Observability baseline
 
 ### Logging

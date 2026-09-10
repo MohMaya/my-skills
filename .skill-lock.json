@@ -132,14 +132,13 @@
       "updatedAt": "2026-07-29T14:40:46.894Z"
     },
     "code-review": {
-      "source": "mattpocock/skills",
+      "source": "factory-ai/skills",
       "sourceType": "github",
-      "sourceUrl": "https://github.com/mattpocock/skills.git",
-      "skillPath": "skills/engineering/code-review/SKILL.md",
-      "skillFolderHash": "d8e341cee7980127dddda05159bedf25dc853615",
-      "pluginName": "mattpocock-skills",
+      "sourceUrl": "https://github.com/factory-ai/skills.git",
+      "skillPath": "skills/code-review/SKILL.md",
+      "skillFolderHash": "f0e17bd370c5885221158060fd7a18b7395bdd0c",
       "installedAt": "2026-05-03T17:02:10.172Z",
-      "updatedAt": "2026-09-04T19:16:57.481Z"
+      "updatedAt": "2026-09-10T13:44:16.519Z"
     },
     "codebase-design": {
       "source": "mattpocock/skills",
@@ -364,14 +363,13 @@
       "updatedAt": "2026-08-11T16:31:56.293Z"
     },
     "frontend-design": {
-      "source": "anthropics/skills",
+      "source": "factory-ai/factory-plugins",
       "sourceType": "github",
-      "sourceUrl": "https://github.com/anthropics/skills.git",
-      "skillPath": "skills/frontend-design/SKILL.md",
-      "skillFolderHash": "0d5b74a14bdf3ebcd64f352d06376a2ef05ed296",
-      "pluginName": "example-skills",
+      "sourceUrl": "https://github.com/factory-ai/factory-plugins.git",
+      "skillPath": "plugins/droid-evolved/skills/frontend-design/SKILL.md",
+      "skillFolderHash": "2ffaf3d370397d97a2320e6e91f6fa1eefc206ba",
       "installedAt": "2026-05-03T16:55:30.072Z",
-      "updatedAt": "2026-08-18T19:01:50.393Z"
+      "updatedAt": "2026-09-10T13:44:34.976Z"
     },
     "full-output-enforcement": {
       "source": "leonxlnx/taste-skill",
@@ -632,7 +630,7 @@
       "skillPath": "plugins/typescript/skills/no-use-effect/SKILL.md",
       "skillFolderHash": "a63e65cf7b06b90aa13b76bc1c968e268859b77e",
       "installedAt": "2026-05-03T17:04:47.841Z",
-      "updatedAt": "2026-05-03T17:04:47.841Z"
+      "updatedAt": "2026-09-10T13:44:34.979Z"
     },
     "notion-cli": {
       "source": "makenotion/skills",
@@ -885,14 +883,13 @@
       "updatedAt": "2026-05-03T17:09:48.422Z"
     },
     "simplify": {
-      "source": "skills.sh",
-      "sourceType": "well-known",
-      "sourceUrl": "https://skills.sh/p/YOo9PeWFib3SzLzu/.well-known/skills/simplify/SKILL.md",
-      "skillFolderHash": "",
-      "sourceBaseUrl": "https://skills.sh/p/YOo9PeWFib3SzLzu",
-      "wellKnownDigest": "sha256:beae448f54d286d4a921e4fb2f40032511039b019a2594c2df6c559c7be0fdd6",
+      "source": "factory-ai/factory-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/factory-ai/factory-plugins.git",
+      "skillPath": "plugins/core/skills/simplify/SKILL.md",
+      "skillFolderHash": "24ccbab1c231c6548c7dcb82a629b5582309d694",
       "installedAt": "2026-05-03T17:05:18.134Z",
-      "updatedAt": "2026-08-11T16:31:56.279Z"
+      "updatedAt": "2026-09-10T13:44:34.983Z"
     },
     "skill-creator": {
       "source": "anthropics/skills",
@@ -989,13 +986,13 @@
       "updatedAt": "2026-05-03T17:02:10.169Z"
     },
     "template-skill": {
-      "source": "anthropics/skills",
+      "source": "factory-ai/skills",
       "sourceType": "github",
-      "sourceUrl": "https://github.com/anthropics/skills.git",
+      "sourceUrl": "https://github.com/factory-ai/skills.git",
       "skillPath": "template/SKILL.md",
-      "skillFolderHash": "a38aa7fa73fd2835b9ce77a60274f7dc62d015a6",
+      "skillFolderHash": "c5800770f9131ae4e4ac91ec08a81f1c393e617f",
       "installedAt": "2026-05-03T16:57:25.003Z",
-      "updatedAt": "2026-05-03T16:57:25.003Z"
+      "updatedAt": "2026-09-10T13:44:16.521Z"
     },
     "testing-strategy": {
       "source": "anthropics/knowledge-work-plugins",
@@ -1571,13 +1568,13 @@
       "updatedAt": "2026-07-20T12:29:54.457Z"
     },
     "security-review": {
-      "source": "getsentry/skills",
+      "source": "factory-ai/factory-plugins",
       "sourceType": "github",
-      "sourceUrl": "https://github.com/getsentry/skills.git",
-      "skillPath": "skills/security-review/SKILL.md",
-      "skillFolderHash": "598da260ce536813c8bce1607b3c447bdc2f54f7",
+      "sourceUrl": "https://github.com/factory-ai/factory-plugins.git",
+      "skillPath": "plugins/security-engineer/skills/security-review/SKILL.md",
+      "skillFolderHash": "374dfb46edee4cfc727ef80084038648dd54eb6a",
       "installedAt": "2026-07-20T12:29:58.861Z",
-      "updatedAt": "2026-07-20T12:29:58.861Z"
+      "updatedAt": "2026-09-10T13:44:34.980Z"
     },
     "copywriting": {
       "source": "skills.sh",
@@ -2460,6 +2457,330 @@
       "skillFolderHash": "871e88cbe9b167670c170c53c8173c68609a2ae9",
       "installedAt": "2026-09-08T20:21:03.806Z",
       "updatedAt": "2026-09-08T20:21:03.806Z"
+    },
+    "performance-review": {
+      "source": "factory-ai/cursed-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/factory-ai/cursed-plugins.git",
+      "skillPath": "skills/performance-review/SKILL.md",
+      "skillFolderHash": "55a4384264a859ee8e5a42a590c2084b08c31dbb",
+      "installedAt": "2026-09-09T16:52:37.556Z",
+      "updatedAt": "2026-09-10T13:43:59.304Z"
+    },
+    "agent-repellent": {
+      "source": "factory-ai/cursed-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/factory-ai/cursed-plugins.git",
+      "skillPath": "skills/agent-repellent/SKILL.md",
+      "skillFolderHash": "99e52be981af00e2a2210850855867d643e48ab7",
+      "installedAt": "2026-09-10T13:43:59.298Z",
+      "updatedAt": "2026-09-10T13:43:59.298Z"
+    },
+    "blame": {
+      "source": "factory-ai/cursed-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/factory-ai/cursed-plugins.git",
+      "skillPath": "skills/blame/SKILL.md",
+      "skillFolderHash": "2cacd3c61a145747fc9b2c79d01fb93c2f976c1f",
+      "installedAt": "2026-09-10T13:43:59.300Z",
+      "updatedAt": "2026-09-10T13:43:59.300Z"
+    },
+    "cobol-converter": {
+      "source": "factory-ai/cursed-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/factory-ai/cursed-plugins.git",
+      "skillPath": "skills/cobol-converter/SKILL.md",
+      "skillFolderHash": "d7a4a5c3f5501d46f3878bfc1b98a6fecb520691",
+      "installedAt": "2026-09-10T13:43:59.301Z",
+      "updatedAt": "2026-09-10T13:43:59.301Z"
+    },
+    "dating-profile": {
+      "source": "factory-ai/cursed-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/factory-ai/cursed-plugins.git",
+      "skillPath": "skills/dating-profile/SKILL.md",
+      "skillFolderHash": "2ccf1f283bcf3dc399340664aa8ed7a4a07bef94",
+      "installedAt": "2026-09-10T13:43:59.301Z",
+      "updatedAt": "2026-09-10T13:43:59.301Z"
+    },
+    "feng-shui": {
+      "source": "factory-ai/cursed-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/factory-ai/cursed-plugins.git",
+      "skillPath": "skills/feng-shui/SKILL.md",
+      "skillFolderHash": "a6fe86bc4d9678a368000500e9e5a0aa9382b079",
+      "installedAt": "2026-09-10T13:43:59.302Z",
+      "updatedAt": "2026-09-10T13:43:59.302Z"
+    },
+    "obituary": {
+      "source": "factory-ai/cursed-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/factory-ai/cursed-plugins.git",
+      "skillPath": "skills/obituary/SKILL.md",
+      "skillFolderHash": "42f68e8d02c5c8d99e95b468663c22ad5f0f35d5",
+      "installedAt": "2026-09-10T13:43:59.303Z",
+      "updatedAt": "2026-09-10T13:43:59.303Z"
+    },
+    "roast": {
+      "source": "factory-ai/cursed-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/factory-ai/cursed-plugins.git",
+      "skillPath": "skills/roast/SKILL.md",
+      "skillFolderHash": "9a4def08102bdc280a4844d72ae85215ab854644",
+      "installedAt": "2026-09-10T13:43:59.304Z",
+      "updatedAt": "2026-09-10T13:43:59.304Z"
+    },
+    "ship-ritual": {
+      "source": "factory-ai/cursed-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/factory-ai/cursed-plugins.git",
+      "skillPath": "skills/ship-ritual/SKILL.md",
+      "skillFolderHash": "506db094174557b115b71ccaa963347f95cacf63",
+      "installedAt": "2026-09-10T13:43:59.305Z",
+      "updatedAt": "2026-09-10T13:43:59.305Z"
+    },
+    "therapy-session": {
+      "source": "factory-ai/cursed-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/factory-ai/cursed-plugins.git",
+      "skillPath": "skills/therapy-session/SKILL.md",
+      "skillFolderHash": "52e5c02da47cfcfd8e059b2604bcab95f9c8873f",
+      "installedAt": "2026-09-10T13:43:59.306Z",
+      "updatedAt": "2026-09-10T13:43:59.306Z"
+    },
+    "commit-security-scan": {
+      "source": "factory-ai/factory-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/factory-ai/factory-plugins.git",
+      "skillPath": "plugins/security-engineer/skills/commit-security-scan/SKILL.md",
+      "skillFolderHash": "9ea49d395fe0ce95e61cee61d2bb22c93670a59a",
+      "installedAt": "2026-09-10T13:44:16.520Z",
+      "updatedAt": "2026-09-10T13:44:34.969Z"
+    },
+    "threat-model-generation": {
+      "source": "factory-ai/factory-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/factory-ai/factory-plugins.git",
+      "skillPath": "plugins/security-engineer/skills/threat-model-generation/SKILL.md",
+      "skillFolderHash": "bc3bf3679c9f5a71d2facff2c6a1cf342bb94ab4",
+      "installedAt": "2026-09-10T13:44:16.522Z",
+      "updatedAt": "2026-09-10T13:44:34.984Z"
+    },
+    "vulnerability-validation": {
+      "source": "factory-ai/factory-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/factory-ai/factory-plugins.git",
+      "skillPath": "plugins/security-engineer/skills/vulnerability-validation/SKILL.md",
+      "skillFolderHash": "463fd0ac84f9bae1458990285b50c2a184fd16b6",
+      "installedAt": "2026-09-10T13:44:16.523Z",
+      "updatedAt": "2026-09-10T13:44:34.988Z"
+    },
+    "agent-browser": {
+      "source": "factory-ai/factory-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/factory-ai/factory-plugins.git",
+      "skillPath": "plugins/droid-control/skills/agent-browser/SKILL.md",
+      "skillFolderHash": "8aea4a5e871ac943e02febe0cf3ee6f6c0e19755",
+      "installedAt": "2026-09-10T13:44:34.965Z",
+      "updatedAt": "2026-09-10T13:44:34.965Z"
+    },
+    "autoresearch": {
+      "source": "factory-ai/factory-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/factory-ai/factory-plugins.git",
+      "skillPath": "plugins/autoresearch/skills/autoresearch/SKILL.md",
+      "skillFolderHash": "9c08504625091b5582b0bc3283a1cb4c64e96ca1",
+      "installedAt": "2026-09-10T13:44:34.966Z",
+      "updatedAt": "2026-09-10T13:44:34.966Z"
+    },
+    "ban-type-assertions": {
+      "source": "factory-ai/factory-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/factory-ai/factory-plugins.git",
+      "skillPath": "plugins/typescript/skills/ban-type-assertions/SKILL.md",
+      "skillFolderHash": "c647bcbade19f515e093f1ec740729d9b5b1637d",
+      "installedAt": "2026-09-10T13:44:34.967Z",
+      "updatedAt": "2026-09-10T13:44:34.967Z"
+    },
+    "browser-navigation": {
+      "source": "factory-ai/factory-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/factory-ai/factory-plugins.git",
+      "skillPath": "plugins/droid-evolved/skills/browser-navigation/SKILL.md",
+      "skillFolderHash": "6af6ce706fc21384acbca5b373cd9a2f49369eed",
+      "installedAt": "2026-09-10T13:44:34.967Z",
+      "updatedAt": "2026-09-10T13:44:34.967Z"
+    },
+    "capture": {
+      "source": "factory-ai/factory-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/factory-ai/factory-plugins.git",
+      "skillPath": "plugins/droid-control/skills/capture/SKILL.md",
+      "skillFolderHash": "3aa65826498f987a05633d35d63800d3526e4e42",
+      "installedAt": "2026-09-10T13:44:34.968Z",
+      "updatedAt": "2026-09-10T13:44:34.968Z"
+    },
+    "compose": {
+      "source": "factory-ai/factory-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/factory-ai/factory-plugins.git",
+      "skillPath": "plugins/droid-control/skills/compose/SKILL.md",
+      "skillFolderHash": "f632011b5524f8f4a5be7f52361688a4786a7284",
+      "installedAt": "2026-09-10T13:44:34.970Z",
+      "updatedAt": "2026-09-10T13:44:34.970Z"
+    },
+    "create-pr": {
+      "source": "factory-ai/factory-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/factory-ai/factory-plugins.git",
+      "skillPath": "plugins/code-review/skills/create-pr/SKILL.md",
+      "skillFolderHash": "d2680570bb2830b8174405d1dae0299d70c2b964",
+      "installedAt": "2026-09-10T13:44:34.971Z",
+      "updatedAt": "2026-09-10T13:44:34.971Z"
+    },
+    "desktop-control": {
+      "source": "factory-ai/factory-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/factory-ai/factory-plugins.git",
+      "skillPath": "plugins/droid-control/skills/desktop-control/SKILL.md",
+      "skillFolderHash": "60b9d5e6a79f47b631518a17caee6101e855cb20",
+      "installedAt": "2026-09-10T13:44:34.971Z",
+      "updatedAt": "2026-09-10T13:44:34.971Z"
+    },
+    "droid-cli": {
+      "source": "factory-ai/factory-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/factory-ai/factory-plugins.git",
+      "skillPath": "plugins/droid-control/skills/droid-cli/SKILL.md",
+      "skillFolderHash": "362294473dd2811bd97139950920a34782ca5ba7",
+      "installedAt": "2026-09-10T13:44:34.972Z",
+      "updatedAt": "2026-09-10T13:44:34.972Z"
+    },
+    "droid-control": {
+      "source": "factory-ai/factory-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/factory-ai/factory-plugins.git",
+      "skillPath": "plugins/droid-control/skills/droid-control/SKILL.md",
+      "skillFolderHash": "a014a0d159f189456066e6fab70e96881f83a875",
+      "installedAt": "2026-09-10T13:44:34.973Z",
+      "updatedAt": "2026-09-10T13:44:34.973Z"
+    },
+    "fix-knip-unused-exports": {
+      "source": "factory-ai/factory-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/factory-ai/factory-plugins.git",
+      "skillPath": "plugins/typescript/skills/fix-knip-unused-exports/SKILL.md",
+      "skillFolderHash": "ef5f03e6e3f64c21865482cb02767b1a96f0ce27",
+      "installedAt": "2026-09-10T13:44:34.974Z",
+      "updatedAt": "2026-09-10T13:44:34.974Z"
+    },
+    "follow-up-on-pr": {
+      "source": "factory-ai/factory-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/factory-ai/factory-plugins.git",
+      "skillPath": "plugins/code-review/skills/follow-up-on-pr/SKILL.md",
+      "skillFolderHash": "e28d5e24de826433849295126e355e9789273bca",
+      "installedAt": "2026-09-10T13:44:34.975Z",
+      "updatedAt": "2026-09-10T13:44:34.975Z"
+    },
+    "http-toolkit-intercept": {
+      "source": "factory-ai/factory-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/factory-ai/factory-plugins.git",
+      "skillPath": "plugins/debugging/skills/http-toolkit-intercept/SKILL.md",
+      "skillFolderHash": "67879818b5d7cf97170fe7d37386dcdd16a67c26",
+      "installedAt": "2026-09-10T13:44:34.976Z",
+      "updatedAt": "2026-09-10T13:44:34.976Z"
+    },
+    "human-writing": {
+      "source": "factory-ai/factory-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/factory-ai/factory-plugins.git",
+      "skillPath": "plugins/droid-evolved/skills/human-writing/SKILL.md",
+      "skillFolderHash": "69f9b5078edcde49c3df99bda1bcf89cf5157fd2",
+      "installedAt": "2026-09-10T13:44:34.977Z",
+      "updatedAt": "2026-09-10T13:44:34.977Z"
+    },
+    "init": {
+      "source": "factory-ai/factory-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/factory-ai/factory-plugins.git",
+      "skillPath": "plugins/core/skills/init/SKILL.md",
+      "skillFolderHash": "17906e72949f312578afb3bc4c2505ae219fd9fe",
+      "installedAt": "2026-09-10T13:44:34.978Z",
+      "updatedAt": "2026-09-10T13:44:34.978Z"
+    },
+    "pty-capture": {
+      "source": "factory-ai/factory-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/factory-ai/factory-plugins.git",
+      "skillPath": "plugins/droid-control/skills/pty-capture/SKILL.md",
+      "skillFolderHash": "72aceaf603ffcf7ea343010f48596b52ac42664e",
+      "installedAt": "2026-09-10T13:44:34.980Z",
+      "updatedAt": "2026-09-10T13:44:34.980Z"
+    },
+    "session-navigation": {
+      "source": "factory-ai/factory-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/factory-ai/factory-plugins.git",
+      "skillPath": "plugins/core/skills/session-navigation/SKILL.md",
+      "skillFolderHash": "071148b0c6f29f934974d180539dbd05957932c7",
+      "installedAt": "2026-09-10T13:44:34.981Z",
+      "updatedAt": "2026-09-10T13:44:34.981Z"
+    },
+    "showcase": {
+      "source": "factory-ai/factory-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/factory-ai/factory-plugins.git",
+      "skillPath": "plugins/droid-control/skills/showcase/SKILL.md",
+      "skillFolderHash": "1e6dfa95d1b4b488dcc4f8e8ceb362df5136c93a",
+      "installedAt": "2026-09-10T13:44:34.982Z",
+      "updatedAt": "2026-09-10T13:44:34.982Z"
+    },
+    "skill-creation": {
+      "source": "factory-ai/factory-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/factory-ai/factory-plugins.git",
+      "skillPath": "plugins/droid-evolved/skills/skill-creation/SKILL.md",
+      "skillFolderHash": "abfa82ed51e1daf6b9694c43a034a3d2326ea805",
+      "installedAt": "2026-09-10T13:44:34.983Z",
+      "updatedAt": "2026-09-10T13:44:34.983Z"
+    },
+    "true-input": {
+      "source": "factory-ai/factory-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/factory-ai/factory-plugins.git",
+      "skillPath": "plugins/droid-control/skills/true-input/SKILL.md",
+      "skillFolderHash": "5d17a79a87ed245f9dcdb8f95890bf2f9c9d02b2",
+      "installedAt": "2026-09-10T13:44:34.985Z",
+      "updatedAt": "2026-09-10T13:44:34.985Z"
+    },
+    "tuistory": {
+      "source": "factory-ai/factory-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/factory-ai/factory-plugins.git",
+      "skillPath": "plugins/droid-control/skills/tuistory/SKILL.md",
+      "skillFolderHash": "a4fb6359a1d414efdcbb06c889f95d6c8f120e0c",
+      "installedAt": "2026-09-10T13:44:34.985Z",
+      "updatedAt": "2026-09-10T13:44:34.985Z"
+    },
+    "verify": {
+      "source": "factory-ai/factory-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/factory-ai/factory-plugins.git",
+      "skillPath": "plugins/droid-control/skills/verify/SKILL.md",
+      "skillFolderHash": "1cc50239e14740a58571e2db1972d57e978734ee",
+      "installedAt": "2026-09-10T13:44:34.986Z",
+      "updatedAt": "2026-09-10T13:44:34.986Z"
+    },
+    "visual-design": {
+      "source": "factory-ai/factory-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/factory-ai/factory-plugins.git",
+      "skillPath": "plugins/droid-evolved/skills/visual-design/SKILL.md",
+      "skillFolderHash": "7015cdf68913dac5b8c16e132551936b7c7916cf",
+      "installedAt": "2026-09-10T13:44:34.987Z",
+      "updatedAt": "2026-09-10T13:44:34.987Z"
     }
   },
   "dismissed": {

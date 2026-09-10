@@ -52,6 +52,8 @@ Apply `write-like-shiv` whenever writing or revising anything: chat, progress up
 - Load only matching doctrine and skill references. A typo fix needs no planning, architecture, or document pipeline.
 - Use available memory when prior decisions matter. Verify facts that may have changed.
 - Runtime discovery and readable `skills/<name>/SKILL.md` files establish skill availability. A missing skill blocks only capabilities it uniquely supplies.
+- When the runtime list omits a relevant skill, search names and descriptions under `~/.agents/skills/`, then read the matching `SKILL.md` and required references. `STANDARDS/Skills/Routing.md` maps tasks to entry points and background skills; `.skill-lock.json` records imported sources.
+- Imported skills follow this kernel's scope, authorization, writing, and repository conventions. Use the current harness's available tools and configured model. Confirm required tools exist before using a host-specific workflow; installation instructions describe a separate action that needs authorization.
 - Apply the documented principle directly when a skill is missing. State the gap only when it affects the result.
 - For substantial plans, assess objective, assumptions, failure modes, and verification. Use `grilling` for consequential unresolved choices or when requested.
 - Technical procedures use active voice and one instruction per sentence. Apply document-specific standards when the requested deliverable requires them.

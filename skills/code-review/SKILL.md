@@ -1,88 +1,90 @@
 ---
 name: code-review
-description: Review a diff or PR against repository standards and the requested behavior. Use for branch, commit, or working-tree reviews.
+description: Review code changes (diffs, PRs, patches) and provide structured, actionable feedback on correctness, maintainability, and test coverage. Use when the user asks for a code review, requests feedback on a patch/PR, or wants an assessment of changes.
 ---
 
-Review the requested change on two axes:
+# Code Review
 
-- **Standards**: does the code conform to this repo's documented coding standards?
-- **Spec**: does the code faithfully implement the originating issue / spec?
+You are a senior engineer conducting a thorough code review.
 
-Delegate independent axes when the review is substantial and the runtime supports sub-agents. Review small or tightly coupled changes locally.
+## Establish Review Target
 
-Use the project's configured tracker when its delivery workflow requires one. A local review does not require tracker setup.
+Determine what to review:
+1. If a PR link or commit range is provided, use that
+2. Otherwise, check for staged changes: `git diff --staged`
+3. Or unstaged changes: `git diff`
+4. Or a user-provided patch/diff
 
-## Process
+## Review Rubric (Priority Order)
 
-### 1. Pin the fixed point
+Evaluate the changes against these criteria, in order of importance:
 
-Use the explicit commit, branch, tag, PR base, or working-tree scope. Infer the target from repository context when unambiguous. Ask only when plausible targets produce materially different reviews.
+### 1. Correctness & Edge Cases
+- Does the code do what it's supposed to do?
+- Are edge cases handled (null/undefined, empty collections, boundary values)?
+- Are error conditions handled appropriately?
+- Is the logic sound?
 
-For a branch review, use `git diff <fixed-point>...HEAD` and `git log <fixed-point>..HEAD --oneline`. For working-tree changes, use the requested staged or unstaged diff. Record the scope so every reviewer examines the same change.
+### 2. API & Behavior Changes
+- Are there breaking changes to public APIs?
+- Do changes affect backwards compatibility?
+- Are behavior changes documented or intentional?
 
-Verify references resolve and inspect the diff. If it is empty, report that result. Resolve an invalid reference before reviewing.
+### 3. Maintainability & Readability
+- Is the code easy to understand?
+- Are names descriptive and consistent with codebase conventions?
+- Is there unnecessary complexity that could be simplified?
+- Is code duplication avoided where appropriate?
 
-### 2. Identify the spec source
+### 4. Tests
+- Are there tests for new functionality?
+- Do existing tests need to be updated?
+- Are edge cases covered by tests?
+- Do tests actually verify the intended behavior?
 
-Look for the originating spec, in this order:
+### 5. Performance (when relevant)
+- Are there obvious performance issues (N+1 queries, unnecessary loops)?
+- Are expensive operations cached or optimized where needed?
+- Only flag performance issues that are clearly problematic
 
-1. The user's request, supplied document, or PR description.
-2. Linked issues, fetched through the configured project workflow when available.
-3. A relevant specification under `docs/`, `specs/`, or `.scratch/`.
+### 6. Security Basics
+- Is user input validated before use?
+- Are there authorization checks where needed?
+- Are secrets/credentials properly handled (not hardcoded, not logged)?
+- Is sensitive data protected?
 
-If none is available, continue correctness and standards review. State that requirement coverage could not be verified. Ask for a specification only when missing intent prevents assessing a material behavior.
+## Feedback Guidelines
 
-### 3. Identify the standards sources
+- **Cite exact locations**: Reference file paths and line numbers
+- **Provide concrete suggestions**: Show how to fix, not just what's wrong
+- **Categorize severity**:
+  - **Must-fix**: Bugs, security issues, breaking changes
+  - **Suggestions**: Improvements that would make the code better
+  - **Nits**: Minor style or preference issues (optional to address)
+- **Be constructive**: Explain why something is an issue
+- **Don't over-engineer**: Avoid suggesting large refactors unless truly necessary
+- **Acknowledge good patterns**: Call out well-written code when you see it
 
-Anything in the repo that documents how code should be written, such as `CODING_STANDARDS.md` or `CONTRIBUTING.md`.
+## Output Format
 
-On top of whatever the repo documents, the Standards axis always carries the **smell baseline** below: a fixed set of Fowler code smells (_Refactoring_, ch.3) that applies even when a repo documents nothing. Two rules bind it:
+Structure your review as follows:
 
-- **The repo overrides.** A documented repo standard always wins; where it endorses something the baseline would flag, suppress the smell.
-- **Always a judgement call.** Each smell is a labelled heuristic ("possible Feature Envy"), never a hard violation. Like any standard here, skip anything tooling already enforces.
+### Summary
+3-6 bullet points summarizing the changes and overall assessment.
 
-Each smell reads *what it is* → *how to fix*; match it against the diff:
+### Must-Fix Issues
+Issues that should be addressed before merging. Include:
+- File and line reference
+- Description of the issue
+- Concrete fix suggestion
 
-- **Mysterious Name**: a function, variable, or type whose name doesn't reveal what it does or holds. → rename it; if no honest name comes, the design's murky.
-- **Duplicated Code**: the same logic shape appears in more than one hunk or file in the change. → extract the shared shape, call it from both.
-- **Feature Envy**: a method that reaches into another object's data more than its own. → move the method onto the data it envies.
-- **Data Clumps**: the same few fields or params keep travelling together (a type wanting to be born). → bundle them into one type, pass that.
-- **Primitive Obsession**: a primitive or string standing in for a domain concept that deserves its own type. → give the concept its own small type.
-- **Repeated Switches**: the same `switch`/`if`-cascade on the same type recurs across the change. → replace with polymorphism, or one map both sites share.
-- **Shotgun Surgery**: one logical change forces scattered edits across many files in the diff. → gather what changes together into one module.
-- **Divergent Change**: one file or module is edited for several unrelated reasons. → split so each module changes for one reason.
-- **Speculative Generality**: abstraction, parameters, or hooks added for needs the spec doesn't have. → delete it; inline back until a real need shows.
-- **Message Chains**: long `a.b().c().d()` navigation the caller shouldn't depend on. → hide the walk behind one method on the first object.
-- **Middle Man**: a class or function that mostly just delegates onward. → cut it, call the real target direct.
-- **Refused Bequest**: a subclass or implementer that ignores or overrides most of what it inherits. → drop the inheritance, use composition.
+### Suggestions
+Improvements that would make the code better but aren't blocking.
 
-### 4. Review the two axes
+### Nits (Optional)
+Minor style or preference items. Keep this section brief.
 
-For a delegated review, provide the scope and these briefs. Apply the same criteria during local review.
-
-**Standards brief** should include:
-
-- The full diff command and commit list.
-- The list of standards-source files you found in step 3, **plus the smell baseline from step 3** pasted in full (the sub-agent has no other access to it).
-- The brief: "Report, per file/hunk where relevant, (a) every place the diff violates a documented standard: cite the standard (file + the rule); and (b) any baseline smell you spot: name it and quote the hunk. Distinguish hard violations from judgement calls: documented-standard breaches can be hard, but baseline smells are always judgement calls, and a documented repo standard overrides the baseline. Skip anything tooling enforces. Under 400 words."
-
-**Spec brief** should include:
-
-- The diff command and commit list.
-- The path or fetched contents of the spec.
-- The brief: "Report: (a) requirements the spec asked for that are missing or partial; (b) behaviour in the diff that wasn't asked for (scope creep); (c) requirements that look implemented but where the implementation looks wrong. Quote the spec line for each finding. Under 400 words."
-
-If the spec is missing, omit the requirement-coverage review and state that limit.
-
-### 5. Aggregate
-
-Verify findings against the actual diff and relevant context. Remove duplicates and unsupported claims. Report actionable findings by severity, with file references and concrete consequences. Label each finding's axis when useful. Keep requirement gaps visible alongside standards findings. State review limits and say when no actionable findings remain.
-
-## Why two axes
-
-A change can pass one axis and fail the other:
-
-- Code that follows every standard but implements the wrong thing → **Standards pass, Spec fail.**
-- Code that does exactly what the issue asked but breaks the project's conventions → **Spec pass, Standards fail.**
-
-Reporting them separately stops one axis from masking the other.
+### Verification
+Commands or steps to verify the changes work as expected:
+- Relevant test commands to run
+- Manual verification steps if applicable
