@@ -47,6 +47,8 @@ Optional body:
 
 Apply `i-have-adhd` to PR bodies by default. Use plain English to describe the problem, what changes for the reader, and how the change was checked. Include technical terms when they help review; explain unfamiliar terms and preserve exact identifiers, required templates, and line counts. PR bodies follow the everyday communication rules in `Core/Prose.md`.
 
+Use `create-pr` for preparation and publication, and `follow-up-on-pr` for requested updates to an open PR. This file owns title, ticket, verification, and merge conventions when imported examples differ. Standalone maintenance needs no ticket. Inspect PR state before updating it; a merged PR requires a linked follow-up PR. Apply review comments after checking their claims against the current diff. Merge and deploy remain governed by the user's authorized scope.
+
 Minimum bar:
 - self-contained change
 - tests or equivalent verification

@@ -5,6 +5,7 @@ Load for TypeScript, React, and Next.js work.
 ## Toolchain
 
 - Respect the existing formatter, linter, test runner, and package manager.
+- Use `no-use-effect` when reviewing React effect usage, `ban-type-assertions` when an assertion rule is requested or already enforced, and `fix-knip-unused-exports` for actual Knip findings. Apply the matching skill within the repository's existing toolchain and public API contract.
 
 ## Types and contracts
 

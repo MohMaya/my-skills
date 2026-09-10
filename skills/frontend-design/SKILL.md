@@ -1,55 +1,186 @@
 ---
 name: frontend-design
-description: Guidance for distinctive, intentional visual design when building new UI or reshaping an existing one. Helps with aesthetic direction, typography, and making choices that don't read as templated defaults.
-license: Complete terms in LICENSE.txt
+version: 1.0.0
+description: |
+  Build good-looking web interfaces. Use when:
+  - User asks you to build a web app, website, landing page, or HTML page
+  - User asks for a one-off tool, utility, or demo app
+  - User is starting a new frontend project
+  - User wants to improve how something looks
+  - User mentions UI, design, styling, or making something look better
+  This applies to ANY frontend work, not just "design" tasks. Even simple
+  apps benefit from basic design principles.
 ---
 
-# Frontend Design
+# Frontend design
 
-Approach this as the design lead at a small studio known for giving every client a visual identity that could not be mistaken for anyone else's. This client has already rejected proposals that felt templated, and is paying for a distinctive point of view: make deliberate, opinionated choices about palette, typography, and layout that are specific to this brief, and take one real aesthetic risk you can justify.
+Practical tactics for designing and building frontend interfaces. This is about making things look good and work well, not about frameworks or tooling.
 
-## Ground it in the subject
+## Start with the creative vision
 
-If the brief does not pin down what the product or subject is, pin it yourself before designing: name one concrete subject, its audience, and the page's single job, and state your choice. If there's any information in your memory about the human's preferences, context about what they're building, or designs you've made before – use that as a hint. The subject's own world, its materials, instruments, artifacts, and vernacular, is where distinctive choices come from. Build with the brief's real content and subject matter throughout.
+Before touching code, understand what you're trying to achieve emotionally and aesthetically.
 
-## Design principles
+### Tone
 
-For web designs, the hero is a thesis. Open with the most characteristic thing in the subject's world, in whatever form makes sense for it: a headline, an image, an animation, a live demo, an interactive moment. Be deliberate with your choice: a big number with a small label, supporting stats, and a gradient accent is the template answer, only use if that's truly the best option.
+What feeling should this interface convey? Professional and trustworthy? Playful and fun? Calm and minimal? Energetic and bold?
 
-Typography carries the personality of the page. Pair the display and body faces deliberately, not the same families you would reach for on any other project, and set a clear type scale with intentional weights, widths, and spacing. Make the type treatment itself a memorable part of the design, not a neutral delivery vehicle for the content.
+The tone affects every decision: colors, typography, spacing, imagery, micro-interactions.
 
-Structure is information. Structural devices, numbering, eyebrows, dividers, labels, should encode something true about the content, not decorate it. Many generic designs use numbered markers (01 / 02 / 03), but that's only appropriate if the content actually is a sequence - like a real process or a typed timeline where order carries information the reader needs. Question if choices like numbered markers actually make sense before incorporating them.
+If there's an existing design language, follow it first. Match the existing tone before introducing new elements. Consistency matters more than novelty.
 
-Leverage motion deliberately. Think about where and if animation can serve the subject: a page-load sequence, a scroll-triggered reveal, hover micro-interactions, ambient atmosphere. An orchestrated moment usually lands harder than scattered effects; choose what the direction calls for. However, sometimes less is more, and extra animation contributes to the feeling that the design is AI-generated.
+### Aesthetics
 
-Match complexity to the vision. Maximalist directions need elaborate execution; minimal directions need precision in spacing, type, and detail. Elegance is executing the chosen vision well.
+Look at references. What interfaces do you admire that have a similar purpose? What makes them work?
 
-Consider written content carefully. Often a design brief may not contain real content, and it's up to you to come up with copy. Copy can make a design feel as templated as the design itself. See the below section on writing for more guidance.
+Collect screenshots, note what you like about each. Is it the generous whitespace? The bold typography? The subtle shadows? The color palette?
 
-## Process: brainstorm, explore, plan, critique, build, critique again
+Don't copy directly, but understand the principles behind what you're drawn to.
 
-For calibration: AI-generated design right now clusters around three looks: (1) a warm cream background (near #F4F1EA) with a high-contrast serif display and a terracotta accent; (2) a near-black background with a single bright acid-green or vermilion accent; (3) a broadsheet-style layout with hairline rules, zero border-radius, and dense newspaper-like columns. All three are legitimate for some briefs, but they are defaults rather than choices, and they appear regardless of subject. Where the brief pins down a visual direction, follow it exactly — the brief's own words always win, including when it asks for one of these looks. Where it leaves an axis free, don't spend that freedom on one of these defaults. Just like a human designer who's hired, there's often a careful balance between doing what you're good at and taking each project as a chance to experiment and learn.
+## Then add constraints
 
-Work in two passes. First, brainstorm a short design plan based on the human's design brief: create a compact token system with color, type, layout, and signature. Color: describe the palette as 4–6 named hex values. Type: the typefaces for 2+ roles (a characterful display face that's used with restraint, a complementary body face, and a utility face for captions or data if needed). Layout: a layout concept, using one-sentence prose descriptions and ASCII wireframes to ideate and compare. Signature: the single unique element this page will be remembered by that embodies the brief in an appropriate way.
+Constraints make design easier, not harder. They eliminate decision fatigue.
 
-Then review that plan against the brief before building: if any part of it reads like the generic default you would produce for any similar page (work through a similar prompt to see if you arrive somewhere similar) rather than a choice made for this specific brief — revise that part, say what you changed and why. Only after you've confirmed the relative uniqueness of your design plan should you start to write the code, following the revised plan exactly and deriving every color and type decision from it.
+### Spacing scale
 
-When writing the code, be careful of structuring your CSS selector specificities. It's easy to generate CSS classes that cancel each other out (especially with a type-based selector like .section and a element-based selector like .cta). This can happen often with paddings/margins between sections.
+Pick a base unit (4px or 8px) and stick to multiples of it.
 
-Try to do a lot of this planning and iteration in your thinking, and only show ideas to the user when you have higher confidence it'll delight them.
+```
+4, 8, 12, 16, 24, 32, 48, 64, 96, 128
+```
 
-## Restraint and self-critique
+Every margin, padding, and gap should come from this scale. No magic numbers like 13px or 47px.
 
-Spend your boldness in one place. Let the signature element be the one memorable thing, keep everything around it quiet and disciplined, and cut any decoration that does not serve the brief. Not taking a risk can be a risk itself! Build to a quality floor without announcing it: responsive down to mobile, visible keyboard focus, reduced motion respected. Critique your own work as you build, taking screenshots if your environment supports it – a picture is worth 1000 tokens. Consider Chanel's advice: before leaving the house, take a look in the mirror and remove one accessory. Human creators have memory and always try to do something new, so if you have a space to quickly jot down notes about what you've tried, it can help you in future passes.
+### Type scale
 
-## More on writing in design
+Pick a ratio (1.25 or 1.333 are common) and generate your sizes:
 
-Words appear in a design for one reason: to make it easier to understand, and therefore easier to use. They are design material, not decoration. Bring the same intentionality to copy that you would bring to spacing and color. Before writing anything, ask what the design needs to say, and how it can best be said to help the person navigate the experience.
+```
+12, 14, 16, 20, 24, 32, 40, 48
+```
 
-Write from the end user's side of the screen. Name things by what people control and recognize, never by how the system is built. A person manages notifications, not webhook config. Describe what something does in plain terms rather than selling it. Being specific is always better than being clever.
+Each size has a purpose: body text, subheadings, headings, display text.
 
-Use active voice as default. A control should say exactly what happens when it's used: "Save changes," not "Submit." An action keeps the same name through the whole flow, so the button that says "Publish" produces a toast that says "Published." The vocabulary of an interface is the signposting for someone navigating the product. Cohesion and consistency are how people learn their way around.
+### Color palette
 
-Treat failure and emptiness as moments for direction, not mood. Explain what went wrong and how to fix it, in the interface's voice rather than a person's. Errors don't apologize, and they are never vague about what happened. An empty screen is an invitation to act.
+Start minimal:
 
-Keep the register conversational and tuned: plain verbs, sentence case, no filler, with tone matched to the brand and the audience. Let each element do exactly one job. A label labels, an example demonstrates, and nothing quietly does double duty.
+- One primary color (your brand or accent)
+- Neutrals: white, black, and 3-4 grays
+- One semantic color for errors (red)
+- One for success (green)
+
+You can always add more later. Starting with fewer colors forces you to use them intentionally.
+
+### Layout grid
+
+Use a 12-column grid with consistent gutters. Most layouts can be built with 12 columns.
+
+## Design in the browser
+
+Designing directly in code (HTML/CSS) has advantages:
+
+- You see real rendering, real responsiveness
+- Faster iteration than design tools for some changes
+- No handoff problems
+- Version control
+
+Start with mobile, then scale up. It's easier to add space than to remove it.
+
+## Common patterns
+
+### Cards
+
+Cards group related content. Keep them simple:
+
+- Consistent padding (16px or 24px)
+- Subtle border or shadow to separate from background
+- Clear hierarchy: image, title, description, action
+
+### Forms
+
+- Labels above inputs, not beside
+- One column for most forms
+- Clear error states (red border, error message below)
+- Generous touch targets (44px minimum height on mobile)
+
+### Navigation
+
+- Keep primary nav minimal (5-7 items max)
+- Current page should be obvious
+- Mobile: hamburger menu or bottom nav
+- Breadcrumbs for deep hierarchies
+
+### Empty states
+
+Don't leave empty areas blank. Show:
+
+- What would normally be here
+- How to add content
+- An illustration if appropriate
+
+### Loading states
+
+- Skeleton screens over spinners when possible
+- Show progress for long operations
+- Don't block the whole UI if only part is loading
+
+## Avoiding AI-slop aesthetics
+
+Generated designs often look generic. To avoid this:
+
+**Be specific about what you want.** "A modern dashboard" gives you something forgettable. "A dashboard with a dark theme, data visualizations using a blue-to-purple gradient, compact information density, inspired by trading terminals" gives you something distinctive.
+
+**Add constraints.** Limit your color palette. Commit to a specific type scale. Use a consistent spacing system. Constraints create cohesion.
+
+**Look at real references.** Find interfaces you admire. Understand why they work. Borrow principles, not pixels.
+
+**Edit ruthlessly.** Generated designs often have too much going on. Remove decorative elements that don't serve a purpose. Simplify until it feels too simple, then add back one thing.
+
+**Test with real content.** Lorem ipsum hides problems. Use realistic text lengths, real images, actual data.
+
+## Responsive design
+
+Design for mobile first, then add complexity for larger screens.
+
+Breakpoints (common):
+
+- Mobile: up to 640px
+- Tablet: 641px to 1024px
+- Desktop: 1025px and up
+
+What changes between breakpoints:
+
+- Number of columns
+- Font sizes (slightly larger on desktop)
+- Navigation pattern
+- Amount of content visible
+
+What stays the same:
+
+- Color palette
+- Typography hierarchy
+- Brand elements
+- Core functionality
+
+## Accessibility basics
+
+- Color contrast: 4.5:1 minimum for text
+- Focus states: visible focus rings for keyboard navigation
+- Alt text: describe images meaningfully
+- Semantic HTML: use headings, lists, buttons correctly
+- Touch targets: 44x44px minimum
+
+These aren't nice-to-haves. They're requirements for usable interfaces.
+
+## Quick checklist
+
+Before shipping:
+
+- [ ] Consistent spacing from the scale
+- [ ] Typography hierarchy is clear
+- [ ] Colors meet contrast requirements
+- [ ] Works on mobile
+- [ ] Focus states are visible
+- [ ] Loading and error states exist
+- [ ] Empty states are handled
+- [ ] Real content has been tested
