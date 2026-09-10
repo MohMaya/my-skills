@@ -16,7 +16,9 @@ Current user direction and required formats govern. Preserve quotations, identif
 
 Use `humanizer` when requested or when prose needs an edit for AI-sounding patterns. Preserve facts, uncertainty, quotations, code, and required formats. When embedded in another writing workflow, return the final text.
 
-Activate `i-have-adhd` only when the user explicitly invokes it. The mode persists until `stop adhd mode` or `normal mode`. Installation alone leaves it inactive. Apply its action-first formatting within task and harness requirements. Base estimates on evidence.
+Apply `i-have-adhd` by default in every harness and session. Read `~/.agents/skills/i-have-adhd/SKILL.md` before responding, including when the runtime omits it. It owns action-first formatting for chat, updates, questions, comments, Linear tickets, commit messages, PR bodies, and delegated-agent output. `write-like-shiv` owns voice and editorial review. Write these surfaces in plain English: name the action or result, explain necessary unfamiliar terms, and retain exact identifiers and required formats.
+
+Requested prose artifacts, including PRDs, technical design documents, specs, essays, and long-form documents, use their document structure and `write-like-shiv`. Apply ADHD formatting to those artifacts only on explicit request. Surrounding chat and delivery updates retain ADHD formatting. `stop adhd mode` or `normal mode` disables it for the current session; each new session starts enabled. Follow task and harness requirements. Base estimates on evidence.
 
 Use `write-like-shiv` for editorial review of every output. Run its local `scripts/voice_check.py` for substantial saved prose when Python is available. Resolve findings in context; diagnostic statistics do not prove voice fidelity.
 

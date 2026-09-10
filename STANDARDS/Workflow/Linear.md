@@ -8,6 +8,8 @@ The Linear issue key is the tracker key in branch names, commit subjects, and PR
 
 ## Issue hygiene
 
+Apply `i-have-adhd` to ticket titles and bodies by default. Use plain English for the problem, expected behavior, and acceptance criteria. Keep necessary implementation details and exact identifiers; explain unfamiliar terms. Tickets follow the everyday communication rules in `Core/Prose.md`.
+
 A usable issue has:
 - clear summary in the tracker format
 - context or problem statement
