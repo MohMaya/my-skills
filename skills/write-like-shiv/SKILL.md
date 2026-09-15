@@ -13,6 +13,24 @@ Infer surface, audience, purpose, strength of claim, and length from the request
 
 Use this precedence: current user direction; the surface's required format and factual constraints; Shiv's explicit preferences; accepted examples for that surface; provisional craft inferences. Preserve code, schema keys, names, quotations, and exact technical terminology. A private journal does not inherit Cosmic Agency's public ideology or promotional posture.
 
+## Articulation bar for non-code prose
+
+This bar applies to briefs, drafts, digests, deal notes, stress tests, ops outcomes, news, and other human-facing prose. It does not apply to code. This skill owns the bar; `i-have-adhd` owns ADHD formatting.
+
+Before you send: have I made this easy for someone else to understand?
+
+Answer three questions before drafting:
+1. What exactly am I saying? State the plain idea, not prestige language.
+2. What does this person need from me? Finish: after this, I want them to understand, decide, or do ______.
+3. What is necessary to get them there? Main point, strongest support, and action. Park the rest for questions. Compress.
+
+Pick one shape when a shape helps:
+- CCC: Context, then the core idea, then the connection, when they need background before the idea lands.
+- PARA: Point, then action, then result, then ask, when showing why an idea is useful.
+- POP: Pause, then one takeaway, then a question, when on the spot or still unclear.
+
+Lead with the point. Do not find it mid-paragraph. Leave a finished recommendation finished: do not re-explain, soften, or pile reasons that make it sound unsettled. Use precise vocabulary that names the actual problem. Cluttered, inconsistent, and unreadable are different claims. If you need a response, ask a specific question.
+
 ## Construct the argument
 
 - For an argument, state the strongest live objection early when it changes the conclusion. For an explanation, give the useful model or answer first. For reflection, enter through the actual moment or tension. Do not manufacture a disagreement or apply the same opening to every surface.

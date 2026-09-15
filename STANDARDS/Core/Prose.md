@@ -2,7 +2,7 @@
 
 Apply `write-like-shiv` whenever writing or revising anything, including short chat replies, progress updates, documents, tickets, comments, commit and PR text, product copy, and delegated-agent output.
 
-Read `~/.agents/skills/write-like-shiv/SKILL.md` before drafting and select the relevant guidance in its `references/surfaces.md`. Read these files directly when the skill is absent from the runtime list. The skill owns voice, argument construction, editorial preferences, and final review. Load only the references needed for the current piece.
+Read `~/.agents/skills/write-like-shiv/SKILL.md` before drafting and select the relevant guidance in its `references/surfaces.md`. Read these files directly when the skill is absent from the runtime list. The skill owns voice, argument construction, editorial preferences, the non-code articulation bar, and final review. Load only the references needed for the current piece.
 
 ## Operator communication
 
