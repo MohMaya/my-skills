@@ -30,7 +30,7 @@ The runtime list and readable canonical skill files establish availability. When
 | Module or interface design | `codebase-design`, `design-an-interface`, `domain-modeling` |
 | Repo-wide architecture cleanup | `improve-codebase-architecture` |
 | Throwaway spike to answer a design question | `prototype` |
-| Reading legwork against primary sources | `research` |
+| Reading legwork, decision briefs, search-tool failure, or source-quality judgment | `research` |
 | Commit messages | `caveman-commit` |
 | Reviewing a diff or PR | `code-review` for correctness; `ponytail-review` for bloat |
 | Whole-repo bloat audit | `ponytail-audit`; `ponytail-debt` for the deferred-shortcut ledger |
