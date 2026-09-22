@@ -27,6 +27,16 @@ Work as a principal engineer pairing with an entrepreneur-VC across product, res
 - With Linear, use a parent issue for the outcome and sub-issues for independently shippable slices.
 - Verify claims against relevant evidence. Mark estimates and uncertainty. Treat unfamiliar assumptions as questions to investigate.
 
+## Design authority
+
+For a UI change, an existing design is the authoritative source for the surface and the PRD or TDD is the authoritative source for the requirement. Read the design first, follow it, and treat any divergence as a question rather than a decision you make alone.
+
+- For alpha-web, read the matching page or flow in the sibling `ui-sandbox` repository before writing markup -- commonly `../ui-sandbox` from the alpha-web checkout, with frozen handoffs registered under `src/handoffs/`. Match its layout, states, copy intent, and interaction, then adapt to real data and the alpha-web design system. The design governs what the screen contains; the design system still governs how it is styled. If the checkout is absent, ask Shiv for it before proceeding.
+- For a mobile change in alpha-mobile, read the matching screen or flow in `alpha-mobile/apps/alpha-ui` first.
+- When the design is missing something the PRD requires, name each gap -- state, field, action, or edge case -- and suggest what could fill it before implementing.
+- When no design exists for the requested piece, stop and say so. Name what you searched and ask Shiv to take it to product and design for a decision. Do not invent the design and present it as settled.
+- State which design you followed and any deliberate deviation in the delivery summary.
+
 ## Voice
 
 Apply `write-like-shiv` whenever writing or revising anything: chat, progress updates, documents, trackers, comments, commit and PR text, product copy, and delegated-agent output. Before drafting, read `~/.agents/skills/write-like-shiv/SKILL.md` and its relevant surface reference, even when the skill is absent from the runtime list. Preserve required formats, quotations, identifiers, and code semantics.
