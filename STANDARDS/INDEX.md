@@ -33,7 +33,7 @@ One concern, one owner. If two files start teaching the same thing, the tree is 
 - Writing voice and editorial review for every output -- `write-like-shiv`; loading and operator communication -- `Core/Prose.md`.
 - Document shapes, including the ADR template -- `Core/Documents.md`.
 - Reading list behind the kernel's discipline -- `Core/Craft.md`.
-- Commit format, branch naming, PR bar, merge policy -- `Workflow/Git.md`.
+- Commit format, branch naming, PR bar, review posture including Cubic AI review comments, merge policy -- `Workflow/Git.md`.
 - GitHub issues, labels, and `gh` flow -- `Workflow/GitHub.md`. Git.md owns commits, branches, and PRs; GitHub.md does not restate those patterns.
 - Delivery operations: pipeline, pre-commit minimum, observability, secrets in logs, rollback, feature flags, caching, schema compatibility -- `Workflow/Delivery.md`.
 - Linear as the work tracker -- `Workflow/Linear.md`. Notion as the durable knowledge base -- `Workflow/Notion.md`. Linear tracks work; Notion holds why.

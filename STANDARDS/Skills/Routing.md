@@ -38,6 +38,7 @@ The runtime list and readable canonical skill files establish availability. When
 | Merge or rebase conflicts | `resolving-merge-conflicts` |
 | Git, commits, branches, PRs | `Workflow/Git.md` |
 | Create a PR; update an open PR after review or CI failures | `create-pr`; `follow-up-on-pr` respectively; `Workflow/Git.md` owns conventions and delivery scope |
+| Cubic review comments on a PR | `Workflow/Git.md` (Cubic review comments); `follow-up-on-pr` when accepted fixes push the branch |
 | GitHub issues and `gh` flow | `Workflow/GitHub.md` |
 | Stacked branches and dependent PRs | `gh-stack`, then `Workflow/GitHub.md` |
 | CI, deploys, rollback, flags, runtime safety | `Workflow/Delivery.md` |
