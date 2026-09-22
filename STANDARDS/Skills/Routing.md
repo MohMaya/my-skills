@@ -35,6 +35,7 @@ The kernel's Engineering skills section owns the mandatory engineering triggers,
 | Reading legwork, decision briefs, search-tool failure, or source-quality judgment | `research` |
 | Creating or updating a Legion/Grok bot (CreateAgent, voice send_task, bot-master brief) | `create-grok-bot` |
 | Bulk YouTube/Apple/Spotify playlist or liked-library mutations (fill, clear, rebuild under quota) | `media-library-bulk` |
+| Daily Economist-style paper / Readwise RSS news edition | `daily-paper-rss` |
 | Commit messages | `caveman-commit` |
 | Reviewing a diff or PR | `code-review` for correctness; `ponytail-review` for bloat |
 | Whole-repo bloat audit | `ponytail-audit`; `ponytail-debt` for the deferred-shortcut ledger |
