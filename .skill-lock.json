@@ -45,7 +45,7 @@
       "skillPath": "engineering/skills/architecture/SKILL.md",
       "skillFolderHash": "6d519497df990baf62959238e756505267603a4d",
       "installedAt": "2026-05-03T17:02:10.171Z",
-      "updatedAt": "2026-05-03T17:02:10.171Z"
+      "updatedAt": "2026-09-09T16:52:37.483Z"
     },
     "ask-matt": {
       "source": "mattpocock/skills",
@@ -83,7 +83,7 @@
       "skillPath": "marketing/skills/brand-review/SKILL.md",
       "skillFolderHash": "8e39501a076b05762e0d0c52e90b5c4e02f27328",
       "installedAt": "2026-05-03T17:02:10.171Z",
-      "updatedAt": "2026-05-03T17:02:10.171Z"
+      "updatedAt": "2026-09-09T16:52:37.484Z"
     },
     "brand-voice-enforcement": {
       "source": "anthropics/knowledge-work-plugins",
@@ -92,7 +92,7 @@
       "skillPath": "partner-built/brand-voice/skills/brand-voice-enforcement/SKILL.md",
       "skillFolderHash": "4b3ec7bf82aff1e2bee0146dbd9adfd20f26b98e",
       "installedAt": "2026-05-03T17:02:10.171Z",
-      "updatedAt": "2026-05-03T17:02:10.171Z"
+      "updatedAt": "2026-09-09T16:52:37.485Z"
     },
     "brandkit": {
       "source": "leonxlnx/taste-skill",
@@ -166,7 +166,7 @@
       "skillPath": "marketing/skills/competitive-brief/SKILL.md",
       "skillFolderHash": "3ee29422dfac705e1ae98ee473bc684f7f81fce0",
       "installedAt": "2026-05-03T17:02:10.172Z",
-      "updatedAt": "2026-05-03T17:02:10.172Z"
+      "updatedAt": "2026-09-09T16:52:37.503Z"
     },
     "competitive-intelligence": {
       "source": "anthropics/knowledge-work-plugins",
@@ -175,7 +175,7 @@
       "skillPath": "sales/skills/competitive-intelligence/SKILL.md",
       "skillFolderHash": "72f4c7c2ca58ba29398fa4e36d70cfa466155c36",
       "installedAt": "2026-05-03T17:02:10.172Z",
-      "updatedAt": "2026-05-03T17:02:10.172Z"
+      "updatedAt": "2026-09-09T16:52:37.504Z"
     },
     "core": {
       "source": "vercel-labs/json-render",
@@ -202,7 +202,7 @@
       "skillPath": "design/skills/design-critique/SKILL.md",
       "skillFolderHash": "7c246346e4e343637cc9a805df5ed87d34f74913",
       "installedAt": "2026-05-03T17:02:10.157Z",
-      "updatedAt": "2026-05-03T17:02:10.157Z"
+      "updatedAt": "2026-09-09T16:52:37.522Z"
     },
     "design-handoff": {
       "source": "anthropics/knowledge-work-plugins",
@@ -211,7 +211,7 @@
       "skillPath": "design/skills/design-handoff/SKILL.md",
       "skillFolderHash": "bd7c03d03990314220955f6fee82c9db055a7332",
       "installedAt": "2026-05-03T17:02:10.160Z",
-      "updatedAt": "2026-05-03T17:02:10.160Z"
+      "updatedAt": "2026-09-09T16:52:37.522Z"
     },
     "design-system": {
       "source": "anthropics/knowledge-work-plugins",
@@ -220,7 +220,7 @@
       "skillPath": "design/skills/design-system/SKILL.md",
       "skillFolderHash": "083f8c4110389572da1e46b769740beb31935609",
       "installedAt": "2026-05-03T17:02:10.161Z",
-      "updatedAt": "2026-05-03T17:02:10.161Z"
+      "updatedAt": "2026-09-09T16:52:37.523Z"
     },
     "design-taste-frontend": {
       "source": "leonxlnx/taste-skill",
@@ -276,7 +276,7 @@
       "skillPath": "engineering/skills/documentation/SKILL.md",
       "skillFolderHash": "67ecdbffd10af4a228470598680aaaa089785fc5",
       "installedAt": "2026-05-03T17:02:10.162Z",
-      "updatedAt": "2026-05-03T17:02:10.162Z"
+      "updatedAt": "2026-09-09T16:52:37.526Z"
     },
     "docx": {
       "source": "anthropics/skills",
@@ -305,7 +305,7 @@
       "skillPath": "marketing/skills/draft-content/SKILL.md",
       "skillFolderHash": "67fb9dad5ffd53ce2a4ed38351d1ee074c5d9aab",
       "installedAt": "2026-05-03T17:02:10.162Z",
-      "updatedAt": "2026-05-03T17:02:10.162Z"
+      "updatedAt": "2026-09-09T16:52:37.526Z"
     },
     "draft-offer": {
       "source": "anthropics/knowledge-work-plugins",
@@ -314,7 +314,7 @@
       "skillPath": "human-resources/skills/draft-offer/SKILL.md",
       "skillFolderHash": "16fb876bedbe494af21749481cd07bd5aee68f3b",
       "installedAt": "2026-05-03T17:02:10.163Z",
-      "updatedAt": "2026-05-03T17:02:10.163Z"
+      "updatedAt": "2026-09-09T16:52:37.527Z"
     },
     "draft-outreach": {
       "source": "anthropics/knowledge-work-plugins",
@@ -323,7 +323,7 @@
       "skillPath": "sales/skills/draft-outreach/SKILL.md",
       "skillFolderHash": "28ab13a23735c7bccf68e6c47850b1aff87ea9b4",
       "installedAt": "2026-05-03T17:02:10.163Z",
-      "updatedAt": "2026-05-03T17:02:10.163Z"
+      "updatedAt": "2026-09-09T16:52:37.529Z"
     },
     "draft-response": {
       "source": "anthropics/knowledge-work-plugins",
@@ -332,7 +332,7 @@
       "skillPath": "customer-support/skills/draft-response/SKILL.md",
       "skillFolderHash": "cb6e12f9d367906d88f7d683110cb4601c7b1c91",
       "installedAt": "2026-05-03T17:02:10.164Z",
-      "updatedAt": "2026-05-03T17:02:10.164Z"
+      "updatedAt": "2026-09-09T16:52:37.530Z"
     },
     "emil-design-eng": {
       "source": "emilkowalski/skill",
@@ -435,7 +435,7 @@
       "skillPath": "partner-built/brand-voice/skills/guideline-generation/SKILL.md",
       "skillFolderHash": "df45eeed20458573e47623c9aa0a45be53f0a558",
       "installedAt": "2026-05-03T17:02:10.165Z",
-      "updatedAt": "2026-05-03T17:02:10.165Z"
+      "updatedAt": "2026-09-09T16:52:37.539Z"
     },
     "handoff": {
       "source": "mattpocock/skills",
@@ -566,7 +566,7 @@
       "skillPath": "customer-support/skills/kb-article/SKILL.md",
       "skillFolderHash": "cf57e363ad086bd5c62ca1adfc2a9a4aa3a92b2f",
       "installedAt": "2026-05-03T17:02:10.165Z",
-      "updatedAt": "2026-05-03T17:02:10.165Z"
+      "updatedAt": "2026-09-09T16:52:37.545Z"
     },
     "knowledge-synthesis": {
       "source": "anthropics/knowledge-work-plugins",
@@ -575,7 +575,7 @@
       "skillPath": "enterprise-search/skills/knowledge-synthesis/SKILL.md",
       "skillFolderHash": "c79597fffe8c754779af5802d5c1bce392821724",
       "installedAt": "2026-05-03T17:02:10.166Z",
-      "updatedAt": "2026-05-03T17:02:10.166Z"
+      "updatedAt": "2026-09-09T16:52:37.545Z"
     },
     "mcp": {
       "source": "vercel-labs/json-render",
@@ -714,7 +714,7 @@
       "skillPath": "operations/skills/process-doc/SKILL.md",
       "skillFolderHash": "4f5d846f3362ec7debd5659bed1f5ad713531ef4",
       "installedAt": "2026-05-03T17:02:10.166Z",
-      "updatedAt": "2026-05-03T17:02:10.166Z"
+      "updatedAt": "2026-09-09T16:52:37.561Z"
     },
     "process-optimization": {
       "source": "anthropics/knowledge-work-plugins",
@@ -723,7 +723,7 @@
       "skillPath": "operations/skills/process-optimization/SKILL.md",
       "skillFolderHash": "33cb922fb588540fec04a4e07f65b76035e415c1",
       "installedAt": "2026-05-03T17:02:10.167Z",
-      "updatedAt": "2026-05-03T17:02:10.167Z"
+      "updatedAt": "2026-09-09T16:52:37.562Z"
     },
     "product-brainstorming": {
       "source": "anthropics/knowledge-work-plugins",
@@ -732,7 +732,7 @@
       "skillPath": "product-management/skills/product-brainstorming/SKILL.md",
       "skillFolderHash": "87927826dc1b27c4c9e84b88be10f3dc383a3e4b",
       "installedAt": "2026-05-03T17:02:10.166Z",
-      "updatedAt": "2026-05-03T17:02:10.166Z"
+      "updatedAt": "2026-09-09T16:52:37.563Z"
     },
     "prototype": {
       "source": "mattpocock/skills",
@@ -851,7 +851,7 @@
       "skillPath": "product-management/skills/roadmap-update/SKILL.md",
       "skillFolderHash": "73d23d7ae40cdab596c70ecad7211477a5e0f14b",
       "installedAt": "2026-05-03T17:02:10.167Z",
-      "updatedAt": "2026-05-03T17:02:10.167Z"
+      "updatedAt": "2026-09-09T16:52:37.571Z"
     },
     "setup-matt-pocock-skills": {
       "source": "mattpocock/skills",
@@ -954,7 +954,7 @@
       "skillPath": "engineering/skills/system-design/SKILL.md",
       "skillFolderHash": "8f8b7f90b8c16cb0aa01ab5dc1f93dc6645d4212",
       "installedAt": "2026-05-03T17:02:10.168Z",
-      "updatedAt": "2026-05-03T17:02:10.168Z"
+      "updatedAt": "2026-09-09T16:52:37.595Z"
     },
     "tdd": {
       "source": "mattpocock/skills",
@@ -983,7 +983,7 @@
       "skillPath": "engineering/skills/tech-debt/SKILL.md",
       "skillFolderHash": "1c7cb3420e404e548f3b44ece95bcf4de9aed4b0",
       "installedAt": "2026-05-03T17:02:10.169Z",
-      "updatedAt": "2026-05-03T17:02:10.169Z"
+      "updatedAt": "2026-09-09T16:52:37.598Z"
     },
     "template-skill": {
       "source": "factory-ai/skills",
@@ -1001,7 +1001,7 @@
       "skillPath": "engineering/skills/testing-strategy/SKILL.md",
       "skillFolderHash": "3221c8b9614642e02c8a474a8a7cd799b09bf7fa",
       "installedAt": "2026-05-03T17:02:10.169Z",
-      "updatedAt": "2026-05-03T17:02:10.169Z"
+      "updatedAt": "2026-09-09T16:52:37.599Z"
     },
     "theme-factory": {
       "source": "anthropics/skills",
@@ -1077,7 +1077,7 @@
       "skillPath": "design/skills/ux-copy/SKILL.md",
       "skillFolderHash": "667711b17d9021f4a45d4cad7d23b7f2c4969680",
       "installedAt": "2026-05-03T17:02:10.169Z",
-      "updatedAt": "2026-05-03T17:02:10.169Z"
+      "updatedAt": "2026-09-09T16:52:37.604Z"
     },
     "vercel-react-best-practices": {
       "source": "vercel-labs/agent-skills",
@@ -1215,7 +1215,7 @@
       "skillPath": "data/skills/write-query/SKILL.md",
       "skillFolderHash": "f961e3469f694b2d1cbb7ef7835eac51be230b1d",
       "installedAt": "2026-05-03T17:02:10.170Z",
-      "updatedAt": "2026-05-03T17:02:10.170Z"
+      "updatedAt": "2026-09-09T16:52:37.608Z"
     },
     "write-spec": {
       "source": "anthropics/knowledge-work-plugins",
@@ -1224,7 +1224,7 @@
       "skillPath": "product-management/skills/write-spec/SKILL.md",
       "skillFolderHash": "b89ce6eed6f867265e4f21c692933361311740d6",
       "installedAt": "2026-05-03T17:02:10.170Z",
-      "updatedAt": "2026-05-03T17:02:10.170Z"
+      "updatedAt": "2026-09-09T16:52:37.609Z"
     },
     "writing-clearly-and-concisely": {
       "source": "obra/the-elements-of-style",
@@ -2458,6 +2458,771 @@
       "installedAt": "2026-09-08T20:21:03.806Z",
       "updatedAt": "2026-09-08T20:21:03.806Z"
     },
+    "qa-testing-strategy": {
+      "source": "vasilyu1983/ai-agents-public",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/vasilyu1983/ai-agents-public.git",
+      "skillPath": "frameworks/shared-skills/skills/qa-testing-strategy/SKILL.md",
+      "skillFolderHash": "0d00ec19e978b274aa07449003a9f274aedc61f6",
+      "installedAt": "2026-09-09T16:51:27.715Z",
+      "updatedAt": "2026-09-09T16:53:44.411Z"
+    },
+    "accessibility-review": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "design/skills/accessibility-review/SKILL.md",
+      "skillFolderHash": "f85ccda1cc84ca38ffb477d442d57b96c6447869",
+      "installedAt": "2026-09-09T16:52:37.480Z",
+      "updatedAt": "2026-09-09T16:52:37.480Z"
+    },
+    "account-research": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "sales/skills/account-research/SKILL.md",
+      "skillFolderHash": "729167f956c9d71b044e4a393927035ea05c1f07",
+      "installedAt": "2026-09-09T16:52:37.481Z",
+      "updatedAt": "2026-09-09T16:52:37.481Z"
+    },
+    "analyze": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "data/skills/analyze/SKILL.md",
+      "skillFolderHash": "7572805313d85c22d2d0a3e25101fdb1ed187af2",
+      "installedAt": "2026-09-09T16:52:37.482Z",
+      "updatedAt": "2026-09-09T16:52:37.482Z"
+    },
+    "audit-support": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "finance/skills/audit-support/SKILL.md",
+      "skillFolderHash": "102afdcfd1082624f0ba450aedd50a55f21fd96e",
+      "installedAt": "2026-09-09T16:52:37.484Z",
+      "updatedAt": "2026-09-09T16:52:37.484Z"
+    },
+    "brief": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "legal/skills/brief/SKILL.md",
+      "skillFolderHash": "0b893239a2c0b5b46cf2dc01f709a9aff21daca1",
+      "installedAt": "2026-09-09T16:52:37.485Z",
+      "updatedAt": "2026-09-09T16:52:37.485Z"
+    },
+    "build-dashboard": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "data/skills/build-dashboard/SKILL.md",
+      "skillFolderHash": "d4f3d89170f0e6fcab49cf28bab08d15d153c7c5",
+      "installedAt": "2026-09-09T16:52:37.486Z",
+      "updatedAt": "2026-09-09T16:52:37.486Z"
+    },
+    "build-zoom-bot": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "partner-built/zoom-plugin/skills/build-zoom-bot/SKILL.md",
+      "skillFolderHash": "850f09c05f1e874b83644e69fc9859b1cf2fbec4",
+      "installedAt": "2026-09-09T16:52:37.487Z",
+      "updatedAt": "2026-09-09T16:52:37.487Z"
+    },
+    "build-zoom-contact-center-app": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "partner-built/zoom-plugin/skills/contact-center/SKILL.md",
+      "skillFolderHash": "ffa27ffde737e98c459068ea98cb8ecbc0db3649",
+      "installedAt": "2026-09-09T16:52:37.487Z",
+      "updatedAt": "2026-09-09T16:52:37.487Z"
+    },
+    "build-zoom-meeting-app": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "partner-built/zoom-plugin/skills/build-zoom-meeting-app/SKILL.md",
+      "skillFolderHash": "8df7ecfb71363aeb6ced379fc59e9c9c9a6372fd",
+      "installedAt": "2026-09-09T16:52:37.488Z",
+      "updatedAt": "2026-09-09T16:52:37.488Z"
+    },
+    "build-zoom-meeting-sdk-app": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "partner-built/zoom-plugin/skills/meeting-sdk/SKILL.md",
+      "skillFolderHash": "ae0511a0832e9631e9cea655ff204772ebaee53d",
+      "installedAt": "2026-09-09T16:52:37.488Z",
+      "updatedAt": "2026-09-09T16:52:37.488Z"
+    },
+    "build-zoom-phone-integration": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "partner-built/zoom-plugin/skills/phone/SKILL.md",
+      "skillFolderHash": "73664ea8dfab9e3d0882d2d09f78348eb7f39a7d",
+      "installedAt": "2026-09-09T16:52:37.489Z",
+      "updatedAt": "2026-09-09T16:52:37.489Z"
+    },
+    "build-zoom-rest-api-app": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "partner-built/zoom-plugin/skills/rest-api/SKILL.md",
+      "skillFolderHash": "22db0315cb1ddccf04aadf93ebef65f85156675a",
+      "installedAt": "2026-09-09T16:52:37.489Z",
+      "updatedAt": "2026-09-09T16:52:37.489Z"
+    },
+    "build-zoom-team-chat-app": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "partner-built/zoom-plugin/skills/team-chat/SKILL.md",
+      "skillFolderHash": "ea4961d5cb8de092c8465c85c7f0fcd8e3f1f30f",
+      "installedAt": "2026-09-09T16:52:37.490Z",
+      "updatedAt": "2026-09-09T16:52:37.490Z"
+    },
+    "build-zoom-video-sdk-app": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "partner-built/zoom-plugin/skills/video-sdk/SKILL.md",
+      "skillFolderHash": "120ade6e6741d7d9cdfe7a37602d114832c57f2a",
+      "installedAt": "2026-09-09T16:52:37.490Z",
+      "updatedAt": "2026-09-09T16:52:37.490Z"
+    },
+    "build-zoom-virtual-agent": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "partner-built/zoom-plugin/skills/virtual-agent/SKILL.md",
+      "skillFolderHash": "18388caabd5553a0b32f2367638183b8d48765a2",
+      "installedAt": "2026-09-09T16:52:37.491Z",
+      "updatedAt": "2026-09-09T16:52:37.491Z"
+    },
+    "business-pulse": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "small-business/skills/business-pulse/SKILL.md",
+      "skillFolderHash": "6522f341bd44963bdc5b5cf2ea9179ac66035c45",
+      "installedAt": "2026-09-09T16:52:37.491Z",
+      "updatedAt": "2026-09-09T16:52:37.491Z"
+    },
+    "call-list": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "small-business/skills/call-list/SKILL.md",
+      "skillFolderHash": "99def5a0121f994d389b215f13200a336c70ff39",
+      "installedAt": "2026-09-09T16:52:37.493Z",
+      "updatedAt": "2026-09-09T16:52:37.493Z"
+    },
+    "call-prep": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "sales/skills/call-prep/SKILL.md",
+      "skillFolderHash": "15af0a69c20abf73a919acda5f6e5ed5a716e008",
+      "installedAt": "2026-09-09T16:52:37.493Z",
+      "updatedAt": "2026-09-09T16:52:37.493Z"
+    },
+    "call-summary": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "sales/skills/call-summary/SKILL.md",
+      "skillFolderHash": "9afb651395f56527727cb4a435958b9194587379",
+      "installedAt": "2026-09-09T16:52:37.494Z",
+      "updatedAt": "2026-09-09T16:52:37.494Z"
+    },
+    "campaign-plan": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "marketing/skills/campaign-plan/SKILL.md",
+      "skillFolderHash": "c43fdc1217b111bad5ab3145712a35998b58868a",
+      "installedAt": "2026-09-09T16:52:37.494Z",
+      "updatedAt": "2026-09-09T16:52:37.494Z"
+    },
+    "canva-creator": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "small-business/skills/canva-creator/SKILL.md",
+      "skillFolderHash": "c85ffb51a7ceabd64a2fe6d596349b342b291471",
+      "installedAt": "2026-09-09T16:52:37.495Z",
+      "updatedAt": "2026-09-09T16:52:37.495Z"
+    },
+    "capacity-plan": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "operations/skills/capacity-plan/SKILL.md",
+      "skillFolderHash": "b0d3075f04d928265f92ba5b178509dba2d2e862",
+      "installedAt": "2026-09-09T16:52:37.497Z",
+      "updatedAt": "2026-09-09T16:52:37.497Z"
+    },
+    "cash-flow-snapshot": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "small-business/skills/cash-flow-snapshot/SKILL.md",
+      "skillFolderHash": "4918556b972bd436b23261f1fdf6f76b9ede6ef9",
+      "installedAt": "2026-09-09T16:52:37.497Z",
+      "updatedAt": "2026-09-09T16:52:37.497Z"
+    },
+    "change-request": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "operations/skills/change-request/SKILL.md",
+      "skillFolderHash": "20859f55884b3d1cfec14f178aab318e52b00364",
+      "installedAt": "2026-09-09T16:52:37.498Z",
+      "updatedAt": "2026-09-09T16:52:37.498Z"
+    },
+    "choose-zoom-approach": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "partner-built/zoom-plugin/skills/choose-zoom-approach/SKILL.md",
+      "skillFolderHash": "6189267571c038b1c2c9d4301f8993cbcc42a1d2",
+      "installedAt": "2026-09-09T16:52:37.498Z",
+      "updatedAt": "2026-09-09T16:52:37.498Z"
+    },
+    "close-management": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "finance/skills/close-management/SKILL.md",
+      "skillFolderHash": "234feb98829b031417af214590321120743158fa",
+      "installedAt": "2026-09-09T16:52:37.499Z",
+      "updatedAt": "2026-09-09T16:52:37.499Z"
+    },
+    "close-month": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "small-business/skills/close-month/SKILL.md",
+      "skillFolderHash": "a5cdb7c28c1356625befe17a8c6429959f96820e",
+      "installedAt": "2026-09-09T16:52:37.500Z",
+      "updatedAt": "2026-09-09T16:52:37.500Z"
+    },
+    "comp-analysis": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "human-resources/skills/comp-analysis/SKILL.md",
+      "skillFolderHash": "c5107b0bf720a9aedb442944ac77b2917d12825b",
+      "installedAt": "2026-09-09T16:52:37.501Z",
+      "updatedAt": "2026-09-09T16:52:37.501Z"
+    },
+    "compliance-check": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "legal/skills/compliance-check/SKILL.md",
+      "skillFolderHash": "d63e9ba276e6f9bb148ad24387087d928d98a129",
+      "installedAt": "2026-09-09T16:52:37.504Z",
+      "updatedAt": "2026-09-09T16:52:37.504Z"
+    },
+    "compliance-tracking": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "operations/skills/compliance-tracking/SKILL.md",
+      "skillFolderHash": "e578a65e6727cb57f5498258c99f5fee4ba84da8",
+      "installedAt": "2026-09-09T16:52:37.505Z",
+      "updatedAt": "2026-09-09T16:52:37.505Z"
+    },
+    "compose-outreach": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "partner-built/common-room/skills/compose-outreach/SKILL.md",
+      "skillFolderHash": "fc06ecbcc77bfb39b1cfc0046537ff9353f4ae8e",
+      "installedAt": "2026-09-09T16:52:37.505Z",
+      "updatedAt": "2026-09-09T16:52:37.505Z"
+    },
+    "contact-research": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "partner-built/common-room/skills/contact-research/SKILL.md",
+      "skillFolderHash": "1d70319bb94344b7459f81acd146b6b96317de31",
+      "installedAt": "2026-09-09T16:52:37.506Z",
+      "updatedAt": "2026-09-09T16:52:37.506Z"
+    },
+    "content-creation": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "marketing/skills/content-creation/SKILL.md",
+      "skillFolderHash": "4aeaa9dda077806c8afd22ae0a7499ad3510bb68",
+      "installedAt": "2026-09-09T16:52:37.506Z",
+      "updatedAt": "2026-09-09T16:52:37.506Z"
+    },
+    "content-strategy": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "small-business/skills/content-strategy/SKILL.md",
+      "skillFolderHash": "fb37977e9ef27649d167b31a40a6c6b0cf6078c1",
+      "installedAt": "2026-09-09T16:52:37.508Z",
+      "updatedAt": "2026-09-09T16:52:37.508Z"
+    },
+    "contract-review": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "small-business/skills/contract-review/SKILL.md",
+      "skillFolderHash": "dcc1dc08b61ce6f392916470c41864a8fed49adb",
+      "installedAt": "2026-09-09T16:52:37.509Z",
+      "updatedAt": "2026-09-09T16:52:37.509Z"
+    },
+    "cowork-plugin-customizer": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "cowork-plugin-management/skills/cowork-plugin-customizer/SKILL.md",
+      "skillFolderHash": "054096a9c8e12852483445cd1b926ade9c2c0057",
+      "installedAt": "2026-09-09T16:52:37.509Z",
+      "updatedAt": "2026-09-09T16:52:37.509Z"
+    },
+    "create-an-asset": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "sales/skills/create-an-asset/SKILL.md",
+      "skillFolderHash": "54d3e5a6a800a85485d6dd9f0d3159aeeb2fac27",
+      "installedAt": "2026-09-09T16:52:37.510Z",
+      "updatedAt": "2026-09-09T16:52:37.510Z"
+    },
+    "create-cowork-plugin": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "cowork-plugin-management/skills/create-cowork-plugin/SKILL.md",
+      "skillFolderHash": "ad9049127766be6681b6c9ce05635f47a68b3dd3",
+      "installedAt": "2026-09-09T16:52:37.510Z",
+      "updatedAt": "2026-09-09T16:52:37.510Z"
+    },
+    "create-viz": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "data/skills/create-viz/SKILL.md",
+      "skillFolderHash": "a1d964650cb9d2439af30254e88d45ad494ec05d",
+      "installedAt": "2026-09-09T16:52:37.511Z",
+      "updatedAt": "2026-09-09T16:52:37.511Z"
+    },
+    "crm-cleanup": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "small-business/skills/crm-cleanup/SKILL.md",
+      "skillFolderHash": "fcac84c74528ba9053799409b77f44f631d1bfa4",
+      "installedAt": "2026-09-09T16:52:37.511Z",
+      "updatedAt": "2026-09-09T16:52:37.511Z"
+    },
+    "crm-maintenance": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "small-business/skills/crm-maintenance/SKILL.md",
+      "skillFolderHash": "19b179b120ad645909bc6714f0b6df296bbafa73",
+      "installedAt": "2026-09-09T16:52:37.512Z",
+      "updatedAt": "2026-09-09T16:52:37.512Z"
+    },
+    "customer-escalation": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "customer-support/skills/customer-escalation/SKILL.md",
+      "skillFolderHash": "ce0fcd089bdddd5b585fd7154695b41612df53b5",
+      "installedAt": "2026-09-09T16:52:37.512Z",
+      "updatedAt": "2026-09-09T16:52:37.512Z"
+    },
+    "customer-pulse": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "small-business/skills/customer-pulse/SKILL.md",
+      "skillFolderHash": "7a2073bf48fd26769f04209ded0432491fb7e877",
+      "installedAt": "2026-09-09T16:52:37.513Z",
+      "updatedAt": "2026-09-09T16:52:37.513Z"
+    },
+    "customer-pulse-check": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "small-business/skills/customer-pulse-check/SKILL.md",
+      "skillFolderHash": "0f69786dcb5c1289d7fd23d53a86236a08a9564e",
+      "installedAt": "2026-09-09T16:52:37.513Z",
+      "updatedAt": "2026-09-09T16:52:37.513Z"
+    },
+    "customer-research": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "customer-support/skills/customer-research/SKILL.md",
+      "skillFolderHash": "7d9a0f36eb0813ca801b765450307e6d4721984f",
+      "installedAt": "2026-09-09T16:52:37.514Z",
+      "updatedAt": "2026-09-09T16:52:37.514Z"
+    },
+    "daily-briefing": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "sales/skills/daily-briefing/SKILL.md",
+      "skillFolderHash": "dee302f3cd0b846a8d9d070fb07f443eff1d4579",
+      "installedAt": "2026-09-09T16:52:37.515Z",
+      "updatedAt": "2026-09-09T16:52:37.515Z"
+    },
+    "data-context-extractor": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "data/skills/data-context-extractor/SKILL.md",
+      "skillFolderHash": "63e9e6585eed590b6af3ee98665500dd5664beba",
+      "installedAt": "2026-09-09T16:52:37.516Z",
+      "updatedAt": "2026-09-09T16:52:37.516Z"
+    },
+    "data-visualization": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "data/skills/data-visualization/SKILL.md",
+      "skillFolderHash": "cc2b5235344f14558b0da842510e87952cc9063b",
+      "installedAt": "2026-09-09T16:52:37.517Z",
+      "updatedAt": "2026-09-09T16:52:37.517Z"
+    },
+    "debug": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "engineering/skills/debug/SKILL.md",
+      "skillFolderHash": "de97f8ed52d0c07f5712683209d5b20d0eea5b6d",
+      "installedAt": "2026-09-09T16:52:37.518Z",
+      "updatedAt": "2026-09-09T16:52:37.518Z"
+    },
+    "debug-zoom": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "partner-built/zoom-plugin/skills/debug-zoom/SKILL.md",
+      "skillFolderHash": "6dcc771e4ffd1cfc2379530500ba1cb8cb99e359",
+      "installedAt": "2026-09-09T16:52:37.518Z",
+      "updatedAt": "2026-09-09T16:52:37.518Z"
+    },
+    "debug-zoom-integration": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "partner-built/zoom-plugin/skills/debug-zoom-integration/SKILL.md",
+      "skillFolderHash": "f18e7b0c9a5ea2b20b527a5ea58ee1cd5d1ac45f",
+      "installedAt": "2026-09-09T16:52:37.521Z",
+      "updatedAt": "2026-09-09T16:52:37.521Z"
+    },
+    "deploy-checklist": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "engineering/skills/deploy-checklist/SKILL.md",
+      "skillFolderHash": "fa2f425b6589365744fe07e87d9ece3573440c7e",
+      "installedAt": "2026-09-09T16:52:37.521Z",
+      "updatedAt": "2026-09-09T16:52:37.521Z"
+    },
+    "design-mcp-workflow": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "partner-built/zoom-plugin/skills/design-mcp-workflow/SKILL.md",
+      "skillFolderHash": "e736d80de9b8657ddcc8e8c39b6c7f4a3003c803",
+      "installedAt": "2026-09-09T16:52:37.523Z",
+      "updatedAt": "2026-09-09T16:52:37.523Z"
+    },
+    "digest": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "enterprise-search/skills/digest/SKILL.md",
+      "skillFolderHash": "422922058e29b32cc4b184189b94605b0ed42efa",
+      "installedAt": "2026-09-09T16:52:37.524Z",
+      "updatedAt": "2026-09-09T16:52:37.524Z"
+    },
+    "discover-brand": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "partner-built/brand-voice/skills/discover-brand/SKILL.md",
+      "skillFolderHash": "edbca279a23635b38aa8eea8a79e31ce6eec4093",
+      "installedAt": "2026-09-09T16:52:37.525Z",
+      "updatedAt": "2026-09-09T16:52:37.525Z"
+    },
+    "email-sequence": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "marketing/skills/email-sequence/SKILL.md",
+      "skillFolderHash": "d542b71008b038c2455058b9ef73d81a18221eb5",
+      "installedAt": "2026-09-09T16:52:37.532Z",
+      "updatedAt": "2026-09-09T16:52:37.532Z"
+    },
+    "enrich-lead": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "partner-built/apollo/skills/enrich-lead/SKILL.md",
+      "skillFolderHash": "7602d48b46a84077f56259657d41f7e4466cce04",
+      "installedAt": "2026-09-09T16:52:37.533Z",
+      "updatedAt": "2026-09-09T16:52:37.533Z"
+    },
+    "explore-data": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "data/skills/explore-data/SKILL.md",
+      "skillFolderHash": "bee4c8c0603859fd60c3622dd41e7a093476fcbf",
+      "installedAt": "2026-09-09T16:52:37.533Z",
+      "updatedAt": "2026-09-09T16:52:37.533Z"
+    },
+    "financial-statements": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "finance/skills/financial-statements/SKILL.md",
+      "skillFolderHash": "e93e01a4a41bb4053c341c19a27d711d47d6c8a9",
+      "installedAt": "2026-09-09T16:52:37.534Z",
+      "updatedAt": "2026-09-09T16:52:37.534Z"
+    },
+    "forecast": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "sales/skills/forecast/SKILL.md",
+      "skillFolderHash": "b258dcaf4c2a906875ddc7f4e95373b03459d814",
+      "installedAt": "2026-09-09T16:52:37.537Z",
+      "updatedAt": "2026-09-09T16:52:37.537Z"
+    },
+    "friday-brief": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "small-business/skills/friday-brief/SKILL.md",
+      "skillFolderHash": "a4a3863404825fb86dba98e88d24eb2fde2c0c53",
+      "installedAt": "2026-09-09T16:52:37.538Z",
+      "updatedAt": "2026-09-09T16:52:37.538Z"
+    },
+    "handle-complaint": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "small-business/skills/handle-complaint/SKILL.md",
+      "skillFolderHash": "0c1d5bd60e9e5f572984ded923d10e8d1d33af84",
+      "installedAt": "2026-09-09T16:52:37.539Z",
+      "updatedAt": "2026-09-09T16:52:37.539Z"
+    },
+    "incident-response": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "engineering/skills/incident-response/SKILL.md",
+      "skillFolderHash": "558ab2f1c05e08ffdf97a53e9b404e519ac76805",
+      "installedAt": "2026-09-09T16:52:37.540Z",
+      "updatedAt": "2026-09-09T16:52:37.540Z"
+    },
+    "instrument-data-to-allotrope": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "bio-research/skills/instrument-data-to-allotrope/SKILL.md",
+      "skillFolderHash": "7e2c5907c64d703326f3e6683e8171a3e6e691db",
+      "installedAt": "2026-09-09T16:52:37.541Z",
+      "updatedAt": "2026-09-09T16:52:37.541Z"
+    },
+    "interview-prep": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "human-resources/skills/interview-prep/SKILL.md",
+      "skillFolderHash": "b966ffd25c89f63fa40f3ad0e9f5eb1ae30d367c",
+      "installedAt": "2026-09-09T16:52:37.541Z",
+      "updatedAt": "2026-09-09T16:52:37.541Z"
+    },
+    "invoice-chase": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "small-business/skills/invoice-chase/SKILL.md",
+      "skillFolderHash": "e9df58acad52518ec902ada5469e9028c0aa1acc",
+      "installedAt": "2026-09-09T16:52:37.542Z",
+      "updatedAt": "2026-09-09T16:52:37.542Z"
+    },
+    "job-post-builder": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "small-business/skills/job-post-builder/SKILL.md",
+      "skillFolderHash": "2ec7131dd572e7275dfe5d9701a6bdce7927c5a1",
+      "installedAt": "2026-09-09T16:52:37.543Z",
+      "updatedAt": "2026-09-09T16:52:37.543Z"
+    },
+    "journal-entry": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "finance/skills/journal-entry/SKILL.md",
+      "skillFolderHash": "0397699b1c3d631d56bf4fe77b0e6e7e31464c96",
+      "installedAt": "2026-09-09T16:52:37.543Z",
+      "updatedAt": "2026-09-09T16:52:37.543Z"
+    },
+    "journal-entry-prep": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "finance/skills/journal-entry-prep/SKILL.md",
+      "skillFolderHash": "a35fde8c9d90f7ee293c779dfd0447116bf2159a",
+      "installedAt": "2026-09-09T16:52:37.544Z",
+      "updatedAt": "2026-09-09T16:52:37.544Z"
+    },
+    "lead-triage": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "small-business/skills/lead-triage/SKILL.md",
+      "skillFolderHash": "90d9c90e2688d77d7fe11298195f76d0aaa8f529",
+      "installedAt": "2026-09-09T16:52:37.546Z",
+      "updatedAt": "2026-09-09T16:52:37.546Z"
+    },
+    "legal-response": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "legal/skills/legal-response/SKILL.md",
+      "skillFolderHash": "5028fb980a29a8f3561787fcb910b97ce4ccd571",
+      "installedAt": "2026-09-09T16:52:37.546Z",
+      "updatedAt": "2026-09-09T16:52:37.546Z"
+    },
+    "legal-risk-assessment": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "legal/skills/legal-risk-assessment/SKILL.md",
+      "skillFolderHash": "e028c762f13c481820d076f1e8b8b143e4ab4e0e",
+      "installedAt": "2026-09-09T16:52:37.547Z",
+      "updatedAt": "2026-09-09T16:52:37.547Z"
+    },
+    "margin-analyzer": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "small-business/skills/margin-analyzer/SKILL.md",
+      "skillFolderHash": "a9c3e0c11f73093ecd0e407f51c69527dbea920d",
+      "installedAt": "2026-09-09T16:52:37.547Z",
+      "updatedAt": "2026-09-09T16:52:37.547Z"
+    },
+    "meeting-briefing": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "legal/skills/meeting-briefing/SKILL.md",
+      "skillFolderHash": "448b50164e179295e0aaf2365ceba552520467fd",
+      "installedAt": "2026-09-09T16:52:37.548Z",
+      "updatedAt": "2026-09-09T16:52:37.548Z"
+    },
+    "memory-management": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "productivity/skills/memory-management/SKILL.md",
+      "skillFolderHash": "9272207d07020b38b62f636f6016e5185c4da01b",
+      "installedAt": "2026-09-09T16:52:37.549Z",
+      "updatedAt": "2026-09-09T16:52:37.549Z"
+    },
+    "metrics-review": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "product-management/skills/metrics-review/SKILL.md",
+      "skillFolderHash": "cf538edaeb1ef432e7cb0f8fc323755a5f7f839f",
+      "installedAt": "2026-09-09T16:52:37.549Z",
+      "updatedAt": "2026-09-09T16:52:37.549Z"
+    },
+    "monday-brief": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "small-business/skills/monday-brief/SKILL.md",
+      "skillFolderHash": "8ff7fd3fa135a98e271bd29f437e8a080fc5d284",
+      "installedAt": "2026-09-09T16:52:37.550Z",
+      "updatedAt": "2026-09-09T16:52:37.550Z"
+    },
+    "month-end-prep": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "small-business/skills/month-end-prep/SKILL.md",
+      "skillFolderHash": "c366d168b897eacd8cb9447499dadf7c6e2b2d2b",
+      "installedAt": "2026-09-09T16:52:37.551Z",
+      "updatedAt": "2026-09-09T16:52:37.551Z"
+    },
+    "month-heads-up": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "small-business/skills/month-heads-up/SKILL.md",
+      "skillFolderHash": "8ca825b757d14f6f667f6615a5da6733f9b02fe4",
+      "installedAt": "2026-09-09T16:52:37.552Z",
+      "updatedAt": "2026-09-09T16:52:37.552Z"
+    },
+    "nextflow-development": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "bio-research/skills/nextflow-development/SKILL.md",
+      "skillFolderHash": "0ef4772fd6afc4bd1992cb16140e6757353c8cbd",
+      "installedAt": "2026-09-09T16:52:37.552Z",
+      "updatedAt": "2026-09-09T16:52:37.552Z"
+    },
+    "onboarding": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "human-resources/skills/onboarding/SKILL.md",
+      "skillFolderHash": "6ec7bebb10356b93b364d789e9eaa6185a2a6407",
+      "installedAt": "2026-09-09T16:52:37.553Z",
+      "updatedAt": "2026-09-09T16:52:37.553Z"
+    },
+    "org-planning": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "human-resources/skills/org-planning/SKILL.md",
+      "skillFolderHash": "a0794bd545865db9fe547686400db4536d3f53c0",
+      "installedAt": "2026-09-09T16:52:37.553Z",
+      "updatedAt": "2026-09-09T16:52:37.553Z"
+    },
+    "people-report": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "human-resources/skills/people-report/SKILL.md",
+      "skillFolderHash": "fdb07274377a0272edc31085c04c694752c2b444",
+      "installedAt": "2026-09-09T16:52:37.555Z",
+      "updatedAt": "2026-09-09T16:52:37.555Z"
+    },
+    "performance-report": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "marketing/skills/performance-report/SKILL.md",
+      "skillFolderHash": "e744a71bff6b29a68c09aad7f43b875fa0cd5a9b",
+      "installedAt": "2026-09-09T16:52:37.556Z",
+      "updatedAt": "2026-09-09T16:52:37.556Z"
+    },
     "performance-review": {
       "source": "factory-ai/cursed-plugins",
       "sourceType": "github",
@@ -2466,6 +3231,591 @@
       "skillFolderHash": "55a4384264a859ee8e5a42a590c2084b08c31dbb",
       "installedAt": "2026-09-09T16:52:37.556Z",
       "updatedAt": "2026-09-10T13:43:59.304Z"
+    },
+    "pipeline-review": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "sales/skills/pipeline-review/SKILL.md",
+      "skillFolderHash": "99e03f9dd20c0fc173800fc5b1fc690ef338b9cd",
+      "installedAt": "2026-09-09T16:52:37.557Z",
+      "updatedAt": "2026-09-09T16:52:37.557Z"
+    },
+    "plan-payroll": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "small-business/skills/plan-payroll/SKILL.md",
+      "skillFolderHash": "f2bf1f719af95967b7707ba2cc9bf9a9254e9092",
+      "installedAt": "2026-09-09T16:52:37.557Z",
+      "updatedAt": "2026-09-09T16:52:37.557Z"
+    },
+    "plan-zoom-integration": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "partner-built/zoom-plugin/skills/plan-zoom-integration/SKILL.md",
+      "skillFolderHash": "3e4787af0e2f537f3e1bca9d25f513d115ce50e0",
+      "installedAt": "2026-09-09T16:52:37.558Z",
+      "updatedAt": "2026-09-09T16:52:37.558Z"
+    },
+    "plan-zoom-product": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "partner-built/zoom-plugin/skills/plan-zoom-product/SKILL.md",
+      "skillFolderHash": "1968b5a9af56d847ef067cc2f077504ee790fef3",
+      "installedAt": "2026-09-09T16:52:37.558Z",
+      "updatedAt": "2026-09-09T16:52:37.558Z"
+    },
+    "policy-lookup": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "human-resources/skills/policy-lookup/SKILL.md",
+      "skillFolderHash": "18def4f052e4430c3437959736fb86e78d099646",
+      "installedAt": "2026-09-09T16:52:37.559Z",
+      "updatedAt": "2026-09-09T16:52:37.559Z"
+    },
+    "price-check": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "small-business/skills/price-check/SKILL.md",
+      "skillFolderHash": "a9067044173e4143517a4374176c6ab79898a414",
+      "installedAt": "2026-09-09T16:52:37.560Z",
+      "updatedAt": "2026-09-09T16:52:37.560Z"
+    },
+    "probe-sdk": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "partner-built/zoom-plugin/skills/probe-sdk/SKILL.md",
+      "skillFolderHash": "136f5fb42a16f8b95d4951a8a1a610ea30d6f8af",
+      "installedAt": "2026-09-09T16:52:37.561Z",
+      "updatedAt": "2026-09-09T16:52:37.561Z"
+    },
+    "prospect": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "partner-built/apollo/skills/prospect/SKILL.md",
+      "skillFolderHash": "b745ecab2b4d9b13484bd756c8d54bdbdc5f7849",
+      "installedAt": "2026-09-09T16:52:37.565Z",
+      "updatedAt": "2026-09-09T16:52:37.565Z"
+    },
+    "quarterly-review": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "small-business/skills/quarterly-review/SKILL.md",
+      "skillFolderHash": "a56775cc8da9c229c7b808545064f9d89ee3c291",
+      "installedAt": "2026-09-09T16:52:37.566Z",
+      "updatedAt": "2026-09-09T16:52:37.566Z"
+    },
+    "reconciliation": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "finance/skills/reconciliation/SKILL.md",
+      "skillFolderHash": "a2fb271a59ee0f127aae4bbcf4a7bac5b36fe9cb",
+      "installedAt": "2026-09-09T16:52:37.567Z",
+      "updatedAt": "2026-09-09T16:52:37.567Z"
+    },
+    "recruiting-pipeline": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "human-resources/skills/recruiting-pipeline/SKILL.md",
+      "skillFolderHash": "828b03880f733102ae088fc19896d74b51fa2e98",
+      "installedAt": "2026-09-09T16:52:37.567Z",
+      "updatedAt": "2026-09-09T16:52:37.567Z"
+    },
+    "research-synthesis": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "design/skills/research-synthesis/SKILL.md",
+      "skillFolderHash": "4b02fdb90ac25904fae23e140b141c6e2daf8a55",
+      "installedAt": "2026-09-09T16:52:37.568Z",
+      "updatedAt": "2026-09-09T16:52:37.568Z"
+    },
+    "review-contract": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "legal/skills/review-contract/SKILL.md",
+      "skillFolderHash": "a82be2b0a9816b1967b6466ee561b78fe5dba662",
+      "installedAt": "2026-09-09T16:52:37.569Z",
+      "updatedAt": "2026-09-09T16:52:37.569Z"
+    },
+    "risk-assessment": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "operations/skills/risk-assessment/SKILL.md",
+      "skillFolderHash": "bb0d3fb6465abc6c720ed261dfd0da07e7e67af0",
+      "installedAt": "2026-09-09T16:52:37.569Z",
+      "updatedAt": "2026-09-09T16:52:37.569Z"
+    },
+    "rivet-sdk": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "partner-built/zoom-plugin/skills/rivet-sdk/SKILL.md",
+      "skillFolderHash": "9c77e81814b213ffbc386d1815e69b43ae642298",
+      "installedAt": "2026-09-09T16:52:37.570Z",
+      "updatedAt": "2026-09-09T16:52:37.570Z"
+    },
+    "run-campaign": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "small-business/skills/run-campaign/SKILL.md",
+      "skillFolderHash": "37b810baaaf2b659293718aa27580b1d3273d920",
+      "installedAt": "2026-09-09T16:52:37.571Z",
+      "updatedAt": "2026-09-09T16:52:37.571Z"
+    },
+    "runbook": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "operations/skills/runbook/SKILL.md",
+      "skillFolderHash": "f895793fb97e62f6f70a1f3983e9fb56ecd609e9",
+      "installedAt": "2026-09-09T16:52:37.572Z",
+      "updatedAt": "2026-09-09T16:52:37.572Z"
+    },
+    "sales-brief": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "small-business/skills/sales-brief/SKILL.md",
+      "skillFolderHash": "a5af6d26821831ebfbf4da415b34865e489ea9a5",
+      "installedAt": "2026-09-09T16:52:37.573Z",
+      "updatedAt": "2026-09-09T16:52:37.573Z"
+    },
+    "scientific-problem-selection": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "bio-research/skills/scientific-problem-selection/SKILL.md",
+      "skillFolderHash": "e99708f6efa5bf9be6dc4b8f6e44bf88b78d189b",
+      "installedAt": "2026-09-09T16:52:37.574Z",
+      "updatedAt": "2026-09-09T16:52:37.574Z"
+    },
+    "scribe": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "partner-built/zoom-plugin/skills/scribe/SKILL.md",
+      "skillFolderHash": "b6992a19fc3f529442643b6263a58ef01c7e23bf",
+      "installedAt": "2026-09-09T16:52:37.575Z",
+      "updatedAt": "2026-09-09T16:52:37.575Z"
+    },
+    "scvi-tools": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "bio-research/skills/scvi-tools/SKILL.md",
+      "skillFolderHash": "06291f4ec55795536284c189f489cf958fce3bf9",
+      "installedAt": "2026-09-09T16:52:37.575Z",
+      "updatedAt": "2026-09-09T16:52:37.575Z"
+    },
+    "search": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "enterprise-search/skills/search/SKILL.md",
+      "skillFolderHash": "c73931cda197f4208b6a41d6c6cbb98dc7574ebb",
+      "installedAt": "2026-09-09T16:52:37.576Z",
+      "updatedAt": "2026-09-09T16:52:37.576Z"
+    },
+    "search-strategy": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "enterprise-search/skills/search-strategy/SKILL.md",
+      "skillFolderHash": "b7a20c6bee9479442c083b2996983f802d0077c9",
+      "installedAt": "2026-09-09T16:52:37.577Z",
+      "updatedAt": "2026-09-09T16:52:37.577Z"
+    },
+    "seo-audit": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "marketing/skills/seo-audit/SKILL.md",
+      "skillFolderHash": "a0129025295909bd28ef7468a5b88a5ec9f1724a",
+      "installedAt": "2026-09-09T16:52:37.578Z",
+      "updatedAt": "2026-09-09T16:52:37.578Z"
+    },
+    "sequence-load": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "partner-built/apollo/skills/sequence-load/SKILL.md",
+      "skillFolderHash": "51bae2d1627c87b6f6a81081b8e70914caeecc37",
+      "installedAt": "2026-09-09T16:52:37.578Z",
+      "updatedAt": "2026-09-09T16:52:37.578Z"
+    },
+    "setup-zoom-mcp": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "partner-built/zoom-plugin/skills/setup-zoom-mcp/SKILL.md",
+      "skillFolderHash": "642c064c80614c9ca1c97c85672b7c838a2bfe06",
+      "installedAt": "2026-09-09T16:52:37.579Z",
+      "updatedAt": "2026-09-09T16:52:37.579Z"
+    },
+    "setup-zoom-oauth": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "partner-built/zoom-plugin/skills/setup-zoom-oauth/SKILL.md",
+      "skillFolderHash": "ad4ed3fd9e72b680d1c1292477e02f5b273961c9",
+      "installedAt": "2026-09-09T16:52:37.580Z",
+      "updatedAt": "2026-09-09T16:52:37.580Z"
+    },
+    "setup-zoom-webhooks": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "partner-built/zoom-plugin/skills/webhooks/SKILL.md",
+      "skillFolderHash": "6987c3bb29de413adf33486317d8feeab92d6c7d",
+      "installedAt": "2026-09-09T16:52:37.580Z",
+      "updatedAt": "2026-09-09T16:52:37.580Z"
+    },
+    "setup-zoom-websockets": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "partner-built/zoom-plugin/skills/websockets/SKILL.md",
+      "skillFolderHash": "3c4272e5d0d2b30a497f3cae61694823a38a31ac",
+      "installedAt": "2026-09-09T16:52:37.581Z",
+      "updatedAt": "2026-09-09T16:52:37.581Z"
+    },
+    "signature-request": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "legal/skills/signature-request/SKILL.md",
+      "skillFolderHash": "02152dacf428a092d87a0ab0a19de640316b8087",
+      "installedAt": "2026-09-09T16:52:37.581Z",
+      "updatedAt": "2026-09-09T16:52:37.581Z"
+    },
+    "single-cell-rna-qc": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "bio-research/skills/single-cell-rna-qc/SKILL.md",
+      "skillFolderHash": "b2994c3376994fd02db1a1fe94081f4748a3f544",
+      "installedAt": "2026-09-09T16:52:37.583Z",
+      "updatedAt": "2026-09-09T16:52:37.583Z"
+    },
+    "slack-messaging": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "partner-built/slack/skills/slack-messaging/SKILL.md",
+      "skillFolderHash": "d58fc568b025a5407ed6a7e6b738adc9a78db20a",
+      "installedAt": "2026-09-09T16:52:37.584Z",
+      "updatedAt": "2026-09-09T16:52:37.584Z"
+    },
+    "slack-search": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "partner-built/slack/skills/slack-search/SKILL.md",
+      "skillFolderHash": "5fb707b6106a3361eccb56f200231c755b4eb20a",
+      "installedAt": "2026-09-09T16:52:37.584Z",
+      "updatedAt": "2026-09-09T16:52:37.584Z"
+    },
+    "smb-onboard": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "small-business/skills/smb-onboard/SKILL.md",
+      "skillFolderHash": "f462363e8186d402b28ed3529c11640d2425355c",
+      "installedAt": "2026-09-09T16:52:37.585Z",
+      "updatedAt": "2026-09-09T16:52:37.585Z"
+    },
+    "smb-router": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "small-business/skills/smb-router/SKILL.md",
+      "skillFolderHash": "4e1e774f87fe92b0bcc13b7017bed138f87a3549",
+      "installedAt": "2026-09-09T16:52:37.586Z",
+      "updatedAt": "2026-09-09T16:52:37.586Z"
+    },
+    "source-management": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "enterprise-search/skills/source-management/SKILL.md",
+      "skillFolderHash": "75d17f3fe3ab09ee9da0f917bb6bcb21fabb1095",
+      "installedAt": "2026-09-09T16:52:37.586Z",
+      "updatedAt": "2026-09-09T16:52:37.586Z"
+    },
+    "sox-testing": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "finance/skills/sox-testing/SKILL.md",
+      "skillFolderHash": "661e9601caa48aeb0cf9ddaecadf6943a6ff0692",
+      "installedAt": "2026-09-09T16:52:37.587Z",
+      "updatedAt": "2026-09-09T16:52:37.587Z"
+    },
+    "sprint-planning": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "product-management/skills/sprint-planning/SKILL.md",
+      "skillFolderHash": "35557ddd6d0891ad91e77bb5d8e4713e80360688",
+      "installedAt": "2026-09-09T16:52:37.588Z",
+      "updatedAt": "2026-09-09T16:52:37.588Z"
+    },
+    "sql-queries": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "data/skills/sql-queries/SKILL.md",
+      "skillFolderHash": "508444de634ec4ba9178750b6cbc897fe9f9c169",
+      "installedAt": "2026-09-09T16:52:37.589Z",
+      "updatedAt": "2026-09-09T16:52:37.589Z"
+    },
+    "stakeholder-update": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "product-management/skills/stakeholder-update/SKILL.md",
+      "skillFolderHash": "28af9eb9b32b8ecf36a784149628b5b1da0c7342",
+      "installedAt": "2026-09-09T16:52:37.589Z",
+      "updatedAt": "2026-09-09T16:52:37.589Z"
+    },
+    "standup": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "engineering/skills/standup/SKILL.md",
+      "skillFolderHash": "1c291f93271dbd36ed777380c348bf00b0fbd0b3",
+      "installedAt": "2026-09-09T16:52:37.590Z",
+      "updatedAt": "2026-09-09T16:52:37.590Z"
+    },
+    "start": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "productivity/skills/start/SKILL.md",
+      "skillFolderHash": "985a7887f7f47e8fbf4dae391f2badac25c06157",
+      "installedAt": "2026-09-09T16:52:37.591Z",
+      "updatedAt": "2026-09-09T16:52:37.591Z"
+    },
+    "statistical-analysis": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "data/skills/statistical-analysis/SKILL.md",
+      "skillFolderHash": "43c75ea64ed2726d5d3b713c3312dc4537444fe2",
+      "installedAt": "2026-09-09T16:52:37.591Z",
+      "updatedAt": "2026-09-09T16:52:37.591Z"
+    },
+    "status-report": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "operations/skills/status-report/SKILL.md",
+      "skillFolderHash": "303c2be4210a9633d1ea3cc13c3adc82199d7a8c",
+      "installedAt": "2026-09-09T16:52:37.592Z",
+      "updatedAt": "2026-09-09T16:52:37.592Z"
+    },
+    "synthesize-research": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "product-management/skills/synthesize-research/SKILL.md",
+      "skillFolderHash": "9bd70401f806a29f44c66ea06b217e020f902ec4",
+      "installedAt": "2026-09-09T16:52:37.593Z",
+      "updatedAt": "2026-09-09T16:52:37.593Z"
+    },
+    "task-management": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "productivity/skills/task-management/SKILL.md",
+      "skillFolderHash": "0bfe4b127621e04e35d38b1b95d2c12f5955180a",
+      "installedAt": "2026-09-09T16:52:37.596Z",
+      "updatedAt": "2026-09-09T16:52:37.596Z"
+    },
+    "tax-prep": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "small-business/skills/tax-prep/SKILL.md",
+      "skillFolderHash": "ce99dd29c65a4d42635a99e0c6e23cb1303367b1",
+      "installedAt": "2026-09-09T16:52:37.597Z",
+      "updatedAt": "2026-09-09T16:52:37.597Z"
+    },
+    "tax-season-organizer": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "small-business/skills/tax-season-organizer/SKILL.md",
+      "skillFolderHash": "24436d3ef70a91e89d82b58f4bdba4f6b4ce7982",
+      "installedAt": "2026-09-09T16:52:37.598Z",
+      "updatedAt": "2026-09-09T16:52:37.598Z"
+    },
+    "ticket-deflector": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "small-business/skills/ticket-deflector/SKILL.md",
+      "skillFolderHash": "768a741299ce61d2da7435d2e93190f4db13104c",
+      "installedAt": "2026-09-09T16:52:37.600Z",
+      "updatedAt": "2026-09-09T16:52:37.600Z"
+    },
+    "ticket-triage": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "customer-support/skills/ticket-triage/SKILL.md",
+      "skillFolderHash": "343127ec6b976c9130c109d1ddcb93cfb6c95825",
+      "installedAt": "2026-09-09T16:52:37.600Z",
+      "updatedAt": "2026-09-09T16:52:37.600Z"
+    },
+    "triage-nda": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "legal/skills/triage-nda/SKILL.md",
+      "skillFolderHash": "29a5829e933d258ab68a34c53d82358c5dafce3e",
+      "installedAt": "2026-09-09T16:52:37.601Z",
+      "updatedAt": "2026-09-09T16:52:37.601Z"
+    },
+    "update": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "productivity/skills/update/SKILL.md",
+      "skillFolderHash": "62b519494e5b7181f19b83cebecc53192b740d39",
+      "installedAt": "2026-09-09T16:52:37.602Z",
+      "updatedAt": "2026-09-09T16:52:37.602Z"
+    },
+    "user-research": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "design/skills/user-research/SKILL.md",
+      "skillFolderHash": "eb1f921879af5ece30dc80607f11b431deadde70",
+      "installedAt": "2026-09-09T16:52:37.603Z",
+      "updatedAt": "2026-09-09T16:52:37.603Z"
+    },
+    "validate-data": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "data/skills/validate-data/SKILL.md",
+      "skillFolderHash": "270c075639c4e5d1dac85478eac215d34dfe2268",
+      "installedAt": "2026-09-09T16:52:37.604Z",
+      "updatedAt": "2026-09-09T16:52:37.604Z"
+    },
+    "variance-analysis": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "finance/skills/variance-analysis/SKILL.md",
+      "skillFolderHash": "3cd2f5450c65b270e00f3c1a5d5a996c115f9fcb",
+      "installedAt": "2026-09-09T16:52:37.605Z",
+      "updatedAt": "2026-09-09T16:52:37.605Z"
+    },
+    "vendor-check": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "legal/skills/vendor-check/SKILL.md",
+      "skillFolderHash": "f8013844f9c2f1d15edc419e974d3868bc9b7e37",
+      "installedAt": "2026-09-09T16:52:37.606Z",
+      "updatedAt": "2026-09-09T16:52:37.606Z"
+    },
+    "vendor-review": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "operations/skills/vendor-review/SKILL.md",
+      "skillFolderHash": "637a87cab740474106b190f0fe11a983caa37380",
+      "installedAt": "2026-09-09T16:52:37.606Z",
+      "updatedAt": "2026-09-09T16:52:37.606Z"
+    },
+    "view-pdf": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "pdf-viewer/skills/view-pdf/SKILL.md",
+      "skillFolderHash": "e08380ffc592e7fe2ca35dc2e150e6a6ecd725b4",
+      "installedAt": "2026-09-09T16:52:37.607Z",
+      "updatedAt": "2026-09-09T16:52:37.607Z"
+    },
+    "weekly-prep-brief": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "partner-built/common-room/skills/weekly-prep-brief/SKILL.md",
+      "skillFolderHash": "499b6effbe72099a0f9a58a91093316b6b4c3562",
+      "installedAt": "2026-09-09T16:52:37.608Z",
+      "updatedAt": "2026-09-09T16:52:37.608Z"
+    },
+    "zoom-apps-sdk": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "partner-built/zoom-plugin/skills/zoom-apps-sdk/SKILL.md",
+      "skillFolderHash": "7ed5d4cfd3d79b07af45bd813c411975610a18a4",
+      "installedAt": "2026-09-09T16:52:37.610Z",
+      "updatedAt": "2026-09-09T16:52:37.610Z"
+    },
+    "zoom-cobrowse-sdk": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "partner-built/zoom-plugin/skills/cobrowse-sdk/SKILL.md",
+      "skillFolderHash": "cc329eeef922137f2e1ba406e2ef286f55ade48e",
+      "installedAt": "2026-09-09T16:52:37.611Z",
+      "updatedAt": "2026-09-09T16:52:37.611Z"
+    },
+    "zoom-general": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "partner-built/zoom-plugin/skills/general/SKILL.md",
+      "skillFolderHash": "a5d962218f099a0731c9a0196d2b847af4cc07e2",
+      "installedAt": "2026-09-09T16:52:37.611Z",
+      "updatedAt": "2026-09-09T16:52:37.611Z"
+    },
+    "zoom-mcp": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "partner-built/zoom-plugin/skills/zoom-mcp/SKILL.md",
+      "skillFolderHash": "950124150eb372275b116ac46ee97fbac00ff72e",
+      "installedAt": "2026-09-09T16:52:37.613Z",
+      "updatedAt": "2026-09-09T16:52:37.613Z"
+    },
+    "zoom-oauth": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "partner-built/zoom-plugin/skills/oauth/SKILL.md",
+      "skillFolderHash": "4dffbc875c909a81e4e9e4c118242b0a309b1b3e",
+      "installedAt": "2026-09-09T16:52:37.616Z",
+      "updatedAt": "2026-09-09T16:52:37.616Z"
+    },
+    "zoom-rtms": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "partner-built/zoom-plugin/skills/rtms/SKILL.md",
+      "skillFolderHash": "5d105be4ea3ce2da35e309bfb6bae7535ee7cc8a",
+      "installedAt": "2026-09-09T16:52:37.617Z",
+      "updatedAt": "2026-09-09T16:52:37.617Z"
     },
     "agent-repellent": {
       "source": "factory-ai/cursed-plugins",
