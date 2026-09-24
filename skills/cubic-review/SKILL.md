@@ -12,6 +12,8 @@ A stack runs **bottom to top**. A fix on a lower layer rewrites every layer abov
 
 Stack mechanics — `view --json`, `checkout`, `rebase --upstack`, exit codes — are owned by `gh-stack`. Load it for a stack; do not re-derive.
 
+The decision and reply rules are owned by `STANDARDS/Workflow/Git.md` (Cubic review comments). This skill is the procedure that carries them out; where the two differ, `Git.md` wins.
+
 ## Invocation
 
 `/cubic-review` plus one of:
@@ -80,6 +82,8 @@ Read the code the finding points at before deciding. Never judge from the commen
 - optimization off the hot path
 - a claim the code refutes — quote the refuting lines
 
+**Valid but wider than this PR:** leave the code as is, say so in the reply, and open a follow-up ticket or note it in the PR.
+
 Right diagnosis, wrong prescription: fix the root cause your way and say so in the reply. One guard where all callers route through beats one guard per caller.
 
 The refusal list is `shiv-code-gate` doctrine. A cubic finding does not outrank it, and volume of findings is not evidence — clearing the list is not the goal.
@@ -104,11 +108,11 @@ gh stack push                # or: git push --force-with-lease  (single-PR mode)
 
 Exit 3 is a rebase conflict — recover per `gh-stack`, do not improvise.
 
-After the rebase, re-read the next layer's findings against the **rebased** diff. A finding the lower fix already resolved gets answered as fixed by that commit, not fixed twice. A finding whose code no longer exists is `isOutdated` — say so and resolve.
+After the rebase, re-read the next layer's findings against the **rebased** diff. A finding the lower fix already resolved gets answered as fixed by that commit, not fixed twice. A finding whose code no longer exists is `isOutdated` — say so in the reply.
 
 ## 5. Answer every thread
 
-One reply per thread, posted after the fix is pushed so the sha resolves. Caveman voice, ships as drafted.
+One reply per thread, on cubic's own thread, posted after the fix is pushed so the sha resolves. Keep it two or three plain-English lines written for cubic as the reader: the decision, the reason, and the commit when one exists. Draft it with `write-like-shiv`.
 
 ```bash
 gh api --method POST "repos/$O/$R/pulls/$N/comments/$COMMENT_ID/replies" -F body=@- <<'EOF'
@@ -128,11 +132,7 @@ Not fixing.
 EOF
 ```
 
-Then resolve **fixed** threads only. Refused threads stay open for the user to overrule.
-
-```bash
-gh api graphql -f query='mutation($t:ID!){resolveReviewThread(input:{threadId:$t}){thread{isResolved}}}' -F t=$THREAD_ID
-```
+Leave every thread open, fixed or refused, so cubic can respond and Shiv can overrule.
 
 ## 6. Re-review
 
