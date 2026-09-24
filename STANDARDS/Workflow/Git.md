@@ -73,7 +73,7 @@ Run `code-review` for correctness, `ponytail-review` when bloat is the question.
 
 ## Cubic review comments
 
-Cubic is an automated reviewer on our PRs. When Shiv hands over a Cubic review, test every comment instead of applying it. Some comments catch real defects; others misread the system or ask for changes outside the PR's scope. Both outcomes need a reply so Cubic's next review is sharper.
+Cubic is an automated reviewer on our PRs. When Shiv hands over a Cubic review, run `cubic-review` for the procedure; this section owns the decision and reply rules it follows. Test every comment instead of applying it. Some comments catch real defects; others misread the system or ask for changes outside the PR's scope. Both outcomes need a reply so Cubic's next review is sharper.
 
 For each comment:
 
