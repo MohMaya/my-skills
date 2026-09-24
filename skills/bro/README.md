@@ -6,7 +6,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Format: Agent Skills](https://img.shields.io/badge/format-Agent%20Skills-blue)](https://agentskills.io)
-[![Works with](https://img.shields.io/badge/works%20with-Hermes%20%C2%B7%20Claude%20Code%20%C2%B7%20Codex%20%C2%B7%20opencode-blueviolet)](#compatibility)
+[![Works with](https://img.shields.io/badge/works%20with-Hermes%20%C2%B7%20Claude%20Code%20%C2%B7%20Cursor%20%C2%B7%20Codex%20%C2%B7%20opencode-blueviolet)](#compatibility)
 
 </div>
 
@@ -28,8 +28,11 @@ Works with any agent that reads the Agent Skills format — and ships thin slash
 |---|---|---|
 | **Hermes Agent** | `~/.hermes/skills/bro/SKILL.md` | skill (auto) |
 | **Claude Code** | `~/.claude/skills/bro/SKILL.md` | `~/.claude/commands/bro.md` |
+| **Cursor** | `~/.cursor/skills/bro/SKILL.md` | skill (`/bro`) |
 | **OpenAI Codex** | `~/.codex/skills/bro/SKILL.md` | `~/.codex/prompts/bro.md` |
 | **opencode** | `~/.config/opencode/skills/bro/SKILL.md` | `~/.config/opencode/command(s)/bro.md` |
+
+Cursor also reads `~/.codex/skills/` and `~/.claude/skills/` (and the matching project folders) as a compatibility fallback. Don't rely on that — Cursor-only machines often have neither directory. The installer writes `~/.cursor/skills/bro/` whenever it detects Cursor, creating `~/.cursor/skills/` if needed (that folder is not there by default).
 
 ## Install
 
@@ -45,7 +48,7 @@ bash <(curl -fsSL https://raw.githubusercontent.com/luchasarie/bro-skill/main/in
 git clone https://github.com/luchasarie/bro-skill.git
 cd bro-skill
 ./install.sh          # installs into every detected tool
-./install.sh --all    # or force-install into all four
+./install.sh --all    # or force-install into every supported tool
 ```
 
 Then restart your agent session and type `/bro` after any reply that made your eyes glaze over.

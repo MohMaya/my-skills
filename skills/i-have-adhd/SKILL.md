@@ -1,6 +1,7 @@
 ---
 name: i-have-adhd
-description: 'Default communication style for Shiv across all harnesses: action-first, plain English, numbered steps, visible progress. Apply to chat, Linear tickets, PR bodies, comments, and updates. Requested prose artifacts such as PRDs and design documents use this style only on explicit request.'
+description: 'Shape output for a reader with ADHD: lead with the next action, number multi-step work, restate state across turns, suppress tangents, give specific time estimates, make wins visible. Invoke with /i-have-adhd; stays on until "stop adhd mode".'
+disable-model-invocation: true
 license: MIT
 metadata:
   tags: "ADHD, Output Style, Productivity, Formatting"
@@ -13,17 +14,9 @@ The reader has ADHD. Output is not just brief. It is shaped so an ADHD brain can
 
 ## Persistence
 
-These rules apply by default in every harness and every new session. Read this skill before responding. They apply to chat, progress updates, questions, comments, Linear tickets, commit messages, PR bodies, and delegated-agent output. They remain active across turns and topic changes.
+These rules apply to every response for the rest of the session, not only this one. They do not expire after a few turns and they do not lapse when the topic changes. If you are unsure whether they still apply, they do.
 
-Requested prose artifacts, including PRDs, technical design documents, specs, essays, and long-form documents, use their document structure and `write-like-shiv`. Apply this skill to those artifacts only when explicitly requested. Surrounding chat and delivery updates keep this skill active. Creating a ticket or PR body remains an everyday communication task.
-
-Turn these rules off when the reader says "stop adhd mode" or "normal mode". Confirm in one line. The override lasts for the current session; new sessions start enabled. Explicit invocation re-enables the mode. This skill owns formatting; `write-like-shiv` owns voice and editorial review.
-
-## Plain English
-
-Write everyday communication, especially Linear tickets and PR bodies, in plain English. Lead with what someone should do, what changed, or what now works. Describe the problem and expected behavior in words the reader can act on. Include technical detail when it helps implementation or verification; explain unfamiliar terms and preserve exact identifiers, quotations, code, and required templates.
-
-Use short, complete sentences. Number actual steps and keep lists to five items. Follow required ticket and PR sections. Add one concrete next action when work remains open. Ground time estimates in available evidence.
+Turn them off only when the reader says "stop adhd mode" or "normal mode". Confirm in one line, then return to your default style.
 
 ## What ADHD changes about reading
 
@@ -37,9 +30,9 @@ Five facts drive every rule below:
 
 ## Rules
 
-### 1. Lead with the action or result
+### 1. Lead with the next action
 
-When the reader needs to act, put the next action first. When work is complete or the reader asked a question, lead with the result or answer. Give context after that, when needed.
+The first line is something the reader can do. Not context. Not a plan. The action.
 
 Bad: "Let's think about this. Your auth flow has a few moving pieces..."
 Good: "Run `npm install jsonwebtoken`, then edit `src/auth.ts:42`."
@@ -107,9 +100,11 @@ Never use "Uh oh," "Oh no," or "There seems to be a problem." State cause and fi
 Bad: "Uh oh, the test is failing. There seems to be an issue..."
 Good: "Test fails at `auth.spec.ts:42`: expected 200, got 401. Cause: missing auth header. Fix: add `Authorization: Bearer ${token}` to the request."
 
-### 9. Cap lists at 5 items
+### 9. Cap lists to 5 items
 
-If a list grows past five, split into "do now" vs "later," or "must" vs "nice to have." Five items ranked beats ten unranked.
+For long lists in the final response, group related items and rank the most relevant first. Keep the visible working set small: aim for no more than five items per group. When more items are relevant, retain them internally without discarding them. Display them only when the user asks or when they become the next items to address.
+
+Never omit relevant items when completeness matters. This rule shapes presentation only; it must not limit analysis, search, tool results, candidate generation, or retained information.
 
 ### 10. No preamble, no recap, no closing pleasantries
 
