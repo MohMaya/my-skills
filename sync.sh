@@ -74,7 +74,7 @@ sync_mandates() {
   mkdir -p "$(dirname "$dest")"
   {
     printf 'MANDATES ACTIVE (generated from ~/.agents/AGENTS.md):\n\n'
-    awk '/^## /{copy=($0 ~ /^## (Scope and completion|Engineering judgment|Design authority|Voice)$/)} copy{print}' "$AGENTS_DIR/AGENTS.md"
+    awk '/^## /{copy=($0 ~ /^## (Scope and completion|Engineering judgment|Engineering skills|Design authority|Voice)$/)} copy{print}' "$AGENTS_DIR/AGENTS.md"
   } > "$dest"
   echo "$dest: regenerated"
 }
