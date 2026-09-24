@@ -127,9 +127,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/anthropics/skills.git",
       "skillPath": "skills/claude-api/SKILL.md",
-      "skillFolderHash": "e26692d106dfd8ed29598d49b27112bdb9a84904",
+      "skillFolderHash": "bdd77c638c62cdcfbac5032f05d778d513e33b99",
       "installedAt": "2026-05-03T16:57:25.010Z",
-      "updatedAt": "2026-09-23T15:13:01.454Z"
+      "updatedAt": "2026-09-24T17:24:12.006Z"
     },
     "code-review": {
       "source": "factory-ai/skills",
@@ -182,9 +182,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/vercel-labs/json-render.git",
       "skillPath": "skills/core/SKILL.md",
-      "skillFolderHash": "3cba1d7863b171be503f023e2063d0a39e895d5c",
+      "skillFolderHash": "ddcd3834c523dca6a0392cce02a8f13c14701b40",
       "installedAt": "2026-05-03T17:09:48.418Z",
-      "updatedAt": "2026-09-23T15:14:35.927Z"
+      "updatedAt": "2026-09-24T17:24:20.045Z"
     },
     "design-critique": {
       "source": "anthropics/knowledge-work-plugins",
@@ -2435,9 +2435,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/vasilyu1983/ai-agents-public.git",
       "skillPath": "frameworks/shared-skills/skills/qa-testing-strategy/SKILL.md",
-      "skillFolderHash": "0d00ec19e978b274aa07449003a9f274aedc61f6",
+      "skillFolderHash": "a0ff7461c5e4d59e6dbad6ef94b1e14028427f8b",
       "installedAt": "2026-09-09T16:51:27.715Z",
-      "updatedAt": "2026-09-09T16:53:44.411Z"
+      "updatedAt": "2026-09-24T17:24:23.620Z"
     },
     "accessibility-review": {
       "source": "anthropics/knowledge-work-plugins",
@@ -2453,9 +2453,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
       "skillPath": "sales/skills/account-research/SKILL.md",
-      "skillFolderHash": "729167f956c9d71b044e4a393927035ea05c1f07",
+      "skillFolderHash": "afa888c55937414007b5db7a6b40d6ee7ec0ef00",
       "installedAt": "2026-09-09T16:52:37.481Z",
-      "updatedAt": "2026-09-09T16:52:37.481Z"
+      "updatedAt": "2026-09-24T17:24:13.885Z"
     },
     "analyze": {
       "source": "anthropics/knowledge-work-plugins",
@@ -2597,9 +2597,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
       "skillPath": "sales/skills/call-prep/SKILL.md",
-      "skillFolderHash": "15af0a69c20abf73a919acda5f6e5ed5a716e008",
+      "skillFolderHash": "7c70e9092041fb18cecfd4ae7380c12f73cb0590",
       "installedAt": "2026-09-09T16:52:37.493Z",
-      "updatedAt": "2026-09-09T16:52:37.493Z"
+      "updatedAt": "2026-09-24T17:24:16.082Z"
     },
     "call-summary": {
       "source": "anthropics/knowledge-work-plugins",
@@ -3011,9 +3011,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
       "skillPath": "small-business/skills/lead-triage/SKILL.md",
-      "skillFolderHash": "90d9c90e2688d77d7fe11298195f76d0aaa8f529",
+      "skillFolderHash": "dcd985b24404cabbcbc16c5e06b4bacc1948cf48",
       "installedAt": "2026-09-09T16:52:37.546Z",
-      "updatedAt": "2026-09-09T16:52:37.546Z"
+      "updatedAt": "2026-09-24T17:24:18.724Z"
     },
     "legal-response": {
       "source": "anthropics/knowledge-work-plugins",
