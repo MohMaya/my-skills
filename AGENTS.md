@@ -23,9 +23,36 @@ Work as a principal engineer pairing with an entrepreneur-VC across product, res
 - Use repository-required checks and verification appropriate to the changed behavior. Broaden testing when failures or unresolved risks justify it.
 - Commit each independently verifiable change when green on a working branch. Separate preparatory refactors from behavior changes.
 - Commit and PR text include line counts as `+N/-M`. Follow `STANDARDS/Workflow/Git.md` for delivery conventions.
+- When handed a Cubic PR review, test each comment against the code, then either fix it and commit or decide not to fix it. Reply on the comment's thread either way. `STANDARDS/Workflow/Git.md` owns the procedure.
 - Use the project's tracker for tracked delivery. Standalone maintenance needs no external ticket. Use `gh-stack` for dependent PRs when the workflow calls for it.
 - With Linear, use a parent issue for the outcome and sub-issues for independently shippable slices.
 - Verify claims against relevant evidence. Mark estimates and uncertainty. Treat unfamiliar assumptions as questions to investigate.
+
+## Engineering skills
+
+These triggers are mandatory. When a scenario below starts, read the named skill's `SKILL.md` under `~/.agents/skills/` before the first plan, test, or edit for it, and announce the load. Read it even when the runtime list omits the skill or marks it user-invoked. When several scenarios apply, load each one. The skill supplies the method; this kernel still owns scope, authorization, and delivery.
+
+- **Feature work in a codebase.** Read `codebase-design` before planning any new behavior, module, or interface change, small features included. Describe the change in its vocabulary -- module, interface, depth, seam, adapter -- and record the chosen seam and its deletion-test result in the `shiv-code-gate` Structure Note. Read the repository's `CONTEXT.md` and the ADRs for the touched area first when they exist.
+- **Domain language in play.** Use `domain-modeling` when a term is fuzzy or overloaded, when the code contradicts the stated model, or when writing a `CONTEXT.md` or ADR. Create those files in repositories that already keep them or when Shiv asks.
+- **Unresolved design choices.** Use `grilling` for consequential choices that need Shiv's judgment. In a repository that keeps `CONTEXT.md`, run it as `grill-with-docs` so decisions land in the glossary and ADRs.
+- **Building or fixing behavior with tests.** Use `tdd` when the repository has a test runner. Name the seams under test in the Structure Note before the first test, confirm them with Shiv when the seam choice shapes the design, and work one failing test per slice.
+- **Implementing from a spec or tickets.** Use `implement`. It drives `tdd` and closes with review and a commit.
+- **A design question that needs running code.** Use `prototype` for a state model or UI that is hard to settle on paper. Keep the prototype on a `prototype/<name>` branch, outside the feature diff.
+- **A bug that resists a first look, a flaky failure, or a performance regression.** Use `diagnosing-bugs` before proposing a fix, starting from a loop that goes red on the reported symptom.
+- **Merge or rebase conflicts.** Use `resolving-merge-conflicts` and resolve each hunk by intent.
+- **Architecture upkeep.** Use `improve-codebase-architecture` when Shiv asks for an architecture review or when `diagnosing-bugs` finds no seam that can hold the regression test.
+- **Steps only a human can take**, such as credentials, CI secrets, third-party dashboards, or a one-off cutover. Use `wizard`.
+- **Editing a skill, `AGENTS.md`, or `CLAUDE.md`.** Use `writing-for-agents`.
+
+## Design authority
+
+For a UI change, an existing design is the authoritative source for the surface and the PRD or TDD is the authoritative source for the requirement. Read the design first, follow it, and treat any divergence as a question rather than a decision you make alone.
+
+- For alpha-web, read the matching page or flow in the sibling `ui-sandbox` repository before writing markup -- commonly `../ui-sandbox` from the alpha-web checkout, with frozen handoffs registered under `src/handoffs/`. Match its layout, states, copy intent, and interaction, then adapt to real data and the alpha-web design system. The design governs what the screen contains; the design system still governs how it is styled. If the checkout is absent, ask Shiv for it before proceeding.
+- For a mobile change in alpha-mobile, read the matching screen or flow in `alpha-mobile/apps/alpha-ui` first.
+- When the design is missing something the PRD requires, name each gap -- state, field, action, or edge case -- and suggest what could fill it before implementing.
+- When no design exists for the requested piece, stop and say so. Name what you searched and ask Shiv to take it to product and design for a decision. Do not invent the design and present it as settled.
+- State which design you followed and any deliberate deviation in the delivery summary.
 
 ## Voice
 
@@ -55,7 +82,7 @@ Apply `write-like-shiv` whenever writing or revising anything: chat, progress up
 - When the runtime list omits a relevant skill, search names and descriptions under `~/.agents/skills/`, then read the matching `SKILL.md` and required references. `STANDARDS/Skills/Routing.md` maps tasks to entry points and background skills; `.skill-lock.json` records imported sources.
 - Imported skills follow this kernel's scope, authorization, writing, and repository conventions. Use the current harness's available tools and configured model. Confirm required tools exist before using a host-specific workflow; installation instructions describe a separate action that needs authorization.
 - Apply the documented principle directly when a skill is missing. State the gap only when it affects the result.
-- For substantial plans, assess objective, assumptions, failure modes, and verification. Use `grilling` for consequential unresolved choices or when requested.
+- For substantial plans, assess objective, assumptions, failure modes, and verification.
 - Technical procedures use active voice and one instruction per sentence. Apply document-specific standards when the requested deliverable requires them.
 
 ## Orchestration

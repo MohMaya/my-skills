@@ -6,10 +6,12 @@ The runtime list and readable canonical skill files establish availability. When
 
 ## Routes
 
+The kernel's Engineering skills section owns the mandatory engineering triggers, including `codebase-design` at the start of feature work. The rows below route everything else and point back to it.
+
 | Task | Load |
 | ---- | ---- |
 | Unclear standards ownership or conflicting doctrine | `STANDARDS/INDEX.md` |
-| Writing or changing code | `shiv-code-gate`; `Core/Code.md` for quality and layer rules; `Core/Execution.md` when execution is unclear |
+| Writing or changing code | `shiv-code-gate`; `codebase-design` first for feature work; `Core/Code.md` for quality and layer rules; `Core/Execution.md` when execution is unclear |
 | Closing out a diff (pre-commit/PR) | `simplify` |
 | Requested chat compression | `caveman` |
 | Requested humanization or prose with AI-sounding patterns | `humanizer`; `write-like-shiv` owns voice |
@@ -18,7 +20,7 @@ The runtime list and readable canonical skill files establish availability. When
 | Any writing or revision: chat, updates, trackers, documents, comments, commits, PRs, product copy, or agents | `write-like-shiv` and its relevant surface reference; `Core/Prose.md`; `Core/Documents.md` when document shapes help |
 | Essay, article, or memo | Select `writing-fragments`, `writing-shape`, or `edit-article` for the current stage |
 | Planning, scoping, tradeoffs, sequencing | `Core/Planning.md` |
-| Stress-testing a plan, decision, or idea | `grilling` |
+| Stress-testing a plan, decision, or idea | `grilling`; `grill-with-docs` in a repository that keeps `CONTEXT.md` |
 | Grilling touches module shape or boundaries | `codebase-design` for the structural questions |
 | Publishing a spec | `to-spec` |
 | Filing tickets | `to-tickets` |
@@ -38,6 +40,7 @@ The runtime list and readable canonical skill files establish availability. When
 | Merge or rebase conflicts | `resolving-merge-conflicts` |
 | Git, commits, branches, PRs | `Workflow/Git.md` |
 | Create a PR; update an open PR after review or CI failures | `create-pr`; `follow-up-on-pr` respectively; `Workflow/Git.md` owns conventions and delivery scope |
+| Cubic review comments on a PR | `Workflow/Git.md` (Cubic review comments); `follow-up-on-pr` when accepted fixes push the branch |
 | GitHub issues and `gh` flow | `Workflow/GitHub.md` |
 | Stacked branches and dependent PRs | `gh-stack`, then `Workflow/GitHub.md` |
 | CI, deploys, rollback, flags, runtime safety | `Workflow/Delivery.md` |
@@ -66,10 +69,11 @@ The runtime list and readable canonical skill files establish availability. When
 | Office file in or out | `docx`, `pptx`, `xlsx` |
 | Images, diagrams, or presentations | `visual-design` and only its matching reference; existing image and presentation workflows own delivery |
 | Requested human-writing edit | `human-writing` under `write-like-shiv`; `Core/Prose.md` owns everyday formatting and prose exceptions |
-| Initialize repository instructions; author a skill | `init`; `skill-creation` respectively; inspect existing instructions and preserve canonical ownership. `template-skill` is an unfinished authoring example |
+| Initialize repository instructions; author a skill; edit a skill, `AGENTS.md`, or `CLAUDE.md` | `init`; `skill-creation`; `writing-for-agents` respectively; inspect existing instructions and preserve canonical ownership. `template-skill` is an unfinished authoring example |
 | Explicit iterative optimization experiment | `autoresearch`; `Core/Execution.md` defines budget, isolation, and stopping conditions |
 | Browse with the installed browser CLI; locate a prior Droid session | `browser-navigation`; `session-navigation` respectively; verify the named CLI and local data exist |
 | Automate a terminal, browser, or desktop; record a demo | `droid-control` is the entry point; select background skills from the map below |
+| Steps only a human can take: credentials, CI secrets, dashboards, cutovers | `wizard` |
 | Inspect HTTP traffic from a CLI or service | `http-toolkit-intercept`; scope capture to the requested process and protect credentials in captured traffic |
 | Can't find the right skill | `find-skills` |
 

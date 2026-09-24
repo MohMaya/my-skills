@@ -1,14 +1,16 @@
 ---
 name: caveman-commit
-description: Draft concise commit messages from a diff, following the repository's format and required metadata.
+description: >
+  Write a Conventional Commits message compressed to intent only. Use for
+  "write a commit", "commit message", /commit or /caveman-commit.
 ---
 
-Write commit messages terse and exact. Follow the repository's commit format. Use Conventional Commits only when the repository has no other convention. Explain why when the diff does not.
+Write commit messages terse and exact. Conventional Commits format. No fluff. Why over what.
 
 ## Rules
 
 **Subject line:**
-- Follow the repository format, including tracker prefixes when required. Otherwise use `<type>(<scope>): <imperative summary>`.
+- `<type>(<scope>): <imperative summary>` — `<scope>` optional
 - Types: `feat`, `fix`, `refactor`, `perf`, `docs`, `test`, `chore`, `build`, `ci`, `style`, `revert`
 - Imperative mood: "add", "fix", "remove" — not "added", "adds", "adding"
 - ≤50 chars when possible, hard cap 72
@@ -16,8 +18,8 @@ Write commit messages terse and exact. Follow the repository's commit format. Us
 - Match project convention for capitalization after the colon
 
 **Body (only if needed):**
-- Include repository-required metadata, such as line counts. Otherwise skip when the subject is self-explanatory.
-- Add context for non-obvious reasoning, breaking changes, migration notes, or linked issues.
+- Skip entirely when subject is self-explanatory
+- Add body only for: non-obvious *why*, breaking changes, migration notes, linked issues
 - Wrap at 72 chars
 - Bullets `-` not `*`
 - Reference issues/PRs at end: `Closes #42`, `Refs #17`
@@ -58,4 +60,4 @@ Always include body for: breaking changes, security fixes, data migrations, anyt
 
 ## Boundaries
 
-This skill supplies message wording. A message-only request produces the draft. When the user authorizes committing or pushing, continue through those actions under the repository workflow. The skill itself grants no additional authorization.
+Only generates the commit message. Does not run `git commit`, does not stage files, does not amend. Output the message as a code block ready to paste. "stop caveman-commit" or "normal mode": revert to verbose commit style.

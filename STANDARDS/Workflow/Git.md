@@ -71,6 +71,27 @@ individual layer, and reference the parent ticket in the body when needed.
 
 Run `code-review` for correctness, `ponytail-review` when bloat is the question. The review bar itself -- what to look at and in what order -- is `Core/Code.md`.
 
+## Cubic review comments
+
+Cubic is an automated reviewer on our PRs. When Shiv hands over a Cubic review, test every comment instead of applying it. Some comments catch real defects; others misread the system or ask for changes outside the PR's scope. Both outcomes need a reply so Cubic's next review is sharper.
+
+For each comment:
+
+1. Read the affected code and the current diff, then decide whether the change it asks for is correct and in scope for this PR.
+2. If the change holds, make it, commit it on the PR's branch, and reply with the short commit SHA.
+3. If the change does not hold, leave the code as is and reply with the reason: the behavior is intentional, the claim is wrong about this system, or the work belongs outside this PR.
+4. If the comment is valid but wider than this PR, say so and open a follow-up ticket or note it in the PR.
+
+Reply on Cubic's own review thread, not a new top-level comment. Keep it two or three plain-English lines: the decision, the reason, and the commit when one exists. Write for Cubic as the reader; name what matters to this system and correct any misreading of it. Do not reply "done" by itself, and do not argue for its own sake. Leave the thread open for Cubic's response.
+
+List the review comments, then reply to one:
+
+```bash
+gh api repos/{owner}/{repo}/pulls/{pr}/comments
+gh api repos/{owner}/{repo}/pulls/{pr}/comments/{comment_id}/replies -f body='...'
+```
+
+
 ## Merge policy
 
 Default:

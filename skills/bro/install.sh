@@ -36,7 +36,8 @@ INSTALLED=()
 
 install_skill() { # $1 = skills root
   mkdir -p "$1/bro"
-  cp "$SKILL" "$1/bro/SKILL.md"
+  # not cp: on the curl | bash path $SKILL is a mktemp file (0600) and that mode rides along
+  install -m 644 "$SKILL" "$1/bro/SKILL.md"
 }
 
 write_cmd() { # $1 = target file
@@ -59,6 +60,15 @@ if want claude "$HOME/.claude" claude; then
   printf -- '---\ndescription: Re-explain the last answer in plain language ("bro what" mode)\n---\n\n%s\n' "$BODY" \
     | write_cmd "$HOME/.claude/commands/bro.md"
   INSTALLED+=("Claude Code    → ~/.claude/skills/bro/ + /bro command")
+fi
+
+# ── Cursor ────────────────────────────────────────────────────
+# Always install into ~/.cursor/skills (mkdir -p). Cursor *also* reads
+# ~/.codex/skills and ~/.claude/skills, but those dirs only exist if you
+# already use Codex/Claude — Cursor-only users will not have them.
+if want cursor "$HOME/.cursor" cursor; then
+  install_skill "$HOME/.cursor/skills"
+  INSTALLED+=("Cursor         → ~/.cursor/skills/bro/SKILL.md")
 fi
 
 # ── OpenAI Codex ──────────────────────────────────────────────
