@@ -27,6 +27,8 @@ Keep findings in the requested review surface. Creating threat-model files, post
 
 ## Observability baseline
 
+Plan these signals with the feature, not after launch; the kernel's Plan triggers load `observability-and-instrumentation` and `performance-optimization` for that. This section owns the minimum; the skills own the method.
+
 ### Logging
 
 - structured logs
@@ -49,12 +51,13 @@ Unhandled exceptions should land in a central error tracker with enough context 
 
 ## Rollback policy
 
-Use the project's rollback runbook and authorized incident response scope. Before deployment, establish thresholds from its service objectives and baseline. Error spikes, latency regressions, critical failures, and threatened data integrity require immediate assessment. Execute rollback when the runbook or user authorizes it; otherwise surface the evidence and proposed action.
+Use `shipping-and-launch` for rollout stages and rollback triggers. Use the project's rollback runbook and authorized incident response scope. Before deployment, establish thresholds from its service objectives and baseline. Error spikes, latency regressions, critical failures, and threatened data integrity require immediate assessment. Execute rollback when the runbook or user authorizes it; otherwise surface the evidence and proposed action.
 
 Rules:
 - rollback should be one command or one obvious platform action
 - schema changes must be backward-compatible with the previous app version
 - do not treat destructive migration rollback as routine
+- run expand, migrate, and contract as separate deploys with `deprecation-and-migration`; stop after the authorized stage
 
 ## Feature flags
 

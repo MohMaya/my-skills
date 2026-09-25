@@ -69,7 +69,7 @@ individual layer, and reference the parent ticket in the body when needed.
 
 ## Review posture
 
-Run `code-review` for correctness, `ponytail-review` when bloat is the question. The review bar itself -- what to look at and in what order -- is `Core/Code.md`.
+Run `code-review-and-quality` before opening or updating a PR, and `simplify` for the subtractive pass. The review bar itself -- what to look at and in what order -- is `Core/Code.md`.
 
 ## Cubic review comments
 
