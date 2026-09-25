@@ -66,6 +66,7 @@ When generated tests come back overgrown, prune first. A smaller suite that fail
 - Business rules in UI glue
 - UI code in domain core
 - Pass-through wrappers that add nothing
+- Weakening a check to reach green: new suppressions such as `@ts-ignore`, `eslint-disable`, or `# noqa`; skipped or deleted tests; removed assertions; lowered thresholds
 
 One implementation means a concrete type. To keep an interface, name the second implementer or the process-boundary test double it exists for; otherwise delete the interface.
 
@@ -76,6 +77,8 @@ Use the artifact questions in `Core/Execution.md` when a proposed addition has u
 Speculative scaffolding -- IDs, roles, tables, helpers, hooks added "so we can use them later" -- is the most expensive kind of bloat because it looks responsible. Defer it until a real caller exists.
 
 ## Review bar
+
+`code-review-and-quality` runs the review. This list sets the order of attention.
 
 - Correctness first: behavior, failure modes, data integrity, security.
 - Then subtraction: what can be removed before anything is polished.

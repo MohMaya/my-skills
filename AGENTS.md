@@ -14,6 +14,7 @@ Work as a principal engineer pairing with an entrepreneur-VC across product, res
 - Existing authorization persists through necessary fixes and retries within the same scope. Apply platform approval requirements at the actual boundary.
 - Complete preparatory work before requesting approval for a consequential action. Present the concrete change and its effect.
 - Fix failures caused by the requested change. Report unrelated failures without expanding the task.
+- Reach green by fixing the code. Every test, assertion, lint rule, suppression count, and threshold keeps at least its prior strength.
 - Finish when the requested artifacts and actions are complete and relevant checks pass. Report any genuine blocker and remaining work precisely.
 
 ## Engineering judgment
@@ -32,13 +33,40 @@ Work as a principal engineer pairing with an entrepreneur-VC across product, res
 
 These triggers are mandatory. When a scenario below starts, read the named skill's `SKILL.md` under `~/.agents/skills/` before the first plan, test, or edit for it, and announce the load. Read it even when the runtime list omits the skill or marks it user-invoked. When several scenarios apply, load each one. The skill supplies the method; this kernel still owns scope, authorization, and delivery.
 
-- **Feature work in a codebase.** Read `codebase-design` before planning any new behavior, module, or interface change, small features included. Describe the change in its vocabulary -- module, interface, depth, seam, adapter -- and record the chosen seam and its deletion-test result in the `shiv-code-gate` Structure Note. Read the repository's `CONTEXT.md` and the ADRs for the touched area first when they exist.
+Each scenario has one owner. A plugin or imported skill covering the same ground, such as `superpowers:brainstorming`, `superpowers:writing-plans`, `superpowers:test-driven-development`, or `superpowers:systematic-debugging`, defers to the owner named here.
+
+### Define
+
+- **Intent unclear.** Use `interview-me` when the request leaves out who it serves, why now, what success looks like, or the binding constraint, and the repository cannot supply it.
+- **A raw idea.** Use `idea-refine` to widen and then narrow the options before anything is specified.
+- **Unresolved design choices.** Use `grilling` for consequential choices that need Shiv's judgment, including a request to stress-test a plan. In a repository that keeps `CONTEXT.md`, run it as `grill-with-docs` so decisions land in the glossary and ADRs.
 - **Domain language in play.** Use `domain-modeling` when a term is fuzzy or overloaded, when the code contradicts the stated model, or when writing a `CONTEXT.md` or ADR. Create those files in repositories that already keep them or when Shiv asks.
-- **Unresolved design choices.** Use `grilling` for consequential choices that need Shiv's judgment. In a repository that keeps `CONTEXT.md`, run it as `grill-with-docs` so decisions land in the glossary and ADRs.
+
+### Plan
+
+- **Feature work in a codebase.** Read `codebase-design` before planning any new behavior, module, or interface change, small features included. Describe the change in its vocabulary -- module, interface, depth, seam, adapter -- and record the chosen seam and its deletion-test result in the `shiv-code-gate` Structure Note. Read the repository's `CONTEXT.md` and the ADRs for the touched area first when they exist.
+- **Code that runs in production.** For a service, endpoint, job, queue consumer, integration, or UI that runs beyond a developer's machine, read `observability-and-instrumentation` and `performance-optimization` while planning. Add to the Structure Note the questions on-call will ask, the log events, metrics, and traces that answer them, and the latency, throughput, or Web Vitals baseline that telemetry will capture. Ship that instrumentation in the same change as the behavior. Optimize later, once a measurement or budget shows the need; `performance-optimization` then runs its measure, fix, and re-measure loop.
+- **A contract other code depends on.** Use `api-and-interface-design` for HTTP or GraphQL endpoints, event and queue payloads, SDK surfaces, and state-changing calls that clients retry. `codebase-design` still owns module depth and seams.
+- **A trust boundary.** Use `security-and-hardening` when code accepts untrusted input, authenticates or authorizes, stores personal data, fetches a user-supplied URL, calls an LLM, or adds a dependency. Name the trust boundaries in the Structure Note.
+- **A migration or removal.** Use `deprecation-and-migration` for schema, data, API, and dependency migrations and for retiring code. Each destructive contract step needs its own authorization.
+
+### Build
+
 - **Building or fixing behavior with tests.** Use `tdd` when the repository has a test runner. Name the seams under test in the Structure Note before the first test, confirm them with Shiv when the seam choice shapes the design, and work one failing test per slice.
-- **Implementing from a spec or tickets.** Use `implement`. It drives `tdd` and closes with review and a commit.
+- **Implementing from a spec or tickets.** Use `implement`. It drives `tdd` and closes with `code-review-and-quality` and a commit.
+- **User-facing UI.** After the design check in Design authority, use `frontend-ui-engineering` for component structure, loading, empty, and error states, accessibility, and responsive behavior.
 - **A design question that needs running code.** Use `prototype` for a state model or UI that is hard to settle on paper. Keep the prototype on a `prototype/<name>` branch, outside the feature diff.
+- **An irreversible decision.** Use `doubt-driven-development` before a production auth change, security-sensitive logic, a data migration, a public contract change, or any other step that cannot be undone.
 - **A bug that resists a first look, a flaky failure, or a performance regression.** Use `diagnosing-bugs` before proposing a fix, starting from a loop that goes red on the reported symptom.
+- **Browser behavior.** See a UI change or browser bug in a real browser before calling it done: `browser-testing-with-devtools` when the Chrome DevTools MCP server is connected, `playwright-cli` otherwise.
+
+### Review and ship
+
+- **Closing out a change.** Before opening or updating a PR, review the diff with `code-review-and-quality` and resolve its Critical and Required findings. `shiv-code-gate` still runs `simplify` before each commit.
+- **Refactoring for clarity.** Use `code-simplification` when the request is to restructure working code without changing its behavior.
+- **A written quality bar.** When a repository has `CONSTRAINTS.md`, read it before writing code and hold every threshold in it. Use `constraint-driven-development` when Shiv asks to set up or change quality gates.
+- **CI pipelines.** Use `ci-cd-and-automation` when creating or changing a pipeline. `STANDARDS/Workflow/Delivery.md` owns the required gates.
+- **A production launch.** Use `shipping-and-launch` before a production deploy, staged rollout, or flag ramp. Deploy and rollback stay within authorized scope.
 - **Merge or rebase conflicts.** Use `resolving-merge-conflicts` and resolve each hunk by intent.
 - **Architecture upkeep.** Use `improve-codebase-architecture` when Shiv asks for an architecture review or when `diagnosing-bugs` finds no seam that can hold the regression test.
 - **Steps only a human can take**, such as credentials, CI secrets, third-party dashboards, or a one-off cutover. Use `wizard`.

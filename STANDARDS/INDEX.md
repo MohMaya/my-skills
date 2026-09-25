@@ -40,7 +40,9 @@ One concern, one owner. If two files start teaching the same thing, the tree is 
 - Stack rules -- the matching file under `Stack/`. Each defers to `Workflow/Delivery.md` for the pre-commit minimum and adds only stack-specific checks.
 - Product architecture -- `Product/Architecture.md`. Architecture-level statements only; operational rules defer to `Workflow/Delivery.md`.
 
-The kernel owns scope, completion, authorization, and orchestration. `shiv-code-gate` owns the reuse ladder, Structure Note, and subtractive review.
+Skill-facing checklists for accessibility, observability, performance, and security live in `~/.agents/references/`, vendored from `addyosmani/agent-skills`; the skills that cite them own their use.
+
+The kernel owns scope, completion, authorization, orchestration, and the mandatory engineering skill triggers. `shiv-code-gate` owns the reuse ladder, Structure Note, and subtractive review.
 
 ## Rewrite rule
 

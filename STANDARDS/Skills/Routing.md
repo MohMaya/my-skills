@@ -6,68 +6,73 @@ The runtime list and readable canonical skill files establish availability. When
 
 ## Routes
 
-The kernel's Engineering skills section owns the mandatory engineering triggers, including `codebase-design` at the start of feature work. The rows below route everything else and point back to it.
+The kernel's Engineering skills section owns the mandatory engineering triggers, from `interview-me` at intake through `shipping-and-launch` at release. Its owners supersede plugin copies of the same method. The rows below route everything else and point back to it.
 
 | Task | Load |
 | ---- | ---- |
 | Unclear standards ownership or conflicting doctrine | `STANDARDS/INDEX.md` |
-| Writing or changing code | `shiv-code-gate`; `codebase-design` first for feature work; `Core/Code.md` for quality and layer rules; `Core/Execution.md` when execution is unclear |
-| Closing out a diff (pre-commit/PR) | `simplify` |
+| Writing or changing code | `shiv-code-gate`; the kernel's Engineering skills triggers; `Core/Code.md` for quality and layer rules; `Core/Execution.md` when execution is unclear |
+| Closing out a change | `simplify` before each commit; `code-review-and-quality` before opening or updating a PR |
 | Requested chat compression | `caveman` |
 | Requested humanization or prose with AI-sounding patterns | `humanizer`; `write-like-shiv` owns voice |
 | Everyday communication, including chat, Linear tickets, PR bodies, and delegated-agent output | `i-have-adhd` by default in every session; plain English; `write-like-shiv` owns the non-code articulation bar; `Core/Prose.md` defines prose-artifact exceptions and session overrides |
 | Substantial knowledge-base document | `Core/Documents.md`; a clarity pass before delivery |
 | Any writing or revision: chat, updates, trackers, documents, comments, commits, PRs, product copy, or agents | `write-like-shiv` and its relevant surface reference; `Core/Prose.md`; `Core/Documents.md` when document shapes help |
-| Essay, article, or memo | Select `writing-fragments`, `writing-shape`, or `edit-article` for the current stage |
+| Essay, article, or memo | Select `writing-fragments`, `writing-beats`, or `writing-shape` for the current stage |
+| Intent unclear before any plan; a raw idea to explore | `interview-me`; `idea-refine` respectively |
 | Planning, scoping, tradeoffs, sequencing | `Core/Planning.md` |
 | Stress-testing a plan, decision, or idea | `grilling`; `grill-with-docs` in a repository that keeps `CONTEXT.md` |
 | Grilling touches module shape or boundaries | `codebase-design` for the structural questions |
-| Publishing a spec | `to-spec` |
-| Filing tickets | `to-tickets` |
-| Writing a PRD | `writing-prds` |
+| Publishing a spec; filing tickets; writing a PRD | `to-spec`; `to-tickets`; `write-spec` respectively |
 | Work too big for one session | `wayfinder` |
 | Implementing from a spec or tickets | `implement` |
 | Session ending mid-work | `handoff` |
 | Judging quality, taste, expert behavior | `Core/Craft.md` |
-| Module or interface design | `codebase-design`, `design-an-interface`, `domain-modeling` |
-| Repo-wide architecture cleanup | `improve-codebase-architecture` |
+| Module or interface design | `codebase-design` for module depth and seams; `api-and-interface-design` for contracts other code depends on; `domain-modeling` for terms |
+| Repo-wide architecture cleanup; prioritized debt ledger | `improve-codebase-architecture`; `tech-debt` respectively |
+| Refactor working code for clarity | `code-simplification` |
 | Throwaway spike to answer a design question | `prototype` |
 | Reading legwork, decision briefs, search-tool failure, or source-quality judgment | `research` |
 | Creating or updating a Legion/Grok bot (CreateAgent, voice send_task, bot-master brief) | `create-grok-bot` |
 | Bulk YouTube/Apple/Spotify playlist or liked-library mutations (fill, clear, rebuild under quota) | `media-library-bulk` |
 | Daily Economist-style paper / Readwise RSS news edition | `daily-paper-rss` |
 | Commit messages | `caveman-commit` |
-| Reviewing a diff or PR | `code-review` for correctness; `ponytail-review` for bloat |
-| Whole-repo bloat audit | `ponytail-audit`; `ponytail-debt` for the deferred-shortcut ledger |
-| Hard bugs, perf regressions | `diagnosing-bugs` |
+| Reviewing a diff or PR | `code-review-and-quality`; `simplify` when bloat is the question |
+| Irreversible decision needing a fresh-context adversarial check | `doubt-driven-development` |
+| Hard bugs, flaky failures, perf regressions | `diagnosing-bugs` |
+| Logs, metrics, traces, alerts, runbooks | `observability-and-instrumentation`; `Workflow/Delivery.md` owns the baseline |
+| Measured slowness, a performance budget, or the deferred optimization pass | `performance-optimization`; re-measure before keeping any change |
 | Merge or rebase conflicts | `resolving-merge-conflicts` |
 | Git, commits, branches, PRs | `Workflow/Git.md` |
 | Create a PR; update an open PR after review or CI failures | `create-pr`; `follow-up-on-pr` respectively; `Workflow/Git.md` owns conventions and delivery scope |
 | Cubic review comments on a PR or stack | `cubic-review`; `Workflow/Git.md` (Cubic review comments) owns the reply rules; `follow-up-on-pr` when accepted fixes push the branch |
 | GitHub issues and `gh` flow | `Workflow/GitHub.md` |
 | Stacked branches and dependent PRs | `gh-stack`, then `Workflow/GitHub.md` |
-| CI, deploys, rollback, flags, runtime safety | `Workflow/Delivery.md` |
+| CI pipelines | `ci-cd-and-automation`; `Workflow/Delivery.md` owns the required gates |
+| Production deploy, staged rollout, flags, rollback | `shipping-and-launch`; `Workflow/Delivery.md` owns rollback authority |
+| Schema, data, API, or dependency migration; retiring code | `deprecation-and-migration` |
+| Setting up or changing a repository's quality gates | `constraint-driven-development`; follow an existing `CONSTRAINTS.md` without it |
 | Linear workflow | `Workflow/Linear.md` |
 | Notion knowledge base | `Workflow/Notion.md` |
-| Auth-touching code or pre-launch | `security-review` |
-| Review a security-sensitive diff; build a threat model; validate a finding | `commit-security-scan`; `threat-model-generation`; `vulnerability-validation` respectively; `Workflow/Delivery.md` defines evidence and authorization boundaries |
-| E2E or browser testing | `playwright-cli` |
+| Writing code that crosses a trust boundary | `security-and-hardening` |
+| Review a security-sensitive diff; build a threat model; validate a finding; broader security review | `commit-security-scan`; `threat-model-generation`; `vulnerability-validation`; `security-review` respectively; `Workflow/Delivery.md` defines evidence and authorization boundaries |
+| Verify UI or debug in a real browser | `browser-testing-with-devtools` when the Chrome DevTools MCP server is connected; `playwright-cli` otherwise |
 | Test-first loop on new behavior | `tdd` |
 | Stack-specific work | matching file under `STANDARDS/Stack/` |
 | React effects, TypeScript assertion rules, or unused exports reported by Knip | `no-use-effect`, `ban-type-assertions`, or `fix-knip-unused-exports` for the specific change; `Stack/TypeScript.md` |
 | Postgres schema, queries, migrations | `supabase-postgres-best-practices` |
-| FastAPI / Python API work | `fastapi` |
 | Go | `golang-code-style`, `golang-error-handling` |
 | Backend on Railway | `use-railway` |
 | Vercel cost or perf | `vercel-optimize` |
 | Mobile (Expo / React Native) | `expo-native-ui`, `expo-router`; ship via `eas-workflows`, `eas-app-stores` |
 | LLM features | `ai-sdk` (TS), `claude-api` (Anthropic specifics) |
-| Implement a responsive UI; choose an art direction | `frontend-design`; `design-taste-frontend` for direction and `high-end-visual-design` for premium surfaces; preserve the existing stack |
-| Figma design → code | `figma:figma-design-to-code`; `extract-design-system` to formalize tokens first |
+| Build product UI | Kernel Design authority first; `frontend-ui-engineering` for structure, states, accessibility, and responsiveness |
+| Art direction for a surface with no product design, such as a one-off tool or artifact | `frontend-design`; `design-taste-frontend` for direction and `high-end-visual-design` for premium surfaces; preserve the existing stack |
+| Figma design → code | `figma:figma-design-to-code`; `design-system` to formalize tokens first |
 | Code or description → Figma | `figma:figma-generate-design` (screens), `figma:figma-generate-library` (design system); `figma:figma-use` before any `use_figma` call |
 | UI polish and motion | `emil-design-eng`, `apple-design`, `web-design-guidelines` |
 | Animation work | `improve-animations` to plan, `review-animations` to review, `animation-vocabulary` to name the effect |
-| Marketing copy, GTM, pricing | `product-marketing` context first, then `copywriting` / `positioning` / `pricing` |
+| Marketing copy, positioning, pricing | `draft-content` for copy; `competitive-brief` for positioning; `pricing` |
 | Product architecture | `Product/Architecture.md` |
 | Office file in or out | `docx`, `pptx`, `xlsx` |
 | Images, diagrams, or presentations | `visual-design` and only its matching reference; existing image and presentation workflows own delivery |
@@ -78,7 +83,7 @@ The kernel's Engineering skills section owns the mandatory engineering triggers,
 | Automate a terminal, browser, or desktop; record a demo | `droid-control` is the entry point; select background skills from the map below |
 | Steps only a human can take: credentials, CI secrets, dashboards, cutovers | `wizard` |
 | Inspect HTTP traffic from a CLI or service | `http-toolkit-intercept`; scope capture to the requested process and protect credentials in captured traffic |
-| Can't find the right skill | `find-skills` |
+| Can't find the right skill | `rg --files ~/.agents/skills -g SKILL.md`, then search task terms in the matching files |
 
 ## Droid control background skills
 
@@ -88,8 +93,8 @@ The copied skill folders contain instructions and selected references. Droid con
 
 | Need | Background skill |
 | ---- | ---- |
-| Virtual terminal; real terminal input; raw key sequences | `tuistory`; `true-input`; `pty-capture` respectively |
-| Web or Electron app; native desktop app | `agent-browser`; `desktop-control` respectively |
+| Real terminal input; raw key sequences | `true-input`; `pty-capture` respectively |
+| Web or Electron app | `playwright-cli` |
 | Droid CLI controls | `droid-cli` |
 | Recording; video assembly; visual polish | `capture`; `compose`; `showcase` respectively; use the existing project stack and authorized output scope |
 | Verify promised deliverables | `verify` |
