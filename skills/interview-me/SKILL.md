@@ -1,6 +1,6 @@
 ---
 name: interview-me
-description: Extracts what the user actually wants instead of what they think they should want. Achieves this through one-question-at-a-time interview until ~95% confidence about the underlying intent. Use when an ask is underspecified ("build me X" without "for whom" or "why now"), when the user explicitly invokes ("interview me", "grill me", "are we sure?", "stress-test my thinking"), or when you catch yourself silently filling in ambiguous requirements before any plan, spec, or code exists.
+description: Extracts what the user actually wants instead of what they think they should want. Achieves this through one-question-at-a-time interview until ~95% confidence about the underlying intent. Use when an ask is underspecified ("build me X" without "for whom" or "why now"), when the user explicitly invokes ("interview me", "are we sure?", "what do I actually want?"), or when you catch yourself silently filling in ambiguous requirements before any plan, spec, or code exists.
 ---
 
 # Interview Me
@@ -11,7 +11,7 @@ What people ask for and what they actually want are different things. They ask f
 
 The cheapest moment to find this gap is before any plan, spec, or code exists. Once you've started building, switching costs are real, and the user will rationalize the wrong thing into a "good enough" thing. The misfit gets locked in.
 
-This skill closes the gap before it costs anything. The other Define-phase skills assume you already know roughly what you want: `idea-refine` generates variations from an idea, `spec-driven-development` writes the requirements down, `doubt-driven-development` stress-tests a plan after you've drafted one. Interview-me is the part before all of those, where you ask one question at a time, with your best guess attached, until you can predict what the user is going to say before they say it.
+This skill closes the gap before it costs anything. The other Define-phase skills assume you already know roughly what you want: `idea-refine` generates variations from an idea, `to-spec` writes the requirements down, `doubt-driven-development` stress-tests a plan after you've drafted one. Interview-me is the part before all of those, where you ask one question at a time, with your best guess attached, until you can predict what the user is going to say before they say it.
 
 ## When to Use
 
@@ -21,7 +21,7 @@ Apply this skill when:
 - The request is conventional rather than specific ("build me X", "make it faster") and you can't unpack the convention without guessing
 - You're tempted to start with assumptions you haven't surfaced
 - The user hasn't said which value they're optimizing for when two reasonable ones are in tension (simplicity vs. flexibility, cost vs. speed)
-- The user explicitly invokes: "interview me", "grill me", "before we start, are we sure?", "stress-test my thinking"
+- The user explicitly invokes: "interview me", "before we start, are we sure?", "what do I actually want?" (stress-testing a plan that already exists belongs to `grilling`)
 
 **When NOT to use:**
 
@@ -126,8 +126,8 @@ If they correct you, fold the correction in and restate. Loop until you get an e
 When the user confirms the statement of intent with an explicit "yes":
 
 1. **Deliver the confirmed Statement of Intent.**
-2. **Offer downstream paths** (offer to save it to `docs/intent/[topic].md`, draft a spec with `spec-driven-development`, or move to task planning after the spec).
-3. **STOP YOUR TURN IMMEDIATELY.** Do NOT invoke tools or start downstream work in this turn. Hand control back to the user to choose the next step.
+2. **Offer downstream paths** (offer to save it to `docs/intent/[topic].md`, draft a spec with `to-spec`, or move to task planning after the spec).
+3. **Stop or continue by scope.** When the interview was the request, stop the turn here and let the user choose the next step. When the interview ran inside a task the user already authorized, continue that task with the confirmed intent.
 
 ### The 95% Confidence Stop
 
@@ -188,10 +188,10 @@ Two questions in, the agent has discovered the actual ask isn't "a dashboard." I
 ## Interaction with Other Skills
 
 - **`idea-refine`**: downstream. If the confirmed intent is "I want X but I don't know how to scope it," hand off to `idea-refine` to generate variations against the now-explicit intent.
-- **`spec-driven-development`**: downstream. If the confirmed intent is concrete ("I want X for Y users with Z success criteria"), hand off to `spec-driven-development` to write it down.
-- **`planning-and-task-breakdown`**: two hops downstream of this skill (after the spec).
+- **`to-spec`**: downstream. If the confirmed intent is concrete ("I want X for Y users with Z success criteria"), hand off to `to-spec` to write it down.
+- **`to-tickets`**: two hops downstream of this skill (after the spec).
 - **`doubt-driven-development`**: opposite end of the timeline. Interview-me is pre-decision intent extraction; doubt-driven is post-decision artifact review. Both catch divergence, but at different moments.
-- **`source-driven-development`**: orthogonal. Interview-me clarifies what the user wants; SDD verifies framework facts. They don't compete.
+- **`research`**: orthogonal. Interview-me clarifies what the user wants; research verifies facts against primary sources. They don't compete.
 
 ## Common Rationalizations
 
@@ -212,7 +212,7 @@ Two questions in, the agent has discovered the actual ask isn't "a dashboard." I
 - A question without your hypothesis attached: that's surveying, not committing
 - Accepting "whatever you think is best" as a terminal answer
 - Producing a spec, plan, or task list before the user has explicitly confirmed your restate
-- Invoking tools or starting downstream work immediately upon intent confirmation instead of stopping the turn
+- Starting downstream work after confirmation when the interview itself was the whole request
 - Questions framed as "what would be best practice?" instead of "what do you actually want?"
 - The user gives a sophistication-signaling answer ("scalable", "clean", "modern") and you accept it without probing whether it's what they actually want
 - Three or more rounds without your confidence visibly rising: you're asking the wrong questions, step back and reframe
@@ -231,5 +231,5 @@ After applying interview-me:
 - [ ] A concrete restate (Outcome / User / Why now / Success / Constraint / Out of scope) was written back to the user
 - [ ] The user confirmed the restate with an explicit yes (not "whatever you think," not "sounds good," not silence)
 - [ ] At the stop point, the agent could predict reactions to the next three questions it would ask
-- [ ] Upon receiving explicit confirmation, stopped the turn immediately without invoking tools or starting downstream work
-- [ ] Any handoff to a downstream skill (`idea-refine`, `spec-driven-development`) was framed in terms of the confirmed intent, not the original underspecified ask
+- [ ] Upon explicit confirmation, stopped the turn when the interview was the request, or continued the already-authorized task with the confirmed intent
+- [ ] Any handoff to a downstream skill (`idea-refine`, `to-spec`) was framed in terms of the confirmed intent, not the original underspecified ask

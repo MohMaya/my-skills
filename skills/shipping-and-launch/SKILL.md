@@ -278,10 +278,10 @@ Every deployment needs a rollback plan before it happens:
 ```
 ## See Also
 
-- For the project-wide Definition of Done that every change must clear before this checklist, see `../../references/definition-of-done.md`
-- For security pre-launch checks, see `../../references/security-checklist.md`
-- For performance pre-launch checklist, see `../../references/performance-checklist.md`
-- For accessibility verification before launch, see `../../references/accessibility-checklist.md`
+- For the completion bar every change clears before this checklist, see `~/.agents/STANDARDS/Core/Execution.md`
+- For security pre-launch checks, see `~/.agents/references/security-checklist.md`
+- For performance pre-launch checklist, see `~/.agents/references/performance-checklist.md`
+- For accessibility verification before launch, see `~/.agents/references/accessibility-checklist.md`
 - For the alerting rules and SLO-tied thresholds, see `observability-and-instrumentation`
 
 ## Common Rationalizations
