@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 # Idempotent sync from the canonical ~/.agents tree to each harness.
-# Safe to re-run: only touches symlinks this script owns and the generated
-# harness rules, Gemini CLI kernel import, and mandate mirror. Never touches non-symlink skill entries (native dirs,
-# vendor skills) or ~/.agents/AGENTS.md, STANDARDS/, skills/ themselves.
+# Safe to re-run: only touches symlinks this script owns, the generated
+# harness rules, Gemini CLI kernel import, mandate mirrors, and the stop-gate
+# entry in Claude and Codex hook settings. Never touches non-symlink skill
+# entries (native dirs, vendor skills), other hooks, or ~/.agents/AGENTS.md,
+# STANDARDS/, skills/ themselves.
 
 set -euo pipefail
 
@@ -70,13 +72,46 @@ sync_rules() {
 
 # Keep injected mandates derived from the kernel, including its prose policy.
 sync_mandates() {
-  local dest="$HOME/.claude/hooks/mandates.md"
-  mkdir -p "$(dirname "$dest")"
-  {
-    printf 'MANDATES ACTIVE (generated from ~/.agents/AGENTS.md):\n\n'
-    awk '/^## /{copy=($0 ~ /^## (Scope and completion|Engineering judgment|Engineering skills|Design authority|Voice)$/)} copy{print}' "$AGENTS_DIR/AGENTS.md"
-  } > "$dest"
-  echo "$dest: regenerated"
+  local dest
+  for dest in "$HOME/.claude/hooks/mandates.md" "$HOME/.codex/hooks/mandates.md"; do
+    mkdir -p "$(dirname "$dest")"
+    {
+      printf 'MANDATES ACTIVE (generated from ~/.agents/AGENTS.md):\n\n'
+      awk '/^## /{copy=($0 ~ /^## (Scope and completion|Engineering judgment|Engineering skills|Design authority|Voice)$/)} copy{print}' "$AGENTS_DIR/AGENTS.md"
+    } > "$dest"
+    echo "$dest: regenerated"
+  done
+}
+
+# Link the turn-end lint and type gate into a harness and register it as a
+# Stop hook. Merge-only: the settings file is rewritten only when the entry
+# is missing, and other hooks stay as they are. Codex asks to trust a new
+# hook on its next run.
+sync_stop_gate() {
+  local harness_dir="$1" settings="$2" link="$1/hooks/stop-gate.py"
+  mkdir -p "$harness_dir/hooks"
+  ln -sfn "$AGENTS_DIR/hooks/stop-gate.py" "$link"
+  python3 - "$settings" "python3 $link" <<'PY'
+import json
+import pathlib
+import sys
+
+path, command = pathlib.Path(sys.argv[1]), sys.argv[2]
+data = json.loads(path.read_text()) if path.exists() else {}
+stop = data.setdefault("hooks", {}).setdefault("Stop", [])
+if any(h.get("command") == command for group in stop for h in group.get("hooks", [])):
+    print(f"{path}: stop gate present")
+else:
+    stop.append({"hooks": [{"type": "command", "command": command, "timeout": 600}]})
+    path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n")
+    print(f"{path}: stop gate registered")
+PY
+}
+
+sync_hooks() {
+  sync_mandates
+  sync_stop_gate "$HOME/.claude" "$HOME/.claude/settings.json"
+  sync_stop_gate "$HOME/.codex" "$HOME/.codex/hooks.json"
 }
 
 # Antigravity loads skills from paths declared in the global skills.json,
@@ -95,7 +130,7 @@ main() {
     --codex-claude)
       sync_skills "$HOME/.claude/skills" relative
       sync_skills "$HOME/.codex/skills" relative
-      sync_mandates
+      sync_hooks
       return
       ;;
     --rules-only) do_skills=0 ;;
@@ -124,7 +159,7 @@ description: Global engineering kernel
   fi
   echo "$gemini_context: kernel import present"
 
-  sync_mandates
+  sync_hooks
 }
 
 main "$@"
