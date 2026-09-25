@@ -1059,7 +1059,7 @@
       "skillPath": "skills/react-best-practices/SKILL.md",
       "skillFolderHash": "343db72180d05814949fef7d46be96b5c6ee86b3",
       "installedAt": "2026-05-03T16:53:07.866Z",
-      "updatedAt": "2026-08-18T18:53:25.600Z"
+      "updatedAt": "2026-09-25T22:39:13.522Z"
     },
     "vercel-react-native-skills": {
       "source": "vercel-labs/agent-skills",
@@ -1068,7 +1068,7 @@
       "skillPath": "skills/react-native-skills/SKILL.md",
       "skillFolderHash": "8b4c6a51914e2111ab6f4f00cb81778652aa241d",
       "installedAt": "2026-05-03T17:09:20.766Z",
-      "updatedAt": "2026-08-18T18:53:25.600Z"
+      "updatedAt": "2026-09-25T22:39:13.528Z"
     },
     "vite": {
       "source": "antfu/skills",
@@ -1169,7 +1169,7 @@
       "skillPath": "skills/web-design-guidelines/SKILL.md",
       "skillFolderHash": "3116f3e62dbd02b44a598b1aa690d2a8938e8f89",
       "installedAt": "2026-05-03T17:11:08.533Z",
-      "updatedAt": "2026-08-18T18:53:25.601Z"
+      "updatedAt": "2026-09-25T22:39:13.544Z"
     },
     "webapp-testing": {
       "source": "anthropics/skills",
@@ -1410,7 +1410,7 @@
       "skillPath": "skills/vercel-optimize/SKILL.md",
       "skillFolderHash": "0901aa3667db7a6e5cc40b213327290bf6556373",
       "installedAt": "2026-07-20T12:29:18.600Z",
-      "updatedAt": "2026-08-18T18:53:25.599Z"
+      "updatedAt": "2026-09-25T22:39:13.540Z"
     },
     "writing-guidelines": {
       "source": "vercel-labs/agent-skills",
@@ -1419,7 +1419,7 @@
       "skillPath": "skills/writing-guidelines/SKILL.md",
       "skillFolderHash": "17d954cadfb8dec50bf0c707c9e7634be9ae9fe8",
       "installedAt": "2026-07-20T12:29:22.589Z",
-      "updatedAt": "2026-08-18T18:53:25.601Z"
+      "updatedAt": "2026-09-25T22:39:13.548Z"
     },
     "supabase-postgres-best-practices": {
       "source": "supabase/agent-skills",
@@ -1592,17 +1592,16 @@
       "skillPath": "skills/composition-patterns/SKILL.md",
       "skillFolderHash": "bf90d0a4b83ea054653350f9c67f6de235d3a368",
       "installedAt": "2026-07-20T12:31:18.771Z",
-      "updatedAt": "2026-08-18T18:53:25.598Z"
+      "updatedAt": "2026-09-25T22:39:13.511Z"
     },
     "vercel-react-view-transitions": {
-      "source": "skills.sh",
-      "sourceType": "well-known",
-      "sourceUrl": "https://skills.sh/p/YOo9PeWFib3SzLzu/.well-known/skills/vercel-react-view-transitions/SKILL.md",
-      "skillFolderHash": "",
-      "sourceBaseUrl": "https://skills.sh/p/YOo9PeWFib3SzLzu",
-      "wellKnownDigest": "sha256:30d576c5081d5131621ee5239cc1adec3a8683a0d31c539335eb10d52058919b",
+      "source": "vercel-labs/agent-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/vercel-labs/agent-skills.git",
+      "skillPath": "skills/react-view-transitions/SKILL.md",
+      "skillFolderHash": "13063dbbfc1b085cbc11b9bd5d4324aa2f41bb3a",
       "installedAt": "2026-07-20T12:31:20.452Z",
-      "updatedAt": "2026-08-11T16:31:56.296Z"
+      "updatedAt": "2026-09-25T22:39:13.533Z"
     },
     "shiv-code-gate": {
       "source": "skills.sh",
@@ -4040,6 +4039,96 @@
       "skillFolderHash": "48677fb7727e6cdb9be1713ace4837aaaa37aed9",
       "installedAt": "2026-09-25T03:21:59.177Z",
       "updatedAt": "2026-09-25T03:21:59.177Z"
+    },
+    "py-code-health": {
+      "source": "l-mb/python-refactoring-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/l-mb/python-refactoring-skills.git",
+      "skillPath": "skills/py-code-health/SKILL.md",
+      "skillFolderHash": "078b6b4f38c2f3412e8b0c12e95aa4c24ecf822c",
+      "installedAt": "2026-09-25T22:39:09.159Z",
+      "updatedAt": "2026-09-25T22:39:09.159Z"
+    },
+    "py-complexity": {
+      "source": "l-mb/python-refactoring-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/l-mb/python-refactoring-skills.git",
+      "skillPath": "skills/py-complexity/SKILL.md",
+      "skillFolderHash": "4342e2f44a86e71c6a7ffac046e0bf35add064a7",
+      "installedAt": "2026-09-25T22:39:09.163Z",
+      "updatedAt": "2026-09-25T22:39:09.163Z"
+    },
+    "py-git-hooks": {
+      "source": "l-mb/python-refactoring-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/l-mb/python-refactoring-skills.git",
+      "skillPath": "skills/py-git-hooks/SKILL.md",
+      "skillFolderHash": "a50a751b9497da75e1459005917b0688275de1ec",
+      "installedAt": "2026-09-25T22:39:09.168Z",
+      "updatedAt": "2026-09-25T22:39:09.168Z"
+    },
+    "py-modernize": {
+      "source": "l-mb/python-refactoring-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/l-mb/python-refactoring-skills.git",
+      "skillPath": "skills/py-modernize/SKILL.md",
+      "skillFolderHash": "a6c6c1ab840f43caeaab2b13b115a88554bf1203",
+      "installedAt": "2026-09-25T22:39:09.172Z",
+      "updatedAt": "2026-09-25T22:39:09.172Z"
+    },
+    "py-quality-setup": {
+      "source": "l-mb/python-refactoring-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/l-mb/python-refactoring-skills.git",
+      "skillPath": "skills/py-quality-setup/SKILL.md",
+      "skillFolderHash": "0eec68eb03b801c42de037f3ffed17df6608d5b8",
+      "installedAt": "2026-09-25T22:39:09.175Z",
+      "updatedAt": "2026-09-25T22:39:09.175Z"
+    },
+    "py-refactor": {
+      "source": "l-mb/python-refactoring-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/l-mb/python-refactoring-skills.git",
+      "skillPath": "skills/py-refactor/SKILL.md",
+      "skillFolderHash": "cfa610c1ba878dc3be78c4743e1f5c4321172538",
+      "installedAt": "2026-09-25T22:39:09.180Z",
+      "updatedAt": "2026-09-25T22:39:09.180Z"
+    },
+    "py-security": {
+      "source": "l-mb/python-refactoring-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/l-mb/python-refactoring-skills.git",
+      "skillPath": "skills/py-security/SKILL.md",
+      "skillFolderHash": "fe75d1af36b2d0e2e510d0d303dde69520ee44a8",
+      "installedAt": "2026-09-25T22:39:09.184Z",
+      "updatedAt": "2026-09-25T22:39:09.184Z"
+    },
+    "py-test-quality": {
+      "source": "l-mb/python-refactoring-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/l-mb/python-refactoring-skills.git",
+      "skillPath": "skills/py-test-quality/SKILL.md",
+      "skillFolderHash": "60bbbb17d5f6fd7ed61e1639c1e551ee4ef6e4ff",
+      "installedAt": "2026-09-25T22:39:09.188Z",
+      "updatedAt": "2026-09-25T22:39:09.188Z"
+    },
+    "deploy-to-vercel": {
+      "source": "vercel-labs/agent-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/vercel-labs/agent-skills.git",
+      "skillPath": "skills/deploy-to-vercel/SKILL.md",
+      "skillFolderHash": "1378aa506439f26c809dbcfc61515cbd70f93d69",
+      "installedAt": "2026-09-25T22:39:13.520Z",
+      "updatedAt": "2026-09-25T22:39:13.520Z"
+    },
+    "vercel-cli-with-tokens": {
+      "source": "vercel-labs/agent-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/vercel-labs/agent-skills.git",
+      "skillPath": "skills/vercel-cli-with-tokens/SKILL.md",
+      "skillFolderHash": "279c8760375cb6a47a4a8a312b652b0745c6d776",
+      "installedAt": "2026-09-25T22:39:13.535Z",
+      "updatedAt": "2026-09-25T22:39:13.535Z"
     }
   },
   "dismissed": {
