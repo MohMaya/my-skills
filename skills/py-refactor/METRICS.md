@@ -55,21 +55,6 @@ Quality targets and tool guidance for Python refactoring.
 | **basedpyright** | Enhanced type analysis | Stricter checking |
 | **ruff** | Fast linting with auto-fix | Code style enforcement |
 
-## Engineering Charter Alignment
-
-These skills implement Engineering Charter principles:
-
-| Charter Principle | Skill Implementation |
-|-------------------|---------------------|
-| Maintainable, idiomatic code | py-complexity, py-code-health |
-| Self-documenting code | py-complexity (reduce need for comments) |
-| Update callers, no shims | py-modernize (direct upgrades) |
-| Consolidate similar code | py-code-health (deduplication) |
-| Never commit secrets | py-security, py-git-hooks |
-| Run linters incrementally | py-quality-setup, py-git-hooks |
-| Code must pass ruff, mypy, basedpyright | py-quality-setup |
-| Pre-commit hooks for linting | py-git-hooks |
-
 ## Validation Commands
 
 Quick validation suite after refactoring:

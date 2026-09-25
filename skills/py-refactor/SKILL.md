@@ -8,6 +8,8 @@ status: stable
 
 Comprehensive refactoring workflow coordinating specialized skills to improve Python code quality.
 
+Use it for an explicit request to refactor or clean up a Python codebase. The kernel's owners still apply inside each phase: `code-simplification` for behavior-preserving restructuring, `tdd` for new tests, `shiv-code-gate` before each commit. Commit each phase separately.
+
 ## Overview
 
 This skill orchestrates multiple focused skills to perform systematic refactoring:
@@ -38,14 +40,11 @@ Follow this impact-based prioritization:
 ```
 1. If quality tools not configured (pyproject.toml):
    → Invoke: py-quality-setup
-   (also configures .claude/settings.local.json permissions for all tools)
 
-2. Add analysis tools to [dependency-groups] dev in pyproject.toml:
-   "radon", "vulture", "pylint", "bandit", "lizard",
-   "pytest-cov", "mutmut", "wily", "ruff", "mypy", "basedpyright"
+2. Run analyzers without changing dependencies: prefix each scanner below
+   with `uv run --with <tool>` unless the project already installs it.
 
-3. Install and activate:
-   uv sync && source .venv/bin/activate
+3. Keep reports/ out of the commit.
 ```
 
 ### Phase 2: Comprehensive Analysis
@@ -162,4 +161,4 @@ Don't use orchestrated refactoring when:
 ## Additional Resources
 
 - **WORKFLOWS.md**: Quick workflows for specific scenarios (security sweep, complexity sprint, legacy modernization)
-- **METRICS.md**: Success metrics, tool reference, Engineering Charter alignment
+- **METRICS.md**: Success metrics and tool reference

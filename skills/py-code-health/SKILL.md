@@ -18,12 +18,10 @@ Remove dead code and consolidate duplication to keep codebase clean and maintain
 
 ## Required Tools
 
-**Add to `[dependency-groups]` dev**: `"vulture"`, `"pylint"`
+**Run without adding dependencies**: `uv run --with vulture --with pylint <command>`. Add them to `[dependency-groups] dev` only when the project adopts them as a standing gate.
 
 - **vulture**: AST-based dead code detection
 - **pylint**: Duplicate code detection
-
-**Permissions**: Run py-quality-setup first to configure `.claude/settings.local.json` with all needed tool permissions.
 
 ## Dead Code Detection
 
@@ -89,6 +87,7 @@ def public_function():
 - Add to whitelist file: `vulture . whitelist.py`
 - Add comment: `# pragma: no cover` or custom marker
 - Accept false positives for public APIs
+- Retire public API through `deprecation-and-migration`, not by deletion
 
 4. Code that *should* be used, but isn't:
 

@@ -6,7 +6,7 @@ status: stable
 
 # Python Security Analysis and Remediation
 
-Find and fix security vulnerabilities in Python code following Engineering Charter security principles.
+Find and fix security vulnerabilities in Python code. This is the Python scanner adapter for `security-and-hardening`, which owns trust boundaries and threat review.
 
 ## Objectives
 
@@ -19,12 +19,10 @@ Find and fix security vulnerabilities in Python code following Engineering Chart
 
 ## Required Tools
 
-**Add to `[dependency-groups]` dev**: `"bandit"`, `"ruff"`
+**Run without adding dependencies**: `uv run --with bandit <command>`. Add them to `[dependency-groups] dev` only when the project adopts them as a standing gate. Ruff's `S` rules need no extra install where ruff is already configured.
 
 - **bandit**: AST-based security scanner
 - **ruff --select S**: Built-in Bandit rules (faster alternative)
-
-**Permissions**: Run py-quality-setup first to configure `.claude/settings.local.json` with all needed tool permissions.
 
 ## Discovery Phase
 
@@ -182,21 +180,19 @@ with open(filename) as f:
 
 ## Git Hooks Integration
 
-Add secret detection to git hooks (complement to py-git-hooks):
+Add scanning to the `.pre-commit-config.yaml` from `py-git-hooks`. Pin `rev` with `pre-commit autoupdate`:
 
-```bash
-# In .git/hooks/pre-commit, add before other checks:
+```yaml
+  - repo: https://github.com/PyCQA/bandit
+    rev: <pinned by autoupdate>
+    hooks:
+      - id: bandit
+        args: [-ll]
 
-# Detect potential secrets
-if git diff --cached | grep -qiE '(password|secret|api[_-]?key|token|credentials)'; then
-    echo "⚠️  Warning: Potential secrets detected in staged changes"
-    echo "Review carefully before committing"
-    read -p "Continue? (y/n) " -n 1 -r
-    echo
-    if [[ ! $REPLY =~ ^[Yy]$ ]]; then
-        exit 1
-    fi
-fi
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: <pinned by autoupdate>
+    hooks:
+      - id: gitleaks
 ```
 
 ## Verification Checklist

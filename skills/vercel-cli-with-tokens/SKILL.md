@@ -1,6 +1,6 @@
 ---
 name: vercel-cli-with-tokens
-description: Deploy and manage projects on Vercel using token-based authentication. Use when working with Vercel CLI using access tokens rather than interactive login — e.g. "deploy to vercel", "set up vercel", "add environment variables to vercel".
+description: Manage Vercel projects with a VERCEL_TOKEN instead of `vercel login`, covering token deploys, environment variables, domains, and deployment logs. Use when a token is how the CLI authenticates, or to set up Vercel env vars or domains. For an ordinary deploy request, use deploy-to-vercel.
 metadata:
   author: vercel
   version: "1.0.0"
@@ -12,20 +12,20 @@ Deploy and manage projects on Vercel using the CLI with token-based authenticati
 
 ## Step 1: Locate the Vercel Token
 
-Before running any Vercel CLI commands, identify where the token is coming from. Work through these scenarios in order:
+Before running any Vercel CLI commands, identify where the token is coming from. Check for names and presence only; keep token values out of command output, logs, and chat. Work through these scenarios in order:
 
 ### A) `VERCEL_TOKEN` is already set in the environment
 
 ```bash
-printenv VERCEL_TOKEN
+[ -n "${VERCEL_TOKEN:-}" ] && echo "VERCEL_TOKEN is set"
 ```
 
-If this returns a value, you're ready. Skip to Step 2.
+If it prints the line, you're ready. Skip to Step 2.
 
 ### B) Token is in a `.env` file under `VERCEL_TOKEN`
 
 ```bash
-grep '^VERCEL_TOKEN=' .env 2>/dev/null
+grep -q '^VERCEL_TOKEN=' .env 2>/dev/null && echo "found in .env"
 ```
 
 If found, export it:
@@ -39,10 +39,10 @@ export VERCEL_TOKEN=$(grep '^VERCEL_TOKEN=' .env | cut -d= -f2-)
 Look for any variable that looks like a Vercel token (Vercel tokens typically start with `vca_`):
 
 ```bash
-grep -i 'vercel' .env 2>/dev/null
+grep -io '^[A-Z0-9_]*vercel[A-Z0-9_]*=' .env 2>/dev/null
 ```
 
-Inspect the output to identify which variable holds the token, then export it as `VERCEL_TOKEN`:
+This prints variable names only. Identify which one holds the token, then export it as `VERCEL_TOKEN`:
 
 ```bash
 export VERCEL_TOKEN=$(grep '^<VARIABLE_NAME>=' .env | cut -d= -f2-)
