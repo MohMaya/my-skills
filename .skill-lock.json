@@ -57,15 +57,6 @@
       "installedAt": "2026-07-10T03:15:24.843Z",
       "updatedAt": "2026-09-04T19:16:57.477Z"
     },
-    "brainstorming": {
-      "source": "obra/superpowers",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/obra/superpowers.git",
-      "skillPath": "skills/brainstorming/SKILL.md",
-      "skillFolderHash": "03d4c6657cd20ba0fce9d270fc688150bd191c3b",
-      "installedAt": "2026-05-03T16:57:03.760Z",
-      "updatedAt": "2026-09-23T15:14:06.179Z"
-    },
     "brand-guidelines": {
       "source": "anthropics/skills",
       "sourceType": "github",
@@ -130,15 +121,6 @@
       "skillFolderHash": "bdd77c638c62cdcfbac5032f05d778d513e33b99",
       "installedAt": "2026-05-03T16:57:25.010Z",
       "updatedAt": "2026-09-24T17:24:12.006Z"
-    },
-    "code-review": {
-      "source": "factory-ai/skills",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/factory-ai/skills.git",
-      "skillPath": "skills/code-review/SKILL.md",
-      "skillFolderHash": "f0e17bd370c5885221158060fd7a18b7395bdd0c",
-      "installedAt": "2026-05-03T17:02:10.172Z",
-      "updatedAt": "2026-09-10T13:44:16.519Z"
     },
     "codebase-design": {
       "source": "mattpocock/skills",
@@ -1863,51 +1845,6 @@
       "installedAt": "2026-08-18T18:54:02.330Z",
       "updatedAt": "2026-09-23T15:14:34.449Z"
     },
-    "investigate-first": {
-      "source": "juliusbrussee/caveman",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/juliusbrussee/caveman.git",
-      "skillPath": "skills/investigate-first/SKILL.md",
-      "skillFolderHash": "c20174862b4748fc26ce55192a8431e9ef662947",
-      "installedAt": "2026-08-18T18:54:02.332Z",
-      "updatedAt": "2026-08-18T18:54:02.332Z"
-    },
-    "lean-build": {
-      "source": "juliusbrussee/caveman",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/juliusbrussee/caveman.git",
-      "skillPath": "skills/lean-build/SKILL.md",
-      "skillFolderHash": "47bc09c3509d7f58f0f890836ab7f382987fd487",
-      "installedAt": "2026-08-18T18:54:02.333Z",
-      "updatedAt": "2026-08-18T18:54:02.333Z"
-    },
-    "migration": {
-      "source": "juliusbrussee/caveman",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/juliusbrussee/caveman.git",
-      "skillPath": "skills/migration/SKILL.md",
-      "skillFolderHash": "b1066e51b4e7cb9a943554a98c3810653ccff059",
-      "installedAt": "2026-08-18T18:54:02.333Z",
-      "updatedAt": "2026-08-18T18:54:02.333Z"
-    },
-    "safe-refactor": {
-      "source": "juliusbrussee/caveman",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/juliusbrussee/caveman.git",
-      "skillPath": "skills/safe-refactor/SKILL.md",
-      "skillFolderHash": "49fd11fcfa4fd63ab175380ed8f80b992090e5e4",
-      "installedAt": "2026-08-18T18:54:02.334Z",
-      "updatedAt": "2026-08-18T18:54:02.334Z"
-    },
-    "surgical-patch": {
-      "source": "juliusbrussee/caveman",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/juliusbrussee/caveman.git",
-      "skillPath": "skills/surgical-patch/SKILL.md",
-      "skillFolderHash": "f7316a9431eff84811b6fd100af70e6984751c91",
-      "installedAt": "2026-08-18T18:54:02.335Z",
-      "updatedAt": "2026-08-18T18:54:02.335Z"
-    },
     "verify-and-stop": {
       "source": "juliusbrussee/caveman",
       "sourceType": "github",
@@ -2859,15 +2796,6 @@
       "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
       "skillPath": "partner-built/zoom-plugin/skills/debug-zoom-integration/SKILL.md",
       "skillFolderHash": "f18e7b0c9a5ea2b20b527a5ea58ee1cd5d1ac45f",
-      "installedAt": "2026-09-09T16:52:37.521Z",
-      "updatedAt": "2026-09-09T16:52:37.521Z"
-    },
-    "deploy-checklist": {
-      "source": "anthropics/knowledge-work-plugins",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
-      "skillPath": "engineering/skills/deploy-checklist/SKILL.md",
-      "skillFolderHash": "fa2f425b6589365744fe07e87d9ece3573440c7e",
       "installedAt": "2026-09-09T16:52:37.521Z",
       "updatedAt": "2026-09-09T16:52:37.521Z"
     },
@@ -4032,24 +3960,6 @@
       "installedAt": "2026-09-25T03:21:59.162Z",
       "updatedAt": "2026-09-25T03:21:59.162Z"
     },
-    "context-engineering": {
-      "source": "addyosmani/agent-skills",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/addyosmani/agent-skills.git",
-      "skillPath": "skills/context-engineering/SKILL.md",
-      "skillFolderHash": "5da63415256218e76f85e7e371bb21ceef4293e1",
-      "installedAt": "2026-09-25T03:21:59.164Z",
-      "updatedAt": "2026-09-25T03:21:59.164Z"
-    },
-    "debugging-and-error-recovery": {
-      "source": "addyosmani/agent-skills",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/addyosmani/agent-skills.git",
-      "skillPath": "skills/debugging-and-error-recovery/SKILL.md",
-      "skillFolderHash": "c3b5c340bae3ac952733213b40035820acfb48a3",
-      "installedAt": "2026-09-25T03:21:59.165Z",
-      "updatedAt": "2026-09-25T03:21:59.165Z"
-    },
     "deprecation-and-migration": {
       "source": "addyosmani/agent-skills",
       "sourceType": "github",
@@ -4058,15 +3968,6 @@
       "skillFolderHash": "452a130309afc52a26beceb21f1467936e53a37c",
       "installedAt": "2026-09-25T03:21:59.166Z",
       "updatedAt": "2026-09-25T03:21:59.166Z"
-    },
-    "documentation-and-adrs": {
-      "source": "addyosmani/agent-skills",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/addyosmani/agent-skills.git",
-      "skillPath": "skills/documentation-and-adrs/SKILL.md",
-      "skillFolderHash": "eeff83d93dd39454d0b9d193ba3ea5c85f681530",
-      "installedAt": "2026-09-25T03:21:59.167Z",
-      "updatedAt": "2026-09-25T03:21:59.167Z"
     },
     "doubt-driven-development": {
       "source": "addyosmani/agent-skills",
@@ -4086,15 +3987,6 @@
       "installedAt": "2026-09-25T03:21:59.169Z",
       "updatedAt": "2026-09-25T03:21:59.169Z"
     },
-    "git-workflow-and-versioning": {
-      "source": "addyosmani/agent-skills",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/addyosmani/agent-skills.git",
-      "skillPath": "skills/git-workflow-and-versioning/SKILL.md",
-      "skillFolderHash": "92d87ae1fe98e6b67403bace2ef01264f9664468",
-      "installedAt": "2026-09-25T03:21:59.170Z",
-      "updatedAt": "2026-09-25T03:21:59.170Z"
-    },
     "idea-refine": {
       "source": "addyosmani/agent-skills",
       "sourceType": "github",
@@ -4103,15 +3995,6 @@
       "skillFolderHash": "14f474d8f51370ddd9127ff3d171810a1acf891a",
       "installedAt": "2026-09-25T03:21:59.171Z",
       "updatedAt": "2026-09-25T03:21:59.171Z"
-    },
-    "incremental-implementation": {
-      "source": "addyosmani/agent-skills",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/addyosmani/agent-skills.git",
-      "skillPath": "skills/incremental-implementation/SKILL.md",
-      "skillFolderHash": "a3e2fab3e3b97e078e2404a505c4b2fa5e123c9b",
-      "installedAt": "2026-09-25T03:21:59.172Z",
-      "updatedAt": "2026-09-25T03:21:59.172Z"
     },
     "interview-me": {
       "source": "addyosmani/agent-skills",
@@ -4140,15 +4023,6 @@
       "installedAt": "2026-09-25T03:21:59.175Z",
       "updatedAt": "2026-09-25T03:21:59.175Z"
     },
-    "planning-and-task-breakdown": {
-      "source": "addyosmani/agent-skills",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/addyosmani/agent-skills.git",
-      "skillPath": "skills/planning-and-task-breakdown/SKILL.md",
-      "skillFolderHash": "3045f95a156dc71d7b5ac1e29ce795bb5cac2b71",
-      "installedAt": "2026-09-25T03:21:59.176Z",
-      "updatedAt": "2026-09-25T03:21:59.176Z"
-    },
     "security-and-hardening": {
       "source": "addyosmani/agent-skills",
       "sourceType": "github",
@@ -4166,42 +4040,6 @@
       "skillFolderHash": "48677fb7727e6cdb9be1713ace4837aaaa37aed9",
       "installedAt": "2026-09-25T03:21:59.177Z",
       "updatedAt": "2026-09-25T03:21:59.177Z"
-    },
-    "source-driven-development": {
-      "source": "addyosmani/agent-skills",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/addyosmani/agent-skills.git",
-      "skillPath": "skills/source-driven-development/SKILL.md",
-      "skillFolderHash": "29e1dcc180d54898aa7c5f4c466864c59ac2ee41",
-      "installedAt": "2026-09-25T03:21:59.178Z",
-      "updatedAt": "2026-09-25T03:21:59.178Z"
-    },
-    "spec-driven-development": {
-      "source": "addyosmani/agent-skills",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/addyosmani/agent-skills.git",
-      "skillPath": "skills/spec-driven-development/SKILL.md",
-      "skillFolderHash": "3c412780068d7faf9f504a9fac10b8137fcd5faa",
-      "installedAt": "2026-09-25T03:21:59.179Z",
-      "updatedAt": "2026-09-25T03:21:59.179Z"
-    },
-    "test-driven-development": {
-      "source": "addyosmani/agent-skills",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/addyosmani/agent-skills.git",
-      "skillPath": "skills/test-driven-development/SKILL.md",
-      "skillFolderHash": "b812b07dc0c5084dbffe58a1cc856de2fdd99116",
-      "installedAt": "2026-09-25T03:21:59.180Z",
-      "updatedAt": "2026-09-25T03:21:59.180Z"
-    },
-    "using-agent-skills": {
-      "source": "addyosmani/agent-skills",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/addyosmani/agent-skills.git",
-      "skillPath": "skills/using-agent-skills/SKILL.md",
-      "skillFolderHash": "81e8196f4dd4bf9fc5f0a1b827f4148af52a4391",
-      "installedAt": "2026-09-25T03:21:59.181Z",
-      "updatedAt": "2026-09-25T03:21:59.181Z"
     }
   },
   "dismissed": {
