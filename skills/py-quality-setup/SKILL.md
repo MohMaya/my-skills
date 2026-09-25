@@ -1,19 +1,19 @@
 ---
 name: py-quality-setup
-description: Configure ruff, mypy, and basedpyright for Python 3.13 projects. Use when setting up linters and type checkers in pyproject.toml and pyrightconfig.json.
+description: Configure ruff, mypy, and basedpyright for Python projects. Use when setting up linters and type checkers in pyproject.toml and pyrightconfig.json.
 status: stable
 ---
 
 # Python Quality Tooling Setup
 
-Configure comprehensive linting and type checking for Python 3.13 projects following Engineering Charter standards.
+Configure comprehensive linting and type checking for Python projects.
 
 ## Objectives
 
 1. Configure ruff for linting and formatting
 2. Configure mypy for strict type checking
 3. Configure basedpyright for additional type analysis
-4. Ensure all tools target Python 3.13 or later
+4. Target the project's existing `requires-python` floor; raise it only when Shiv asks
 5. Add tools to dev dependencies
 
 ## Required Tools
@@ -28,7 +28,7 @@ Configure comprehensive linting and type checking for Python 3.13 projects follo
 
 ### pyproject.toml (Canonical Reference)
 
-This skill provides the **canonical pyproject.toml configuration** for all quality tools. Other skills reference this configuration.
+This skill provides the **canonical pyproject.toml configuration** for all quality tools. Other skills reference this configuration. The 3.13 values are the default for a new project; in an existing project, match `target-version`, `python_version`, and `pythonVersion` to its `requires-python`.
 
 Must include these sections:
 
@@ -161,83 +161,11 @@ A.When using `pyrightconfig.json` for multi-package projects, REMOVE the `tool.b
    basedpyright .
    ```
 
-6. **Configure Claude Code permissions**
+6. **Confirm the turn-end gate**
 
-   Write `.claude/settings.local.json` so all py-* skills can run without permission prompts. If the file already exists, merge new entries into the existing `allow` list without removing user entries.
+   `~/.agents/sync.sh` links `~/.agents/hooks/stop-gate.py` into Claude Code and Codex as a Stop hook. At the end of each turn it runs the ruff, mypy, and basedpyright configured here on changed files, auto-fixes what ruff can, and blocks the turn on remaining errors. Run `bash ~/.agents/sync.sh` if `~/.claude/hooks/stop-gate.py` is missing. Tool permissions stay with the harness's approval policy.
 
-   ```json
-   {
-     "permissions": {
-       "allow": [
-         "Bash(ruff *)",
-         "Bash(mypy *)",
-         "Bash(basedpyright *)",
-         "Bash(pytest *)",
-         "Bash(vulture *)",
-         "Bash(pylint *)",
-         "Bash(radon *)",
-         "Bash(lizard *)",
-         "Bash(wily *)",
-         "Bash(bandit *)",
-         "Bash(mutmut *)",
-         "Bash(pyupgrade *)",
-         "Bash(scc *)",
-         "Bash(pre-commit *)",
-         "Bash(uv *)",
-         "Bash(pip *)",
-         "Bash(python3 *)",
-         "Bash(python *)",
-         "Bash(source *)",
-         "Bash(which *)",
-         "Bash(mkdir *)",
-         "Bash(chmod *)",
-         "Bash(ls *)",
-         "Bash(ln *)",
-         "Bash(git add *)",
-         "Bash(git diff *)",
-         "Bash(git status *)",
-         "Bash(git log *)",
-         "Bash(git ls-files *)",
-         "Bash(git checkout *)",
-         "Bash(git branch *)",
-         "Bash(git commit *)"
-       ],
-       "deny": []
-     }
-   }
-   ```
-
-   **Merge logic**: Read existing file, parse JSON, take union of `allow` lists, write back. Create `.claude/` directory if needed.
-
-7. **Install Stop hook lint gate**
-
-   Symlink the lint gate script so Claude Code runs the full lint suite (ruff, mypy, basedpyright) on modified files before returning to the user. If any linter reports errors, Claude is blocked from stopping and must fix them first.
-
-   ```bash
-   mkdir -p ~/.claude/hooks
-   ln -sf ~/.claude/skills/py-git-hooks/lint-gate.py ~/.claude/hooks/lint-gate.py
-   ```
-
-   Configure the Stop hook in `~/.claude/settings.json` (merge into existing hooks if present):
-
-   ```json
-   {
-     "hooks": {
-       "Stop": [
-         {
-           "hooks": [
-             {
-               "type": "command",
-               "command": "python3 ~/.claude/hooks/lint-gate.py"
-             }
-           ]
-         }
-       ]
-     }
-   }
-   ```
-
-8. **Configure git hooks** (if requested)
+7. **Configure git hooks** (if requested)
    - Set up pre-commit hook to run linters
    - See py-git-hooks skill
 
@@ -290,8 +218,7 @@ ignore_missing_imports = true
 - [ ] ruff check passes (or only expected errors)
 - [ ] mypy . passes (or only expected errors)
 - [ ] basedpyright . passes (or only expected errors)
-- [ ] `.claude/settings.local.json` exists with permissions for all quality tools
-- [ ] `~/.claude/hooks/lint-gate.py` symlinked and Stop hook configured in `~/.claude/settings.json`
+- [ ] `~/.claude/hooks/stop-gate.py` links to `~/.agents/hooks/stop-gate.py`
 
 ## Examples
 

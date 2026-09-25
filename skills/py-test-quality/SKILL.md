@@ -18,14 +18,12 @@ Measure test coverage and verify test suite effectiveness using coverage analysi
 
 ## Required Tools
 
-**Add to `[dependency-groups]` dev**: `"pytest"`, `"pytest-cov"`, `"mutmut"`, `"coverage"`
+**Run without adding dependencies**: `uv run --with pytest-cov --with mutmut <command>`. Add them to `[dependency-groups] dev` only when the project adopts them as a standing gate.
 **Optional**: `"cosmic-ray"` (advanced mutation testing)
 
 - **pytest-cov**: Code coverage measurement
 - **mutmut**: Mutation testing - verifies tests catch bugs
 - **cosmic-ray**: Advanced mutation testing (slower)
-
-**Permissions**: Run py-quality-setup first to configure `.claude/settings.local.json` with all needed tool permissions.
 
 ## Coverage Analysis
 
@@ -102,7 +100,7 @@ TOTAL                 257     40     58     14    82%
 - **Cover**: Coverage percentage
 - **Missing**: Line numbers not covered
 
-**Coverage targets**:
+**Coverage targets** (a floor in `CONSTRAINTS.md` or CI wins; hold it, never lower it):
 - **≥80%**: Minimum acceptable
 - **≥90%**: Good coverage
 - **100%**: Ideal (may not be practical for all code)

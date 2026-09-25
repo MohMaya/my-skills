@@ -62,12 +62,7 @@ This is the ideal state. The project is linked and has git integration.
    trigger a deployment. Want me to proceed?
    ```
 
-2. **Commit and push:**
-   ```bash
-   git add .
-   git commit -m "deploy: <description of changes>"
-   git push
-   ```
+2. **Commit and push** following `~/.agents/STANDARDS/Workflow/Git.md`: stage the intended files by path, commit on a working branch, and push that branch. Pushing the production branch deploys production, so it needs the explicit production request.
    Vercel automatically builds from the push. Non-production branches get preview deployments; the production branch (usually `main`) gets a production deployment.
 
 3. **Retrieve the preview URL.** If the CLI is authenticated:

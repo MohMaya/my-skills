@@ -8,8 +8,6 @@ status: stable
 
 Reduce code complexity to improve maintainability and understandability.
 
-Effective use of context windows.
-
 ## Objectives
 
 1. Measure cyclomatic and cognitive complexity
@@ -21,14 +19,12 @@ Effective use of context windows.
 
 ## Required Tools
 
-**Add to `[dependency-groups]` dev**: `"radon"`, `"lizard"`, `"xenon"`, `"wily"`
+**Run without adding dependencies**: `uv run --with radon --with lizard --with xenon --with wily <command>`. Add them to `[dependency-groups] dev` only when the project adopts them as a standing gate.
 
 - **radon**: Cyclomatic complexity & maintainability index
 - **lizard**: Cognitive complexity (better for readability)
 - **xenon**: CI/CD threshold enforcement
 - **wily**: Track trends across git history
-
-**Permissions**: Run py-quality-setup first to configure `.claude/settings.local.json` with all needed tool permissions.
 
 ## Discovery Phase
 

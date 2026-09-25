@@ -1,12 +1,14 @@
 ---
 name: py-modernize
-description: Modernize Python codebases - migrate pip to uv, upgrade syntax to Python 3.13+, replace deprecated patterns, and update tooling to current best practices.
+description: Modernize a Python codebase on explicit request - migrate pip to uv, upgrade syntax within the project's Python floor, replace deprecated patterns, and consolidate config into pyproject.toml.
 status: stable
 ---
 
 # Python Codebase Modernization
 
-Upgrade Python projects to use modern tooling, syntax, and patterns following Engineering Charter principles.
+Upgrade Python projects to use modern tooling, syntax, and patterns.
+
+Run this on an explicit request. A pip to uv move or a raised Python floor changes the project's toolchain, which stays as-is unless Shiv asks; plan it with `deprecation-and-migration`. Syntax upgrades stay within the project's current `requires-python`.
 
 ## Objectives
 
@@ -18,14 +20,12 @@ Upgrade Python projects to use modern tooling, syntax, and patterns following En
 
 ## Required Tools
 
-**Install uv globally** (via package manager): `sudo zypper install uv` or `pip install --user uv`
-**Add to `[dependency-groups]` dev**: `"pyupgrade"`, `"ruff"`
+**uv on PATH**: if it is missing, ask Shiv to install it (`brew install uv`).
+**Run without adding dependencies**: `uv run --with pyupgrade <command>`. Add them to `[dependency-groups] dev` only when the project adopts them as a standing gate.
 
 - **uv**: Fast package installer (pip replacement)
 - **pyupgrade**: Auto-upgrade syntax to newer Python
 - **ruff**: Modern linter with UP rules
-
-**Permissions**: Run py-quality-setup first to configure `.claude/settings.local.json` with all needed tool permissions.
 
 ## Package Manager: pip → uv
 
@@ -103,9 +103,7 @@ pip install -e ".[dev]"
 <!-- AFTER -->
 ## Development Setup
 
-# Install uv if not already installed (via package manager preferred)
-# sudo zypper install uv  # openSUSE
-# or: pip install --user uv
+# Install uv if missing: brew install uv
 
 uv venv
 source .venv/bin/activate
@@ -230,8 +228,7 @@ grep -rn "from collections import.*Callable\|from collections import.*Iterable" 
    - cat pyproject.toml
 
 2. Install uv (if not already installed):
-   - Via package manager: sudo zypper install uv  # openSUSE
-   - Or as user package: pip install --user uv
+   - Ask Shiv to install it: brew install uv
 
 3. Test uv with current project:
    - uv venv
