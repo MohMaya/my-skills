@@ -59,11 +59,13 @@ The kernel's Engineering skills section owns the mandatory engineering triggers,
 | Verify UI or debug in a real browser | `browser-testing-with-devtools` when the Chrome DevTools MCP server is connected; `playwright-cli` otherwise |
 | Test-first loop on new behavior | `tdd` |
 | Stack-specific work | matching file under `STANDARDS/Stack/` |
-| React effects, TypeScript assertion rules, or unused exports reported by Knip | `no-use-effect`, `ban-type-assertions`, or `fix-knip-unused-exports` for the specific change; `Stack/TypeScript.md` |
+| Python cleanup, scanning, coverage, or lint and hook setup | `py-*` skills from the Skills table in `Stack/Python.md` |
+| React, Next.js, React Native, effects, assertion rules, or Knip findings | the Skills table in `Stack/TypeScript.md` |
 | Postgres schema, queries, migrations | `supabase-postgres-best-practices` |
 | Go | `golang-code-style`, `golang-error-handling` |
 | Backend on Railway | `use-railway` |
 | Vercel cost or perf | `vercel-optimize` |
+| Deploy to Vercel; token-authenticated Vercel CLI, env vars, or domains | `deploy-to-vercel`; `vercel-cli-with-tokens` respectively; `shipping-and-launch` for production |
 | Mobile (Expo / React Native) | `expo-native-ui`, `expo-router`; ship via `eas-workflows`, `eas-app-stores` |
 | LLM features | `ai-sdk` (TS), `claude-api` (Anthropic specifics) |
 | Build product UI | Kernel Design authority first; `frontend-ui-engineering` for structure, states, accessibility, and responsiveness |
@@ -71,7 +73,7 @@ The kernel's Engineering skills section owns the mandatory engineering triggers,
 | Figma design → code | `figma:figma-design-to-code`; `design-system` to formalize tokens first |
 | Code or description → Figma | `figma:figma-generate-design` (screens), `figma:figma-generate-library` (design system); `figma:figma-use` before any `use_figma` call |
 | UI polish and motion | `emil-design-eng`, `apple-design`, `web-design-guidelines` |
-| Animation work | `improve-animations` to plan, `review-animations` to review, `animation-vocabulary` to name the effect |
+| Animation work | `improve-animations` to plan, `review-animations` to review, `animation-vocabulary` to name the effect; `vercel-react-view-transitions` for React view transitions |
 | Marketing copy, positioning, pricing | `draft-content` for copy; `competitive-brief` for positioning; `pricing` |
 | Product architecture | `Product/Architecture.md` |
 | Office file in or out | `docx`, `pptx`, `xlsx` |
@@ -107,7 +109,7 @@ Factory's cursed-plugin skills produce humorous codebase reports. Use them only 
 
 Routes name preferred skills, not guaranteed installations. The active runtime and readable `~/.agents/skills/*/SKILL.md` files determine availability. Verify provider-specific tools in the current session. For `simplify`, re-climb the code gate if the skill is absent. For unavailable document or domain skills, apply the relevant standards directly and state the gap. Figma capabilities depend on the installed integration, not the harness name.
 
-Run `bash ~/.agents/sync.sh` after changing canonical skills or the kernel. It maintains Codex, Claude, and Cursor skill links and generated harness rules. Gemini CLI reads the shared kernel import; Antigravity reads the configured canonical skills path. Droid supports `~/.agents/AGENTS.md` and `~/.agents/skills/**/SKILL.md` directly. Verify links and generated rules after sync, then use fresh sessions to load the updated inventory.
+Run `bash ~/.agents/sync.sh` after changing canonical skills or the kernel. It maintains Codex, Claude, and Cursor skill links, generated harness rules, the Claude and Codex mandate mirrors, and the `stop-gate.py` Stop hook in both. Codex asks to trust a new hook on its next run. Gemini CLI reads the shared kernel import; Antigravity reads the configured canonical skills path. Droid supports `~/.agents/AGENTS.md` and `~/.agents/skills/**/SKILL.md` directly. Verify links and generated rules after sync, then use fresh sessions to load the updated inventory.
 
 ## Invocation contract
 

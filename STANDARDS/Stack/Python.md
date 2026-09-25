@@ -7,6 +7,22 @@ Load for Python work.
 - Use `uv` unless the repo already chose otherwise.
 - Follow the repo's formatter, linter, and test runner.
 - Do not introduce untyped new code in a typed codebase.
+- Run analyzers the project does not carry with `uv run --with <tool>`, leaving `pyproject.toml` unchanged.
+- In Claude Code and Codex, `stop-gate.py` runs the project's configured ruff, mypy, and basedpyright on changed files at each turn end.
+
+## Skills
+
+Each skill is the Python adapter under the kernel owner named beside it.
+
+| Task | Skill |
+| ---- | ----- |
+| Requested cleanup or refactor of a codebase | `py-refactor`, which sequences the rest; `code-simplification` owns the method |
+| Scanner run or Python-specific security fix | `py-security`, under `security-and-hardening` |
+| Coverage gaps or mutation testing | `py-test-quality`; `tdd` owns writing the tests |
+| Dead code or duplication | `py-code-health` |
+| Complexity hotspots | `py-complexity` |
+| Linter and type-checker setup; pre-commit hooks | `py-quality-setup`; `py-git-hooks`, when Shiv asks |
+| pip to uv, a raised Python floor, or deprecated APIs | `py-modernize`, on request, planned with `deprecation-and-migration` |
 
 ## Types and contracts
 
