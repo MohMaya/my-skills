@@ -54,6 +54,7 @@ Each scenario has one owner. A plugin or imported skill covering the same ground
 
 - **Building or fixing behavior with tests.** Use `tdd` when the repository has a test runner. Name the seams under test in the Structure Note before the first test, confirm them with Shiv when the seam choice shapes the design, and work one failing test per slice.
 - **Implementing from a spec or tickets.** Use `implement`. It drives `tdd` and closes with `code-review-and-quality` and a commit.
+- **Python or TypeScript code.** Read the matching `STANDARDS/Stack/` file before the first edit. Its Skills section names the language skill for each task, such as `py-refactor` for a Python cleanup and `vercel-react-best-practices` for React or Next.js.
 - **User-facing UI.** After the design check in Design authority, use `frontend-ui-engineering` for component structure, loading, empty, and error states, accessibility, and responsive behavior.
 - **A design question that needs running code.** Use `prototype` for a state model or UI that is hard to settle on paper. Keep the prototype on a `prototype/<name>` branch, outside the feature diff.
 - **An irreversible decision.** Use `doubt-driven-development` before a production auth change, security-sensitive logic, a data migration, a public contract change, or any other step that cannot be undone.
@@ -63,6 +64,7 @@ Each scenario has one owner. A plugin or imported skill covering the same ground
 ### Review and ship
 
 - **Closing out a change.** Before opening or updating a PR, review the diff with `code-review-and-quality` and resolve its Critical and Required findings. `shiv-code-gate` still runs `simplify` before each commit.
+- **Turn-end gate.** In Claude Code and Codex, `stop-gate.py` runs the project's configured Python and TypeScript linters and type checkers on changed files when a turn ends. Treat a block as a failing check and fix the code.
 - **Refactoring for clarity.** Use `code-simplification` when the request is to restructure working code without changing its behavior.
 - **A written quality bar.** When a repository has `CONSTRAINTS.md`, read it before writing code and hold every threshold in it. Use `constraint-driven-development` when Shiv asks to set up or change quality gates.
 - **CI pipelines.** Use `ci-cd-and-automation` when creating or changing a pipeline. `STANDARDS/Workflow/Delivery.md` owns the required gates.

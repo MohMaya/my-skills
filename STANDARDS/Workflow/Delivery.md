@@ -17,7 +17,7 @@ Failing quality gates block merge or deploy.
 
 ## Pre-commit minimum
 
-Run repository-required checks and the checks relevant to the changed behavior before committing. Use the existing lint, type, test, or smoke checks as applicable. Stack files supply domain-specific requirements. A prose-only edit needs no unrelated application build unless CI requires it.
+Run repository-required checks and the checks relevant to the changed behavior before committing. Use the existing lint, type, test, or smoke checks as applicable. Stack files supply domain-specific requirements. A prose-only edit needs no unrelated application build unless CI requires it. In Claude Code and Codex, `stop-gate.py` runs the configured Python and TypeScript lint and type checks on changed files at each turn end; the repository's own checks still run before commit.
 
 ## Security review skills
 

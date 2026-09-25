@@ -5,7 +5,22 @@ Load for TypeScript, React, and Next.js work.
 ## Toolchain
 
 - Respect the existing formatter, linter, test runner, and package manager.
-- Use `no-use-effect` when reviewing React effect usage, `ban-type-assertions` when an assertion rule is requested or already enforced, and `fix-knip-unused-exports` for actual Knip findings. Apply the matching skill within the repository's existing toolchain and public API contract.
+- In Claude Code and Codex, `stop-gate.py` runs the project's configured tsc, eslint, and biome on changed files at each turn end.
+
+## Skills
+
+Apply the matching skill within the repository's existing toolchain and public API contract.
+
+| Task | Skill |
+| ---- | ----- |
+| Writing or reviewing React or Next.js | `vercel-react-best-practices` |
+| A component API growing boolean props, or a reusable component library | `vercel-composition-patterns` |
+| Route or state transitions with React's View Transition API | `vercel-react-view-transitions` |
+| React Native or Expo | `vercel-react-native-skills`, with `Stack/Expo.md` |
+| React effect usage | `no-use-effect` |
+| An assertion rule requested or already enforced | `ban-type-assertions` |
+| Actual Knip findings | `fix-knip-unused-exports` |
+| Pre-commit hooks, when Shiv asks | `setup-pre-commit` |
 
 ## Types and contracts
 
