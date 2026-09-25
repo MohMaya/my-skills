@@ -84,27 +84,47 @@ sync_mandates() {
 }
 
 # Link the turn-end lint and type gate into a harness and register it as a
-# Stop hook. Merge-only: the settings file is rewritten only when the entry
-# is missing, and other hooks stay as they are. Codex asks to trust a new
-# hook on its next run.
+# Stop hook. The command fails open: if the link dangles, the turn still ends.
+# Merge-only: the settings file is rewritten (atomically) only when the entry
+# is missing or stale, and other hooks stay as they are. Codex asks to trust
+# a new or changed hook on its next run.
 sync_stop_gate() {
   local harness_dir="$1" settings="$2" link="$1/hooks/stop-gate.py"
   mkdir -p "$harness_dir/hooks"
+  if [ -e "$link" ] && [ ! -L "$link" ]; then
+    echo "conflict: $link is a real file; preserved, stop gate not registered" >&2
+    return 0
+  fi
   ln -sfn "$AGENTS_DIR/hooks/stop-gate.py" "$link"
-  python3 - "$settings" "python3 $link" <<'PY'
+  python3 - "$settings" "$link" <<'PY' || echo "$settings: stop gate not registered" >&2
 import json
+import os
 import pathlib
+import shlex
 import sys
+import tempfile
 
-path, command = pathlib.Path(sys.argv[1]), sys.argv[2]
-data = json.loads(path.read_text()) if path.exists() else {}
+path, link = pathlib.Path(sys.argv[1]), sys.argv[2]
+q = shlex.quote(link)
+command = f"[ -f {q} ] && python3 {q} || true"
+try:
+    data = json.loads(path.read_text()) if path.exists() else {}
+except ValueError as e:
+    sys.exit(f"{path}: invalid JSON ({e})")
 stop = data.setdefault("hooks", {}).setdefault("Stop", [])
 if any(h.get("command") == command for group in stop for h in group.get("hooks", [])):
     print(f"{path}: stop gate present")
-else:
-    stop.append({"hooks": [{"type": "command", "command": command, "timeout": 600}]})
-    path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n")
-    print(f"{path}: stop gate registered")
+    sys.exit()
+for group in stop:  # drop earlier registrations of this gate
+    group["hooks"] = [h for h in group.get("hooks", []) if "stop-gate.py" not in h.get("command", "")]
+stop[:] = [g for g in stop if g.get("hooks")]
+stop.append({"hooks": [{"type": "command", "command": command, "timeout": 600}]})
+fd, tmp = tempfile.mkstemp(dir=path.parent, prefix=path.name + ".")
+with os.fdopen(fd, "w") as f:
+    f.write(json.dumps(data, indent=2, ensure_ascii=False) + "\n")
+os.chmod(tmp, path.stat().st_mode if path.exists() else 0o644)
+os.replace(tmp, path)
+print(f"{path}: stop gate registered")
 PY
 }
 
