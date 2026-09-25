@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 # Idempotent sync from the canonical ~/.agents tree to each harness.
 # Safe to re-run: only touches symlinks this script owns, the generated
-# harness rules, Gemini CLI kernel import, mandate mirrors, and the stop-gate
-# entry in Claude and Codex hook settings. Never touches non-symlink skill
-# entries (native dirs, vendor skills), other hooks, or ~/.agents/AGENTS.md,
-# STANDARDS/, skills/ themselves.
+# harness rules, Gemini CLI kernel import, mandate mirrors, the repo-owned
+# hooks under hooks/, and the stop-gate entry in Claude and Codex settings.
+# Never touches non-symlink skill entries (native dirs, vendor skills), other
+# hooks, or ~/.agents/AGENTS.md, STANDARDS/, skills/ themselves.
 
 set -euo pipefail
 
@@ -83,6 +83,18 @@ sync_mandates() {
   done
 }
 
+# Link a repo-owned hook into a harness's hooks dir. A real file at the link
+# path is preserved and reported; returns 1 so callers skip registration.
+link_hook() {
+  local harness_dir="$1" name="$2" link="$1/hooks/$2"
+  mkdir -p "$harness_dir/hooks"
+  if [ -e "$link" ] && [ ! -L "$link" ]; then
+    echo "conflict: $link is a real file; preserved" >&2
+    return 1
+  fi
+  ln -sfn "$AGENTS_DIR/hooks/$name" "$link"
+}
+
 # Link the turn-end lint and type gate into a harness and register it as a
 # Stop hook. The command fails open: if the link dangles, the turn still ends.
 # Merge-only: the settings file is rewritten (atomically) only when the entry
@@ -90,12 +102,7 @@ sync_mandates() {
 # a new or changed hook on its next run.
 sync_stop_gate() {
   local harness_dir="$1" settings="$2" link="$1/hooks/stop-gate.py"
-  mkdir -p "$harness_dir/hooks"
-  if [ -e "$link" ] && [ ! -L "$link" ]; then
-    echo "conflict: $link is a real file; preserved, stop gate not registered" >&2
-    return 0
-  fi
-  ln -sfn "$AGENTS_DIR/hooks/stop-gate.py" "$link"
+  link_hook "$harness_dir" stop-gate.py || return 0
   python3 - "$settings" "$link" <<'PY' || echo "$settings: stop gate not registered" >&2
 import json
 import os
@@ -130,6 +137,8 @@ PY
 
 sync_hooks() {
   sync_mandates
+  link_hook "$HOME/.claude" format-on-edit.sh || true
+  link_hook "$HOME/.codex" format-on-edit.sh || true
   sync_stop_gate "$HOME/.claude" "$HOME/.claude/settings.json"
   sync_stop_gate "$HOME/.codex" "$HOME/.codex/hooks.json"
 }
