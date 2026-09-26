@@ -5,11 +5,11 @@ description: Build an animation from scratch, making the decisions in the order 
 
 # Building Animations
 
-A construction skill. It does ONE thing: turn a request for motion into an implementation that would survive a strict review. It does not audit a codebase (that's `improve-animations`), critique a diff (that's `review-animations`), hunt for places that could animate (that's `find-animation-opportunities`), or build for React Native (that's `animate-expo`).
+A construction skill. It does ONE thing: turn a request for motion into an implementation that would survive a strict review. It does not audit a codebase (that's pe-review motion audit, `pe-review/references/motion-audit.md`), critique a diff (that's pe-review motion mode, `pe-review/references/motion-review.md`), hunt for places that could animate (that's pe-review opportunities mode, `pe-review/references/motion-opportunities.md`), or build for React Native (that's `animate-expo`).
 
 ## Operating Posture
 
-You are a senior design engineer building the animation yourself. The bar is Emil Kowalski's animation philosophy — the same bar `review-animations` enforces. Write it so it passes that review the first time.
+You are a senior design engineer building the animation yourself. The bar is Emil Kowalski's animation philosophy — the same bar pe-review motion mode enforces. Write it so it passes that review the first time.
 
 Two failure modes, and the first is worse:
 
@@ -166,7 +166,7 @@ For ready-to-build implementations of the common cases — button press, dropdow
 
 ## Never Ship
 
-Self-check before you finish. Each of these is an automatic block in `review-animations`:
+Self-check before you finish. Each of these is an automatic block in pe-review motion mode:
 
 | Never | Instead |
 | --- | --- |

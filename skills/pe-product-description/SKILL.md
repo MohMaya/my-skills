@@ -38,7 +38,7 @@ Settle these before writing a file. Ask only for what you cannot infer from the 
 2. **Source of truth.** The path to the source repo (read-only reference) and the commit. Every document footer cites `git rev-parse --short HEAD` of that repo.
 3. **Where to run it.** The command and URL, binary, or account that brings up the surface for verification.
 4. **Out of scope.** Name what is excluded and why, so later readers do not think it was forgotten.
-5. **Where the repo goes.** A new directory, `git init`, first commit `Initial commit`.
+5. **Where the repo goes.** A new directory, `git init`, first commit `Initial commit`, then a working branch for everything after it.
 6. **The product's shape.** Read `references/product-kinds.md` and decide, once: the unit of interaction and the names of its five phases; the variant axis (modifiers, flags, roles); the fixed interrupt list; the cross-cutting concerns and their order. These go into the README's "Document template" section and the glossary before the pilot is written, and they do not change afterwards without revisiting every document.
 
 Then do a reconnaissance pass over the source repo to find: where interaction state lives (state machines, reducers, controllers, route handlers, command definitions), where behavior tests are (the ones that read as executable specs of edge cases), where the UI is, and where defaults and thresholds are defined (options, constants, config schemas). These go into the README's "Reference" section and goal.md's reading order.
@@ -52,7 +52,7 @@ Write, in this order, adapting the templates in `references/`:
 3. **goal.md** from `goal-template.md`. This is the prompt that drives all drafting. Its "Things already established" section is empty at first and fills in as the foundations are written.
 4. **AGENTS.md** and **CLAUDE.md** with the one-line contents shown under Outputs. Do not leave AGENTS.md empty; it is what a fresh session reads first.
 
-Commit: `docs: add README, glossary, goal`.
+Commit the README, glossary, and goal (commit text per the Commits rule under Writing rules below).
 
 ## Phase 2: pilot, foundations, the hard part
 
@@ -62,7 +62,7 @@ Do these yourself, in sequence, not in parallel. They fix the template, tone, de
 2. **Foundations.** The documents everything else links to: the input or invocation model (events, thresholds, what cancels, completes, and interrupts), the core object or data model, the mode, tool, or navigation model, the viewport or session model. These *own* the facts other documents link to instead of restating. As each is written, add its load-bearing facts (numbers, defaults, rules) to goal.md's "Things already established" so no later document re-derives or contradicts them.
 3. **The hardest area.** The bulk of the experience (the selection tool, the main editor, the `build` command, the composer plus the streaming response). Read all of its state handling before writing any of its documents, because the states hand off to each other and the documents must agree on where one ends and the next begins. Decide which document owns each state and write that down in goal.md.
 
-Commit after each document or coherent group: `docs: add {path}`.
+Commit after each document or coherent group.
 
 ## Phase 3: draft the rest in parallel
 
@@ -72,7 +72,7 @@ Once the exemplars exist, the remaining documents are independent. Fan out with 
 
 Review every result yourself before accepting it. Check: glossary words used correctly, established facts not contradicted, relative links resolve, footer present, interrupt table complete (every row, even if the answer is "no effect"), suspected bugs stated plainly in "Open questions" rather than smoothed over.
 
-Update the coverage table to `drafted` as each lands. Commit in groups: `docs: add {paths}`.
+Update the coverage table to `drafted` as each lands. Commit in groups.
 
 ## Phase 4: consistency pass
 
@@ -85,7 +85,7 @@ Over the whole set:
 - The interrupt table has the same rows in the same order in every document; the cross-cutting concerns appear in the same order.
 - The README structure and coverage table match the files on disk exactly.
 
-Commit: `docs: revise the set after the consistency review`. Then go back through the documents whose open questions were thinnest and deepen them; expect a second revision pass on a handful of documents.
+Commit the revisions from the consistency review. Then go back through the documents whose open questions were thinnest and deepen them; expect a second revision pass on a handful of documents.
 
 ## Phase 5: verification checklists
 
@@ -100,7 +100,7 @@ If you can drive the product (browser tools, a console handle on the app, a shel
 
 From `bug-triage-template.md`: collect every suspected defect from every document's body and open questions, merge duplicates (the same root cause raised by many documents is one entry with many "Raised by" links), and write each up with where the user meets it, what happens vs. what was expected, reproduction steps, the cause in the code with file and line, a severity, and the decision the product team needs (`fix` or `product call`). Summary table at the top sorted by severity. Entries confirmed by a verification pass carry a **Status** line.
 
-**Filing upstream is a separate, outward-facing step.** Offer it; do not do it unasked. If the user wants the entries filed as issues, confirm the repo and the format first, file them, then add an Issue line to each entry and a link column to the summary table (`docs: revise bug-triage.md with links to the filed issues`).
+**Filing upstream is a separate, outward-facing step.** Offer it; do not do it unasked. If the user wants the entries filed as issues, confirm the repo and the format first, file them, then add an Issue line to each entry and a link column to the summary table, then commit.
 
 ## Resuming and extending an existing repo
 
@@ -108,8 +108,8 @@ A later session, or a request to add a feature that was out of scope, starts her
 
 1. Read `AGENTS.md`, `README.md` (structure, coverage table, scope decisions), `goal.md` (established facts), and `glossary.md`. Read the pilot to recalibrate depth.
 2. Confirm the source repo's commit. If it has moved, decide with the user whether new documents cite the new commit (and say so in their footer) or the repo pins the old one. Do not silently mix.
-3. To add a document: add it to the README structure and coverage table first, write it, add its checklist table to the right `verification/` file (new ID prefix, numbered from 01), add any new triage entries to `bug-triage.md` with the next `B-NN`, and commit each step: `docs: add {path}`, `docs: add the {name} checklist ({PREFIX}-01 to {PREFIX}-NN) to verification/{cluster}.md`, `docs: add B-NN to B-MM to bug-triage.md from the {name} work`.
-4. To revise a document after a verification pass: change the document, update the checklist row's Result and note, update the triage entry's Status, and commit as `docs: revise {path}`.
+3. To add a document: add it to the README structure and coverage table first, write it, add its checklist table to the right `verification/` file (new ID prefix, numbered from 01), add any new triage entries to `bug-triage.md` with the next `B-NN`, and commit each step.
+4. To revise a document after a verification pass: change the document, update the checklist row's Result and note, update the triage entry's Status, and commit.
 5. Never renumber checklist IDs or triage IDs once a pass or an issue has used them.
 
 ## Writing rules (carry into goal.md verbatim or adapted)
@@ -122,7 +122,7 @@ A later session, or a request to add a feature that was out of scope, starts her
 - Cross-reference with relative links instead of repeating. The foundation documents own thresholds and definitions.
 - One Mermaid `stateDiagram-v2` per interaction, limited to the states the user passes through.
 - Footer: `## Open questions and verification`, a bullet list, then `Verified against {repo} commit \`{sha}\``.
-- Commits: `docs: add {path}` / `docs: revise {path}`. Follow whatever the user's repo does about AI attribution in commit messages.
+- Commits: follow `~/.agents/STANDARDS/Workflow/Git.md` — a working branch, never a protected one, and `+N/-M` line counts in the commit text. Follow whatever the user's repo does about AI attribution in commit messages.
 - Never modify the source repo. It is read-only reference material.
 - When a behavior cannot be determined from code and tests, write what can be determined, put the rest in "Open questions", move on. Do not guess, do not block.
 

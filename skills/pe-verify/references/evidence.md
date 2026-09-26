@@ -4,11 +4,13 @@ How a browser check produces a recording, checkpoints, and stills the report can
 
 ## Before driving anything
 
-- Use the Playwright that is installed: `npx playwright` in a Node project, the
+- Drive the browser through `browser-testing-with-devtools` when the Chrome DevTools
+  MCP server is connected, `playwright-cli` otherwise. Fall back to the Playwright that
+  is installed only when neither can record: `npx playwright` in a Node project, the
   `playwright` Python package elsewhere (same calls: `browser.new_context(record_video_dir=RUN, ...)`,
   `page.video.path()`). No browser binary: the item reports `skipped` with that reason
-  and the run continues. The install offer belongs to the orchestrator's Scope step,
-  never to a worker mid-run.
+  and the run continues. The install question belongs to the orchestrator's Scope step
+  and needs Shiv's explicit yes, never a worker mid-run.
 - Reach the product the way a user would. Start the local server or open the built
   artifact; wait for it to be ready; put the URL in the item's `summary`. Never drive a
   production URL unless the user named it.

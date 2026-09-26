@@ -5,6 +5,10 @@ argument-hint: <file-or-pattern>
 
 # Web Interface Guidelines
 
+Pinned copy of the upstream Vercel Web Interface Guidelines. Re-sync from
+https://raw.githubusercontent.com/vercel-labs/web-interface-guidelines/main/command.md
+when it drifts.
+
 Review these files for compliance: $ARGUMENTS
 
 Read files, check against rules below. Output concise but comprehensive—sacrifice grammar for brevity. High signal-to-noise.

@@ -30,7 +30,7 @@ Write the kept scenarios down before building, one line each, so the harness ren
 
 ## 3. Build the harness page
 
-One throwaway page, holding the real component imported from the project, rendered once per scenario in a single column with a short text label above each instance.
+One throwaway page, kept in scratch space or on a `prototype/<name>` branch so it never enters the feature diff, holding the real component imported from the project, rendered once per scenario in a single column with a short text label above each instance.
 
 The component ships untouched, in its real environment. A scratch route inside the app gives it the app's own layout, fonts and global styles for free. Labels, container widths and fixture props are everything the page adds: no fonts or styles of its own, no simulated themes or token swaps, no probes. A component observed under any of those is a different component.
 
@@ -65,7 +65,7 @@ Do not fix anything unasked. On a request to fix, follow the owner skill's rules
 
 ## 6. Leave the page up, delete it on request
 
-The page is half the report, so it outlives the findings table. Leave it running and delete it and its fixtures only when the user says they are done with it.
+The page is half the report, so it outlives the findings table. Leave it running and delete it and its fixtures when the user says they are done with it, and always before any commit on the feature branch.
 
 ## Before you finish
 

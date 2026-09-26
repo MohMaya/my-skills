@@ -60,4 +60,4 @@ A consolidated list of the defects and inconsistencies that the feature document
 
 ## Filing upstream
 
-Outward-facing; do only when the user asks, after confirming the target repo and the issue format. One issue per entry, title from the table, body from the entry (omit the "Raised by" links unless the description repo is public), a label if the repo uses them. Then add the Issue line to each entry, the Issue column to the table, and the range to the intro paragraph. Commit as `docs: revise bug-triage.md with links to the filed issues ({owner}/{repo} #NNNN–#NNNN)`.
+Outward-facing; do only when the user asks, after confirming the target repo and the issue format. One issue per entry, title from the table, body from the entry (omit the "Raised by" links unless the description repo is public), a label if the repo uses them. Then add the Issue line to each entry, the Issue column to the table, and the range to the intro paragraph. Commit per `~/.agents/STANDARDS/Workflow/Git.md`, naming the filed range ({owner}/{repo} #NNNN–#NNNN).

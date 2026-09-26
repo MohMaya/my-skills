@@ -42,7 +42,8 @@ Resolve framework utilities through the active theme before writing exact values
 ## Validation (the ship gate)
 
 Identify the export target first — `css-tailwind` (Tailwind v4), `json-tailwind`
-(v3), `dtcg` otherwise — then:
+(v3), `dtcg` otherwise. Ask Shiv before the first `npx @google/design.md` run (it
+downloads and executes a package); without a yes, skip the gate and report it unrun. Then:
 
 ```bash
 npx @google/design.md spec                      # check the installed schema first

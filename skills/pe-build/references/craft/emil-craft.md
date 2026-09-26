@@ -166,7 +166,7 @@ Springs maintain velocity when interrupted — CSS animations and keyframes rest
 
 ### Buttons must feel responsive
 
-Add `transform: scale(0.97)` on `:active`. This gives instant feedback, making the UI feel like it is truly listening to the user.
+Add `transform: scale(0.96)` on `:active`. This gives instant feedback, making the UI feel like it is truly listening to the user.
 
 ```css
 .button {
@@ -174,11 +174,11 @@ Add `transform: scale(0.97)` on `:active`. This gives instant feedback, making t
 }
 
 .button:active {
-  transform: scale(0.97);
+  transform: scale(0.96);
 }
 ```
 
-This applies to any pressable element. The scale should be subtle (0.95-0.98).
+This applies to any pressable element. Use exactly 0.96, the house press scale.
 
 ### Never animate from scale(0)
 
@@ -225,7 +225,7 @@ Tooltips should delay before appearing to prevent accidental activation. But onc
 .tooltip[data-starting-style],
 .tooltip[data-ending-style] {
   opacity: 0;
-  transform: scale(0.97);
+  transform: scale(0.96);
 }
 
 /* Skip animation on subsequent tooltips */
@@ -261,7 +261,7 @@ When a crossfade between two states feels off despite trying different easings a
 
 **Why blur works:** Without blur, you see two distinct objects during a crossfade — the old state and the new state overlapping. This looks unnatural. Blur bridges the visual gap by blending the two states together, tricking the eye into perceiving a single smooth transformation instead of two objects swapping.
 
-Combine blur with scale-on-press (`scale(0.97)`) for a polished button state transition:
+Combine blur with scale-on-press (`scale(0.96)`) for a polished button state transition:
 
 ```css
 .button {
@@ -269,7 +269,7 @@ Combine blur with scale-on-press (`scale(0.97)`) for a polished button state tra
 }
 
 .button:active {
-  transform: scale(0.97);
+  transform: scale(0.96);
 }
 
 .button-content {
@@ -394,7 +394,7 @@ Duplicate the tab list. Style the copy as "active" (different background, differ
 
 ### Hold-to-delete pattern
 
-Use `clip-path: inset(0 100% 0 0)` on a colored overlay. On `:active`, transition to `inset(0 0 0 0)` over 2s with linear timing. On release, snap back with 200ms ease-out. Add `scale(0.97)` on the button for press feedback.
+Use `clip-path: inset(0 100% 0 0)` on a colored overlay. On `:active`, transition to `inset(0 0 0 0)` over 2s with linear timing. On release, snap back with 200ms ease-out. Add `scale(0.96)` on the button for press feedback.
 
 ### Image reveals on scroll
 
