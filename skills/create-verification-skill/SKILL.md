@@ -6,7 +6,14 @@ disable-model-invocation: true
 
 # Create a verification skill
 
-Every serious project needs a scripted way to drive the real app and prove behavior: launch it, exercise a feature the way a user would, and capture evidence. This skill generates that as a project-local skill (`<skills>/verify-<app>/`) tailored to the repo. `<skills>` is your harness's project skill folder: `.cursor/skills/` in Cursor, `.claude/skills/` in Claude Code, `.pi/skills/` in Pi, `.agents/skills/` in Codex, OpenCode, and others. If the repo already keeps skills in one of these, use that one. You write the generator's output for the next agent, not for a human: it will be read cold, mid-task, by an agent that has never seen the app.
+Every serious project needs a scripted way to drive the real app and prove behavior: launch it, exercise a feature the way a user would, and capture evidence. This skill generates that as a project-local skill (`<skills>/verify-<app>/`) tailored to the repo. `<skills>` is the skill folder the repo already keeps (for example `.claude/skills/` or `.agents/skills/`); ask Shiv when the repo keeps none. You write the generator's output for the next agent, not for a human: it will be read cold, mid-task, by an agent that has never seen the app. Follow `writing-for-agents` for the generated SKILL.md.
+
+Two parts make a verification skill work, and every step below serves them:
+
+- **A CLI inside the skill directory** (`<skills>/verify-<app>/bin/control-<app>` or similar) that wraps launch, doctor, drive, evidence, and cleanup. Runs become reproducible because the next agent calls the same commands instead of re-deriving them.
+- **A feature map** (`<skills>/verify-<app>/features/`): materialized memory of each user-facing feature and how a user reaches it, so later runs cover every entry point without rediscovering the app.
+
+For web UIs, `pe-verify` owns recorded Playwright evidence reports and QA-list runs. The generated skill supplies the launch, doctor, and feature map those runs drive.
 
 ## 1. Interview the repo, not the user
 
@@ -29,7 +36,7 @@ Write `<skills>/verify-<app>/SKILL.md` with YAML frontmatter (`name: verify-<app
 - **Drive:** the harness recipe with real selectors/commands from this repo, not examples. Prefer stable handles (ARIA labels, data attributes, prompt strings, route paths) over coordinates and tab order.
 - **Evidence:** what to capture for a proof and where it goes. State the proof standards: exercise the real user path, not internal setters or test-only endpoints; capture the action and the resulting state, not just the final screen; verify side effects (files written, rows inserted, messages sent) alongside what's visible; mocks only where a production boundary already isolates the external system. When the safe path is a dry-run or test mode, verify what it actually skips by observing (files, network, git refs) rather than trusting its name: some dry-runs still touch the network or open a browser.
 - **Cleanup:** how to tear down instances the run created. Never kill by process name; kill what you started. Cleanup removes instances and scratch state, never the evidence: proof artifacts survive the teardown, in a location the skill names.
-- **Helpers:** any script the skill ships is executable and its invocation is shown in the skill body. A helper the reader has to reverse-engineer is not a helper.
+- **CLI:** the skill ships its CLI in its own directory, executable, with every subcommand's invocation shown in the skill body. Launch, doctor, drive, and cleanup above each map to a subcommand. A helper the reader has to reverse-engineer is not a helper.
 
 ## 3. Seed the feature map
 

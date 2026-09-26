@@ -14,10 +14,10 @@ Apply each criterion to every finding:
 
 - Durability: still true in 6 months once paths, SHAs, tool versions, and code shapes have changed.
 - Specificity: broad enough to apply across tasks, precise enough that a future agent recognizes when to use it. Reject vague platitudes ("write good code") and hyper-specific facts ("`<specific-skill-name>` has 175 tokens at limit 80").
-- Existing-skill-first: propose `new skill via create-skill:` only when no existing skill is a real home, the pattern recurs, and the topic deserves its own skill.
+- Existing-skill-first: propose `new skill via skill-creation:` only when no existing skill is a real home, the pattern recurs, and the topic deserves its own skill.
 - Convergence: findings echoed by 2+ reviewers carry higher confidence. Singletons must clear a higher bar on the other criteria.
 - Decision-changing: a future agent does something different because of the edit, not just reads more text.
-- Structural-mechanism check: route to Backlog when a lint rule, script, metadata flag, or runtime check already enforces the rule or could enforce it cheaply. Skill prose is for things mechanisms cannot enforce.
+- Trust ladder: choose the most enforceable fix that holds. (1) Structure: change code or data structures so the mistake is impossible. (2) Check: a lint rule, type, compiler, or CI check. (3) Skill or rule edit. (4) Human review. Propose rungs 1 and 2 before a skill edit; skill prose is for what structure and checks cannot enforce. Reject a row as `structural` only when an existing mechanism already enforces it.
 - Skill-was-used: only accept findings that route to a skill, tool, or MCP the parent actually invoked in the transcript. If the skill wasn't used but should have been, route to `tune description: <skill path>` so it triggers next time. If neither, reject as `skill-not-used`.
 - Already-covered: read the target skill before accepting any body-edit row. If the proposal duplicates clear, well-placed existing guidance, reject as `already-covered`. The issue is execution, not the skill. If the existing guidance is buried, weak, or easy to skip past, accept the row but reframe the proposal as a wording / placement improvement to make it fire (not a duplicate addition).
 
@@ -41,9 +41,11 @@ Output exactly the format below. No preamble, no narration. One sentence per cel
 |---|---|---|
 | <failure mode in a skill the parent used> | <change to that skill's body> | <skill path + section> |
 | <skill existed but didn't trigger> | <tune the skill's description so it fires next time> | <tune description: <skill path>> |
-| <new pattern, no existing skill is a real home> | <draft a new skill via create-skill> | <new skill via create-skill: <kebab-name>> |
+| <mistake that structure can make impossible> | <the code or data-structure change> | <structure: <file or module>> |
+| <mistake a lint, type, compiler, or CI check can catch> | <the check to add> | <check: <tool + rule>> |
+| <new pattern, no existing skill is a real home> | <draft a new skill via skill-creation> | <new skill via skill-creation: <kebab-name>> |
 
-One row per finding. The user approves row by row.
+One row per finding, highest rung that holds. The user approves row by row.
 
 ## Rejected
 
@@ -53,4 +55,4 @@ For each rejected finding:
 
 ## Backlog
 
-For each item, describe the pattern, what was hit, and the suggested mechanism. The parent files each to whatever devex / backlog tracker the team uses.
+For each item, describe the pattern, what was hit, and the suggested mechanism. Use Backlog for fixes too large for this session. The parent presents them; filing any to a tracker waits for Shiv's explicit approval.

@@ -1,6 +1,6 @@
 # TypeScript patterns
 
-Code examples for each rule in `SKILL.md`. The underlying principles are language-agnostic. See the **type-system-discipline** and **boundary-discipline** principle skills.
+Code examples for each rule in `SKILL.md`. The underlying principles are language-agnostic. See `principle-type-system-discipline` and `STANDARDS/Core/Code.md`.
 
 ## Branded types
 
@@ -258,7 +258,7 @@ const config = { theme: "dark", cols: 3 } satisfies Config;
 
 ## Boundary validation
 
-Validate once where data crosses in. Trust types inside. See the **boundary-discipline** principle skill.
+Validate once where data crosses in. Trust types inside. `STANDARDS/Core/Code.md` owns boundary placement.
 
 - **Wire formats** (proto, JSON-RPC): parse with `ignoreUnknownFields` so forward-compatible changes don't break old clients.
 - **Persisted JSON:** versioned blob with a try/catch around the parse.
@@ -286,28 +286,3 @@ function renderChecks(s: Pick<ChecksMessage, "totalCount" | "checks">) {
 ```
 
 Reach for `Pick`, `Omit`, `Parameters`, `ReturnType`, `Awaited`, `typeof` before writing a new interface.
-
-## Object args
-
-```ts
-// Don't. Swap two args, still compiles.
-openFile(uri, {
-  startLineNumber: 10,
-  startColumn: 1,
-  endLineNumber: 10,
-  endColumn: 1,
-});
-
-// Do. Order-independent, self-documenting.
-openFile({
-  uri,
-  selection: {
-    startLineNumber: 10,
-    startColumn: 1,
-    endLineNumber: 10,
-    endColumn: 1,
-  },
-});
-```
-
-Skip on hot paths: per-frame render, tokenizers, parsers, anything in a tight loop where the allocation cost matters.

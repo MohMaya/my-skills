@@ -21,7 +21,7 @@ Findings must point to skills, tools, or MCPs invoked in this transcript. Specul
 
 - `Read` tool calls against any `SKILL.md` file: workspace skill folders (`.cursor/skills/`, `.claude/skills/`, `.agents/skills/`, `.pi/skills/`), user-level ones (`~/.cursor/skills/`, `~/.claude/skills/`, `~/.codex/skills/`, `~/.pi/agent/skills/`, `~/.agents/skills/`), or plugin-installed paths (`~/.cursor/plugins/`, `~/.claude/plugins/`)
 - Skill-invocation tool calls (`Skill` in Claude Code, `skill` in OpenCode)
-- Subagent prompts (`Task`, `Agent`, `task`, `spawn_agent`) that name a skill path
+- Subagent prompts (the harness's subagent tool, such as `Agent` in Claude Code) that name a skill path
 - Tool calls (Shell, Grep, MCP, etc.) that match a skill's documented commands
 
 Two valid finding shapes:

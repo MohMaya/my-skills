@@ -8,6 +8,8 @@ disable-model-invocation: true
 ---
 # How to make a bot UI
 
+This skill works only inside the Grok Bot runtime; it pairs with `create-grok-bot`.
+
 Build a page the user clicks. A server on this computer POSTs JSON to a webhook routine. The bot wakes with that JSON. Keep the sender key on the server. Do not put the sender key in the browser, in chat, or in this skill.
 
 ## Create the webhook routine
@@ -83,7 +85,7 @@ If `tailscale status` shows an online node, skip install. Read the hostname from
 
 Use HTTP. Do not add HTTPS unless the user asks.
 
-If Tailscale is not installed, install it:
+If Tailscale is not installed, ask Shiv for explicit approval before installing it; the install runs a remote script with sudo. After approval, install it:
 
 ```
 curl -fsSL https://tailscale.com/install.sh | sudo sh
