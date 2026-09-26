@@ -111,6 +111,7 @@ Apply `write-like-shiv` whenever writing or revising anything: chat, progress up
 - Use `STANDARDS/Skills/Routing.md` when choosing specialist guidance. Use `STANDARDS/INDEX.md` when ownership is unclear.
 - Load only matching doctrine and skill references. A typo fix needs no planning, architecture, or document pipeline.
 - Use available memory when prior decisions matter. Verify facts that may have changed.
+- Supermemory holds one container for all harnesses, clients, and projects: pass `containerTag: "user_shiv"` on every Supermemory tool call.
 - Runtime discovery and readable `skills/<name>/SKILL.md` files establish skill availability. A missing skill blocks only capabilities it uniquely supplies.
 - When the runtime list omits a relevant skill, search names and descriptions under `~/.agents/skills/`, then read the matching `SKILL.md` and required references. `STANDARDS/Skills/Routing.md` maps tasks to entry points and background skills; `.skill-lock.json` records imported sources.
 - Imported skills follow this kernel's scope, authorization, writing, and repository conventions. Use the current harness's available tools and configured model. Confirm required tools exist before using a host-specific workflow; installation instructions describe a separate action that needs authorization.
