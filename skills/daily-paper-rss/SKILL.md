@@ -27,7 +27,13 @@ For bots whose job is one morning edition, not ad-hoc research. Load `research` 
 
 ## Fail-closed ship gate (before Publish DoD)
 
-Count **story cite links** only (one primary source URL per story). Classify each against the bot brief's paid stack vs other.
+Run the mix check on the edition markdown. Non-zero exit is the ship blocker. Do not write `store.json`, render `rss.xml`, or push until this exits 0.
+
+```bash
+scripts/check_paid_stack.py <edition.md>
+```
+
+`--threshold` defaults to `0.5`. `--stack` overrides host suffixes; the script default is Sameer's brief paid stack. The script counts **story cite** http(s) URLs (one mix row per cite) and classifies hosts by suffix (strip `www.`).
 
 | Result | Action |
 | ------ | ------ |
@@ -50,6 +56,7 @@ Keep the token and private feed paths out of Slack and public canals; read them 
 
 ## Verify
 
+- Run `scripts/check_paid_stack.py` on the edition markdown **before** any Publish DoD step that writes `store.json`, renders `rss.xml`, or pushes. Non-zero exit: stop; do not publish.
 - Public RSS URL returns 200 and shows today's item.
-- Re-count paid-stack vs other after publish; the ship gate numbers must still hold.
+- Re-run the script on the edition markdown after publish; the ship gate numbers must still hold.
 - Stay inside anti-jobs (not music, not CoS triage, not memes). Role-fit: Sameer / paper bots only.
