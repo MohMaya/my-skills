@@ -37,7 +37,14 @@ The kernel's Engineering skills section owns the mandatory engineering triggers,
 | Bulk YouTube/Apple/Spotify playlist or liked-library mutations (fill, clear, rebuild under quota) | `media-library-bulk` |
 | Daily Economist-style paper / Readwise RSS news edition | `daily-paper-rss` |
 | Commit messages | `caveman-commit` |
-| Reviewing a diff or PR | `code-review-and-quality`; `simplify` when bloat is the question |
+| Reviewing a diff or PR | `code-review-and-quality`; `simplify` when bloat is the question; `pe-review` change mode when it touches UI; `blast-radius` for breakage beyond the diff before merging a change you don't fully trust |
+| How code works or where something should live; why it is shaped this way | `how`; `why` respectively |
+| Design-first sketch before code, on explicit request | `architect`, recording shapes in `codebase-design` terms |
+| Bakeoff of competing candidates | `arena` |
+| Catch me up or resume context | `recall` |
+| Turn session learnings into fixes | `reflect`, preferring code and lint fixes over skill edits; skill edits go through `writing-for-agents` |
+| Decision trail for unattended or multi-phase work | `show-me-your-work` |
+| Build or update a repo-local app driver skill | `create-verification-skill`; `maintain-verification-skill` |
 | Irreversible decision needing a fresh-context adversarial check | `doubt-driven-development` |
 | Hard bugs, flaky failures, perf regressions | `diagnosing-bugs` |
 | Logs, metrics, traces, alerts, runbooks | `observability-and-instrumentation`; `Workflow/Delivery.md` owns the baseline |
@@ -56,7 +63,9 @@ The kernel's Engineering skills section owns the mandatory engineering triggers,
 | Notion knowledge base | `Workflow/Notion.md` |
 | Writing code that crosses a trust boundary | `security-and-hardening` |
 | Review a security-sensitive diff; build a threat model; validate a finding; broader security review | `commit-security-scan`; `threat-model-generation`; `vulnerability-validation`; `security-review` respectively; `Workflow/Delivery.md` defines evidence and authorization boundaries |
-| Verify UI or debug in a real browser | `browser-testing-with-devtools` when the Chrome DevTools MCP server is connected; `playwright-cli` otherwise |
+| Verify UI or debug in a real browser | `browser-testing-with-devtools` when the Chrome DevTools MCP server is connected; `playwright-cli` otherwise; `pe-verify` for a recorded evidence report or QA-list run |
+| UI quality review or accessibility audit | `pe-review` |
+| Behavior spec of an existing product | `pe-product-description` |
 | Test-first loop on new behavior | `tdd` |
 | Stack-specific work | matching file under `STANDARDS/Stack/` |
 | Python cleanup, scanning, coverage, or lint and hook setup | `py-*` skills from the Skills table in `Stack/Python.md` |
@@ -68,16 +77,16 @@ The kernel's Engineering skills section owns the mandatory engineering triggers,
 | Deploy to Vercel; token-authenticated Vercel CLI, env vars, or domains | `deploy-to-vercel`; `vercel-cli-with-tokens` respectively; `shipping-and-launch` for production |
 | Mobile (Expo / React Native) | `expo-native-ui`, `expo-router`; ship via `eas-workflows`, `eas-app-stores` |
 | LLM features | `ai-sdk` (TS), `claude-api` (Anthropic specifics) |
-| Build product UI | Kernel Design authority first; `frontend-ui-engineering` for structure, states, accessibility, and responsiveness |
-| Art direction for a surface with no product design, such as a one-off tool or artifact | `frontend-design`; `design-taste-frontend` for direction and `high-end-visual-design` for premium surfaces; preserve the existing stack |
+| Build product UI | Kernel Design authority first; `frontend-ui-engineering` for structure, states, accessibility, and responsiveness; `pe-build` for craft |
+| Art direction for a surface with no product design, such as a one-off tool or artifact | `pe-design` direct mode and its presets; preserve the existing stack |
 | Figma design → code | `figma:figma-design-to-code`; `design-system` to formalize tokens first |
 | Code or description → Figma | `figma:figma-generate-design` (screens), `figma:figma-generate-library` (design system); `figma:figma-use` before any `use_figma` call |
-| UI polish and motion | `emil-design-eng`, `apple-design`, `web-design-guidelines` |
-| Animation work | `improve-animations` to plan, `review-animations` to review, `animation-vocabulary` to name the effect; `vercel-react-view-transitions` for React view transitions |
+| UI polish and motion | `pe-build` craft and motion modes |
+| Animation work | `pe-build` motion mode to build, including React view transitions; `pe-review` motion modes to review, audit, or find opportunities; `animate-expo` for Expo |
 | Marketing copy, positioning, pricing | `draft-content` for copy; `competitive-brief` for positioning; `pricing` |
 | Product architecture | `Product/Architecture.md` |
 | Office file in or out | `docx`, `pptx`, `xlsx` |
-| Images, diagrams, or presentations | `visual-design` and only its matching reference; existing image and presentation workflows own delivery |
+| Images, diagrams, or presentations | `visual-design` and only its matching reference for raster images and decks; `pe-brand-assets` for on-brand SVG, social images, and logos; `pe-design` mock mode for HTML diagrams and plans |
 | Requested human-writing edit | `human-writing` under `write-like-shiv`; `Core/Prose.md` owns everyday formatting and prose exceptions |
 | Initialize repository instructions; author a skill; edit a skill, `AGENTS.md`, or `CLAUDE.md` | `init`; `skill-creation`; `writing-for-agents` respectively; inspect existing instructions and preserve canonical ownership. `template-skill` is an unfinished authoring example |
 | Explicit iterative optimization experiment | `autoresearch`; `Core/Execution.md` defines budget, isolation, and stopping conditions |

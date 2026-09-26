@@ -3,7 +3,7 @@ name: skill-creation
 version: 1.0.0
 description: |
   Create, improve, and manage Droid skills. Use when the user wants to:
-  - Create new skills from scratch or from session learnings
+  - Create new skills from scratch or from a `reflect` finding
   - Improve existing skills based on user preferences
   - Analyze sessions to identify patterns worth codifying
   - Understand best practices for agentic skill design

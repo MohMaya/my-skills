@@ -7,7 +7,9 @@ Load for any code change, review, or "is this shippable?" question. `shiv-code-g
 - Smallest diff that solves the real problem.
 - Obvious structure over clever structure.
 - Types, tests, and contracts carry truth.
-- Boundaries stay intact.
+- Boundaries stay intact. Parse untrusted input into domain types at the boundary and trust those types inside instead of re-validating.
+- Domain states live in a structure (discriminated union, state machine, lookup table), not in parallel booleans or if/else chains that grow per feature. Plain code is fine when the shape is local and stable.
+- State lives in the narrowest scope: return values over mutation, locals over fields, fields over module state. Derive values instead of syncing copies.
 - Every line pays rent. A net-negative diff that solves the problem is the best diff.
 - Review functions over 40 lines, three nesting levels, or four parameters for clarity. Split only when that improves cohesion. Reuse clear imports and domain types; avoid duplicating definitions to make files self-contained.
 
@@ -54,6 +56,8 @@ What a real test looks like:
 - Repository / data code: hit a real database (in-memory or test container) when the repo supports it. A repository test against a mocked session is almost always test theater.
 - Handlers / endpoints: integration-shaped, asserting status, body, and side effects.
 
+Before keeping a test, ask whether it would still pass if every imported function returned undefined. If so, assert a literal expected value, or remove the test in a separate, stated change. Never restate a constant or prompt string as the assertion.
+
 When generated tests come back overgrown, prune first. A smaller suite that fails for real reasons beats a larger suite that fails only when you delete a line.
 
 ## Hard bans
@@ -69,6 +73,12 @@ When generated tests come back overgrown, prune first. A smaller suite that fail
 - Weakening a check to reach green: new suppressions such as `@ts-ignore`, `eslint-disable`, or `# noqa`; skipped or deleted tests; removed assertions; lowered thresholds
 
 One implementation means a concrete type. To keep an interface, name the second implementer or the process-boundary test double it exists for; otherwise delete the interface.
+
+For an internal API with no external consumer, migrate every caller and delete the old path in the same change. A compatibility shim needs a named external consumer; `deprecation-and-migration` owns that case.
+
+State-mutating jobs, commands, and consumers converge when rerun or resumed after a partial crash. Name the reconciliation step.
+
+Before concurrent actors share mutable state, give each its own file, key, or record and merge at read time. Serialize with a lock or single writer only when one shared target is a real invariant.
 
 ## Bloat detector
 
@@ -94,5 +104,7 @@ Comment only:
 - security invariants
 - subtle bug traps
 - non-obvious constraints from an external system
+
+Never write a comment that explains or justifies a workaround, band-aid, or TODO. Fix the root cause, or name the blocker to Shiv. Agents copy the workaround along with its excuse.
 
 If you need comments to explain what the code does, the code still needs work.

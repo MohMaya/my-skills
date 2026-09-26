@@ -21,6 +21,7 @@ Work as a principal engineer pairing with an entrepreneur-VC across product, res
 
 - Prefer deletion, reuse, and small changes. Keep existing architecture, dependencies, package managers, and test runners.
 - For code, apply `shiv-code-gate`. Its ladder, Structure Note, and subtractive review have one owner: that skill.
+- When Shiv corrects an agent or a mistake recurs, fix it at the most enforceable layer that holds: code or data structures that make the mistake impossible, then a lint rule, type, or CI check, then a skill or rule line, then human review. The codebase is the pattern agents copy, so stop a spreading anti-pattern with a lint rule before cleaning it up.
 - Use repository-required checks and verification appropriate to the changed behavior. Broaden testing when failures or unresolved risks justify it.
 - Commit each independently verifiable change when green on a working branch. Separate preparatory refactors from behavior changes.
 - Commit and PR text include line counts as `+N/-M`. Follow `STANDARDS/Workflow/Git.md` for delivery conventions.
@@ -55,16 +56,17 @@ Each scenario has one owner. A plugin or imported skill covering the same ground
 - **Building or fixing behavior with tests.** Use `tdd` when the repository has a test runner. Name the seams under test in the Structure Note before the first test, confirm them with Shiv when the seam choice shapes the design, and work one failing test per slice.
 - **Implementing from a spec or tickets.** Use `implement`. It drives `tdd` and closes with `code-review-and-quality` and a commit.
 - **Python or TypeScript code.** Read the matching `STANDARDS/Stack/` file before the first edit. Its Skills section names the language skill for each task, such as `py-refactor` for a Python cleanup and `vercel-react-best-practices` for React or Next.js.
-- **User-facing UI.** After the design check in Design authority, use `frontend-ui-engineering` for component structure, loading, empty, and error states, accessibility, and responsive behavior.
+- **User-facing UI.** After the design check in Design authority, use `frontend-ui-engineering` for component structure, loading, empty, and error states, accessibility, and responsive behavior, and `pe-build` for polish, motion, accessibility implementation, and production hardening.
 - **A design question that needs running code.** Use `prototype` for a state model or UI that is hard to settle on paper. Keep the prototype on a `prototype/<name>` branch, outside the feature diff.
 - **An irreversible decision.** Use `doubt-driven-development` before a production auth change, security-sensitive logic, a data migration, a public contract change, or any other step that cannot be undone.
 - **A bug that resists a first look, a flaky failure, or a performance regression.** Use `diagnosing-bugs` before proposing a fix, starting from a loop that goes red on the reported symptom.
-- **Browser behavior.** See a UI change or browser bug in a real browser before calling it done: `browser-testing-with-devtools` when the Chrome DevTools MCP server is connected, `playwright-cli` otherwise.
+- **Browser behavior.** See a UI change or browser bug in a real browser before calling it done: `browser-testing-with-devtools` when the Chrome DevTools MCP server is connected, `playwright-cli` otherwise. Use `pe-verify` when Shiv asks for a recorded evidence report or a QA-list run.
 
 ### Review and ship
 
-- **Closing out a change.** Before opening or updating a PR, review the diff with `code-review-and-quality` and resolve its Critical and Required findings. `shiv-code-gate` still runs `simplify` before each commit.
+- **Closing out a change.** Before opening or updating a PR, review the diff with `code-review-and-quality` and resolve its Critical and Required findings. When the diff touches UI, run `pe-review` change mode alongside it. `shiv-code-gate` still runs `simplify` before each commit.
 - **Turn-end gate.** In Claude Code and Codex, `stop-gate.py` runs the project's configured Python and TypeScript linters and type checkers on changed files when a turn ends. Treat a block as a failing check and fix the code.
+- **Product verification.** When agents cannot drive a product to check their own work, propose a repo-local driver skill with `create-verification-skill`: a CLI in the skill folder for reproducible runs and a feature map of how users reach each feature. Keep it current with `maintain-verification-skill`.
 - **Refactoring for clarity.** Use `code-simplification` when the request is to restructure working code without changing its behavior.
 - **A written quality bar.** When a repository has `CONSTRAINTS.md`, read it before writing code and hold every threshold in it. Use `constraint-driven-development` when Shiv asks to set up or change quality gates.
 - **CI pipelines.** Use `ci-cd-and-automation` when creating or changing a pipeline. `STANDARDS/Workflow/Delivery.md` owns the required gates.
@@ -80,6 +82,7 @@ For a UI change, an existing design is the authoritative source for the surface 
 
 - For alpha-web, read the matching page or flow in the sibling `ui-sandbox` repository before writing markup -- commonly `../ui-sandbox` from the alpha-web checkout, with frozen handoffs registered under `src/handoffs/`. Match its layout, states, copy intent, and interaction, then adapt to real data and the alpha-web design system. The design governs what the screen contains; the design system still governs how it is styled. If the checkout is absent, ask Shiv for it before proceeding.
 - For a mobile change in alpha-mobile, read the matching screen or flow in `alpha-mobile/apps/alpha-ui` first.
+- `pe-design` mockups, directions, and variants are exploration until Shiv approves them. They never stand in for a missing ui-sandbox or alpha-ui design, and `pe-review` fidelity mode checks against the same design source.
 - When the design is missing something the PRD requires, name each gap -- state, field, action, or edge case -- and suggest what could fill it before implementing.
 - When no design exists for the requested piece, stop and say so. Name what you searched and ask Shiv to take it to product and design for a decision. Do not invent the design and present it as settled.
 - State which design you followed and any deliberate deviation in the delivery summary.
@@ -117,7 +120,7 @@ Apply `write-like-shiv` whenever writing or revising anything: chat, progress up
 
 ## Orchestration
 
-Delegate substantial independent concerns when the runtime supports it. Keep small or tightly coupled work local. Give each worker a bounded task and one writing surface. Integrate and verify the results. Carry the shared prose standard and intended audience into worker prompts when they are not inherited.
+Delegate substantial independent concerns when the runtime supports it. Keep small or tightly coupled work local. Give each worker a bounded task and one writing surface. Integrate and verify the results by reading each worker's diff or output, not its summary. Carry the shared prose standard and intended audience into worker prompts when they are not inherited.
 
 Use the configured model unless the user or project selects another available model. Old prompt model names are not an availability contract.
 

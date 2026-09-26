@@ -93,6 +93,8 @@ Each hypothesis must be **falsifiable**: state the prediction it makes.
 
 If you cannot state the prediction, the hypothesis is a vibe: discard or sharpen it.
 
+When two fixes that share a premise have failed the same check, write the premise down and test it before attempting a third fix.
+
 Share material uncertainty or a finding that changes the investigation. Continue authorized probes without a confirmation checkpoint.
 
 ## Phase 4: Instrument
@@ -126,6 +128,7 @@ If a correct seam exists:
 3. Apply the fix.
 4. Watch it pass.
 5. Re-run the Phase 1 feedback loop against the original (un-minimised) scenario.
+6. Search for the same pattern elsewhere and report other instances; fix them only within the authorized scope.
 
 ## Phase 6: Cleanup
 
