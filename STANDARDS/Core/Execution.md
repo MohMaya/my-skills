@@ -26,6 +26,8 @@ Check test configuration before assuming fixtures are disposable or services are
 
 For `autoresearch`, establish the metric, allowed edits, experiment budget, and stopping condition before starting. Run experiments in a dedicated worktree with an inspected starting state. Preserve unrelated tracked and untracked files; limit rollback to the experiment's own edits. Continue only within the authorized budget, even when an imported procedure says to loop forever.
 
+For repetitive edits or checks across many sites, write a rerunnable script or codemod, prove it against one hand-done unit, and commit it only when the work outlives the session.
+
 Run affected checks after relevant edits. Broaden or repeat them when new evidence warrants it. Fix failures caused by the change and report unrelated failures.
 
 ## Completion

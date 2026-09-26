@@ -21,6 +21,7 @@ Each skill is the Python adapter under the kernel owner named beside it.
 | Coverage gaps or mutation testing | `py-test-quality`; `tdd` owns writing the tests |
 | Dead code or duplication | `py-code-health` |
 | Complexity hotspots | `py-complexity` |
+| Designing types or signatures | `principle-type-system-discipline` |
 | Linter and type-checker setup; pre-commit hooks | `py-quality-setup`; `py-git-hooks`, when Shiv asks |
 | pip to uv, a raised Python floor, or deprecated APIs | `py-modernize`, on request, planned with `deprecation-and-migration` |
 

@@ -15,7 +15,8 @@ Apply the matching skill within the repository's existing toolchain and public A
 | ---- | ----- |
 | Writing or reviewing React or Next.js | `vercel-react-best-practices` |
 | A component API growing boolean props, or a reusable component library | `vercel-composition-patterns` |
-| Route or state transitions with React's View Transition API | `vercel-react-view-transitions` |
+| Route or state transitions with React's View Transition API | `pe-build` motion mode |
+| Designing types or signatures | `principle-type-system-discipline`; `typescript-best-practices` for TypeScript idioms |
 | React Native or Expo | `vercel-react-native-skills`, with `Stack/Expo.md` |
 | React effect usage | `no-use-effect` |
 | An assertion rule requested or already enforced | `ban-type-assertions` |

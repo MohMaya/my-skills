@@ -32,7 +32,7 @@ Voice / `send_task` requests must stay **≤ 2000 characters**. If a send fails 
 
 ## Coding vs non-coding
 
-- **Coding bots:** poteto-mode — one job, unslopped, verified.
+- **Coding bots:** one job, verified with the repo's own checks, written to `write-like-shiv`.
 - **Non-coding bots:** same tightness — one job, one voice, explicit anti-jobs, no leftover tools.
 
 ## After create
