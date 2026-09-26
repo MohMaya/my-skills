@@ -21,7 +21,7 @@ Work as a principal engineer pairing with an entrepreneur-VC across product, res
 
 - Prefer deletion, reuse, and small changes. Keep existing architecture, dependencies, package managers, and test runners.
 - For code, apply `shiv-code-gate`. Its ladder, Structure Note, and subtractive review have one owner: that skill.
-- When Shiv corrects an agent or a mistake recurs, fix it at the most enforceable layer that holds: code or data structures that make the mistake impossible, then a lint rule, type, or CI check, then a skill or rule line, then human review. The codebase is the pattern agents copy, so stop a spreading anti-pattern with a lint rule before cleaning it up.
+- When Shiv corrects an agent or a mistake recurs, propose the fix at the most enforceable layer that holds, and apply it within the current task's scope: code or data structures that make the mistake impossible, then a lint rule, type, or CI check, then a skill or rule line, then human review. The codebase is the pattern agents copy, so stop a spreading anti-pattern with a lint rule before cleaning it up.
 - Use repository-required checks and verification appropriate to the changed behavior. Broaden testing when failures or unresolved risks justify it.
 - Commit each independently verifiable change when green on a working branch. Separate preparatory refactors from behavior changes.
 - Commit and PR text include line counts as `+N/-M`. Follow `STANDARDS/Workflow/Git.md` for delivery conventions.
@@ -56,7 +56,7 @@ Each scenario has one owner. A plugin or imported skill covering the same ground
 - **Building or fixing behavior with tests.** Use `tdd` when the repository has a test runner. Name the seams under test in the Structure Note before the first test, confirm them with Shiv when the seam choice shapes the design, and work one failing test per slice.
 - **Implementing from a spec or tickets.** Use `implement`. It drives `tdd` and closes with `code-review-and-quality` and a commit.
 - **Python or TypeScript code.** Read the matching `STANDARDS/Stack/` file before the first edit. Its Skills section names the language skill for each task, such as `py-refactor` for a Python cleanup and `vercel-react-best-practices` for React or Next.js.
-- **User-facing UI.** After the design check in Design authority, use `frontend-ui-engineering` for component structure, loading, empty, and error states, accessibility, and responsive behavior, and `pe-build` for polish, motion, accessibility implementation, and production hardening.
+- **User-facing UI.** After the design check in Design authority, use `frontend-ui-engineering` for component structure, loading, empty, and error states, and responsive behavior, and `pe-build` for polish, motion, accessibility, and production hardening.
 - **A design question that needs running code.** Use `prototype` for a state model or UI that is hard to settle on paper. Keep the prototype on a `prototype/<name>` branch, outside the feature diff.
 - **An irreversible decision.** Use `doubt-driven-development` before a production auth change, security-sensitive logic, a data migration, a public contract change, or any other step that cannot be undone.
 - **A bug that resists a first look, a flaky failure, or a performance regression.** Use `diagnosing-bugs` before proposing a fix, starting from a loop that goes red on the reported symptom.

@@ -37,12 +37,12 @@ The kernel's Engineering skills section owns the mandatory engineering triggers,
 | Bulk YouTube/Apple/Spotify playlist or liked-library mutations (fill, clear, rebuild under quota) | `media-library-bulk` |
 | Daily Economist-style paper / Readwise RSS news edition | `daily-paper-rss` |
 | Commit messages | `caveman-commit` |
-| Reviewing a diff or PR | `code-review-and-quality`; `simplify` when bloat is the question; `pe-review` change mode when it touches UI; `blast-radius` for breakage beyond the diff before merging a change you don't fully trust |
+| Reviewing a diff or PR | `code-review-and-quality`; `simplify` when bloat is the question; `pe-review` change mode when it touches UI; `blast-radius` for breakage beyond the diff when a change touches shared code, contracts, or configuration |
 | How code works or where something should live; why it is shaped this way | `how`; `why` respectively |
 | Design-first sketch before code, on explicit request | `architect`, recording shapes in `codebase-design` terms |
 | Bakeoff of competing candidates | `arena` |
 | Catch me up or resume context | `recall` |
-| Turn session learnings into fixes | `reflect`, preferring code and lint fixes over skill edits; skill edits go through `writing-for-agents` |
+| Turn session learnings into fixes | `reflect`, following the kernel's corrections rule; skill edits go through `writing-for-agents` |
 | Decision trail for unattended or multi-phase work | `show-me-your-work` |
 | Build or update a repo-local app driver skill | `create-verification-skill`; `maintain-verification-skill` |
 | Irreversible decision needing a fresh-context adversarial check | `doubt-driven-development` |
@@ -78,7 +78,7 @@ The kernel's Engineering skills section owns the mandatory engineering triggers,
 | Mobile (Expo / React Native) | `expo-native-ui`, `expo-router`; ship via `eas-workflows`, `eas-app-stores` |
 | LLM features | `ai-sdk` (TS), `claude-api` (Anthropic specifics) |
 | Build product UI | Kernel Design authority first; `frontend-ui-engineering` for structure, states, accessibility, and responsiveness; `pe-build` for craft |
-| Art direction for a surface with no product design, such as a one-off tool or artifact | `pe-design` direct mode and its presets; preserve the existing stack |
+| Art direction for a one-off tool or artifact outside a product | `pe-design` direct mode and its presets; preserve the existing stack |
 | Figma design → code | `figma:figma-design-to-code`; `design-system` to formalize tokens first |
 | Code or description → Figma | `figma:figma-generate-design` (screens), `figma:figma-generate-library` (design system); `figma:figma-use` before any `use_figma` call |
 | UI polish and motion | `pe-build` craft and motion modes |

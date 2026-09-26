@@ -281,15 +281,6 @@
       "installedAt": "2026-05-03T16:51:17.947Z",
       "updatedAt": "2026-08-11T16:31:56.293Z"
     },
-    "frontend-design": {
-      "source": "factory-ai/factory-plugins",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/factory-ai/factory-plugins.git",
-      "skillPath": "plugins/droid-evolved/skills/frontend-design/SKILL.md",
-      "skillFolderHash": "2ffaf3d370397d97a2320e6e91f6fa1eefc206ba",
-      "installedAt": "2026-05-03T16:55:30.072Z",
-      "updatedAt": "2026-09-10T13:44:34.976Z"
-    },
     "full-output-enforcement": {
       "source": "leonxlnx/taste-skill",
       "sourceType": "github",
