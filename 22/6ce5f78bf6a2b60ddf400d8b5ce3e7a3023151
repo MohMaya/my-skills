@@ -1,0 +1,19 @@
+AGENTS.md
+  s_88c062cf354c17::t_90247c03957c3b 114
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "226ce5f78bf6a2b60ddf400d8b5ce3e7a3023151",
+  "prompts": {},
+  "sessions": {
+    "s_88c062cf354c17": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4626eca1-23f5-4177-8309-f98a497921b5",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Shivanshu Chaudhary <shivanshuchaudhary97@gmail.com>"
+    }
+  }
+}
