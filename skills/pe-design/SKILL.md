@@ -11,11 +11,26 @@ metadata:
 Everything before production code. This spine routes; the craft lives in the
 reference files — load only what the mode needs.
 
+## Design authority (first, every mode)
+
+Run the kernel's Design authority check before any mode:
+
+- **alpha-web:** read the matching page or flow in the sibling `ui-sandbox` repo
+  (commonly `../ui-sandbox`; frozen handoffs under `src/handoffs/`).
+- **alpha-mobile:** read the matching screen or flow in `alpha-mobile/apps/alpha-ui`.
+- **No product design for the piece:** stop, name what you searched, and ask Shiv to
+  take it to product and design.
+
+An existing design governs what the surface contains. **direct**, **mock**, **vary**,
+and understand's generated mode run only on explicit request, and every artifact they
+produce is labelled "exploration, not approved" until product and design adopt it.
+
 ## Contract (all modes)
 
 - **Deliverables are documents and artifacts**, never production code. The one
-  sanctioned codebase touch is vary mode's throwaway picker harness, removed when a
-  variant is promoted.
+  sanctioned codebase touch is vary mode's throwaway picker harness, built on a
+  `prototype/<name>` branch outside the feature diff and removed when a variant is
+  promoted.
 - **Authority chain, every mode:** the user's words → the project's design system
   (DESIGN.md, tokens, components) → the subject itself → your judgment. Never let a
   preset or a habit override an upstream authority.
@@ -52,9 +67,11 @@ from which conversation or variant, the exact state approved (layout, toggles, f
 as chosen), the decisions on the way (what was rejected and why), and what is explicitly
 out of scope. A newer approval supersedes: rename the old folder `<slug>--YYYY-MM-DD`
 (its approval date; append `-2`, `-3` on a same-day collision), never delete it, and
-never edit a record except to mark it superseded. If `.product/` is absent, create it
-and tell the user the convention: product-level records live there, human-readable and
-diffable, owned by the user.
+never edit a record except to mark it superseded. If `.product/` is absent, ask before
+creating it, and tell the user the convention: product-level records live there,
+human-readable and diffable, owned by the user. In the alpha repos the `ui-sandbox`
+handoff (or `alpha-ui` screen) is the approval record, so skip `.product/approved/`
+there.
 
 ## Name mapping
 

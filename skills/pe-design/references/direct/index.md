@@ -23,7 +23,7 @@ Everything in the fundamentals section applies universally. The editorial proces
 
 **Anchor everything to the subject.** Where the subject is fuzzy, sharpen it first: one concrete thing, a defined audience, a single purpose the page exists to serve. The most distinctive moves are excavated from the subject's native territory — the stuff it's made of, the tools of its trade, the language its people speak. Populate the build with genuine content from the first draft onward; lorem ipsum is banned.
 
-**Put two typefaces in conversation.** Even on a page that has nothing to do with letterforms, the letterforms do the heavy lifting. Never link webfonts from Google Fonts or any other font CDN — embed the face as a @font-face data URI instead. Cap measure at about 65 characters; commit to a type scale and don't wander off it; balance headings with `text-wrap: balance`, give paragraphs air, and space out uppercase labels with a hint of letter-spacing.
+**Put two typefaces in conversation.** Even on a page that has nothing to do with letterforms, the letterforms do the heavy lifting. Outside Artifact-tool pages, never link webfonts from Google Fonts or any other font CDN — embed the face as a @font-face data URI instead. A page published through the Artifact tool may load Google Fonts stylesheets. Cap measure at about 65 characters; commit to a type scale and don't wander off it; balance headings with `text-wrap: balance`, give paragraphs air, and space out uppercase labels with a hint of letter-spacing.
 
 **Neutrals are choices too.** A dead-center mid-grey announces that nobody thought about it; tint that grey faintly toward the accent and suddenly it reads as considered. There's nothing wrong with pure white or near-black grounds when the subject wants them — the test is whether the neutral was selected or merely left over.
 
@@ -68,16 +68,4 @@ Audit the design plan against the subject before a line of code exists: any elem
 
 ## After the artifact ships
 
-Once the artifact is finished and delivered, ask the user whether they'd like to share it as a public page. If — and only if — they say yes, publish the file with the `tot` CLI (tot.page) and hand back the URL it prints:
-
-```bash
-tot path/to/artifact.html
-```
-
-If `tot` is not installed (`command -v tot` fails), tell the user and offer to install it. Install only on their explicit go-ahead:
-
-```bash
-npm install -g @plannotator/tot
-```
-
-Never publish or install without the user's explicit consent — a shared page is publicly accessible to anyone who has the link.
+Publish the page only when Shiv asks, and publish it through the harness's Artifact tool.

@@ -27,7 +27,7 @@ conventions, and the capture method live in `references/` — load what the run 
 - **Evidence or it is not a finding.** Every fail and flag carries a `file:line`, a
   recording timestamp, or the command that showed it.
 - **A missing browser skips, never blocks.** The orchestrator checks for a browser once,
-  in Scope, and may offer the install there; workers never prompt. Browser items without
+  in Scope, and may ask for install consent there; workers never prompt. Browser items without
   a browser report `skipped` with the reason; code items still run.
 
 ## Modes
@@ -57,7 +57,10 @@ Decide per item, at run time. A list entry may carry a hint ("— browser"); mos
 - **code** — read, trace, run tests or commands; no browser. "Bun is still pinned to
   1.3.x", "no config-breaking changes in this release", "the install script still
   targets both paths".
-- **browser** — Playwright drives the product and records it. "Annotating HTML works
+- **browser** — a browser drives the product and records it, through the kernel's
+  owners: `browser-testing-with-devtools` when the Chrome DevTools MCP server is
+  connected, `playwright-cli` otherwise; raw `npx playwright` only as the fallback
+  when neither can produce the recording. "Annotating HTML works
   headlessly", "every toolbar button is present", "the diff loads on a 2MB file".
 - **mixed** — both: a behavior in the browser plus the code path behind it.
 
@@ -79,9 +82,9 @@ fragment shaped by the contract; the orchestrator assembles `report.json`, sets
 
 1. **Scope.** Name the mode, the target (a feature, or the list and its path), the
    commit, and how the product will be reached (local server, built artifact, CLI).
-   Check that Playwright has a browser; when it does not, offer
-   `npx playwright install chromium` in one line and continue with whatever answer
-   comes — no answer means browser items skip.
+   Check that a browser is available through the owners above. When none is, ask Shiv
+   in one line whether to install one (`npx playwright install chromium`); install only
+   on his explicit yes. Any other answer, or none, means browser items skip.
 2. **Classify** each check as above.
 3. **Run.** Browser items per `references/evidence.md`: a recording, three to six
    checkpoints with stills, one-line narration each. Code items: the command or the
@@ -95,7 +98,8 @@ fragment shaped by the contract; the orchestrator assembles `report.json`, sets
 
 ## Handoffs
 
-Fixes → **pe-build**. Judgment of quality — does it look right, is the motion good, is
+Non-UI acceptance proof (APIs, jobs, CLIs) → `verify-and-stop`. Building a repo-local
+skill that launches and drives this app → `create-verification-skill`. Fixes → **pe-build**. Judgment of quality — does it look right, is the motion good, is
 it accessible — → **pe-review**. Whether the build matches the approved mock →
 **pe-review**, fidelity mode. Documenting the behavior that was verified →
 **pe-product-description**.

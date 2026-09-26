@@ -15,11 +15,15 @@ craft itself lives in the reference files — load only what the mode needs.
 
 1. **Boundary** — name the exact target, what must remain unchanged, and the surface's
    job (persuade / operate / read / experience); read `DESIGN.md` when present and
-   verify it against tokens, components, and rendered output. Read `.product/approved/`
-   for a record matching the target: an approved artifact ranks above your judgment and
-   below the user's words — implement to it, and state any deviation (constraint,
-   platform, accessibility) before making it, never as a silent improvement. Preserve
-   the incumbent identity: polish is refinement, never a concealed redesign.
+   verify it against tokens, components, and rendered output. Run the kernel's Design
+   authority check first: on alpha-web the matching page in the sibling `ui-sandbox`
+   repo (handoffs under `src/handoffs/`), on alpha-mobile `alpha-mobile/apps/alpha-ui`;
+   when no design exists, stop and ask Shiv to take it to product and design. Only when
+   no kernel design source applies, read `.product/approved/` (if present) for a record
+   matching the target. The design ranks above your judgment and below the user's
+   words — implement to it, and state any deviation (constraint, platform,
+   accessibility) before making it, never as a silent improvement. Preserve the
+   incumbent identity: polish is refinement, never a concealed redesign.
 2. **Evidence** — read the real code and, where possible, the rendered result before
    changing anything.
 3. **Triage** — fix in order: blocked tasks and inaccessible paths → missing states
@@ -43,12 +47,6 @@ craft itself lives in the reference files — load only what the mode needs.
 **Generation guardrail:** when writing new UI from scratch in any mode, also load
 `craft/generation-guardrails.md` (terse MUST/NEVER rules).
 
-**Course preference:** if `references/course/` contains files, prefer them for their
-topics — `craft-design-rules.md` and friends extend craft; the `motion-*` files extend
-and deepen motion (CSS, Motion for React, gestures, scroll, debugging, performance,
-reduced-motion snippets, and the motion-brief interview). They are a licensed local
-install; never copy from them into tracked files.
-
 ## Gates
 
 - **Redesign gate:** changing the visual identity (fonts, palette, layout language) is
@@ -71,6 +69,8 @@ install; never copy from them into tracked files.
   novel curves ad hoc.
 - Stagger ~30–80ms between list items, ~100ms between semantic groups.
 - Never disable submit buttons; validate on submit.
+- Comments explain a non-obvious why. A workaround or band-aid gets a root-cause fix,
+  not a comment justifying it. The repo's comment conventions win.
 
 ## Name mapping
 
@@ -82,5 +82,6 @@ skill.
 
 ## Handoffs
 
-Verdicts and audits → **pe-review**. Proof that the built feature works, with recordings → **pe-verify** (the natural last step after harden). Direction, mockups, variations → **pe-design**. Standalone brand assets → **pe-brand-assets**. Documenting the
+Component structure and state (loading, empty, error) → `frontend-ui-engineering`; this
+skill owns the craft bar on top. Verdicts and audits → **pe-review**. Proof that the built feature works, with recordings → **pe-verify** (the natural last step after harden). Direction, mockups, variations → **pe-design**. Standalone brand assets → **pe-brand-assets**. Documenting the
 system you built → **pe-design**, understand mode.

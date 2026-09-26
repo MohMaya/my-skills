@@ -77,4 +77,5 @@ raster where the destination requires it.
 
 No brand truth exists → **pe-design**, understand mode (document or generate the system
 first). Asset needs to become a UI component → **pe-build**. Judging existing assets →
-**pe-review**. Animating an asset → **pe-build**, motion mode.
+**pe-review**. Animating an asset → **pe-build**, motion mode. Raster image generation
+(photographic or painted imagery, not SVG exported to PNG) → `visual-design`.

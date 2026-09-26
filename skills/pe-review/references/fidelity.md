@@ -5,7 +5,11 @@ artifact the user approved.
 
 ## Locate the record
 
-- Read `.product/approved/`. Each folder is one record: the approved artifact
+- Check the kernel design source first: on alpha-web, the matching page or flow in the
+  sibling `ui-sandbox` repo (frozen handoffs under `src/handoffs/`); on alpha-mobile,
+  the matching screen in `alpha-mobile/apps/alpha-ui`. When one matches, it is the
+  record; compare against it and skip `.product/approved/`.
+- Otherwise read `.product/approved/`. Each folder is one record: the approved artifact
   byte-for-byte, plus `approval.md`. Match the folder to the feature, route, or
   component under review by slug; when two could match, ask which, naming both.
 - A folder named `<slug>--YYYY-MM-DD` is superseded (the pe-design skill's Approval
