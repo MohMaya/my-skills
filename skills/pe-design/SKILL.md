@@ -18,12 +18,13 @@ Run the kernel's Design authority check before any mode:
 - **alpha-web:** read the matching page or flow in the sibling `ui-sandbox` repo
   (commonly `../ui-sandbox`; frozen handoffs under `src/handoffs/`).
 - **alpha-mobile:** read the matching screen or flow in `alpha-mobile/apps/alpha-ui`.
-- **No product design for the piece:** stop, name what you searched, and ask Shiv to
-  take it to product and design.
+- **No product design for a product surface:** stop, name what you searched, and ask
+  Shiv to take it to product and design. One-off tools and artifacts outside a product
+  may use direct mode for art direction.
 
 An existing design governs what the surface contains. **direct**, **mock**, **vary**,
 and understand's generated mode run only on explicit request, and every artifact they
-produce is labelled "exploration, not approved" until product and design adopt it.
+produce is labelled "exploration, not approved" until Shiv approves it.
 
 ## Contract (all modes)
 

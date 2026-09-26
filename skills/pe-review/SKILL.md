@@ -1,6 +1,6 @@
 ---
 name: pe-review
-description: Read-only review of existing UI with verdicts. Use to critique a screen, site, or screenshot; review a diff, branch, or PR for interface quality; produce a prioritized audit with implementation plans for another agent; check code against the Web Interface Guidelines; stress-test a component in hostile states; review animation and motion craft; audit accessibility; or check an implementation against the approved design record. Triggers on review, critique, audit, UX review, design review, interface review, "review my PR", "check accessibility", "will this survive", "review the animations", "did we match the mock". Produces findings and verdicts only — never edits code.
+description: Read-only review of existing UI with verdicts. Use to critique a screen, site, or screenshot; review a diff, branch, or PR for interface quality; produce a prioritized audit with implementation plans for another agent; check code against the Web Interface Guidelines; stress-test a component in hostile states; review animation and motion craft; audit accessibility; or check an implementation against the approved design record. Triggers on UI review, UX review, design review, interface review, UI audit, "review this screen", "check accessibility", "will this survive", "review the animations", "did we match the mock". Runs alongside code-review-and-quality, which owns general code review. Produces findings and verdicts only — never edits code.
 license: Apache-2.0
 metadata:
   provenance: foundry/derivations/review.md in the source repository

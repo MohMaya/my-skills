@@ -1,8 +1,3 @@
----
-name: animate
-description: Build an animation from scratch, making the decisions in the order that determines whether it feels right — should it animate at all, what purpose, which tool, which properties, which curve and duration, how it interrupts, how it exits. Writes the implementation. Use when asked to animate something, add motion, make a component feel alive, or build a transition. For critiquing existing motion use review-animations; for auditing a whole codebase use improve-animations.
----
-
 # Building Animations
 
 A construction skill. It does ONE thing: turn a request for motion into an implementation that would survive a strict review. It does not audit a codebase (that's pe-review motion audit, `pe-review/references/motion-audit.md`), critique a diff (that's pe-review motion mode, `pe-review/references/motion-review.md`), hunt for places that could animate (that's pe-review opportunities mode, `pe-review/references/motion-opportunities.md`), or build for React Native (that's `animate-expo`).

@@ -85,7 +85,7 @@ If `tailscale status` shows an online node, skip install. Read the hostname from
 
 Use HTTP. Do not add HTTPS unless the user asks.
 
-If Tailscale is not installed, ask Shiv for explicit approval before installing it; the install runs a remote script with sudo. After approval, install it:
+If Tailscale is not installed, ask Shiv for explicit approval before installing it and joining the machine to a tailnet; the install runs a remote script with sudo, and `tailscale up` adds the machine to the network. After approval, install it:
 
 ```
 curl -fsSL https://tailscale.com/install.sh | sudo sh

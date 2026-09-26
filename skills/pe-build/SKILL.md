@@ -1,6 +1,6 @@
 ---
 name: pe-build
-description: Write and refine production UI code to a high craft bar. Use for building components, polish and detail work (spacing, typography, color, copy, icons, shadows, interaction states), implementing animation and gestures, implementing accessibility (keyboard, screen readers, focus, forms), and hardening for production (real data, failure states, devices, languages, offline, shipping metadata). Triggers on build, implement, polish, refine, tighten, "feels off", animate, transition, gesture, drawer, make accessible, keyboard navigation, production-ready, edge cases, empty states. The deliverable is code. Not for read-only critique (review) or pre-code design work (design).
+description: Write and refine production UI code to a high craft bar. Use for building components, polish and detail work (spacing, typography, color, copy, icons, shadows, interaction states), implementing animation and gestures, implementing accessibility (keyboard, screen readers, focus, forms), and hardening for production (real data, failure states, devices, languages, offline, shipping metadata). Triggers on polish, refine, tighten, "feels off", animate, transition, gesture, drawer, make accessible, keyboard navigation, screen reader, production-ready, harden. Component structure and loading, empty, and error states belong to frontend-ui-engineering. The deliverable is code. Not for read-only critique (review) or pre-code design work (design).
 license: Apache-2.0
 metadata:
   provenance: foundry/derivations/build.md in the source repository

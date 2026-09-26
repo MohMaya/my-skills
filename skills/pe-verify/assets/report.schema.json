@@ -196,7 +196,7 @@
           },
           "checked_by": {
             "type": "string",
-            "description": "Who ran it, e.g. 'opus · browser' or 'sonnet · code'"
+            "description": "Who ran it, e.g. 'worker · browser' or 'coordinator · code'"
           }
         },
         "allOf": [

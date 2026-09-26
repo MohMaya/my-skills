@@ -56,7 +56,7 @@ What a real test looks like:
 - Repository / data code: hit a real database (in-memory or test container) when the repo supports it. A repository test against a mocked session is almost always test theater.
 - Handlers / endpoints: integration-shaped, asserting status, body, and side effects.
 
-Before keeping a test, ask whether it would still pass if every imported function returned undefined. If so, assert a literal expected value, or remove the test in a separate, stated change. Never restate a constant or prompt string as the assertion.
+Before keeping a test, ask whether it would still pass if every imported function returned undefined. If so, assert a literal expected value, or remove the test in a separate, stated change. Assert on behavior, not on a restated constant or prompt string.
 
 When generated tests come back overgrown, prune first. A smaller suite that fails for real reasons beats a larger suite that fails only when you delete a line.
 
@@ -105,6 +105,6 @@ Comment only:
 - subtle bug traps
 - non-obvious constraints from an external system
 
-Never write a comment that explains or justifies a workaround, band-aid, or TODO. Fix the root cause, or name the blocker to Shiv. Agents copy the workaround along with its excuse.
+Fix the root cause instead of commenting a workaround, band-aid, or TODO; agents copy the workaround along with its excuse. When the blocker is outside the codebase, name it to Shiv. A workaround that must stay for an external system gets one line naming that constraint and the condition for removing it.
 
 If you need comments to explain what the code does, the code still needs work.

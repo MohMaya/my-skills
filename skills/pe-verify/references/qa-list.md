@@ -8,31 +8,12 @@ demand. It stays in the repo; nothing else this skill produces does.
 1. Look in `.product/` for a markdown file whose name says what it is: `qa-list.md`,
    `qa.md`, `checks.md`, `release-checklist.md`, `verify.md`. One match is the list.
    Several matches: ask which.
-2. No match: read `~/.product-engineering/memories.md` for a `## pe-verify` entry
-   naming this repo. Use that path.
-3. Still nothing: ask one question — where the list is, or whether to seed one — and
-   record the answer in the memories file so the question is never asked again for
-   this repo.
+2. No match: ask one question — where the list is, or whether to seed one at
+   `.product/qa-list.md` — and create or move the list there so the next run finds it
+   in step 1. Ask before creating `.product/`.
 
 Tell users the convention once, when it is relevant: keep a `.product/` folder at the
 repo root with the QA list in it.
-
-## The memories file
-
-`~/.product-engineering/memories.md` is the kit's home folder note. Plain markdown; one
-`##` section per skill; other skills keep their own durable notes here in their own
-sections. Create the folder and file when absent. This skill's section:
-
-```markdown
-## pe-verify
-
-- github.com/backnotprop/plannotator: docs/release-qa.md
-- /Users/me/work/internal-tool: .product/qa-list.md
-```
-
-One line per repo: the remote (host/owner/name, no scheme) or the absolute path when
-there is no remote, then the list's path relative to the repo root. Add a line when the
-user answers the question above; replace it when they move the list.
 
 ## Reading the list
 

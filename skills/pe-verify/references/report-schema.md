@@ -74,7 +74,7 @@ the `media` key entirely (not `null`). Paths are relative, stay inside the run f
   at that moment, narrate in one sentence, and capture the still at that exact time.
 - For a browser item, `summary` is also the recording's overall narration: what the
   video shows from start to end.
-- `checked_by` records who ran the item (`opus · browser`, `sonnet · code`) so a
+- `checked_by` records who ran the item (`worker · browser`, `coordinator · code`) so a
   reader knows how much to trust it.
 - Give every `fail` or `flag` finding an `evidence` value: a file:line, a recording
   timestamp, or the command that showed it.
