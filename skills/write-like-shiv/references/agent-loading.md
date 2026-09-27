@@ -29,10 +29,11 @@ Pangram's own [technical report](https://arxiv.org/html/2402.14873v3) describes 
 | SKILL.md | A writing agent reads the shared voice contract; without it the package has no usable skill entrypoint. |
 | agents/openai.yaml | The skill selector reads its name, summary, and invocation prompt; without it this package lacks its intended UI presentation. |
 | references/surfaces.md | The drafting agent selects form-specific guidance; without it a message, journal, and design doc tend to inherit one inappropriate template. |
+| references/vision.md | The drafting agent reads the approved canon for vision prose; without it a thesis or public post falls back to the compressed default and loses its structure and length bar. |
 | references/corpus.md | An agent researching or updating the voice reads source links, evidence status, and annotations; without it inferred taste loses provenance. |
 | references/calibration.md | The editor reads examples and diagnostic limits; without it generated examples or rhythm statistics can be mistaken for personal evidence. |
 | references/agent-loading.md | An installer or host maintainer reads the loading boundaries; without it ~/.agents/ can be mistaken for universal enforcement. |
 | assets/AGENTS.md | A configured host loads the compact default contract; without it implicit skill selection remains the only default trigger. |
-| scripts/voice_check.py | The writing agent or an explicitly configured publication pipeline runs repeatable checks; without it review depends entirely on model attention. |
+| scripts/voice_check.py | The writing agent or an explicitly configured publication pipeline runs repeatable checks, including vision mode's length and list-density checks; without it review depends entirely on model attention. |
 
 For portability, copy the complete skill folder, including references, script, and contract. Preserve existing host configuration and its unrelated instructions. The Notion reading profile is the browsing and feedback surface; this package is the executable instruction surface. A change to one does not automatically update the other.
