@@ -1,0 +1,20 @@
+skills/write-like-shiv/scripts/voice_check.py
+  s_3d613075c3da19::t_9cd0413ac8c866 32-34,36-37,40,62-72,80-81
+  s_3d613075c3da19::t_50b9944acbb7c3 24,26,38,46,73-76,93
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "1e1157117d97394ee0f0c81e021c63a40f7c7822",
+  "prompts": {},
+  "sessions": {
+    "s_3d613075c3da19": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d7742d0e-3c56-47bb-b6e9-1333cde0856c",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Shivanshu Chaudhary <shivanshuchaudhary97@gmail.com>"
+    }
+  }
+}
