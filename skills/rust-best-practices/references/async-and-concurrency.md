@@ -207,7 +207,19 @@ shutdown_tx.send(true).unwrap();
 
 ## Async Traits
 
-Native `async fn` in traits is stable since Rust 1.75 but has limitations with `dyn` dispatch. Use `async-trait` crate when trait objects are needed:
+Native `async fn` in traits is stable since Rust 1.75. Use it by default for traits consumed through generics:
+
+```rust
+pub trait Repository {
+    async fn get(&self, id: &str) -> anyhow::Result<Entity>;
+}
+
+async fn process(repo: &impl Repository, id: &str) -> anyhow::Result<Entity> {
+    repo.get(id).await
+}
+```
+
+A public trait whose futures must be `Send` (for example, to cross `tokio::spawn`) declares `fn get(&self, id: &str) -> impl Future<Output = anyhow::Result<Entity>> + Send;` instead; the `async_fn_in_trait` lint flags the bare form. Native async trait methods are not `dyn`-compatible, so use the `async-trait` crate when trait objects are needed:
 
 ```rust
 use async_trait::async_trait;
