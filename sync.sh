@@ -148,6 +148,8 @@ sync_hooks() {
   link_hook "$HOME/.codex" format-on-edit.sh || true
   register_hook "$HOME/.claude" "$HOME/.claude/settings.json" stop-gate.py Stop "" 600
   register_hook "$HOME/.codex" "$HOME/.codex/hooks.json" stop-gate.py Stop "" 600
+  register_hook "$HOME/.claude" "$HOME/.claude/settings.json" block-no-verify.sh PreToolUse Bash
+  register_hook "$HOME/.codex" "$HOME/.codex/hooks.json" block-no-verify.sh PreToolUse Bash
 }
 
 # Antigravity loads skills from paths declared in the global skills.json,
