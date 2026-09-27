@@ -1,0 +1,26 @@
+STANDARDS/Skills/Routing.md
+  s_3d613075c3da19::t_5dff0c8310fa05 24
+skills/idea-refine/SKILL.md
+  s_3d613075c3da19::t_863bfecb9dfcb4 3,104
+  s_3d613075c3da19::t_78f2e29985b653 105
+skills/idea-refine/refinement-criteria.md
+  s_3d613075c3da19::t_863bfecb9dfcb4 94-107
+AGENTS.md
+  s_3d613075c3da19::t_5dff0c8310fa05 42
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "9a07eaf8bca8e479fe62d32f72a2cd7d9d578cf8",
+  "prompts": {},
+  "sessions": {
+    "s_3d613075c3da19": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d7742d0e-3c56-47bb-b6e9-1333cde0856c",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Shivanshu Chaudhary <shivanshuchaudhary97@gmail.com>"
+    }
+  }
+}
