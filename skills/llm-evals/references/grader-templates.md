@@ -195,7 +195,7 @@ def grade_llm_judge(task: str, response: str, criterion: str,
         response=response,
     )
     # judge_client is pinned to a fixed snapshot per
-    # SKILL.md's Judge Calibration section — never an
+    # SKILL.md's Judge calibration section — never an
     # unpinned "latest" alias.
     verdict = judge_client.complete(prompt, temperature=0).strip().upper()
     if verdict not in ("PASS", "FAIL"):

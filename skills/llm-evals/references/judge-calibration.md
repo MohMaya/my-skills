@@ -2,8 +2,8 @@ Last verified: 2026-07-14
 
 # Judge Calibration Protocol
 
-The full procedure behind `SKILL.md`'s "Judge
-Calibration Is a Prerequisite" section. Any grader
+The full procedure behind `SKILL.md`'s Judge
+calibration section. Any grader
 routed to an LLM-judge follows this before its
 verdicts count toward a pass rate or a ship
 decision.
@@ -30,7 +30,7 @@ Collect human labels for **≥100 items** covering the
 failure bucket the judge will grade. Use the same
 labelers (or a labeling rubric tight enough to be
 interchangeable) that produced the axial-coding
-buckets in `SKILL.md`'s Building Goldens section —
+buckets in `SKILL.md`'s Loop, step 2 —
 a judge calibrated against a different notion of
 "pass" than the one used to build goldens will
 silently diverge from what the harness is supposed
