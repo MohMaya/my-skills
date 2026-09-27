@@ -1,0 +1,21 @@
+skills/rust-best-practices/references/async-and-concurrency.md
+  s_3d613075c3da19::t_7643747fac28a8 210-222
+skills/rust-best-practices/SOURCE.md
+  s_3d613075c3da19::t_70a5be7ea8f421 12
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "4d87e42102283f071fc52aec8ddabc1ace5c4bdf",
+  "prompts": {},
+  "sessions": {
+    "s_3d613075c3da19": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d7742d0e-3c56-47bb-b6e9-1333cde0856c",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Shivanshu Chaudhary <shivanshuchaudhary97@gmail.com>"
+    }
+  }
+}
