@@ -1,0 +1,62 @@
+skills/gpui/SKILL.md
+  s_c53d6976a0dba0::t_b3360e14ef2d00 1-62
+STANDARDS/Stack/Desktop.md
+  s_c53d6976a0dba0::t_d4d0690ad74213 1-20,23-55
+  s_c53d6976a0dba0::t_b3360e14ef2d00 21-22
+  s_c53d6976a0dba0::t_e6147c41b8206b 56
+skills/gpui-test/SOURCE.md
+  s_c53d6976a0dba0::t_280f433948efbe 1-10
+skills/rust-best-practices/SOURCE.md
+  s_c53d6976a0dba0::t_280f433948efbe 1-13
+AGENTS.md
+  s_c53d6976a0dba0::t_d4d0690ad74213 48,59-60
+STANDARDS/Skills/Routing.md
+  s_c53d6976a0dba0::t_d4d0690ad74213 73-74
+  s_c53d6976a0dba0::t_b159c06427aea7 11-12,84
+STANDARDS/Stack/Rust.md
+  s_c53d6976a0dba0::t_d4d0690ad74213 1-32
+.skill-lock.json
+  s_c53d6976a0dba0::t_5fb3d9edb2271c 4123-4142,4163
+skills/gpui-test/LICENSE-GPL
+  s_c53d6976a0dba0::t_6131186e6bcb79 1-200
+skills/gpui-test/SKILL.md
+  s_c53d6976a0dba0::t_2def8198c63a05 1-162
+skills/rust-best-practices/SKILL.md
+  s_c53d6976a0dba0::t_5fc3705546cbf2 1-42
+skills/rust-best-practices/references/async-and-concurrency.md
+  s_c53d6976a0dba0::t_0f63ab3092298a 1-375
+skills/rust-best-practices/references/clippy-and-linting.md
+  s_c53d6976a0dba0::t_d80ef35b62cb9d 1-91
+skills/rust-best-practices/references/coding-style.md
+  s_c53d6976a0dba0::t_3cfcc9c997a6ef 1-203
+skills/rust-best-practices/references/concurrency-sync.md
+  s_c53d6976a0dba0::t_f9168a13f902b8 1-203
+skills/rust-best-practices/references/documentation.md
+  s_c53d6976a0dba0::t_4857c8eb59678a 1-154
+skills/rust-best-practices/references/error-handling.md
+  s_c53d6976a0dba0::t_0dd12b564599c8 1-308
+skills/rust-best-practices/references/ownership-and-pointers.md
+  s_c53d6976a0dba0::t_eff53971803cd5 1-304
+skills/rust-best-practices/references/performance.md
+  s_c53d6976a0dba0::t_1ee77d0d4a1792 1-134
+skills/rust-best-practices/references/testing.md
+  s_c53d6976a0dba0::t_ff00ea89f0b0af 1-378
+skills/rust-best-practices/references/traits-and-generics.md
+  s_c53d6976a0dba0::t_f83b66101dc28b 1-371
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "99e36a0c692276b6c138bec6b1ac0464db73a070",
+  "prompts": {},
+  "sessions": {
+    "s_c53d6976a0dba0": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e02a-fee6-7ff1-8565-d366b4dd20ac",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Shivanshu Chaudhary <shivanshuchaudhary97@gmail.com>"
+    }
+  }
+}
