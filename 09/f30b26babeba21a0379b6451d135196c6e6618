@@ -1,0 +1,32 @@
+skills/llm-evals/references/grader-templates.md
+  s_3d613075c3da19::t_a3377d71ca7666 1-211
+skills/llm-evals/references/judge-calibration.md
+  s_3d613075c3da19::t_a3377d71ca7666 1-7,10-15,18-19,21-154,156-173
+  s_3d613075c3da19::t_bed8cb96dc6b29 8-9,16-17,20,155
+skills/llm-evals/SKILL.md
+  s_3d613075c3da19::t_5d40063050a21a 1-65
+.skill-lock.json
+  s_3d613075c3da19::t_35024e1453e176 4143-4152
+skills/llm-evals/SOURCE.md
+  s_3d613075c3da19::t_408710afcd45d3 1-13
+AGENTS.md
+  s_3d613075c3da19::t_a2ef1e43328157 63
+STANDARDS/Skills/Routing.md
+  s_3d613075c3da19::t_eb209cb035c9d0 83
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "09f30b26babeba21a0379b6451d135196c6e6618",
+  "prompts": {},
+  "sessions": {
+    "s_3d613075c3da19": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d7742d0e-3c56-47bb-b6e9-1333cde0856c",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Shivanshu Chaudhary <shivanshuchaudhary97@gmail.com>"
+    }
+  }
+}
