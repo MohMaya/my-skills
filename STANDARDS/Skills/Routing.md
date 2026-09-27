@@ -122,7 +122,7 @@ Factory's cursed-plugin skills produce humorous codebase reports. Use them only 
 
 Routes name preferred skills, not guaranteed installations. The active runtime and readable `~/.agents/skills/*/SKILL.md` files determine availability. Verify provider-specific tools in the current session. For `simplify`, re-climb the code gate if the skill is absent. For unavailable document or domain skills, apply the relevant standards directly and state the gap. Figma capabilities depend on the installed integration, not the harness name.
 
-Run `bash ~/.agents/sync.sh` after changing canonical skills or the kernel. It maintains Codex, Claude, and Cursor skill links, generated harness rules, the Claude and Codex mandate mirrors, and the `stop-gate.py` Stop hook in both. Codex asks to trust a new hook on its next run. Gemini CLI reads the shared kernel import; Antigravity reads the configured canonical skills path. Droid supports `~/.agents/AGENTS.md` and `~/.agents/skills/**/SKILL.md` directly. Verify links and generated rules after sync, then use fresh sessions to load the updated inventory.
+Run `bash ~/.agents/sync.sh` after changing canonical skills or the kernel. It maintains Codex, Claude, and Cursor skill links, generated harness rules, the Claude and Codex mandate mirrors, the `stop-gate.py` Stop hook, and the `block-no-verify.sh` PreToolUse hook in both. Codex asks to trust a new hook on its next run. Gemini CLI reads the shared kernel import; Antigravity reads the configured canonical skills path. Droid supports `~/.agents/AGENTS.md` and `~/.agents/skills/**/SKILL.md` directly. Verify links and generated rules after sync, then use fresh sessions to load the updated inventory.
 
 ## Invocation contract
 
