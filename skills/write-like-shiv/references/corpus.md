@@ -2,7 +2,7 @@
 
 Contents: [Core influences](#core-influences) · [Adjacent writers](#recommended-adjacent-writers) · [Stanford d.school](#stanford-dschool) · [Evidence boundaries](#evidence-boundaries)
 
-Assembled September 8, 2026. [Notion reading profile](https://app.notion.com/p/3d532eb6dc45811f8cedde1b77a30010). Contents: core influences C01–C21; recommended adjacent writers R01–R11; Stanford d.school D01–D14. This is a linked, annotated reading corpus, not a full-text training dataset. Notes describe inspected passages or clearly identified catalog information. Recommendations and craft interpretations are editorial judgments.
+Assembled September 8, 2026. [Notion reading profile](https://app.notion.com/p/3d532eb6dc45811f8cedde1b77a30010). Contents: core influences C01–C22; recommended adjacent writers R01–R11; Stanford d.school D01–D14. This is a linked, annotated reading corpus, not a full-text training dataset. Notes describe inspected passages or clearly identified catalog information. Recommendations and craft interpretations are editorial judgments.
 
 Preference labels: **Exact** means Shiv named the work; **Author** means Shiv named the author and this work was selected for study; **Publisher** means Shiv named the publication family; **Collection** means Shiv named the d.school collection; **Suggested** means a new recommendation. Only Exact establishes that Shiv specifically likes this work. Sampled text does not imply an entire book or essay was read. A catalog description establishes subject and format, not the author's sentence-level style.
 
@@ -133,6 +133,12 @@ Exact book. The inspected primary reading is the corresponding lecture material:
 [a16z article](https://a16z.com/good-product-manager-bad-product-manager/). Publisher. Posted June 15, 2012; the article itself warns that the underlying document was already old. Text inspected.
 
 **Craft:** Converts expectations into observable behaviors with repeated comparisons. **Transfer:** Write role standards a colleague could assess. **Limit:** The writer explicitly presents it as a historical training-document example. Neither its dated management model nor its repeated good/bad framing belongs in every new piece.
+
+### C22 · Alexandr Wang · Why I'm Building Muse
+
+[Post on X](https://x.com/alexandr_wang/status/2103551714536439951). Exact. Shiv named it the reference essay for vision prose on September 26, 2026. These notes come from the canon approved that day, not from a fresh reading of the text.
+
+**Craft:** Opens on a human need, names the failure in physical terms, builds the mechanism, lets the product arrive late in one sentence, and closes on a toast. **Transfer:** The structure and length bar in [vision.md](vision.md). **Limit:** Borrow the structure only; its phrases are its own, and repeating them reads as costume.
 
 ## Recommended adjacent writers
 
