@@ -2,7 +2,7 @@
 # Idempotent sync from the canonical ~/.agents tree to each harness.
 # Safe to re-run: only touches symlinks this script owns, the generated
 # harness rules, Gemini CLI kernel import, mandate mirrors, the repo-owned
-# hooks under hooks/, and the stop-gate entry in Claude and Codex settings.
+# hooks under hooks/, and their entries in Claude and Codex settings.
 # Never touches non-symlink skill entries (native dirs, vendor skills), other
 # hooks, or ~/.agents/AGENTS.md, STANDARDS/, skills/ themselves.
 
@@ -95,15 +95,17 @@ link_hook() {
   ln -sfn "$AGENTS_DIR/hooks/$name" "$link"
 }
 
-# Link the turn-end lint and type gate into a harness and register it as a
-# Stop hook. The command fails open: if the link dangles, the turn still ends.
-# Merge-only: the settings file is rewritten (atomically) only when the entry
-# is missing or stale, and other hooks stay as they are. Codex asks to trust
-# a new or changed hook on its next run.
-sync_stop_gate() {
-  local harness_dir="$1" settings="$2" link="$1/hooks/stop-gate.py"
-  link_hook "$harness_dir" stop-gate.py || return 0
-  python3 - "$settings" "$link" <<'PY' || echo "$settings: stop gate not registered" >&2
+# Link a repo-owned hook into a harness and register it under EVENT, scoped
+# to MATCHER when one is given. The command fails open: if the link dangles,
+# the turn ends and the tool call runs. Merge-only: the settings file is
+# rewritten (atomically) only when the entry is missing or stale, and other
+# hooks stay as they are. Codex asks to trust a new or changed hook on its
+# next run.
+# Usage: register_hook HARNESS_DIR SETTINGS NAME EVENT MATCHER [TIMEOUT]
+register_hook() {
+  local harness_dir="$1" settings="$2" name="$3" link="$1/hooks/$3"
+  link_hook "$harness_dir" "$name" || return 0
+  python3 - "$settings" "$link" "$name" "$4" "$5" "${6:-}" <<'PY' || echo "$settings: $name not registered" >&2
 import json
 import os
 import pathlib
@@ -111,27 +113,32 @@ import shlex
 import sys
 import tempfile
 
-path, link = pathlib.Path(sys.argv[1]), sys.argv[2]
+path, (link, name, event, matcher, timeout) = pathlib.Path(sys.argv[1]), sys.argv[2:]
 q = shlex.quote(link)
-command = f"[ -f {q} ] && python3 {q} || true"
+run = f"python3 {q}" if name.endswith(".py") else q
+# A Stop hook never blocks the turn; a PreToolUse hook keeps its exit code.
+command = f"[ -f {q} ] && {run} || true" if event == "Stop" else f"[ ! -f {q} ] || {run}"
+entry = {"type": "command", "command": command}
+if timeout:
+    entry["timeout"] = int(timeout)
 try:
     data = json.loads(path.read_text()) if path.exists() else {}
 except ValueError as e:
     sys.exit(f"{path}: invalid JSON ({e})")
-stop = data.setdefault("hooks", {}).setdefault("Stop", [])
-if any(h.get("command") == command for group in stop for h in group.get("hooks", [])):
-    print(f"{path}: stop gate present")
+groups = data.setdefault("hooks", {}).setdefault(event, [])
+if any(g.get("matcher", "") == matcher and entry in g.get("hooks", []) for g in groups):
+    print(f"{path}: {name} present")
     sys.exit()
-for group in stop:  # drop earlier registrations of this gate
-    group["hooks"] = [h for h in group.get("hooks", []) if "stop-gate.py" not in h.get("command", "")]
-stop[:] = [g for g in stop if g.get("hooks")]
-stop.append({"hooks": [{"type": "command", "command": command, "timeout": 600}]})
+for group in groups:  # drop earlier registrations of this hook
+    group["hooks"] = [h for h in group.get("hooks", []) if name not in h.get("command", "")]
+groups[:] = [g for g in groups if g.get("hooks")]
+groups.append({**({"matcher": matcher} if matcher else {}), "hooks": [entry]})
 fd, tmp = tempfile.mkstemp(dir=path.parent, prefix=path.name + ".")
 with os.fdopen(fd, "w") as f:
     f.write(json.dumps(data, indent=2, ensure_ascii=False) + "\n")
 os.chmod(tmp, path.stat().st_mode if path.exists() else 0o644)
 os.replace(tmp, path)
-print(f"{path}: stop gate registered")
+print(f"{path}: {name} registered")
 PY
 }
 
@@ -139,8 +146,8 @@ sync_hooks() {
   sync_mandates
   link_hook "$HOME/.claude" format-on-edit.sh || true
   link_hook "$HOME/.codex" format-on-edit.sh || true
-  sync_stop_gate "$HOME/.claude" "$HOME/.claude/settings.json"
-  sync_stop_gate "$HOME/.codex" "$HOME/.codex/hooks.json"
+  register_hook "$HOME/.claude" "$HOME/.claude/settings.json" stop-gate.py Stop "" 600
+  register_hook "$HOME/.codex" "$HOME/.codex/hooks.json" stop-gate.py Stop "" 600
 }
 
 # Antigravity loads skills from paths declared in the global skills.json,
