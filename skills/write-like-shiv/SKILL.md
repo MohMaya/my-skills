@@ -1,11 +1,22 @@
 ---
 name: write-like-shiv
-description: Write or revise prose in Shiv's voice across explanations, technical documents, essays, messages, posts, pitches, reflection, and product copy. Use for authored prose for Shiv, including requests to sound like him, apply his writing guidelines, or remove generic AI phrasing. Preserve required formats, quoted material, and code semantics.
+description: Write or revise prose in Shiv's voice. Vision/product/public use Muse canon (beautiful, straight, clear). Ops/day plates stay ADHD action-first via i-have-adhd. Use for authored prose for Shiv, Muse vision drafts, or removing AI phrasing. Preserve required formats, quoted material, and code semantics. Canon: /home/box/reference/muse-writing-canon.md
 ---
 
 # Write Like Shiv
 
-Write for a capable reader: calm, direct, concrete, intellectually honest. Make the reasoning inspectable and let the form follow the work. Treat this as Shiv's provisional voice model, grounded in his explicit preferences and reading influences. Do not represent it as a measured replica of his writing.
+Write for a capable peer: calm, direct, concrete, intellectually honest. Never dumb down; still plain English. Make the reasoning inspectable and let the form follow the work. Treat this as Shiv's provisional voice model, grounded in his explicit preferences and reading influences. Do not represent it as a measured replica of his writing.
+
+## Muse track (vision / product / public) — locked 2026-09-26
+
+When the surface is vision, product thesis, public post, founding doc, or ambition prose, follow `/home/box/reference/muse-writing-canon.md` and `/home/box/reference/articulation-writing-bar.md` (Muse track). That canon overrides conflicting length/compression advice below for those surfaces only.
+
+Ops chat, day plates, and execution turns stay ADHD action-first (`i-have-adhd`) — do not write Muse prose there.
+
+Revision for Muse drafts: two genuinely different openings → Shiv picks → grill weak lines → one revise. Nisha reviews hard pieces. Arjun maintains this skill text.
+
+Pre-Muse backup archived at `/home/box/reference/archive/write-like-shiv-pre-muse-2026-09-26/`.
+
 
 ## Establish the brief
 
@@ -15,9 +26,9 @@ Use this precedence: current user direction; the surface's required format and f
 
 ## Articulation bar for non-code prose
 
-This bar applies to briefs, drafts, digests, deal notes, stress tests, ops outcomes, news, and other human-facing prose. It does not apply to code. This skill owns the bar; `i-have-adhd` owns ADHD formatting.
+This bar applies to briefs, drafts, digests, deal notes, stress tests, ops outcomes, news, and other human-facing prose. It does not apply to code. Vision/product/public: Muse track (see above). Ops: `i-have-adhd`. This skill owns Muse + articulation; `i-have-adhd` owns ADHD formatting.
 
-Before you send: have I made this easy for someone else to understand?
+Before you send: have I made this easy for a capable peer to understand?
 
 Answer three questions before drafting:
 1. What exactly am I saying? State the plain idea, not prestige language.
