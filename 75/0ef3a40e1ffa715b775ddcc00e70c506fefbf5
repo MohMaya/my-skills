@@ -1,0 +1,21 @@
+skills/llm-evals/references/grader-templates.md
+  s_3d613075c3da19::t_a5b66f4851f136 198
+skills/llm-evals/references/judge-calibration.md
+  s_3d613075c3da19::t_52296aabfafbee 5-6,33
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "750ef3a40e1ffa715b775ddcc00e70c506fefbf5",
+  "prompts": {},
+  "sessions": {
+    "s_3d613075c3da19": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d7742d0e-3c56-47bb-b6e9-1333cde0856c",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Shivanshu Chaudhary <shivanshuchaudhary97@gmail.com>"
+    }
+  }
+}
