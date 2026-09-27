@@ -1,6 +1,6 @@
 ---
 name: idea-refine
-description: Refines raw ideas into sharp, actionable concepts through structured divergent and convergent thinking. Use when an idea is still vague or when you want to expand options before converging on one. Triggers on "ideate", "refine this idea", or "what could this be?".
+description: Refines raw ideas into sharp, actionable concepts through structured divergent and convergent thinking. Use when an idea is still vague, when you want to expand options before converging on one, or before building a new product, MVP, or major feature whose demand is unproven. Triggers on "ideate", "refine this idea", or "what could this be?".
 ---
 
 # Idea Refine
@@ -100,6 +100,8 @@ After the user reacts to Phase 1 (indicates which ideas resonate, pushes back, a
    - What you're betting is true (but haven't validated)
    - What could kill this idea
    - What you're choosing to ignore (and why that's okay for now)
+
+   Test the dealbreakers against the seven risk lenses in `refinement-criteria.md`: demand, positioning, monetization, retention, trust, distribution, and feature adoption. Name the single assumption most likely to break the idea and the smallest signal that would confirm or kill it before building.
 
    This is where most ideation fails. Don't skip it.
 
