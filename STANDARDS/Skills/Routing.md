@@ -80,7 +80,7 @@ For GPUI implementation, polish, motion, and review, `Stack/Desktop.md` takes pr
 | Vercel cost or perf | `vercel-optimize` |
 | Deploy to Vercel; token-authenticated Vercel CLI, env vars, or domains | `deploy-to-vercel`; `vercel-cli-with-tokens` respectively; `shipping-and-launch` for production |
 | Mobile (Expo / React Native) | `expo-native-ui`, `expo-router`; ship via `eas-workflows`, `eas-app-stores` |
-| LLM features | `ai-sdk` (TS), `claude-api` (Anthropic specifics) |
+| LLM features | `ai-sdk` (TS), `claude-api` (Anthropic specifics); `llm-evals` for golden sets, graders, judge calibration, and comparing a prompt or model change against the baseline |
 | Build product UI | Kernel Design authority first; `Stack/Desktop.md` for GPUI; otherwise `frontend-ui-engineering` for structure, states, accessibility, and responsiveness, and `pe-build` for craft |
 | Art direction for a one-off tool or artifact outside a product | `pe-design` direct mode and its presets; preserve the existing stack |
 | Figma design → code | `figma:figma-design-to-code`; `design-system` to formalize tokens first |

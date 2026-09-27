@@ -60,6 +60,7 @@ Each scenario has one owner. A plugin or imported skill covering the same ground
 - **User-facing UI.** After the design check in Design authority, use the native desktop route in `STANDARDS/Stack/Desktop.md` for GPUI. For other UI, use `frontend-ui-engineering` for component structure, loading, empty, and error states, and responsive behavior, and `pe-build` for polish, motion, accessibility, and production hardening.
 - **A design question that needs running code.** Use `prototype` for a state model or UI that is hard to settle on paper. Keep the prototype on a `prototype/<name>` branch, outside the feature diff.
 - **An irreversible decision.** Use `doubt-driven-development` before a production auth change, security-sensitive logic, a data migration, a public contract change, or any other step that cannot be undone.
+- **An LLM feature.** Use `llm-evals` when building one or changing its prompt, model, retrieval, or judge. Compare the change against the recorded baseline, per failure bucket.
 - **A bug that resists a first look, a flaky failure, or a performance regression.** Use `diagnosing-bugs` before proposing a fix, starting from a loop that goes red on the reported symptom.
 - **Browser behavior.** See a UI change or browser bug in a real browser before calling it done: `browser-testing-with-devtools` when the Chrome DevTools MCP server is connected, `playwright-cli` otherwise. Use `pe-verify` when Shiv asks for a recorded evidence report or a QA-list run.
 

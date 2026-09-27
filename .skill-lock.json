@@ -4140,6 +4140,16 @@
       "sourceRevision": "bda9c0bd43a8d235d82adb01ea5bc875b861ecfc",
       "installedAt": "2026-09-27T00:07:13.707Z",
       "updatedAt": "2026-09-27T00:07:13.707Z"
+    },
+    "llm-evals": {
+      "source": "wshobson/agents",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/wshobson/agents.git",
+      "skillPath": "plugins/llm-finetuning/skills/eval-harness-first/SKILL.md",
+      "skillFolderHash": "5831e1bfbfa88b2982827c6be1e0447c37876ad9",
+      "sourceRevision": "9b15b34b0bfc13a815cbfc2366e14ea549e09422",
+      "installedAt": "2026-09-27T01:30:00.000Z",
+      "updatedAt": "2026-09-27T01:30:00.000Z"
     }
   },
   "dismissed": {
