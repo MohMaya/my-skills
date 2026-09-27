@@ -1,0 +1,23 @@
+sync.sh
+  s_3d613075c3da19::t_5aa98af4b73aa0 151-152
+hooks/block-no-verify.sh
+  s_3d613075c3da19::t_8436fb4f38e285 1-19
+STANDARDS/Skills/Routing.md
+  s_3d613075c3da19::t_019ba36229c6a5 125
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "b7cbc3cf6ee344bfd7c1462785573bbc6d4ec6bf",
+  "prompts": {},
+  "sessions": {
+    "s_3d613075c3da19": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d7742d0e-3c56-47bb-b6e9-1333cde0856c",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Shivanshu Chaudhary <shivanshuchaudhary97@gmail.com>"
+    }
+  }
+}
