@@ -39,7 +39,7 @@ Each scenario has one owner. A plugin or imported skill covering the same ground
 ### Define
 
 - **Intent unclear.** Use `interview-me` when the request leaves out who it serves, why now, what success looks like, or the binding constraint, and the repository cannot supply it.
-- **A raw idea.** Use `idea-refine` to widen and then narrow the options before anything is specified.
+- **A raw idea, or a new product, MVP, or major feature with unproven demand.** Use `idea-refine` to widen and then narrow the options, and to name the riskiest assumption, before anything is specified.
 - **Unresolved design choices.** Use `grilling` for consequential choices that need Shiv's judgment, including a request to stress-test a plan. In a repository that keeps `CONTEXT.md`, run it as `grill-with-docs` so decisions land in the glossary and ADRs.
 - **Domain language in play.** Use `domain-modeling` when a term is fuzzy or overloaded, when the code contradicts the stated model, or when writing a `CONTEXT.md` or ADR. Create those files in repositories that already keep them or when Shiv asks.
 

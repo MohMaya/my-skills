@@ -21,7 +21,7 @@ For GPUI implementation, polish, motion, and review, `Stack/Desktop.md` takes pr
 | Substantial knowledge-base document | `Core/Documents.md`; a clarity pass before delivery |
 | Any writing or revision: chat, updates, trackers, documents, comments, commits, PRs, product copy, or agents | `write-like-shiv` and its relevant surface reference; `Core/Prose.md`; `Core/Documents.md` when document shapes help |
 | Essay, article, or memo | Select `writing-fragments`, `writing-beats`, or `writing-shape` for the current stage |
-| Intent unclear before any plan; a raw idea to explore | `interview-me`; `idea-refine` respectively |
+| Intent unclear before any plan; a raw idea to explore, or a product or major feature with unproven demand | `interview-me`; `idea-refine` respectively |
 | Planning, scoping, tradeoffs, sequencing | `Core/Planning.md` |
 | Stress-testing a plan, decision, or idea | `grilling`; `grill-with-docs` in a repository that keeps `CONTEXT.md` |
 | Grilling touches module shape or boundaries | `codebase-design` for the structural questions |

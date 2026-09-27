@@ -91,6 +91,20 @@ Assumptions about secondary features or optimizations. Don't validate these unti
 
 Example: "Users will want to share their results with teammates" — a growth feature, not a core value proposition.
 
+## Risk Lenses
+
+Before building a product, MVP, or major feature, check the Must Be True assumptions through each lens. Separate product risk from engineering difficulty, and name missing evidence rather than inventing market claims. Adapted from Seth Hobson's `before-you-build` (wshobson/agents, MIT).
+
+- **Demand:** Who has the painful problem today, and what workaround do they use? What behavior shows urgency: payment, repeated manual work, switching tools, or asking for the same outcome more than once?
+- **Positioning:** Can the target user say what this is for without hearing implementation details? Is the promise tied to a concrete outcome, and what alternative must it beat?
+- **Monetization:** Who controls the budget or the time saved? Is the value large enough to cover build and maintenance cost, and would the first useful version justify payment, adoption, or internal sponsorship?
+- **Retention:** What makes it useful after the first session: a saved workflow, history, a collaboration loop, or a recurring decision? Would users come back without reminders?
+- **Trust:** What data, permissions, integrations, or behavior change does it require? What proof would make a cautious user try it, and what failure would make it feel unsafe or unserious?
+- **Distribution:** Where can the exact target user be reached repeatedly? Which existing channel, community, workflow, or integration exposes it beyond one launch post?
+- **Feature adoption:** What existing behavior will this feature change? Is it tied to an active pain, and can adoption be measured with one clear event?
+
+Rate the idea low, medium, or high risk from the weakest lens. The MVP then tests that lens first, and the Not Doing list names what waits for the evidence.
+
 ## Decision Framework
 
 When choosing between directions, rank on this matrix:
