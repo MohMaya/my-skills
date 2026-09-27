@@ -8,6 +8,8 @@ The runtime list and readable canonical skill files establish availability. When
 
 The kernel's Engineering skills section owns the mandatory engineering triggers, from `interview-me` at intake through `shipping-and-launch` at release. Its owners supersede plugin copies of the same method. The rows below route everything else and point back to it.
 
+For GPUI implementation, polish, motion, and review, `Stack/Desktop.md` takes precedence over the web UI routes below.
+
 | Task | Load |
 | ---- | ---- |
 | Unclear standards ownership or conflicting doctrine | `STANDARDS/INDEX.md` |
@@ -68,6 +70,8 @@ The kernel's Engineering skills section owns the mandatory engineering triggers,
 | Behavior spec of an existing product | `pe-product-description` |
 | Test-first loop on new behavior | `tdd` |
 | Stack-specific work | matching file under `STANDARDS/Stack/` |
+| New desktop app, desktop stack selection, or GPUI behavior | `Stack/Desktop.md` for the Rust + GPUI policy, native UI skills, and verification |
+| Rust code, refactoring, or review | `Stack/Rust.md`; `rust-best-practices` for the relevant language concerns |
 | Python cleanup, scanning, coverage, or lint and hook setup | `py-*` skills from the Skills table in `Stack/Python.md` |
 | React, Next.js, React Native, effects, assertion rules, or Knip findings | the Skills table in `Stack/TypeScript.md` |
 | Postgres schema, queries, migrations | `supabase-postgres-best-practices` |
@@ -77,7 +81,7 @@ The kernel's Engineering skills section owns the mandatory engineering triggers,
 | Deploy to Vercel; token-authenticated Vercel CLI, env vars, or domains | `deploy-to-vercel`; `vercel-cli-with-tokens` respectively; `shipping-and-launch` for production |
 | Mobile (Expo / React Native) | `expo-native-ui`, `expo-router`; ship via `eas-workflows`, `eas-app-stores` |
 | LLM features | `ai-sdk` (TS), `claude-api` (Anthropic specifics) |
-| Build product UI | Kernel Design authority first; `frontend-ui-engineering` for structure, states, accessibility, and responsiveness; `pe-build` for craft |
+| Build product UI | Kernel Design authority first; `Stack/Desktop.md` for GPUI; otherwise `frontend-ui-engineering` for structure, states, accessibility, and responsiveness, and `pe-build` for craft |
 | Art direction for a one-off tool or artifact outside a product | `pe-design` direct mode and its presets; preserve the existing stack |
 | Figma design → code | `figma:figma-design-to-code`; `design-system` to formalize tokens first |
 | Code or description → Figma | `figma:figma-generate-design` (screens), `figma:figma-generate-library` (design system); `figma:figma-use` before any `use_figma` call |
