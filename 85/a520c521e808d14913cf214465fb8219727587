@@ -1,0 +1,19 @@
+skills/pe-design/references/research.md
+  s_94ddb2747f9ab3::t_abb33b6590741e 20
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "85a520c521e808d14913cf214465fb8219727587",
+  "prompts": {},
+  "sessions": {
+    "s_94ddb2747f9ab3": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "89e8468b-7710-48f5-a9b1-dbe92028de32",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Shivanshu Chaudhary <shivanshuchaudhary97@gmail.com>"
+    }
+  }
+}
