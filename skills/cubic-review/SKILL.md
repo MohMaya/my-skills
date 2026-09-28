@@ -146,7 +146,6 @@ PR #<n> <title>
   refused  <k>   <one line each, with the reason>
   skipped  <k>   already answered / resolved / outdated
   verify   <command> -> pass|fail
-  net      +N/-M
 ```
 
 One block per PR, bottom to top. Close with any layer that needs a re-run.
