@@ -85,6 +85,7 @@ For GPUI implementation, polish, motion, and review, `Stack/Desktop.md` takes pr
 | Build product UI | Kernel Design authority first; `Stack/Desktop.md` for GPUI; otherwise `frontend-ui-engineering` for structure, states, accessibility, and responsiveness, and `pe-build` for craft |
 | Art direction for a one-off tool or artifact outside a product | `pe-design` direct mode and its presets; preserve the existing stack |
 | Figma design → code | `figma:figma-design-to-code`; `design-system` to formalize tokens first |
+| Pattern research: how shipped apps handle a screen, flow, or website section | Mobbin MCP (`search_screens`, `search_flows`, `search_sections`) following `pe-design` `references/research.md`; the kernel Design authority requires it before any design proposal |
 | Code or description → Figma | `figma:figma-generate-design` (screens), `figma:figma-generate-library` (design system); `figma:figma-use` before any `use_figma` call |
 | UI polish and motion | `pe-build` craft and motion modes |
 | Animation work | `pe-build` motion mode to build, including React view transitions; `pe-review` motion modes to review, audit, or find opportunities; `animate-expo` for Expo |
@@ -121,7 +122,7 @@ Factory's cursed-plugin skills produce humorous codebase reports. Use them only 
 
 ## Availability
 
-Routes name preferred skills, not guaranteed installations. The active runtime and readable `~/.agents/skills/*/SKILL.md` files determine availability. Verify provider-specific tools in the current session. For `simplify`, re-climb the code gate if the skill is absent. For unavailable document or domain skills, apply the relevant standards directly and state the gap. Figma capabilities depend on the installed integration, not the harness name.
+Routes name preferred skills, not guaranteed installations. The active runtime and readable `~/.agents/skills/*/SKILL.md` files determine availability. Verify provider-specific tools in the current session. For `simplify`, re-climb the code gate if the skill is absent. For unavailable document or domain skills, apply the relevant standards directly and state the gap. Figma and Mobbin capabilities depend on the installed MCP integration, not the harness name; when one is absent, proceed and name the evidence the work went without.
 
 Run `bash ~/.agents/sync.sh` after changing canonical skills or the kernel. It maintains Codex, Claude, and Cursor skill links, generated harness rules, the Claude and Codex mandate mirrors, the `stop-gate.py` Stop hook, and the `block-no-verify.sh` PreToolUse hook in both. Codex asks to trust a new hook on its next run. Gemini CLI reads the shared kernel import; Antigravity reads the configured canonical skills path. Droid supports `~/.agents/AGENTS.md` and `~/.agents/skills/**/SKILL.md` directly. Verify links and generated rules after sync, then use fresh sessions to load the updated inventory.
 

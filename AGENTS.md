@@ -84,9 +84,11 @@ For a UI change, an existing design is the authoritative source for the surface 
 
 - For alpha-web, read the matching page or flow in the sibling `ui-sandbox` repository before writing markup -- commonly `../ui-sandbox` from the alpha-web checkout, with frozen handoffs registered under `src/handoffs/`. Match its layout, states, copy intent, and interaction, then adapt to real data and the alpha-web design system. The design governs what the screen contains; the design system still governs how it is styled. If the checkout is absent, ask Shiv for it before proceeding.
 - For a mobile change in alpha-mobile, read the matching screen or flow in `alpha-mobile/apps/alpha-ui` first.
-- `pe-design` mockups, directions, and variants are exploration until Shiv approves them. They never stand in for a missing ui-sandbox or alpha-ui design, and `pe-review` fidelity mode checks against the same design source.
+- A Figma frame linked from the ticket, the PRD, or Shiv is a design source too. Read it through the Figma MCP with `get_design_context` and `get_screenshot` before writing markup. When it disagrees with ui-sandbox or alpha-ui, ask which one governs.
+- `pe-design` mockups, directions, and variants are exploration until Shiv approves them. They never stand in for a missing ui-sandbox, alpha-ui, or Figma design, and `pe-review` fidelity mode checks against the same design source.
+- Ground every design proposal in shipped products. Before proposing a layout, flow, or pattern -- in `pe-design`, in a gap suggestion, or in options brought to product and design -- search Mobbin for how real apps solve the same screen or flow, following `pe-design` `references/research.md`, and cite each reference that shaped the choice. Mobbin informs the proposal; the design source still governs the surface.
 - When the design is missing something the PRD requires, name each gap -- state, field, action, or edge case -- and suggest what could fill it before implementing.
-- When no design exists for the requested piece, stop and say so. Name what you searched and ask Shiv to take it to product and design for a decision. Do not invent the design and present it as settled.
+- When no design exists for the requested piece, stop and say so. Name what you searched and ask Shiv to take it to product and design for a decision, with the Mobbin references that frame the options. Do not invent the design and present it as settled.
 - State which design you followed and any deliberate deviation in the delivery summary.
 
 ## Voice

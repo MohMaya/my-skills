@@ -7,7 +7,9 @@ artifact the user approved.
 
 - Check the kernel design source first: on alpha-web, the matching page or flow in the
   sibling `ui-sandbox` repo (frozen handoffs under `src/handoffs/`); on alpha-mobile,
-  the matching screen in `alpha-mobile/apps/alpha-ui`. When one matches, it is the
+  the matching screen in `alpha-mobile/apps/alpha-ui`; a Figma frame linked from the
+  ticket, the PRD, or Shiv, read with the Figma MCP's `get_screenshot` for the visual
+  and `get_design_context` for spacing, tokens, and states. When one matches, it is the
   record; compare against it and skip `.product/approved/`.
 - Otherwise read `.product/approved/`. Each folder is one record: the approved artifact
   byte-for-byte, plus `approval.md`. Match the folder to the feature, route, or

@@ -33,7 +33,7 @@ reference files — load only what the mode needs.
 | **motion** | "Review the animations / motion." For a whole-codebase motion audit with plans, add `motion-audit.md` + `motion-audit-signals.md` + `plan-template.md`. | `motion-review.md`, `motion-standards.md` |
 | **opportunities** | "What could be animated here?" — read-only; proposes motion with exact values, never implements. Explicit invocation only. | `motion-opportunities.md` |
 | **a11y** | "Is this accessible?" — audit, not implementation. | `a11y-audit.md` (+ engine triggers) |
-| **fidelity** | "Did we stay true to the mock / design?" — the implementation against the kernel design source first (alpha-web: the matching page in the sibling `ui-sandbox` repo, handoffs under `src/handoffs/`; alpha-mobile: `alpha-mobile/apps/alpha-ui`), then the approved artifact in `.product/approved/` when no kernel source applies; every deviation is a finding with severity. Implied whenever a reviewed surface has a design source or approved record. | `fidelity.md` |
+| **fidelity** | "Did we stay true to the mock / design?" — the implementation against the kernel design source first (alpha-web: the matching page in the sibling `ui-sandbox` repo, handoffs under `src/handoffs/`; alpha-mobile: `alpha-mobile/apps/alpha-ui`; a linked Figma frame via the Figma MCP), then the approved artifact in `.product/approved/` when no kernel source applies; every deviation is a finding with severity. Implied whenever a reviewed surface has a design source or approved record. | `fidelity.md` |
 
 Disambiguation: **verb beats noun** — "review the animation" is motion mode here;
 "fix the animation" is not this skill at all (pe-build). A request that mixes modes runs

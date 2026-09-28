@@ -18,6 +18,8 @@ Run the kernel's Design authority check before any mode:
 - **alpha-web:** read the matching page or flow in the sibling `ui-sandbox` repo
   (commonly `../ui-sandbox`; frozen handoffs under `src/handoffs/`).
 - **alpha-mobile:** read the matching screen or flow in `alpha-mobile/apps/alpha-ui`.
+- **Figma:** a frame linked from the ticket, the PRD, or Shiv is a design source; read it
+  with the Figma MCP's `get_design_context` and `get_screenshot`.
 - **No product design for a product surface:** stop, name what you searched, and ask
   Shiv to take it to product and design. One-off tools and artifacts outside a product
   may use direct mode for art direction.
@@ -35,6 +37,9 @@ produce is labelled "exploration, not approved" until Shiv approves it.
 - **Authority chain, every mode:** the user's words → the project's design system
   (DESIGN.md, tokens, components) → the subject itself → your judgment. Never let a
   preset or a habit override an upstream authority.
+- **Research before proposing.** brief, direct, mock, vary, and onboard run
+  `references/research.md` before proposing a layout, flow, or pattern, and the
+  deliverable carries its References list.
 - **Derivation is the default; presets are commissions.** Direction comes from the
   subject and brief (`direct/index.md`). A named preset (`direct/presets/`) is used
   only when the user's direction explicitly matches it.
@@ -87,5 +92,6 @@ fallback resolves to `direct/index.md`.
 
 Implementing a confirmed brief, chosen direction, mock, or winning variant →
 **pe-build** (with the DESIGN.md, any chosen preset, and the approved record named).
-Judging existing UI → **pe-review**. Behavior specs beyond PRODUCT.md's scope →
+Judging existing UI → **pe-review**. Putting an artifact on a Figma canvas →
+`figma:figma-generate-design`, with `figma:figma-use` loaded before any `use_figma` call. Behavior specs beyond PRODUCT.md's scope →
 **pe-product-description**. On-brand standalone assets → **pe-brand-assets**.
