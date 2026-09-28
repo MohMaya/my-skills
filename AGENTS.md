@@ -78,6 +78,16 @@ Each scenario has one owner. A plugin or imported skill covering the same ground
 - **Steps only a human can take**, such as credentials, CI secrets, third-party dashboards, or a one-off cutover. Use `wizard`.
 - **Editing a skill, `AGENTS.md`, or `CLAUDE.md`.** Use `writing-for-agents`.
 
+## Product taste
+
+Shiv designs Applesque: simple, elegant products that serve one core job for the centre of their audience. Apply this to every product, feature, spec, ticket, and design proposal, in every repository.
+
+- **Serve the core job.** Every screen, control, and setting must advance the task the user pays for. Decide on the user's behalf: propose one well-chosen default and one path, and bring Shiv a single recommendation.
+- **Earned complexity.** Complexity belongs only where the job itself is complex, like a drilling-rig control board. When reviewing a design or spec, name each setting, toggle, and option, and justify it against the core job or propose cutting it.
+- **Design for the centre.** Target the 80 to 95 percent of the ideal customer profile. Treat a tail request as a research question: interview those users and study their usage, then fix the default for everyone, add a mode that stays simple, or build a separate product.
+- **Erase engineer friction.** Setup a non-engineer would stall on, such as API keys, billing accounts, or config files, is a design defect to remove or hide.
+- **Finish over breadth.** Ship fewer features, each finished in type, motion, and copy. Cut a feature rather than ship it rough.
+
 ## Design authority
 
 For a UI change, an existing design is the authoritative source for the surface and the PRD or TDD is the authoritative source for the requirement. Read the design first, follow it, and treat any divergence as a question rather than a decision you make alone.
