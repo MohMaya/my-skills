@@ -122,7 +122,7 @@ A later session, or a request to add a feature that was out of scope, starts her
 - Cross-reference with relative links instead of repeating. The foundation documents own thresholds and definitions.
 - One Mermaid `stateDiagram-v2` per interaction, limited to the states the user passes through.
 - Footer: `## Open questions and verification`, a bullet list, then `Verified against {repo} commit \`{sha}\``.
-- Commits: follow `~/.agents/STANDARDS/Workflow/Git.md` — a working branch, never a protected one, and `+N/-M` line counts in the commit text. Follow whatever the user's repo does about AI attribution in commit messages.
+- Commits: follow `~/.agents/STANDARDS/Workflow/Git.md` — a working branch, never a protected one. Follow whatever the user's repo does about AI attribution in commit messages.
 - Never modify the source repo. It is read-only reference material.
 - When a behavior cannot be determined from code and tests, write what can be determined, put the rest in "Open questions", move on. Do not guess, do not block.
 

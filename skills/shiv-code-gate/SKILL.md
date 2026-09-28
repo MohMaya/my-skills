@@ -44,4 +44,4 @@ Use checks that exercise the changed behavior or its important invariants. Follo
 
 Before commit or PR, use `simplify` if available or reapply the ladder to the diff. Remove duplication and unnecessary scaffolding. Retain necessary error handling.
 
-Report verification and line counts as `+N/-M` in the commit or PR. Completion and authorization follow the kernel and the user's request.
+Report verification in the commit or PR. Completion and authorization follow the kernel and the user's request.

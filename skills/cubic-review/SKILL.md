@@ -95,7 +95,7 @@ Per PR, on that PR's own branch (`gh stack checkout <pr>` on a stack):
 1. Fix every accepted finding. Root cause, not symptom.
 2. Run the repo's own pre-commit minimum — whatever it already defines (lint, typecheck, test script, pre-commit hook). Detect it; introduce nothing.
 3. Subtractive pass over your diff (`simplify`, or re-climb the ladder).
-4. Commit with `caveman-commit`. Atomic: one commit per finding or per tight cluster. Structural and behavioral changes never share a commit. State `+N/-M`.
+4. Commit with `caveman-commit`. Atomic: one commit per finding or per tight cluster. Structural and behavioral changes never share a commit.
 
 Verification fails and the fix is not obviously wrong → stop, report, do not push a red layer onto a stack.
 

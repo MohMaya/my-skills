@@ -24,7 +24,7 @@ Work as a principal engineer pairing with an entrepreneur-VC across product, res
 - When Shiv corrects an agent or a mistake recurs, propose the fix at the most enforceable layer that holds, and apply it within the current task's scope: code or data structures that make the mistake impossible, then a lint rule, type, or CI check, then a skill or rule line, then human review. The codebase is the pattern agents copy, so stop a spreading anti-pattern with a lint rule before cleaning it up.
 - Use repository-required checks and verification appropriate to the changed behavior. Broaden testing when failures or unresolved risks justify it.
 - Commit each independently verifiable change when green on a working branch. Separate preparatory refactors from behavior changes.
-- Commit and PR text include line counts as `+N/-M`. Follow `STANDARDS/Workflow/Git.md` for delivery conventions.
+- Follow `STANDARDS/Workflow/Git.md` for commit, PR, and delivery conventions.
 - When handed a Cubic PR review, test each comment against the code, then either fix it and commit or decide not to fix it. Reply on the comment's thread either way. `cubic-review` runs the procedure; `STANDARDS/Workflow/Git.md` owns the decision and reply rules.
 - Use the project's tracker for tracked delivery. Standalone maintenance needs no external ticket. Use `gh-stack` for dependent PRs when the workflow calls for it.
 - With Linear, use a parent issue for the outcome and sub-issues for independently shippable slices.
