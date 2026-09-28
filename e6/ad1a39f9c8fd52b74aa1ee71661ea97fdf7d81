@@ -1,0 +1,32 @@
+STANDARDS/Skills/Routing.md
+  s_94ddb2747f9ab3::t_2cc9765e00e47b 88
+  s_94ddb2747f9ab3::t_3df2fb7261dd5a 125
+skills/pe-review/SKILL.md
+  s_94ddb2747f9ab3::t_db8b0f53430177 36
+skills/pe-design/references/research.md
+  s_94ddb2747f9ab3::t_0f8eaf4bd5a6de 1-40
+skills/pe-design/SKILL.md
+  s_94ddb2747f9ab3::t_e4b19dcfe52843 95-96
+  s_94ddb2747f9ab3::t_2a19693a7f40e2 21-22
+  s_94ddb2747f9ab3::t_9d023176d2f7f1 40-42
+skills/pe-review/references/fidelity.md
+  s_94ddb2747f9ab3::t_dc4f3dfd6993e1 10-12
+AGENTS.md
+  s_94ddb2747f9ab3::t_82fa877122cb98 87-89,91
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "e6ad1a39f9c8fd52b74aa1ee71661ea97fdf7d81",
+  "prompts": {},
+  "sessions": {
+    "s_94ddb2747f9ab3": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "89e8468b-7710-48f5-a9b1-dbe92028de32",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Shivanshu Chaudhary <shivanshuchaudhary97@gmail.com>"
+    }
+  }
+}
