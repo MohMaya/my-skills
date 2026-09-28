@@ -17,8 +17,7 @@ project's design system governs styling.
    with promo code field and saved cards". Name an app to filter to it. Search each flow
    or screen separately. Style adjectives and negations weaken results. Keep
    `task_intent` and `output_destination` identical across calls for the task: `code`
-   in a repository, `doc` for a brief or PRD, `design_tool` when the output goes to Figma
-   or Paper.
+   in a repository, `doc` for a brief or PRD, `design_tool` when the output goes to Figma.
 4. **Read the images.** Judge each result from its preview images, not its metadata.
    Collect three to six references that span distinct approaches: the convention most
    apps share, and any standout that solves the job better.
