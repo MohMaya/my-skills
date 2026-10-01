@@ -37,7 +37,7 @@ For GPUI implementation, polish, motion, and review, `Stack/Desktop.md` takes pr
 | Throwaway spike to answer a design question | `prototype` |
 | Reading legwork, decision briefs, search-tool failure, or source-quality judgment | `research` |
 | Creating or updating a Legion/Grok bot (CreateAgent, voice send_task, bot-master brief) | `create-grok-bot` |
-| Bulk YouTube/Apple/Spotify playlist or liked-library mutations (fill, clear, rebuild under quota) | `media-library-bulk` |
+| Bulk Apple Music playlist or liked-library mutations for music-queue bots (fill, clear, rebuild under quota; no YouTube Music writes) | `media-library-bulk` |
 | Daily Economist-style paper / Readwise RSS news edition | `daily-paper-rss` |
 | Commit messages | `caveman-commit` |
 | Reviewing a diff or PR | `code-review-and-quality`; `simplify` when bloat is the question; `pe-review` change mode when it touches UI; `blast-radius` for breakage beyond the diff when a change touches shared code, contracts, or configuration |
