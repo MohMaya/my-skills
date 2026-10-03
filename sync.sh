@@ -6,8 +6,8 @@
 #                      Cursor: sessionStart hook (Cursor has no global rules file)
 #   skills  skills/    Claude: links in ~/.claude/skills
 #                      Codex and Cursor read ~/.agents/skills natively
-#   hooks   hooks/     turn-end gate and git-bypass guard in all three
-#   claude  claude-setup-sync.sh: plugins
+#   hooks   hooks/     turn-end gate, git-bypass guard, and secret-path guard
+#   claude  claude-setup-sync.sh: settings, plugins, plugin runtimes
 #
 # MCP servers are configured per machine in each harness; mcp.json records
 # them and is not synced. Adds what is missing and replaces only entries it
@@ -66,7 +66,7 @@ import json, os, shlex, sys
 from pathlib import Path
 
 hooks = sys.argv[1]
-OURS = ("stop-gate.py", "block-no-verify.sh", "session-kernel.py",
+OURS = ("stop-gate.py", "block-no-verify.sh", "session-kernel.py", "guard-protected-paths.sh",
         "format-on-edit.sh", "mandates.md", "shiv-code-gate.md")
 
 def cmd(script, stop=False):
@@ -80,7 +80,8 @@ def ours(entry):
 # Claude Code and Codex: {"hooks": {Event: [{"matcher", "hooks": [entry]}]}}
 NESTED = {
     "Stop": [{"hooks": [{"type": "command", "command": cmd("stop-gate.py", stop=True), "timeout": 600}]}],
-    "PreToolUse": [{"matcher": "Bash", "hooks": [{"type": "command", "command": cmd("block-no-verify.sh")}]}],
+    "PreToolUse": [{"matcher": "Bash", "hooks": [{"type": "command", "command": cmd("block-no-verify.sh")}]},
+                   {"matcher": "Write|Edit|MultiEdit", "hooks": [{"type": "command", "command": cmd("guard-protected-paths.sh")}]}],
 }
 # Cursor: {"version": 1, "hooks": {event: [entry]}}
 FLAT = {
