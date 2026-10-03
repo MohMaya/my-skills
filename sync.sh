@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 # Idempotent sync from the canonical ~/.agents tree to each harness.
 # Safe to re-run: only touches symlinks this script owns, the generated
-# harness rules, Gemini CLI kernel import, mandate mirrors, the repo-owned
-# hooks under hooks/, and their entries in Claude and Codex settings.
+# harness rules, Gemini CLI kernel import, the Codex kernel link, the
+# repo-owned hooks under hooks/, and their entries in Claude and Codex settings.
 # Never touches non-symlink skill entries (native dirs, vendor skills), other
-# hooks, or ~/.agents/AGENTS.md, STANDARDS/, skills/ themselves.
+# hooks, or ~/.agents/AGENTS.md and skills/ themselves.
 
 set -euo pipefail
 
@@ -70,17 +70,17 @@ sync_rules() {
   echo "$dest: regenerated ($(wc -c < "$dest" | tr -d ' ') bytes)"
 }
 
-# Keep injected mandates derived from the kernel, including its prose policy.
-sync_mandates() {
-  local dest
-  for dest in "$HOME/.claude/hooks/mandates.md" "$HOME/.codex/hooks/mandates.md"; do
-    mkdir -p "$(dirname "$dest")"
-    {
-      printf 'MANDATES ACTIVE (generated from ~/.agents/AGENTS.md):\n\n'
-      awk '/^## /{copy=($0 ~ /^## (Scope and completion|Engineering judgment|Engineering skills|Design authority|Voice)$/)} copy{print}' "$AGENTS_DIR/AGENTS.md"
-    } > "$dest"
-    echo "$dest: regenerated"
-  done
+# Codex reads its global instructions from $CODEX_HOME/AGENTS.md. Point it at
+# the kernel; a real file there is preserved and reported.
+link_codex_kernel() {
+  local link="$HOME/.codex/AGENTS.md"
+  mkdir -p "$HOME/.codex"
+  if [ -e "$link" ] && [ ! -L "$link" ]; then
+    echo "conflict: $link is a real file; preserved" >&2
+    return 0
+  fi
+  ln -sfn "$AGENTS_DIR/AGENTS.md" "$link"
+  echo "$link: linked to kernel"
 }
 
 # Link a repo-owned hook into a harness's hooks dir. A real file at the link
@@ -143,7 +143,7 @@ PY
 }
 
 sync_hooks() {
-  sync_mandates
+  link_codex_kernel
   link_hook "$HOME/.claude" format-on-edit.sh || true
   link_hook "$HOME/.codex" format-on-edit.sh || true
   register_hook "$HOME/.claude" "$HOME/.claude/settings.json" stop-gate.py Stop "" 600
