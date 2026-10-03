@@ -2,27 +2,31 @@
 """Turn-end quality gate for Claude Code and Codex Stop hooks.
 
 Runs the linters and type checkers a project already configures on the
-Python and TypeScript files changed in the working tree. Unfixable errors
-block the stop and go back to the agent as the reason; a clean tree, an
-unconfigured project, a timeout, or a retry after a block lets the turn end.
+Python, TypeScript, Go, and Rust files changed in the working tree, then
+holds every changed function to a cyclomatic-complexity ratchet. Unfixable
+errors block the stop and go back to the agent as the reason; a clean tree,
+an unconfigured project, a timeout, or a retry after a block lets the turn
+end.
 
 Each checker runs from the nearest directory that configures it, so
 monorepo packages use their own config. TypeScript tools and the Python
 type checkers run only from project-local installs (node_modules, a venv),
 since a global copy cannot see the project's dependencies.
 
-Synced by ~/.agents/sync.sh into ~/.claude/hooks and ~/.codex/hooks.
+Registered by ~/.agents/sync.sh as the Stop hook in Claude Code, Codex, and Cursor.
 """
 
 from __future__ import annotations
 
 import configparser
+import csv
 import fnmatch
 import json
 import re
 import shutil
 import subprocess
 import sys
+import tempfile
 import time
 import tomllib
 from dataclasses import dataclass
@@ -36,6 +40,12 @@ TOTAL_BUDGET = 480  # the registered hook allows 600s
 PY = (".py", ".pyi")
 TS = (".ts", ".tsx", ".mts", ".cts")
 JS = TS + (".js", ".jsx", ".mjs", ".cjs")
+GO = (".go",)
+RS = (".rs",)
+
+# A changed function may not exceed this cyclomatic complexity unless it was
+# already over it at HEAD and did not get worse.
+CCN_LIMIT = 10
 
 Probe = Callable[[Path], bool]
 
@@ -201,6 +211,33 @@ CHECKERS = (
     Checker(
         "biome", JS, _has_file("biome.json", "biome.jsonc"), check=("check",), node=True
     ),
+    Checker(
+        "gofmt",
+        GO,
+        _has_file("go.mod"),
+        check=("-l",),
+        fixes=((("-w",), _ALWAYS),),
+        path_fallback=True,
+    ),
+    Checker(
+        "go",
+        GO,
+        _has_file("go.mod"),
+        check=("vet", "./..."),
+        pass_files=False,
+        scope_output=True,
+        path_fallback=True,
+    ),
+    Checker(
+        "cargo",
+        RS,
+        _has_file("Cargo.toml"),
+        check=("clippy", "--all-targets", "--message-format", "short", "--", "-D", "warnings"),
+        fixes=((("fmt",), _ALWAYS),),
+        pass_files=False,
+        scope_output=True,
+        path_fallback=True,
+    ),
 )
 
 
@@ -265,7 +302,8 @@ def binary(project: Path, root: Path, checker: Checker) -> str | None:
 
 def scoped(output: str, files: list[Path], project: Path) -> str:
     """Keep diagnostics that start with a changed file's path, plus their indented continuations."""
-    names = {str(f) for f in files} | {str(f.relative_to(project)) for f in files}
+    rels = {str(f.relative_to(project)) for f in files}
+    names = {str(f) for f in files} | rels | {"./" + r for r in rels}
     starts = re.compile(r"^\s*(?:%s)[:(]" % "|".join(re.escape(n) for n in names))
     kept: list[str] = []
     keeping = False
@@ -304,6 +342,58 @@ def truncate(output: str) -> str:
     return "\n".join(lines[:MAX_LINES_PER_TOOL]) + f"\n... ({extra} more lines)"
 
 
+def lizard(rels: list[str], cwd: Path, deadline: float) -> dict[tuple[str, str], tuple[int, int]]:
+    """Map (file, function) to (complexity, start line); empty when lizard is unavailable."""
+    timeout = min(TOOL_TIMEOUT, deadline - time.monotonic())
+    exe = ["lizard"] if shutil.which("lizard") else ["uvx", "--quiet", "lizard"]
+    if not rels or timeout <= 1 or not shutil.which(exe[0]):
+        return {}
+    try:
+        out = subprocess.run(
+            [*exe, "--csv", *rels], capture_output=True, text=True, cwd=cwd, timeout=timeout
+        ).stdout
+    except (subprocess.SubprocessError, OSError):
+        return {}
+    found: dict[tuple[str, str], tuple[int, int]] = {}
+    for row in csv.reader(out.splitlines()):
+        if len(row) >= 10 and row[1].isdigit():
+            key = (row[6], row[7])
+            found[key] = max(found.get(key, (0, 0)), (int(row[1]), int(row[9])))
+    return found
+
+
+def complexity(root: Path, files: list[Path], deadline: float) -> str | None:
+    """Changed functions over CCN_LIMIT that are new or more complex than at HEAD."""
+    exts = PY + JS + GO + RS
+    rels = [str(f.relative_to(root)) for f in files if f.suffix in exts]
+    now = lizard(rels, root, deadline)
+    if not any(ccn > CCN_LIMIT for ccn, _ in now.values()):
+        return None
+    with tempfile.TemporaryDirectory() as tmp:
+        tracked = []
+        for rel in rels:
+            r = subprocess.run(
+                ["git", "show", f"HEAD:{rel}"], capture_output=True, cwd=root, timeout=10
+            )
+            if r.returncode == 0:
+                (Path(tmp) / rel).parent.mkdir(parents=True, exist_ok=True)
+                (Path(tmp) / rel).write_bytes(r.stdout)
+                tracked.append(rel)
+        before = lizard(tracked, Path(tmp), deadline)
+    worse = [
+        f"{file}:{line} {name} has complexity {ccn} (limit {CCN_LIMIT}"
+        + (f"; was {before[(file, name)][0]})" if (file, name) in before else ")")
+        for (file, name), (ccn, line) in sorted(now.items())
+        if ccn > CCN_LIMIT and ccn > before.get((file, name), (0, 0))[0]
+    ]
+    if not worse:
+        return None
+    return (
+        "=== complexity ===\nSplit these functions or move their branches into data, "
+        "types, or one shared guard:\n" + truncate("\n".join(worse))
+    )
+
+
 def gate(root: Path, deadline: float) -> list[str]:
     files = changed_files(root)
     errors: list[str] = []
@@ -331,6 +421,8 @@ def gate(root: Path, deadline: float) -> list[str]:
             if code != 0 and output:
                 where = project.relative_to(root) if project != root else Path(".")
                 errors.append(f"=== {checker.tool} ({where}) ===\n{truncate(output)}")
+    if found := complexity(root, files, deadline):
+        errors.append(found)
     return errors
 
 
@@ -339,10 +431,16 @@ def main() -> None:
         payload = json.load(sys.stdin)
     except ValueError:
         return
-    # A retry after a block ends the turn, so a stubborn error cannot loop forever.
-    if not isinstance(payload, dict) or payload.get("stop_hook_active"):
+    if not isinstance(payload, dict):
         return
-    root = repo_root(Path(payload.get("cwd") or ".").resolve())
+    # Claude Code and Codex send cwd and block with a decision; Cursor sends
+    # workspace_roots and continues the turn with a follow-up message.
+    cursor = "workspace_roots" in payload
+    # A retry after a block ends the turn, so a stubborn error cannot loop forever.
+    if payload.get("stop_hook_active") or payload.get("loop_count") or payload.get("status", "completed") != "completed":
+        return
+    cwd = (payload.get("workspace_roots") or [None])[0] if cursor else payload.get("cwd")
+    root = repo_root(Path(cwd or ".").resolve())
     if not root:
         return
     errors = gate(root, time.monotonic() + TOTAL_BUDGET)
@@ -351,7 +449,8 @@ def main() -> None:
             "Fix these errors in changed files before ending the turn:\n\n"
             + "\n\n".join(errors)
         )
-        json.dump({"decision": "block", "reason": reason}, sys.stdout)
+        out = {"followup_message": reason} if cursor else {"decision": "block", "reason": reason}
+        json.dump(out, sys.stdout)
 
 
 if __name__ == "__main__":

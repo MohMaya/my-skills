@@ -1,203 +1,206 @@
 #!/usr/bin/env bash
-# Idempotent sync from the canonical ~/.agents tree to each harness.
-# Safe to re-run: only touches symlinks this script owns, the generated
-# harness rules, Gemini CLI kernel import, the Codex kernel link, the
-# repo-owned hooks under hooks/, and their entries in Claude and Codex settings.
-# Never touches non-symlink skill entries (native dirs, vendor skills), other
-# hooks, or ~/.agents/AGENTS.md and skills/ themselves.
+# Wire ~/.agents into Claude Code, Codex, and Cursor. Safe to re-run.
+#
+#   kernel  AGENTS.md  Claude: import in ~/.claude/CLAUDE.md
+#                      Codex:  ~/.codex/AGENTS.md link
+#                      Cursor: sessionStart hook (Cursor has no global rules file)
+#   skills  skills/    Claude: links in ~/.claude/skills
+#                      Codex and Cursor read ~/.agents/skills natively
+#   hooks   hooks/     turn-end gate and git-bypass guard in all three
+#   tools   mcp.json   Codex and Cursor MCP servers; Claude gets plugins,
+#                      claude.ai connectors, and the servers in CLAUDE_MCP
+#
+# Adds what is missing and replaces only entries it owns. Plugins and MCP
+# servers it did not add stay as they are.
 
 set -euo pipefail
 
-AGENTS_DIR="$HOME/.agents"
-SKILLS_SRC="$AGENTS_DIR/skills"
+A="$HOME/.agents"
+CODEX=$(command -v codex || echo "/Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS/codex")
 
-sync_skills() {
-  local harness_dir="$1" link_style="$2" linked=0 removed=0
-  local link target resolved skill_dir name
+CLAUDE_MARKETPLACES=(anthropics/claude-plugins-official supermemoryai/claude-supermemory)
+CLAUDE_PLUGINS=(
+  posthog@claude-plugins-official firebase@claude-plugins-official
+  railway@claude-plugins-official cloudflare@claude-plugins-official
+  figma@claude-plugins-official supermemory@supermemory-plugins
+  typescript-lsp@claude-plugins-official pyright-lsp@claude-plugins-official
+  gopls-lsp@claude-plugins-official rust-analyzer-lsp@claude-plugins-official
+)
+CLAUDE_MCP=(mobbin)
 
-  mkdir -p "$harness_dir"
+has() { command -v "$1" >/dev/null 2>&1 || [ -x "$1" ]; }
 
-  # Remove dangling symlinks that point into $SKILLS_SRC.
+# Remove links in DIR that point into ~/.agents; with "all", remove every
+# such link, otherwise only dangling ones.
+prune_links() {
+  local dir="$1" mode="$2" link
+  [ -d "$dir" ] || return 0
   while IFS= read -r -d '' link; do
-    target=$(readlink "$link")
-    resolved=$(python3 -c 'import os,sys; print(os.path.abspath(os.path.join(os.path.dirname(sys.argv[1]), sys.argv[2])))' "$link" "$target")
-    if [[ "$resolved" == "$SKILLS_SRC"/* && ! -e "$link" ]]; then
-      rm -f "$link"
-      removed=$((removed + 1))
-    fi
-  done < <(find "$harness_dir" -maxdepth 1 -type l -print0 2>/dev/null)
+    case "$(readlink "$link")" in
+      *".agents/"*) if [ "$mode" = all ] || [ ! -e "$link" ]; then rm -f "$link"; fi ;;
+    esac
+  done < <(find "$dir" -maxdepth 1 -type l -print0)
+}
 
-  # Ensure a symlink for every canonical skill.
-  for skill_dir in "$SKILLS_SRC"/*/; do
-    [ -f "$skill_dir/SKILL.md" ] || continue
-    name=$(basename "$skill_dir")
-    link="$harness_dir/$name"
-
-    if [ -L "$link" ]; then
-      if [ "$link" -ef "$skill_dir" ]; then
-        continue
-      fi
-      echo "conflict: $link points elsewhere; preserved" >&2
-      continue
-    elif [ -e "$link" ]; then
-      continue # native/vendor entry with the same name -- never touch
+link_claude_skills() {
+  local d="$HOME/.claude/skills" skill name
+  mkdir -p "$d"
+  prune_links "$d" dangling
+  for skill in "$A"/skills/*/; do
+    name=$(basename "$skill")
+    if [ -f "$skill/SKILL.md" ] && [ ! -e "$d/$name" ]; then
+      ln -s "../../.agents/skills/$name" "$d/$name"
     fi
-
-    if [ "$link_style" = "relative" ]; then
-      target=$(python3 -c "import os,sys; print(os.path.relpath(sys.argv[1], sys.argv[2]))" "$skill_dir" "$harness_dir")
-    else
-      target="$skill_dir"
-    fi
-    ln -s "${target%/}" "$link"
-    linked=$((linked + 1))
   done
-
-  echo "$harness_dir: $linked skills linked, $removed dangling removed"
+  echo "claude: $(find "$d" -maxdepth 1 -type l | wc -l | tr -d ' ') skills linked"
 }
 
-# Regenerate a harness rules file from the kernel. $2 is the harness-specific
-# frontmatter body (delimiters are added here); the kernel's own frontmatter
-# (first --- ... --- block) is stripped.
-sync_rules() {
-  local dest="$1" frontmatter="$2" src="$AGENTS_DIR/AGENTS.md"
-  mkdir -p "$(dirname "$dest")"
-
-  {
-    printf -- '---\n%s---\n\n' "$frontmatter"
-    awk 'BEGIN{fm=0} /^---$/{fm++; next} fm>=2{print}' "$src"
-  } > "$dest"
-
-  echo "$dest: regenerated ($(wc -c < "$dest" | tr -d ' ') bytes)"
-}
-
-# Codex reads its global instructions from $CODEX_HOME/AGENTS.md. Point it at
-# the kernel; a real file there is preserved and reported.
-link_codex_kernel() {
-  local link="$HOME/.codex/AGENTS.md"
-  mkdir -p "$HOME/.codex"
-  if [ -e "$link" ] && [ ! -L "$link" ]; then
-    echo "conflict: $link is a real file; preserved" >&2
-    return 0
+link_kernels() {
+  local md="$HOME/.claude/CLAUDE.md" codex="$HOME/.codex/AGENTS.md"
+  mkdir -p "$HOME/.claude" "$HOME/.codex"
+  grep -qsE '^@.*AGENTS\.md$' "$md" || printf '@~/.agents/AGENTS.md\n' >> "$md"
+  if [ -e "$codex" ] && [ ! -L "$codex" ]; then
+    echo "codex: $codex is a real file; preserved" >&2
+  else
+    ln -sfn "$A/AGENTS.md" "$codex"
   fi
-  ln -sfn "$AGENTS_DIR/AGENTS.md" "$link"
-  echo "$link: linked to kernel"
+  rm -f "$HOME/.cursor/rules/kernel.mdc" "$HOME/.claude/hooks/mandates.md" "$HOME/.codex/hooks/mandates.md"
+  echo "kernel: Claude import, Codex link, Cursor sessionStart hook"
 }
 
-# Link a repo-owned hook into a harness's hooks dir. A real file at the link
-# path is preserved and reported; returns 1 so callers skip registration.
-link_hook() {
-  local harness_dir="$1" name="$2" link="$1/hooks/$2"
-  mkdir -p "$harness_dir/hooks"
-  if [ -e "$link" ] && [ ! -L "$link" ]; then
-    echo "conflict: $link is a real file; preserved" >&2
-    return 1
-  fi
-  ln -sfn "$AGENTS_DIR/hooks/$name" "$link"
+# Rewrite our entries in each harness's hook config. An entry is ours when its
+# command names one of our scripts or a retired one; everything else is kept.
+sync_hooks() {
+  prune_links "$HOME/.claude/hooks" all
+  prune_links "$HOME/.codex/hooks" all
+  python3 - "$A/hooks" <<'PY'
+import json, os, shlex, sys
+from pathlib import Path
+
+hooks = sys.argv[1]
+OURS = ("stop-gate.py", "block-no-verify.sh", "session-kernel.py",
+        "format-on-edit.sh", "mandates.md", "shiv-code-gate.md")
+
+def cmd(script, stop=False):
+    path = shlex.quote(f"{hooks}/{script}")
+    run = f"python3 {path}" if script.endswith(".py") else path
+    return f"[ -f {path} ] && {run} || true" if stop else f"[ ! -f {path} ] || {run}"
+
+def ours(entry):
+    return any(n in entry.get("command", "") for n in OURS)
+
+# Claude Code and Codex: {"hooks": {Event: [{"matcher", "hooks": [entry]}]}}
+NESTED = {
+    "Stop": [{"hooks": [{"type": "command", "command": cmd("stop-gate.py", stop=True), "timeout": 600}]}],
+    "PreToolUse": [{"matcher": "Bash", "hooks": [{"type": "command", "command": cmd("block-no-verify.sh")}]}],
+}
+# Cursor: {"version": 1, "hooks": {event: [entry]}}
+FLAT = {
+    "sessionStart": [{"command": cmd("session-kernel.py", stop=True)}],
+    "stop": [{"command": cmd("stop-gate.py", stop=True), "timeout": 600, "loop_limit": 1}],
+    "beforeShellExecution": [{"command": cmd("block-no-verify.sh")}],
 }
 
-# Link a repo-owned hook into a harness and register it under EVENT, scoped
-# to MATCHER when one is given. The command fails open: if the link dangles,
-# the turn ends and the tool call runs. Merge-only: the settings file is
-# rewritten (atomically) only when the entry is missing or stale, and other
-# hooks stay as they are. Codex asks to trust a new or changed hook on its
-# next run.
-# Usage: register_hook HARNESS_DIR SETTINGS NAME EVENT MATCHER [TIMEOUT]
-register_hook() {
-  local harness_dir="$1" settings="$2" name="$3" link="$1/hooks/$3"
-  link_hook "$harness_dir" "$name" || return 0
-  python3 - "$settings" "$link" "$name" "$4" "$5" "${6:-}" <<'PY' || echo "$settings: $name not registered" >&2
-import json
-import os
-import pathlib
-import shlex
-import sys
-import tempfile
+def merge_nested(cfg):
+    events = cfg.setdefault("hooks", {})
+    for name in list(events):
+        groups = [{**g, "hooks": [h for h in g.get("hooks", []) if not ours(h)]} for g in events[name]]
+        events[name] = [g for g in groups if g["hooks"]]
+    for name, groups in NESTED.items():
+        events.setdefault(name, []).extend(groups)
+    cfg["hooks"] = {k: v for k, v in events.items() if v}
 
-path, (link, name, event, matcher, timeout) = pathlib.Path(sys.argv[1]), sys.argv[2:]
-q = shlex.quote(link)
-run = f"python3 {q}" if name.endswith(".py") else q
-# A Stop hook never blocks the turn; a PreToolUse hook keeps its exit code.
-command = f"[ -f {q} ] && {run} || true" if event == "Stop" else f"[ ! -f {q} ] || {run}"
-entry = {"type": "command", "command": command}
-if timeout:
-    entry["timeout"] = int(timeout)
-try:
-    data = json.loads(path.read_text()) if path.exists() else {}
-except ValueError as e:
-    sys.exit(f"{path}: invalid JSON ({e})")
-groups = data.setdefault("hooks", {}).setdefault(event, [])
-if any(g.get("matcher", "") == matcher and entry in g.get("hooks", []) for g in groups):
-    print(f"{path}: {name} present")
-    sys.exit()
-for group in groups:  # drop earlier registrations of this hook
-    group["hooks"] = [h for h in group.get("hooks", []) if name not in h.get("command", "")]
-groups[:] = [g for g in groups if g.get("hooks")]
-groups.append({**({"matcher": matcher} if matcher else {}), "hooks": [entry]})
-fd, tmp = tempfile.mkstemp(dir=path.parent, prefix=path.name + ".")
-with os.fdopen(fd, "w") as f:
-    f.write(json.dumps(data, indent=2, ensure_ascii=False) + "\n")
-os.chmod(tmp, path.stat().st_mode if path.exists() else 0o644)
-os.replace(tmp, path)
-print(f"{path}: {name} registered")
+def merge_flat(cfg):
+    cfg.setdefault("version", 1)
+    events = cfg.setdefault("hooks", {})
+    for name in list(events):
+        events[name] = [h for h in events[name] if not ours(h)]
+    for name, entries in FLAT.items():
+        events.setdefault(name, []).extend(entries)
+    cfg["hooks"] = {k: v for k, v in events.items() if v}
+
+for path, merge in (("~/.claude/settings.json", merge_nested),
+                    ("~/.codex/hooks.json", merge_nested),
+                    ("~/.cursor/hooks.json", merge_flat)):
+    p = Path(path).expanduser()
+    try:
+        cfg = json.loads(p.read_text()) if p.exists() else {}
+    except ValueError as e:
+        print(f"{p}: invalid JSON ({e}); skipped", file=sys.stderr)
+        continue
+    before = json.dumps(cfg, sort_keys=True)
+    merge(cfg)
+    if json.dumps(cfg, sort_keys=True) != before:
+        p.parent.mkdir(parents=True, exist_ok=True)
+        tmp = p.with_name(p.name + ".tmp")
+        tmp.write_text(json.dumps(cfg, indent=2, ensure_ascii=False) + "\n")
+        os.replace(tmp, p)
+        print(f"{p}: hooks updated")
+    else:
+        print(f"{p}: hooks current")
 PY
 }
 
-sync_hooks() {
-  link_codex_kernel
-  link_hook "$HOME/.claude" format-on-edit.sh || true
-  link_hook "$HOME/.codex" format-on-edit.sh || true
-  register_hook "$HOME/.claude" "$HOME/.claude/settings.json" stop-gate.py Stop "" 600
-  register_hook "$HOME/.codex" "$HOME/.codex/hooks.json" stop-gate.py Stop "" 600
-  register_hook "$HOME/.claude" "$HOME/.claude/settings.json" block-no-verify.sh PreToolUse Bash
-  register_hook "$HOME/.codex" "$HOME/.codex/hooks.json" block-no-verify.sh PreToolUse Bash
+sync_claude_plugins() {
+  has claude || { echo "claude: CLI not found; plugins skipped" >&2; return 0; }
+  local installed m p
+  installed=$(claude plugin list --json 2>/dev/null || echo "[]")
+  for m in "${CLAUDE_MARKETPLACES[@]}"; do claude plugin marketplace add "$m" >/dev/null 2>&1 || true; done
+  for p in "${CLAUDE_PLUGINS[@]}"; do
+    grep -q "\"$p\"" <<<"$installed" || claude plugin install "$p" >/dev/null 2>&1 || echo "claude: $p not installed" >&2
+  done
+  echo "claude: ${#CLAUDE_PLUGINS[@]} plugins checked"
 }
 
-# Antigravity loads skills from paths declared in the global skills.json,
-# so the canonical tree needs no per-skill symlinks. The path must be absolute:
-# this build rejects "~/" despite its own docs claiming home-relative support.
-sync_antigravity_skills_config() {
-  local dest="$HOME/.gemini/config/skills.json"
-  mkdir -p "$(dirname "$dest")"
-  printf '{\n  "entries": [\n    { "path": "%s" }\n  ]\n}\n' "$SKILLS_SRC" > "$dest"
-  echo "$dest: written"
+# Print "name|url|command args" for each server in mcp.json.
+mcp_entries() {
+  python3 -c '
+import json, sys
+for name, s in json.load(open(sys.argv[1]))["mcpServers"].items():
+    print(name, s.get("url", ""), " ".join([s.get("command", "")] + s.get("args", [])).strip(), sep="|")
+' "$A/mcp.json"
+}
+
+sync_mcp() {
+  local name url command argv
+  while IFS='|' read -r name url command; do
+    if has "$CODEX" && ! "$CODEX" mcp get "$name" >/dev/null 2>&1; then
+      if [ -n "$url" ]; then
+        "$CODEX" mcp add "$name" --url "$url" >/dev/null
+      else
+        read -ra argv <<<"$command"
+        "$CODEX" mcp add "$name" -- "${argv[@]}" >/dev/null
+      fi
+    fi
+    if [[ " ${CLAUDE_MCP[*]} " == *" $name "* ]] && has claude && ! claude mcp get "$name" >/dev/null 2>&1; then
+      claude mcp add --scope user --transport http "$name" "$url" >/dev/null
+    fi
+  done < <(mcp_entries)
+  python3 - "$A/mcp.json" <<'PY'
+import json, sys
+from pathlib import Path
+p = Path("~/.cursor/mcp.json").expanduser()
+cfg = json.loads(p.read_text()) if p.exists() else {}
+servers = cfg.setdefault("mcpServers", {})
+missing = {k: v for k, v in json.load(open(sys.argv[1]))["mcpServers"].items() if k not in servers}
+if missing:
+    servers.update(missing)
+    p.parent.mkdir(parents=True, exist_ok=True)
+    p.write_text(json.dumps(cfg, indent=2) + "\n")
+print(f"cursor: {len(missing)} MCP servers added")
+PY
+  echo "mcp: checked. Sign in once per server: 'codex mcp login <name>' and Cursor Settings > MCP"
 }
 
 main() {
-  local do_skills=1 gemini_context="$HOME/.gemini/GEMINI.md"
-  case "${1:-}" in
-    --codex-claude)
-      sync_skills "$HOME/.claude/skills" relative
-      sync_skills "$HOME/.codex/skills" relative
-      sync_hooks
-      return
-      ;;
-    --rules-only) do_skills=0 ;;
-    "") ;;
-    *) echo "usage: $0 [--codex-claude|--rules-only]" >&2; return 2 ;;
-  esac
-
-  if [ "$do_skills" = 1 ]; then
-    sync_skills "$HOME/.claude/skills" relative
-    sync_skills "$HOME/.codex/skills" relative
-    sync_skills "$HOME/.cursor/skills" absolute
-  fi
-
-  sync_rules "$HOME/.cursor/rules/kernel.mdc" \
-    'description: Global engineering kernel
-alwaysApply: true
-'
-  sync_rules "$HOME/.gemini/config/rules/kernel.md" \
-    'trigger: always_on
-description: Global engineering kernel
-'
-  [ "$do_skills" = 0 ] || sync_antigravity_skills_config
-
-  if ! grep -Fxq "@$AGENTS_DIR/AGENTS.md" "$gemini_context" 2>/dev/null; then
-    printf '\n@%s/AGENTS.md\n' "$AGENTS_DIR" >> "$gemini_context"
-  fi
-  echo "$gemini_context: kernel import present"
-
+  link_kernels
+  link_claude_skills
+  prune_links "$HOME/.codex/skills" all
+  prune_links "$HOME/.cursor/skills" all
   sync_hooks
+  sync_claude_plugins
+  sync_mcp
+  echo "done. Codex asks you to trust the hooks once: run /hooks in Codex."
 }
 
 main "$@"
