@@ -12,8 +12,6 @@ A stack runs **bottom to top**. A fix on a lower layer rewrites every layer abov
 
 Stack mechanics — `view --json`, `checkout`, `rebase --upstack`, exit codes — are owned by `gh-stack`. Load it for a stack; do not re-derive.
 
-The decision and reply rules are owned by `STANDARDS/Workflow/Git.md` (Cubic review comments). This skill is the procedure that carries them out; where the two differ, `Git.md` wins.
-
 ## Invocation
 
 `/cubic-review` plus one of:
@@ -86,7 +84,7 @@ Read the code the finding points at before deciding. Never judge from the commen
 
 Right diagnosis, wrong prescription: fix the root cause your way and say so in the reply. One guard where all callers route through beats one guard per caller.
 
-The refusal list is `shiv-code-gate` doctrine. A cubic finding does not outrank it, and volume of findings is not evidence — clearing the list is not the goal.
+The refusal list is the kernel's code ladder (`~/.agents/AGENTS.md`, Writing code). A cubic finding does not outrank it, and volume of findings is not evidence — clearing the list is not the goal.
 
 ## 3. Fix, verify, commit
 
@@ -94,8 +92,8 @@ Per PR, on that PR's own branch (`gh stack checkout <pr>` on a stack):
 
 1. Fix every accepted finding. Root cause, not symptom.
 2. Run the repo's own pre-commit minimum — whatever it already defines (lint, typecheck, test script, pre-commit hook). Detect it; introduce nothing.
-3. Subtractive pass over your diff (`simplify`, or re-climb the ladder).
-4. Commit with `caveman-commit`. Atomic: one commit per finding or per tight cluster. Structural and behavioral changes never share a commit.
+3. Subtractive pass over your diff (`/simplify` where the harness has it, or re-climb the ladder).
+4. Commit in the kernel's format. Atomic: one commit per finding or per tight cluster. Structural and behavioral changes never share a commit.
 
 Verification fails and the fix is not obviously wrong → stop, report, do not push a red layer onto a stack.
 

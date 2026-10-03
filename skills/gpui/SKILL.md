@@ -5,8 +5,8 @@ description: Build or review native Rust desktop UI with GPUI, including entitie
 
 # GPUI application development
 
-Read `~/.agents/STANDARDS/Stack/Desktop.md` for stack policy, design authority, architecture, and delivery checks.
-This skill owns GPUI implementation conventions. `rust-best-practices` supplies Rust guidance; `gpui-test` supplies deterministic test techniques.
+Read [references/desktop.md](references/desktop.md) for stack policy, architecture, and delivery checks.
+This skill owns GPUI implementation conventions; `gpui-test` supplies deterministic test techniques.
 
 ## Resolve the actual API
 
@@ -59,4 +59,4 @@ Zed's `ui` helpers and Longbridge's component helpers are not automatically avai
 Use `gpui-test` when tests depend on GPUI contexts, scheduling, or fake time.
 That imported skill describes Zed's source revision; confirm macro arguments, environment variables, and test-support features against the app's GPUI version.
 Keep domain-only tests independent of GPUI. Use the application's native verification path for visible interactions.
-Finish with the checks in `STANDARDS/Stack/Desktop.md`, stating the target platform and any unverified behavior.
+Finish with the checks in [references/desktop.md](references/desktop.md), stating the target platform and any unverified behavior.
