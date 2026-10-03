@@ -1,0 +1,23 @@
+claude-setup-sync.sh
+  s_2695fdaf0327fa::t_0b6a8f67f25321 1,3-7,11-28
+  s_2695fdaf0327fa::t_c5133026bfbfac 2,8-10
+sync.sh
+  s_2695fdaf0327fa::t_c5133026bfbfac 10
+  s_2695fdaf0327fa::t_761c004f3b3414 138
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "7acb6ab356c3979cac22521cea97ce67245b4e27",
+  "prompts": {},
+  "sessions": {
+    "s_2695fdaf0327fa": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "dba1d411-90db-4e56-b447-c076f8b3f836",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Shivanshu Chaudhary <shivanshuchaudhary97@gmail.com>"
+    }
+  }
+}
