@@ -1,0 +1,24 @@
+sync.sh
+  s_bb24834448934a::t_94ca47c38614ee 24
+  s_bb24834448934a::t_05341a6c17904d 11-13,21-22
+mcp.json
+  s_bb24834448934a::t_08ee04c7b8bbf1 5-11,13
+README.md
+  s_bb24834448934a::t_05341a6c17904d 15,26
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "980d9d0273f4f8ad0d03fe7570ea122bfe2e489e",
+  "prompts": {},
+  "sessions": {
+    "s_bb24834448934a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "14c27058-1c74-4d5a-a42c-ef635fc24e6c",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Shivanshu Chaudhary <shivanshuchaudhary97@gmail.com>"
+    }
+  }
+}
