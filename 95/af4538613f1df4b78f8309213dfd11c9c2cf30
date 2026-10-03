@@ -1,0 +1,25 @@
+skills/gpui/SKILL.md
+  s_bb24834448934a::t_3688e3adafcd0f 8-9,62
+skills/cubic-review/SKILL.md
+  s_bb24834448934a::t_b785b2f7f70dfc 87,95-96
+skills/gpui/references/desktop.md
+  s_bb24834448934a::t_3688e3adafcd0f 1-54
+.skill-lock.json
+  s_bb24834448934a::t_57694ca3d6ba5a 52,56-57,59-60,62-63,65-69,71-72,74-78,80-81,83-87,89-90,92-96,98-99,101-105,107-108,110-114,116,120-121,123-124,126-127,129-133,135-136,138-142,144-145,147-151,153-154,156-160,162-163,165-169,171-172,174-178,180-181
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "95af4538613f1df4b78f8309213dfd11c9c2cf30",
+  "prompts": {},
+  "sessions": {
+    "s_bb24834448934a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "14c27058-1c74-4d5a-a42c-ef635fc24e6c",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Shivanshu Chaudhary <shivanshuchaudhary97@gmail.com>"
+    }
+  }
+}
