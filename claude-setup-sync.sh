@@ -75,6 +75,7 @@ sync_plugin_python() {
   echo "python: plugin packages present for $(python --version)"
 }
 
-merge_settings
+# The CLI's first run rewrites some settings, so ours are applied last.
 sync_plugins
 sync_plugin_python
+merge_settings
