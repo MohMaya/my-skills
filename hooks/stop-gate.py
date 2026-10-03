@@ -362,13 +362,8 @@ def lizard(rels: list[str], cwd: Path, deadline: float) -> dict[tuple[str, str],
     return found
 
 
-def complexity(root: Path, files: list[Path], deadline: float) -> str | None:
-    """Changed functions over CCN_LIMIT that are new or more complex than at HEAD."""
-    exts = PY + JS + GO + RS
-    rels = [str(f.relative_to(root)) for f in files if f.suffix in exts]
-    now = lizard(rels, root, deadline)
-    if not any(ccn > CCN_LIMIT for ccn, _ in now.values()):
-        return None
+def head_complexity(root: Path, rels: list[str], deadline: float) -> dict[tuple[str, str], tuple[int, int]]:
+    """Complexity of the same files as committed at HEAD; new files are absent."""
     with tempfile.TemporaryDirectory() as tmp:
         tracked = []
         for rel in rels:
@@ -379,12 +374,18 @@ def complexity(root: Path, files: list[Path], deadline: float) -> str | None:
                 (Path(tmp) / rel).parent.mkdir(parents=True, exist_ok=True)
                 (Path(tmp) / rel).write_bytes(r.stdout)
                 tracked.append(rel)
-        before = lizard(tracked, Path(tmp), deadline)
+        return lizard(tracked, Path(tmp), deadline)
+
+
+def complexity(root: Path, files: list[Path], deadline: float) -> str | None:
+    """Changed functions over CCN_LIMIT that are new or more complex than at HEAD."""
+    rels = [str(f.relative_to(root)) for f in files if f.suffix in PY + JS + GO + RS]
+    over = {k: v for k, v in lizard(rels, root, deadline).items() if v[0] > CCN_LIMIT}
+    before = head_complexity(root, rels, deadline) if over else {}
     worse = [
-        f"{file}:{line} {name} has complexity {ccn} (limit {CCN_LIMIT}"
-        + (f"; was {before[(file, name)][0]})" if (file, name) in before else ")")
-        for (file, name), (ccn, line) in sorted(now.items())
-        if ccn > CCN_LIMIT and ccn > before.get((file, name), (0, 0))[0]
+        f"{file}:{line} {name} has complexity {ccn} (limit {CCN_LIMIT}, was {before.get((file, name), (0,))[0] or 'new'})"
+        for (file, name), (ccn, line) in sorted(over.items())
+        if ccn > before.get((file, name), (0, 0))[0]
     ]
     if not worse:
         return None
@@ -394,36 +395,63 @@ def complexity(root: Path, files: list[Path], deadline: float) -> str | None:
     )
 
 
+def checker_groups(checker: Checker, files: list[Path], root: Path) -> dict[Path, list[Path]]:
+    """Changed files the checker covers, grouped by the directory that configures it."""
+    groups: dict[Path, list[Path]] = {}
+    for f in files:
+        if f.suffix not in checker.exts or not (d := config_dir(f, root, checker)):
+            continue
+        if not checker.excluded(d, f.relative_to(d).as_posix()):
+            groups.setdefault(d, []).append(f)
+    return groups
+
+
+def check_project(
+    checker: Checker, project: Path, group: list[Path], root: Path, deadline: float
+) -> str | None:
+    """Apply the checker's fixes, then return its remaining errors, if any."""
+    exe = binary(project, root, checker)
+    if not exe:
+        return None
+    targets = group if checker.pass_files else []
+    for args, applies in checker.fixes:
+        if applies(project):
+            run(exe, args, targets, project, deadline)
+    result = run(exe, checker.check, targets, project, deadline)
+    if result is None:
+        return None  # a timeout gives the agent nothing to fix
+    code, output = result
+    if checker.scope_output:
+        output = scoped(output, group, project)
+    if code == 0 or not output:
+        return None
+    where = project.relative_to(root) if project != root else Path(".")
+    return f"=== {checker.tool} ({where}) ===\n{truncate(output)}"
+
+
 def gate(root: Path, deadline: float) -> list[str]:
     files = changed_files(root)
-    errors: list[str] = []
-    for checker in CHECKERS:
-        groups: dict[Path, list[Path]] = {}
-        for f in files:
-            if f.suffix not in checker.exts or not (d := config_dir(f, root, checker)):
-                continue
-            if not checker.excluded(d, f.relative_to(d).as_posix()):
-                groups.setdefault(d, []).append(f)
-        for project, group in groups.items():
-            exe = binary(project, root, checker)
-            if not exe:
-                continue
-            targets = group if checker.pass_files else []
-            for args, applies in checker.fixes:
-                if applies(project):
-                    run(exe, args, targets, project, deadline)
-            result = run(exe, checker.check, targets, project, deadline)
-            if result is None:
-                continue  # a timeout gives the agent nothing to fix
-            code, output = result
-            if checker.scope_output:
-                output = scoped(output, group, project)
-            if code != 0 and output:
-                where = project.relative_to(root) if project != root else Path(".")
-                errors.append(f"=== {checker.tool} ({where}) ===\n{truncate(output)}")
-    if found := complexity(root, files, deadline):
-        errors.append(found)
-    return errors
+    found = [
+        check_project(checker, project, group, root, deadline)
+        for checker in CHECKERS
+        for project, group in checker_groups(checker, files, root).items()
+    ]
+    found.append(complexity(root, files, deadline))
+    return [f for f in found if f]
+
+
+def stop_root(payload: dict[str, Any]) -> Path | None:
+    """The repository to check, or None when this stop should pass unchecked.
+
+    Claude Code and Codex send cwd; Cursor sends workspace_roots. A retry after
+    a block, or an aborted turn, passes so a stubborn error cannot loop forever.
+    """
+    if payload.get("stop_hook_active") or payload.get("loop_count"):
+        return None
+    if payload.get("status", "completed") != "completed":
+        return None
+    roots = payload.get("workspace_roots") or [payload.get("cwd") or "."]
+    return repo_root(Path(roots[0]).resolve())
 
 
 def main() -> None:
@@ -431,26 +459,14 @@ def main() -> None:
         payload = json.load(sys.stdin)
     except ValueError:
         return
-    if not isinstance(payload, dict):
+    root = stop_root(payload) if isinstance(payload, dict) else None
+    errors = gate(root, time.monotonic() + TOTAL_BUDGET) if root else []
+    if not errors:
         return
-    # Claude Code and Codex send cwd and block with a decision; Cursor sends
-    # workspace_roots and continues the turn with a follow-up message.
+    reason = "Fix these errors in changed files before ending the turn:\n\n" + "\n\n".join(errors)
+    # Cursor's stop hook cannot block; it continues the turn with a follow-up.
     cursor = "workspace_roots" in payload
-    # A retry after a block ends the turn, so a stubborn error cannot loop forever.
-    if payload.get("stop_hook_active") or payload.get("loop_count") or payload.get("status", "completed") != "completed":
-        return
-    cwd = (payload.get("workspace_roots") or [None])[0] if cursor else payload.get("cwd")
-    root = repo_root(Path(cwd or ".").resolve())
-    if not root:
-        return
-    errors = gate(root, time.monotonic() + TOTAL_BUDGET)
-    if errors:
-        reason = (
-            "Fix these errors in changed files before ending the turn:\n\n"
-            + "\n\n".join(errors)
-        )
-        out = {"followup_message": reason} if cursor else {"decision": "block", "reason": reason}
-        json.dump(out, sys.stdout)
+    json.dump({"followup_message": reason} if cursor else {"decision": "block", "reason": reason}, sys.stdout)
 
 
 if __name__ == "__main__":
