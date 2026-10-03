@@ -4,7 +4,6 @@
 #   settings  claude/settings.json merged key by key into ~/.claude/settings.json;
 #             machine-only keys (hooks, autoMode, local plugins) are kept
 #   plugins   every marketplace and plugin below is added if missing
-#   runtimes  Python packages that plugin MCP servers import
 #
 # sync.sh runs this; it also runs on its own.
 
@@ -19,7 +18,6 @@ CLAUDE_MARKETPLACES=(
 )
 CLAUDE_PLUGINS=(
   supermemory@supermemory-plugins
-  agent-memory@claude-community
   next-steps@claude-community
   typescript-lsp@claude-plugins-official pyright-lsp@claude-plugins-official
   gopls-lsp@claude-plugins-official rust-analyzer-lsp@claude-plugins-official
@@ -27,8 +25,6 @@ CLAUDE_PLUGINS=(
   figma@claude-plugins-official posthog@claude-plugins-official
   railway@claude-plugins-official
 )
-# agent-memory launches `python` and is written against the mcp 1.x server API.
-PLUGIN_PYTHON_PACKAGES=("mcp>=1,<2" pyyaml aiosqlite anthropic)
 
 merge_settings() {
   python3 - "$A/claude/settings.json" "$HOME/.claude/settings.json" <<'PY'
@@ -69,13 +65,6 @@ sync_plugins() {
   echo "claude: ${#CLAUDE_PLUGINS[@]} plugins checked"
 }
 
-sync_plugin_python() {
-  command -v python >/dev/null 2>&1 || { echo "python: not on PATH; agent-memory will not start" >&2; return 0; }
-  python -m pip install -q "${PLUGIN_PYTHON_PACKAGES[@]}" || echo "python: plugin packages failed to install" >&2
-  echo "python: plugin packages present for $(python --version)"
-}
-
 # The CLI's first run rewrites some settings, so ours are applied last.
 sync_plugins
-sync_plugin_python
 merge_settings
