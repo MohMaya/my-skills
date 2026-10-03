@@ -20,7 +20,7 @@ Voice / `send_task` requests must stay **≤ 2000 characters**. If a send fails 
 5. **Wiring** — concrete sinks (playlists, Reader, calendars). Mark what is pre-approved vs needs confirm.
 6. **Notify path** — in-app / agent messaging. This Legion does **not** use Slack as primary notify.
 7. **Anti-jobs** — explicit list of what the bot must never do.
-8. **Doctrine one-liners** — one job / one voice / no leftover tools; load matching skills via Routing only; `write-like-shiv` + `i-have-adhd` for Shiv-facing prose; no external send without explicit confirm.
+8. **Doctrine one-liners** — one job / one voice / no leftover tools; load matching skills by their descriptions; `write-like-shiv` + `i-have-adhd` for Shiv-facing prose; no external send without explicit confirm.
 9. **Return** — what the builder must report back (name, instruction summary, wiring live vs auth needed).
 
 ## Compress without loss
