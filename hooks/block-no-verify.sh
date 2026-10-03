@@ -5,12 +5,13 @@
 # containing n after `commit` (-n is --no-verify); and core.hooksPath
 # overrides. The match is textual and fails safe: a commit message that
 # quotes a flag is blocked too. Adapted from wshobson/agents block-no-verify.
-# Synced by ~/.agents/sync.sh into ~/.claude/hooks and ~/.codex/hooks.
+# Registered by ~/.agents/sync.sh in Claude Code, Codex (PreToolUse Bash), and
+# Cursor (beforeShellExecution); exit 2 blocks the command in all three.
 
 set -u
 
 input=$(cat)
-cmd=$(printf '%s' "$input" | /usr/bin/env jq -r '.tool_input.command // empty' 2>/dev/null) || cmd=$input
+cmd=$(printf '%s' "$input" | /usr/bin/env jq -r '.tool_input.command // .command // empty' 2>/dev/null) || cmd=$input
 
 if printf '%s' "$cmd" | grep -qE -- '--no-(veri|g)|commit[^;&|]*[[:space:]]-[a-zA-Z]*n|core\.hooks[Pp]ath'; then
   echo 'BLOCKED: git hook and signing bypasses (--no-verify, -n, --no-gpg-sign, core.hooksPath) are not allowed. Fix what the hook reports, then commit without the bypass.' >&2
