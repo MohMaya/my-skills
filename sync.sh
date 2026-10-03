@@ -7,6 +7,7 @@
 #   skills  skills/    Claude: links in ~/.claude/skills
 #                      Codex and Cursor read ~/.agents/skills natively
 #   hooks   hooks/     turn-end gate and git-bypass guard in all three
+#   claude  claude-setup-sync.sh: plugins
 #
 # MCP servers are configured per machine in each harness; mcp.json records
 # them and is not synced. Adds what is missing and replaces only entries it
@@ -16,17 +17,6 @@ set -euo pipefail
 
 A="$HOME/.agents"
 CODEX=$(command -v codex || echo "/Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS/codex")
-
-CLAUDE_MARKETPLACES=(anthropics/claude-plugins-official supermemoryai/claude-supermemory)
-# Plugins every machine gets. Plugins that only carry an MCP server are per
-# machine; mcp.json records which plugin provides each one.
-CLAUDE_PLUGINS=(
-  supermemory@supermemory-plugins
-  typescript-lsp@claude-plugins-official pyright-lsp@claude-plugins-official
-  gopls-lsp@claude-plugins-official rust-analyzer-lsp@claude-plugins-official
-)
-
-has() { command -v "$1" >/dev/null 2>&1 || [ -x "$1" ]; }
 
 # Remove links in DIR that point into ~/.agents; with "all", remove every
 # such link, otherwise only dangling ones.
@@ -139,24 +129,13 @@ for path, merge in (("~/.claude/settings.json", merge_nested),
 PY
 }
 
-sync_claude_plugins() {
-  has claude || { echo "claude: CLI not found; plugins skipped" >&2; return 0; }
-  local installed m p
-  installed=$(claude plugin list --json 2>/dev/null || echo "[]")
-  for m in "${CLAUDE_MARKETPLACES[@]}"; do claude plugin marketplace add "$m" >/dev/null 2>&1 || true; done
-  for p in "${CLAUDE_PLUGINS[@]}"; do
-    grep -q "\"$p\"" <<<"$installed" || claude plugin install "$p" >/dev/null 2>&1 || echo "claude: $p not installed" >&2
-  done
-  echo "claude: ${#CLAUDE_PLUGINS[@]} plugins checked"
-}
-
 main() {
   link_kernels
   link_claude_skills
   prune_links "$HOME/.codex/skills" all
   prune_links "$HOME/.cursor/skills" all
   sync_hooks
-  sync_claude_plugins
+  bash "$A/claude-setup-sync.sh"
   echo "done. Codex asks you to trust the hooks once: run /hooks in Codex."
 }
 
