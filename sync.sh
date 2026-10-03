@@ -7,11 +7,10 @@
 #   skills  skills/    Claude: links in ~/.claude/skills
 #                      Codex and Cursor read ~/.agents/skills natively
 #   hooks   hooks/     turn-end gate and git-bypass guard in all three
-#   tools   mcp.json   Codex and Cursor MCP servers; Claude gets plugins,
-#                      claude.ai connectors, and the servers in CLAUDE_MCP
 #
-# Adds what is missing and replaces only entries it owns. Plugins and MCP
-# servers it did not add stay as they are.
+# MCP servers are configured per machine in each harness; mcp.json records
+# them and is not synced. Adds what is missing and replaces only entries it
+# owns. Plugins it did not add stay as they are.
 
 set -euo pipefail
 
@@ -19,14 +18,13 @@ A="$HOME/.agents"
 CODEX=$(command -v codex || echo "/Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS/codex")
 
 CLAUDE_MARKETPLACES=(anthropics/claude-plugins-official supermemoryai/claude-supermemory)
+# Plugins every machine gets. Plugins that only carry an MCP server are per
+# machine; mcp.json records which plugin provides each one.
 CLAUDE_PLUGINS=(
-  posthog@claude-plugins-official firebase@claude-plugins-official
-  railway@claude-plugins-official cloudflare@claude-plugins-official
-  figma@claude-plugins-official supermemory@supermemory-plugins
+  supermemory@supermemory-plugins
   typescript-lsp@claude-plugins-official pyright-lsp@claude-plugins-official
   gopls-lsp@claude-plugins-official rust-analyzer-lsp@claude-plugins-official
 )
-CLAUDE_MCP=(mobbin)
 
 has() { command -v "$1" >/dev/null 2>&1 || [ -x "$1" ]; }
 
@@ -152,46 +150,6 @@ sync_claude_plugins() {
   echo "claude: ${#CLAUDE_PLUGINS[@]} plugins checked"
 }
 
-# Print "name|url|command args" for each server in mcp.json.
-mcp_entries() {
-  python3 -c '
-import json, sys
-for name, s in json.load(open(sys.argv[1]))["mcpServers"].items():
-    print(name, s.get("url", ""), " ".join([s.get("command", "")] + s.get("args", [])).strip(), sep="|")
-' "$A/mcp.json"
-}
-
-sync_mcp() {
-  local name url command argv
-  while IFS='|' read -r name url command; do
-    if has "$CODEX" && ! "$CODEX" mcp get "$name" >/dev/null 2>&1; then
-      if [ -n "$url" ]; then
-        "$CODEX" mcp add "$name" --url "$url" >/dev/null
-      else
-        read -ra argv <<<"$command"
-        "$CODEX" mcp add "$name" -- "${argv[@]}" >/dev/null
-      fi
-    fi
-    if [[ " ${CLAUDE_MCP[*]} " == *" $name "* ]] && has claude && ! claude mcp get "$name" >/dev/null 2>&1; then
-      claude mcp add --scope user --transport http "$name" "$url" >/dev/null
-    fi
-  done < <(mcp_entries)
-  python3 - "$A/mcp.json" <<'PY'
-import json, sys
-from pathlib import Path
-p = Path("~/.cursor/mcp.json").expanduser()
-cfg = json.loads(p.read_text()) if p.exists() else {}
-servers = cfg.setdefault("mcpServers", {})
-missing = {k: v for k, v in json.load(open(sys.argv[1]))["mcpServers"].items() if k not in servers}
-if missing:
-    servers.update(missing)
-    p.parent.mkdir(parents=True, exist_ok=True)
-    p.write_text(json.dumps(cfg, indent=2) + "\n")
-print(f"cursor: {len(missing)} MCP servers added")
-PY
-  echo "mcp: checked. Sign in once per server: 'codex mcp login <name>' and Cursor Settings > MCP"
-}
-
 main() {
   link_kernels
   link_claude_skills
@@ -199,7 +157,6 @@ main() {
   prune_links "$HOME/.cursor/skills" all
   sync_hooks
   sync_claude_plugins
-  sync_mcp
   echo "done. Codex asks you to trust the hooks once: run /hooks in Codex."
 }
 

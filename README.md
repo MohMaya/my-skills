@@ -12,7 +12,7 @@ bash ~/.agents/sync.sh
 Then, once per machine:
 
 1. In Codex, run `/hooks` and trust the two hooks.
-2. Sign in to each MCP server: `codex mcp login <name>` for Codex, and Settings > MCP in Cursor. Claude's servers come from its plugins and your claude.ai connectors.
+2. Add the MCP servers this machine needs in each harness. `mcp.json` records every server's URL, and which Claude plugin provides it.
 
 Re-run `sync.sh` after every `git pull`. It is safe to repeat.
 
@@ -23,7 +23,7 @@ Re-run `sync.sh` after every `git pull`. It is safe to repeat.
 | `AGENTS.md` | The kernel every harness loads: only what a model cannot infer |
 | `skills/` | 30 skills, each carrying knowledge or a procedure a model lacks |
 | `hooks/` | Turn-end gate (lint, types, complexity ratchet), git-bypass guard, Cursor kernel injection |
-| `mcp.json` | Tool servers for Codex and Cursor |
+| `mcp.json` | Record of every MCP server and its URL; not synced |
 | `evals/` | Real past commits replayed as tasks; run after every model or kernel change |
 
 ## Measuring a change
