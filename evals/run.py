@@ -61,16 +61,24 @@ def sh(cmd: str | list[str], cwd: Path, timeout: int = 900) -> subprocess.Comple
                           text=True, timeout=timeout)
 
 
+def must(cmd: str | list[str], cwd: Path) -> str:
+    done = sh(cmd, cwd)
+    if done.returncode:
+        shown = cmd if isinstance(cmd, str) else " ".join(cmd)
+        raise RuntimeError(f"{shown} failed in {cwd}: {(done.stderr or done.stdout).strip()[-400:]}")
+    return done.stdout.strip()
+
+
 def git(work: Path, *args: str) -> str:
-    return sh(["git", *args], work).stdout.strip()
+    return must(["git", *args], work)
 
 
 def prepare(task: dict, work: Path) -> str:
     """Clone the repo at the commit's parent, install dependencies, and snapshot
     the result so setup artifacts never count as the harness's diff."""
-    sh(["git", "clone", "--quiet", os.path.expanduser(task["repo"]), str(work)], work.parent)
+    must(["git", "clone", "--quiet", os.path.expanduser(task["repo"]), str(work)], work.parent)
     git(work, "checkout", "--quiet", f"{task['commit']}^")
-    sh(task["setup"], work)
+    must(task["setup"], work)
     git(work, "add", "-A")
     tree = git(work, "write-tree")
     snapshot = git(work, "-c", "user.name=eval", "-c", "user.email=eval@local",
