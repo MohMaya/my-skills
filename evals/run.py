@@ -8,7 +8,7 @@ The `oracle` harness applies the human commit, which proves a task is gradable
 and gives the human diff size to compare against; `none` changes nothing, which
 proves the hidden tests fail without a fix.
 
-    python3 evals/run.py <claude|codex|cursor|oracle|none> [task-id ...]
+    python3 evals/run.py <claude|codex|oracle|none> [task-id ...]
 
 Results append to evals/results.jsonl. Re-run after every model or kernel
 change and compare pass rate, diff size, and new complexity violations.
@@ -42,8 +42,6 @@ HARNESSES = {
                                     "--permission-mode", "bypassPermissions"],
     "codex": lambda work, prompt: [CODEX, "exec", "-C", str(work), "--json", "--ephemeral",
                                    "--skip-git-repo-check", "--dangerously-bypass-approvals-and-sandbox", prompt],
-    "cursor": lambda work, prompt: ["agent", "-p", "--output-format", "json", "--force", "--trust",
-                                    "--workspace", str(work), prompt],
     "oracle": None,
     "none": None,
 }

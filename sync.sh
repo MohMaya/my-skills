@@ -1,12 +1,11 @@
 #!/usr/bin/env bash
-# Wire ~/.agents into Claude Code, Codex, and Cursor. Safe to re-run.
+# Wire ~/.agents into Claude Code and Codex. Safe to re-run.
 #
 #   kernel  AGENTS.md  Claude: import in ~/.claude/CLAUDE.md
 #                      Codex:  ~/.codex/AGENTS.md link
-#                      Cursor: sessionStart hook (Cursor has no global rules file)
 #   skills  skills/    Claude: links in ~/.claude/skills
 #   agents  claude/agents/  Claude: links in ~/.claude/agents
-#                      Codex and Cursor read ~/.agents/skills natively
+#                      Codex reads ~/.agents/skills natively
 #   hooks   hooks/     turn-end gate, git-bypass guard, and secret-path guard
 #   claude  claude-setup-sync.sh: settings, plugins, plugin runtimes
 #
@@ -64,12 +63,11 @@ link_kernels() {
   else
     ln -sfn "$A/AGENTS.md" "$codex"
   fi
-  rm -f "$HOME/.cursor/rules/kernel.mdc" "$HOME/.claude/hooks/mandates.md" "$HOME/.codex/hooks/mandates.md"
-  echo "kernel: Claude import, Codex link, Cursor sessionStart hook"
+  echo "kernel: Claude import, Codex link"
 }
 
 # Rewrite our entries in each harness's hook config. An entry is ours when its
-# command names one of our scripts or a retired one; everything else is kept.
+# command names one of our scripts; everything else is kept.
 sync_hooks() {
   prune_links "$HOME/.claude/hooks" all
   prune_links "$HOME/.codex/hooks" all
@@ -78,8 +76,7 @@ import json, os, shlex, sys
 from pathlib import Path
 
 hooks = sys.argv[1]
-OURS = ("stop-gate.py", "block-no-verify.sh", "session-kernel.py", "guard-protected-paths.sh",
-        "format-on-edit.sh", "mandates.md", "shiv-code-gate.md")
+OURS = ("stop-gate.py", "block-no-verify.sh", "guard-protected-paths.sh")
 
 def cmd(script, stop=False):
     path = shlex.quote(f"{hooks}/{script}")
@@ -90,39 +87,21 @@ def ours(entry):
     return any(n in entry.get("command", "") for n in OURS)
 
 # Claude Code and Codex: {"hooks": {Event: [{"matcher", "hooks": [entry]}]}}
-NESTED = {
+HOOKS = {
     "Stop": [{"hooks": [{"type": "command", "command": cmd("stop-gate.py", stop=True), "timeout": 600}]}],
     "PreToolUse": [{"matcher": "Bash", "hooks": [{"type": "command", "command": cmd("block-no-verify.sh")}]},
                    {"matcher": "Write|Edit|MultiEdit", "hooks": [{"type": "command", "command": cmd("guard-protected-paths.sh")}]}],
 }
-# Cursor: {"version": 1, "hooks": {event: [entry]}}
-FLAT = {
-    "sessionStart": [{"command": cmd("session-kernel.py", stop=True)}],
-    "stop": [{"command": cmd("stop-gate.py", stop=True), "timeout": 600, "loop_limit": 1}],
-    "beforeShellExecution": [{"command": cmd("block-no-verify.sh")}],
-}
-
-def merge_nested(cfg):
+def merge(cfg):
     events = cfg.setdefault("hooks", {})
     for name in list(events):
         groups = [{**g, "hooks": [h for h in g.get("hooks", []) if not ours(h)]} for g in events[name]]
         events[name] = [g for g in groups if g["hooks"]]
-    for name, groups in NESTED.items():
+    for name, groups in HOOKS.items():
         events.setdefault(name, []).extend(groups)
     cfg["hooks"] = {k: v for k, v in events.items() if v}
 
-def merge_flat(cfg):
-    cfg.setdefault("version", 1)
-    events = cfg.setdefault("hooks", {})
-    for name in list(events):
-        events[name] = [h for h in events[name] if not ours(h)]
-    for name, entries in FLAT.items():
-        events.setdefault(name, []).extend(entries)
-    cfg["hooks"] = {k: v for k, v in events.items() if v}
-
-for path, merge in (("~/.claude/settings.json", merge_nested),
-                    ("~/.codex/hooks.json", merge_nested),
-                    ("~/.cursor/hooks.json", merge_flat)):
+for path in ("~/.claude/settings.json", "~/.codex/hooks.json"):
     p = Path(path).expanduser()
     try:
         cfg = json.loads(p.read_text()) if p.exists() else {}
@@ -147,7 +126,6 @@ main() {
   link_claude_skills
   link_claude_agents
   prune_links "$HOME/.codex/skills" all
-  prune_links "$HOME/.cursor/skills" all
   sync_hooks
   bash "$A/claude-setup-sync.sh"
   echo "done. Codex asks you to trust the hooks once: run /hooks in Codex."

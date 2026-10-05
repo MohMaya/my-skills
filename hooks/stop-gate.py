@@ -13,7 +13,7 @@ monorepo packages use their own config. TypeScript tools and the Python
 type checkers run only from project-local installs (node_modules, a venv),
 since a global copy cannot see the project's dependencies.
 
-Registered by ~/.agents/sync.sh as the Stop hook in Claude Code, Codex, and Cursor.
+Registered by ~/.agents/sync.sh as the Stop hook in Claude Code and Codex.
 """
 
 from __future__ import annotations
@@ -443,15 +443,11 @@ def gate(root: Path, deadline: float) -> list[str]:
 def stop_root(payload: dict[str, Any]) -> Path | None:
     """The repository to check, or None when this stop should pass unchecked.
 
-    Claude Code and Codex send cwd; Cursor sends workspace_roots. A retry after
-    a block, or an aborted turn, passes so a stubborn error cannot loop forever.
+    A retry after a block passes so a stubborn error cannot loop forever.
     """
-    if payload.get("stop_hook_active") or payload.get("loop_count"):
+    if payload.get("stop_hook_active"):
         return None
-    if payload.get("status", "completed") != "completed":
-        return None
-    roots = payload.get("workspace_roots") or [payload.get("cwd") or "."]
-    return repo_root(Path(roots[0]).resolve())
+    return repo_root(Path(payload.get("cwd") or ".").resolve())
 
 
 def main() -> None:
@@ -464,9 +460,7 @@ def main() -> None:
     if not errors:
         return
     reason = "Fix these errors in changed files before ending the turn:\n\n" + "\n\n".join(errors)
-    # Cursor's stop hook cannot block; it continues the turn with a follow-up.
-    cursor = "workspace_roots" in payload
-    json.dump({"followup_message": reason} if cursor else {"decision": "block", "reason": reason}, sys.stdout)
+    json.dump({"decision": "block", "reason": reason}, sys.stdout)
 
 
 if __name__ == "__main__":
