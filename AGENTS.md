@@ -32,7 +32,7 @@ Spend effort on reading and understanding, and keep the diff small. Choose the s
 4. Use the standard library, then a platform feature, then an installed dependency.
 5. Write the minimum new code.
 
-- Match the surrounding code: its patterns, naming, package manager, and test runner. A new dependency needs a stated reason.
+- Match the surrounding code's patterns, naming, package manager, and test runner where they meet the bar; where they fall below it, raise them through `bar-raiser` rather than copy them. A new dependency needs a stated reason.
 - Parse untrusted input into domain types at the boundary, then trust those types inside.
 - Use `query-design` before writing or changing any SQL statement or ORM query.
 - Keep every function at cyclomatic complexity 10 or below. Move branches into data (lookup tables, state machines, discriminated unions), into types parsed once at the boundary, or into one shared guard. The turn-end gate rejects new functions over 10 and changes that make an over-limit function worse.
@@ -71,11 +71,9 @@ Shiv builds Applesque products: one core job, done well, for the centre of the i
 - Hide setup a non-engineer would stall on, such as API keys and config files.
 - Ship fewer features, each finished in type, motion, and copy.
 
-UI follows the existing design:
+UI follows an approved design:
 
-- alpha-web: match the page in the sibling `ui-sandbox` repository (handoffs under `src/handoffs/`), styled with the alpha-web design system.
-- alpha-mobile: match the screen in `apps/alpha-ui`.
-- A Figma frame linked from the ticket, PRD, or Shiv is also a design source. When two sources disagree, ask which governs.
+- A design source is what the ticket, PRD, repository docs, or Shiv names: a design handoff, a prototype, or a linked Figma frame. When two sources disagree, ask which governs.
 - When the design lacks a state the PRD needs, name the gap and propose a fill. When no design exists, stop and tell Shiv, with Mobbin references that frame the options. Leave the design decision to Shiv and product.
 - Name the design you followed in your summary.
 

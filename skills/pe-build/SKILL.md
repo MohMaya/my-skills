@@ -15,11 +15,10 @@ craft itself lives in the reference files — load only what the mode needs.
 
 1. **Boundary** — name the exact target, what must remain unchanged, and the surface's
    job (persuade / operate / read / experience); read `DESIGN.md` when present and
-   verify it against tokens, components, and rendered output. Run the kernel's Design
-   authority check first: on alpha-web the matching page in the sibling `ui-sandbox`
-   repo (handoffs under `src/handoffs/`), on alpha-mobile `alpha-mobile/apps/alpha-ui`;
+   verify it against tokens, components, and rendered output. Find the kernel's design
+   source first: the handoff, prototype, or Figma frame that the ticket, PRD, repository docs, or Shiv names;
    when no design exists, stop and ask Shiv to take it to product and design. Only when
-   no kernel design source applies, read `.product/approved/` (if present) for a record
+   no named design source applies, read `.product/approved/` (if present) for a record
    matching the target. The design ranks above your judgment and below the user's
    words — implement to it, and state any deviation (constraint, platform,
    accessibility) before making it, never as a silent improvement. Preserve the

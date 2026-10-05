@@ -15,9 +15,7 @@ reference files — load only what the mode needs.
 
 Run the kernel's Design authority check before any mode:
 
-- **alpha-web:** read the matching page or flow in the sibling `ui-sandbox` repo
-  (commonly `../ui-sandbox`; frozen handoffs under `src/handoffs/`).
-- **alpha-mobile:** read the matching screen or flow in `alpha-mobile/apps/alpha-ui`.
+- **Named source:** read the handoff, prototype, or screen that the ticket, PRD, repository docs, or Shiv names.
 - **Figma:** a frame linked from the ticket, the PRD, or Shiv is a design source; read it
   with the Figma MCP's `get_design_context` and `get_screenshot`.
 - **No product design for a product surface:** stop, name what you searched, and ask
@@ -75,9 +73,8 @@ out of scope. A newer approval supersedes: rename the old folder `<slug>--YYYY-M
 (its approval date; append `-2`, `-3` on a same-day collision), never delete it, and
 never edit a record except to mark it superseded. If `.product/` is absent, ask before
 creating it, and tell the user the convention: product-level records live there,
-human-readable and diffable, owned by the user. In the alpha repos the `ui-sandbox`
-handoff (or `alpha-ui` screen) is the approval record, so skip `.product/approved/`
-there.
+human-readable and diffable, owned by the user. Where a repository's docs name a design
+handoff as its approval record, that handoff governs and `.product/approved/` is skipped.
 
 ## Handoffs
 
