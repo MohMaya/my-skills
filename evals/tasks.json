@@ -3,7 +3,9 @@
     "id": "go-ingest-jail",
     "repo": "https://github.com/MohMaya/manthan.git",
     "commit": "687e9a0",
-    "tests": ["backend/internal/session/server_test.go"],
+    "tests": [
+      "backend/internal/session/server_test.go"
+    ],
     "setup": "cd backend && go mod download",
     "check": "cd backend && go test ./internal/session/",
     "prompt": "Security fix in backend/internal/session: POST /v1/ingest reads whatever path the request names. CodeQL flagged user-controlled paths reaching Stat and ReadFile. Confine ingest to the process's working directory: resolve the request's path relative to the cwd, and answer 400 Bad Request for an absolute path outside it, any path that escapes with ../, and the path \"..\" itself. Ingesting files and directories inside the cwd keeps working as before."
@@ -12,7 +14,9 @@
     "id": "go-analyze-422",
     "repo": "https://github.com/MohMaya/manthan.git",
     "commit": "0ce53f2",
-    "tests": ["backend/internal/session/server_test.go"],
+    "tests": [
+      "backend/internal/session/server_test.go"
+    ],
     "setup": "cd backend && go mod download",
     "check": "cd backend && go test ./internal/session/ ./internal/adapter/...",
     "prompt": "Two fixes to draft analysis in the backend. First: when the model's analysis JSON cannot be parsed (invalid JSON or trailing content), the analyze endpoint must answer 422 with body {\"error\":\"unparseable_model\"} and leave the draft untouched. Add kernel.ErrUnparseable (its message is \"unparseable_model\") and have the OpenRouter coach adapter return it, still wrapping kernel.ErrUnavailable so existing callers behave the same. Second: exemplars are style samples, not evidence. A fact flag's evidence may only cite attached sources; exemplars appear only in style notes. Citation locators stay the analyze response contract."
@@ -21,7 +25,9 @@
     "id": "go-platform-sqlite",
     "repo": "https://github.com/MohMaya/manthan.git",
     "commit": "fc6d2ce",
-    "tests": ["backend/internal/platform/server_test.go"],
+    "tests": [
+      "backend/internal/platform/server_test.go"
+    ],
     "setup": "cd backend && go mod download",
     "check": "cd backend && go test ./internal/platform/",
     "prompt": "The local platform server in backend/internal/platform loses every document on restart. Make it run on durable SQLite: add a DBPath field to platform.Config, defaulting to manthan/manthan.db under the user config directory (fall back to manthan.db when that is unavailable) and overridable with the MANTHAN_DB_PATH environment variable. A document created through one server built with NewWithConfig must still be readable after srv.Close() and a new NewWithConfig on the same DBPath."
@@ -30,18 +36,11 @@
     "id": "ts-waitlist-post",
     "repo": "https://github.com/MohMaya/manthan.git",
     "commit": "4b0c15e",
-    "tests": ["site/worker/waitlist.test.ts"],
+    "tests": [
+      "site/worker/waitlist.test.ts"
+    ],
     "setup": "cd site && npm ci --silent",
     "check": "cd site && npm test --silent && npx tsc -p worker --noEmit",
     "prompt": "Bug MAN-59 in the site's Cloudflare Worker (site/worker): the page's script loads after first paint, so a waitlist submit before it arrives goes out as a plain HTML form post, and the email leaks into a GET URL or fails. Make POST /api/waitlist also accept a form-encoded body (fields email and the website honeypot), store the signup exactly as the JSON path does, and answer 303 with Location /#get. The JSON path keeps its current behavior."
-  },
-  {
-    "id": "ts-credentials",
-    "repo": "~/Work/MohMaya/music-sync",
-    "commit": "a3cecb6",
-    "tests": ["src/auth/__tests__/credentials.test.ts"],
-    "setup": "bun install --silent",
-    "check": "bunx vitest run src/auth && bunx tsc --noEmit",
-    "prompt": "Add credential storage for connected music services, backed by the system keychain through the keytar package (already a dependency). Create src/auth/types.ts with OAuthTokens (accessToken, optional refreshToken, expiresAt as a Unix timestamp, tokenType) and ServiceCredentials (tokens, userId, optional userName). Create src/auth/credentials.ts exporting class CredentialManager with async store(service, credentials), retrieve(service) returning the credentials or null, delete(service) returning a boolean, and exists(service) returning a boolean. Credentials are stored as JSON under one keychain service name for the app, keyed by the music service."
   }
 ]
