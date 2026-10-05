@@ -1,35 +1,4 @@
 {
-  "model": "opus",
-  "advisorModel": "fable",
-  "effortLevel": "high",
-  "env": {
-    "SUPERMEMORY_REPO_TAG": "user_shiv",
-    "CLAUDE_CODE_SUBAGENT_MODEL": "sonnet",
-    "CLAUDE_CODE_SUBAGENT_MODEL_FORCE": "1"
-  },
-  "permissions": {
-    "defaultMode": "auto"
-  },
-  "attribution": {
-    "commit": "",
-    "pr": ""
-  },
-  "statusLine": {
-    "type": "command",
-    "command": "\"$HOME/.agents/claude/statusline.sh\"",
-    "refreshInterval": 1
-  },
-  "pluginConfigs": {
-    "next-steps@claude-community": {
-      "options": {
-        "suggestSkills": true
-      }
-    }
-  },
-  "theme": "dark",
-  "tui": "fullscreen",
-  "autoCompactEnabled": true,
-  "autoContinueAtUsageLimit": true,
-  "agentPushNotifEnabled": true,
-  "skipAutoPermissionPrompt": true
+  "syncClaudeAiSkills": false,
+  "syncClaudeAiPlugins": false
 }

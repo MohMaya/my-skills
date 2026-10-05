@@ -3,3 +3,6 @@ __pycache__/
 *.py[cod]
 skills/synced/
 skills/.trash/
+backups/
+.audit/
+.ruff_cache/

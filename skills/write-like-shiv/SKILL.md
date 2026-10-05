@@ -19,7 +19,9 @@ Use this precedence: current user direction; the surface's required format and f
 
 ## Articulation bar for non-code prose
 
-This bar applies to briefs, drafts, digests, deal notes, stress tests, ops outcomes, news, and other human-facing prose. It does not apply to code. Vision prose adds [vision.md](references/vision.md). This skill owns the bar and vision prose; `i-have-adhd` owns ADHD formatting.
+This bar applies to briefs, drafts, digests, deal notes, stress tests, ops outcomes, news, and other human-facing prose. It does not apply to code. Vision prose adds [vision.md](references/vision.md).
+
+For operational chat, status, plans, and digests, lead with the result or next action. Number multi-step work, state where things stand, and end with one concrete next step when anything is open. Finish one topic before introducing another. Base time estimates on evidence. "Stop adhd mode" or "normal mode" turns this operational formatting off for the session. Substantial prose follows its surface's natural structure.
 
 Before you send: have I made this easy for a capable peer to understand?
 
