@@ -33,6 +33,7 @@ Spend effort on reading and understanding, and keep the diff small. Choose the s
 
 - Match the surrounding code: its patterns, naming, package manager, and test runner. A new dependency needs a stated reason.
 - Parse untrusted input into domain types at the boundary, then trust those types inside.
+- Use `query-design` before writing or changing any SQL statement or ORM query.
 - Keep every function at cyclomatic complexity 10 or below. Move branches into data (lookup tables, state machines, discriminated unions), into types parsed once at the boundary, or into one shared guard. The turn-end gate rejects new functions over 10 and changes that make an over-limit function worse.
 - Add a seam, plugin point, interface, or config option only when a second real case exists today. Simple code is the extensible code.
 - Change an internal API by migrating every caller and deleting the old path in the same change.

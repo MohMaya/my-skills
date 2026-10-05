@@ -13,6 +13,7 @@
     "granola": { "url": "https://mcp.granola.ai/mcp" },
     "supermemory": { "url": "https://mcp.supermemory.ai/mcp" },
     "context7": { "url": "https://mcp.context7.com/mcp" },
-    "expo": { "url": "https://mcp.expo.dev/mcp" }
+    "expo": { "url": "https://mcp.expo.dev/mcp" },
+    "postgres": { "command": "uvx", "args": ["postgres-mcp", "--access-mode=restricted"], "env": { "DATABASE_URI": "postgresql://<read-only role>@<staging host>/<db>" }, "scope": "per project" }
   }
 }
