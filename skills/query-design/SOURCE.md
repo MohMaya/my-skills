@@ -8,4 +8,4 @@ Written for this repository on 2026-10-05. Ideas adapted, with rules rewritten r
 - [yuribodo/postgres-query-optimization-skill](https://github.com/yuribodo/postgres-query-optimization-skill) at `e675a4904b689445c231ce3ea6f51dcfb6d7a89c`: per-loop plan timings, estimate-versus-actual checks, ranking by total time.
 - [neondatabase/agent-skills](https://github.com/neondatabase/agent-skills) at `9e4a5705922fddb540c396111a7979e0dca79cc2` (Apache-2.0): join repetition of parent columns, `rows/calls` as an over-fetch signal.
 
-PostgreSQL behaviour was checked against the PostgreSQL 18 manual (Tiger MCP `search_docs`); SQLAlchemy options against the SQLAlchemy 2.0 docs. The intent card, necessity verdicts, and equivalence proof are this repository's own.
+PostgreSQL behaviour was checked against the PostgreSQL 18 manual (via the Tiger docs MCP); SQLAlchemy options against the SQLAlchemy 2.0 docs. The intent card, necessity verdicts, and equivalence proof are this repository's own.

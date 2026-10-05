@@ -12,6 +12,7 @@ set -u
 
 input=$(cat)
 cmd=$(printf '%s' "$input" | /usr/bin/env jq -r '.tool_input.command // empty' 2>/dev/null) || cmd=$input
+[ -n "$cmd" ] || cmd=$input
 
 if printf '%s' "$cmd" | grep -qE -- '--no-(veri|g)|commit[^;&|]*[[:space:]]-[a-zA-Z]*n|core\.hooks[Pp]ath'; then
   echo 'BLOCKED: git hook and signing bypasses (--no-verify, -n, --no-gpg-sign, core.hooksPath) are not allowed. Fix what the hook reports, then commit without the bypass.' >&2

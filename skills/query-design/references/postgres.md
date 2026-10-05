@@ -1,6 +1,6 @@
 # PostgreSQL reference
 
-Consult on demand from `query-design`. Check version-specific behaviour against the server's major version with Tiger MCP `search_docs` (`SHOW server_version;`).
+Consult on demand from `query-design`. Check version-specific behaviour against the manual for the server's major version (`SHOW server_version;`): the Tiger docs MCP's `search_docs` when configured, otherwise `postgresql.org/docs/<major>`.
 
 ## Diagnostics and safety
 

@@ -127,5 +127,5 @@ Open with what the query is for and what changed. Then: what was removed and why
 
 - [references/postgres.md](references/postgres.md): diagnostics with safety labels, plan reading, index design, query shapes, TimescaleDB, pooling.
 - [references/sqlalchemy.md](references/sqlalchemy.md): SQLAlchemy 2.0 async, psycopg, asyncpg, Alembic.
-- Tiger MCP `search_docs` (source `postgres_<major>`) for the manual matching the server's version.
+- The PostgreSQL manual for the server's major version: the Tiger docs MCP's `search_docs` when configured, otherwise `postgresql.org/docs/<major>`.
 - `postgres-mcp`, when configured for the project: hypothetical indexes, workload index advice, database health.

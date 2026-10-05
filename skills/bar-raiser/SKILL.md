@@ -13,7 +13,7 @@ Sweep depth scales with blast radius, and nothing is exempt:
 
 | Target | Sweep |
 | --- | --- |
-| A local fix with no new behavior | The catalogue sections the changed lines touch |
+| A local fix with no new behavior | The catalogue sections the changed lines touch; the report fits in a few lines |
 | A feature or refactor | Every catalogue section, against the diff and the modules it touches |
 | A new service, data model, public API, migration, or infrastructure | Everything below, including numbers and the failure walkthrough for every external call |
 
@@ -49,7 +49,7 @@ Take each candidate through five parts:
 4. **Decision**: the chosen design and the first step that closes most of the gap. Replace a bad boundary or data model piece by piece behind a seam; a whole-product rewrite discards the bug fixes the old code encodes.
 5. **Proof**: the test, measurement, assertion, or metric that will show it worked.
 
-Keep the arguments honest. A performance claim needs a measured hot path or a back-of-envelope number. A simplicity claim names the braided construct (state with time, a decision leaked across modules), not a preference. Label every finding **measured**, **sourced** (a catalogue citation), or **judgment**; only measured and sourced findings block, and judgment findings go to Shiv as questions.
+Keep the arguments honest. A performance claim needs a measured hot path or a back-of-envelope number. A simplicity claim names the braided construct (state with time, a decision leaked across modules), not a preference. Label every finding **measured**, **sourced** (a catalogue citation), or **judgment**. Measured and sourced findings count toward the verdict; a judgment finding, whatever its severity, goes to Shiv as a question and counts once he agrees.
 
 A candidate leaves the list only with the written sentence explaining why it is fine. If you cannot write that sentence, it is not fine.
 
@@ -58,15 +58,15 @@ A candidate leaves the list only with the written sentence explaining why it is 
 ## 4. Scope
 
 - **Inside the blast radius** (code the change writes, or behavior it alters): fix it in this change.
-- **Outside**: raise it as a drilled proposal, all five parts, for Shiv to schedule. Every finding reaches him.
+- **Outside**: list it as a drilled proposal, all five parts, at the end of the report for Shiv to schedule.
 - **Contract changes** (API shape, schema, staleness, cost): state the objection once with a recommendation and follow Shiv's call.
 
 ## 5. Verdict
 
 Severity: **critical** (data loss or corruption, security, outage, wrong money), **major** (design that compounds: leaked decisions, invariants held only in application code, unbounded work, non-idempotent effects), **minor** (local clarity).
 
-- **excellent**: no critical or major findings remain, and every fix is verified.
-- **below bar**: the work is not done until each finding is fixed and verified, or Shiv accepts it in writing.
+- **excellent**: no measured or sourced critical or major findings remain, and every fix is verified.
+- **below bar**: the work is not done until each such finding is fixed and verified, or Shiv accepts it in writing.
 
 Report:
 

@@ -16,7 +16,6 @@
 set -euo pipefail
 
 A="$HOME/.agents"
-CODEX=$(command -v codex || echo "/Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS/codex")
 
 # Remove links in DIR that point into ~/.agents; with "all", remove every
 # such link, otherwise only dangling ones.
@@ -48,8 +47,13 @@ link_claude_agents() {
   mkdir -p "$d"
   prune_links "$d" dangling
   for agent in "$A"/claude/agents/*.md; do
+    [ -e "$agent" ] || continue
     name=$(basename "$agent")
-    [ -e "$d/$name" ] || ln -s "../../.agents/claude/agents/$name" "$d/$name"
+    if [ -L "$d/$name" ] || [ ! -e "$d/$name" ]; then
+      ln -sfn "../../.agents/claude/agents/$name" "$d/$name"
+    else
+      echo "claude: $d/$name is a real file; preserved" >&2
+    fi
   done
   echo "claude: $(find "$d" -maxdepth 1 -type l | wc -l | tr -d ' ') agents linked"
 }
