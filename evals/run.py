@@ -29,7 +29,6 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 AGENT_TIMEOUT = 1800
-CODEX = shutil.which("codex") or "/Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS/codex"
 
 spec = importlib.util.spec_from_file_location("gate", HERE.parent / "hooks" / "stop-gate.py")
 assert spec and spec.loader
@@ -37,10 +36,20 @@ gate = importlib.util.module_from_spec(spec)
 sys.modules["gate"] = gate
 spec.loader.exec_module(gate)
 
+CODEX_APP_BIN = Path("/Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS/codex")
+
+
+def codex_cli() -> str:
+    found = shutil.which("codex") or (str(CODEX_APP_BIN) if CODEX_APP_BIN.is_file() else None)
+    if not found:
+        raise SystemExit(f"Codex not found: install the ChatGPT app ({CODEX_APP_BIN}) or put codex on PATH")
+    return found
+
+
 HARNESSES = {
     "claude": lambda work, prompt: ["claude", "-p", prompt, "--output-format", "json",
                                     "--permission-mode", "bypassPermissions"],
-    "codex": lambda work, prompt: [CODEX, "exec", "-C", str(work), "--json", "--ephemeral",
+    "codex": lambda work, prompt: [codex_cli(), "exec", "-C", str(work), "--json", "--ephemeral",
                                    "--skip-git-repo-check", "--dangerously-bypass-approvals-and-sandbox", prompt],
     "oracle": None,
     "none": None,
@@ -105,9 +114,10 @@ def grade(task: dict, work: Path, base: str) -> dict:
     complexity = gate.complexity(work, gate.changed_files(work), time.monotonic() + 300)
     git(work, "checkout", task["commit"], "--", *task["tests"])
     check = sh(task["check"], work)
+    tail = (check.stdout + check.stderr).replace(f"{work.resolve()}/", "").replace(f"{work}/", "")
     return {"pass": check.returncode == 0, "files": len(stat), "added": added, "removed": removed,
             "complexity_violations": complexity.count("\n") - 1 if complexity else 0,
-            "check_tail": (check.stdout + check.stderr)[-600:] if check.returncode else ""}
+            "check_tail": tail[-600:] if check.returncode else ""}
 
 
 def run(harness: str, task: dict) -> dict:
