@@ -19,13 +19,29 @@ Sweep depth scales with blast radius, and nothing is exempt:
 
 One owner per concern: SQL and ORM queries go through `query-design`, whose findings count here; module depth and seams use the `codebase-design` vocabulary; UI goes to `pe-review`; Cubic findings to `cubic-review`.
 
+## Evidence gate
+
+Treat the implementation, its explanation, and every proposed simplification as claims to disprove. Apply the same scrutiny to your own recommendations and to previously approved changes. User approval authorizes work; it does not establish the truth of the rationale you supplied.
+
+Before accepting a removal or calling work redundant, cheaper, bounded, safe, or idempotent:
+
+1. **Separate correctness from cost.** Prove the observable result and account for the work needed to produce it. Equal outputs and passing tests alone say nothing about rows scanned, bytes transferred, allocations, lock duration, or external effects.
+2. **Trace the whole path.** For each boundary, record what enters, what leaves, and where filtering, deduplication, sorting, limiting, validation, or retries actually happen. Work eliminated downstream may already have consumed upstream resources.
+3. **Prove the bound.** Name the constraint, limit, or algorithm that enforces it. A bounded number of parents does not bound their children or historical rows. Small fixtures, current observations, and “usually a handful” are assumptions, not enforced bounds.
+4. **Try to falsify the claim.** Construct a valid counterexample: large history or fan-out, duplicates, empty inputs, concurrent calls, or partial failure as applicable. For SQL changes, obtain `query-design` evidence for both semantics and execution cost. Test the claimed invariant at the boundary where it matters; final-output assertions can hide excessive intermediate work.
+5. **Check the final diff.** Simplification edits invalidate the affected review conclusions. Re-read the changed path and rerun the evidence those edits could invalidate before assigning a verdict. Record the reviewed revision or diff and any remaining material uncertainty.
+
+For example, a Python `set` proves final uniqueness; it does not make SQL `DISTINCT` redundant in cost. The driver may transfer and materialize every duplicate first. Conversely, a database uniqueness constraint may prove that the query cannot return duplicates. Choose from the caller's required cardinality and measured plan; neither “always keep DISTINCT” nor “always remove it” is a review rule.
+
+**Done when** every material claim has its mechanism or evidence, a falsifier, and a checked result. Keep an unverified claim open. A completed checklist or another reviewer's approval cannot close it.
+
 ## 1. Map
 
 Write down, before judging:
 
 - **Job**: what the work is for and who calls it.
 - **Invariants**: what must always hold, including absences ("nothing outside `billing/` writes invoices").
-- **Data path**: where each piece of data lives, and per operation the rows, bytes, and round trips, each priced against [the latency table](references/catalogue.md#numbers).
+- **Data path**: where each piece of data lives; rows scanned, returned, transferred, and materialized at each boundary; bytes, round trips, and lock duration per operation. Distinguish enforced bounds from assumed workload sizes and price the work against [the latency table](references/catalogue.md#numbers).
 - **Effects**: every external call and every piece of state mutated.
 - **Change friction** (codebase audits): files that change together, from `git log --format= --name-only` over recent history.
 
@@ -65,12 +81,14 @@ A candidate leaves the list only with the written sentence explaining why it is 
 
 Severity: **critical** (data loss or corruption, security, outage, wrong money), **major** (design that compounds: leaked decisions, invariants held only in application code, unbounded work, non-idempotent effects), **minor** (local clarity).
 
-- **excellent**: no measured or sourced critical or major findings remain, and every fix is verified.
+- **excellent**: no measured or sourced critical or major findings remain, every fix is verified against the final diff, and no unverified material claim could conceal such a finding.
 - **below bar**: the work is not done until each such finding is fixed and verified, or Shiv accepts it in writing.
+
+Missing evidence is an open verification gap, not a reason to mark a section clear or downgrade a concern to taste. State the limit on the verdict. If a reviewer catches a defect this review should have caught, acknowledge the review failure, reopen the invalidated conclusions, and correct any persistent guidance that taught the faulty rationale. A later fix does not retroactively validate the failed review.
 
 Report:
 
 1. Verdict, in one line.
 2. Findings, most severe first: `file:line`, smell, why (with source), ideal, decision and first step, proof, evidence tier.
 3. Proposals outside the change's scope.
-4. What was not checked, and why.
+4. The reviewed revision or diff, evidence for material claims, and what was not checked and why.
