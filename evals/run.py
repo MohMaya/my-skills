@@ -25,6 +25,7 @@ import subprocess
 import sys
 import tempfile
 import time
+from dataclasses import dataclass
 from datetime import date
 from pathlib import Path
 
@@ -63,20 +64,41 @@ def sh(cmd: str | list[str], cwd: Path, timeout: int = 900) -> subprocess.Comple
 
 
 def must(cmd: str | list[str], cwd: Path) -> str:
+    """Run cmd and return its raw stdout, raising with its stderr when it fails."""
     done = sh(cmd, cwd)
     if done.returncode:
         shown = cmd if isinstance(cmd, str) else " ".join(cmd)
         raise RuntimeError(f"{shown} failed in {cwd}: {(done.stderr or done.stdout).strip()[-400:]}")
-    return done.stdout.strip()
+    return done.stdout
 
 
 def git(work: Path, *args: str) -> str:
-    return must(["git", *args], work)
+    return must(["git", *args], work).strip()
 
 
-def prepare(task: dict, work: Path) -> str:
-    """Clone the repo at the commit's parent, install dependencies, and snapshot
-    the result so setup artifacts never count as the harness's diff."""
+@dataclass(frozen=True)
+class Answer:
+    """What the agent must not see: the hidden tests and the human patch."""
+    tests: dict[str, str]
+    patch: str
+
+
+def hide_history(work: Path) -> None:
+    """Drop every ref and prune unreachable objects, so the fix commit and
+    everything after it are gone from the clone the agent works in."""
+    git(work, "remote", "remove", "origin")
+    for ref in git(work, "for-each-ref", "--format=%(refname)").splitlines():
+        git(work, "update-ref", "-d", ref)
+    for leftover in ("FETCH_HEAD", "ORIG_HEAD"):
+        (work / ".git" / leftover).unlink(missing_ok=True)
+    git(work, "reflog", "expire", "--expire=now", "--all")
+    git(work, "gc", "--quiet", "--prune=now")
+
+
+def prepare(task: dict, work: Path) -> tuple[str, Answer]:
+    """Clone the repo at the commit's parent, install dependencies, snapshot the
+    result so setup artifacts never count as the harness's diff, and take the
+    answer out of the clone before the agent sees it."""
     must(["git", "clone", "--quiet", os.path.expanduser(task["repo"]), str(work)], work.parent)
     if "fetch" in task:
         git(work, "fetch", "--quiet", "origin", task["fetch"])
@@ -87,13 +109,19 @@ def prepare(task: dict, work: Path) -> str:
     snapshot = git(work, "-c", "user.name=eval", "-c", "user.email=eval@local",
                    "commit-tree", tree, "-p", "HEAD", "-m", "setup")
     git(work, "reset", "--quiet", "--soft", snapshot)
-    return snapshot
+    commit = task["commit"]
+    answer = Answer(tests={path: must(["git", "show", f"{commit}:{path}"], work) for path in task["tests"]},
+                    patch=must(["git", "diff", "--binary", f"{commit}^", commit], work))
+    hide_history(work)
+    return snapshot, answer
 
 
-def solve(harness: str, task: dict, work: Path) -> str:
-    """Run the harness, or apply the human commit for the oracle; return its stdout."""
+def solve(harness: str, task: dict, work: Path, answer: Answer) -> str:
+    """Run the harness, or apply the human patch for the oracle; return its stdout."""
     if harness == "oracle":
-        git(work, "cherry-pick", "--no-commit", task["commit"])
+        patch = work.parent / "oracle.patch"
+        patch.write_text(answer.patch)
+        git(work, "apply", "--binary", str(patch))
         return ""
     build = HARNESSES[harness]
     if build is None:
@@ -115,7 +143,7 @@ def usage(harness: str, stdout: str) -> dict:
     return {}
 
 
-def grade(task: dict, work: Path, base: str) -> dict:
+def grade(task: dict, work: Path, base: str, answer: Answer) -> dict:
     """Measure the change against base, then restore the hidden tests and run the check."""
     git(work, "add", "-A")
     git(work, "reset", "--quiet", "--soft", base)
@@ -123,7 +151,9 @@ def grade(task: dict, work: Path, base: str) -> dict:
     added = sum(int(row.split("\t")[0]) for row in stat if row.split("\t")[0].isdigit())
     removed = sum(int(row.split("\t")[1]) for row in stat if row.split("\t")[1].isdigit())
     complexity = gate.complexity(work, gate.changed_files(work), time.monotonic() + 300)
-    git(work, "checkout", task["commit"], "--", *task["tests"])
+    for path, content in answer.tests.items():
+        (work / path).parent.mkdir(parents=True, exist_ok=True)
+        (work / path).write_text(content)
     check = sh(task["check"], work)
     tail = (check.stdout + check.stderr).replace(f"{work.resolve()}/", "").replace(f"{work}/", "")
     return {"pass": check.returncode == 0, "files": len(stat), "added": added, "removed": removed,
@@ -134,12 +164,12 @@ def grade(task: dict, work: Path, base: str) -> dict:
 def run(harness: str, task: dict) -> dict:
     with tempfile.TemporaryDirectory(prefix=f"eval-{task['id']}-", ignore_cleanup_errors=True) as tmp:
         work = Path(tmp) / "repo"
-        base = prepare(task, work)
+        base, answer = prepare(task, work)
         start = time.monotonic()
-        stdout = solve(harness, task, work)
+        stdout = solve(harness, task, work, answer)
         seconds = round(time.monotonic() - start)
         return {"date": date.today().isoformat(), "harness": harness, "task": task["id"],
-                "seconds": seconds, **grade(task, work, base), **usage(harness, stdout)}
+                "seconds": seconds, **grade(task, work, base, answer), **usage(harness, stdout)}
 
 
 def main() -> None:
