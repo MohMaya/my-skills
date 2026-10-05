@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SmartAC — Artifact</title>
+<style>
+  /* --------------------------------------------------------------
+     1) Paste tokens-light.css here verbatim
+     -------------------------------------------------------------- */
+  /* :root { ... --app-color-*, --primitives-color-*, --app-radius-*, --app-shadow-* ... } */
+
+  /* --------------------------------------------------------------
+     2) Paste tokens-dark.css here verbatim
+     -------------------------------------------------------------- */
+  /* .dark, [data-theme="dark"] { ... overrides ... } */
+
+  /* --------------------------------------------------------------
+     3) Paste primitives.css here verbatim
+     -------------------------------------------------------------- */
+  /* All .ui-* classes — card, button, badge, stat, input, table, sidebar, typography, icons */
+</style>
+</head>
+<body>
+  <div style="display:flex; min-height:100vh;">
+
+    <!-- Sidebar -->
+    <aside class="ui-sidebar">
+      <div class="ui-sidebar-header">
+        <span class="ui-icon ui-icon-4" style="color:var(--app-color-interactive-primary);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg>
+        </span>
+        <span>SmartAC</span>
+      </div>
+      <nav style="padding:8px 0; display:flex; flex-direction:column; gap:2px;">
+        <a href="#" class="ui-sidebar-item is-active">Activity</a>
+        <a href="#" class="ui-sidebar-item">Homes</a>
+        <a href="#" class="ui-sidebar-item">Customers</a>
+        <a href="#" class="ui-sidebar-item">Orders</a>
+      </nav>
+    </aside>
+
+    <!-- Main -->
+    <div style="flex:1; display:flex; flex-direction:column; min-width:0;">
+      <header class="ui-app-header">
+        <div style="flex:1;"></div>
+        <button class="ui-button ui-button-ghost ui-button-icon" aria-label="Notifications">
+          <span class="ui-icon ui-icon-4">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 16v-5a6 6 0 1 0-12 0v5l-2 2h16l-2-2z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg>
+          </span>
+        </button>
+      </header>
+
+      <main style="flex:1; padding:24px; display:flex; flex-direction:column; gap:16px;">
+
+        <div>
+          <h1 class="ui-text-2xl ui-text-primary">GTM Dashboard</h1>
+          <div class="ui-text-sm ui-text-secondary" style="margin-top:4px;">New logos · Q1 2026</div>
+        </div>
+
+        <!-- Stat grid card -->
+        <div class="ui-card">
+          <div class="ui-card-header">
+            <div class="ui-card-title">Pipeline snapshot</div>
+            <div class="ui-card-description">Trailing 90 days</div>
+            <div class="ui-card-action">
+              <span class="ui-badge ui-badge-error">Behind pace</span>
+            </div>
+          </div>
+          <div class="ui-card-content">
+            <div style="display:grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap:20px;">
+              <div class="ui-stat">
+                <div class="ui-stat-label">Closed won</div>
+                <div class="ui-stat-value ui-tabular">$291.8K</div>
+              </div>
+              <div class="ui-stat">
+                <div class="ui-stat-label">Deals closed</div>
+                <div class="ui-stat-value ui-tabular">19</div>
+              </div>
+              <div class="ui-stat">
+                <div class="ui-stat-label">Open deals</div>
+                <div class="ui-stat-value ui-tabular">958</div>
+              </div>
+              <div class="ui-stat">
+                <div class="ui-stat-label">Stalled</div>
+                <div class="ui-stat-value ui-tabular ui-text-warning">230</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Progress card -->
+        <div class="ui-card">
+          <div class="ui-card-header">
+            <div class="ui-card-title">Annual pacing</div>
+            <div class="ui-card-description">$291.8K of $2.05M · 14%</div>
+          </div>
+          <div class="ui-card-content">
+            <div style="height:6px; width:100%; background:var(--app-color-surface-inset); border-radius:var(--app-radius-full); overflow:hidden;">
+              <div style="height:100%; width:14%; background:var(--app-color-interactive-primary); border-radius:var(--app-radius-full);"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Table card -->
+        <div class="ui-card">
+          <div class="ui-card-header">
+            <div class="ui-card-title">Top deals</div>
+          </div>
+          <table class="ui-table">
+            <thead>
+              <tr><th>Deal</th><th>Owner</th><th>Stage</th><th style="text-align:right;">Amount</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Cowboy's</td><td>J. Rivera</td>
+                <td><span class="ui-badge ui-badge-sm ui-badge-success">Closed won</span></td>
+                <td class="ui-tabular" style="text-align:right;">$92,400</td>
+              </tr>
+              <tr>
+                <td>Genz-Ryan</td><td>S. Patel</td>
+                <td><span class="ui-badge ui-badge-sm ui-badge-warning">Follow-up</span></td>
+                <td class="ui-tabular" style="text-align:right;">$20,600</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </main>
+    </div>
+  </div>
+</body>
+</html>
