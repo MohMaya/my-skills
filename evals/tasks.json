@@ -35,12 +35,13 @@
   {
     "id": "ts-waitlist-post",
     "repo": "https://github.com/MohMaya/manthan.git",
-    "commit": "4b0c15e",
+    "commit": "8d4aef8",
     "tests": [
       "site/worker/waitlist.test.ts"
     ],
     "setup": "cd site && npm ci --silent",
     "check": "cd site && npm test --silent && npx tsc -p worker --noEmit",
-    "prompt": "Bug MAN-59 in the site's Cloudflare Worker (site/worker): the page's script loads after first paint, so a waitlist submit before it arrives goes out as a plain HTML form post, and the email leaks into a GET URL or fails. Make POST /api/waitlist also accept a form-encoded body (fields email and the website honeypot), store the signup exactly as the JSON path does, and answer 303 with Location /#get. The JSON path keeps its current behavior."
+    "prompt": "Bug MAN-59 in the site's Cloudflare Worker (site/worker): the page's script loads after first paint, so a waitlist submit before it arrives goes out as a plain HTML form post, and the email leaks into a GET URL or fails. Make POST /api/waitlist also accept a form-encoded body (fields email and the website honeypot), store the signup exactly as the JSON path does, and answer 303 with Location /#get. The JSON path keeps its current behavior.",
+    "fetch": "refs/pull/14/head"
   }
 ]

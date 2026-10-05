@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Replay real commits as tasks and grade a harness on them.
 
-Each task in tasks.json is a past commit from Shiv's repos. The harness starts
+Each task in tasks.json is a past commit from Shiv's repos; a squash-merged PR's
+commit names the PR ref to fetch (`fetch`), since a clone holds only main. The harness starts
 at the commit's parent with a ticket-style prompt; afterwards the commit's own
 tests are restored over the work and the task's check decides pass or fail.
 The `oracle` harness applies the human commit, which proves a task is gradable
@@ -77,6 +78,8 @@ def prepare(task: dict, work: Path) -> str:
     """Clone the repo at the commit's parent, install dependencies, and snapshot
     the result so setup artifacts never count as the harness's diff."""
     must(["git", "clone", "--quiet", os.path.expanduser(task["repo"]), str(work)], work.parent)
+    if "fetch" in task:
+        git(work, "fetch", "--quiet", "origin", task["fetch"])
     git(work, "checkout", "--quiet", f"{task['commit']}^")
     must(task["setup"], work)
     git(work, "add", "-A")
