@@ -5,6 +5,7 @@
 #                      Codex:  ~/.codex/AGENTS.md link
 #                      Cursor: sessionStart hook (Cursor has no global rules file)
 #   skills  skills/    Claude: links in ~/.claude/skills
+#   agents  claude/agents/  Claude: links in ~/.claude/agents
 #                      Codex and Cursor read ~/.agents/skills natively
 #   hooks   hooks/     turn-end gate, git-bypass guard, and secret-path guard
 #   claude  claude-setup-sync.sh: settings, plugins, plugin runtimes
@@ -41,6 +42,17 @@ link_claude_skills() {
     fi
   done
   echo "claude: $(find "$d" -maxdepth 1 -type l | wc -l | tr -d ' ') skills linked"
+}
+
+link_claude_agents() {
+  local d="$HOME/.claude/agents" agent name
+  mkdir -p "$d"
+  prune_links "$d" dangling
+  for agent in "$A"/claude/agents/*.md; do
+    name=$(basename "$agent")
+    [ -e "$d/$name" ] || ln -s "../../.agents/claude/agents/$name" "$d/$name"
+  done
+  echo "claude: $(find "$d" -maxdepth 1 -type l | wc -l | tr -d ' ') agents linked"
 }
 
 link_kernels() {
@@ -133,6 +145,7 @@ PY
 main() {
   link_kernels
   link_claude_skills
+  link_claude_agents
   prune_links "$HOME/.codex/skills" all
   prune_links "$HOME/.cursor/skills" all
   sync_hooks
