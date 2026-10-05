@@ -105,7 +105,7 @@ check("unreadable → exit 2 and error page", r.returncode == 2 and "not valid J
 lst = copy.deepcopy(base); lst["mode"] = "list"; lst["selection"] = "all"; lst["title"] = "Release QA"; lst["list_source"] = ".product/qa-list.md"
 a = copy.deepcopy(base["items"][0]); a["id"] = "bun-version"; a["title"] = "Bun 1.3.11"; a["check_type"] = "code"; a["status"] = "flag"; a.pop("media")
 b = copy.deepcopy(base["items"][0]); b["id"] = "remote-urls"; b["status"] = "fail"; b.pop("media")
-c = copy.deepcopy(a); c["id"] = "install-paths"; c["title"] = "Install paths still diverge for Pi and OpenCode"; c["status"] = "not-run"; c["summary"] = "No change under install/ in this change set."; c.pop("findings", None)
+c = copy.deepcopy(a); c["id"] = "install-paths"; c["title"] = "Install paths still diverge between Claude Code and Codex"; c["status"] = "not-run"; c["summary"] = "No change under install/ in this change set."; c.pop("findings", None)
 lst["items"] += [a, b, c]; lst["selection"] = "selective"; lst["selection_basis"] = "diff main...HEAD, 14 files"; json.dump(lst, open(os.path.join(d, "list.json"), "w"))
 r = run([os.path.join(HERE, "render-report.py"), os.path.join(d, "list.json"), "--no-convert", "--out", os.path.join(d, "list.html")])
 lhtml = open(os.path.join(d, "list.html")).read()

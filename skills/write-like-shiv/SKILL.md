@@ -80,5 +80,3 @@ Return the finished piece. Include material factual limits when the reader needs
 Use [corpus.md](references/corpus.md) when exploring an influence or revising the voice model. Borrow general craft techniques, not signature expressions or a simulated named-author persona. Keep user-liked works, editor-selected works, collection-level preferences, and new recommendations distinct.
 
 Use only Shiv's explicitly accepted text or edits as personal calibration evidence. Record why an edit improved the piece and its surface. Do not promote an agent-generated example, a generic “looks good,” or admiration of an author into an unconditional rule. Keep a few accepted examples for each active surface; retire rules that repeatedly conflict with his corrections.
-
-For loading this skill through ~/.agents/ or another agent host, use [agent-loading.md](references/agent-loading.md). That guide distinguishes instructions, diagnostics, and enforceable application checks.
