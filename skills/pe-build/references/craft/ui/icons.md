@@ -107,4 +107,4 @@ Under `dir="rtl"`, flip icons whose meaning is tied to reading direction, and le
 <ChevronRightIcon class="icon-directional rtl:-scale-x-100" />
 ```
 
-Analyze composite icons part by part. A badge or slash overlay may keep its position even when the base glyph flips. Accessible names for icon-only buttons belong to `better-accessibility`.
+Analyze composite icons part by part. A badge or slash overlay may keep its position even when the base glyph flips. Accessible names for icon-only buttons belong to [accessibility](../../a11y/index.md).

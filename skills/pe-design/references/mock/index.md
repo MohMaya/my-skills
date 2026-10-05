@@ -1,27 +1,20 @@
----
-name: html
-description: Create or redesign self-contained single-file HTML artifacts with a visual direction shaped by the user's brief, project, and subject. Use when HTML is the deliverable for a report, explainer, landing page, presentation, tool, mixed artifact, or broad request. This is the collection's only implicit router. Route clear wireframe, prototype, mockup, plan, or diagram requests to the matching direct-invocation specialist when available. Do not use for ordinary application implementation when a standalone HTML file is not the deliverable.
----
-
 # HTML
 
 Build one self-contained HTML file that makes the subject clearer, easier to use, or easier to understand. The standard is consistent care, not a consistent look. Do not reproduce a house palette, typography stack, card system, or layout from prior runs.
 
 ## Route the request first
 
-Use the narrowest skill that owns the main review question:
+Use the narrowest file that owns the main review question:
 
-- Read and compose [`design-artifact`](../design-artifact/SKILL.md) with the
+- Read and compose [creative direction](../direct/index.md) with the
   chosen workflow when palette, type, composition, theming, or overall visual
   register remain open. It provides creative direction; it does not replace the
-  specialist that owns fidelity, structure, or behavior.
-- Read and follow [`html-wireframe`](../html-wireframe/SKILL.md) when structure, information hierarchy, navigation, or task flow is still unsettled. It should remain visibly low fidelity and may compare two or three layout directions.
-- Read and follow [`html-prototype`](../html-prototype/SKILL.md) when the user needs a polished mockup or a working interactive flow. A mockup is the static fidelity mode inside that skill.
-- Read and follow [`html-plan`](../html-plan/SKILL.md) when the artifact is primarily a plan, roadmap, implementation sequence, or rollout document whose source commitments must remain easy to verify.
-- Read and follow [`html-diagram`](../html-diagram/SKILL.md) when relationships, sequence, topology, state, hierarchy, or system behavior are the main content.
-- Continue with `html` for reports, explainers, presentations, landing pages, data stories, tools, and mixed artifacts that do not have a clearer owner.
-
-These sibling links are the nesting mechanism when the collection is installed together. If a specialized skill is unavailable, continue here and load the closest reference below. Do not make the user install another skill before completing the request.
+  specialist file that owns fidelity, structure, or behavior.
+- Read and follow [wireframe.md](wireframe.md) when structure, information hierarchy, navigation, or task flow is still unsettled. It should remain visibly low fidelity and may compare two or three layout directions.
+- Read and follow [prototype.md](prototype.md) when the user needs a polished mockup or a working interactive flow. A mockup is the static fidelity mode inside that file.
+- Read and follow [plan.md](plan.md) when the artifact is primarily a plan, roadmap, implementation sequence, or rollout document whose source commitments must remain easy to verify.
+- Read and follow [diagram.md](diagram.md) when relationships, sequence, topology, state, hierarchy, or system behavior are the main content.
+- Continue here for reports, explainers, presentations, landing pages, data stories, tools, and mixed artifacts that do not have a clearer owner.
 
 ## Read the room before designing
 
@@ -43,17 +36,15 @@ Before coding, settle five things in working notes:
 - **Interaction:** what benefits from exploration, sequencing, filtering, or motion, if anything.
 
 If the project already answers the visual questions, follow it. Otherwise read
-and compose [`design-artifact`](../design-artifact/SKILL.md) when it is
-available. If the collection was installed without that sibling skill, read
-[`references/creative-direction.md`](references/creative-direction.md) before
+and compose [creative direction](../direct/index.md) before
 choosing the palette, type, composition, or motion.
 
 ## Load only the guidance the artifact needs
 
-- For reports, briefs, plans, explainers, and decks, read [`references/documents-and-presentations.md`](references/documents-and-presentations.md).
-- For interfaces, calculators, and other tools that remain in this broad skill, read [`references/interfaces.md`](references/interfaces.md).
-- For architecture, process, sequence, state, hierarchy, or concept diagrams, read [`references/diagrams.md`](references/diagrams.md).
-- For quantitative charts, tables, metrics, or data stories, read [`references/charts-and-data.md`](references/charts-and-data.md).
+- For reports, briefs, plans, explainers, and decks, read [`documents-and-presentations.md`](documents-and-presentations.md).
+- For interfaces, calculators, and other tools that remain in this broad file, read [`interfaces.md`](interfaces.md).
+- For architecture, process, sequence, state, hierarchy, or concept diagrams, read [`diagrams.md`](diagrams.md).
+- For quantitative charts, tables, metrics, or data stories, read [`charts-and-data.md`](charts-and-data.md).
 
 Requests can span forms. Read every reference that materially applies, then give the artifact one coherent direction.
 

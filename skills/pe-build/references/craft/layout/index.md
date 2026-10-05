@@ -1,15 +1,10 @@
----
-name: better-layout
-description: Layout structure for web interfaces. Use when structuring a page or component, deciding what collapses at small sizes, or reviewing frontend code for layout. Triggers on layout, spacing, alignment, grouping, whitespace, visual hierarchy, reading order, progressive disclosure, breakpoints, container queries, safe area, full-bleed, layout margins, RTL layout, logical properties.
----
-
 # Layout
 
 Position, spacing and alignment carry hierarchy before a word is read. This skill builds that structure and stress-tests it: resize it, translate it, mirror it for RTL.
 
 Write every fix in the project's styling system. The numbers below are starting points for interfaces with no established density system, and where one applies, use it as written rather than a familiar-looking substitute. Keep deliberate platform chrome, compact professional tools and project tokens where they still pass the stress tests.
 
-Hit areas and focus behavior belong to `better-accessibility`. Radius, shadows and animation belong to `better-ui`. Line length and text spacing belong to `better-typography`.
+Hit areas and focus behavior belong to [accessibility](../../a11y/index.md). Radius, shadows and animation belong to [ui](../ui/index.md). Line length and text spacing belong to [typography](../typography/index.md).
 
 ## Group with space, not lines
 
@@ -35,7 +30,7 @@ Progressive disclosure needs a visible affordance. Use the project's established
 
 ## Breathing room between targets
 
-Without an established density system, start with `12px` between adjacent bordered or filled controls and `24px` around borderless text- and icon-only ones. Compact layouts may use less, as long as `better-accessibility` hit areas don't overlap and the controls stay distinct. Layout margins and breakpoint recipes are in [spacing-and-adaptivity.md](spacing-and-adaptivity.md).
+Without an established density system, start with `12px` between adjacent bordered or filled controls and `24px` around borderless text- and icon-only ones. Compact layouts may use less, as long as [accessibility](../../a11y/index.md) hit areas don't overlap and the controls stay distinct. Layout margins and breakpoint recipes are in [spacing-and-adaptivity.md](spacing-and-adaptivity.md).
 
 ## Inset buttons from the edges
 

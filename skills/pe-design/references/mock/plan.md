@@ -1,8 +1,3 @@
----
-name: html-plan
-description: Direct-invocation specialist for clear, self-contained HTML plans that preserve source material while improving hierarchy, sequence, ownership, dependencies, and reviewability. Use when the user explicitly invokes html-plan or the broad html skill routes a plan request here. Do not activate independently from a general request.
----
-
 # HTML Plan
 
 Turn source material into a plan people can inspect and act on. Preserve the user's scope, ordering, commitments, and terminology unless they ask for broader synthesis.
@@ -11,9 +6,7 @@ Turn source material into a plan people can inspect and act on. Preserve the use
 
 Read the conversation, project instructions, and supplied plan before designing. Match an existing design language when one is present. Otherwise derive a quiet, workmanlike direction from the audience and subject.
 
-When [`design-artifact`](../design-artifact/SKILL.md) is available, read its
-fundamentals to make that direction intentional. Keep this skill's traceability
-and source-preservation rules authoritative; creative direction must not
+Read the fundamentals in [creative direction](../direct/index.md) to make that direction intentional. Keep this file's traceability and source-preservation rules authoritative; creative direction must not
 inflate the plan into a dashboard or campaign page.
 
 Decide what the plan actually needs:

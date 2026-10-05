@@ -1,6 +1,6 @@
 ---
 name: pe-verify
-description: Produce a recorded evidence report that behavior works, or re-run the project's QA list. Use when Shiv asks for a verification report ("create a verification for the toolbar", "record proof it works") or a release check ("run the QA list", "release check"). Classifies each check as code, browser, or mixed; drives the product with Playwright, recording video and checkpoint screenshots; writes one report.json and renders it into a branded HTML report with a checkpoint video player. Triggers on verification report, QA list, release check. Everyday done-checks belong to verify-and-stop and the browser owners. Read-only toward product code — reports pass, fail, flag, skipped, or not-run; fixes go to pe-build, and judgment of design quality is pe-review.
+description: Produce a recorded evidence report that behavior works, or re-run the project's QA list. Use when Shiv asks for a verification report ("create a verification for the toolbar", "record proof it works") or a release check ("run the QA list", "release check"). Classifies each check as code, browser, or mixed; drives the product with Playwright, recording video and checkpoint screenshots; writes one report.json and renders it into a branded HTML report with a checkpoint video player. Triggers on verification report, QA list, release check. Read-only toward product code — reports pass, fail, flag, skipped, or not-run; fixes go to pe-build, and judgment of design quality is pe-review.
 license: Apache-2.0
 metadata:
   provenance: foundry/derivations/verify.md in the source repository
@@ -98,8 +98,6 @@ fragment shaped by the contract; the orchestrator assembles `report.json`, sets
 
 ## Handoffs
 
-Non-UI acceptance proof (APIs, jobs, CLIs) → `verify-and-stop`. Building a repo-local
-skill that launches and drives this app → `create-verification-skill`. Fixes → **pe-build**. Judgment of quality — does it look right, is the motion good, is
+Fixes → **pe-build**. Judgment of quality — does it look right, is the motion good, is
 it accessible — → **pe-review**. Whether the build matches the approved mock →
-**pe-review**, fidelity mode. Documenting the behavior that was verified →
-**pe-product-description**.
+**pe-review**, fidelity mode.

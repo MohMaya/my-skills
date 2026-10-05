@@ -1,8 +1,3 @@
----
-name: html-wireframe
-description: Direct-invocation specialist for low-fidelity, self-contained HTML wireframes that test information hierarchy, content, navigation, task flow, and responsive structure before visual design. Use when the user explicitly invokes html-wireframe or the broad html skill routes a wireframe request here. Do not activate independently from a general request. Do not use for polished mockups or production-like interaction; use html-prototype for those.
----
-
 # HTML Wireframe
 
 Turn a product question into a low-fidelity HTML artifact that is easy to inspect, change, and discuss. The wireframe should help reviewers decide what belongs on the screen and how the task should work. It should not look like a finished product.
@@ -30,7 +25,7 @@ Use real labels and representative content. Low fidelity is not permission to us
 
 ## Explore structure before style
 
-When [`design-artifact`](../design-artifact/SKILL.md) is available, read it for
+Read [creative direction](../direct/index.md) for
 subject-specific composition and hierarchy guidance without importing editorial
 polish. This skill's low-fidelity contract remains authoritative.
 

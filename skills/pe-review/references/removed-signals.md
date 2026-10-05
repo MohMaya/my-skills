@@ -1,19 +1,19 @@
 # Removed signals
 
-What to look for on the `-` side of a hunk and which skill owns the judgement. A row here is a lead, never a finding. Route the removal to its owner and report it only once that skill confirms the interface got worse.
+What to look for on the `-` side of a hunk and which pe-build reference owns the judgement. A row here is a lead, never a finding. Route the removal to its owner and report it only once that reference confirms the interface got worse.
 
 | Removed from the `-` side | Owner | What to check |
 | --- | --- | --- |
-| `aria-label`, `aria-labelledby`, `aria-describedby`, `aria-live`, `role=` | `better-accessibility` | The control or region lost its accessible name, description, or announcement |
-| `alt=`, `<label`, `for=`, `scope=` | `better-accessibility` | Image, field, or table cell lost its programmatic association |
-| `<button>`, `<a>`, `<nav>`, `<main>`, `<ul>` replaced by `div` or `span` | `better-accessibility` | Keyboard and assistive-technology behavior was traded for styling |
-| `:focus-visible`, `:focus`, `outline`, `tabindex` | `better-accessibility` | Keyboard users lost the focus indicator or the element left the tab order |
-| `prefers-reduced-motion`, `prefers-contrast` | `better-accessibility` | Motion or contrast now ignores the user's system preference |
-| Logical properties swapped for `left` / `right` | `better-layout` | Direction-aware layout was dropped |
-| `lang=`, `dir=` | `better-typography` | Language metadata or text direction was dropped |
-| `text-wrap`, `line-clamp`, `overflow-wrap`, `tabular-nums`, `font-feature-settings` | `better-typography` | Text rendering, wrapping, or numeral alignment silently changed |
-| A color token swapped for a literal, or a token swapped for a lighter one | `better-colors` | The rendered contrast pair may now fail; measure it |
-| A user-facing string deleted or shortened | `better-writing` | A label, error, or empty state lost the information it carried |
+| `aria-label`, `aria-labelledby`, `aria-describedby`, `aria-live`, `role=` | `pe-build/references/a11y/` | The control or region lost its accessible name, description, or announcement |
+| `alt=`, `<label`, `for=`, `scope=` | `pe-build/references/a11y/` | Image, field, or table cell lost its programmatic association |
+| `<button>`, `<a>`, `<nav>`, `<main>`, `<ul>` replaced by `div` or `span` | `pe-build/references/a11y/` | Keyboard and assistive-technology behavior was traded for styling |
+| `:focus-visible`, `:focus`, `outline`, `tabindex` | `pe-build/references/a11y/` | Keyboard users lost the focus indicator or the element left the tab order |
+| `prefers-reduced-motion`, `prefers-contrast` | `pe-build/references/a11y/` | Motion or contrast now ignores the user's system preference |
+| Logical properties swapped for `left` / `right` | `pe-build/references/craft/layout/` | Direction-aware layout was dropped |
+| `lang=`, `dir=` | `pe-build/references/craft/typography/` | Language metadata or text direction was dropped |
+| `text-wrap`, `line-clamp`, `overflow-wrap`, `tabular-nums`, `font-feature-settings` | `pe-build/references/craft/typography/` | Text rendering, wrapping, or numeral alignment silently changed |
+| A color token swapped for a literal, or a token swapped for a lighter one | `pe-build/references/craft/colors/` | The rendered contrast pair may now fail; measure it |
+| A user-facing string deleted or shortened | `pe-build/references/craft/writing/` | A label, error, or empty state lost the information it carried |
 
 ## Equivalent replacements
 

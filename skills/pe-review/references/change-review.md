@@ -1,15 +1,8 @@
----
-name: interface-review
-disable-model-invocation: true
-description: >-
-  Interface review of a change rather than a screen: uncommitted work, the current branch, or a pull request. Covers interface quality, not correctness, tests, or security.
----
-
 # Change review
 
 This skill reviews a change rather than a screen. It resolves the scope, expands the changed files to the surfaces they affect, reads both sides of the diff and classifies every finding.
 
-Scope is all it owns. Domain rules belong to the `better-*` skills. Severity, consolidation, coverage, the cap and the verdict belong to `better-interface`, which this skill hands the review to.
+Scope is all it owns. Domain rules belong to the pe-build references under `pe-build/references/a11y/` and `pe-build/references/craft/`. Severity, consolidation, coverage, the cap and the verdict belong to [engine.md](engine.md), which this file hands the review to.
 
 Correctness, tests, security and performance belong to the project's general code review. Name the concern once and move on.
 
@@ -23,7 +16,7 @@ Read the change before forming an opinion of it. The stated intent decides what 
 
 ### 1. Resolve the change scope first
 
-The whole invocation is the target, so `/interface-review pr 482` reviews pull request 482. [Scope resolution](scope-resolution.md) holds the accepted targets and how each resolves.
+The whole invocation is the target, so `pr 482` reviews pull request 482. [Scope resolution](scope-resolution.md) holds the accepted targets and how each resolves.
 
 With no target supplied, resolve in this order and stop at the first match:
 
@@ -43,7 +36,7 @@ State the repository facts you found, then offer the routes and wait. [Nothing t
 
 - **The last commit**, `HEAD~1..HEAD`, named by short SHA and subject, so the user sees what they would get before choosing it.
 - **A target they name**: `pr <n>`, a branch, a ref, or a range, resolved per **Resolve the change scope first**.
-- **A whole-repository interface audit**, which is not a change review. Hand it to `better-interface` as a repository-scope review, without this skill's scope block, statuses, or pre-existing section. With no change, every finding is pre-existing and the classification says nothing.
+- **A whole-repository interface audit**, which is not a change review. Hand it to [engine.md](engine.md) as a repository-scope review, without this skill's scope block, statuses, or pre-existing section. With no change, every finding is pre-existing and the classification says nothing.
 
 Check for an open pull request on the current branch before asking, and offer it first. A branch whose commits already landed resolves to no change, while its pull request is still exactly what the user meant.
 
@@ -61,7 +54,7 @@ Review at most five consumers, ordered by [the rule in Scope resolution](scope-r
 
 Regressions are invisible in the post-change state. Read the `-` side of every hunk against [Removed signals](removed-signals.md).
 
-A signal is a lead, not a finding. A removal is only a regression when nothing in the change replaces it, and the domain skill owns that judgement. Route each unmatched removal to its owner, report only what that skill confirms and status it `Regression`. That tells the author they broke something that worked rather than made a new mistake.
+A signal is a lead, not a finding. A removal is only a regression when nothing in the change replaces it, and the owning pe-build reference decides that judgement. Route each unmatched removal to its owner, report only what that reference confirms and status it `Regression`. That tells the author they broke something that worked rather than made a new mistake.
 
 ### 5. Classify every finding
 
@@ -77,7 +70,7 @@ Status by what the diff touched, not by which file it sits in: a line the change
 git blame -L <line>,<line> "$BASE" -- path/to/file
 ```
 
-Hand every finding up with its status attached and let `better-interface` apply its cap and verdict rules.
+Hand every finding up with its status attached and let [engine.md](engine.md) apply its cap and verdict rules.
 
 ### 6. Hold the change to its stated intent
 
@@ -92,11 +85,9 @@ This is what surfaces the **incomplete** change. A surface review cannot see it,
 
 Do not report scope creep. Whether a change does too much is a process question, not an interface one.
 
-### 7. Hand the review to `better-interface`
+### 7. Hand the review to the engine
 
-Hand `better-interface` the scope block, the affected surfaces and a status on every finding. It routes to the domain skills, applies severity, consolidates, enforces the cap and issues the verdict.
-
-If `better-interface` is unavailable, report the resolved scope and the file inventory, name it as the missing skill and stop. Do not invent a severity scale, a cap, or a verdict.
+Hand [engine.md](engine.md) the scope block, the affected surfaces and a status on every finding. It routes to the pe-build references, applies severity, consolidates, enforces the cap and issues the verdict.
 
 ### 8. Never mutate the working tree
 
@@ -117,7 +108,7 @@ Rendered verification is opt-in. Mark visual and runtime claims **Not verified**
 | A line near a hunk statused `Introduced` | Status by what the diff touched, confirmed with `git blame` against the base ref |
 | A pull request checked out to review it | Fetch the ref and review it in place |
 | Line numbers cited that do not exist on the reviewed ref | Cite against the head ref named in the scope block |
-| The severity scale or the finding cap restated here | Defer to `better-interface` |
+| The severity scale or the finding cap restated here | Defer to [engine.md](engine.md) |
 | Correctness, test, or security findings in the report | Name the concern once, point at the project's code review and drop it |
 
 ## Review output format
@@ -152,4 +143,4 @@ Then `Pre-existing` findings, at most three, highest severity first, stated plai
 
 The cap and the verdict cover `Introduced` and `Regression` only. `Pre-existing` findings sit outside the cap, so touching a legacy file cannot turn into a full-file audit. They sit outside the verdict too, so a change whose only findings are pre-existing is an `Approve`.
 
-End with `Block` when any `HIGH` remains and `Approve` otherwise, leaving the remaining findings in the table as work to do. When `better-interface` is available, the severity scale and the cap come from it.
+End with `Block` when any `HIGH` remains and `Approve` otherwise, leaving the remaining findings in the table as work to do. The severity scale and the cap come from [engine.md](engine.md).

@@ -1,6 +1,6 @@
 ---
 name: pe-review
-description: Read-only review of existing UI with verdicts. Use to critique a screen, site, or screenshot; review a diff, branch, or PR for interface quality; produce a prioritized audit with implementation plans for another agent; check code against the Web Interface Guidelines; stress-test a component in hostile states; review animation and motion craft; audit accessibility; or check an implementation against the approved design record. Triggers on UI review, UX review, design review, interface review, UI audit, "review this screen", "check accessibility", "will this survive", "review the animations", "did we match the mock". Runs alongside code-review-and-quality, which owns general code review. Produces findings and verdicts only — never edits code.
+description: Read-only review of existing UI with verdicts. Use to critique a screen, site, or screenshot; review a diff, branch, or PR for interface quality; produce a prioritized audit with implementation plans for another agent; check code against the Web Interface Guidelines; stress-test a component in hostile states; review animation and motion craft; audit accessibility; or check an implementation against the approved design record. Triggers on UI review, UX review, design review, interface review, UI audit, "review this screen", "check accessibility", "will this survive", "review the animations", "did we match the mock". Runs alongside bar-raiser, which owns general code review. Produces findings and verdicts only — never edits code.
 license: Apache-2.0
 metadata:
   provenance: foundry/derivations/review.md in the source repository
@@ -25,7 +25,7 @@ reference files — load only what the mode needs.
 
 | Mode | When | Load |
 | --- | --- | --- |
-| **change** | A diff, branch, PR, or "review my changes" is named. Always wins over screen when both could apply. | `change-review.md`, `scope-resolution.md`, `removed-signals.md`. Runs alongside `code-review-and-quality` (correctness, tests, security), never instead of it. |
+| **change** | A diff, branch, PR, or "review my changes" is named. Always wins over screen when both could apply. | `change-review.md`, `scope-resolution.md`, `removed-signals.md`. Runs alongside the `bar-raiser` skill and the `reviewer` subagent (correctness, tests, security), never instead of them. |
 | **screen** | A screen, page, site, or screenshot; "review this UI." | `screen-review.md`, `experience-rubric.md`, `technical-rubric.md` |
 | **improve** | "Audit this and give me a roadmap", "improve the app" — whole-surface improvement, delivered as self-contained plans another agent executes. Explicit invocation only. | `audit-method.md`, `plan-template.md` |
 | **guidelines** | "Check against best practices / the guidelines"; terse file:line lint of UI code. | `web-interface-guidelines.md` (a pinned copy of the upstream Vercel Web Interface Guidelines; its header names the re-sync source) |
@@ -38,17 +38,6 @@ reference files — load only what the mode needs.
 Disambiguation: **verb beats noun** — "review the animation" is motion mode here;
 "fix the animation" is not this skill at all (pe-build). A request that mixes modes runs
 the engine once and consolidates, never two parallel reviews.
-
-## Name mapping
-
-Some references route to skills by name. Those names resolve as follows — apply the
-mapping silently:
-
-| Text says | Use |
-| --- | --- |
-| better-accessibility | `a11y-audit.md` for ordering; the engine's own triggers for severity; the pe-build skill's `references/a11y/` for depth |
-| better-ui, better-layout, better-typography, better-colors, better-writing | the pe-build skill's `references/craft/{ui,layout,typography,colors,writing}/` |
-| better-interface | this skill's engine mode itself |
 
 ## House rules
 

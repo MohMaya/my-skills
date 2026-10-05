@@ -1,6 +1,6 @@
 ---
 name: pe-build
-description: Write and refine production UI code to a high craft bar. Use for building components, polish and detail work (spacing, typography, color, copy, icons, shadows, interaction states), implementing animation and gestures, implementing accessibility (keyboard, screen readers, focus, forms), and hardening for production (real data, failure states, devices, languages, offline, shipping metadata). Triggers on polish, refine, tighten, "feels off", animate, transition, gesture, drawer, make accessible, keyboard navigation, screen reader, production-ready, harden. Component structure and loading, empty, and error states belong to frontend-ui-engineering. The deliverable is code. Not for read-only critique (review) or pre-code design work (design).
+description: Write and refine production UI code to a high craft bar. Use for building components, polish and detail work (spacing, typography, color, copy, icons, shadows, interaction states), implementing animation and gestures, implementing accessibility (keyboard, screen readers, focus, forms), and hardening for production (real data, failure states, devices, languages, offline, shipping metadata). Triggers on polish, refine, tighten, "feels off", animate, transition, gesture, drawer, make accessible, keyboard navigation, screen reader, production-ready, harden. The deliverable is code. Not for read-only critique (review) or pre-code design work (design).
 license: Apache-2.0
 metadata:
   provenance: foundry/derivations/build.md in the source repository
@@ -72,16 +72,7 @@ craft itself lives in the reference files — load only what the mode needs.
 - Comments explain a non-obvious why. A workaround or band-aid gets a root-cause fix,
   not a comment justifying it. The repo's comment conventions win.
 
-## Name mapping
-
-References that route to `better-*` skills by name resolve inside this skill:
-better-ui → `craft/ui/` · better-layout → `craft/layout/` · better-typography →
-`craft/typography/` · better-colors → `craft/colors/` · better-writing →
-`craft/writing/` · better-accessibility → `a11y/` · better-interface → the pe-review
-skill.
-
 ## Handoffs
 
-Component structure and state (loading, empty, error) → `frontend-ui-engineering`; this
-skill owns the craft bar on top. Verdicts and audits → **pe-review**. Proof that the built feature works, with recordings → **pe-verify** (the natural last step after harden). Direction, mockups, variations → **pe-design**. Standalone brand assets → **pe-brand-assets**. Documenting the
+Verdicts and audits → **pe-review**. Proof that the built feature works, with recordings → **pe-verify** (the natural last step after harden). Direction, mockups, variations → **pe-design**. Documenting the
 system you built → **pe-design**, understand mode.

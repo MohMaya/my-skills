@@ -1,8 +1,3 @@
----
-name: improve-ui
-description: Audit an existing product surface against its own design evidence, identify verified UI problems, and write self-contained implementation plans for another agent. Strictly read-only on product source. Use when asked to review, refine, improve, or clean up an interface without replacing its identity; investigate design-system drift; or prepare a design handoff.
----
-
 # Improve UI
 
 Audit one coherent product surface against the system that actually governs it. Preserve the product's identity, reuse existing owners, and prefer no finding to an unsupported one. Write plans only for changes the user selects; another agent executes them.
@@ -107,7 +102,7 @@ If findings survive, stop and ask which to turn into plans. If the user already 
 
 ## 6. Specify selected changes
 
-Read [references/plan-template.md](references/plan-template.md). Write one plan per selected change, never one per symptom.
+Read [plan-template.md](plan-template.md). Write one plan per selected change, never one per symptom.
 
 Before writing, re-open every cited source, record the current commit when available, identify exact reusable primitives and exemplars, and trace affected surfaces. Reconcile an existing plan instead of duplicating it.
 

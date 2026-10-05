@@ -1,8 +1,3 @@
----
-name: better-accessibility
-description: Accessibility engineering for product interfaces. Use when building or reviewing UI components and custom widgets, or when the user reports a keyboard or screen-reader problem. Triggers on accessibility, a11y, WCAG, aria, focus ring, focus trap, keyboard navigation, tabindex, screen reader, sr-only, alt text, hit area, hover on touch, prefers-reduced-motion, autoplay, skip link, semantic HTML, form errors, disabled buttons, "not keyboard accessible".
----
-
 # Accessibility
 
 Most accessibility is free if you use the platform. Native elements ship with keyboard support, real labels announce themselves and a visible focus ring is one CSS rule.
@@ -11,7 +6,7 @@ Write every fix in the project's styling system, and use the exact values below 
 
 Reviewing means two walks. Keyboard-only, where every flow completes without a mouse. Then screen-reader, where every control announces a name, a role and its state. When unsure, take the platform default over a custom rebuild, and remove ARIA rather than add it.
 
-Contrast measurement and color fixes belong to `better-colors`. Text sizing and iOS input zoom belong to `better-typography`. Spatial RTL layout belongs to `better-layout`.
+Contrast measurement and color fixes belong to [colors](../craft/colors/index.md). Text sizing and iOS input zoom belong to [typography](../craft/typography/index.md). Spatial RTL layout belongs to [layout](../craft/layout/index.md).
 
 ## Native elements first
 
@@ -57,7 +52,7 @@ Icon-only buttons need a descriptive `aria-label`. Visible label text must appea
 
 ## Don't rely on color alone
 
-Status needs a redundant cue: an icon, text, or an underline alongside the color. Work out which WCAG contrast requirement applies, then use `better-colors` to measure the rendered pair. When it fails, report the pair and the requirement it misses, and leave the colors alone unless asked.
+Status needs a redundant cue: an icon, text, or an underline alongside the color. Work out which WCAG contrast requirement applies, then use [colors](../craft/colors/index.md) to measure the rendered pair. When it fails, report the pair and the requirement it misses, and leave the colors alone unless asked.
 
 ## Honor prefers-reduced-motion
 

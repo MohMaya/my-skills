@@ -16,7 +16,7 @@ module.exports = nextConfig;
 
 Because every link click is a transition, any VT with `default="auto"` fires on **every** navigation — use `default="none"` to prevent competing animations.
 
-Do **not** install `react@canary` — see [Availability](../SKILL.md#availability) for details.
+Do **not** install `react@canary` — see [Availability](index.md#availability) for details.
 
 ---
 

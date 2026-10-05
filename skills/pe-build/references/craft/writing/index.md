@@ -1,16 +1,8 @@
----
-name: better-writing
-description: >-
-  UX writing and interface copy. Use when writing or reviewing any user-facing text.
-  Triggers on UX writing, microcopy, button labels, link text, error messages, empty
-  states, placeholder text, settings labels, capitalization, sentence case, voice and tone.
----
-
 # Interface writing
 
 Clear and brief beats clever; consistent beats varied. The best error message is the interaction redesigned so the error cannot happen.
 
-How copy renders (capitalization via `text-transform`, truncation, smart punctuation) belongs to `better-typography`. Error markup and announcements (`aria-invalid`, live regions) belong to `better-accessibility`. Room for translated strings belongs to `better-layout`.
+How copy renders (capitalization via `text-transform`, truncation, smart punctuation) belongs to [typography](../typography/index.md). Error markup and announcements (`aria-invalid`, live regions) belong to [accessibility](../../a11y/index.md). Room for translated strings belongs to [layout](../layout/index.md).
 
 ## Recon the existing voice
 

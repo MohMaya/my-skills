@@ -1,15 +1,10 @@
----
-name: better-colors
-description: Color systems for digital products. Use when creating or extending a palette, theming light and dark appearances, or auditing the colors in a codebase. Triggers on color palette, palette generation, color ramp, brand color, accent color, gray palette, status colors, color tokens, token naming, theming, dark mode colors, contrast ratio, APCA, gamut, display p3, oklch, color conversion, gradients, color meaning, increased contrast.
----
-
 # Colors
 
 A color system is a small set of ramps, named by role and verified against the backgrounds they actually render on. Most color bugs are system bugs. A value picked in isolation, a token borrowed because it looked right, a pair nobody measured.
 
 Never report a contrast value you did not measure, and never estimate a color you could compute. Colors are one of the few interface concerns with an exact answer, so produce the exact answer.
 
-Contrast requirements belong to `better-accessibility`. Surfaces, shadows and icon color belong to `better-ui`.
+Contrast requirements belong to [accessibility](../../a11y/index.md). Surfaces, shadows and icon color belong to [ui](../ui/index.md).
 
 ## Match the project's color system
 
@@ -48,7 +43,7 @@ Both ends stop short of pure black and white, which cannot carry hue at all. Use
 
 ## One color, one meaning
 
-Use a color for one purpose across the whole interface, treating anything within `15°` of hue as the same color. If the accent means interactive, that hue on static text tells users to click something that is not clickable, and an interactive element rendered neutral misleads just as badly. Color is never the only carrier of meaning, which `better-accessibility` owns.
+Use a color for one purpose across the whole interface, treating anything within `15°` of hue as the same color. If the accent means interactive, that hue on static text tells users to click something that is not clickable, and an interactive element rendered neutral misleads just as badly. Color is never the only carrier of meaning, which [accessibility](../../a11y/index.md) owns.
 
 ## Fill exactly one action per view
 

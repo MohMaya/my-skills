@@ -1,16 +1,10 @@
----
-name: break
-description: Answers "does this survive?" for one component. Renders it on a page in every state real use can put it in, and hands that page over as a visual report of what broke.
-disable-model-invocation: true
----
-
 # Break
 
 This skill takes one component and renders it on a fresh page under every scenario that can actually reach it. That page is the deliverable: a visual report the user scrolls through, every state side by side, with the breaks marked. A component built against one happy path looks finished right up until real content arrives.
 
-It observes rather than judges. A finding here is something that visibly broke on the page, named in the vocabulary of the domain skill that owns the fix. Reviewing code against a standard is `interface-review` and `better-interface`; exploring design alternatives is `variant`.
+It observes rather than judges. A finding here is something that visibly broke on the page, named in the vocabulary of the pe-build reference that owns the fix. Reviewing code against a standard is change mode (`change-review.md`) and `engine.md`; exploring design alternatives is pe-design's vary mode.
 
-Where `variant` insists on the real page, this skill isolates on purpose. You are not judging how the component looks in context. You are checking whether it defends itself when the content is worst-case.
+Where pe-design's vary mode insists on the real page, this skill isolates on purpose. You are not judging how the component looks in context. You are checking whether it defends itself when the content is worst-case.
 
 The whole run is build, look once, report: minutes, not a session. The work is rendering an existing component with different props, and nothing in it justifies instrumentation, browser debugging or a second pass.
 
@@ -24,7 +18,7 @@ Restate what the component is in one sentence: what it accepts, what it renders 
 
 Stress only what varies. A scenario earns a slot when the component accepts something that can take that shape in production. So read the component first: its props, its slots, its states and the data it renders.
 
-[scenarios.md](scenarios.md) holds the axes, the values on each and the cue that says whether an axis applies. Walk it against the component and keep only the axes whose cue matches. A text input gets content length and states, never item quantity. A static icon button with a fixed label gets container and environment, never long text.
+[stress-scenarios.md](stress-scenarios.md) holds the axes, the values on each and the cue that says whether an axis applies. Walk it against the component and keep only the axes whose cue matches. A text input gets content length and states, never item quantity. A static icon button with a fixed label gets container and environment, never long text.
 
 Write the kept scenarios down before building, one line each, so the harness renders a planned set rather than whatever came to mind. Then say which axes you dropped and why, in one line, so a wrong inference is cheap to catch.
 
@@ -54,14 +48,14 @@ Report findings as a table, broken scenarios first:
 
 | Scenario | Observed | Owner |
 | --- | --- | --- |
-| One unbreakable 60-character string | Overflows the card, no wrap and no truncation | `better-typography` |
-| Zero items | Blank region with no message | `better-writing` |
+| One unbreakable 60-character string | Overflows the card, no wrap and no truncation | `pe-build/references/craft/typography/` |
+| Zero items | Blank region with no message | `pe-build/references/craft/writing/` |
 
-The owner column names the domain skill whose rules diagnose the break, so the fix starts in the right place. This skill owns no domain rules and issues no verdict.
+The owner column names the pe-build reference whose rules diagnose the break, so the fix starts in the right place. This skill owns no domain rules and issues no verdict.
 
 "Everything survived" is a complete and useful report. Say which scenarios are on the page and where it is running, so the user can see every one themselves. End there rather than padding the result with preferences.
 
-Do not fix anything unasked. On a request to fix, follow the owner skill's rules, then re-render the failing scenarios to confirm.
+Do not fix anything unasked. On a request to fix, follow the owner's rules, then re-render the failing scenarios to confirm.
 
 ## 6. Leave the page up, delete it on request
 
@@ -78,7 +72,7 @@ The page is half the report, so it outlives the findings table. Leave it running
 | The harness restyles or re-themes the component | The app's layout, fonts and tokens as they are; labels and widths are all the page adds |
 | A browser launched, debugged or screenshotted per scenario | One load and one look, or hand the URL over and skip the look |
 | Findings phrased as taste | Report what was visible on the page, or nothing |
-| A break reported without an owner | Name the domain skill whose rules diagnose it |
+| A break reported without an owner | Name the pe-build reference whose rules diagnose it |
 | A clean run padded with suggestions | "Everything survived" plus the scenario list is the report |
 | The viewport resized scenario by scenario | Widths are fixed containers on the page; one load shows them all |
 | A break in the table but unmarked on the page | Note it under the scenario's label; the page reads as the report on its own |

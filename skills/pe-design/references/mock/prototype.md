@@ -1,8 +1,3 @@
----
-name: html-prototype
-description: Direct-invocation specialist for polished, responsive, self-contained HTML mockups and interactive prototypes grounded in the user's conversation, product context, and design language. Use when the user explicitly invokes html-prototype or the broad html skill routes a mockup or prototype request here. Do not activate independently from a general request. Treat a mockup as a noninteractive fidelity mode within this skill, not as a separate skill.
----
-
 # HTML Prototype
 
 Build a credible model of a product decision. Match the artifact to the user's context instead of applying a recurring house style. The goal is not to make every possible screen. The goal is to make the important visual or behavioral question testable.
@@ -14,7 +9,7 @@ Use one of two modes:
 - **Mockup:** Create a polished, responsive, mostly static artifact when the open question is visual hierarchy, layout, typography, color, or product fit.
 - **Prototype:** Create a working flow when the open question is navigation, input, state change, feedback, recovery, or transition.
 
-Do not create a separate `html-mockup` skill. Do not add behavior merely to make a mockup seem more complete. If a user asks for both modes, preserve the same content and structure so changes in fidelity remain easy to compare.
+Do not add behavior merely to make a mockup seem more complete. If a user asks for both modes, preserve the same content and structure so changes in fidelity remain easy to compare.
 
 ## Derive the direction from context
 
@@ -38,8 +33,8 @@ Before coding, settle:
 
 When no design system exists, create a specific direction from the subject and use case. Do not default to a gradient, a dark dashboard, interchangeable cards, or decorative metrics. A prototype for a field tool, an editorial workflow, and a financial approval should not feel like the same product.
 
-When [`design-artifact`](../design-artifact/SKILL.md) is available and the visual
-direction remains open, read and compose it with this skill. Use it to choose
+When the visual
+direction remains open, read and compose [creative direction](../direct/index.md) with this skill. Use it to choose
 the register, palette, type, and composition; keep this skill authoritative for
 fidelity, state, and interaction completeness.
 

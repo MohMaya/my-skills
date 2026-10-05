@@ -1,8 +1,3 @@
----
-name: better-ui
-description: Design engineering principles for making interfaces feel polished. Use when building UI components, implementing animations or hover states, or doing any visual detail work. Triggers on UI polish, "feels off", stagger animations, enter animations, theme switch transitions, border radius, optical alignment, image outlines, box shadows, icons, icon stroke weight, motion restraint.
----
-
 # UI polish
 
 Polish comes from a pile of small details that compound. This skill is the reference for which are worth having and what values they take.
@@ -13,7 +8,7 @@ Keep the project's component library, tokens and density, and match its motion l
 
 Every duration, curve, scale and blur below is a specific value, not a range to approximate. `cubic-bezier(0.2, 0, 0, 1)` is not `cubic-bezier(0.4, 0, 0.2, 1)`, and `0.96` is not `0.95`. Use what is written.
 
-Text wrapping, font rendering, tabular numbers and text spacing belong to `better-typography`. Hit areas, focus, keyboard support, ARIA and reduced motion belong to `better-accessibility`. Grouping, section spacing, breakpoints and spatial RTL belong to `better-layout`.
+Text wrapping, font rendering, tabular numbers and text spacing belong to [typography](../typography/index.md). Hit areas, focus, keyboard support, ARIA and reduced motion belong to [accessibility](../../a11y/index.md). Grouping, section spacing, breakpoints and spatial RTL belong to [layout](../layout/index.md).
 
 ## Concentric border radius
 

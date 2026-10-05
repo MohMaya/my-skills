@@ -79,19 +79,9 @@ human-readable and diffable, owned by the user. In the alpha repos the `ui-sandb
 handoff (or `alpha-ui` screen) is the approval record, so skip `.product/approved/`
 there.
 
-## Name mapping
-
-The mock files route to skills by name (html-wireframe, html-prototype,
-html-diagram, html-plan, design-artifact — including `../design-artifact/SKILL.md`
-links): resolve to this skill's `mock/wireframe.md`, `mock/prototype.md`,
-`mock/diagram.md`, `mock/plan.md`, and `direct/index.md` respectively. Their relative
-`references/*.md` links resolve to the same `mock/` folder. The `creative-direction.md`
-fallback resolves to `direct/index.md`.
-
 ## Handoffs
 
 Implementing a confirmed brief, chosen direction, mock, or winning variant →
 **pe-build** (with the DESIGN.md, any chosen preset, and the approved record named).
 Judging existing UI → **pe-review**. Putting an artifact on a Figma canvas →
-`figma:figma-generate-design`, with `figma:figma-use` loaded before any `use_figma` call. Behavior specs beyond PRODUCT.md's scope →
-**pe-product-description**. On-brand standalone assets → **pe-brand-assets**.
+`figma:figma-generate-design`, with `figma:figma-use` loaded before any `use_figma` call.
