@@ -28,7 +28,7 @@ Write an **intent card** before studying the SQL:
 
 - **Question**: one sentence in domain terms ("does this system have an active membership?").
 - **Callers**: every call site of the public entry points (when several share one private query core, list each entry point and name the shared core), each with its frequency (per request, per list row, per job batch, per keystroke). Take frequency from telemetry when it exists; otherwise derive it from the code path and mark it inferred.
-- **Consumption**: for each caller, the fields actually read, traced through the serializer, DTO, GraphQL type and field resolvers, or template, and on to the client documents that select them when the client lives in a reachable repository (alpha-web's GraphQL documents for alpha-core). The client's selection is the real consumer.
+- **Consumption**: for each caller, the fields actually read, traced through the serializer, DTO, GraphQL type and field resolvers, or template, and on to the client documents that select them when the client lives in a reachable repository (a frontend's GraphQL documents, an SDK's calls). The client's selection is the real consumer.
 - **Shape**: the answer's cardinality (yes/no, one row, a bounded page, the full set), the ordering a consumer relies on, the pagination contract.
 - **Envelope**: tenant or organization scope, the database role and its grants, lifecycle predicates (`removed_at`, `deleted_at`), time zones and bound inclusivity, tolerated staleness, read-your-writes needs, locks.
 

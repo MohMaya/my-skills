@@ -6,7 +6,7 @@ Consult on demand from `query-design`. Covers SQLAlchemy 2.0 async with psycopg 
 
 - Local run: `create_async_engine(url, echo=True)`, or set the `sqlalchemy.engine` logger to `INFO`.
 - One statement: `str(stmt.compile(dialect=postgresql.dialect(), compile_kwargs={"literal_binds": True}))` gives runnable SQL for `EXPLAIN`; some types will not render as literals, so bind those by hand.
-- Statements per path in a test: count with `event.listen(engine.sync_engine, "before_cursor_execute", …)`. Reuse the repository's helper when one exists (alpha-core: `tests/livedb/test_service_address_count_live.py`).
+- Statements per path in a test: count with `event.listen(engine.sync_engine, "before_cursor_execute", …)`. Reuse the repository's helper when one exists (search the tests for `before_cursor_execute`).
 - GraphQL: field resolvers run after the root query, so the statement count belongs to the whole operation, not the resolver alone.
 
 ## Loading relationships
@@ -41,7 +41,7 @@ Consult on demand from `query-design`. Covers SQLAlchemy 2.0 async with psycopg 
 
 ## Roles and grants
 
-When a repository runs each service as its own database role (alpha-core: `CLAUDE.md` § Database role grants), a rewrite that reads or writes a new table follows those rules: grant every role that runs the statement, and test the statement under each role. Run `EXPLAIN` under that role so RLS and permissions match production.
+When a repository runs each service as its own database role (its `AGENTS.md` or `CLAUDE.md` says so), a rewrite that reads or writes a new table follows those rules: grant every role that runs the statement, and test the statement under each role. Run `EXPLAIN` under that role so RLS and permissions match production.
 
 ## Alembic
 

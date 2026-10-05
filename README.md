@@ -25,6 +25,7 @@ Re-run `sync.sh` after every `git pull`. It is safe to repeat. It runs `claude-s
 | `hooks/` | Turn-end gate (lint, types, complexity ratchet), git-bypass guard, secret-path guard |
 | `claude/` | Claude Code subagents (`agents/`), settings every machine shares, merged key by key (Opus main, Sonnet subagents, Fable advisor), and the status line |
 | `claude-setup-sync.sh` | Applies `claude/`, installs the shared plugins, and installs the Python packages plugin servers need |
+| `check.sh` | Fails on any machine-specific path, so the setup works on every machine; CI runs it on each push |
 | `mcp.json` | Record of every MCP server and its URL; not synced |
 | `evals/` | Real past commits replayed as tasks; run after every model or kernel change |
 
