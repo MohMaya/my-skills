@@ -20,6 +20,8 @@ For a project used from both harnesses, keep one verification skill under `.agen
 
 Use `maintain-verification-skill` when the driver or Feature Map lacks coverage or has drifted. After a change, run the relevant repository checks and exercise the affected real user path. Preserve reviewable evidence. Report exactly what passed and what remains unverified. A passing build alone does not prove behavior.
 
+For performance work, use pstack's Perf issue or Hillclimb playbook and `benchmark-checklist`. Prioritize user journeys from real usage. Define timing from interaction to usable result. Prove that lab proxies predict user latency before making them CI gates. Preserve confirmed wins with stable regression budgets that tighten as performance improves. After an authorized rollout, compare production telemetry with the baseline. Keep benchmarks and rollout details in the project.
+
 ## Use the current harness
 
 Claude Code uses the native `pstack` and `mattpocock-skills` plugins. Codex uses the full `pstack` port from `pstack-claude`, plus `mattpocock-skills`. The curated `pstack-plugin` ChatGPT subset lacks the router and verification workflows and is not the engineering installation.
@@ -27,6 +29,10 @@ Claude Code uses the native `pstack` and `mattpocock-skills` plugins. Codex uses
 On Codex, read pstack's `poteto-mode/references/codex-tools.md` before translating its tool calls. Use the tools actually exposed by the session when the mapping is older than the host. The runtime's pstack model configuration chooses roles. Respect agent capacity and report reduced model diversity honestly.
 
 Delegate substantial, independent work as the selected skill prescribes. Give each writer isolated state and a bounded task. Read the returned diff and evidence yourself. Use cloud workers only when the current harness actually provides them. Local subagents are local.
+
+## Shared memory
+
+Supermemory is Shiv's shared memory across harnesses and surfaces. Keep it enabled. Pass `containerTag: "user_shiv"` on every Supermemory call that accepts it. Recall relevant context and retain durable decisions and preferences; check remembered project facts against the current repository. pstack and Matt remain the engineering workflow owners.
 
 ## Write for Shiv
 

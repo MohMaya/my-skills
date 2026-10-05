@@ -1,4 +1,10 @@
 {
   "syncClaudeAiSkills": false,
-  "syncClaudeAiPlugins": false
+  "syncClaudeAiPlugins": false,
+  "env": {
+    "SUPERMEMORY_REPO_TAG": "user_shiv"
+  },
+  "enabledPlugins": {
+    "supermemory@supermemory-plugins": true
+  }
 }

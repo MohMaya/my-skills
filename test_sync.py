@@ -25,7 +25,14 @@ class SyncTest(unittest.TestCase):
             "feature, refactoring: inherit-parent\nsession hook: off\n"
         )
         (self.agent_root / "claude/settings.json").write_text(
-            '{"syncClaudeAiSkills": false, "syncClaudeAiPlugins": false}\n'
+            json.dumps(
+                {
+                    "syncClaudeAiSkills": False,
+                    "syncClaudeAiPlugins": False,
+                    "env": {"SUPERMEMORY_REPO_TAG": "user_shiv"},
+                    "enabledPlugins": {"supermemory@supermemory-plugins": True},
+                }
+            )
         )
         matt = (
             self.home_root
@@ -92,7 +99,15 @@ class SyncTest(unittest.TestCase):
         settings = self.home_root / ".claude/settings.json"
         settings.parent.mkdir()
         settings.write_text(
-            '{"model": "fable", "syncClaudeAiSkills": true, "syncClaudeAiPlugins": true}\n'
+            json.dumps(
+                {
+                    "model": "fable",
+                    "syncClaudeAiSkills": True,
+                    "syncClaudeAiPlugins": True,
+                    "env": {"EXISTING_OPTION": "preserved"},
+                    "enabledPlugins": {"existing-tool": True},
+                }
+            )
         )
         settings.chmod(0o600)
         sync(self.agent_root, self.home_root)
@@ -102,6 +117,14 @@ class SyncTest(unittest.TestCase):
                 "model": "fable",
                 "syncClaudeAiSkills": False,
                 "syncClaudeAiPlugins": False,
+                "env": {
+                    "EXISTING_OPTION": "preserved",
+                    "SUPERMEMORY_REPO_TAG": "user_shiv",
+                },
+                "enabledPlugins": {
+                    "existing-tool": True,
+                    "supermemory@supermemory-plugins": True,
+                },
             },
         )
         self.assertEqual(settings.stat().st_mode & 0o777, 0o600)

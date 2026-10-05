@@ -63,7 +63,11 @@ def sync(agent_root: Path, home_root: Path) -> None:
     current_settings = (
         json.loads(settings_path.read_text()) if settings_path.exists() else {}
     )
-    current_settings.update(json.loads(settings.read_text()))
+    overrides = json.loads(settings.read_text())
+    for key in ("env", "enabledPlugins"):
+        if key in overrides:
+            current_settings.setdefault(key, {}).update(overrides.pop(key))
+    current_settings.update(overrides)
     replace_file(settings_path, json.dumps(current_settings, indent=2) + "\n")
     replace_file(claude_root / "CLAUDE.md", f"@{shared}\n@{claude_models}\n")
     rows = "\n".join(

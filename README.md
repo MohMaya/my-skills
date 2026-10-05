@@ -1,12 +1,14 @@
 # Shiv's agent setup
 
-Claude Code and Codex use pstack for engineering execution and verification, Matt Pocock Skills for requirements and test-first workflows, and `write-like-shiv` for voice. `AGENTS.md` connects the systems without copying their playbooks.
+Claude Code and Codex use pstack for engineering execution and verification, Matt Pocock Skills for requirements and test-first workflows, and `write-like-shiv` for voice. Supermemory remains the shared memory service. `AGENTS.md` connects the systems without copying their playbooks.
 
 Lauren's [Complete Guide to pstack, Part 1](https://x.com/poteto/status/2094457600259842065) makes verification the foundation. Each product repository needs a working driver and Feature Map. The global instructions make agents create or maintain those when needed. This repository does not claim to have configured every product or scheduled daily maintenance.
 
+The [claude.ai performance report](https://claude.dev/blog/how-we-made-claude-ai-faster/) adds the production feedback loop: choose important journeys, validate lab proxies, preserve wins in CI, and check field telemetry. pstack already supplies the measurement and iterative optimization workflows. Project repositories own the actual instruments and budgets.
+
 ## Set up a machine
 
-Install [Matt Pocock Skills](https://github.com/mattpocock/skills) in both harnesses. Install the full [pstack port for Claude Code and Codex](https://github.com/michael-denyer/pstack-claude), which adapts [Lauren's upstream pstack](https://github.com/cursor/plugins/tree/main/pstack). The curated Codex `pstack-plugin` is a ChatGPT subset and lacks `poteto-mode` and the verification generators.
+Install [Matt Pocock Skills](https://github.com/mattpocock/skills) in both harnesses. Install the full [pstack port for Claude Code and Codex](https://github.com/michael-denyer/pstack-claude), which adapts [Lauren's upstream pstack](https://github.com/cursor/plugins/tree/main/pstack). Keep the [Supermemory Claude plugin](https://github.com/supermemoryai/claude-supermemory) and Codex connector installed and authenticated. The curated Codex `pstack-plugin` is a ChatGPT subset and lacks `poteto-mode` and the verification generators.
 
 The tested pstack port is `0.9.70`, from commit `72270b73211a4b9baa673a33728bb18b05684f91`. Matt Pocock Skills is `1.2.3`.
 
@@ -37,6 +39,8 @@ Claude loads pstack's native session hook. Codex uses the standing instruction i
 Describe the outcome. pstack selects the engineering playbook for substantial work. Ask for Matt's planning or implementation workflow when you want that flow. His explicit-entry skills remain explicit-entry. The shared instructions compose the two without starting competing execution loops.
 
 Use `write-like-shiv` for authored prose. It is the only personal skill in `skills/`. Browser and computer tools, language servers, document tools, and service connectors remain available to execute the work.
+
+Supermemory calls use `user_shiv` across surfaces. Sync preserves its enabled Claude plugin and sets `SUPERMEMORY_REPO_TAG` to the same value while preserving unrelated environment and plugin settings. Cloud plugin sync stays off so disabled workflow plugins do not return. Ponytail stays disabled.
 
 The model sheets live in `claude/` and `codex/`. Ordinary roles inherit the selected session model. Claude's review panels use its supported model families. Codex uses available GPT models and reports the reduced diversity compared with a cross-family panel. These settings do not create cloud workers or raise agent limits.
 
