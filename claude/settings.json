@@ -31,5 +31,10 @@
   "autoCompactEnabled": true,
   "autoContinueAtUsageLimit": true,
   "agentPushNotifEnabled": true,
-  "skipAutoPermissionPrompt": true
+  "skipAutoPermissionPrompt": true,
+  "enabledPlugins": {
+    "mattpocock-skills@mattpocock": false,
+    "mattpocock-skills@claude-plugins-official": false,
+    "pstack@pstack-claude": false
+  }
 }

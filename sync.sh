@@ -6,7 +6,8 @@
 #   skills  skills/    Claude: links in ~/.claude/skills
 #   agents  claude/agents/  Claude: links in ~/.claude/agents
 #                      Codex reads ~/.agents/skills natively
-#   hooks   hooks/     turn-end gate, git-bypass guard, and secret-path guard
+#   hooks   hooks/     turn-end gate, bar-raiser review gate, git-bypass guard,
+#                      and secret-path guard
 #   claude  claude-setup-sync.sh: settings, plugins, plugin runtimes
 #
 # MCP servers are configured per machine in each harness; mcp.json records
@@ -80,32 +81,42 @@ import json, os, shlex, sys
 from pathlib import Path
 
 hooks = sys.argv[1]
-OURS = ("stop-gate.py", "block-no-verify.sh", "guard-protected-paths.sh")
+OURS = ("stop-gate.py", "review-gate.py", "block-no-verify.sh", "guard-protected-paths.sh")
 
-def cmd(script, stop=False):
+def cmd(script, stop=False, args=""):
     path = shlex.quote(f"{hooks}/{script}")
-    run = f"python3 {path}" if script.endswith(".py") else path
+    run = (f"python3 {path}" if script.endswith(".py") else path) + (f" {args}" if args else "")
     return f"[ -f {path} ] && {run} || true" if stop else f"[ ! -f {path} ] || {run}"
 
 def ours(entry):
     return any(n in entry.get("command", "") for n in OURS)
 
 # Claude Code and Codex: {"hooks": {Event: [{"matcher", "hooks": [entry]}]}}
-HOOKS = {
-    "Stop": [{"hooks": [{"type": "command", "command": cmd("stop-gate.py", stop=True), "timeout": 600}]}],
-    "PreToolUse": [{"matcher": "Bash", "hooks": [{"type": "command", "command": cmd("block-no-verify.sh")}]},
-                   {"matcher": "Write|Edit|MultiEdit", "hooks": [{"type": "command", "command": cmd("guard-protected-paths.sh")}]}],
-}
-def merge(cfg):
+# The review gate takes its turn baseline at the first tool call in Claude Code,
+# which fires PreToolUse for every tool; Codex takes it at the prompt.
+def hooks_for(harness):
+    touch = " --first-touch" if harness == "claude" else ""
+    gate = {"matcher": "", "hooks": []} if touch else {"matcher": "Bash", "hooks": []}
+    gate["hooks"].append({"type": "command", "command": cmd("review-gate.py", args="pre-tool" + touch), "timeout": 60})
+    return {
+        "UserPromptSubmit": [{"hooks": [{"type": "command", "command": cmd("review-gate.py", stop=True, args="prompt" + touch), "timeout": 60}]}],
+        "Stop": [{"hooks": [{"type": "command", "command": cmd("stop-gate.py", stop=True), "timeout": 600},
+                            {"type": "command", "command": cmd("review-gate.py", stop=True, args="stop" + touch), "timeout": 120}]}],
+        "PreToolUse": [{"matcher": "Bash", "hooks": [{"type": "command", "command": cmd("block-no-verify.sh")}]},
+                       gate,
+                       {"matcher": "Write|Edit|MultiEdit", "hooks": [{"type": "command", "command": cmd("guard-protected-paths.sh")}]}],
+    }
+
+def merge(cfg, ours_now):
     events = cfg.setdefault("hooks", {})
     for name in list(events):
         groups = [{**g, "hooks": [h for h in g.get("hooks", []) if not ours(h)]} for g in events[name]]
         events[name] = [g for g in groups if g["hooks"]]
-    for name, groups in HOOKS.items():
+    for name, groups in ours_now.items():
         events.setdefault(name, []).extend(groups)
     cfg["hooks"] = {k: v for k, v in events.items() if v}
 
-for path in ("~/.claude/settings.json", "~/.codex/hooks.json"):
+for harness, path in (("claude", "~/.claude/settings.json"), ("codex", "~/.codex/hooks.json")):
     p = Path(path).expanduser()
     try:
         cfg = json.loads(p.read_text()) if p.exists() else {}
@@ -113,7 +124,7 @@ for path in ("~/.claude/settings.json", "~/.codex/hooks.json"):
         print(f"{p}: invalid JSON ({e}); skipped", file=sys.stderr)
         continue
     before = json.dumps(cfg, sort_keys=True)
-    merge(cfg)
+    merge(cfg, hooks_for(harness))
     if json.dumps(cfg, sort_keys=True) != before:
         p.parent.mkdir(parents=True, exist_ok=True)
         tmp = p.with_name(p.name + ".tmp")

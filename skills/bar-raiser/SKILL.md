@@ -88,7 +88,23 @@ Missing evidence is an open verification gap, not a reason to mark a section cle
 
 Report:
 
-1. Verdict, in one line.
+1. Four header lines: `Snapshot:` the tree you reviewed; `Verdict: excellent` or `Verdict: below bar`; `Skills:` the workflow skills the work used (such as `tdd`, `diagnosing-bugs`, `query-design`); `Tests:` the bug each new test catches, or why the change needs none.
 2. Findings, most severe first: `file:line`, smell, why (with source), ideal, decision and first step, proof, evidence tier.
 3. Proposals outside the change's scope.
 4. The reviewed revision or diff, evidence for material claims, and what was not checked and why.
+
+For code in a git repository, the review gate needs the report recorded. Before you read the diff, print the snapshot you are reviewing; add `--index` to review only the staged changes of a split commit, or `--commit <sha>` for a commit:
+
+```sh
+python3 ~/.agents/hooks/review-gate.py tree
+```
+
+Fixes made during the review change the snapshot, so take `tree` again on the final state and review that. Then pipe the report in on stdin, so no report file enters the repository:
+
+```sh
+python3 ~/.agents/hooks/review-gate.py record --verdict <excellent|below-bar> [--index | --commit <sha>] <<'REPORT'
+<the report>
+REPORT
+```
+
+`record` refuses a report whose `Snapshot:` is not the current code. Only Shiv turns a below-bar review into an accepted one, by replying `accept <snapshot>`.

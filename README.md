@@ -11,8 +11,10 @@ bash ~/.agents/sync.sh
 
 Then, once per machine:
 
-1. In Codex, run `/hooks` and trust the two hooks.
+1. In Codex, run `/hooks` and trust our hooks.
 2. Add the MCP servers this machine needs in each harness. `mcp.json` records every server's URL, and which Claude plugin provides it.
+
+Update third-party skills with `npx skills@latest update -g`, then commit `skills/` and `.skill-lock.json`.
 
 Re-run `sync.sh` after every `git pull`. It is safe to repeat. It runs `claude-setup-sync.sh`, which you can also run alone after changing Claude settings or plugins.
 
@@ -21,8 +23,8 @@ Re-run `sync.sh` after every `git pull`. It is safe to repeat. It runs `claude-s
 | Path | Holds |
 | ---- | ----- |
 | `AGENTS.md` | The kernel every harness loads: only what a model cannot infer |
-| `skills/` | 27 skills, each carrying knowledge or a procedure a model lacks |
-| `hooks/` | Turn-end gate (lint, types, complexity ratchet), git-bypass guard, secret-path guard |
+| `skills/` | 60 skills both harnesses share: ours plus Matt Pocock's full set, pinned in `.skill-lock.json` |
+| `hooks/` | Turn-end gate (lint, types, complexity ratchet), bar-raiser review gate, git-bypass guard, secret-path guard |
 | `claude/` | Claude Code subagents (`agents/`), settings every machine shares, merged key by key (Opus main, Sonnet subagents, Fable advisor), and the status line |
 | `claude-setup-sync.sh` | Applies `claude/`, installs the shared plugins, and installs the Python packages plugin servers need |
 | `check.sh` | Fails on any machine-specific path, so the setup works on every machine; CI runs it on each push |

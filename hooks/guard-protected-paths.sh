@@ -19,6 +19,8 @@ case "$path" in
     echo "blocked: refusing to write inside a secrets directory ($path)" >&2; exit 2 ;;
   *.pem|*.key|*_rsa|*_ed25519|*.p12|*.pfx)
     echo "blocked: refusing to write to private key material ($path)" >&2; exit 2 ;;
+  */.git/bar-raiser/*)
+    echo "blocked: reviews are written only by review-gate.py record ($path)" >&2; exit 2 ;;
 esac
 
 case "$base" in

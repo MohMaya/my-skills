@@ -17,7 +17,7 @@ Alongside the bar-raiser sweep, check these, each a finding in its format:
 
 ## Output shape
 
-The bar-raiser report: verdict (`excellent` or `below bar`), findings most severe first as `file:line` with the drill, proposals outside scope, and what you did not check. Add **Questions** for ambiguities only the author can resolve.
+The bar-raiser report, starting with its `Snapshot:`, `Verdict:`, `Skills:`, and `Tests:` header lines: findings most severe first as `file:line` with the drill, proposals outside scope, and what you did not check. Add **Questions** for ambiguities only the author can resolve. Return the report; the author records it after confirming the snapshot still matches.
 
 ## Posture
 
