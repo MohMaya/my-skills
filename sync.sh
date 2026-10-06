@@ -59,6 +59,31 @@ link_claude_agents() {
   echo "claude: $(find "$d" -maxdepth 1 -type l | wc -l | tr -d ' ') agents linked"
 }
 
+# Undo what the retired pstack setup's sync wrote, so pulling and re-syncing on any
+# machine leaves no pstack instructions behind. Each target is a file that setup
+# generated: a real ~/.codex/AGENTS.md naming pstack, the model-sheet import and
+# links, and its link to the Codex plugin cache of Matt Pocock's skills.
+retire_pstack() {
+  local codex="$HOME/.codex/AGENTS.md" md="$HOME/.claude/CLAUDE.md" link
+  if [ -f "$codex" ] && [ ! -L "$codex" ] && grep -q 'pstack' "$codex"; then
+    rm -f "$codex"
+    echo "codex: removed the pstack-era AGENTS.md"
+  fi
+  if grep -qs 'pstack-models\.md' "$md"; then
+    sed -i.bak '/pstack-models\.md/d' "$md" && rm -f "$md.bak"
+    echo "claude: removed the pstack model sheet import"
+  fi
+  for link in "$HOME/.claude/pstack-models.md" "$HOME/.codex/pstack-models.md" "$HOME/.codex/skills/mattpocock-skills"; do
+    if [ -L "$link" ]; then
+      rm -f "$link"
+      echo "removed pstack-era link $link"
+    fi
+  done
+  if grep -qs 'pstack@pstack-claude' "$HOME/.codex/config.toml"; then
+    echo "codex: pstack is still installed; remove it with: codex plugin remove pstack@pstack-claude" >&2
+  fi
+}
+
 link_kernels() {
   local md="$HOME/.claude/CLAUDE.md" codex="$HOME/.codex/AGENTS.md"
   mkdir -p "$HOME/.claude" "$HOME/.codex"
@@ -137,6 +162,7 @@ PY
 }
 
 main() {
+  retire_pstack
   link_kernels
   link_claude_skills
   link_claude_agents
