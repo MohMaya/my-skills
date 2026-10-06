@@ -1,4 +1,138 @@
 #!/usr/bin/env bash
+# Wire ~/.agents into Claude Code and Codex. Safe to re-run.
+#
+#   kernel  AGENTS.md  Claude: import in ~/.claude/CLAUDE.md
+#                      Codex:  ~/.codex/AGENTS.md link
+#   skills  skills/    Claude: links in ~/.claude/skills
+#   agents  claude/agents/  Claude: links in ~/.claude/agents
+#                      Codex reads ~/.agents/skills natively
+#   hooks   hooks/     turn-end gate, git-bypass guard, and secret-path guard
+#   claude  claude-setup-sync.sh: settings, plugins, plugin runtimes
+#
+# MCP servers are configured per machine in each harness; mcp.json records
+# them and is not synced. Adds what is missing and replaces only entries it
+# owns. Plugins it did not add stay as they are.
+
 set -euo pipefail
-cd "$(dirname "$0")"
-python3 sync.py "$@"
+
+A="$HOME/.agents"
+
+# Remove links in DIR that point into ~/.agents; with "all", remove every
+# such link, otherwise only dangling ones.
+prune_links() {
+  local dir="$1" mode="$2" link
+  [ -d "$dir" ] || return 0
+  while IFS= read -r -d '' link; do
+    case "$(readlink "$link")" in
+      *".agents/"*) if [ "$mode" = all ] || [ ! -e "$link" ]; then rm -f "$link"; fi ;;
+    esac
+  done < <(find "$dir" -maxdepth 1 -type l -print0)
+}
+
+link_claude_skills() {
+  local d="$HOME/.claude/skills" skill name
+  mkdir -p "$d"
+  prune_links "$d" dangling
+  for skill in "$A"/skills/*/; do
+    name=$(basename "$skill")
+    if [ -f "$skill/SKILL.md" ] && [ ! -e "$d/$name" ]; then
+      ln -s "../../.agents/skills/$name" "$d/$name"
+    fi
+  done
+  echo "claude: $(find "$d" -maxdepth 1 -type l | wc -l | tr -d ' ') skills linked"
+}
+
+link_claude_agents() {
+  local d="$HOME/.claude/agents" agent name
+  mkdir -p "$d"
+  prune_links "$d" dangling
+  for agent in "$A"/claude/agents/*.md; do
+    [ -e "$agent" ] || continue
+    name=$(basename "$agent")
+    if [ -L "$d/$name" ] || [ ! -e "$d/$name" ]; then
+      ln -sfn "../../.agents/claude/agents/$name" "$d/$name"
+    else
+      echo "claude: $d/$name is a real file; preserved" >&2
+    fi
+  done
+  echo "claude: $(find "$d" -maxdepth 1 -type l | wc -l | tr -d ' ') agents linked"
+}
+
+link_kernels() {
+  local md="$HOME/.claude/CLAUDE.md" codex="$HOME/.codex/AGENTS.md"
+  mkdir -p "$HOME/.claude" "$HOME/.codex"
+  grep -qsE '^@.*AGENTS\.md$' "$md" || printf '@~/.agents/AGENTS.md\n' >> "$md"
+  if [ -e "$codex" ] && [ ! -L "$codex" ]; then
+    echo "codex: $codex is a real file; preserved" >&2
+  else
+    ln -sfn "$A/AGENTS.md" "$codex"
+  fi
+  echo "kernel: Claude import, Codex link"
+}
+
+# Rewrite our entries in each harness's hook config. An entry is ours when its
+# command names one of our scripts; everything else is kept.
+sync_hooks() {
+  prune_links "$HOME/.claude/hooks" all
+  prune_links "$HOME/.codex/hooks" all
+  python3 - "$A/hooks" <<'PY'
+import json, os, shlex, sys
+from pathlib import Path
+
+hooks = sys.argv[1]
+OURS = ("stop-gate.py", "block-no-verify.sh", "guard-protected-paths.sh")
+
+def cmd(script, stop=False):
+    path = shlex.quote(f"{hooks}/{script}")
+    run = f"python3 {path}" if script.endswith(".py") else path
+    return f"[ -f {path} ] && {run} || true" if stop else f"[ ! -f {path} ] || {run}"
+
+def ours(entry):
+    return any(n in entry.get("command", "") for n in OURS)
+
+# Claude Code and Codex: {"hooks": {Event: [{"matcher", "hooks": [entry]}]}}
+HOOKS = {
+    "Stop": [{"hooks": [{"type": "command", "command": cmd("stop-gate.py", stop=True), "timeout": 600}]}],
+    "PreToolUse": [{"matcher": "Bash", "hooks": [{"type": "command", "command": cmd("block-no-verify.sh")}]},
+                   {"matcher": "Write|Edit|MultiEdit", "hooks": [{"type": "command", "command": cmd("guard-protected-paths.sh")}]}],
+}
+def merge(cfg):
+    events = cfg.setdefault("hooks", {})
+    for name in list(events):
+        groups = [{**g, "hooks": [h for h in g.get("hooks", []) if not ours(h)]} for g in events[name]]
+        events[name] = [g for g in groups if g["hooks"]]
+    for name, groups in HOOKS.items():
+        events.setdefault(name, []).extend(groups)
+    cfg["hooks"] = {k: v for k, v in events.items() if v}
+
+for path in ("~/.claude/settings.json", "~/.codex/hooks.json"):
+    p = Path(path).expanduser()
+    try:
+        cfg = json.loads(p.read_text()) if p.exists() else {}
+    except ValueError as e:
+        print(f"{p}: invalid JSON ({e}); skipped", file=sys.stderr)
+        continue
+    before = json.dumps(cfg, sort_keys=True)
+    merge(cfg)
+    if json.dumps(cfg, sort_keys=True) != before:
+        p.parent.mkdir(parents=True, exist_ok=True)
+        tmp = p.with_name(p.name + ".tmp")
+        tmp.write_text(json.dumps(cfg, indent=2, ensure_ascii=False) + "\n")
+        os.replace(tmp, p)
+        print(f"{p}: hooks updated")
+    else:
+        print(f"{p}: hooks current")
+PY
+}
+
+main() {
+  link_kernels
+  link_claude_skills
+  link_claude_agents
+  prune_links "$HOME/.codex/skills" all
+  sync_hooks
+  bash "$A/claude-setup-sync.sh"
+  echo "done. Codex asks you to trust the hooks once: run /hooks in Codex."
+}
+
+main "$@"

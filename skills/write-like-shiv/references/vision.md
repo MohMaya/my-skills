@@ -1,6 +1,6 @@
 # Vision prose
 
-Shiv approved this canon on September 26, 2026. It applies to vision prose: a vision or product thesis, a founding document, a public post, and other ambition prose. For those surfaces it overrides conflicting length and compression guidance in `SKILL.md`. Every other rule in `SKILL.md` still holds. Operational writing (chat, status, plans, digests, checklists) keeps the action-first shape in `SKILL.md`.
+Shiv approved this canon on September 26, 2026. It applies to vision prose: a vision or product thesis, a founding document, a public post, and other ambition prose. For those surfaces it overrides conflicting length and compression guidance in `SKILL.md`. Every other rule in `SKILL.md` still holds. Operational writing (chat, status, plans, digests, checklists) keeps the action-first shape in `i-have-adhd`.
 
 Research and history essays use the same clarity, with inline source links on the relevant prose.
 

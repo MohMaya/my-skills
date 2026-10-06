@@ -1,0 +1,20 @@
+{
+  "mcpServers": {
+    "linear": { "url": "https://mcp.linear.app/mcp" },
+    "notion": { "url": "https://mcp.notion.com/mcp" },
+    "posthog": { "url": "https://mcp.posthog.com/mcp", "claude_plugin": "posthog@claude-plugins-official" },
+    "datadog": { "url": "https://mcp.datadoghq.com/api/unstable/mcp-server/mcp" },
+    "railway": { "url": "https://mcp.railway.com", "claude_plugin": "railway@claude-plugins-official" },
+    "cloudflare": { "url": "https://mcp.cloudflare.com/mcp", "claude_plugin": "cloudflare@claude-plugins-official" },
+    "firebase": { "command": "npx", "args": ["-y", "firebase-tools@latest", "mcp"], "claude_plugin": "firebase@claude-plugins-official" },
+    "stripe": { "url": "https://mcp.stripe.com" },
+    "figma": { "url": "https://mcp.figma.com/mcp", "claude_plugin": "figma@claude-plugins-official" },
+    "mobbin": { "url": "https://api.mobbin.com/mcp" },
+    "granola": { "url": "https://mcp.granola.ai/mcp" },
+    "supermemory": { "url": "https://mcp.supermemory.ai/mcp" },
+    "context7": { "url": "https://mcp.context7.com/mcp" },
+    "expo": { "url": "https://mcp.expo.dev/mcp" },
+    "tiger-docs": { "url": "https://mcp.tigerdata.com/docs" },
+    "postgres": { "command": "uvx", "args": ["postgres-mcp", "--access-mode=restricted"], "env": { "DATABASE_URI": "postgresql://<read-only role>@<staging host>/<db>" } }
+  }
+}

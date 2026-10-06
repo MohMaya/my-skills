@@ -1,0 +1,569 @@
+/* ============================================================
+   SmartAC Ambient UI — Primitive Emulation Layer
+   ============================================================
+   Every visual element in an artifact MUST use one of these
+   classes. No custom CSS classes. No inline styles for colors,
+   borders, shadows, radii, typography.
+
+   These classes mirror the React primitives shipped in
+   @smartacteam/ambient-web. One vocabulary, two modes.
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   Base
+   ------------------------------------------------------------ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  background: var(--app-color-surface-inset);
+  color: var(--app-color-foreground-primary);
+  font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+}
+
+/* ------------------------------------------------------------
+   Surface — page backgrounds and elevation levels
+   ------------------------------------------------------------ */
+.ui-surface-inset       { background: var(--app-color-surface-inset); }
+.ui-surface-default     { background: var(--app-color-surface-default); }
+.ui-surface-elevated    { background: var(--app-color-surface-elevated); }
+.ui-surface-offset      { background: var(--app-color-surface-default-offset); }
+
+/* ------------------------------------------------------------
+   Card — the ONLY container for grouped content.
+   Mirrors <Card.Root>, <Card.Header>, <Card.Title>, etc.
+   ------------------------------------------------------------ */
+.ui-card {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 20px 0;
+  background: var(--app-color-surface-default);
+  border: 0.5px solid var(--app-color-stroke-default);
+  border-radius: var(--app-radius-lg);
+  box-shadow: var(--app-shadow-sm);
+  color: var(--app-color-foreground-primary);
+}
+
+.ui-card-header {
+  display: grid;
+  grid-auto-rows: min-content;
+  grid-template-rows: auto auto;
+  align-items: start;
+  gap: 8px;
+  padding: 0 24px;
+}
+
+.ui-card-header:has(.ui-card-action) {
+  grid-template-columns: 1fr auto;
+}
+
+.ui-card-title {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  color: var(--app-color-foreground-primary);
+}
+
+.ui-card-description {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.5;
+  color: var(--app-color-foreground-secondary);
+}
+
+.ui-card-action {
+  grid-column-start: 2;
+  grid-row: 1 / span 2;
+  align-self: start;
+  justify-self: end;
+}
+
+.ui-card-content {
+  padding: 0 24px;
+}
+
+.ui-card-footer {
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+}
+
+/* ------------------------------------------------------------
+   Button — mirrors <Button variant size>
+   ------------------------------------------------------------ */
+.ui-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 36px;
+  padding: 6px 12px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  border: 0.5px solid transparent;
+  border-radius: var(--app-radius-md);
+  background: transparent;
+  color: var(--app-color-foreground-primary);
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  transition: background-color 100ms ease-out, border-color 100ms ease-out,
+    color 100ms ease-out, transform 100ms ease-out;
+  box-shadow: var(--app-shadow-sm);
+}
+
+.ui-button:active { transform: scale(0.99); box-shadow: none; }
+.ui-button:disabled { cursor: not-allowed; opacity: 0.5; }
+.ui-button:focus-visible {
+  outline: 2px solid var(--app-color-ring-default);
+  outline-offset: 1px;
+}
+
+/* Variants */
+.ui-button-default {
+  background: var(--app-color-interactive-secondary);
+  color: var(--app-color-foreground-primary);
+  border-color: var(--app-color-stroke-default);
+}
+.ui-button-default:hover:not(:disabled) {
+  background: var(--app-color-interactive-secondary-hover);
+  border-color: var(--app-color-stroke-strong);
+}
+
+.ui-button-primary {
+  background: var(--app-color-interactive-primary);
+  color: var(--app-color-foreground-on-color);
+  border-color: transparent;
+}
+.ui-button-primary:hover:not(:disabled) {
+  background: var(--app-color-interactive-primary-hover);
+}
+
+.ui-button-ghost {
+  background: transparent;
+  color: var(--app-color-foreground-secondary);
+  border-color: transparent;
+  box-shadow: none;
+}
+.ui-button-ghost:hover:not(:disabled) {
+  background: var(--app-color-surface-inset);
+}
+
+.ui-button-text {
+  background: transparent;
+  color: var(--app-color-foreground-primary);
+  border-color: transparent;
+  box-shadow: none;
+}
+.ui-button-text:hover:not(:disabled) {
+  color: var(--app-color-foreground-secondary);
+}
+
+.ui-button-destructive {
+  background: var(--app-color-status-error-subtle);
+  color: var(--app-color-status-error-default);
+  border-color: transparent;
+}
+
+/* Sizes */
+.ui-button-sm { height: 32px; padding: 4px 8px; font-size: 14px; }
+.ui-button-lg { height: 40px; padding: 6px 12px; font-size: 16px; }
+.ui-button-icon { height: 36px; width: 36px; padding: 0; }
+.ui-button-icon-sm { height: 32px; width: 32px; padding: 0; }
+
+/* ------------------------------------------------------------
+   Badge — status chips and counts. NEVER use raw <span> for
+   statuses.
+   ------------------------------------------------------------ */
+.ui-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 2px 8px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  border: 0.5px solid transparent;
+  border-radius: var(--app-radius-sm);
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.ui-badge-sm { font-size: 12px; padding: 2px 6px; }
+
+/* Status variants */
+.ui-badge-default {
+  background: var(--app-color-surface-default);
+  color: var(--app-color-foreground-secondary);
+  border-color: var(--app-color-stroke-default);
+}
+.ui-badge-success {
+  background: var(--app-color-status-success-subtle);
+  color: var(--app-color-status-success-default);
+  border-color: var(--app-color-status-success-border);
+}
+.ui-badge-warning {
+  background: var(--app-color-status-warning-subtle);
+  color: var(--app-color-status-warning-default);
+  border-color: var(--app-color-status-warning-border);
+}
+.ui-badge-error {
+  background: var(--app-color-status-error-subtle);
+  color: var(--app-color-status-error-default);
+  border-color: var(--app-color-status-error-border);
+}
+.ui-badge-info {
+  background: var(--app-color-status-info-subtle);
+  color: var(--app-color-status-info-default);
+  border-color: var(--app-color-status-info-border);
+}
+
+/* Count variant — no border, stronger surface */
+.ui-badge-count {
+  border: 0;
+  background: var(--app-color-surface-default-offset);
+  color: var(--app-color-foreground-secondary);
+}
+
+/* ------------------------------------------------------------
+   Stat — the KPI / metric display primitive. This is the ONLY
+   approved way to display a large number with a label.
+   ------------------------------------------------------------ */
+.ui-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ui-stat-label {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  color: var(--app-color-foreground-secondary);
+  text-transform: none;
+}
+
+.ui-stat-value {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.167;
+  letter-spacing: -0.01em;
+  color: var(--app-color-foreground-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.ui-stat-value-lg {
+  font-size: 32px;
+  line-height: 1.167;
+}
+
+.ui-stat-delta {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--app-color-foreground-secondary);
+}
+.ui-stat-delta-positive { color: var(--app-color-status-success-default); }
+.ui-stat-delta-negative { color: var(--app-color-status-error-default); }
+.ui-stat-delta-warning  { color: var(--app-color-status-warning-default); }
+
+/* ------------------------------------------------------------
+   Separator
+   ------------------------------------------------------------ */
+.ui-separator {
+  height: 1px;
+  width: 100%;
+  background: var(--app-color-stroke-default);
+  border: 0;
+}
+.ui-separator-vertical {
+  width: 1px;
+  height: auto;
+  align-self: stretch;
+}
+
+/* ------------------------------------------------------------
+   Input — mirrors <Input>
+   ------------------------------------------------------------ */
+.ui-input {
+  width: 100%;
+  height: 36px;
+  padding: 6px 12px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  color: var(--app-color-foreground-primary);
+  background: var(--app-color-surface-default);
+  border: 0.5px solid var(--app-color-stroke-default);
+  border-radius: var(--app-radius-md);
+  box-shadow: var(--app-shadow-sm);
+  transition: border-color 100ms ease-out, box-shadow 100ms ease-out;
+}
+.ui-input::placeholder { color: var(--app-color-foreground-secondary); }
+.ui-input:focus-visible {
+  outline: none;
+  border-color: var(--app-color-ring-default);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--app-color-ring-default) 20%, transparent);
+}
+
+.ui-label {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--app-color-foreground-primary);
+}
+
+/* ------------------------------------------------------------
+   Table — mirrors <Table>/<DataTable>
+   ------------------------------------------------------------ */
+.ui-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  color: var(--app-color-foreground-primary);
+}
+.ui-table thead th {
+  text-align: left;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--app-color-foreground-secondary);
+  padding: 10px 12px;
+  border-bottom: 0.5px solid var(--app-color-stroke-default);
+  background: var(--app-color-surface-default);
+}
+.ui-table tbody td {
+  padding: 12px;
+  border-bottom: 0.5px solid var(--app-color-stroke-default);
+  font-weight: 300;
+  vertical-align: middle;
+}
+.ui-table tbody tr:last-child td { border-bottom: 0; }
+.ui-table tbody tr:hover td { background: var(--app-color-surface-inset); }
+
+/* ------------------------------------------------------------
+   Sidebar / App shell scaffolding
+   ------------------------------------------------------------ */
+.ui-sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 240px;
+  height: 100vh;
+  background: var(--app-color-surface-default);
+  border-right: 0.5px solid var(--app-color-stroke-default);
+}
+.ui-sidebar-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 56px;
+  padding: 0 16px;
+  border-bottom: 0.5px solid var(--app-color-stroke-default);
+  font-size: 14px;
+  font-weight: 400;
+}
+.ui-sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  margin: 2px 8px;
+  border-radius: var(--app-radius-md);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--app-color-foreground-secondary);
+  text-decoration: none;
+  cursor: pointer;
+}
+.ui-sidebar-item:hover { background: var(--app-color-surface-inset); color: var(--app-color-foreground-primary); }
+.ui-sidebar-item.is-active {
+  background: var(--app-color-surface-inset);
+  color: var(--app-color-foreground-primary);
+  font-weight: 400;
+}
+
+.ui-app-header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  height: 56px;
+  padding: 0 20px 0 8px;
+  gap: 8px;
+  background: var(--app-color-surface-default);
+  border-bottom: 0.5px solid var(--app-color-stroke-default);
+  z-index: 10;
+}
+
+/* ------------------------------------------------------------
+   Typography primitives — these are the ONLY approved sizes.
+   Minimum size is 12px (ui-text-xs). Do not go smaller.
+   ------------------------------------------------------------ */
+.ui-text-2xl { font-size: 24px; line-height: 1.167; font-weight: 500; letter-spacing: -0.01em; }
+.ui-text-xl  { font-size: 20px; line-height: 1.167; font-weight: 500; letter-spacing: -0.01em; }
+.ui-text-lg  { font-size: 18px; line-height: 1.167; font-weight: 500; letter-spacing: -0.01em; }
+.ui-text-md  { font-size: 16px; line-height: 1.5; font-weight: 300; }
+.ui-text-sm  { font-size: 14px; line-height: 1.5; font-weight: 300; }
+.ui-text-xs  { font-size: 12px; line-height: 1.5; font-weight: 300; }
+
+.ui-font-normal { font-weight: 300; }
+.ui-font-medium { font-weight: 400; }
+.ui-font-bold   { font-weight: 500; }
+
+.ui-text-primary   { color: var(--app-color-foreground-primary); }
+.ui-text-secondary { color: var(--app-color-foreground-secondary); }
+.ui-text-inverse   { color: var(--app-color-foreground-inverse); }
+.ui-text-on-color  { color: var(--app-color-foreground-on-color); }
+
+.ui-text-success { color: var(--app-color-status-success-default); }
+.ui-text-warning { color: var(--app-color-status-warning-default); }
+.ui-text-error   { color: var(--app-color-status-error-default); }
+.ui-text-info    { color: var(--app-color-status-info-default); }
+
+.ui-tabular { font-variant-numeric: tabular-nums; }
+
+/* ------------------------------------------------------------
+   Icon — for HTML artifacts, ship inline SVG. Never use emoji
+   or HTML entities (&#9654;, &#10005;, ▶, ✕, ⚠) as iconography.
+   Size with .ui-icon-{4,5,6} (in px × 4).
+   ------------------------------------------------------------ */
+.ui-icon    { display: inline-block; flex-shrink: 0; vertical-align: middle; }
+.ui-icon-3  { width: 12px; height: 12px; }
+.ui-icon-4  { width: 16px; height: 16px; }
+.ui-icon-5  { width: 20px; height: 20px; }
+.ui-icon-6  { width: 24px; height: 24px; }
+
+/* Icon color follows text color by default */
+.ui-icon { color: inherit; }
+.ui-icon svg { display: block; width: 100%; height: 100%; }
+
+/* ------------------------------------------------------------
+   Chart / dataviz swatches — use these for ANY colored chart
+   segment, legend dot, or stacked bar slice. Removes the excuse
+   to inline `style="background: var(--primitives-color-dataviz-…)"`.
+
+   Series (ordinal, for ranked categories): .ui-swatch-series-1 … -8
+   Qualitative (discrete, for unordered categories):
+     .ui-swatch-qual-0, -10, -20, -30, -40, -50, -60, -70, -80, -90, -100
+   ------------------------------------------------------------ */
+.ui-swatch-series-1 { background: var(--primitives-color-dataviz-series-1); }
+.ui-swatch-series-2 { background: var(--primitives-color-dataviz-series-2); }
+.ui-swatch-series-3 { background: var(--primitives-color-dataviz-series-3); }
+.ui-swatch-series-4 { background: var(--primitives-color-dataviz-series-4); }
+.ui-swatch-series-5 { background: var(--primitives-color-dataviz-series-5); }
+.ui-swatch-series-6 { background: var(--primitives-color-dataviz-series-6); }
+.ui-swatch-series-7 { background: var(--primitives-color-dataviz-series-7); }
+.ui-swatch-series-8 { background: var(--primitives-color-dataviz-series-8); }
+
+.ui-swatch-qual-0   { background: var(--primitives-color-dataviz-qualitative-0); }
+.ui-swatch-qual-10  { background: var(--primitives-color-dataviz-qualitative-10); }
+.ui-swatch-qual-20  { background: var(--primitives-color-dataviz-qualitative-20); }
+.ui-swatch-qual-30  { background: var(--primitives-color-dataviz-qualitative-30); }
+.ui-swatch-qual-40  { background: var(--primitives-color-dataviz-qualitative-40); }
+.ui-swatch-qual-50  { background: var(--primitives-color-dataviz-qualitative-50); }
+.ui-swatch-qual-60  { background: var(--primitives-color-dataviz-qualitative-60); }
+.ui-swatch-qual-70  { background: var(--primitives-color-dataviz-qualitative-70); }
+.ui-swatch-qual-80  { background: var(--primitives-color-dataviz-qualitative-80); }
+.ui-swatch-qual-90  { background: var(--primitives-color-dataviz-qualitative-90); }
+.ui-swatch-qual-100 { background: var(--primitives-color-dataviz-qualitative-100); }
+
+/* Legend dot (8px square) — pairs with a .ui-swatch-* class */
+.ui-swatch-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: var(--app-radius-sm);
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+
+/* Chart legend row — horizontal list of swatch + label pairs */
+.ui-chart-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 16px;
+  align-items: center;
+}
+.ui-chart-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--app-color-foreground-secondary);
+}
+
+/* Horizontal stacked bar — container + segment. Width of each
+   segment is set inline (layout only: style="width: 42%"). */
+.ui-bar-stack {
+  display: flex;
+  width: 100%;
+  height: 16px;
+  background: var(--app-color-surface-inset);
+  border-radius: var(--app-radius-sm);
+  overflow: hidden;
+}
+.ui-bar-stack-sm { height: 12px; }
+.ui-bar-stack-lg { height: 20px; }
+
+.ui-bar-segment {
+  height: 100%;
+  min-width: 0;
+}
+.ui-bar-segment:first-child { border-top-left-radius: inherit; border-bottom-left-radius: inherit; }
+.ui-bar-segment:last-child  { border-top-right-radius: inherit; border-bottom-right-radius: inherit; }
+
+/* Simple progress bar — like ui-bar-stack but single filled segment.
+   Use .ui-progress-track as container, .ui-progress-fill inside. */
+.ui-progress-track {
+  position: relative;
+  width: 100%;
+  height: 6px;
+  background: var(--app-color-surface-inset);
+  border-radius: var(--app-radius-full);
+  overflow: hidden;
+}
+.ui-progress-track-lg { height: 8px; }
+.ui-progress-fill {
+  height: 100%;
+  background: var(--app-color-interactive-primary);
+  border-radius: inherit;
+}
+.ui-progress-fill-success { background: var(--app-color-status-success-default); }
+.ui-progress-fill-warning { background: var(--app-color-status-warning-default); }
+.ui-progress-fill-error   { background: var(--app-color-status-error-default); }
+
+/* Expected-pace marker for progress bars — vertical tick at a %
+   position. Use `style="left: 24.7%"` for the position only. */
+.ui-progress-marker {
+  position: absolute;
+  top: -3px;
+  bottom: -3px;
+  width: 2px;
+  background: var(--app-color-foreground-secondary);
+  border-radius: 1px;
+  pointer-events: none;
+}
