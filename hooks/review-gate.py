@@ -101,6 +101,7 @@ GIT = (
 GIT_VERB = re.compile(PREFIX + GIT + r"\s+(commit|push)(?=[\s;&|)'\"]|$)", re.MULTILINE)
 GH_PR_CREATE = re.compile(PREFIX + r"gh\s+pr\s+create\b", re.MULTILINE)
 GIT_ADD = re.compile(PREFIX + GIT + r"\s+add(?=[\s;&|)'\"]|$)", re.MULTILINE)
+REDIRECTION = re.compile(r"(?<!\S)(?:\d*|&)(?:>>?|<)(?:&\d+|\s*[^\s;&|]+)?")
 CD = re.compile(PREFIX + r"cd\s+(\"[^\"]*\"|'[^']*'|[^\s;&|)]+)", re.MULTILINE)
 COMMIT_VALUE_FLAGS = {
     "-m", "--message", "-F", "--file", "-C", "-c", "--reuse-message", "--reedit-message",
@@ -482,7 +483,11 @@ def shell_words(text: str) -> list[str]:
 
 
 def clause(command: str, start: int) -> list[str]:
-    return shell_words(re.split(r"[;&|)]", command[start:], maxsplit=1)[0])
+    """The words of one simple command, without shell redirections such as `2>&1`."""
+    text = REDIRECTION.sub(
+        " ", re.split(r"[;|)]|&&|(?<![<>])&(?![\d>])", command[start:], maxsplit=1)[0]
+    )
+    return shell_words(text)
 
 
 def directory_at(command: str, cwd: Path, end: int) -> Path:

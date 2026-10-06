@@ -730,6 +730,35 @@ class RoundSixTest(Gate):
         self.assertIn("could not list", str(out.get("reason")))
 
 
+class RedirectionTest(Gate):
+    def test_shell_redirections_are_not_refspecs_or_pathspecs(self) -> None:
+        remote = Path(self.tmp.name) / "remote.git"
+        git(self.repo, "init", "-q", "--bare", str(remote))
+        git(self.repo, "remote", "add", "origin", str(remote))
+        git(self.repo, "push", "-q", "-u", "origin", "main")
+        (self.repo / "app.py").write_text("x = 2\n")
+        git(self.repo, "add", "-A")
+        self.record("excellent", "--index")
+        for command in (
+            "git commit -m x 2>&1",
+            "git commit -m x > /dev/null",
+            "git commit -m x 2>err.log",
+        ):
+            with self.subTest(command=command):
+                self.assertEqual(self.tool(command).returncode, 0)
+        sha = self.commit_all("reviewed")
+        self.record("excellent", "--commit", sha)
+        for command in (
+            "git push origin main 2>&1",
+            "git push 2>/dev/null",
+            "git push origin main >> push.log",
+            "git push origin main &> push.log",
+            "git push origin main &",
+        ):
+            with self.subTest(command=command):
+                self.assertEqual(self.tool(command).returncode, 0)
+
+
 class SandboxTest(Gate):
     def test_a_review_the_sandbox_cannot_store_is_queued_and_filed_at_the_next_hook(
         self,
