@@ -82,6 +82,7 @@ Price every hop before judging a design. Orders of magnitude:
 - **Stringly typed domain**: statuses, IDs of different entities, money, and times as bare strings or numbers. → Domain types parsed once at the boundary. (King)
 - **Validation that returns nothing**, leaving data in its weak type. → A parser that returns a stronger type. (King)
 - **Shotgun parsing**: checks scattered through processing. → Parse everything up front, then process trusted types. (King)
+- **Hand-rolled check beside an existing parser** for the same value (an ID, email, money amount). → Reuse the codebase's parser; search for one by the value's type and format before accepting a new check. (King)
 - **Illegal states representable**: two nullable fields where exactly one must be set, flags that contradict. → A tagged union or a state machine. (King)
 - **Swallowed error**: empty catch, catch-and-log, ignored return codes. Mishandled errors are behind most catastrophic failures. → Handle it or fail loudly with a specific message. (Luu-testing)
 - **Global mutable state or singletons.** → Values passed explicitly; dependencies injected. (Hickey)
