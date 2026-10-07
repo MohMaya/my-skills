@@ -464,6 +464,40 @@ class CommitsOffTheMainLineTest(Gate):
         git(self.repo, "pull", "-q", "--ff-only")
         self.assertEqual(self.stop(), {})
 
+    def test_work_merged_to_the_default_branch_during_the_turn_is_not_gated(
+        self,
+    ) -> None:
+        remote = Path(self.tmp.name) / "remote.git"
+        git(self.repo, "init", "-q", "--bare", str(remote))
+        git(self.repo, "remote", "add", "origin", str(remote))
+        git(self.repo, "push", "-q", "-u", "origin", "main")
+        git(self.repo, "remote", "set-head", "origin", "main")
+        teammate = Path(self.tmp.name) / "teammate"
+        git(Path(self.tmp.name), "clone", "-q", str(remote), str(teammate))
+        git(teammate, "config", "user.email", "o@example.com")
+        git(teammate, "config", "user.name", "O")
+        self.prompt()
+        (teammate / "other.py").write_text("z = 1\n")
+        self.commit_all("their work, merged while the turn runs", teammate)
+        git(teammate, "push", "-q")
+        git(self.repo, "pull", "-q", "--ff-only")
+        self.assertEqual(self.stop(), {})
+
+    def test_a_commit_pushed_to_a_side_branch_during_the_turn_is_still_gated(
+        self,
+    ) -> None:
+        remote = Path(self.tmp.name) / "remote.git"
+        git(self.repo, "init", "-q", "--bare", str(remote))
+        git(self.repo, "remote", "add", "origin", str(remote))
+        git(self.repo, "push", "-q", "-u", "origin", "main")
+        git(self.repo, "remote", "set-head", "origin", "main")
+        self.prompt()
+        git(self.repo, "switch", "-q", "-c", "feat")
+        (self.repo / "feature.py").write_text("f = 1\n")
+        self.commit_all("feature")
+        git(self.repo, "push", "-q", "-u", "origin", "feat")
+        self.assertEqual(self.stop().get("decision"), "block")
+
     def test_a_rebased_commit_needs_its_own_review(self) -> None:
         git(self.repo, "switch", "-q", "-c", "feat")
         (self.repo / "feature.py").write_text("f = 1\n")

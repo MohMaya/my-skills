@@ -30,9 +30,12 @@ repo's own core.hooksPath (husky) silently replaces it and it would gate Shiv's
 commits too, so the outcome check at stop is the guarantee instead. That check
 sees a push only after it happened: a push from a script ships, and the turn
 then blocks on it. A commit that reached a remote during the turn counts unless
-its committer date predates the turn, so pulled work made before the turn
-passes, while a teammate's commit made during the turn and pulled is flagged,
-and a backdated commit pushed from a script is missed. Commit times have
+its committer date predates the turn or it sits on a remote's default branch
+(`refs/remotes/<remote>/HEAD`), so pulled work passes, including a teammate's
+merge to main made during the turn. A teammate's commit pulled from any other
+branch during the turn is flagged, a backdated commit pushed from a script is
+missed, and so is a commit a script pushes straight to the default branch,
+which the pre-tool push check sees only when the push is a visible command. Commit times have
 one-second precision, so a pulled commit made in the second the turn began
 counts as the turn's. With reflogs off, commits made on a detached HEAD or reset
 away are missed. A first push to a remote with no tracking refs is judged on its
@@ -397,8 +400,9 @@ def turn_branches(root: Path, base: dict[str, Any]) -> list[str]:
 def new_commits(root: Path, base: dict[str, Any]) -> list[str] | None:
     """Commits that appeared since the baseline on any branch of this session, on a
     detached HEAD, or since reset away. One that already sits on a remote counts only
-    if it was made during the turn, so pulled work passes and pushed work does not.
-    None when git cannot list them, which the caller treats as unreviewed."""
+    if it was made during the turn and is not on a remote's default branch, so pulled
+    work passes, including work merged to main while the turn ran, and pushed work
+    does not. None when git cannot list them, which the caller treats as unreviewed."""
     heads = turn_branches(root, base) + (["HEAD"] if rev(root, "HEAD") else [])
     sources = heads + head_reflog_since(root, int(base.get("time", 0)))
     if not sources:
@@ -410,11 +414,28 @@ def new_commits(root: Path, base: dict[str, Any]) -> list[str] | None:
         root, "rev-list", "--stdin", *sources, "--not", "--remotes", stdin=known
     )
     made = git(root, "log", "--stdin", "--format=%H %ct", *sources, stdin=known)
-    if local is None or made is None:
+    defaults = default_branches(root)
+    off_default = git(
+        root, "rev-list", "--stdin", *sources, "--not", *defaults, stdin=known
+    )
+    if local is None or made is None or off_default is None:
         return None
     rows = (line.split() for line in made.splitlines())
     since, unpushed = int(base.get("time", 0)), set(local.split())
-    return [c for c, ct in rows if c in unpushed or int(ct) >= since]
+    not_on_default = set(off_default.split())
+    return [
+        c
+        for c, ct in rows
+        if c in unpushed or (int(ct) >= since and c in not_on_default)
+    ]
+
+
+def default_branches(root: Path) -> list[str]:
+    """Each remote's default branch, as `refs/remotes/<remote>/HEAD` names it. Work that
+    reached one arrived through that branch's own review, so a turn that pulls or
+    rebases onto it is not credited with it."""
+    out = git(root, "for-each-ref", "--format=%(symref)", "refs/remotes/*/HEAD")
+    return [ref for ref in words(out) if ref]
 
 
 def uncommitted_problem(root: Path, base: dict[str, Any] | None) -> str | None:
