@@ -5,8 +5,8 @@
 # containing n after `commit` (-n is --no-verify); and core.hooksPath
 # overrides. The match is textual and fails safe: a commit message that
 # quotes a flag is blocked too. Adapted from wshobson/agents block-no-verify.
-# Registered by ~/.agents/sync.sh as a PreToolUse Bash hook in Claude Code and
-# Codex; exit 2 blocks the command in both.
+# Registered by ~/.agents/sync.sh as a PreToolUse Bash hook in Claude Code;
+# exit 2 blocks the command.
 
 set -u
 

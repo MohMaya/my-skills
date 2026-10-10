@@ -1,6 +1,6 @@
 # ~/.agents
 
-One agent setup for Claude Code and Codex.
+One agent setup for Claude Code.
 
 ## New machine
 
@@ -9,10 +9,7 @@ git clone https://github.com/MohMaya/my-skills.git ~/.agents
 bash ~/.agents/sync.sh
 ```
 
-Then, once per machine:
-
-1. In Codex, run `/hooks` and trust our hooks.
-2. Add the MCP servers this machine needs in each harness. `mcp.json` records every server's URL, and which Claude plugin provides it.
+Then, once per machine, add the MCP servers it needs. `mcp.json` records every server's URL, and which Claude plugin provides it.
 
 Update third-party skills with `npx skills@latest update -g`, then commit `skills/` and `.skill-lock.json`.
 
@@ -23,7 +20,7 @@ Re-run `sync.sh` after every `git pull`. It is safe to repeat. It runs `claude-s
 | Path | Holds |
 | ---- | ----- |
 | `AGENTS.md` | The kernel every harness loads: only what a model cannot infer |
-| `skills/` | 60 skills both harnesses share: ours plus Matt Pocock's full set, pinned in `.skill-lock.json` |
+| `skills/` | 60 skills: ours plus Matt Pocock's full set, pinned in `.skill-lock.json` |
 | `hooks/` | Turn-end gate (lint, types, complexity ratchet), bar-raiser review gate, git-bypass guard, secret-path guard |
 | `claude/` | Claude Code subagents (`agents/`), settings every machine shares, merged key by key (Opus main, Sonnet subagents, Fable advisor), and the status line |
 | `claude-setup-sync.sh` | Applies `claude/`, installs the shared plugins, and installs the Python packages plugin servers need |
@@ -34,7 +31,7 @@ Re-run `sync.sh` after every `git pull`. It is safe to repeat. It runs `claude-s
 ## Measuring a change
 
 ```sh
-python3 evals/run.py claude    # or codex
+python3 evals/run.py claude
 ```
 
 Compare pass rate, diff size, and complexity violations in `evals/results.jsonl` against the `oracle` (the human commit) and `none` (no change) rows.

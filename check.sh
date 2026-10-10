@@ -8,7 +8,7 @@ set -euo pipefail
 cd "$(dirname "$0")"
 
 home='(~|\$HOME)/'
-owned='\.(agents|claude|codex|supermemory-claude)([/.,;:]|$)'
+owned='\.(agents|claude|supermemory-claude)([/.,;:]|$)'
 paths="(${home}[A-Za-z0-9._-][^[:space:]\`\"')]*|/(Users|home|Volumes|opt|private)/[A-Za-z0-9][^[:space:]\`\"')]*|[A-Z]:\\\\[^[:space:]\`\"')]*)"
 
 found=$(git grep --untracked -nIoE "$paths" -- . ':!check.sh' \
@@ -16,7 +16,7 @@ found=$(git grep --untracked -nIoE "$paths" -- . ':!check.sh' \
 
 if [ -n "$found" ]; then
   printf '%s\n' "$found" >&2
-  echo "machine-specific paths above: use ~/.agents, ~/.claude, ~/.codex, a repo-relative path, or a URL" >&2
+  echo "machine-specific paths above: use ~/.agents, ~/.claude, a repo-relative path, or a URL" >&2
   exit 1
 fi
 echo "portable: no machine-specific paths"

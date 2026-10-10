@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Bar-raiser review gate for Claude Code and Codex hooks.
+"""Bar-raiser review gate for Claude Code hooks.
 
 A snapshot is a git tree: the working tree as `git add -A` would stage it, the
 index, or a commit's tree. A review is <git-common-dir>/bar-raiser/<tree>.md,
@@ -10,8 +10,8 @@ cherry-pick that rewrites commits needs each new commit reviewed.
 Hook modes (sync.sh passes the event, so it never depends on payload fields):
 
   prompt    Files queued reviews, and turns a below-bar review into an accepted
-            one when Shiv's prompt says `accept <snapshot>`. Codex takes the
-            turn baseline here. With --first-touch (Claude Code) the baseline
+            one when Shiv's prompt says `accept <snapshot>`. Without --first-touch
+            the turn baseline is taken here. With --first-touch the baseline
             is taken at the turn's first tool call, so edits Shiv makes himself,
             including `!` shell commands, never count as the agent's. A prompt
             that arrives mid-turn keeps the open baseline.
@@ -72,7 +72,7 @@ OPEN_TURN_SECONDS = 15 * 60
 COMMITTABLE = ("excellent", "accepted")
 REQUIRED_LINES = ("Snapshot", "Verdict", "Skills", "Tests")
 STALE_DAYS = {"sessions": 7, "reviews": 365}
-# Codex's sandbox cannot write .git, so `record` queues there and a hook files it.
+# A sandbox that cannot write .git makes `record` queue there; a hook files it.
 INBOX = Path(
     os.environ.get("REVIEW_GATE_INBOX") or f"/tmp/agent-review-inbox-{os.getuid()}"
 )

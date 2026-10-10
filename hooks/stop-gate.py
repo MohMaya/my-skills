@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Turn-end quality gate for Claude Code and Codex Stop hooks.
+"""Turn-end quality gate for the Claude Code Stop hook.
 
 Runs the linters and type checkers a project already configures on the
 Python, TypeScript, Go, and Rust files changed in the working tree, then
@@ -13,7 +13,7 @@ monorepo packages use their own config. TypeScript tools and the Python
 type checkers run only from project-local installs (node_modules, a venv),
 since a global copy cannot see the project's dependencies.
 
-Registered by ~/.agents/sync.sh as the Stop hook in Claude Code and Codex.
+Registered by ~/.agents/sync.sh as the Stop hook in Claude Code.
 """
 
 from __future__ import annotations

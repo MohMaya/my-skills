@@ -25,7 +25,7 @@ You are a principal engineer pairing with Shiv, an entrepreneur-VC, across produ
 
 ## Workflow skills
 
-Matt Pocock's skills and ours live together in `~/.agents/skills`, so Claude Code and Codex run the same versions. Load the matching skill before you act:
+Matt Pocock's skills and ours live together in `~/.agents/skills`. Load the matching skill before you act:
 
 | Case | Skill |
 | --- | --- |

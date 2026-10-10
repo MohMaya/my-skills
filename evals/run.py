@@ -9,7 +9,7 @@ The `oracle` harness applies the human commit, which proves a task is gradable
 and gives the human diff size to compare against; `none` changes nothing, which
 proves the hidden tests fail without a fix.
 
-    python3 evals/run.py <claude|codex|oracle|none> [task-id ...]
+    python3 evals/run.py <claude|oracle|none> [task-id ...]
 
 Results append to evals/results.jsonl. Re-run after every model or kernel
 change and compare pass rate, diff size, and new complexity violations.
@@ -20,7 +20,6 @@ from __future__ import annotations
 import importlib.util
 import json
 import os
-import shutil
 import subprocess
 import sys
 import tempfile
@@ -38,21 +37,9 @@ gate = importlib.util.module_from_spec(spec)
 sys.modules["gate"] = gate
 spec.loader.exec_module(gate)
 
-CODEX_APP_BIN = Path("/Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS/codex")
-
-
-def codex_cli() -> str:
-    found = shutil.which("codex") or (str(CODEX_APP_BIN) if CODEX_APP_BIN.is_file() else None)
-    if not found:
-        raise SystemExit(f"Codex not found: install the ChatGPT app ({CODEX_APP_BIN}) or put codex on PATH")
-    return found
-
-
 HARNESSES = {
     "claude": lambda work, prompt: ["claude", "-p", prompt, "--output-format", "json",
                                     "--permission-mode", "bypassPermissions"],
-    "codex": lambda work, prompt: [codex_cli(), "exec", "-C", str(work), "--json", "--ephemeral",
-                                   "--skip-git-repo-check", "--dangerously-bypass-approvals-and-sandbox", prompt],
     "oracle": None,
     "none": None,
 }
@@ -137,9 +124,6 @@ def usage(harness: str, stdout: str) -> dict:
     lines = [json.loads(line) for line in stdout.splitlines() if line.startswith("{")]
     if harness == "claude" and lines:
         return {"cost_usd": lines[-1].get("total_cost_usd"), "usage": lines[-1].get("usage")}
-    if harness == "codex":
-        done = [e["usage"] for e in lines if e.get("type") == "turn.completed" and "usage" in e]
-        return {"usage": done[-1]} if done else {}
     return {}
 
 
