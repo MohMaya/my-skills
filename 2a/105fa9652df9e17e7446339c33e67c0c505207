@@ -1,0 +1,33 @@
+check.sh
+  s_770d333931f40d::t_d1aaf159087083 11,19
+AGENTS.md
+  s_770d333931f40d::t_d1aaf159087083 28
+evals/run.py
+  s_770d333931f40d::t_d1aaf159087083 12
+hooks/review-gate.py
+  s_770d333931f40d::t_d1aaf159087083 2,13-14,75
+hooks/stop-gate.py
+  s_770d333931f40d::t_d1aaf159087083 2,16
+sync.sh
+  s_770d333931f40d::t_d1aaf159087083 2,11,62,64,69-71,75-77,79,82,101-105,111,124-138,144,149
+hooks/block-no-verify.sh
+  s_770d333931f40d::t_d1aaf159087083 8-9
+README.md
+  s_770d333931f40d::t_d1aaf159087083 3,12,23,34
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "2a105fa9652df9e17e7446339c33e67c0c505207",
+  "prompts": {},
+  "sessions": {
+    "s_770d333931f40d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "500d8f7f-fce3-4d43-901a-4df47467897a",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Shivanshu Chaudhary <shivanshuchaudhary97@gmail.com>"
+    }
+  }
+}
