@@ -1,0 +1,49 @@
+hooks/test_review_gate.py
+  s_770d333931f40d::t_12087bb82777e1 469
+  s_770d333931f40d::t_64b36f6cb04e72 473
+  s_770d333931f40d::t_529f45f7ce586e 440-446
+  s_770d333931f40d::t_db65dff3d2a9d8 436-438
+  s_770d333931f40d::t_bde8ccc0795d75 462-468,470-472,474-479
+  s_770d333931f40d::t_b006d4bce9d28a 410-435,439,447-451,454-458,460-461
+  s_770d333931f40d::t_4ee6dfe18ba1a1 452-453,459
+README.md
+  s_770d333931f40d::t_2778a1c25ac3b3 5
+  s_770d333931f40d::t_c1ae57ba833ae4 3-4
+hooks/review-gate.py
+  s_770d333931f40d::t_5e6495b2bf4b7d 680-684,689-690
+  s_770d333931f40d::t_6f0277108cf2f4 685-688,691-692
+check.sh
+  s_770d333931f40d::t_a56f9d44a6bfcd 23-25
+test_link_kernel.sh
+  s_770d333931f40d::t_d83e10e2fd5594 1-45
+hooks/test_stop_gate.py
+  s_770d333931f40d::t_99e60708312740 1-32,37-42
+  s_770d333931f40d::t_b37b51bc2452e4 36
+  s_770d333931f40d::t_b9fe462f0bf0d2 33-35
+hooks/stop-gate.py
+  s_770d333931f40d::t_6f0277108cf2f4 453-455
+  s_770d333931f40d::t_5e6495b2bf4b7d 446-449,451
+sync.sh
+  s_770d333931f40d::t_b333d04b91eb70 79,91
+  s_770d333931f40d::t_51727012293908 83,86-87,90
+  s_770d333931f40d::t_64b36f6cb04e72 85
+  s_770d333931f40d::t_613f76015c3afc 13,80-81
+  s_770d333931f40d::t_70511b4054e297 2,4,8,11-12,88-89,92
+  s_770d333931f40d::t_c5f7a3e2f85c42 14
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "99d87f15c5fed7b615f7f1fb72038e5eee5330d9",
+  "prompts": {},
+  "sessions": {
+    "s_770d333931f40d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "500d8f7f-fce3-4d43-901a-4df47467897a",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Shivanshu Chaudhary <shivanshuchaudhary97@gmail.com>"
+    }
+  }
+}
