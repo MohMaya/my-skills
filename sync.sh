@@ -1,12 +1,16 @@
 #!/usr/bin/env bash
-# Wire ~/.agents into Claude Code. Safe to re-run.
+# Wire ~/.agents into Claude Code and Cursor. Safe to re-run.
 #
-#   kernel  AGENTS.md  Claude: import in ~/.claude/CLAUDE.md
+#   kernel  AGENTS.md  ~/.claude/CLAUDE.md link
 #   skills  skills/    Claude: links in ~/.claude/skills
 #   agents  claude/agents/  Claude: links in ~/.claude/agents
 #   hooks   hooks/     turn-end gate, bar-raiser review gate, git-bypass guard,
-#                      and secret-path guard
+#                      and secret-path guard, in ~/.claude/settings.json
 #   claude  claude-setup-sync.sh: settings, plugins, plugin runtimes
+#
+# Cursor reads ~/.agents/skills itself, and imports ~/.claude/CLAUDE.md and
+# the hooks in ~/.claude/settings.json while its "Include third-party
+# Plugins, Skills, and other configs" setting is on (the default).
 #
 # MCP servers are configured per machine; mcp.json records
 # them and is not synced. Adds what is missing and replaces only entries it
@@ -72,11 +76,20 @@ retire_pstack() {
   fi
 }
 
+# Cursor reads CLAUDE.md, and nothing documents it following @-imports, so the
+# kernel is linked in. A CLAUDE.md with Shiv's own content stays, and imports
+# the kernel instead.
 link_kernel() {
-  local md="$HOME/.claude/CLAUDE.md"
+  local md="$HOME/.claude/CLAUDE.md" kernel=../.agents/AGENTS.md
   mkdir -p "$HOME/.claude"
-  grep -qsE '^@.*AGENTS\.md$' "$md" || printf '@~/.agents/AGENTS.md\n' >> "$md"
-  echo "kernel: Claude import"
+  if [ "$md" -ef "$A/AGENTS.md" ] || { [ -L "$md" ] && [ ! -e "$md" ]; } \
+    || ! grep -qsvE '^(@.*AGENTS\.md)?$' "$md"; then
+    ln -sfn "$kernel" "$md"
+    echo "kernel: ~/.claude/CLAUDE.md linked"
+  else
+    grep -qsE '^@.*AGENTS\.md$' "$md" || printf '@~/.agents/AGENTS.md\n' >> "$md"
+    echo "kernel: $md has its own content; kernel imported, which Cursor may not follow" >&2
+  fi
 }
 
 # Rewrite our entries in Claude Code's hook config. An entry is ours when its

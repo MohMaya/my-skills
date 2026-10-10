@@ -677,7 +677,19 @@ def read_payload() -> Payload:
         payload = json.load(sys.stdin)
     except ValueError:
         return {}
-    return payload if isinstance(payload, dict) else {}
+    return with_cwd(payload) if isinstance(payload, dict) else {}
+
+
+def with_cwd(payload: Payload) -> Payload:
+    """Cursor runs Claude Code hooks from ~/.claude with an empty cwd: a shell
+    tool's own cwd, taken relative to the first workspace root, names the
+    repository, else that root does."""
+    roots = payload.get("workspace_roots")
+    root = roots[0] if isinstance(roots, list) and roots and isinstance(roots[0], str) else ""
+    tool = payload.get("tool_input")
+    shell_cwd = tool.get("cwd") if isinstance(tool, dict) else None
+    shell = str(Path(root) / shell_cwd) if isinstance(shell_cwd, str) and shell_cwd else ""
+    return {**payload, "cwd": payload.get("cwd") or shell or root}
 
 
 def hook_pre_tool(payload: Payload, first_touch: bool) -> int:

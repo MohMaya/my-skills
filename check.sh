@@ -20,3 +20,6 @@ if [ -n "$found" ]; then
   exit 1
 fi
 echo "portable: no machine-specific paths"
+
+bash test_link_kernel.sh >/dev/null || { bash test_link_kernel.sh | grep FAIL >&2; exit 1; }
+echo "link_kernel: every CLAUDE.md state handled"

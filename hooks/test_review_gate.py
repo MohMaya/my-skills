@@ -407,6 +407,76 @@ class FirstTouchTest(Gate):
         self.assertEqual(self.stop(), {})
 
 
+class CursorTest(Gate):
+    """Cursor runs Claude Code hooks from ~/.claude with an empty cwd and names
+    the project only in workspace_roots."""
+
+    first_touch = True
+
+    def hook(self, mode: str, **payload: object) -> subprocess.CompletedProcess[str]:
+        body = {"session_id": "c1", "cwd": "", "workspace_roots": [str(self.repo)], **payload}
+        return self.run_gate(
+            mode, "--first-touch", stdin=json.dumps(body), cwd=Path(self.tmp.name)
+        )
+
+    def tool(self, command: str = "ls") -> subprocess.CompletedProcess[str]:
+        return self.hook(
+            "pre-tool", tool_name="Shell", tool_input={"command": command, "cwd": ""}
+        )
+
+    def test_an_unreviewed_change_blocks_the_turn(self) -> None:
+        self.prompt()
+        self.tool()
+        (self.repo / "app.py").write_text("x = 2\n")
+        self.assertEqual(self.stop().get("decision"), "block")
+
+    def test_an_unreviewed_commit_is_blocked(self) -> None:
+        self.prompt()
+        (self.repo / "app.py").write_text("x = 2\n")
+        result = self.tool("git commit -am change")
+        self.assertEqual(result.returncode, 2)
+        self.assertIn("has no excellent review", result.stderr)
+
+    def test_a_reviewed_commit_is_allowed(self) -> None:
+        self.prompt()
+        (self.repo / "app.py").write_text("x = 2\n")
+        self.record()
+        result = self.tool("git commit -am change")
+        self.assertEqual(result.returncode, 0, result.stderr)
+
+    def test_a_shell_cwd_names_the_repository_the_command_runs_in(self) -> None:
+        other = self.new_repo("other")
+        (other / "b.py").write_text("y = 1\n")
+        self.commit_all("init", other)
+        (other / "b.py").write_text("y = 2\n")
+        snap = self.run_gate("tree", cwd=other).stdout.strip().removeprefix("Snapshot: ")
+        self.run_gate("record", "--verdict", "excellent", stdin=report(snap), cwd=other)
+        result = self.hook(
+            "pre-tool",
+            tool_name="Shell",
+            tool_input={"command": "git commit -am change", "cwd": str(other)},
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
+
+
+    def test_a_relative_shell_cwd_resolves_against_the_workspace_root(self) -> None:
+        self.prompt()
+        (self.repo / "app.py").write_text("x = 2\n")
+        self.record()
+        result = self.hook(
+            "pre-tool",
+            tool_name="Shell",
+            tool_input={"command": "git commit -am change", "cwd": "."},
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
+
+    def test_malformed_workspace_fields_do_not_crash_the_stop_hook(self) -> None:
+        result = self.hook(
+            "stop", workspace_roots=str(self.repo), tool_input={"cwd": 3}
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
+
+
 class CommitsOffTheMainLineTest(Gate):
     def unreviewed_commit(self) -> str:
         (self.repo / "app.py").write_text(f"x = {time.time_ns()}\n")

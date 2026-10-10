@@ -443,11 +443,16 @@ def gate(root: Path, deadline: float) -> list[str]:
 def stop_root(payload: dict[str, Any]) -> Path | None:
     """The repository to check, or None when this stop should pass unchecked.
 
-    A retry after a block passes so a stubborn error cannot loop forever.
+    A retry after a block passes so a stubborn error cannot loop forever:
+    Claude Code flags it with stop_hook_active, Cursor with loop_count. Cursor
+    runs this from ~/.claude with an empty cwd and names the project in
+    workspace_roots.
     """
-    if payload.get("stop_hook_active"):
+    if payload.get("stop_hook_active") or payload.get("loop_count"):
         return None
-    return repo_root(Path(payload.get("cwd") or ".").resolve())
+    roots = payload.get("workspace_roots")
+    root = roots[0] if isinstance(roots, list) and roots and isinstance(roots[0], str) else ""
+    return repo_root(Path(payload.get("cwd") or root or ".").resolve())
 
 
 def main() -> None:

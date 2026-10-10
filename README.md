@@ -1,6 +1,8 @@
 # ~/.agents
 
-One agent setup for Claude Code.
+One agent setup for Claude Code and Cursor.
+
+`sync.sh` wires Claude Code. Cursor picks up the same kernel, skills, and hooks on its own: it reads `~/.agents/skills`, and imports `~/.claude/CLAUDE.md` and the hooks in `~/.claude/settings.json` while Cursor Settings → Agents → Third-Party Imports → "Include third-party Plugins, Skills, and other configs" is on (the default). In a multi-root Cursor workspace the gates check only the first root.
 
 ## New machine
 
