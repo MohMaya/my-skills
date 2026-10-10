@@ -24,8 +24,6 @@ def report(snapshot: str, verdict: str = "excellent") -> str:
 
 
 class Gate(unittest.TestCase):
-    first_touch = False
-
     def setUp(self) -> None:
         self.tmp = tempfile.TemporaryDirectory()
         self.repo = self.new_repo("repo")
@@ -62,12 +60,15 @@ class Gate(unittest.TestCase):
         )
 
     def hook(self, mode: str, **payload: object) -> subprocess.CompletedProcess[str]:
-        flags = ["--first-touch"] if self.first_touch else []
         body = {"session_id": "s1", "cwd": str(self.repo), **payload}
-        return self.run_gate(mode, *flags, stdin=json.dumps(body))
+        return self.run_gate(mode, stdin=json.dumps(body))
 
-    def prompt(self, text: str = "do the thing") -> None:
+    def prompt(self, text: str = "do the thing", first_tool: bool = True) -> None:
+        """Shiv's prompt, then by default the agent's first tool call, which
+        starts the turn's baseline."""
         self.assertEqual(self.hook("prompt", prompt=text).returncode, 0)
+        if first_tool:
+            self.tool()
 
     def tool(self, command: str = "ls") -> subprocess.CompletedProcess[str]:
         return self.hook("pre-tool", tool_name="Bash", tool_input={"command": command})
@@ -141,10 +142,6 @@ class StopGateTest(Gate):
         (self.repo / "app.py").write_text("x = 2  # Shiv's own edit\n")
         self.prompt()
         self.assertEqual(self.stop(), {})
-
-    def test_without_a_turn_baseline_changes_still_block(self) -> None:
-        (self.repo / "app.py").write_text("x = 2\n")
-        self.assertEqual(self.stop().get("decision"), "block")
 
     def test_blocks_give_way_per_turn_even_while_files_keep_changing(self) -> None:
         self.prompt()
@@ -380,28 +377,35 @@ class PreToolTest(Gate):
 
 
 class FirstTouchTest(Gate):
-    first_touch = True
-
     def test_shivs_shell_edit_before_the_first_tool_call_is_not_gated(self) -> None:
-        self.prompt()
+        self.prompt(first_tool=False)
         (self.repo / "app.py").write_text("x = 2  # Shiv's ! command\n")
         self.tool()
         self.assertEqual(self.stop(), {})
 
+    def test_settings_written_before_the_flag_was_dropped_still_gate(self) -> None:
+        def stale(mode: str) -> subprocess.CompletedProcess[str]:
+            body = json.dumps({"session_id": "s1", "cwd": str(self.repo)})
+            return self.run_gate(mode, "--first-touch", stdin=body)
+
+        stale("prompt")
+        stale("pre-tool")
+        (self.repo / "app.py").write_text("x = 2\n")
+        self.assertEqual(json.loads(stale("stop").stdout).get("decision"), "block")
+
     def test_a_turn_without_tool_calls_is_not_gated(self) -> None:
-        self.prompt()
+        self.prompt(first_tool=False)
         (self.repo / "app.py").write_text("x = 2  # Shiv's ! command\n")
         self.assertEqual(self.stop(), {})
 
     def test_changes_after_the_first_tool_call_are_gated(self) -> None:
-        self.prompt()
+        self.prompt(first_tool=False)
         self.tool()
         (self.repo / "app.py").write_text("x = 2\n")
         self.assertEqual(self.stop().get("decision"), "block")
 
     def test_a_finished_turn_does_not_carry_its_baseline_into_the_next(self) -> None:
         self.prompt()
-        self.tool()
         self.assertEqual(self.stop(), {})
         (self.repo / "app.py").write_text("x = 2  # Shiv's ! command between turns\n")
         self.assertEqual(self.stop(), {})
@@ -411,13 +415,9 @@ class CursorTest(Gate):
     """Cursor runs Claude Code hooks from ~/.claude with an empty cwd and names
     the project only in workspace_roots."""
 
-    first_touch = True
-
     def hook(self, mode: str, **payload: object) -> subprocess.CompletedProcess[str]:
         body = {"session_id": "c1", "cwd": "", "workspace_roots": [str(self.repo)], **payload}
-        return self.run_gate(
-            mode, "--first-touch", stdin=json.dumps(body), cwd=Path(self.tmp.name)
-        )
+        return self.run_gate(mode, stdin=json.dumps(body), cwd=Path(self.tmp.name))
 
     def tool(self, command: str = "ls") -> subprocess.CompletedProcess[str]:
         return self.hook(
@@ -646,14 +646,6 @@ class MidTurnPromptTest(Gate):
         (self.repo / "app.py").write_text("x = 2\n")
         self.prompt("also do this")
         self.assertEqual(self.stop().get("decision"), "block")
-
-
-class MidTurnPromptFirstTouchTest(MidTurnPromptTest):
-    first_touch = True
-
-    def prompt(self, text: str = "do the thing") -> None:
-        super().prompt(text)
-        self.tool()
 
 
 class RoundFourTest(Gate):

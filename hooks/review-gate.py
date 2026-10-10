@@ -10,8 +10,7 @@ cherry-pick that rewrites commits needs each new commit reviewed.
 Hook modes (sync.sh passes the event, so it never depends on payload fields):
 
   prompt    Files queued reviews, and turns a below-bar review into an accepted
-            one when Shiv's prompt says `accept <snapshot>`. Without --first-touch
-            the turn baseline is taken here. With --first-touch the baseline
+            one when Shiv's prompt says `accept <snapshot>`. The turn baseline
             is taken at the turn's first tool call, so edits Shiv makes himself,
             including `!` shell commands, never count as the agent's. A prompt
             that arrives mid-turn keeps the open baseline.
@@ -357,7 +356,7 @@ def accept_from_prompt(root: Path, payload: Payload) -> None:
                 f.write_text(f"verdict: accepted\naccepted-by-shiv: {stamp}\n{text}")
 
 
-def on_prompt(root: Path, payload: Payload, first_touch: bool) -> None:
+def on_prompt(root: Path, payload: Payload) -> None:
     prune(root)
     file_queued_reviews(root)
     accept_from_prompt(root, payload)
@@ -365,8 +364,6 @@ def on_prompt(root: Path, payload: Payload, first_touch: bool) -> None:
     if base.is_file() and time.time() - base.stat().st_mtime < OPEN_TURN_SECONDS:
         return
     close_turn(root, payload)
-    if not first_touch:
-        write_baseline(root, payload)
 
 
 # stop
@@ -472,10 +469,10 @@ def blocks_so_far(root: Path, payload: Payload, base: dict[str, Any] | None) -> 
     return n - 1
 
 
-def on_stop(root: Path, payload: Payload, first_touch: bool) -> dict[str, str]:
+def on_stop(root: Path, payload: Payload) -> dict[str, str]:
     file_queued_reviews(root)
     base = read_baseline(root, payload)
-    if first_touch and not base:
+    if not base:
         return {}
     problems = unreviewed(root, base)
     if problems and blocks_so_far(root, payload, base) < MAX_BLOCKS:
@@ -632,13 +629,13 @@ def check_push(root: Path, command: str, m: re.Match[str]) -> str | None:
     return f"BLOCKED: this push is not fully reviewed: {problem}.\n\n{HOW_TO_RECORD}"
 
 
-def touch_baseline(payload: Payload, first_touch: bool) -> None:
-    """Keeps an open turn's baseline fresh, or with --first-touch starts one."""
+def touch_baseline(payload: Payload) -> None:
+    """Keeps an open turn's baseline fresh, or starts one."""
     root = repo_root(Path(payload.get("cwd") or "."))
     base = session_file(root, payload, "base") if root else None
     if base and base.is_file():
         os.utime(base)
-    elif root and first_touch:
+    elif root:
         write_baseline(root, payload)
 
 
@@ -692,29 +689,29 @@ def with_cwd(payload: Payload) -> Payload:
     return {**payload, "cwd": payload.get("cwd") or shell or root}
 
 
-def hook_pre_tool(payload: Payload, first_touch: bool) -> int:
-    touch_baseline(payload, first_touch)
+def hook_pre_tool(payload: Payload) -> int:
+    touch_baseline(payload)
     reason = check_command(payload)
     print(reason or "", file=sys.stderr, end="")
     return 2 if reason else 0
 
 
-def hook_prompt(payload: Payload, first_touch: bool) -> int:
+def hook_prompt(payload: Payload) -> int:
     root = repo_root(Path(payload.get("cwd") or "."))
     if root:
-        on_prompt(root, payload, first_touch)
+        on_prompt(root, payload)
     return 0
 
 
-def hook_stop(payload: Payload, first_touch: bool) -> int:
+def hook_stop(payload: Payload) -> int:
     root = repo_root(Path(payload.get("cwd") or "."))
-    out = on_stop(root, payload, first_touch) if root else {}
+    out = on_stop(root, payload) if root else {}
     if out:
         json.dump(out, sys.stdout)
     return 0
 
 
-HOOKS: dict[str, Callable[[Payload, bool], int]] = {
+HOOKS: dict[str, Callable[[Payload], int]] = {
     "prompt": hook_prompt,
     "stop": hook_stop,
     "pre-tool": hook_pre_tool,
@@ -834,10 +831,12 @@ def main() -> int:
     mode, rest = (sys.argv[1:2] or [""])[0], sys.argv[2:]
     if mode in COMMANDS:
         return COMMANDS[mode](rest)
+    # Hook modes ignore extra arguments: settings written before sync.sh dropped
+    # --first-touch still pass it until sync.sh rewrites them.
     if mode in HOOKS:
-        return HOOKS[mode](read_payload(), "--first-touch" in rest)
+        return HOOKS[mode](read_payload())
     print(
-        "usage: review-gate.py prompt|stop|pre-tool [--first-touch] | tree | record",
+        "usage: review-gate.py prompt|stop|pre-tool | tree | record",
         file=sys.stderr,
     )
     return 0 if not mode else 2

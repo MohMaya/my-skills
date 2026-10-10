@@ -115,13 +115,12 @@ def ours(entry):
 # The review gate takes its turn baseline at the first tool call, which fires
 # PreToolUse for every tool.
 def our_hooks():
-    touch = " --first-touch"
     return {
-        "UserPromptSubmit": [{"hooks": [{"type": "command", "command": cmd("review-gate.py", stop=True, args="prompt" + touch), "timeout": 60}]}],
+        "UserPromptSubmit": [{"hooks": [{"type": "command", "command": cmd("review-gate.py", stop=True, args="prompt"), "timeout": 60}]}],
         "Stop": [{"hooks": [{"type": "command", "command": cmd("stop-gate.py", stop=True), "timeout": 600},
-                            {"type": "command", "command": cmd("review-gate.py", stop=True, args="stop" + touch), "timeout": 120}]}],
+                            {"type": "command", "command": cmd("review-gate.py", stop=True, args="stop"), "timeout": 120}]}],
         "PreToolUse": [{"matcher": "Bash", "hooks": [{"type": "command", "command": cmd("block-no-verify.sh")}]},
-                       {"matcher": "", "hooks": [{"type": "command", "command": cmd("review-gate.py", args="pre-tool" + touch), "timeout": 60}]},
+                       {"matcher": "", "hooks": [{"type": "command", "command": cmd("review-gate.py", args="pre-tool"), "timeout": 60}]},
                        {"matcher": "Write|Edit|MultiEdit", "hooks": [{"type": "command", "command": cmd("guard-protected-paths.sh")}]}],
     }
 
