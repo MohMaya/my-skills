@@ -1,0 +1,18 @@
+# Tastemakers
+
+The living roster the nightly study draws from. Add a person only on evidence of signal, and record who recommended them. Status is `studied` once a study in `studies/` covers their work.
+
+| Name | X | Great at | Publishes | Why high-signal (evidence) | Recommended by | Status |
+| --- | --- | --- | --- | --- | --- | --- |
+| Paul Graham | @paulg | Short essays that take an obvious premise one step further to a surprising, defensible claim; plain style | [paulgraham.com](https://paulgraham.com/articles.html) | Y Combinator cofounder; about 5.4M X followers; readers on X still call his essays the best on how to write well (e.g. @tommyswriting, Sep 2026) | Shiv (seed) | studied: 2026-10-11 |
+| Patrick Collison | @patrickc | Compressed, evidence-dense lists and questions; framing progress as a field of study | [patrickcollison.com](https://patrickcollison.com/fast), [Advice](https://patrickcollison.com/advice) | Stripe CEO and Arc Institute cofounder; read drafts of Paul Graham's "Putting Ideas into Words" (acknowledged in the essay); Works in Progress is part of Stripe | Shiv (seed), Paul Graham's acknowledgments | not yet |
+| Karri Saarinen | @karrisaarinen | Product and craft writing with strong opinions about how software teams should work | [The Linear Method](https://linear.app/method), [Linear blog](https://linear.app/blog) | Linear CEO, previously at Airbnb and Coinbase (X bio); the Linear Method is the public statement of how Linear builds product | Shiv (seed) | not yet |
+| Dario Amodei | @DarioAmodei | Long-form research essays that hold optimism and risk in one argument with explicit reasoning | [darioamodei.com](https://www.darioamodei.com/essay/machines-of-loving-grace) | Anthropic CEO; "Machines of Loving Grace" is his long essay on what powerful AI could do if things go well | Shiv (seed) | not yet |
+| Sam Lambert and PlanetScale engineers | @samlambert | Technical writing that teaches databases from first principles with conviction | [PlanetScale blog](https://planetscale.com/blog) | PlanetScale CEO; the blog is the engineering writing Shiv named as a model | Shiv (seed) | not yet |
+| Sean R. Eddy | — | Science essays that name a new pattern and argue for it in a few pages | ["Antedisciplinary" Science, PLoS Comput Biol 2005](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.0010006) | Recommended on X by @lpachter (Lior Pachter, Sep 2026), retweeted by @paulg | @lpachter, @paulg | not yet |
+
+## Sources to mine
+
+- [Works in Progress](https://worksinprogress.co) (@WorksInProgMag): new and underrated ideas to improve the world; part of Stripe.
+- [Asterisk](https://asteriskmag.com) (@asteriskmgzn): long-form essays on science, economics, and policy.
+- Company engineering blogs (PlanetScale and peers) and the best Substacks; add specific writers to the table once a piece earns it.
