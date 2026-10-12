@@ -111,7 +111,7 @@
       "skillPath": "skills/pick-ui-library/SKILL.md",
       "skillFolderHash": "370e19776f0aa2403a2edeed78266bd6a5d78036",
       "installedAt": "2026-08-11T16:31:56.283Z",
-      "updatedAt": "2026-09-23T15:13:09.548Z"
+      "updatedAt": "2026-10-12T16:06:40.588Z"
     },
     "writing-for-agents": {
       "source": "mattpocock/skills",
@@ -130,7 +130,7 @@
       "skillPath": "skills/animate-expo/SKILL.md",
       "skillFolderHash": "6874701c790c7e74926ccd0a8716647a81424c85",
       "installedAt": "2026-08-18T18:59:15.134Z",
-      "updatedAt": "2026-09-23T15:13:12.508Z"
+      "updatedAt": "2026-10-12T16:06:40.581Z"
     },
     "i-have-adhd": {
       "source": "ayghri/i-have-adhd",
@@ -307,14 +307,13 @@
       "updatedAt": "2026-10-06T13:28:26.353Z"
     },
     "prototype": {
-      "source": "mattpocock/skills",
+      "source": "emilkowalski/skill",
       "sourceType": "github",
-      "sourceUrl": "https://github.com/mattpocock/skills.git",
-      "skillPath": "skills/engineering/prototype/SKILL.md",
-      "skillFolderHash": "e41d92e171f074a2b6887d8f6faca4a15c83d1ca",
-      "pluginName": "mattpocock-skills",
+      "sourceUrl": "https://github.com/emilkowalski/skill.git",
+      "skillPath": "skills/prototype/SKILL.md",
+      "skillFolderHash": "34cd3a303aef0a975fcce3ac906d6b293e600399",
       "installedAt": "2026-10-06T13:28:26.353Z",
-      "updatedAt": "2026-10-06T13:28:26.353Z"
+      "updatedAt": "2026-10-12T16:06:40.589Z"
     },
     "research": {
       "source": "mattpocock/skills",
@@ -524,13 +523,132 @@
       "skillFolderHash": "ac92229646fccf7315ae139c37b479b3790617f2",
       "installedAt": "2026-10-06T13:28:26.362Z",
       "updatedAt": "2026-10-06T13:28:26.362Z"
+    },
+    "animate": {
+      "source": "emilkowalski/skill",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/emilkowalski/skill.git",
+      "skillPath": "skills/animate/SKILL.md",
+      "skillFolderHash": "a92e36f28d741aee4ff77d1a001300d7e86e07fe",
+      "installedAt": "2026-10-12T16:06:40.579Z",
+      "updatedAt": "2026-10-12T16:06:40.579Z"
+    },
+    "animation-performance": {
+      "source": "emilkowalski/skill",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/emilkowalski/skill.git",
+      "skillPath": "skills/animation-performance/SKILL.md",
+      "skillFolderHash": "59c4651915a493803d1696d4278d2f9f980e47c8",
+      "installedAt": "2026-10-12T16:06:40.582Z",
+      "updatedAt": "2026-10-12T16:06:40.582Z"
+    },
+    "animation-vocabulary": {
+      "source": "emilkowalski/skill",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/emilkowalski/skill.git",
+      "skillPath": "skills/animation-vocabulary/SKILL.md",
+      "skillFolderHash": "d49565744427887a1f719de1ceee04d941d4e681",
+      "installedAt": "2026-10-12T16:06:40.582Z",
+      "updatedAt": "2026-10-12T16:06:40.582Z"
+    },
+    "apple-design": {
+      "source": "emilkowalski/skill",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/emilkowalski/skill.git",
+      "skillPath": "skills/apple-design/SKILL.md",
+      "skillFolderHash": "cd509ae729c86487d352e17a26651217a4c25711",
+      "installedAt": "2026-10-12T16:06:40.583Z",
+      "updatedAt": "2026-10-12T16:06:40.583Z"
+    },
+    "ask-sonner": {
+      "source": "emilkowalski/skill",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/emilkowalski/skill.git",
+      "skillPath": "skills/ask-sonner/SKILL.md",
+      "skillFolderHash": "aeca3dba0eb0415fa5a310cd6823b824fe60323d",
+      "installedAt": "2026-10-12T16:06:40.584Z",
+      "updatedAt": "2026-10-12T16:06:40.584Z"
+    },
+    "break-ui": {
+      "source": "emilkowalski/skill",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/emilkowalski/skill.git",
+      "skillPath": "skills/break-ui/SKILL.md",
+      "skillFolderHash": "f2a3441d4cf14df060ee363e155502a4818b5f8d",
+      "installedAt": "2026-10-12T16:06:40.585Z",
+      "updatedAt": "2026-10-12T16:06:40.585Z"
+    },
+    "emil-design-eng": {
+      "source": "emilkowalski/skill",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/emilkowalski/skill.git",
+      "skillPath": "skills/emil-design-eng/SKILL.md",
+      "skillFolderHash": "db7a20dc1d8ad26a0307dcb45ebc79fc372f5c69",
+      "installedAt": "2026-10-12T16:06:40.586Z",
+      "updatedAt": "2026-10-12T16:06:40.586Z"
+    },
+    "find-animation-opportunities": {
+      "source": "emilkowalski/skill",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/emilkowalski/skill.git",
+      "skillPath": "skills/find-animation-opportunities/SKILL.md",
+      "skillFolderHash": "e6443880f38e33cf78e5d678471eed35e8566763",
+      "installedAt": "2026-10-12T16:06:40.587Z",
+      "updatedAt": "2026-10-12T16:06:40.587Z"
+    },
+    "improve-animations": {
+      "source": "emilkowalski/skill",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/emilkowalski/skill.git",
+      "skillPath": "skills/improve-animations/SKILL.md",
+      "skillFolderHash": "cf1f7aabac34c08f2cf833f039fa99af2f415183",
+      "installedAt": "2026-10-12T16:06:40.587Z",
+      "updatedAt": "2026-10-12T16:06:40.587Z"
+    },
+    "mobile-native": {
+      "source": "emilkowalski/skill",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/emilkowalski/skill.git",
+      "skillPath": "skills/mobile-native/SKILL.md",
+      "skillFolderHash": "fdad6e6e91d8bbfda7164c7027269a8389dbadcd",
+      "installedAt": "2026-10-12T16:06:40.588Z",
+      "updatedAt": "2026-10-12T16:06:40.588Z"
+    },
+    "review-animations": {
+      "source": "emilkowalski/skill",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/emilkowalski/skill.git",
+      "skillPath": "skills/review-animations/SKILL.md",
+      "skillFolderHash": "0e0d3cb3e07ca307fe946ccaf57f6c82eb75124a",
+      "installedAt": "2026-10-12T16:06:40.589Z",
+      "updatedAt": "2026-10-12T16:06:40.589Z"
+    },
+    "write-swift": {
+      "source": "emilkowalski/skill",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/emilkowalski/skill.git",
+      "skillPath": "skills/write-swift/SKILL.md",
+      "skillFolderHash": "bdefda3891d347b8a183bdc727e4a1de2be3c82b",
+      "installedAt": "2026-10-12T16:06:40.590Z",
+      "updatedAt": "2026-10-12T16:06:40.590Z"
     }
   },
   "dismissed": {
     "findSkillsPrompt": true
   },
   "lastSelectedAgents": [
-    "claude-code",
-    "codex"
+    "amp",
+    "cline",
+    "codex",
+    "cursor",
+    "droid",
+    "gemini-cli",
+    "github-copilot",
+    "kilo",
+    "kimi-code-cli",
+    "opencode",
+    "warp",
+    "zed",
+    "claude-code"
   ]
 }
