@@ -10,6 +10,8 @@ description: >-
 
 Before applying this guide outside its source revision, verify the app's pinned GPUI test APIs and supported environment variables. See [SOURCE.md](SOURCE.md).
 
+**Dvandva.** Run `dvandva` before you produce a fix.
+
 Use this skill when the user asks about `#[gpui::test]`, GPUI test seeds or iterations, deterministic scheduler failures, parking/pending task failures, or how to reproduce a flaky GPUI test.
 
 ## What `#[gpui::test]` does

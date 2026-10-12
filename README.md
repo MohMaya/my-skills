@@ -22,7 +22,7 @@ Re-run `sync.sh` after every `git pull`. It is safe to repeat. It runs `claude-s
 | Path | Holds |
 | ---- | ----- |
 | `AGENTS.md` | The kernel every harness loads: only what a model cannot infer |
-| `skills/` | 61 skills: ours plus Matt Pocock's full set, pinned in `.skill-lock.json` |
+| `skills/` | 74 skills: ours plus Matt Pocock's full set, pinned in `.skill-lock.json` |
 | `hooks/` | Turn-end gate (lint, types, complexity ratchet), bar-raiser review gate, git-bypass guard, secret-path guard |
 | `claude/` | Claude Code subagents (`agents/`), settings every machine shares, merged key by key (Opus main, Sonnet subagents, Fable advisor), and the status line |
 | `claude-setup-sync.sh` | Applies `claude/`, installs the shared plugins, and installs the Python packages plugin servers need |

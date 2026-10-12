@@ -8,6 +8,8 @@ disable-model-invocation: true
 
 cubic (`cubic-dev-ai[bot]`) reviews a PR as one inline comment per finding plus one review-summary. This skill judges each finding, fixes the ones that are real, and answers every thread — fixed or refused. No finding is left silently unanswered.
 
+**Dvandva.** Run `dvandva` before you produce a fix or reply.
+
 A stack runs **bottom to top**. A fix on a lower layer rewrites every layer above it, so upper findings get read against the rebased diff, not the diff cubic saw.
 
 Stack mechanics — `view --json`, `checkout`, `rebase --upstack`, exit codes — are owned by `gh-stack`. Load it for a stack; do not re-derive.

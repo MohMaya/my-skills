@@ -5,6 +5,8 @@ description: Migrate test files from `as` type assertions to @total-typescript/s
 
 # Migrate to Shoehorn
 
+**Dvandva.** Run `dvandva` before you produce the migration.
+
 ## Why shoehorn?
 
 `shoehorn` lets you pass partial data in tests while keeping TypeScript happy. It replaces `as` assertions with type-safe alternatives.

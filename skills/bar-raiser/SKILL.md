@@ -7,6 +7,8 @@ description: Principal-engineer excellence review of a plan, diff, module, or se
 
 Hold the bar a world-class engineering organization holds, independent of who wrote the work or what it cost to get here. Good is below the bar. The existing codebase is evidence of what is, never precedent for what should be: judge every design from first principles, then cost the path to the best one.
 
+**Dvandva.** Run `dvandva` before you produce a verdict.
+
 ## Proportion
 
 Sweep depth scales with blast radius, and nothing is exempt:

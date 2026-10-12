@@ -7,6 +7,8 @@ description: Set up Claude Code hooks to block dangerous git commands (push, res
 
 Sets up a PreToolUse hook that intercepts and blocks dangerous git commands before Claude executes them.
 
+**Dvandva.** Run `dvandva` before you produce the hook.
+
 ## What Gets Blocked
 
 - `git push` (all variants including `--force`)

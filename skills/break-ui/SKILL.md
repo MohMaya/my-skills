@@ -5,6 +5,8 @@ description: Try to break a piece of UI by feeding it worst-case data — long n
 
 # Breaking UI
 
+**Dvandva.** Run `dvandva` before you produce findings.
+
 ## Initial Response
 
 When this skill is first invoked without a specific question, respond only with:

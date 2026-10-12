@@ -7,6 +7,8 @@ description: Create exercise directory structures with sections, problems, solut
 
 Create exercise directory structures that pass `pnpm ai-hero-cli internal lint`, then commit with `git commit`.
 
+**Dvandva.** Run `dvandva` before you produce an exercise.
+
 ## Directory naming
 
 - **Sections**: `XX-section-name/` inside `exercises/` (e.g., `01-retrieval-skill-building`)

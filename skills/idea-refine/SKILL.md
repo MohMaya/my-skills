@@ -7,6 +7,8 @@ description: Refines raw ideas into sharp, actionable concepts through structure
 
 Refines raw ideas into sharp, actionable concepts worth building through structured divergent and convergent thinking.
 
+**Dvandva.** Run `dvandva` before you produce the one-pager.
+
 ## How It Works
 
 1.  **Understand & Expand (Divergent):** Restate the idea, ask sharpening questions, and generate variations.

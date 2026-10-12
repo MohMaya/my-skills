@@ -32,7 +32,7 @@ produce is labelled "exploration, not approved" until Shiv approves it.
   sanctioned codebase touch is vary mode's throwaway picker harness, built on a
   `prototype/<name>` branch outside the feature diff and removed when a variant is
   promoted.
-- **Distill.** A brief or artifact leads with its crux in two sentences; every line
+- **Distill.** Run `dvandva` first. A brief or artifact leads with its crux in two sentences; every line
   earns its place, and what does not is cut.
 - **Authority chain, every mode:** the user's words → the project's design system
   (DESIGN.md, tokens, components) → the subject itself → your judgment. Never let a

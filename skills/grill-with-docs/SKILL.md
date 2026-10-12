@@ -5,3 +5,5 @@ disable-model-invocation: true
 ---
 
 Call the Skill tool twice, for "grilling" and "domain-modeling".
+
+**Dvandva.** Run `dvandva` before you produce a question, term, or ADR.

@@ -5,6 +5,8 @@ description: Set up Husky pre-commit hooks with lint-staged (Prettier), type che
 
 # Setup Pre-Commit Hooks
 
+**Dvandva.** Run `dvandva` before you produce the setup.
+
 ## What This Sets Up
 
 - **Husky** pre-commit hook

@@ -5,6 +5,8 @@ description: Build an animation from scratch, making the decisions in the order 
 
 # Building Animations
 
+**Dvandva.** Run `dvandva` before you produce an animation.
+
 ## Initial Response
 
 When this skill is first invoked without a specific question, respond only with:

@@ -36,7 +36,7 @@ Use this template for writing the PR body:
 
 Skip all preambles and keep prose brief. Use the user's domain language from `GLOSSARY.md`.
 
-**Distill.** The Summary is the crux: what changed and why, in two sentences, before any diagram. Every other line earns its place, and a section with nothing real in it is dropped, not padded.
+**Distill.** Run `dvandva` first. The Summary is the crux: what changed and why, in two sentences, before any diagram. Every other line earns its place, and a section with nothing real in it is dropped, not padded.
 
 ### Summary
 

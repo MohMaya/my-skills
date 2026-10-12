@@ -14,6 +14,8 @@ Scaffold the per-repo configuration that the engineering skills assume:
 
 This is a prompt-driven skill, not a deterministic script. Explore, present what you found, confirm with the user, then write.
 
+**Dvandva.** Run `dvandva` before you produce the config.
+
 ## Process
 
 ### 1. Explore

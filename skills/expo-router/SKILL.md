@@ -9,6 +9,8 @@ license: MIT
 
 Navigation and routing for Expo Router apps. For screen styling, colors, controls, media, and visual effects, use the `expo-native-ui` skill; for motion and gestures, use `animate-expo`.
 
+**Dvandva.** Run `dvandva` before you produce a route.
+
 ## References
 
 Consult these resources as needed:
