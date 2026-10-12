@@ -20,6 +20,8 @@ reference files — load only what the mode needs.
   verdict format in `references/review-format.md`.
 - **Severity** is HIGH / MEDIUM / LOW plus the engine's escalation triggers.
   Accessibility findings are never discarded.
+- **Distill.** The verdict and the findings are the whole report; every finding and plan
+  line earns its place.
 
 ## Modes
 

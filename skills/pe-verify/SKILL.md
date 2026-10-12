@@ -29,6 +29,8 @@ conventions, and the capture method live in `references/` — load what the run 
 - **A missing browser skips, never blocks.** The orchestrator checks for a browser once,
   in Scope, and may ask for install consent there; workers never prompt. Browser items without
   a browser report `skipped` with the reason; code items still run.
+- **Distill.** The verdict and the evidence that carries it are the whole report; every
+  line earns its place.
 
 ## Modes
 
