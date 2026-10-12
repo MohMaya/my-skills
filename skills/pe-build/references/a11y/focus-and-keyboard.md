@@ -128,4 +128,4 @@ Universal rules:
 
 ## SPA route changes
 
-Client-side navigation doesn't reset focus or announce anything. On route change, update `document.title` to match the new context, then move focus to the new view's `<h1>` (given `tabindex="-1"`) or to `<main>`. Restore scroll position on back and forward navigation, and scroll to top on forward navigation.
+Client-side navigation doesn't reset focus or announce anything. On route change, update `document.title` to match the new context, then move focus to the new view's `<h1>` (given `tabindex="-1"`) or to `<main>`. Restore scroll position on back and forward navigation, and scroll to top on forward navigation. The mechanism is [URL state](../craft/ui/url-state.md).

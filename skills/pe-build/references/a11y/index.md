@@ -87,7 +87,7 @@ The page must work at 200% zoom and reflow at 320px width without horizontal scr
 | `assertive` live region for a routine toast | Use `polite`; reserve `assertive` for errors |
 | `aria-hidden="true"` on a focusable element | Remove it or make the element non-focusable |
 | Submit disabled until the form is valid | Keep it enabled; validate on submit and focus the first error |
-| Hover treatment stuck after a tap on touch | Gate hover styling with `@media (hover: hover)` |
+| Hover treatment stuck after a tap on touch | Gate hover styling with `@media (hover: hover)`. Recipe: [touch](../craft/ui/touch.md) |
 | Tooltip on a natively `disabled` control | Text beside it, or `aria-disabled` so it stays focusable |
 
 ## Reporting

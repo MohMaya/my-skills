@@ -10,7 +10,7 @@ The words themselves belong to [writing](../writing/index.md). Semantic heading 
 
 ## Serve the right format
 
-Use `.woff2` on the web, for Brotli compression and broad support. `.woff` is a fallback for very old browsers. `.ttf` and `.otf` are desktop formats with no web compression. How the files load is the project's concern.
+Use `.woff2` on the web, for Brotli compression and broad support. `.woff` is a fallback for very old browsers. `.ttf` and `.otf` are desktop formats with no web compression. How the files load: [font-loading.md](font-loading.md).
 
 ## Properties over raw tags
 

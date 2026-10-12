@@ -10,6 +10,8 @@ Every duration, curve, scale and blur below is a specific value, not a range to 
 
 Text wrapping, font rendering, tabular numbers and text spacing belong to [typography](../typography/index.md). Hit areas, focus, keyboard support, ARIA and reduced motion belong to [accessibility](../../a11y/index.md). Grouping, section spacing, breakpoints and spatial RTL belong to [layout](../layout/index.md).
 
+URL as state: [url-state.md](url-state.md). Copy confirmation: [clipboard.md](clipboard.md). Touch: [touch.md](touch.md). Last details before ship: [finishing.md](finishing.md).
+
 ## Concentric border radius
 
 Outer radius = inner radius + padding. Mismatched radii on nested elements is the most common thing that makes an interface feel off. Radius, shadow and outline recipes are in [surfaces.md](surfaces.md).
