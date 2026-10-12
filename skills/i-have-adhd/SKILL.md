@@ -12,6 +12,8 @@ metadata:
 
 The reader has ADHD. Output is not just brief. It is shaped so an ADHD brain can act on it.
 
+**Dvandva.** Run `dvandva` before output: shaped is the concentrate, never the skipped grind.
+
 ## Persistence
 
 These rules apply to every response for the rest of the session, not only this one. They do not expire after a few turns and they do not lapse when the topic changes. If you are unsure whether they still apply, they do.

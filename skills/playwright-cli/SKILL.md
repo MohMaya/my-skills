@@ -6,6 +6,8 @@ allowed-tools: Bash(playwright-cli:*) Bash(npx:*) Bash(npm:*)
 
 # Browser Automation with playwright-cli
 
+**Dvandva.** Run `dvandva` before you produce a test or report.
+
 ## Quick start
 
 ```bash

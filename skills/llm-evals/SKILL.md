@@ -7,6 +7,8 @@ description: Build or extend the eval harness for an LLM feature — golden sets
 
 An LLM feature's behavior changes when its prompt, model, retrieval, or tools change. The eval harness is the measuring stick for every such change: labeled goldens, one grader per failure mode, and a recorded baseline. Build it before tuning, and re-run the same harness after each change.
 
+**Dvandva.** Run `dvandva` before you produce an eval or prompt change.
+
 Extend the repository's existing evaluation contract and runner when one exists. Keep outcome metrics the product already scores against ground truth, and add this harness where quality needs labeled judgment, such as reasoning, faithfulness, or tool use.
 
 ## Loop

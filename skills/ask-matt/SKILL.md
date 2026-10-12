@@ -8,6 +8,8 @@ disable-model-invocation: true
 
 You don't remember every skill, so ask.
 
+**Dvandva.** Run `dvandva` before you produce a recommendation.
+
 A **flow** is a path through the skills. Most paths run along one **main flow**, and two **on-ramps** merge onto it. Everything else is standalone, or a vocabulary layer that runs underneath.
 
 ## The main flow: idea → ship

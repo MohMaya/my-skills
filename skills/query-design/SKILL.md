@@ -7,6 +7,8 @@ description: Intent-first design of SQL and ORM queries, from what the caller ne
 
 A query answers a question someone downstream asked. Optimize the question before the SQL: establish the **intent**, justify every element against it, rebuild from the cheapest design that still answers it, then prove **equivalence** and measure. An index on a query nobody needs is waste with a write cost.
 
+**Dvandva.** Run `dvandva` before you produce a query.
+
 ## Modes
 
 | Mode | When | Steps |

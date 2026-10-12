@@ -5,6 +5,8 @@ description: Build animations in React Native and Expo, making the decisions in 
 
 # Building Animations in Expo
 
+**Dvandva.** Run `dvandva` before you produce an animation.
+
 ## Initial Response
 
 When this skill is first invoked without a specific question, respond only with:

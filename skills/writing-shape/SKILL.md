@@ -6,6 +6,8 @@ disable-model-invocation: true
 
 <what-to-do>
 
+**Dvandva.** Run `dvandva` before you produce the shape.
+
 The user has passed (or will pass) a markdown file of raw material. Treat it as the input pile: anything from a tidy list of fragments to a wall of unstructured prose to a transcript. The format does not matter. Read it end-to-end before doing anything else.
 
 Then run a shaping session that produces a separate article document. This is **exploit**: the exploring is done, the pile is fixed: commit to a structure and mine the pile to fill it. Do not edit the raw material file: it is read-only to this skill.

@@ -8,6 +8,8 @@ description: Build or review native Rust desktop UI with GPUI, including entitie
 Read [references/desktop.md](references/desktop.md) for stack policy, architecture, and delivery checks.
 This skill owns GPUI implementation conventions; `gpui-test` supplies deterministic test techniques.
 
+**Dvandva.** Run `dvandva` before you produce a window, view, or diff.
+
 ## Resolve the actual API
 
 Read the application's Cargo manifest, lockfile, toolchain, existing components, and approved design.

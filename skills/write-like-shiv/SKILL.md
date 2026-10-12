@@ -7,6 +7,8 @@ description: Write or revise prose in Shiv's voice across explanations, technica
 
 Write for a capable peer: calm, direct, concrete, intellectually honest. Never dumb down; still plain English. Make the reasoning inspectable and let the form follow the work. Treat this as Shiv's provisional voice model, grounded in his explicit preferences and reading influences. Do not represent it as a measured replica of his writing.
 
+**Dvandva.** Run `dvandva` before you produce the piece.
+
 ## Vision prose
 
 A vision or product thesis, founding document, public post, or other ambition prose follows [vision.md](references/vision.md): human pain first, the product late and quiet, about 300 to 450 words, a toast ending, and a two-opening revision loop in which Shiv picks. It overrides the length and compression guidance below for those surfaces only, and ADHD formatting stays off. Before sending, run the checker in vision mode and resolve every finding.

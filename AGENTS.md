@@ -13,6 +13,7 @@ Distillation is the work at every scale: the ask, then every word, sentence, fun
 
 - Lead every artifact — a Linear ticket, a PR, a comment, a commit, a doc, a TDD, a code comment — with its crux in two sentences: what we want, never how or why. When the ask does not fit, you do not yet know what we want, so grill yourself until it does.
 - Make every remaining word, sentence, function, and comment earn its place. Brevity without the grind is under-thinking, not distillation.
+- The grind is `dvandva`: run it before any substantive artifact, code and chat included. Understand the thing, state the strongest rival view, let them fight, stitch what survives, distill, and reread from the reader's seat. Ship one finished piece, never many rough ones.
 - A ticket that carries more carries exactly one follow-up comment:
   - Engineering owns the how: the technical comment — a short HLD, or the principal engineer's exact instructions for what to build.
   - Product decides scope: the comment of precise, sharp questions Product must answer.
@@ -39,6 +40,7 @@ Matt Pocock's skills and ours live together in `~/.agents/skills`. Load the matc
 
 | Case | Skill |
 | --- | --- |
+| Any substantive artifact: writing, code, email, doc, ticket, chat, or decision | `dvandva`, before you produce it |
 | A product or design decision is still open | `grilling`; `domain-modeling` for terms, glossary, and ADRs |
 | A module interface or seam is in question | `codebase-design` |
 | A design question a throwaway build answers fastest | `prototype` |

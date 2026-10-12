@@ -6,6 +6,8 @@ disable-model-invocation: true
 
 # Prototyping Variants
 
+**Dvandva.** Run `dvandva` before you produce a variant.
+
 ## Initial Response
 
 When this skill is first invoked without a specific question, respond only with:

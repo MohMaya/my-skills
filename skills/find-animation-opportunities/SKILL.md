@@ -5,6 +5,8 @@ description: Search a codebase or UI for places that don't animate but should, a
 
 # Finding Animation Opportunities
 
+**Dvandva.** Run `dvandva` before you produce the list.
+
 ## Initial Response
 
 When this skill is first invoked without a specific question, respond only with:

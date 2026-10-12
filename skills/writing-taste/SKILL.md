@@ -7,6 +7,8 @@ description: Taste library of how the highest-signal writers think and write. Us
 
 A library of moves studied from the highest-signal writers, so prose earns its conviction. `write-like-shiv` owns the voice; this skill supplies the thinking and craft that voice applies.
 
+**Dvandva.** Run `dvandva` before you produce the piece.
+
 ## Use it
 
 1. Pick the genre of the piece you are writing and read one or two matching studies in [`references/studies/`](references/studies/). Each ends with an exercise.

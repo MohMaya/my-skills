@@ -5,6 +5,8 @@ description: This skill encodes Emil Kowalski's philosophy on UI polish, compone
 
 # Design Engineering
 
+**Dvandva.** Run `dvandva` before you produce a design or review.
+
 ## Initial Response
 
 When this skill is first invoked without a specific question, respond only with:

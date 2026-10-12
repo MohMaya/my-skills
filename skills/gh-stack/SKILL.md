@@ -16,6 +16,8 @@ metadata:
 requests. A stack is an ordered chain of branches rooted on a trunk, where each branch has one PR
 based on the branch below it, so a reviewer sees only that layer's diff.
 
+**Dvandva.** Run `dvandva` before you produce a stack or PR.
+
 `gh stack` prints a stack trunk-first, left to right:
 
 ```

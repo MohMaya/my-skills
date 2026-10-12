@@ -6,6 +6,8 @@ disable-model-invocation: true
 
 <what-to-do>
 
+**Dvandva.** Run `dvandva` before you produce the beats.
+
 The user has passed (or will pass) a markdown file of raw material. This is **exploit**: the exploring is done, the pile is fixed. Commit to a path through it and mine the pile to fill each beat.
 
 If the user did not say where to save the article, ask once and remember the path.

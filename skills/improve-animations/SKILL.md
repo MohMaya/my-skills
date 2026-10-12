@@ -5,6 +5,8 @@ description: Survey a codebase's animation and motion code as a senior motion ad
 
 # Improving Animations
 
+**Dvandva.** Run `dvandva` before you produce a change.
+
 ## Initial Response
 
 When this skill is first invoked without a specific question, respond only with:
