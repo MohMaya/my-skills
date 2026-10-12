@@ -102,6 +102,7 @@ Shiv builds Applesque products: one core job, done well, for the centre of the i
 - Every screen, control, and setting serves the core job. Bring one recommended default, not a menu.
 - Hide setup a non-engineer would stall on, such as API keys and config files.
 - Ship fewer features, each finished in type, motion, and copy.
+- Every website and app ships a brand-palette text selection color that shifts with scroll or section, never system blue, with AA contrast. Recipe: `pe-build` `craft/colors/selection.md`.
 
 UI follows an approved design:
 

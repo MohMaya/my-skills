@@ -4,6 +4,8 @@ A color system is a small set of ramps, named by role and verified against the b
 
 Never report a contrast value you did not measure, and never estimate a color you could compute. Colors are one of the few interface concerns with an exact answer, so produce the exact answer.
 
+Selection color: [selection.md](selection.md).
+
 Contrast requirements belong to [accessibility](../../a11y/index.md). Surfaces, shadows and icon color belong to [ui](../ui/index.md).
 
 ## Match the project's color system
