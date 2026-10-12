@@ -103,6 +103,11 @@ Shiv builds Applesque products: one core job, done well, for the centre of the i
 - Hide setup a non-engineer would stall on, such as API keys and config files.
 - Ship fewer features, each finished in type, motion, and copy.
 - Every website and app ships a brand-palette text selection color that shifts with scroll or section, never system blue, with AA contrast. Recipe: `pe-build` `craft/colors/selection.md`.
+- Filters, tabs, and modals live in the URL, back and forward restore scroll, and every view is a link. Recipe: `pe-build` `craft/ui/url-state.md`.
+- The critical font preloads with `font-display: swap` and a metric-matched fallback, so text never flashes invisible or jumps. Recipe: `pe-build` `craft/typography/font-loading.md`.
+- Copy confirms in place, resets in about two seconds, and announces the result. Recipe: `pe-build` `craft/ui/clipboard.md`.
+- Touch controls fire on the first tap, show a real pressed state, stay at least 44px, and hover only where a pointer can hover. Recipe: `pe-build` `craft/ui/touch.md`.
+- Ship one easter egg, a public changelog, a stable scrollbar, intent prefetch, a theme-aware favicon, and a complete share card. Recipe: `pe-build` `craft/ui/finishing.md`.
 
 UI follows an approved design:
 

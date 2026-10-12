@@ -62,11 +62,11 @@ Reference these guidelines when:
 - prefer correct image dimensions and stable aspect ratios
 - og:url must match the canonical URL
 - use a sensible og:type, usually website or article
-- set twitter:card appropriately, summary_large_image by default
+- set twitter:card appropriately, summary_large_image by default; the tags are in [finishing](../craft/ui/finishing.md)
 
 ### 5. icons and manifest (medium)
 
-- include at least one favicon that works across browsers
+- include at least one favicon that works across browsers; a theme-aware SVG is in [finishing](../craft/ui/finishing.md)
 - include apple-touch-icon when relevant
 - manifest must be valid and referenced when used
 - set theme-color intentionally to avoid mismatched UI chrome

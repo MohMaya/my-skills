@@ -87,8 +87,7 @@ Keep pointer events on any layer the user is meant to hit: a modal scrim that di
 
 ## Touch behavior
 
-- Add `touch-action: manipulation` to interactive elements to remove the double-tap-to-zoom delay on mobile.
+The first-tap delay, the pressed state, the tap flash, and hover live in [touch](../craft/ui/touch.md).
+
 - Set `touch-action: none` on a surface implementing its own pan, zoom, or drag gestures, so the browser stops claiming them for scrolling and pinch-zoom. Scope it to that surface; at page level it removes scrolling.
-- Set `-webkit-tap-highlight-color` to match the design instead of the default gray flash.
-- Put hover-only styling behind `@media (hover: hover)`. On touch, `:hover` latches after a tap and holds until the user taps elsewhere, so it reads as a stuck selected state. Tailwind 4's `hover:` variant already compiles under this query.
 - Prefer generous targets and clear affordances over finicky interactions such as tiny drag handles and precise hover zones.
