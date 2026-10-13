@@ -19,11 +19,11 @@ A library of moves studied from the highest-signal writers, so prose earns its c
 
 Promoted only after a pattern appears in two or more studies, each naming its sources.
 
-- **Start from what the reader already accepts, then climb one step at a time.** Open with the claim in its most obvious form, and let each step add exactly one new demand until you reach the part that surprises. Graham pushes a shared experience to a shocking conclusion; Bussink climbs from a query that needs no decoding to one that needs every value. ([Graham, words](references/studies/2026-10-11-putting-ideas-into-words.md); [Bussink, Neki](references/studies/2026-10-12-designing-neki-for-performance.md))
-- **Name the default you are breaking, and give it its due.** State the convention or usual approach plainly, and its real benefit, before departing from it. Graham names the polite fiction that you wrote what you already thought; Bussink calls decode-everything "a sensible default" and shows its cost in real code. (Graham, words; Bussink, Neki)
-- **Concede with a boundary.** Answer the strongest counterexample by stating exactly where the claim stops holding, not by retreating. Graham fences off chess and math; Bussink gives aggregates their own section because no byte-level trick works there. (Graham, words; Bussink, Neki)
-- **Tell the reader where they are.** Use transitions that place the reader in the argument or pose the next question, so the piece needs few headings to stay navigable. Graham: "This much, I assume, won't be that controversial"; Bussink: "but what if it did?" (Graham, words; Bussink, Neki)
-- **End at the claim's true size.** Close by stating how far the idea reaches, including the case where it stops, instead of inflating it. Graham ends on necessary but not sufficient; Bussink ends on the one query that must go through every layer. (Graham, words; Bussink, Neki)
+- **Start from what the reader already accepts, then climb one step at a time.** Open with the claim in its most obvious form, and let each step add exactly one new demand until you reach the part that surprises. Graham pushes a shared experience to a shocking conclusion; Bussink climbs from a query that needs no decoding to one that needs every value; Saarinen grants that building is cheap, then shows the bill moved to carrying. ([Graham, words](references/studies/2026-10-11-putting-ideas-into-words.md); [Bussink, Neki](references/studies/2026-10-12-designing-neki-for-performance.md); [Saarinen, features](references/studies/2026-10-13-every-feature-should-earn-its-place.md))
+- **Name the default you are breaking, and give it its due.** State the convention or usual approach plainly, and its real benefit, before departing from it. Graham names the polite fiction that you wrote what you already thought; Bussink calls decode-everything "a sensible default"; Saarinen calls "just build it and see" a tactic that works for exploration before saying it is not free. (Graham, words; Bussink, Neki; Saarinen, features)
+- **Concede with a boundary.** Answer the strongest counterexample by stating exactly where the claim stops holding, not by retreating. Graham fences off chess and math; Bussink gives aggregates their own section; Saarinen keeps cheap building for prototypes and isolated experiments, and stops the claim at features that enter the product. (Graham, words; Bussink, Neki; Saarinen, features)
+- **Tell the reader where they are.** Use transitions that place the reader in the argument or pose the next question, so the piece needs few headings to stay navigable. Graham: "This much, I assume, won't be that controversial"; Bussink: "but what if it did?"; Saarinen: "In a world where building is easy, the real cost comes later." (Graham, words; Bussink, Neki; Saarinen, features)
+- **End at the claim's true size.** Close by stating how far the idea reaches, including the case where it stops, instead of inflating it. Graham ends on necessary but not sufficient; Bussink ends on the one query that must go through every layer; Saarinen ends by flipping the reason—existence is expensive, not implementation. (Graham, words; Bussink, Neki; Saarinen, features)
 
 ## Candidate moves (one study each)
 
@@ -33,6 +33,9 @@ Promoted only after a pattern appears in two or more studies, each naming its so
 - **Show the rejected path in real code.** Put the usual approach on the page, ideally from your own earlier system, so the cost is visible before the alternative. (Bussink, Neki)
 - **Pay the bill for the cleverness.** After the win, list the invariants it depends on and what breaks if they fail. (Bussink, Neki)
 - **Point at the oddity.** When the principle produces a surprising result, call it out; it is the best evidence the principle is real. (Bussink, Neki)
+- **Rename the cost the reader forgot.** When a popular story says one thing got cheap, name the cost that moved elsewhere and make that the claim. (Saarinen, features)
+- **Name the harder failure mode.** Prefer the case that looks like success (partial adoption that sticks) over the obvious failure everyone already fears. (Saarinen, features)
+- **Flip the reason in the last line.** Restate the rule, then change *why* it holds, so the ending sharpens the claim instead of repeating the title. (Saarinen, features)
 
 ## Checklist before sending
 
@@ -49,6 +52,7 @@ Promoted only after a pattern appears in two or more studies, each naming its so
 
 - [Paul Graham, "Putting Ideas into Words"](references/studies/2026-10-11-putting-ideas-into-words.md): entrepreneurial essay on writing as the test of ideas.
 - [Dirkjan Bussink, "Designing Neki for performance"](references/studies/2026-10-12-designing-neki-for-performance.md): technical post that teaches a layered design by climbing one query at a time.
+- [Karri Saarinen, "Every feature should earn its place"](references/studies/2026-10-13-every-feature-should-earn-its-place.md): product essay that separates the cost of building from the cost of carrying.
 
 ## Sources
 
