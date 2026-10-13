@@ -1,0 +1,572 @@
+.skill-lock.json
+  h_22370449f3812f 634-741,758
+skills/remotion-best-practices/SKILL.md
+  h_22370449f3812f 1-109
+skills/remotion-best-practices/agents/openai.yaml
+  h_22370449f3812f 1-7
+skills/remotion-best-practices/assets/remotion-icon.svg
+  h_22370449f3812f 1-4
+skills/remotion-best-practices/remotion-captions/REFERENCE.md
+  h_22370449f3812f 1-42
+skills/remotion-best-practices/remotion-captions/agents/openai.yaml
+  h_22370449f3812f 1-7
+skills/remotion-best-practices/remotion-captions/assets/remotion-icon.svg
+  h_22370449f3812f 1-4
+skills/remotion-best-practices/remotion-captions/display-captions.md
+  h_22370449f3812f 1-175
+skills/remotion-best-practices/remotion-captions/import-srt-captions.md
+  h_22370449f3812f 1-73
+skills/remotion-best-practices/remotion-captions/transcribe-captions.md
+  h_22370449f3812f 1-172
+skills/remotion-best-practices/remotion-create/REFERENCE.md
+  h_22370449f3812f 1-75
+skills/remotion-best-practices/remotion-create/agents/openai.yaml
+  h_22370449f3812f 1-7
+skills/remotion-best-practices/remotion-create/assets/remotion-icon.svg
+  h_22370449f3812f 1-4
+skills/remotion-best-practices/remotion-create/tailwind.md
+  h_22370449f3812f 1-11
+skills/remotion-best-practices/remotion-create/video-layout.md
+  h_22370449f3812f 1-9
+skills/remotion-best-practices/remotion-docs/REFERENCE.md
+  h_22370449f3812f 1-46
+skills/remotion-best-practices/remotion-docs/agents/openai.yaml
+  h_22370449f3812f 1-7
+skills/remotion-best-practices/remotion-docs/assets/remotion-icon.svg
+  h_22370449f3812f 1-4
+skills/remotion-best-practices/remotion-interactivity/REFERENCE.md
+  h_22370449f3812f 1-484
+skills/remotion-best-practices/remotion-interactivity/agents/openai.yaml
+  h_22370449f3812f 1-7
+skills/remotion-best-practices/remotion-interactivity/assets/remotion-icon.svg
+  h_22370449f3812f 1-4
+skills/remotion-best-practices/remotion-interactivity/inline-effects.md
+  h_22370449f3812f 1-42
+skills/remotion-best-practices/remotion-maps/REFERENCE.md
+  h_22370449f3812f 1-36
+skills/remotion-best-practices/remotion-maps/agents/openai.yaml
+  h_22370449f3812f 1-7
+skills/remotion-best-practices/remotion-maps/assets/remotion-icon.svg
+  h_22370449f3812f 1-4
+skills/remotion-best-practices/remotion-maps/techniques/cesium/TECHNIQUE.md
+  h_22370449f3812f 1-89
+skills/remotion-best-practices/remotion-maps/techniques/cesium/assets/CesiumFlythrough.tsx
+  h_22370449f3812f 1-284
+skills/remotion-best-practices/remotion-maps/techniques/cesium/assets/cesium-path.json
+  h_22370449f3812f 1-299
+skills/remotion-best-practices/remotion-maps/techniques/cesium/assets/city-path.json
+  h_22370449f3812f 1-12
+skills/remotion-best-practices/remotion-maps/techniques/cesium/assets/example-Root.tsx
+  h_22370449f3812f 1-39
+skills/remotion-best-practices/remotion-maps/techniques/cesium/assets/flight-path.ts
+  h_22370449f3812f 1-35
+skills/remotion-best-practices/remotion-maps/techniques/cesium/assets/sample-river.geojson
+  h_22370449f3812f 1-215
+skills/remotion-best-practices/remotion-maps/techniques/cesium/references/3d-data-sources.md
+  h_22370449f3812f 1-43
+skills/remotion-best-practices/remotion-maps/techniques/cesium/references/3d-flyover-architecture.md
+  h_22370449f3812f 1-128
+skills/remotion-best-practices/remotion-maps/techniques/cesium/references/3d-troubleshooting.md
+  h_22370449f3812f 1-57
+skills/remotion-best-practices/remotion-maps/techniques/cesium/scripts/prep-cesium-path.mjs
+  h_22370449f3812f 1-161
+skills/remotion-best-practices/remotion-maps/techniques/mapbox/TECHNIQUE.md
+  h_22370449f3812f 1-449
+skills/remotion-best-practices/remotion-maps/techniques/mapbox/references/render-stability.md
+  h_22370449f3812f 1-64
+skills/remotion-best-practices/remotion-maps/techniques/maplibre/TECHNIQUE.md
+  h_22370449f3812f 1-484
+skills/remotion-best-practices/remotion-maps/techniques/maplibre/references/render-stability.md
+  h_22370449f3812f 1-64
+skills/remotion-best-practices/remotion-maps/techniques/maptiler/TECHNIQUE.md
+  h_22370449f3812f 1-80
+skills/remotion-best-practices/remotion-maps/techniques/maptiler/assets/CountryLabel.tsx
+  h_22370449f3812f 1-70
+skills/remotion-best-practices/remotion-maps/techniques/maptiler/assets/MapTilerVectorElement.ts
+  h_22370449f3812f 1-80
+skills/remotion-best-practices/remotion-maps/techniques/maptiler/assets/RiverReveal.tsx
+  h_22370449f3812f 1-363
+skills/remotion-best-practices/remotion-maps/techniques/maptiler/assets/example-Root.tsx
+  h_22370449f3812f 1-22
+skills/remotion-best-practices/remotion-maps/techniques/maptiler/assets/sample-data/country-meta.json
+  h_22370449f3812f 1-7535
+skills/remotion-best-practices/remotion-maps/techniques/maptiler/assets/sample-data/yarlung-flow.json
+  h_22370449f3812f 1-605
+skills/remotion-best-practices/remotion-maps/techniques/maptiler/assets/tokens.ts
+  h_22370449f3812f 1-34
+skills/remotion-best-practices/remotion-maps/techniques/maptiler/references/map-data-sources.md
+  h_22370449f3812f 1-91
+skills/remotion-best-practices/remotion-maps/techniques/maptiler/references/map-explainer-architecture.md
+  h_22370449f3812f 1-129
+skills/remotion-best-practices/remotion-maps/techniques/maptiler/references/map-geo-prep.md
+  h_22370449f3812f 1-85
+skills/remotion-best-practices/remotion-maps/techniques/maptiler/references/render-stability.md
+  h_22370449f3812f 1-64
+skills/remotion-best-practices/remotion-maps/techniques/maptiler/scripts/prep-geo.mjs
+  h_22370449f3812f 1-202
+skills/remotion-best-practices/remotion-maps/techniques/static-map/TECHNIQUE.md
+  h_22370449f3812f 1-37
+skills/remotion-best-practices/remotion-markup/3d.md
+  h_22370449f3812f 1-86
+skills/remotion-best-practices/remotion-markup/REFERENCE.md
+  h_22370449f3812f 1-474
+skills/remotion-best-practices/remotion-markup/agents/openai.yaml
+  h_22370449f3812f 1-7
+skills/remotion-best-practices/remotion-markup/assets/remotion-icon.svg
+  h_22370449f3812f 1-4
+skills/remotion-best-practices/remotion-markup/audio-visualization.md
+  h_22370449f3812f 1-198
+skills/remotion-best-practices/remotion-markup/audio.md
+  h_22370449f3812f 1-190
+skills/remotion-best-practices/remotion-markup/calculate-metadata.md
+  h_22370449f3812f 1-136
+skills/remotion-best-practices/remotion-markup/compositions.md
+  h_22370449f3812f 1-178
+skills/remotion-best-practices/remotion-markup/connected-compositions.md
+  h_22370449f3812f 1-146
+skills/remotion-best-practices/remotion-markup/cropping.md
+  h_22370449f3812f 1-36
+skills/remotion-best-practices/remotion-markup/effects.md
+  h_22370449f3812f 1-277
+skills/remotion-best-practices/remotion-markup/embedding-videos.md
+  h_22370449f3812f 1-178
+skills/remotion-best-practices/remotion-markup/ffmpeg.md
+  h_22370449f3812f 1-38
+skills/remotion-best-practices/remotion-markup/gifs.md
+  h_22370449f3812f 1-187
+skills/remotion-best-practices/remotion-markup/google-fonts.md
+  h_22370449f3812f 1-76
+skills/remotion-best-practices/remotion-markup/html-in-canvas.md
+  h_22370449f3812f 1-106
+skills/remotion-best-practices/remotion-markup/images.md
+  h_22370449f3812f 1-71
+skills/remotion-best-practices/remotion-markup/light-leaks.md
+  h_22370449f3812f 1-104
+skills/remotion-best-practices/remotion-markup/local-fonts.md
+  h_22370449f3812f 1-69
+skills/remotion-best-practices/remotion-markup/lottie.md
+  h_22370449f3812f 1-73
+skills/remotion-best-practices/remotion-markup/measuring-dom-nodes.md
+  h_22370449f3812f 1-38
+skills/remotion-best-practices/remotion-markup/measuring-text.md
+  h_22370449f3812f 1-146
+skills/remotion-best-practices/remotion-markup/motion-blur.md
+  h_22370449f3812f 1-60
+skills/remotion-best-practices/remotion-markup/multi-scene-video.md
+  h_22370449f3812f 1-107
+skills/remotion-best-practices/remotion-markup/parameters.md
+  h_22370449f3812f 1-111
+skills/remotion-best-practices/remotion-markup/remotion-maps/REFERENCE.md
+  h_22370449f3812f 1-36
+skills/remotion-best-practices/remotion-markup/remotion-maps/agents/openai.yaml
+  h_22370449f3812f 1-7
+skills/remotion-best-practices/remotion-markup/remotion-maps/assets/remotion-icon.svg
+  h_22370449f3812f 1-4
+skills/remotion-best-practices/remotion-markup/remotion-maps/techniques/cesium/TECHNIQUE.md
+  h_22370449f3812f 1-89
+skills/remotion-best-practices/remotion-markup/remotion-maps/techniques/cesium/assets/CesiumFlythrough.tsx
+  h_22370449f3812f 1-284
+skills/remotion-best-practices/remotion-markup/remotion-maps/techniques/cesium/assets/cesium-path.json
+  h_22370449f3812f 1-299
+skills/remotion-best-practices/remotion-markup/remotion-maps/techniques/cesium/assets/city-path.json
+  h_22370449f3812f 1-12
+skills/remotion-best-practices/remotion-markup/remotion-maps/techniques/cesium/assets/example-Root.tsx
+  h_22370449f3812f 1-39
+skills/remotion-best-practices/remotion-markup/remotion-maps/techniques/cesium/assets/flight-path.ts
+  h_22370449f3812f 1-35
+skills/remotion-best-practices/remotion-markup/remotion-maps/techniques/cesium/assets/sample-river.geojson
+  h_22370449f3812f 1-215
+skills/remotion-best-practices/remotion-markup/remotion-maps/techniques/cesium/references/3d-data-sources.md
+  h_22370449f3812f 1-43
+skills/remotion-best-practices/remotion-markup/remotion-maps/techniques/cesium/references/3d-flyover-architecture.md
+  h_22370449f3812f 1-128
+skills/remotion-best-practices/remotion-markup/remotion-maps/techniques/cesium/references/3d-troubleshooting.md
+  h_22370449f3812f 1-57
+skills/remotion-best-practices/remotion-markup/remotion-maps/techniques/cesium/scripts/prep-cesium-path.mjs
+  h_22370449f3812f 1-161
+skills/remotion-best-practices/remotion-markup/remotion-maps/techniques/mapbox/TECHNIQUE.md
+  h_22370449f3812f 1-449
+skills/remotion-best-practices/remotion-markup/remotion-maps/techniques/mapbox/references/render-stability.md
+  h_22370449f3812f 1-64
+skills/remotion-best-practices/remotion-markup/remotion-maps/techniques/maplibre/TECHNIQUE.md
+  h_22370449f3812f 1-484
+skills/remotion-best-practices/remotion-markup/remotion-maps/techniques/maplibre/references/render-stability.md
+  h_22370449f3812f 1-64
+skills/remotion-best-practices/remotion-markup/remotion-maps/techniques/maptiler/TECHNIQUE.md
+  h_22370449f3812f 1-80
+skills/remotion-best-practices/remotion-markup/remotion-maps/techniques/maptiler/assets/CountryLabel.tsx
+  h_22370449f3812f 1-70
+skills/remotion-best-practices/remotion-markup/remotion-maps/techniques/maptiler/assets/MapTilerVectorElement.ts
+  h_22370449f3812f 1-80
+skills/remotion-best-practices/remotion-markup/remotion-maps/techniques/maptiler/assets/RiverReveal.tsx
+  h_22370449f3812f 1-363
+skills/remotion-best-practices/remotion-markup/remotion-maps/techniques/maptiler/assets/example-Root.tsx
+  h_22370449f3812f 1-22
+skills/remotion-best-practices/remotion-markup/remotion-maps/techniques/maptiler/assets/sample-data/country-meta.json
+  h_22370449f3812f 1-7535
+skills/remotion-best-practices/remotion-markup/remotion-maps/techniques/maptiler/assets/sample-data/yarlung-flow.json
+  h_22370449f3812f 1-605
+skills/remotion-best-practices/remotion-markup/remotion-maps/techniques/maptiler/assets/tokens.ts
+  h_22370449f3812f 1-34
+skills/remotion-best-practices/remotion-markup/remotion-maps/techniques/maptiler/references/map-data-sources.md
+  h_22370449f3812f 1-91
+skills/remotion-best-practices/remotion-markup/remotion-maps/techniques/maptiler/references/map-explainer-architecture.md
+  h_22370449f3812f 1-129
+skills/remotion-best-practices/remotion-markup/remotion-maps/techniques/maptiler/references/map-geo-prep.md
+  h_22370449f3812f 1-85
+skills/remotion-best-practices/remotion-markup/remotion-maps/techniques/maptiler/references/render-stability.md
+  h_22370449f3812f 1-64
+skills/remotion-best-practices/remotion-markup/remotion-maps/techniques/maptiler/scripts/prep-geo.mjs
+  h_22370449f3812f 1-202
+skills/remotion-best-practices/remotion-markup/remotion-maps/techniques/static-map/TECHNIQUE.md
+  h_22370449f3812f 1-37
+skills/remotion-best-practices/remotion-markup/sequencing.md
+  h_22370449f3812f 1-67
+skills/remotion-best-practices/remotion-markup/sfx.md
+  h_22370449f3812f 1-51
+skills/remotion-best-practices/remotion-markup/silence-detection.md
+  h_22370449f3812f 1-71
+skills/remotion-best-practices/remotion-markup/text-highlights.md
+  h_22370449f3812f 1-56
+skills/remotion-best-practices/remotion-markup/timing-props.md
+  h_22370449f3812f 1-94
+skills/remotion-best-practices/remotion-markup/timing.md
+  h_22370449f3812f 1-111
+skills/remotion-best-practices/remotion-markup/transitions.md
+  h_22370449f3812f 1-251
+skills/remotion-best-practices/remotion-markup/video-editing.md
+  h_22370449f3812f 1-177
+skills/remotion-best-practices/remotion-markup/voiceover.md
+  h_22370449f3812f 1-103
+skills/remotion-best-practices/remotion-multimedia/REFERENCE.md
+  h_22370449f3812f 1-20
+skills/remotion-best-practices/remotion-multimedia/agents/openai.yaml
+  h_22370449f3812f 1-7
+skills/remotion-best-practices/remotion-multimedia/assets/remotion-icon.svg
+  h_22370449f3812f 1-4
+skills/remotion-best-practices/remotion-multimedia/get-audio-duration.md
+  h_22370449f3812f 1-61
+skills/remotion-best-practices/remotion-multimedia/get-video-dimensions.md
+  h_22370449f3812f 1-72
+skills/remotion-best-practices/remotion-multimedia/get-video-duration.md
+  h_22370449f3812f 1-61
+skills/remotion-best-practices/remotion-render/REFERENCE.md
+  h_22370449f3812f 1-35
+skills/remotion-best-practices/remotion-render/agents/openai.yaml
+  h_22370449f3812f 1-7
+skills/remotion-best-practices/remotion-render/assets/remotion-icon.svg
+  h_22370449f3812f 1-4
+skills/remotion-best-practices/remotion-render/transparent-videos.md
+  h_22370449f3812f 1-106
+skills/remotion-best-practices/remotion-saas/REFERENCE.md
+  h_22370449f3812f 1-33
+skills/remotion-best-practices/remotion-saas/agents/openai.yaml
+  h_22370449f3812f 1-7
+skills/remotion-best-practices/remotion-saas/assets/remotion-icon.svg
+  h_22370449f3812f 1-4
+skills/remotion-best-practices/remotion-saas/framework.md
+  h_22370449f3812f 1-19
+skills/remotion-best-practices/remotion-saas/player.md
+  h_22370449f3812f 1-33
+skills/remotion-best-practices/remotion-saas/rendering.md
+  h_22370449f3812f 1-69
+skills/remotion-best-practices/remotion-studio/REFERENCE.md
+  h_22370449f3812f 1-32
+skills/remotion-best-practices/remotion-studio/agents/openai.yaml
+  h_22370449f3812f 1-7
+skills/remotion-best-practices/remotion-studio/assets/remotion-icon.svg
+  h_22370449f3812f 1-4
+skills/remotion-best-practices/remotion-upgrade/REFERENCE.md
+  h_22370449f3812f 1-31
+skills/remotion-best-practices/remotion-upgrade/agents/openai.yaml
+  h_22370449f3812f 1-7
+skills/remotion-best-practices/remotion-upgrade/assets/remotion-icon.svg
+  h_22370449f3812f 1-4
+skills/remotion-captions/SKILL.md
+  h_22370449f3812f 1-42
+skills/remotion-captions/agents/openai.yaml
+  h_22370449f3812f 1-7
+skills/remotion-captions/assets/remotion-icon.svg
+  h_22370449f3812f 1-4
+skills/remotion-captions/display-captions.md
+  h_22370449f3812f 1-175
+skills/remotion-captions/import-srt-captions.md
+  h_22370449f3812f 1-73
+skills/remotion-captions/transcribe-captions.md
+  h_22370449f3812f 1-172
+skills/remotion-create/SKILL.md
+  h_22370449f3812f 1-75
+skills/remotion-create/agents/openai.yaml
+  h_22370449f3812f 1-7
+skills/remotion-create/assets/remotion-icon.svg
+  h_22370449f3812f 1-4
+skills/remotion-create/tailwind.md
+  h_22370449f3812f 1-11
+skills/remotion-create/video-layout.md
+  h_22370449f3812f 1-9
+skills/remotion-docs/SKILL.md
+  h_22370449f3812f 1-46
+skills/remotion-docs/agents/openai.yaml
+  h_22370449f3812f 1-7
+skills/remotion-docs/assets/remotion-icon.svg
+  h_22370449f3812f 1-4
+skills/remotion-interactivity/SKILL.md
+  h_22370449f3812f 1-484
+skills/remotion-interactivity/agents/openai.yaml
+  h_22370449f3812f 1-7
+skills/remotion-interactivity/assets/remotion-icon.svg
+  h_22370449f3812f 1-4
+skills/remotion-interactivity/inline-effects.md
+  h_22370449f3812f 1-42
+skills/remotion-maps/SKILL.md
+  h_22370449f3812f 1-36
+skills/remotion-maps/agents/openai.yaml
+  h_22370449f3812f 1-7
+skills/remotion-maps/assets/remotion-icon.svg
+  h_22370449f3812f 1-4
+skills/remotion-maps/techniques/cesium/TECHNIQUE.md
+  h_22370449f3812f 1-89
+skills/remotion-maps/techniques/cesium/assets/CesiumFlythrough.tsx
+  h_22370449f3812f 1-284
+skills/remotion-maps/techniques/cesium/assets/cesium-path.json
+  h_22370449f3812f 1-299
+skills/remotion-maps/techniques/cesium/assets/city-path.json
+  h_22370449f3812f 1-12
+skills/remotion-maps/techniques/cesium/assets/example-Root.tsx
+  h_22370449f3812f 1-39
+skills/remotion-maps/techniques/cesium/assets/flight-path.ts
+  h_22370449f3812f 1-35
+skills/remotion-maps/techniques/cesium/assets/sample-river.geojson
+  h_22370449f3812f 1-215
+skills/remotion-maps/techniques/cesium/references/3d-data-sources.md
+  h_22370449f3812f 1-43
+skills/remotion-maps/techniques/cesium/references/3d-flyover-architecture.md
+  h_22370449f3812f 1-128
+skills/remotion-maps/techniques/cesium/references/3d-troubleshooting.md
+  h_22370449f3812f 1-57
+skills/remotion-maps/techniques/cesium/scripts/prep-cesium-path.mjs
+  h_22370449f3812f 1-161
+skills/remotion-maps/techniques/mapbox/TECHNIQUE.md
+  h_22370449f3812f 1-449
+skills/remotion-maps/techniques/mapbox/references/render-stability.md
+  h_22370449f3812f 1-64
+skills/remotion-maps/techniques/maplibre/TECHNIQUE.md
+  h_22370449f3812f 1-484
+skills/remotion-maps/techniques/maplibre/references/render-stability.md
+  h_22370449f3812f 1-64
+skills/remotion-maps/techniques/maptiler/TECHNIQUE.md
+  h_22370449f3812f 1-80
+skills/remotion-maps/techniques/maptiler/assets/CountryLabel.tsx
+  h_22370449f3812f 1-70
+skills/remotion-maps/techniques/maptiler/assets/MapTilerVectorElement.ts
+  h_22370449f3812f 1-80
+skills/remotion-maps/techniques/maptiler/assets/RiverReveal.tsx
+  h_22370449f3812f 1-363
+skills/remotion-maps/techniques/maptiler/assets/example-Root.tsx
+  h_22370449f3812f 1-22
+skills/remotion-maps/techniques/maptiler/assets/sample-data/country-meta.json
+  h_22370449f3812f 1-7535
+skills/remotion-maps/techniques/maptiler/assets/sample-data/yarlung-flow.json
+  h_22370449f3812f 1-605
+skills/remotion-maps/techniques/maptiler/assets/tokens.ts
+  h_22370449f3812f 1-34
+skills/remotion-maps/techniques/maptiler/references/map-data-sources.md
+  h_22370449f3812f 1-91
+skills/remotion-maps/techniques/maptiler/references/map-explainer-architecture.md
+  h_22370449f3812f 1-129
+skills/remotion-maps/techniques/maptiler/references/map-geo-prep.md
+  h_22370449f3812f 1-85
+skills/remotion-maps/techniques/maptiler/references/render-stability.md
+  h_22370449f3812f 1-64
+skills/remotion-maps/techniques/maptiler/scripts/prep-geo.mjs
+  h_22370449f3812f 1-202
+skills/remotion-maps/techniques/static-map/TECHNIQUE.md
+  h_22370449f3812f 1-37
+skills/remotion-markup/3d.md
+  h_22370449f3812f 1-86
+skills/remotion-markup/SKILL.md
+  h_22370449f3812f 1-474
+skills/remotion-markup/agents/openai.yaml
+  h_22370449f3812f 1-7
+skills/remotion-markup/assets/remotion-icon.svg
+  h_22370449f3812f 1-4
+skills/remotion-markup/audio-visualization.md
+  h_22370449f3812f 1-198
+skills/remotion-markup/audio.md
+  h_22370449f3812f 1-190
+skills/remotion-markup/calculate-metadata.md
+  h_22370449f3812f 1-136
+skills/remotion-markup/compositions.md
+  h_22370449f3812f 1-178
+skills/remotion-markup/connected-compositions.md
+  h_22370449f3812f 1-146
+skills/remotion-markup/cropping.md
+  h_22370449f3812f 1-36
+skills/remotion-markup/effects.md
+  h_22370449f3812f 1-277
+skills/remotion-markup/embedding-videos.md
+  h_22370449f3812f 1-178
+skills/remotion-markup/ffmpeg.md
+  h_22370449f3812f 1-38
+skills/remotion-markup/gifs.md
+  h_22370449f3812f 1-187
+skills/remotion-markup/google-fonts.md
+  h_22370449f3812f 1-76
+skills/remotion-markup/html-in-canvas.md
+  h_22370449f3812f 1-106
+skills/remotion-markup/images.md
+  h_22370449f3812f 1-71
+skills/remotion-markup/light-leaks.md
+  h_22370449f3812f 1-104
+skills/remotion-markup/local-fonts.md
+  h_22370449f3812f 1-69
+skills/remotion-markup/lottie.md
+  h_22370449f3812f 1-73
+skills/remotion-markup/measuring-dom-nodes.md
+  h_22370449f3812f 1-38
+skills/remotion-markup/measuring-text.md
+  h_22370449f3812f 1-146
+skills/remotion-markup/motion-blur.md
+  h_22370449f3812f 1-60
+skills/remotion-markup/multi-scene-video.md
+  h_22370449f3812f 1-107
+skills/remotion-markup/parameters.md
+  h_22370449f3812f 1-111
+skills/remotion-markup/remotion-maps/REFERENCE.md
+  h_22370449f3812f 1-36
+skills/remotion-markup/remotion-maps/agents/openai.yaml
+  h_22370449f3812f 1-7
+skills/remotion-markup/remotion-maps/assets/remotion-icon.svg
+  h_22370449f3812f 1-4
+skills/remotion-markup/remotion-maps/techniques/cesium/TECHNIQUE.md
+  h_22370449f3812f 1-89
+skills/remotion-markup/remotion-maps/techniques/cesium/assets/CesiumFlythrough.tsx
+  h_22370449f3812f 1-284
+skills/remotion-markup/remotion-maps/techniques/cesium/assets/cesium-path.json
+  h_22370449f3812f 1-299
+skills/remotion-markup/remotion-maps/techniques/cesium/assets/city-path.json
+  h_22370449f3812f 1-12
+skills/remotion-markup/remotion-maps/techniques/cesium/assets/example-Root.tsx
+  h_22370449f3812f 1-39
+skills/remotion-markup/remotion-maps/techniques/cesium/assets/flight-path.ts
+  h_22370449f3812f 1-35
+skills/remotion-markup/remotion-maps/techniques/cesium/assets/sample-river.geojson
+  h_22370449f3812f 1-215
+skills/remotion-markup/remotion-maps/techniques/cesium/references/3d-data-sources.md
+  h_22370449f3812f 1-43
+skills/remotion-markup/remotion-maps/techniques/cesium/references/3d-flyover-architecture.md
+  h_22370449f3812f 1-128
+skills/remotion-markup/remotion-maps/techniques/cesium/references/3d-troubleshooting.md
+  h_22370449f3812f 1-57
+skills/remotion-markup/remotion-maps/techniques/cesium/scripts/prep-cesium-path.mjs
+  h_22370449f3812f 1-161
+skills/remotion-markup/remotion-maps/techniques/mapbox/TECHNIQUE.md
+  h_22370449f3812f 1-449
+skills/remotion-markup/remotion-maps/techniques/mapbox/references/render-stability.md
+  h_22370449f3812f 1-64
+skills/remotion-markup/remotion-maps/techniques/maplibre/TECHNIQUE.md
+  h_22370449f3812f 1-484
+skills/remotion-markup/remotion-maps/techniques/maplibre/references/render-stability.md
+  h_22370449f3812f 1-64
+skills/remotion-markup/remotion-maps/techniques/maptiler/TECHNIQUE.md
+  h_22370449f3812f 1-80
+skills/remotion-markup/remotion-maps/techniques/maptiler/assets/CountryLabel.tsx
+  h_22370449f3812f 1-70
+skills/remotion-markup/remotion-maps/techniques/maptiler/assets/MapTilerVectorElement.ts
+  h_22370449f3812f 1-80
+skills/remotion-markup/remotion-maps/techniques/maptiler/assets/RiverReveal.tsx
+  h_22370449f3812f 1-363
+skills/remotion-markup/remotion-maps/techniques/maptiler/assets/example-Root.tsx
+  h_22370449f3812f 1-22
+skills/remotion-markup/remotion-maps/techniques/maptiler/assets/sample-data/country-meta.json
+  h_22370449f3812f 1-7535
+skills/remotion-markup/remotion-maps/techniques/maptiler/assets/sample-data/yarlung-flow.json
+  h_22370449f3812f 1-605
+skills/remotion-markup/remotion-maps/techniques/maptiler/assets/tokens.ts
+  h_22370449f3812f 1-34
+skills/remotion-markup/remotion-maps/techniques/maptiler/references/map-data-sources.md
+  h_22370449f3812f 1-91
+skills/remotion-markup/remotion-maps/techniques/maptiler/references/map-explainer-architecture.md
+  h_22370449f3812f 1-129
+skills/remotion-markup/remotion-maps/techniques/maptiler/references/map-geo-prep.md
+  h_22370449f3812f 1-85
+skills/remotion-markup/remotion-maps/techniques/maptiler/references/render-stability.md
+  h_22370449f3812f 1-64
+skills/remotion-markup/remotion-maps/techniques/maptiler/scripts/prep-geo.mjs
+  h_22370449f3812f 1-202
+skills/remotion-markup/remotion-maps/techniques/static-map/TECHNIQUE.md
+  h_22370449f3812f 1-37
+skills/remotion-markup/sequencing.md
+  h_22370449f3812f 1-67
+skills/remotion-markup/sfx.md
+  h_22370449f3812f 1-51
+skills/remotion-markup/silence-detection.md
+  h_22370449f3812f 1-71
+skills/remotion-markup/text-highlights.md
+  h_22370449f3812f 1-56
+skills/remotion-markup/timing-props.md
+  h_22370449f3812f 1-94
+skills/remotion-markup/timing.md
+  h_22370449f3812f 1-111
+skills/remotion-markup/transitions.md
+  h_22370449f3812f 1-251
+skills/remotion-markup/video-editing.md
+  h_22370449f3812f 1-177
+skills/remotion-markup/voiceover.md
+  h_22370449f3812f 1-103
+skills/remotion-multimedia/SKILL.md
+  h_22370449f3812f 1-20
+skills/remotion-multimedia/agents/openai.yaml
+  h_22370449f3812f 1-7
+skills/remotion-multimedia/assets/remotion-icon.svg
+  h_22370449f3812f 1-4
+skills/remotion-multimedia/get-audio-duration.md
+  h_22370449f3812f 1-61
+skills/remotion-multimedia/get-video-dimensions.md
+  h_22370449f3812f 1-72
+skills/remotion-multimedia/get-video-duration.md
+  h_22370449f3812f 1-61
+skills/remotion-render/SKILL.md
+  h_22370449f3812f 1-35
+skills/remotion-render/agents/openai.yaml
+  h_22370449f3812f 1-7
+skills/remotion-render/assets/remotion-icon.svg
+  h_22370449f3812f 1-4
+skills/remotion-render/transparent-videos.md
+  h_22370449f3812f 1-106
+skills/remotion-saas/SKILL.md
+  h_22370449f3812f 1-33
+skills/remotion-saas/agents/openai.yaml
+  h_22370449f3812f 1-7
+skills/remotion-saas/assets/remotion-icon.svg
+  h_22370449f3812f 1-4
+skills/remotion-saas/framework.md
+  h_22370449f3812f 1-19
+skills/remotion-saas/player.md
+  h_22370449f3812f 1-33
+skills/remotion-saas/rendering.md
+  h_22370449f3812f 1-69
+skills/remotion-studio/SKILL.md
+  h_22370449f3812f 1-32
+skills/remotion-studio/agents/openai.yaml
+  h_22370449f3812f 1-7
+skills/remotion-studio/assets/remotion-icon.svg
+  h_22370449f3812f 1-4
+skills/remotion-upgrade/SKILL.md
+  h_22370449f3812f 1-31
+skills/remotion-upgrade/agents/openai.yaml
+  h_22370449f3812f 1-7
+skills/remotion-upgrade/assets/remotion-icon.svg
+  h_22370449f3812f 1-4
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "8efb6172a0cd97f45b758bbe0c3ebc10c60eafc3",
+  "prompts": {},
+  "humans": {
+    "h_22370449f3812f": {
+      "author": "Shivanshu Chaudhary <shivanshuchaudhary97@gmail.com>"
+    }
+  }
+}
