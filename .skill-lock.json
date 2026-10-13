@@ -631,6 +631,114 @@
       "skillFolderHash": "bdefda3891d347b8a183bdc727e4a1de2be3c82b",
       "installedAt": "2026-10-12T16:06:40.590Z",
       "updatedAt": "2026-10-12T16:06:40.590Z"
+    },
+    "remotion-best-practices": {
+      "source": "remotion-dev/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/remotion-dev/skills.git",
+      "skillPath": "skills/remotion-best-practices/SKILL.md",
+      "skillFolderHash": "52ebfc32e4e362cf41769499f31684391e883838",
+      "installedAt": "2026-10-13T17:57:10.945Z",
+      "updatedAt": "2026-10-13T17:57:10.945Z"
+    },
+    "remotion-captions": {
+      "source": "remotion-dev/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/remotion-dev/skills.git",
+      "skillPath": "skills/remotion-captions/SKILL.md",
+      "skillFolderHash": "3d407aa18ea3fc1b529244ab5611f2de4d356837",
+      "installedAt": "2026-10-13T17:57:10.946Z",
+      "updatedAt": "2026-10-13T17:57:10.946Z"
+    },
+    "remotion-create": {
+      "source": "remotion-dev/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/remotion-dev/skills.git",
+      "skillPath": "skills/remotion-create/SKILL.md",
+      "skillFolderHash": "640ddd5ac3be0740b3475d8c35ef9bb2bd2c1675",
+      "installedAt": "2026-10-13T17:57:10.946Z",
+      "updatedAt": "2026-10-13T17:57:10.946Z"
+    },
+    "remotion-docs": {
+      "source": "remotion-dev/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/remotion-dev/skills.git",
+      "skillPath": "skills/remotion-docs/SKILL.md",
+      "skillFolderHash": "971248adb963f84c14eea6850187958d2a4c956b",
+      "installedAt": "2026-10-13T17:57:10.948Z",
+      "updatedAt": "2026-10-13T17:57:10.948Z"
+    },
+    "remotion-interactivity": {
+      "source": "remotion-dev/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/remotion-dev/skills.git",
+      "skillPath": "skills/remotion-interactivity/SKILL.md",
+      "skillFolderHash": "de2829a447a2b8b1788cff69946aad38ed13b5d0",
+      "installedAt": "2026-10-13T17:57:10.948Z",
+      "updatedAt": "2026-10-13T17:57:10.948Z"
+    },
+    "remotion-maps": {
+      "source": "remotion-dev/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/remotion-dev/skills.git",
+      "skillPath": "skills/remotion-maps/SKILL.md",
+      "skillFolderHash": "b8480093d9001abbd4ddae7e9f55f609c210a8b1",
+      "installedAt": "2026-10-13T17:57:10.948Z",
+      "updatedAt": "2026-10-13T17:57:10.948Z"
+    },
+    "remotion-markup": {
+      "source": "remotion-dev/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/remotion-dev/skills.git",
+      "skillPath": "skills/remotion-markup/SKILL.md",
+      "skillFolderHash": "5fd9170d1f002cea5526cac12a055b313688c42a",
+      "installedAt": "2026-10-13T17:57:10.948Z",
+      "updatedAt": "2026-10-13T17:57:10.948Z"
+    },
+    "remotion-multimedia": {
+      "source": "remotion-dev/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/remotion-dev/skills.git",
+      "skillPath": "skills/remotion-multimedia/SKILL.md",
+      "skillFolderHash": "aee2e1fe8af788c2507242611877460bdad202e5",
+      "installedAt": "2026-10-13T17:57:10.948Z",
+      "updatedAt": "2026-10-13T17:57:10.948Z"
+    },
+    "remotion-render": {
+      "source": "remotion-dev/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/remotion-dev/skills.git",
+      "skillPath": "skills/remotion-render/SKILL.md",
+      "skillFolderHash": "4a4dd0abe624298638152343a4dc4abb677608b8",
+      "installedAt": "2026-10-13T17:57:10.948Z",
+      "updatedAt": "2026-10-13T17:57:10.948Z"
+    },
+    "remotion-saas": {
+      "source": "remotion-dev/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/remotion-dev/skills.git",
+      "skillPath": "skills/remotion-saas/SKILL.md",
+      "skillFolderHash": "52822a39aea969055dffd1b594e126204ade660e",
+      "installedAt": "2026-10-13T17:57:10.949Z",
+      "updatedAt": "2026-10-13T17:57:10.949Z"
+    },
+    "remotion-studio": {
+      "source": "remotion-dev/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/remotion-dev/skills.git",
+      "skillPath": "skills/remotion-studio/SKILL.md",
+      "skillFolderHash": "13fff7e942c0f8fd8f79aeb5e93d581943bd60e3",
+      "installedAt": "2026-10-13T17:57:10.949Z",
+      "updatedAt": "2026-10-13T17:57:10.949Z"
+    },
+    "remotion-upgrade": {
+      "source": "remotion-dev/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/remotion-dev/skills.git",
+      "skillPath": "skills/remotion-upgrade/SKILL.md",
+      "skillFolderHash": "43655202c0e1020debd1d2c7bb760746c4df03a3",
+      "installedAt": "2026-10-13T17:57:10.949Z",
+      "updatedAt": "2026-10-13T17:57:10.949Z"
     }
   },
   "dismissed": {
@@ -647,6 +755,7 @@
     "kilo",
     "kimi-code-cli",
     "opencode",
+    "pi",
     "warp",
     "zed",
     "claude-code"
