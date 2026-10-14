@@ -27,7 +27,8 @@ Run in order. Each ends on its **done when**; loop back when a later move breaks
 4. **Stitch.** Fold what survived into one position and re-state the crux; it is usually sharper, sometimes different. Each sentence or line now serves the crux, and the strongest objection that changes the conclusion is addressed in place. _Done when_ the crux stands against the purvapaksha and you can say why it wins.
 5. **Distill.** Remove everything that is not David. Cut every word, line, function, section, and caveat that does not carry the crux, then cut again; what remains reads as inevitable. Run the kernel's Distillation. _Done when_ no further cut leaves the artifact intact.
 6. **Empathy.** Re-read cold from the reader's seat, as a stranger with only the page and none of your context. Where would they stall, mistrust, or feel talked at? Does it answer the question they will actually ask next? Does it read like someone who cares and truly understands? _Done when_ the stranger has nothing left to ask.
-7. **Produce.** Ship one artifact, finished. One recommendation, not a menu; one draft, not variants, unless Shiv asked for options.
+7. **Lessons.** Read the promoted lessons for this task type and apply each one that fits (`lesson-log`). When something is wrong, name it, including a pattern of Shivanshu's, with the evidence, kindly and directly. The task ends with one lesson, or `none`. _Done when_ every fitting lesson is in the artifact or named as not fitting.
+8. **Produce.** Ship one artifact, finished. One recommendation, not a menu; one draft, not variants, unless Shiv asked for options. Then append this task's lesson, or `none`. _Done when_ today's inbox holds that one entry.
 
 ## Stop rules
 
@@ -45,6 +46,7 @@ Run in order. Each ends on its **done when**; loop back when a later move breaks
 - [ ] Crux re-stated after the fight
 - [ ] Every remaining word and line earns its place
 - [ ] Cold read from the reader's seat passes
+- [ ] Promoted lessons applied, a miss named with evidence when there is one, one lesson or `none` appended
 - [ ] One finished artifact, no visible process
 
 The sources behind each move, with what is verified and what is apocryphal: [references/literature.md](references/literature.md).
