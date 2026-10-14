@@ -1,84 +1,61 @@
 ---
 name: write-like-shiv
-description: Write or revise prose in Shiv's voice across explanations, technical documents, essays, messages, posts, pitches, reflection, product copy, and vision prose (a vision or product thesis, founding document, or public post). Use for authored prose for Shiv, including requests to sound like him, apply his writing guidelines, or remove generic AI phrasing. Preserve required formats, quoted material, and code semantics.
+description: Write or revise Shiv's prose and enforce the writing-taste bar, for explanations, essays, messages, posts, pitches, product copy, vision prose, design docs, and systems papers. Use when the piece should sound like him, follow his writing guidelines, or lose generic AI phrasing. Preserve required formats, quotations, and code semantics.
 ---
 
 # Write Like Shiv
 
-Write for a capable peer: calm, direct, concrete, intellectually honest. Never dumb down; still plain English. Make the reasoning inspectable and let the form follow the work. Treat this as Shiv's provisional voice model, grounded in his explicit preferences and reading influences. Do not represent it as a measured replica of his writing.
+Shiv's voice, held to the writing-taste bar. The voice is his: plain words, active verbs, contractions, double hyphens, no costume, no invented life. Thinking, conviction, clarity, density, and genre shape belong to [`writing-taste`](../writing-taste/SKILL.md). Where they conflict, writing-taste wins. A voice habit stays only when the sentence is still clear.
+
+A provisional model from his explicit preferences, not a measured replica of his prose.
 
 **Dvandva.** Run `dvandva` before you produce the piece.
 
-## Vision prose
+## Produce
 
-A vision or product thesis, founding document, public post, or other ambition prose follows [vision.md](references/vision.md): human pain first, the product late and quiet, about 300 to 450 words, a toast ending, and a two-opening revision loop in which Shiv picks. It overrides the length and compression guidance below for those surfaces only, and ADHD formatting stays off. Before sending, run the checker in vision mode and resolve every finding.
+1. **Brief.** Name the surface, the audience, and the one job of the piece: understand, decide, or do. Ask only when a missing answer would change the piece. Default a judgment to a concise Take and an explanation to Teacher. Load that one row in [surfaces.md](references/surfaces.md).
+   Done when surface, audience, and job are named.
 
-## Establish the brief
+2. **Genre.** Read what that row points at. When it names studies, read one or two that match, not the folder. When it links no file, the voice delta is the shape and the checklist is the one in writing-taste.
+   Done when you can name the shape and the checklist.
 
-Infer surface, audience, purpose, strength of claim, and length from the request. Ask only when a missing answer would materially change the piece. Default to a concise Take for judgment and Teacher for explanation. Use the relevant row in [surfaces.md](references/surfaces.md); do not load the whole corpus for routine writing.
+3. **Draft.** One opening, in the voice rules below, in that shape. On a substantial piece whose frame is still open, compare two openings privately and keep the one the reader needs. Show an exploratory draft only when asked. Vision is the exception: follow the revision loop in [vision.md](references/vision.md), which shows Shiv the two openings.
+   Done when the draft carries the job and contains the parts the reference requires, skipping any part it says to skip.
 
-Use this precedence: current user direction; the surface's required format and factual constraints; Shiv's explicit preferences; accepted examples for that surface; provisional craft inferences. Preserve code, schema keys, names, quotations, and exact technical terminology. A private journal does not inherit Cosmic Agency's public ideology or promotional posture.
+4. **Taste.** Before sending, run that checklist and fix every miss. A voice delta overrides a checklist line only when the row states the exception. On a row that links no genre file, a line about a broken default, an objection, or a renamed story applies only when the piece does that.
+   Done when every line that applies passes, or the piece states the factual limit that blocks it.
 
-## Articulation bar for non-code prose
+5. **Voice.** For a substantial saved draft, when Python is available:
 
-This bar applies to briefs, drafts, digests, deal notes, stress tests, ops outcomes, news, and other human-facing prose. It does not apply to code. Vision prose adds [vision.md](references/vision.md). This skill owns the bar and vision prose; `i-have-adhd` owns ADHD formatting.
+   ```bash
+   python3 <skill-directory>/scripts/voice_check.py <draft-file>
+   ```
 
-Before you send: have I made this easy for a capable peer to understand?
+   Vision adds `--surface vision --strict`. Treat each finding as an editorial question and resolve it in context. Rhythm figures are descriptive, never a target. A short reply gets the same review without a file. Checker limits: [calibration.md](references/calibration.md).
+   Done when every finding is fixed or kept for a reason a reader can see.
 
-Answer three questions before drafting:
-1. What exactly am I saying? State the plain idea, not prestige language.
-2. What does this person need from me? Finish: after this, I want them to understand, decide, or do ______.
-3. What is necessary to get them there? Main point, strongest support, and action. Park the rest for questions. Compress.
+Return the piece. Include a factual limit the reader needs. Omit the process and any score unless asked.
 
-Pick one shape when a shape helps:
-- CCC: Context, then the core idea, then the connection, when they need background before the idea lands.
-- PARA: Point, then action, then result, then ask, when showing why an idea is useful.
-- POP: Pause, then one takeaway, then a question, when on the spot or still unclear.
+## Precedence
 
-Lead with the point. Do not find it mid-paragraph. Leave a finished recommendation finished: do not re-explain, soften, or pile reasons that make it sound unsettled. Use precise vocabulary that names the actual problem. Cluttered, inconsistent, and unreadable are different claims. If you need a response, ask a specific question.
+Current direction from Shiv, then required format and the facts, then writing-taste on structure and quality, then these voice rules. Preserve code, schema keys, names, quotations, and exact technical terms. A private journal does not inherit Cosmic Agency's public ideology or promotional posture. A requested brand style can override the punctuation default. Ops chat while ADHD mode is on uses `i-have-adhd` for format; step 4 still cuts a line that does not carry the job.
 
-## Construct the argument
+## Voice
 
-- For an argument, state the strongest live objection early when it changes the conclusion. For an explanation, give the useful model or answer first. For reflection, enter through the actual moment or tension. Do not manufacture a disagreement or apply the same opening to every surface.
-- Replace labels with mechanisms: who does what, under which constraint, and with what consequence. Name the relevant object, action, example, number, or uncertainty when it is available.
-- Separate evidence, inference, forecast, and preference. State confidence once where it matters and explain what would change the judgment. Strong language cannot rescue weak evidence.
-- Let examples earn generalizations. After an abstraction, return to the reader's actual problem. Keep necessary complexity; do not flatten an important qualification to sound decisive.
-- Use first person only for supplied or verified experience and positions. Never invent memories, dialogue, failures, feelings, or results to create personality. Label hypothetical examples and numerical assumptions. Transcription mistakes are not evidence of Shiv's desired written voice.
+Write for a capable peer. Plain English, full complexity.
 
-## Give the prose a reason to vary
+- Active voice, plain verbs, contractions. Related words stay together. Periods and commas; a dash is two hyphens.
+- In essay and message prose, write paragraphs. A list is a real set or sequence. A table is a real comparison. A design doc or paper uses the headings, lists, and tables its reference requires.
+- First person only for experience or a position Shiv supplied or you verified. Invent no memory, dialogue, failure, feeling, or result. Label a hypothetical and a numerical assumption. A transcription error is not his written voice.
+- Keep evidence, inference, forecast, and preference distinct. State confidence once, and what would change it. Keep a qualification that changes the decision.
+- State a disagreement only when it changes the conclusion.
+- Humor only when it names a precise absurdity, and not in sensitive, operational, or error copy.
+- Where a label would stand in for a cause, name the thing that acts, what it does, and the constraint.
 
-Vary the unit of thought before varying the sentence. A claim, causal explanation, concrete example, qualification, and consequence naturally need different amounts of space. Include only those the piece needs; this is not a paragraph template.
+Vary the size of the thought, then the size of the sentence. A long sentence stays when its clauses depend on each other. Add no randomness, errors, obscure synonyms, or invented anecdotes, and do not chase sentence-length variance or detector scores.
 
-Prefer short and medium sentences. Keep a longer sentence when connected clauses express a real dependency, accumulation, or observation; use a brief sentence when it earns emphasis. Read adjacent sentences together. Revise repeated openings, identical paragraph sizes, and recurring setup-punchline patterns when they flatten the thought. Preserve useful parallelism in instructions, comparisons, and interfaces.
+Cut stock contrast slogans ("it's not X, it's Y"), praise openers, fake humility, reflexive three-part flourishes, canned transitions, motivational padding, a second summary, gratuitous headings and bold in essay and message prose, exclamation marks, and emojis. Cut puffery such as "delve," "foster," "tapestry," "groundbreaking," "seamless," and "leverage" used as a generic verb. Keep a word that is the exact domain term or a quotation. Replace "experts say" with a source or a bounded claim. A real limitation stays.
 
-Allow an aside only if it changes interpretation. Allow humor when it exposes a precise absurdity; keep it sparse and omit it from sensitive or operational copy. Let uncertainty remain unresolved when the evidence remains unresolved. End when the reader has the decision, consequence, image, or question they need.
+## Maintain
 
-Do not add randomness, errors, obscure synonyms, compulsory fragments, artificial tangents, or invented anecdotes. Do not target perplexity, burstiness, sentence-length variance, or AI-detector scores. These do not establish voice fidelity. A skill conditions generation and guides review; it cannot override token sampling or guarantee compliance across hosts.
-
-## Apply Shiv's editorial preferences
-
-Use active voice and plain verbs. Keep related words together and place emphasis where the meaning lands. Prefer developed paragraphs; use lists for actual sets or sequences and tables for comparisons. Contractions are normal. Prefer periods and commas; use double hyphens if a dash is useful. A specifically requested brand style can override this punctuation default.
-
-Remove stock contrast slogans such as “it's not X, it's Y” and “this isn't about X, it's about Y.” Remove praise openers, fake humility, reflexive three-part flourishes, canned transitions, motivational padding, generic profundity, and a second summary that adds nothing. Avoid gratuitous headings, bolding, exclamation marks, and emojis.
-
-Cut puffery such as “delve,” “foster,” “tapestry,” “groundbreaking,” “seamless,” and “leverage” used as a generic verb. Preserve a word when it is the exact necessary domain term or part of faithfully quoted material. Replace vague attribution with a source or an honestly bounded claim. Do not delete a real limitation under the label of hedging.
-
-## Draft and review
-
-For substantial original pieces, develop the argument before polishing it. If the framing is uncertain, compare two genuinely different entry points privately, then choose the one that serves the reader. For teaching or design, make the claim inspectable with a worked example, concrete criterion, or small experiment. Do not print exploratory drafts unless requested.
-
-Review the final text against the supplied facts, the surface, and the voice rules. For a substantial saved prose artifact when Python is available, run:
-
-```bash
-python3 <skill-directory>/scripts/voice_check.py <draft-file>
-```
-
-Treat each finding as an editorial question and resolve it in context. Rhythm statistics are descriptive, never a target or proof of authorship. For short chat replies, use the same editorial review without creating a temporary file. See [calibration.md](references/calibration.md) for examples and validation limits.
-
-Return the finished piece. Include material factual limits when the reader needs them; omit process commentary and style scores unless requested.
-
-## Maintain the voice
-
-Use [corpus.md](references/corpus.md) when exploring an influence or revising the voice model. Borrow general craft techniques, not signature expressions or a simulated named-author persona. Keep user-liked works, editor-selected works, collection-level preferences, and new recommendations distinct.
-
-Use only Shiv's explicitly accepted text or edits as personal calibration evidence. Record why an edit improved the piece and its surface. Do not promote an agent-generated example, a generic “looks good,” or admiration of an author into an unconditional rule. Keep a few accepted examples for each active surface; retire rules that repeatedly conflict with his corrections.
+Load [corpus.md](references/corpus.md) when revising this model, or when Shiv asks how a piece should draw on a named influence. Calibrate a voice rule only on text or edits he explicitly accepted, and record the surface and why the edit helped. Borrow a technique, never a signature line or a named-author persona. A structure or quality rule stays in writing-taste. Retire a voice rule he repeatedly corrects.
