@@ -40,6 +40,8 @@ Code map: `prose_lines` is called by the CLI to isolate likely authored prose wh
 
 ## How to improve the voice model
 
+Add a voice rule only when Shiv's accepted edits repeat it. A structure or quality rule stays in writing-taste, so this skill does not grow a second copy.
+
 Collect a small set of real pieces across the surfaces Shiv actually uses. For each, retain the task, audience, draft, Shiv's revision, and the reason for the change. Keep factual context with the sample. Separate liked passages by other authors from Shiv's own prose.
 
 Compare candidate output with its baseline on factual fidelity, usefulness to the reader, specificity, reasoning, rhythm, and recognizability to Shiv. Prefer a blind comparison when it is convenient. A winning example is evidence for that surface; it is not a universal law.

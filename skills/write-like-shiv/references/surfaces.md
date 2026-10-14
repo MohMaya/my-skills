@@ -1,30 +1,25 @@
 # Surfaces and forms
 
-Use the smallest form that serves the reader. These are working shapes, not compulsory templates. Do not combine every mode or every influence in one piece.
+One row per piece. Read the file it links, apply the voice delta, then run the checklist the row names. [`writing-taste`](../../writing-taste/SKILL.md) owns quality and structure. The delta overrides a checklist line only where the row says so. Do not combine rows.
 
-| Surface or mode | Useful shape | What changes from the baseline |
+| Surface | Read, then its checklist | Voice delta |
 | --- | --- | --- |
-| Vision thesis; product story; founding document; public post | Human pain or need (or a shared belief or problem at nation scale), the failure in physical terms from the reader's domain, the mechanism that clears the path, the product late and quiet in one sentence, a toast ending | About 300 to 450 words for a thesis. Follow [vision.md](vision.md) and run the checker with `--surface vision`. |
-| Ops chat; status; plan; digest | Action, state, next step | Action-first via `i-have-adhd`. Vision prose rules do not apply. |
-| Take; Slack; email; PR discussion | Recommendation or request, decisive reason, material tradeoff, next action if needed | Compress context the reader already has. A message can be one paragraph. No performance, invented urgency, or essay-length windup. |
-| Technical explanation; engineering article; incident account | Problem, constraints, mechanism or approach, verified result, remaining tradeoff | Name concrete services, tables, interfaces, failure behavior, and units. Distinguish observation from causal attribution. Use a diagram only when it explains a relationship better. |
-| Technical design document | Summary; problem and constraints; current state; proposal; components and responsibilities; interface or contract changes; data or migration; failure modes and tradeoffs; rollout and rollback; observability; testing; alternatives; open questions | This order is an explicit prior preference. Use it for an actual design document, not every engineering response. Mark missing facts as unresolved. Explain how a decision changes future options. |
-| Teacher; tutorial | Useful model, steps where sequential, worked example, boundary of the model | Begin at the reader's knowledge gap. For experts, omit prerequisite exposition. Give an analogy a precise mapping and a limit; do not use it as proof. |
-| Think; essay | Specific puzzle or observation, developing reasoning, serious complication, earned implication | Allow a longer paragraph or sentence when it carries thought. An opening scene needs supplied facts. No obligatory thesis-roadmap-summary wrapper. |
-| Observer; cultural analysis | Observable pattern, concrete instances, mechanism, limits | Direct the wit at the behavior being examined. Do not invent representative anecdotes or infer motives as facts. |
-| Manifesto | Defensible conviction, grounds, commitments that change action | Keep ambition specific. A principle should settle an actual choice. Avoid motivational slogans and contempt for imagined opponents. |
-| Pitch | What changes, why now, initial customer and wedge, credible ability to execute, requested action | Separate validated traction from plans. Product promise must connect to a user action or outcome. Do not convert confidence into a forecast presented as fact. |
-| Journal; private reflection | Actual moment or tension, what was felt or done, reflection that may remain open | Preserve vulnerability, contradiction, and uncertainty. Do not rewrite distress as a lesson about agency or manufacture stoicism. No compulsory moral. |
-| Philosopher | Live question, concrete situation, reasoned position or unresolved tension | Keep scale and mortality connected to the particular situation. No detached cosmic sermon or quote-card conclusion. |
-| Short public post | One specific idea with enough context to be understood on its own | Vary length only as the thought needs. No bait, thread cadence, forced punchline, or invented extreme claim. |
-| Product copy; onboarding; error message | State, user consequence, available action | Reader comprehension dominates literary personality. Keep labels consistent. No humor in errors or irreversible confirmations. Do not expose implementation detail that changes no user decision. |
-| Design critique; product rationale | User task, observed friction, reason it occurs, proposed change, inspectable criterion | Ground taste in use, constraints, and alternatives. Use images or examples when they make the claim testable. Avoid unsupported adjectives like “intuitive.” |
-
-## Influence selection
-
-Use Graham's progressive reasoning and Feynman's concrete models as useful defaults for analytical work. Add Airey's practical tradeoffs and d.school's experiments when explaining design. Use Klein's scrutiny of competing explanations when evidence is contested. Reserve Wallace's self-questioning and Didion's observational restraint for forms that can support them. Use Carlin's attention to verbal absurdity as a light editorial lens, never as an instruction to become caustic.
-
-Use Newport's procedural specificity for tutorials, Altman's compression for a decision note, and Lee Kuan Yew's attention to constraints for strategic argument. Treat each as an aspect to study, not an authority that supplies Shiv's beliefs. See the corpus for access limits and provisional selections.
+| Vision thesis; product story; founding document; public ambition | [vision.md](vision.md) | ADHD formatting stays off. |
+| Ops chat; status; plan; digest | The writing-taste checklist | Action, state, next step, via `i-have-adhd`. Not vision prose. |
+| Take; Slack; email; PR discussion | The writing-taste checklist | The recommendation or request, the decisive reason, the material tradeoff, the next action if there is one. Compress context the reader already has. One paragraph can be the whole piece. |
+| Technical explanation; engineering article; incident account | One or two matching [studies](../../writing-taste/references/studies/), then the writing-taste checklist | Name the service, table, interface, failure, and unit. An observation is not a cause. A diagram only when it shows a relationship. |
+| Engineering design doc; HLD; LLD | [design-doc.md](../../writing-taste/references/genres/design-doc.md), then its Before sending list | Use it for a design doc, not for every engineering reply. |
+| Systems research paper | [systems-paper.md](../../writing-taste/references/genres/systems-paper.md), then the writing-taste checklist | No second outline on top of that file. |
+| Teacher; tutorial | One or two matching [studies](../../writing-taste/references/studies/), then the writing-taste checklist | Start at the reader's gap. An expert skips the prerequisite. An analogy has a mapping and a limit. |
+| Essay | One or two matching [studies](../../writing-taste/references/studies/), then the writing-taste checklist | A scene needs supplied facts. No opening roadmap. |
+| Observer; cultural analysis | One or two matching [studies](../../writing-taste/references/studies/), then the writing-taste checklist | Wit aims at the behavior. No invented anecdote, and no motive stated as fact. |
+| Manifesto | The writing-taste checklist | A conviction, its grounds, and the commitment that changes an action. Specific enough to settle a choice. |
+| Pitch | The writing-taste checklist | What changes, why now, the first customer and wedge, the ability to execute, the ask. Traction stays separate from the plan. A promise connects to a user action. Confidence is not a forecast. |
+| Journal; private reflection | The writing-taste checklist. The ending may stay open. | The moment or the tension, what was felt or done. Distress stays distress. No compulsory moral. |
+| Philosopher | The writing-taste checklist | A live question, a concrete situation, a position or an open tension. Scale stays tied to that situation. |
+| Short public post | The writing-taste checklist | One idea, with enough context to stand alone. Length follows the thought. No bait and no invented extreme. |
+| Product copy; onboarding; error | The writing-taste checklist | State, consequence, action. Comprehension over personality. Keep labels consistent. No humor in an error or an irreversible confirmation. No implementation detail that changes no decision. |
+| Design critique; product rationale | The writing-taste checklist | The user's task, the friction, why it happens, the change, a criterion someone can check. |
 
 ## An original worked example across surfaces
 
@@ -46,4 +41,4 @@ Equipment history needed. Ask a technician to add the missing details before con
 
 A complete ticket can conceal an unfinished job. The missing history only becomes visible when someone tries to decide what to do next. That distinction matters when the product is being judged on whether it can finish the work.
 
-Each version changes the reader's task and level of explanation. None obtains personality by changing the facts.
+Each version changes the reader's task and the level of explanation. None obtains personality by changing the facts.
