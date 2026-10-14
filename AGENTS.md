@@ -18,6 +18,18 @@ Distillation is the work at every scale: the ask, then every word, sentence, fun
   - Engineering owns the how: the technical comment — a short HLD, or the principal engineer's exact instructions for what to build.
   - Product decides scope: the comment of precise, sharp questions Product must answer.
 
+## First principles
+
+Shiv builds Lego blocks: small pieces with one job each that snap together into a Millennium Falcon or a Hogwarts castle. This holds for code, documents, and stories alike. Three laws shape every block.
+
+- **Reason from what a primitive is for.** Before using a tool, framework, or pattern, state the problem it was built to solve and check that ours has that shape. How the codebase already uses it is evidence, not the answer. Temporal exists for durable per-entity workflows and timers, so a "wake every 28 days" job becomes one workflow per entity rather than an hourly sweep over every row.
+- **Everything is a state machine.** Every entity, request, job, and document moves through named states by allowed transitions. Even a "stateless" request carries its state with it. Make the machine explicit, and enforce it in code:
+  - the states are an enum or a discriminated union;
+  - the transitions live in one table or one function;
+  - a guard rejects every illegal move.
+  A reader is taken on the same journey: each section of a document is one state, and it ends with a clear exit to the next.
+- **Minimise degrees of freedom.** Every option, flag, nullable field, branch, parameter, config knob, seam, or interface is a degree of freedom. Each one multiplies the states a system can reach, and so its entropy. Start at the fewest. Add one only when a real case needs it today, and name that case. Constrain what remains with types, so an invalid state cannot be represented.
+
 ## Done means verified
 
 - Own the outcome. Carry the task through implementation, checks, and the delivery Shiv asked for. A first draft is a checkpoint.
@@ -69,7 +81,6 @@ Spend effort on reading and understanding, and keep the diff small. Choose the s
 - Match the surrounding code's patterns, naming, package manager, and test runner where they meet the bar; where they fall below it, raise them through `bar-raiser` rather than copy them. A new dependency needs a stated reason.
 - Parse untrusted input into domain types at the boundary, then trust those types inside.
 - Keep every function at cyclomatic complexity 10 or below. Move branches into data (lookup tables, state machines, discriminated unions), into types parsed once at the boundary, or into one shared guard. The turn-end gate rejects new functions over 10 and changes that make an over-limit function worse.
-- Add a seam, plugin point, interface, or config option only when a second real case exists today. Simple code is the extensible code.
 - Change an internal API by migrating every caller and deleting the old path in the same change.
 - Keep business logic in services, out of components, hooks, and route handlers.
 - Fail loudly with a specific message. Empty catches and catch-and-log hide real failures.
