@@ -1,6 +1,6 @@
 # Dvandva: the literature behind the moves
 
-Each source below earns its place by feeding one move; headings follow the moves in `../SKILL.md` (move 7, Produce, needs no source). Quotes are verbatim from the cited source; paraphrases are marked as such. Attributions known to be apocryphal say so.
+Each source below earns its place by feeding one move; headings follow the moves in `../SKILL.md` (moves 7 and 8, Lessons and Produce, need no source). Quotes are verbatim from the cited source; paraphrases are marked as such. Attributions known to be apocryphal say so.
 
 ## 1. Understand: you do not know it until you can say it
 
