@@ -1,6 +1,6 @@
 ---
 name: writing-taste
-description: Taste library of how the highest-signal writers think and write. Use before drafting or revising essays, technical posts, product or leadership writing, and research explainers, to borrow proven thinking and writing moves and run the pre-send checklist. Voice stays with write-like-shiv.
+description: Taste library of how the highest-signal writers think and write. Use before drafting or revising essays, technical posts, product or leadership writing, research explainers, engineering design docs, and systems papers, to borrow the matching moves and run the pre-send checklist. Voice stays with write-like-shiv.
 ---
 
 # Writing taste
@@ -11,9 +11,12 @@ A library of moves studied from the highest-signal writers, so prose earns its c
 
 ## Use it
 
-1. Pick the genre of the piece you are writing and read one or two matching studies in [`references/studies/`](references/studies/). Each ends with an exercise.
-2. Think before writing: draft the core claim in one sentence. If you cannot, you do not understand the subject yet; write to find out, then rewrite.
-3. Draft, then run the checklist below and fix every miss.
+1. Name the piece and read its reference.
+   - Engineering design doc (HLD, LLD, or a decision that answers requirements that already exist): [`references/genres/design-doc.md`](references/genres/design-doc.md), then the exemplar it names.
+   - Systems research paper: [`references/genres/systems-paper.md`](references/genres/systems-paper.md).
+   - Essay, technical post, product or leadership writing, or research explainer: one or two matching studies in [`references/studies/`](references/studies/). Each ends with an exercise.
+2. Think before writing: draft the core claim in one sentence. If you cannot, you do not understand the subject yet; write to find out, then rewrite. For a design doc, that sentence is the decision plus the boundary invariant.
+3. Draft, then run that reference's checklist and fix every miss. Essays, posts, and explainers use the checklist below.
 
 ## Principles
 
@@ -47,6 +50,11 @@ Promoted only after a pattern appears in two or more studies, each naming its so
 - Every abstraction has one concrete example, image, or piece of real code.
 - Each paragraph moves the argument; asides live in notes or are cut.
 - The ending is as strong as the evidence and no stronger.
+
+## Genres
+
+- [Engineering design doc](references/genres/design-doc.md): HLD and LLD after requirements exist, from the decision down to the detail a reviewer must see. Exemplars: [how to write one](references/genres/design-docs-at-google.md), [a requirements-driven decision](references/genres/oxide-rfd-110.md).
+- [Systems research paper](references/genres/systems-paper.md): Dynamo and the S3 ShardStore paper. Requirements up front, lessons from production, and where a paper parts from an internal design doc.
 
 ## Studies
 
