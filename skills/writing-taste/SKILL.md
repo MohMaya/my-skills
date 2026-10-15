@@ -28,12 +28,12 @@ Promoted only after a pattern appears in two or more studies, each naming its so
 - **Tell the reader where they are.** Use transitions that place the reader in the argument or pose the next question, so the piece needs few headings to stay navigable. Graham: "This much, I assume, won't be that controversial"; Bussink: "but what if it did?"; Saarinen: "In a world where building is easy, the real cost comes later."; Rivaton and Southwood: headings that name the next demand ("Local heroes"; "Growth is the best policy"; "The Chicago way"). (Graham, words; Bussink, Neki; Saarinen, features; Rivaton & Southwood, China)
 - **End at the claim's true size.** Close by stating how far the idea reaches, including the case where it stops, instead of inflating it. Graham ends on necessary but not sufficient; Bussink ends on the one query that must go through every layer; Saarinen ends by flipping the reason—existence is expensive, not implementation; Rivaton and Southwood end by refusing the fashionable ask for a new model and naming the old one the West abandoned. (Graham, words; Bussink, Neki; Saarinen, features; Rivaton & Southwood, China)
 - **Rename the story the reader brought.** When a popular account misnames the cost or the actor, swap the label and make the new name the claim. Saarinen renames cheap building so the bill that still bites is *carrying*; Rivaton and Southwood rename China's "command economy" as a continent-sized tournament of local growth machines. (Saarinen, features; Rivaton & Southwood, China)
+- **Hold one subject and change one axis at a time.** Keep a single concrete example through the piece, and let each step alter one demand on it, so the reader tracks the idea instead of new setups. Bussink climbs one query from decoding nothing to decoding every value; Rieseberg keeps one quarterly deck and changes only the kind of ambition. ([Bussink, Neki](references/studies/2026-10-12-designing-neki-for-performance.md); [Rieseberg, ambition](references/studies/2026-10-15-how-to-be-more-ambitious.md))
 
 ## Candidate moves (one study each)
 
 - **Writing is the test of the idea.** Write to find out what you think; expect half the ideas to arrive while writing. (Graham, words)
 - **Pass the neutral stranger.** Reread as a reader who knows only the page; add what they need even if it costs nice sentences. (Graham, words)
-- **One running example, one change per section.** Keep a single concrete example (a table, a query, a user) and change one thing per section, so the reader tracks the idea instead of new setups. (Bussink, Neki)
 - **Show the rejected path in real code.** Put the usual approach on the page, ideally from your own earlier system, so the cost is visible before the alternative. (Bussink, Neki)
 - **Pay the bill for the cleverness.** After the win, list the invariants it depends on and what breaks if they fail. (Bussink, Neki)
 - **Point at the oddity.** When the principle produces a surprising result, call it out; it is the best evidence the principle is real. (Bussink, Neki)
@@ -42,11 +42,14 @@ Promoted only after a pattern appears in two or more studies, each naming its so
 - **Open on a concrete analogy the reader already inhabits.** Before any foreign case or abstract mechanism, give a counterfactual the reader can feel (YC runs the city), so the thesis arrives as recognition. (Rivaton & Southwood, China)
 - **Cases first, scorecard second.** Show named actors winning or losing before you open the incentive file that explains them, so the system feels discovered. (Rivaton & Southwood, China)
 - **Map the foreign case onto the reader's own history.** Close by finding the same machine in the reader's past (Daley, Moses, Hartsfield), so the lesson is recovery, not import. (Rivaton & Southwood, China)
+- **Split the slogan, then skip the settled kind.** Break a command the reader already repeats into a few kinds, grant the kind that already works, and teach only the rest. (Rieseberg, ambition)
+- **Demand the instrument, not the costume.** When a fancier version would only change the voice or the role, name the raw material, the method a leading practitioner would use, and a judge other than the maker. (Rieseberg, ambition)
 
 ## Checklist before sending
 
 - The core claim fits in one sentence, and the opening states it in its most obvious form.
 - Each section or step adds exactly one new demand or idea.
+- When a tutorial or a design is taught by climbing, one concrete subject carries it, and each step changes one thing about that subject.
 - The default being broken is named, with its real benefit, before the alternative.
 - A neutral stranger would find it correct and complete.
 - The strongest objection is answered, with the boundary of the claim stated.
@@ -66,6 +69,7 @@ Promoted only after a pattern appears in two or more studies, each naming its so
 - [Dirkjan Bussink, "Designing Neki for performance"](references/studies/2026-10-12-designing-neki-for-performance.md): technical post that teaches a layered design by climbing one query at a time.
 - [Karri Saarinen, "Every feature should earn its place"](references/studies/2026-10-13-every-feature-should-earn-its-place.md): product essay that separates the cost of building from the cost of carrying.
 - [Robin Rivaton & Ben Southwood, "China's growth machines"](references/studies/2026-10-14-chinas-growth-machines.md): economics explainer that replaces Beijing-as-command with a tournament of local growth machines.
+- [Felix Rieseberg, "How to be more ambitious"](references/studies/2026-10-15-how-to-be-more-ambitious.md): tutorial that turns a rallying cry into three climbs on one ordinary task.
 
 ## Sources
 
