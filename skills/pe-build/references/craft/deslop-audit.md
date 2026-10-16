@@ -84,7 +84,7 @@ Check for these problems and fix them:
 - **3-card carousel testimonials with dots.** Replace with a masonry wall, embedded social posts, or a single rotating quote.
 - **Pricing table with 3 towers.** Highlight the recommended tier with color and emphasis, not just extra height.
 - **Modals for everything.** Use inline editing, slide-over panels, or expandable sections instead of popups for simple actions.
-- **Avatar circles exclusively.** Try squircles or rounded squares for a less generic look.
+- **Avatar circles exclusively.** Try [squircles](ui/surfaces.md#compensated-squircle-corners) or rounded squares for a less generic look.
 - **Light/dark toggle always a sun/moon switch.** Use a dropdown, system preference detection, or integrate it into settings.
 - **Footer link farm with 4 columns.** Simplify. Focus on main navigational paths and legally required links.
 

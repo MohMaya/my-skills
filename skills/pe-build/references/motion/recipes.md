@@ -235,6 +235,51 @@ The text and background change together, in perfect sync, because they're one el
 
 ---
 
+## Sliding indicator, anchor positioning
+
+One pseudo-element follows the hovered item, or the keyboard-focused item when nothing is hovered. That item holds `anchor-name`; the pseudo-element's `anchor()` insets track it, and transitioning those insets is the slide. This is hover-follow and same-page state. A React or route change uses the [view-transition indicator](view-transitions/css-recipes.md#sliding-indicator-tab-underline--segmented-pill). A full load paints the indicator where the current item is; it does not travel.
+
+```css
+.nav {
+  position: relative;
+}
+.nav a[aria-current="page"] {
+  background: var(--indicator);
+}
+
+@supports (anchor-name: --a) {
+  .nav a[aria-current="page"] {
+    background: none;
+    anchor-name: --nav;
+  }
+  .nav:has(:hover) a:not(:hover),
+  .nav:not(:has(:hover)):has(:focus-visible) a:not(:focus-visible) {
+    anchor-name: none;
+  }
+  .nav a:hover,
+  .nav:not(:has(:hover)) a:focus-visible {
+    anchor-name: --nav;
+  }
+  .nav::before {
+    content: "";
+    position: absolute;
+    position-anchor: --nav;
+    inset: anchor(inside);
+    background: var(--indicator);
+    pointer-events: none;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .nav::before {
+      transition: inset 200ms var(--ease-out);
+    }
+  }
+}
+```
+
+Exactly one element holds the name. `:has()` releases it from the current item while another is hovered, and `:focus-visible` takes it only when nothing is hovered. `pointer-events: none` keeps the pseudo-element off the hit target while it crosses the gap. Transition the `anchor()` insets (`inset`, or the longhands). `position-area` does not interpolate. Without support, the current item keeps the static background.
+
+---
+
 ## Scroll reveal
 
 Marketing surfaces only. Don't do this to functional UI a user visits daily.
