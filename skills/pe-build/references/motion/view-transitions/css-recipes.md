@@ -278,7 +278,7 @@ Same freeze as persistent chrome. A floating/interactive element left rendered w
 
 ### Sliding Indicator (tab underline / segmented pill)
 
-One shared-name indicator morphs between positions. Slide the group; disable old/new so the solid bar slides instead of cross-fading:
+One shared-name indicator morphs between positions on a React or route state change. Slide the group; disable old/new so the solid bar slides instead of cross-fading. Hover-follow and same-page state use [anchor positioning](../recipes.md#sliding-indicator-anchor-positioning).
 
 ```css
 ::view-transition-group(.tab-underline) {

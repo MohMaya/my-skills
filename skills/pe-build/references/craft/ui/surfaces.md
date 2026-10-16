@@ -54,6 +54,27 @@ The rule matters most when nested surfaces sit close together. Past `24px` of pa
 
 Mismatched radii on closely nested surfaces are a common source of visual tension. Calculate concentrically where the layers share a visible, even inset. Keep an established component token where they are independent or the padding is deliberately asymmetric.
 
+## Compensated squircle corners
+
+`corner-shape` draws inside the existing radius and does nothing without one. A squircle (`superellipse(2)`) removes less of the corner than a circle at the same radius, so the corner looks sharper. Grow the radius until that diagonal cut matches the circle it replaces. Nested surfaces then keep the even gap from [concentric radii](#concentric-border-radius), on the same `--factor`. Borders, outline, `box-shadow`, `overflow`, and `backdrop-filter` follow the shape. Hit-testing follows the `border-radius` box, not the squircle.
+
+```css
+.surface {
+  border-radius: calc(var(--radius, 1rem) * var(--factor, 1));
+}
+
+@supports (corner-shape: squircle) {
+  .surface {
+    --factor: calc(
+      (1 - pow(2, -0.5)) / (1 - pow(2, -1 / pow(2, var(--shape, 2))))
+    );
+    corner-shape: superellipse(var(--shape, 2));
+  }
+}
+```
+
+Unsupported browsers never set `--factor`, so they keep the original radius. Set `--shape` (default `2`) and the curve and the factor follow together. Leave pills on `9999px` or `50%`; those ends stay round. A large radius on a small box is clamped when painted. Plain CSS is the default. `tailwindcss-squircles` wraps this recipe; add it only with a stated reason.
+
 ## Optical alignment
 
 When geometric centering looks off, align optically instead.

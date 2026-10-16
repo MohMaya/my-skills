@@ -14,7 +14,7 @@ URL as state: [url-state.md](url-state.md). Copy confirmation: [clipboard.md](cl
 
 ## Concentric border radius
 
-Outer radius = inner radius + padding. Mismatched radii on nested elements is the most common thing that makes an interface feel off. Radius, shadow and outline recipes are in [surfaces.md](surfaces.md).
+Outer radius = inner radius + padding. Mismatched radii on nested elements is the most common thing that makes an interface feel off. Radius, squircle, shadow and outline recipes are in [surfaces.md](surfaces.md).
 
 ## Optical over geometric alignment
 
