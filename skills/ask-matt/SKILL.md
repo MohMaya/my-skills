@@ -8,7 +8,7 @@ disable-model-invocation: true
 
 You don't remember every skill, so ask.
 
-**Dvandva.** Run `dvandva` before you produce a recommendation.
+Before stating what a skill does or recommending a step be skipped, read that skill's SKILL.md: the summaries here are for orientation only.
 
 A **flow** is a path through the skills. Most paths run along one **main flow**, and two **on-ramps** merge onto it. Everything else is standalone, or a vocabulary layer that runs underneath.
 

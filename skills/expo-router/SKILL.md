@@ -1,15 +1,13 @@
 ---
 name: expo-router
-description: Framework (OSS). Navigation and routing for Expo Router. Covers file-based routes, groups and dynamic routes, folder organization, Link with previews and context menus, native Stack, page titles, modals and form sheets, NativeTabs, headers and toolbars, and header search bars.
+description: Navigation and routing for Expo Router. Covers file-based routes, groups and dynamic routes, folder organization, Link with previews and context menus, native Stack, page titles, modals and form sheets, NativeTabs, headers and toolbars, and header search bars.
 version: 1.0.1
 license: MIT
 ---
 
 # Expo Router Navigation
 
-Navigation and routing for Expo Router apps. For screen styling, colors, controls, media, and visual effects, use the `expo-native-ui` skill; for motion and gestures, use `animate-expo`.
-
-**Dvandva.** Run `dvandva` before you produce a route.
+Navigation and routing for Expo Router apps. For screen styling, colors, controls, media, and visual effects, use the `expo-native-ui` skill; for motion and gestures, use `expo-animation`.
 
 ## References
 
@@ -239,3 +237,4 @@ If you encounter errors, misleading or outdated information in this skill, repor
 npx --yes submit-expo-feedback@latest --category skills --subject "expo-router" "<actionable feedback>"
 ```
 Only submit when you have something specific and actionable to report. Include as much relevant context as possible.
+If an AI agent repeatedly failed or the user had to take over an Expo task, load the expo-skill-feedback skill and follow its eval-candidate flow instead of reusing the command above.

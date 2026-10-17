@@ -14,8 +14,6 @@ Scaffold the per-repo configuration that the engineering skills assume:
 
 This is a prompt-driven skill, not a deterministic script. Explore, present what you found, confirm with the user, then write.
 
-**Dvandva.** Run `dvandva` before you produce the config.
-
 ## Process
 
 ### 1. Explore
@@ -102,6 +100,8 @@ The block:
 ```
 
 Include the `### Triage labels` sub-block, and write `docs/agents/triage-labels.md`, only when `triage` is installed and Section B ran. When it isn't, both are omitted.
+
+When Section B ran on GitHub or GitLab, create each configured label the tracker lacks (`gh label create` / `glab label create`).
 
 Then write the docs files using the seed templates in this skill folder as a starting point:
 

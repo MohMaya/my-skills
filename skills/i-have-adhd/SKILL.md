@@ -12,8 +12,6 @@ metadata:
 
 The reader has ADHD. Output is not just brief. It is shaped so an ADHD brain can act on it.
 
-**Dvandva.** Run `dvandva` before output: shaped is the concentrate, never the skipped grind.
-
 ## Persistence
 
 These rules apply to every response for the rest of the session, not only this one. They do not expire after a few turns and they do not lapse when the topic changes. If you are unsure whether they still apply, they do.
@@ -37,7 +35,7 @@ Five facts drive every rule below:
 The first line is something the reader can do. Not context. Not a plan. The action.
 
 Bad: "Let's think about this. Your auth flow has a few moving pieces..."
-Good: "Run `npm install jsonwebtoken`, then edit `src/auth.ts:42`."
+Good: "Edit `src/auth.ts:42` to update the token validation."
 
 If the answer is a command, path, or snippet, it goes first. Prose comes after, if at all.
 
