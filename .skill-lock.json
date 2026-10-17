@@ -855,6 +855,42 @@
       "skillFolderHash": "de2038cf286b31f33b397c1308455dbc17ef26f3",
       "installedAt": "2026-10-17T14:11:32.414Z",
       "updatedAt": "2026-10-17T14:11:32.414Z"
+    },
+    "earshot": {
+      "source": "Leonxlnx/earshot",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/Leonxlnx/earshot.git",
+      "skillPath": "skills/earshot/SKILL.md",
+      "skillFolderHash": "85bc66a1ccccd5f2c2f8bae1966ee7fc3f7d8b25",
+      "installedAt": "2026-10-17T23:01:44.061Z",
+      "updatedAt": "2026-10-17T23:01:44.061Z"
+    },
+    "real-sound": {
+      "source": "Leonxlnx/earshot",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/Leonxlnx/earshot.git",
+      "skillPath": "skills/real-sound/SKILL.md",
+      "skillFolderHash": "1bf994ea902087700449149d9d8c01a7364fd6e8",
+      "installedAt": "2026-10-17T23:01:44.062Z",
+      "updatedAt": "2026-10-17T23:01:44.062Z"
+    },
+    "unlazy": {
+      "source": "Leonxlnx/unlazy",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/Leonxlnx/unlazy.git",
+      "skillPath": "SKILL.md",
+      "skillFolderHash": "16671491f6679ad9378f52604d3bc2415b4120c7",
+      "installedAt": "2026-10-17T23:01:47.668Z",
+      "updatedAt": "2026-10-17T23:01:47.668Z"
+    },
+    "userinterface-wiki": {
+      "source": "raphaelsalaja/userinterface-wiki",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/raphaelsalaja/userinterface-wiki.git",
+      "skillPath": "skills/SKILL.md",
+      "skillFolderHash": "7b2588047fed29a1e41a08b6287137cc940d6293",
+      "installedAt": "2026-10-17T23:01:52.878Z",
+      "updatedAt": "2026-10-17T23:01:52.878Z"
     }
   },
   "dismissed": {
