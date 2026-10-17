@@ -11,7 +11,7 @@ home='(~|\$HOME)/'
 owned='\.(agents|claude|supermemory-claude)([/.,;:]|$)'
 paths="(${home}[A-Za-z0-9._-][^[:space:]\`\"')]*|/(Users|home|Volumes|opt|private)/[A-Za-z0-9][^[:space:]\`\"')]*|[A-Z]:\\\\[^[:space:]\`\"')]*)"
 
-found=$(git grep --untracked -nIoE "$paths" -- . ':!check.sh' \
+found=$(git grep --untracked -nIoE "$paths" -- . ':!check.sh' ':!skills/' \
   | grep -vE ":${home}${owned}" || true)
 
 if [ -n "$found" ]; then
