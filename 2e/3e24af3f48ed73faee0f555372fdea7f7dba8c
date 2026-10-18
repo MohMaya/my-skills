@@ -1,0 +1,26 @@
+hooks/test_stop_gate.py
+  s_f16178bc6c18a1::t_d140a4d75c6c36 58-64,66-77,83-85
+  s_f16178bc6c18a1::t_e80f53adff15c5 41-57,65,86-96
+  s_f16178bc6c18a1::t_f44c88828f0c6f 78-82
+hooks/stop-gate.py
+  s_f16178bc6c18a1::t_432f557c2235ae 311-316
+  s_f16178bc6c18a1::t_3457dea5e0a57c 6-7,281-294,296,320-327
+  s_f16178bc6c18a1::t_8cc649f12fdb5d 280,295,297-310
+  s_f16178bc6c18a1::t_80f820877bab61 279,317-319,328-329,485
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "2e3e24af3f48ed73faee0f555372fdea7f7dba8c",
+  "prompts": {},
+  "sessions": {
+    "s_f16178bc6c18a1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "fce56075-34a5-4c90-b862-1ff1e768a006",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Shivanshu Chaudhary <shivanshuchaudhary97@gmail.com>"
+    }
+  }
+}
