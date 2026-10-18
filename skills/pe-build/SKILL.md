@@ -68,6 +68,7 @@ craft itself lives in the reference files — load only what the mode needs.
   novel curves ad hoc.
 - Stagger ~30–80ms between list items, ~100ms between semantic groups.
 - Never disable submit buttons; validate on submit.
+- Premium feel is state completeness: build to pe-review's `references/experience-rubric.md` § State completeness (S1–S7) and check them in Verify.
 - **Distill.** Run `dvandva` first. The diff is the artifact: every line, function, and comment earns its
   place.
 - Comments explain a non-obvious why. A workaround or band-aid gets a root-cause fix,

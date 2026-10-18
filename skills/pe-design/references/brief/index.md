@@ -94,3 +94,5 @@ Present the brief in chat for explicit confirmation or one correction round, the
 stop — no implementation, no code. Write the brief to a file only when the user asks,
 wherever they say; there is no required format or storage. When no answer mechanism
 exists, mark assumptions plainly, return the brief, and stop.
+
+A brief lists, for each primary-path action, its feedback, take-back, and next step, plus its failure states; pe-review's `references/experience-rubric.md` § State completeness (S1–S7) is the bar the build is judged against.
