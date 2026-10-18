@@ -1,0 +1,248 @@
+.skill-lock.json
+  h_22370449f3812f 9,11,28,30,37,39,46,48,55,57,82,84,91,93,100,102,137,139,146,148,211,213,220,222,269,271,337,339,346,348,405,407,414,416,423,425,630,632,639,641,648,650,657,659,666,668,675,677,684,686,693,695,702,704,711,713,720,722,729,731-857,864,866
+skills/ask-matt/SKILL.md
+  h_22370449f3812f 11
+skills/brandkit/SKILL.md
+  h_22370449f3812f 1-843
+skills/caveman/README.md
+  h_22370449f3812f 7-10,12,14-18,20-24,29-32,36-47,55-59,61-62,67
+skills/caveman/SKILL.md
+  h_22370449f3812f 4-6,9-10,13,17-21,23-26,30-37,39,41,43,45,47,49-50,52,54,56,58,60,62,64,66,68,70,72,74,76-82,84,86-89
+skills/chief-of-staff/SKILL.md
+  h_22370449f3812f 7,9,11-12,28-45
+skills/code-review/SKILL.md
+  h_22370449f3812f 13,29,36,60-61
+skills/design-taste-frontend-v1/SKILL.md
+  h_22370449f3812f 1-226
+skills/design-taste-frontend-v2-experimental/SKILL.md
+  h_22370449f3812f 1-1228
+skills/design-taste-frontend/README.md
+  h_22370449f3812f 1-81
+skills/design-taste-frontend/SKILL.md
+  h_22370449f3812f 1-414
+skills/design-taste-frontend/assets/base.css
+  h_22370449f3812f 1-100
+skills/design-taste-frontend/assets/base.js
+  h_22370449f3812f 1-37
+skills/design-taste-frontend/evals/evals.json
+  h_22370449f3812f 1-48
+skills/design-taste-frontend/library/directions.json
+  h_22370449f3812f 1-1078
+skills/design-taste-frontend/library/heroes.json
+  h_22370449f3812f 1-894
+skills/design-taste-frontend/library/motions.json
+  h_22370449f3812f 1-57
+skills/design-taste-frontend/library/palettes.json
+  h_22370449f3812f 1-1485
+skills/design-taste-frontend/library/photos.json
+  h_22370449f3812f 1-7240
+skills/design-taste-frontend/library/sections.json
+  h_22370449f3812f 1-4136
+skills/design-taste-frontend/library/sites.json
+  h_22370449f3812f 1-7274
+skills/design-taste-frontend/library/type.json
+  h_22370449f3812f 1-2024
+skills/design-taste-frontend/references/colour.md
+  h_22370449f3812f 1-141
+skills/design-taste-frontend/references/copy.md
+  h_22370449f3812f 1-177
+skills/design-taste-frontend/references/critique.md
+  h_22370449f3812f 1-171
+skills/design-taste-frontend/references/imagery.md
+  h_22370449f3812f 1-377
+skills/design-taste-frontend/references/layout.md
+  h_22370449f3812f 1-178
+skills/design-taste-frontend/references/motion.md
+  h_22370449f3812f 1-292
+skills/design-taste-frontend/references/research.md
+  h_22370449f3812f 1-306
+skills/design-taste-frontend/references/tells.md
+  h_22370449f3812f 1-115
+skills/design-taste-frontend/references/type.md
+  h_22370449f3812f 1-170
+skills/design-taste-frontend/scripts/assets.mjs
+  h_22370449f3812f 1-865
+skills/design-taste-frontend/scripts/draw.mjs
+  h_22370449f3812f 1-525
+skills/design-taste-frontend/scripts/inspect.mjs
+  h_22370449f3812f 1-205
+skills/design-taste-frontend/scripts/lib/cdp.mjs
+  h_22370449f3812f 1-205
+skills/design-taste-frontend/scripts/lib/probe.mjs
+  h_22370449f3812f 1-569
+skills/design-taste-frontend/scripts/lib/rules.mjs
+  h_22370449f3812f 1-137
+skills/design-taste-frontend/scripts/lint.mjs
+  h_22370449f3812f 1-108
+skills/diagnosing-bugs/SKILL.md
+  h_22370449f3812f 125
+skills/expo-native-ui/SKILL.md
+  h_22370449f3812f 3,10,12,68,98,100,102,117,201
+skills/expo-router/SKILL.md
+  h_22370449f3812f 3,10,240
+skills/full-output-enforcement/SKILL.md
+  h_22370449f3812f 1-49
+skills/gh-stack/SKILL.md
+  h_22370449f3812f 10,32-33,64-67,171-177
+skills/gh-stack/references/commands.md
+  h_22370449f3812f 26-28,48-50,83,114-117,132-134,154-157,194-212
+skills/gh-stack/references/troubleshooting.md
+  h_22370449f3812f 130-132,144-160,163-166,178-186
+skills/gpt-taste/SKILL.md
+  h_22370449f3812f 1-75
+skills/grilling/SKILL.md
+  h_22370449f3812f 24-25
+skills/high-end-visual-design/SKILL.md
+  h_22370449f3812f 1-98
+skills/i-have-adhd/SKILL.md
+  h_22370449f3812f 38
+skills/i-have-adhd/agents/gemini.toml
+  h_22370449f3812f 1-24
+skills/idea-refine/SKILL.md
+  h_22370449f3812f 3,8-9,12-18,163-172
+skills/image-to-code/SKILL.md
+  h_22370449f3812f 1-1228
+skills/imagegen-frontend-mobile/SKILL.md
+  h_22370449f3812f 1-1465
+skills/imagegen-frontend-web/SKILL.md
+  h_22370449f3812f 1-987
+skills/implement/SKILL.md
+  h_22370449f3812f 9
+skills/industrial-brutalist-ui/SKILL.md
+  h_22370449f3812f 1-92
+skills/minimalist-ui/SKILL.md
+  h_22370449f3812f 1-86
+skills/playwright-cli/SKILL.md
+  h_22370449f3812f 4,55-56,215-216,233,400-401
+skills/playwright-cli/references/running-code.md
+  h_22370449f3812f 24-27
+skills/playwright-cli/references/test-generation.md
+  h_22370449f3812f 352
+skills/redesign-existing-projects/SKILL.md
+  h_22370449f3812f 1-181
+skills/remotion-best-practices/SKILL.md
+  h_22370449f3812f 4
+skills/remotion-best-practices/remotion-captions/REFERENCE.md
+  h_22370449f3812f 4
+skills/remotion-best-practices/remotion-create/REFERENCE.md
+  h_22370449f3812f 4
+skills/remotion-best-practices/remotion-docs/REFERENCE.md
+  h_22370449f3812f 4
+skills/remotion-best-practices/remotion-interactivity/REFERENCE.md
+  h_22370449f3812f 4,18,20,22-23,25-27,29,33-43,45,50-52,80,105-107,114-115,119,123-124,128,131-135,151-152,155,164-166,168-169,185-190
+skills/remotion-best-practices/remotion-interactivity/timeline-structure.md
+  h_22370449f3812f 1-170
+skills/remotion-best-practices/remotion-maps/REFERENCE.md
+  h_22370449f3812f 4
+skills/remotion-best-practices/remotion-markup/REFERENCE.md
+  h_22370449f3812f 4,20,30-36,112,117-118,123-124,143,146,179-183,203,230,236,244,246,306,377-380
+skills/remotion-best-practices/remotion-markup/audio.md
+  h_22370449f3812f 152,155
+skills/remotion-best-practices/remotion-markup/color-correction.md
+  h_22370449f3812f 1-118
+skills/remotion-best-practices/remotion-markup/connected-compositions.md
+  h_22370449f3812f 3,5-7,9,11-13,17-20,22-23
+skills/remotion-best-practices/remotion-markup/cropping.md
+  h_22370449f3812f 10
+skills/remotion-best-practices/remotion-markup/effects.md
+  h_22370449f3812f 14-16
+skills/remotion-best-practices/remotion-markup/multi-scene-video.md
+  h_22370449f3812f 3-5,7-8,16-19,24-27,29-32
+skills/remotion-best-practices/remotion-markup/remotion-maps/REFERENCE.md
+  h_22370449f3812f 4
+skills/remotion-best-practices/remotion-markup/sequencing.md
+  h_22370449f3812f 9,11,19,21-22,39,42,45
+skills/remotion-best-practices/remotion-markup/timing-props.md
+  h_22370449f3812f 7-8
+skills/remotion-best-practices/remotion-markup/transitions.md
+  h_22370449f3812f 24,29-30,32-50,53-56,58-83,86-97,99-100,102,104,110,123-146,151,153,156-172,174-178,210
+skills/remotion-best-practices/remotion-markup/video-editing.md
+  h_22370449f3812f 22-23,98,104,110,127,140,150
+skills/remotion-best-practices/remotion-multimedia/REFERENCE.md
+  h_22370449f3812f 4
+skills/remotion-best-practices/remotion-render/REFERENCE.md
+  h_22370449f3812f 4
+skills/remotion-best-practices/remotion-saas/REFERENCE.md
+  h_22370449f3812f 4
+skills/remotion-best-practices/remotion-studio/REFERENCE.md
+  h_22370449f3812f 4
+skills/remotion-best-practices/remotion-upgrade/REFERENCE.md
+  h_22370449f3812f 4
+skills/remotion-captions/SKILL.md
+  h_22370449f3812f 4
+skills/remotion-create/SKILL.md
+  h_22370449f3812f 4
+skills/remotion-docs/SKILL.md
+  h_22370449f3812f 4
+skills/remotion-interactivity/SKILL.md
+  h_22370449f3812f 4,18,20,22-23,25-27,29,33-43,45,50-52,80,105-107,114-115,119,123-124,128,131-135,151-152,155,164-166,168-169,185-190
+skills/remotion-interactivity/timeline-structure.md
+  h_22370449f3812f 1-170
+skills/remotion-maps/SKILL.md
+  h_22370449f3812f 4
+skills/remotion-markup/SKILL.md
+  h_22370449f3812f 4,20,30-36,112,117-118,123-124,143,146,179-183,203,230,236,244,246,306,377-380
+skills/remotion-markup/audio.md
+  h_22370449f3812f 152,155
+skills/remotion-markup/color-correction.md
+  h_22370449f3812f 1-118
+skills/remotion-markup/connected-compositions.md
+  h_22370449f3812f 3,5-7,9,11-13,17-20,22-23
+skills/remotion-markup/cropping.md
+  h_22370449f3812f 10
+skills/remotion-markup/effects.md
+  h_22370449f3812f 14-16
+skills/remotion-markup/multi-scene-video.md
+  h_22370449f3812f 3-5,7-8,16-19,24-27,29-32
+skills/remotion-markup/remotion-maps/REFERENCE.md
+  h_22370449f3812f 4
+skills/remotion-markup/sequencing.md
+  h_22370449f3812f 9,11,19,21-22,39,42,45
+skills/remotion-markup/timing-props.md
+  h_22370449f3812f 7-8
+skills/remotion-markup/transitions.md
+  h_22370449f3812f 24,29-30,32-50,53-56,58-83,86-97,99-100,102,104,110,123-146,151,153,156-172,174-178,210
+skills/remotion-markup/video-editing.md
+  h_22370449f3812f 22-23,98,104,110,127,140,150
+skills/remotion-multimedia/SKILL.md
+  h_22370449f3812f 4
+skills/remotion-render/SKILL.md
+  h_22370449f3812f 4
+skills/remotion-saas/SKILL.md
+  h_22370449f3812f 4
+skills/remotion-studio/SKILL.md
+  h_22370449f3812f 4
+skills/remotion-upgrade/SKILL.md
+  h_22370449f3812f 4
+skills/setup-matt-pocock-skills/SKILL.md
+  h_22370449f3812f 104-105
+skills/setup-matt-pocock-skills/issue-tracker-github.md
+  h_22370449f3812f 8,35
+skills/setup-matt-pocock-skills/issue-tracker-gitlab.md
+  h_22370449f3812f 9,44
+skills/setup-matt-pocock-skills/triage-labels.md
+  h_22370449f3812f 15
+skills/stitch-design-taste/DESIGN.md
+  h_22370449f3812f 1-121
+skills/stitch-design-taste/SKILL.md
+  h_22370449f3812f 1-184
+skills/tdd/SKILL.md
+  h_22370449f3812f 24
+skills/teach/SKILL.md
+  h_22370449f3812f 12,110
+skills/wayfinder/SKILL.md
+  h_22370449f3812f 65,114-115,124
+skills/wizard/template.sh
+  h_22370449f3812f 17,19,35-36,74,92-93,96-103,107-108,110,112-116,123,130,132,137-139,141-142,145-148,197-198,201-202,221-223
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "a28854fa5d12cd8bb78477cb114b65e90c125d36",
+  "prompts": {},
+  "humans": {
+    "h_22370449f3812f": {
+      "author": "Shivanshu Chaudhary <shivanshuchaudhary97@gmail.com>"
+    }
+  }
+}
