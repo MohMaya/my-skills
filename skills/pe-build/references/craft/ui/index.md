@@ -10,7 +10,7 @@ Every duration, curve, scale and blur below is a specific value, not a range to 
 
 Text wrapping, font rendering, tabular numbers and text spacing belong to [typography](../typography/index.md). Hit areas, focus, keyboard support, ARIA and reduced motion belong to [accessibility](../../a11y/index.md). Grouping, section spacing, breakpoints and spatial RTL belong to [layout](../layout/index.md).
 
-URL as state: [url-state.md](url-state.md). Copy confirmation: [clipboard.md](clipboard.md). Touch: [touch.md](touch.md). Last details before ship: [finishing.md](finishing.md).
+URL as state: [url-state.md](url-state.md). Copy confirmation: [clipboard.md](clipboard.md). Touch: [touch.md](touch.md). Sound feedback: [ui-sound.md](ui-sound.md). Last details before ship: [finishing.md](finishing.md).
 
 ## Concentric border radius
 

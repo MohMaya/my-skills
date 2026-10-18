@@ -182,12 +182,16 @@ export function DisableThemeTransitions() {
 
 That covers the OS-level change. An in-app toggle needs the same treatment around its own flip: apply the override, change the theme, flush, remove. `next-themes` ships this as `disableTransitionOnChange`.
 
+## Height animations
+
+Measure the content in JS rather than animating to `auto`. Observe an inner wrapper with `ResizeObserver` and animate the outer element: the outer element's size is the animation's, the inner wrapper's is the content's. Until the first measurement lands, keep the height `auto`, not `0`, so the content never renders collapsed.
+
 ## Motion restraint
 
 Motion is a budget, not a garnish. Three rules decide whether an animation belongs at all:
 
 - **Give high-frequency interactions instant feedback instead of animation.** Every keystroke, every list-row hover, every tab switch in a work tool. Reserve expressive motion for infrequent moments (first load of a view, success states, empty states); high-frequency interactions get instant feedback or the subtlest possible transition (`opacity`/`background-color` at ≤150ms).
-- **Motion is never the only feedback channel.** Every state change an animation communicates stays visible when it doesn't run: a color change, an icon swap, a label. Users with reduced motion enabled and anyone who blinked still need to see what happened.
+- **Motion is never the only feedback channel.** Every state change an animation communicates stays visible when it doesn't run: a color change, an icon swap, a label. Users with reduced motion enabled and anyone who blinked still need to see what happened. Sound follows the same rule ([ui-sound.md](ui-sound.md)).
 - **Brief and precise beats prominent.** Where a shorter, smaller animation says the same thing, use it. When in doubt cut the duration, not the clarity.
 
 ```css

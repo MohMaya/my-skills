@@ -10,7 +10,7 @@ Any unit works. `65ch` measures characters directly, one `ch` being the width of
 
 ## Alignment
 
-`text-align` controls where each line starts and ends. `justify` stretches spaces until both edges line up, which works in specific editorial layouts and nowhere else in an interface.
+`text-align` controls where each line starts and ends. `justify` stretches spaces until both edges line up, which works in specific editorial layouts and nowhere else in an interface. Where it is used, add `hyphens: auto` and set `lang`: browsers hyphenate only an element whose language is tagged.
 
 ## Wrapping
 

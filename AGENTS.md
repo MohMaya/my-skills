@@ -73,7 +73,6 @@ Matt Pocock's skills and ours live together in `~/.agents/skills`. Load the matc
 | Review of a plan or diff | `bar-raiser`, the one review verdict |
 | Judging, choosing, trimming, verifying, or comparing sound you cannot hear (audio assets, sound effects, ambiences, video audio, soundtracks) | `earshot`; for a full licensed soundtrack for a video or animation, also `real-sound` |
 | A long, multi-part, or autonomous task that must not ship half-done (acceptance gates, depth tree, re-verification) | `unlazy` |
-| UI/UX review of a web interface: animations, CSS, typography, audio feedback, UX laws | `userinterface-wiki` (alongside `pe-review`) |
 
 `code-review`, Matt's or Claude's built-in, feeds findings into `bar-raiser`; the verdict stays with `bar-raiser`. When Shiv invokes a flow such as `grill-with-docs`, `to-spec`, `to-tickets`, `implement`, or `wayfinder`, that flow owns its phase and everything here still applies. Each review record's `Skills:` line names the workflow skills you used, and its `Tests:` line names the bug each new test catches.
 

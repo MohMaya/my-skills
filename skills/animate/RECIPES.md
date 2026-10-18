@@ -163,7 +163,7 @@ When toasts stack and the list reflows, the opacity change has to work against t
 }
 ```
 
-Keep it short — this is one of the few animations that costs layout on every frame, so a long duration is expensive as well as sluggish. Measure the content height in JS (or use a headless primitive that supplies it) rather than animating to `auto`.
+Keep it short — this is one of the few animations that costs layout on every frame, so a long duration is expensive as well as sluggish. Measuring rules: [pe-build animations, Height animations](../pe-build/references/craft/ui/animations.md#height-animations).
 
 ---
 

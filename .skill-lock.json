@@ -882,15 +882,6 @@
       "skillFolderHash": "16671491f6679ad9378f52604d3bc2415b4120c7",
       "installedAt": "2026-10-17T23:01:47.668Z",
       "updatedAt": "2026-10-17T23:01:47.668Z"
-    },
-    "userinterface-wiki": {
-      "source": "raphaelsalaja/userinterface-wiki",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/raphaelsalaja/userinterface-wiki.git",
-      "skillPath": "skills/SKILL.md",
-      "skillFolderHash": "7b2588047fed29a1e41a08b6287137cc940d6293",
-      "installedAt": "2026-10-17T23:01:52.878Z",
-      "updatedAt": "2026-10-17T23:01:52.878Z"
     }
   },
   "dismissed": {

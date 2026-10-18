@@ -145,3 +145,13 @@ Exits are softer and less attention-grabbing than enters. The user's focus is mo
 - Exit duration should be shorter than enter duration (150ms vs 300ms)
 - Use a subtle exit when it preserves spatial context. Remove immediately when motion adds no information, the interaction repeats frequently, or reduced motion is requested.
 
+## AnimatePresence mechanics
+
+`AnimatePresence` runs an exit only when it sits outside the condition that unmounts its direct child.
+
+- Write `<AnimatePresence>{open && <motion.div key="panel" exit={{ opacity: 0 }} />}</AnimatePresence>`. A condition around `AnimatePresence` itself skips the exit.
+- Every direct child has a stable `key` (the item id, never the index) and an `exit`.
+- A child that must stop taking input while it leaves reads `useIsPresent()` in its own component and disables itself. Async cleanup uses `usePresence()` and calls `safeToRemove` when it finishes.
+- `mode="wait"` plays the exit, then the enter, for one child, so the user waits both durations. Shorten each half so the total stays inside the 300ms UI budget in `animate`.
+- `mode="popLayout"` suits lists that reflow: leaving items drop out of layout at once. Custom children use `forwardRef`, and the parent has a non-static `position`.
+- A nested `AnimatePresence` takes `propagate`, so its children's exits run when the parent leaves.
