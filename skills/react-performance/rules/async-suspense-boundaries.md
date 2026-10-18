@@ -2,97 +2,63 @@
 title: Strategic Suspense Boundaries
 impact: HIGH
 impactDescription: faster initial paint
-tags: async, suspense, streaming, layout-shift
+tags: async, suspense, useSuspenseQuery, tanstack-query, layout-shift
 ---
 
 ## Strategic Suspense Boundaries
 
-Instead of awaiting data in async components before returning JSX, use Suspense boundaries to show the wrapper UI faster while data loads.
+Fetching in a component that wraps the whole page blocks the whole page. Push `useSuspenseQuery` down into the component that needs the data and wrap that component in `<Suspense>`, so the shell paints immediately.
 
-**Incorrect (wrapper blocked by data fetching):**
+**Incorrect (page shell waits for data):**
 
 ```tsx
-async function Page() {
-  const data = await fetchData() // Blocks entire page
-  
+function Page() {
+  const { data } = useSuspenseQuery(dataOptions())
+
   return (
     <div>
-      <div>Sidebar</div>
-      <div>Header</div>
-      <div>
-        <DataDisplay data={data} />
-      </div>
-      <div>Footer</div>
+      <Sidebar />
+      <Header />
+      <DataDisplay data={data} />
+      <Footer />
     </div>
   )
 }
 ```
 
-The entire layout waits for data even though only the middle section needs it.
-
-**Correct (wrapper shows immediately, data streams in):**
+**Correct (shell renders immediately, data fills in):**
 
 ```tsx
 function Page() {
   return (
     <div>
-      <div>Sidebar</div>
-      <div>Header</div>
-      <div>
-        <Suspense fallback={<Skeleton />}>
-          <DataDisplay />
-        </Suspense>
-      </div>
-      <div>Footer</div>
-    </div>
-  )
-}
-
-async function DataDisplay() {
-  const data = await fetchData() // Only blocks this component
-  return <div>{data.content}</div>
-}
-```
-
-Sidebar, Header, and Footer render immediately. Only DataDisplay waits for data.
-
-**Alternative (share promise across components):**
-
-```tsx
-function Page() {
-  // Start fetch immediately, but don't await
-  const dataPromise = fetchData()
-  
-  return (
-    <div>
-      <div>Sidebar</div>
-      <div>Header</div>
+      <Sidebar />
+      <Header />
       <Suspense fallback={<Skeleton />}>
-        <DataDisplay dataPromise={dataPromise} />
-        <DataSummary dataPromise={dataPromise} />
+        <DataDisplay />
       </Suspense>
-      <div>Footer</div>
+      <Footer />
     </div>
   )
 }
 
-function DataDisplay({ dataPromise }: { dataPromise: Promise<Data> }) {
-  const data = use(dataPromise) // Unwraps the promise
+function DataDisplay() {
+  const { data } = useSuspenseQuery(dataOptions())
   return <div>{data.content}</div>
-}
-
-function DataSummary({ dataPromise }: { dataPromise: Promise<Data> }) {
-  const data = use(dataPromise) // Reuses the same promise
-  return <div>{data.summary}</div>
 }
 ```
 
-Both components share the same promise, so only one fetch occurs. Layout renders immediately while both components wait together.
+Two `useSuspenseQuery` calls in one component run in series, because the first suspends before the second starts. Use `useSuspenseQueries` for several queries in one component, or one component per query under sibling boundaries (see [Promise.all() for Independent Operations](./async-parallel.md)).
+
+```tsx
+const [{ data: users }, { data: teams }] = useSuspenseQueries({
+  queries: [usersOptions(), teamsOptions()],
+})
+```
 
 **When NOT to use this pattern:**
 
 - Critical data needed for layout decisions (affects positioning)
-- SEO-critical content above the fold
 - Small, fast queries where suspense overhead isn't worth it
 - When you want to avoid layout shift (loading → content jump)
 

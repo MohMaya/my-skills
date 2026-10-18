@@ -1,49 +1,48 @@
 ---
 title: Defer Non-Critical Third-Party Libraries
 impact: MEDIUM
-impactDescription: loads after hydration
+impactDescription: loads after first render
 tags: bundle, third-party, analytics, defer
 ---
 
 ## Defer Non-Critical Third-Party Libraries
 
-Analytics, logging, and error tracking don't block user interaction. Load them after hydration.
+Analytics, logging, and error tracking don't block user interaction. Load them after the first render.
 
 **Incorrect (blocks initial bundle):**
 
 ```tsx
-import { Analytics } from '@vercel/analytics/react'
+import { Analytics } from './analytics'
 
-export default function RootLayout({ children }) {
+export function App() {
   return (
-    <html>
-      <body>
-        {children}
-        <Analytics />
-      </body>
-    </html>
+    <>
+      <Routes />
+      <Analytics />
+    </>
   )
 }
 ```
 
-**Correct (loads after hydration):**
+**Correct (separate chunk, fetched after the app renders):**
 
 ```tsx
-import dynamic from 'next/dynamic'
+import { lazy, Suspense } from 'react'
 
-const Analytics = dynamic(
-  () => import('@vercel/analytics/react').then(m => m.Analytics),
-  { ssr: false }
+const Analytics = lazy(() =>
+  import('./analytics').then(m => ({ default: m.Analytics }))
 )
 
-export default function RootLayout({ children }) {
+export function App() {
   return (
-    <html>
-      <body>
-        {children}
+    <>
+      <Routes />
+      <Suspense fallback={null}>
         <Analytics />
-      </body>
-    </html>
+      </Suspense>
+    </>
   )
 }
 ```
+
+For an SDK with no component, call `requestIdleCallback(() => import('./sdk').then(m => m.init()))` from the entry module after `createRoot(...).render(...)`.
