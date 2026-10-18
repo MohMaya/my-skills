@@ -187,7 +187,7 @@ function base64ToLocalUri(base64: string, filename?: string) {
 
   const f = new File(Paths.cache, filename);
   f.create({ overwrite: true });
-  f.write(bytes);
+  f.writeSync(bytes);
   return f.uri;
 }
 ```

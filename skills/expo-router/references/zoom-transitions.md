@@ -154,5 +154,5 @@ Zoom transitions work alongside long-press previews:
 ## References
 
 - Expo Router Zoom Transitions: https://docs.expo.dev/router/advanced/zoom-transition/
-- Link.AppleZoom API: https://docs.expo.dev/versions/v55.0.0/sdk/router/#linkapplezoom
+- Link.AppleZoom API: https://docs.expo.dev/versions/latest/sdk/router/link/
 - Apple UIKit Fluid Transitions: https://developer.apple.com/documentation/uikit/enhancing-your-app-with-fluid-transitions

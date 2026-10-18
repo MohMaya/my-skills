@@ -202,7 +202,7 @@ Some symbols support multiple colors:
 
 On Android an SF Symbol source renders nothing - an app that ships SF-only iconography ships blank icons. Give every icon a Material source:
 
-- **Tab bars**: pass `md` (Material Symbol name) beside `sf` on NativeTabs triggers - `<NativeTabs.Trigger.Icon sf="gear" md="settings" />` (SDK 55+, see the `expo-router` skill).
+- **Tab bars**: pass `md` (Material Symbol name) beside `sf` on NativeTabs triggers - `<NativeTabs.Trigger.Icon sf="gear" md="settings" />` (SDK 55+; on SDK 58 also install `expo-symbols`; see the `expo-router` skill).
 - **In screens**: `@expo/vector-icons` Material families, gated by platform:
 
 ```tsx
