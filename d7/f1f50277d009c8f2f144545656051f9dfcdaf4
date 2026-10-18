@@ -1,0 +1,24 @@
+skills/git-guardrails-claude-code/SOURCE.md
+  s_f16178bc6c18a1::t_2deb2ef2b30099 1-6
+skills/git-guardrails-claude-code/SKILL.md
+  s_f16178bc6c18a1::t_2bd5bddeb9547f 14
+  s_f16178bc6c18a1::t_53904c90a560cd 3,94
+skills/git-guardrails-claude-code/scripts/block-dangerous-git.sh
+  s_f16178bc6c18a1::t_2bd5bddeb9547f 13-15
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d7f1f50277d009c8f2f144545656051f9dfcdaf4",
+  "prompts": {},
+  "sessions": {
+    "s_f16178bc6c18a1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "fce56075-34a5-4c90-b862-1ff1e768a006",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Shivanshu Chaudhary <shivanshuchaudhary97@gmail.com>"
+    }
+  }
+}
