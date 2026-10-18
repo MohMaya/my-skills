@@ -73,7 +73,7 @@ Walk down; stop at the first that fits.
 | Anything a finger touches, or anything derived from scroll | **`useSharedValue` + `Gesture` + `useAnimatedStyle`** |
 | Screen to screen | **Native stack options in Expo Router.** Never hand-roll this |
 | A bottom sheet that is its own screen | **`presentation: 'formSheet'`** — it's a real UISheetPresentationController, free and correct |
-| Tab bar | **`NativeTabs`** (from `expo-router/unstable-native-tabs`) — the platform's real tab bar, its behaviors and transitions included |
+| Tab bar | **`NativeTabs`** (from `expo-router/native-tabs`) — the platform's real tab bar, its behaviors and transitions included |
 | Context menu, press-and-hold preview | **`Link.Menu` / `Link.Preview`** (Expo Router, iOS-only) — native menus and peek, never rebuilt in JS |
 | Header that collapses into a large title | **`headerLargeTitleEnabled`** on the native stack (iOS-only; `headerLargeTitle` is deprecated) — not a scroll worklet |
 | Pull to refresh | **`RefreshControl`** — hand-roll only when it's a signature interaction (see the threshold recipe) |
@@ -232,7 +232,7 @@ For ready-to-build implementations — press feedback, drag-to-dismiss sheet, sw
 
 | Never | Instead |
 | --- | --- |
-| `PanResponder` | `Gesture.Pan()` from gesture-handler |
+| `PanResponder` | `usePanGesture()` from gesture-handler (`Gesture.Pan()` on v2) |
 | `setState` in a gesture or scroll handler | shared value + `useAnimatedStyle` |
 | `runOnJS` (deprecated in Reanimated 4) | `scheduleOnRN` from `react-native-worklets` |
 | `scheduleOnRN` per frame | `onEnd`, or `useAnimatedReaction` at a threshold |

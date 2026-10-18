@@ -1,6 +1,6 @@
 # Native Tabs
 
-Always prefer NativeTabs from 'expo-router/unstable-native-tabs' for the best iOS experience.
+Always prefer NativeTabs from 'expo-router/native-tabs' for the best iOS experience. That path is stable from SDK 58; SDK 54–57 import from 'expo-router/unstable-native-tabs', which SDK 58 deprecates.
 
 **SDK 54+. SDK 55 recommended.**
 
@@ -19,7 +19,7 @@ All examples below use SDK 55 syntax. For SDK 54, replace `NativeTabs.Trigger.Ic
 ## Basic Usage
 
 ```tsx
-import { NativeTabs } from "expo-router/unstable-native-tabs";
+import { NativeTabs } from "expo-router/native-tabs";
 
 export default function TabLayout() {
   return (
@@ -188,7 +188,7 @@ Use `hidden` prop on `NativeTabs` to hide the entire tab bar dynamically:
 **Important**: Two instances render simultaneously — store state outside the component (props, context, or external store).
 
 ```tsx
-import { NativeTabs } from "expo-router/unstable-native-tabs";
+import { NativeTabs } from "expo-router/native-tabs";
 import { useState } from "react";
 import { Pressable, Text, View } from "react-native";
 
@@ -262,7 +262,7 @@ export default function HomeScreen() {
 If you must use @expo/vector-icons instead of SF Symbols:
 
 ```tsx
-import { NativeTabs } from "expo-router/unstable-native-tabs";
+import { NativeTabs } from "expo-router/native-tabs";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
 <NativeTabs.Trigger name="home">
@@ -273,7 +273,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 
 **Prefer SF Symbols + `md` prop over vector icons for native feel.**
 
-If you are using SDK 55 and later **use the md prop to specify Material Symbols used on Android**.
+If you are using SDK 55 and later **use the md prop to specify Material Symbols used on Android**. On SDK 58, `md` icons need `expo-symbols` installed (an optional peer dependency of `expo-router`).
 
 ## Structure with Stacks
 
@@ -281,7 +281,7 @@ Native tabs don't render headers. Nest Stacks inside each tab for navigation hea
 
 ```tsx
 // app/(tabs)/_layout.tsx
-import { NativeTabs } from "expo-router/unstable-native-tabs";
+import { NativeTabs } from "expo-router/native-tabs";
 
 export default function TabLayout() {
   return (
@@ -344,7 +344,7 @@ import { Tabs } from "expo-router";
 ### After (Native Tabs)
 
 ```tsx
-import { NativeTabs } from "expo-router/unstable-native-tabs";
+import { NativeTabs } from "expo-router/native-tabs";
 
 <NativeTabs>
   <NativeTabs.Trigger name="index">
@@ -390,7 +390,7 @@ Configure in app.json:
 
 ## Common Issues
 
-1. **Icons not showing on Android**: Add `md` prop (SDK 55) or use VectorIcon
+1. **Icons not showing on Android**: Add `md` prop (SDK 55) or use VectorIcon; on SDK 58 also install `expo-symbols`
 2. **Headers missing**: Nest a Stack inside each tab group
 3. **Trigger name mismatch**: `name` must match exact route name including parentheses
 4. **Badge not visible**: Badge must be a child of Trigger, not a prop

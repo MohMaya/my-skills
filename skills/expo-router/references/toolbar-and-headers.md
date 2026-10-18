@@ -1,8 +1,8 @@
 # Toolbars and headers
 
-Add native iOS toolbar items to Stack screens. Items can be placed in the header (left/right) or in a bottom toolbar area.
+Add native toolbar items to Stack screens. Items can be placed in the header (left/right) or in a bottom toolbar area.
 
-**Important:** iOS only. Available in Expo SDK 55+.
+**Important:** iOS in Expo SDK 55+, Android in SDK 56+ (on SDK 58 install `@expo/ui`, now an optional peer dependency). The examples below are iOS: SF Symbols, `SearchBarSlot`, and flexible Spacers do not render on Android.
 
 ## Notes app example
 
@@ -274,7 +274,7 @@ function Page() {
 
 ## Limitations
 
-- iOS only
+- Android `icon` takes an image source (`require(...)`); SF Symbols and `Stack.Toolbar.SearchBarSlot` are iOS only
 - `placement="bottom"` can only be used inside screen components (not in layout files)
 - `Stack.Toolbar.Badge` only works with `placement="left"` or `"right"`
 - Header Spacers require explicit `width`

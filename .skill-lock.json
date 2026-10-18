@@ -847,6 +847,15 @@
       "installedAt": "2026-10-17T14:11:32.414Z",
       "updatedAt": "2026-10-17T14:11:32.414Z"
     },
+    "expo-ui": {
+      "source": "expo/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/expo/skills.git",
+      "skillPath": "plugins/expo/skills/expo-ui/SKILL.md",
+      "skillFolderHash": "82e3aa84be3eae2a43b3e7123495e5e8cde73fa3",
+      "installedAt": "2026-10-18T17:56:11.529Z",
+      "updatedAt": "2026-10-18T17:56:11.529Z"
+    },
     "earshot": {
       "source": "Leonxlnx/earshot",
       "sourceType": "github",

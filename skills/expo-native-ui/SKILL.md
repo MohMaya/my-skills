@@ -1,13 +1,13 @@
 ---
 name: expo-native-ui
-description: Build beautiful, native-feeling Expo screens. Covers Apple HIG styling, semantic colors, native controls, SF Symbols, media, visual effects, gradients, storage, and responsive layout. For routing and navigation, use the expo-router skill; for motion and animation, use the expo-animation skill.
+description: Build beautiful, native-feeling Expo screens. Covers Apple HIG styling, semantic colors, native controls, SF Symbols, media, visual effects, gradients, storage, and responsive layout. For routing and navigation, use the expo-router skill; for motion and animation, use the animate-expo skill.
 version: 1.1.1
 license: MIT
 ---
 
 # Expo Native UI Guidelines
 
-For routes, links, stacks, tabs, modals, sheets, and headers, use the `expo-router` skill. For any motion — entering/exiting, gestures, springs, keyboard-driven UI — use the `expo-animation` skill.
+For routes, links, stacks, tabs, modals, sheets, and headers, use the `expo-router` skill. For any motion — entering/exiting, gestures, springs, keyboard-driven UI — use the `animate-expo` skill.
 
 > **Before picking any UI component, check `expo-ui` first.** `@expo/ui` provides native equivalents — BottomSheet, Button, Picker, Slider, Menu, Section, Switch, SegmentedControl, and more — rendered as real SwiftUI on iOS and Jetpack Compose on Android, available in Expo Go on SDK 56+ with no custom build. Load the **`expo-ui`** skill to find the right component before falling back to React Native built-ins or community libraries. This skill (`expo-native-ui`) covers the surrounding structure: Expo Router navigation, layout, styling, and visual effects.
 
@@ -95,11 +95,11 @@ Expo Go supports a wide range of features out of the box:
 - Use the `<Text selectable />` prop on text containing data that could be copied
 - Consider formatting large numbers like 1.4M or 38k
 - Never use intrinsic elements like 'img' or 'div' unless in a webview or Expo DOM component
-- Every screen that loads data has four states (loading, error, empty, content) - never show the empty state while the first load is still resolving; the rules live in the `expo-data-fetching` skill
+- Every screen that loads data has four states (loading, error, empty, content) - never show the empty state while the first load is still resolving. Fetch with TanStack Query (the kernel default), whose `isPending`, `isError`, and `data` map onto those states
 - On scrollable forms and search results, use `keyboardShouldPersistTaps="handled"` so controls receive the first tap and unhandled taps can dismiss the keyboard. Use `"always"` only when unhandled taps should also keep it open
-- A form's primary action must never sit under the keyboard. For UI that tracks the keyboard's real frame, load the `expo-animation` skill's keyboard recipe (`react-native-keyboard-controller`) - never `Keyboard.addListener` plus a timing animation
+- A form's primary action must never sit under the keyboard. For UI that tracks the keyboard's real frame, use `react-native-keyboard-controller` (the `animate-expo` skill covers keyboard-driven motion) - never `Keyboard.addListener` plus a timing animation
 - Every enabled control must perform its advertised action: search filters results, Save commits edits, and settings affect behavior. Empty handlers and success alerts are not implementations; local state is enough when the user requested a prototype
-- For async saves, preserve drafts and handle pending/failure states per `expo-data-fetching`; do not dismiss a form before its save succeeds
+- For async saves, preserve drafts and handle the mutation's pending and failure states; do not dismiss a form before its save succeeds
 
 Before calling a screen complete, walk through its primary task, including one failure and recovery when it loads or saves data. Check keyboard access and back/dismiss behavior. Try long titles, missing images, no search results, and large system text; required actions must remain reachable. Report what you exercised and what you could not run.
 
@@ -114,7 +114,7 @@ Follow each platform's own design language: Apple Human Interface Guidelines on 
 - Always account for safe area, either with stack headers, tabs, or ScrollView/FlatList `contentInsetAdjustmentBehavior="automatic"`
 - Ensure both top and bottom safe area insets are accounted for
 - Inline styles not StyleSheet.create unless reusing styles is faster
-- For any motion or animation work, load the `expo-animation` skill — it owns the animate-or-not decision, timing values, and interruption rules
+- For any motion or animation work, load the `animate-expo` skill — it owns the animate-or-not decision, timing values, and interruption rules
 - Use `{ borderCurve: 'continuous' }` for rounded corners unless creating a capsule shape
 - ALWAYS use a navigation stack title instead of a custom text element on the page
 - When padding a ScrollView, use `contentContainerStyle` padding and gap instead of padding on the ScrollView itself (reduces clipping)
@@ -193,9 +193,8 @@ Use CSS `boxShadow` style prop. NEVER use legacy React Native shadow or elevatio
 'inset' shadows are supported.
 
 ## Submitting Feedback
-If you encounter errors, misleading or outdated information in this skill, report it so Expo can improve:
+If you encounter errors, misleading or outdated information in this skill, ask Shiv, then report it so Expo can improve:
 ```bash
 npx --yes submit-expo-feedback@latest --category skills --subject "expo-native-ui" "<actionable feedback>"
 ```
 Only submit when you have something specific and actionable to report. Include as much relevant context as possible.
-If an AI agent repeatedly failed or the user had to take over an Expo task, load the expo-skill-feedback skill and follow its eval-candidate flow instead of reusing the command above.

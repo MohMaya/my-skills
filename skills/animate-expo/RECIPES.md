@@ -50,7 +50,7 @@ Three conventions, explained once here instead of in every recipe:
 - **`scheduleOnRN(fn, ...args)` replaces the deprecated `runOnJS(fn)(...args)`** for calling back to the React Native runtime from a worklet.
 - **Gestures are wrapped in `useMemo`.** Rebuilding a gesture on every render can reattach the recognizer and drop a drag that's mid-flight.
 
-**Gesture Handler v3:** Expo installs v2, and the recipes use its `Gesture.Pan()` builder. If the project is already on v3, the builder is legacy — each gesture is a hook taking one config object, with `onStart` → `onActivate`, `onEnd` → `onDeactivate`, and the `success` flag replaced by `event.canceled` (inverted). The hook manages its own identity, so drop the `useMemo`:
+**Gesture Handler v3:** Expo installs v3 from SDK 58 (v2 through SDK 57). The recipes use the v2 `Gesture.Pan()` builder, which v3 deprecates for removal; use one API per `GestureDetector` tree, since builder and hook gestures cannot be combined. On v3, each gesture is a hook taking one config object, with `onStart` → `onActivate`, `onEnd` → `onDeactivate`, and the `success` flag replaced by `event.canceled` (inverted). The hook manages its own identity, so drop the `useMemo`:
 
 ```jsx
 const pan = usePanGesture({
