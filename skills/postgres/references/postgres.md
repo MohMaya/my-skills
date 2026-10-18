@@ -57,12 +57,12 @@ Run `EXPLAIN` as the service's role (`SET LOCAL ROLE <role>` inside a transactio
 ## Index design
 
 - Design from the access path: equality columns first, then the range or sort column, in the `ORDER BY` order and direction the query uses.
-- **Partial** (`WHERE removed_at IS NULL`, `WHERE status = 'active'`) for a hot subset. The planner uses it only when it can prove the query's predicate implies the index's, so a parameter (`status = $1`) under a generic plan misses an index written for a literal.
+- **Partial** (`WHERE removed_at IS NULL`, `WHERE status = 'active'`) for a hot subset. The planner uses it only when it can prove the query's predicate implies the index's, so a parameter (`status = $1`) under a generic plan misses an index written for a literal. The predicate must be immutable ([schema.md](schema.md)).
 - **Covering** (`INCLUDE (cols)`) to serve hot reads from the index alone; depends on vacuum keeping the visibility map current.
-- **Expression** indexes match only the identical expression: `lower(email)` in the index and in the query, or a `citext` column instead.
+- **Expression** indexes match only the identical expression: `lower(email)` in the index and in the query, or a `citext` column instead. The same holds for one JSONB key: `(payload->>'k')` in both; `@>` is served by a GIN index (operator class in [schema.md](schema.md)).
 - Foreign keys get no automatic index. Index the referencing column when you join on it or delete parents.
 - Every index taxes every write and can turn HOT updates into full updates when it covers a frequently updated column. Check `pg_stat_user_indexes` for a near-duplicate before adding one, and write the cost down.
-- Build on live tables with `CREATE INDEX CONCURRENTLY` outside a transaction. A failed build leaves an `INVALID` index that is maintained on writes and never read, and `IF NOT EXISTS` reports success over it; check `pg_index.indisvalid`.
+- Build and drop indexes on live tables as [migrations.md](migrations.md) prescribes.
 - Prototype with hypothetical indexes (hypopg via `postgres-mcp`), which yield estimates only; confirm with a real index on staging before writing the migration.
 
 ## Query shapes
@@ -75,6 +75,8 @@ Run `EXPLAIN` as the service's role (`SET LOCAL ROLE <role>` inside a transactio
 - **Fan-out**: joining two one-to-many children multiplies rows and inflates sums and counts. Aggregate each child in its own subquery or `LATERAL`, then join. `DISTINCT` patching a join is a symptom.
 - **Top-N per group**: `LATERAL (SELECT … ORDER BY … LIMIT n)` over an index; `DISTINCT ON` for n = 1.
 - **CTEs** (PG12+): a non-recursive, side-effect-free CTE referenced once is inlined; `MATERIALIZED` forces a single evaluation and fences optimization; `NOT MATERIALIZED` forces inlining.
+- **Recursive CTEs** need a cycle guard: `CYCLE <key> SET is_cycle USING path` (PG14+), or an array of visited keys tested with `= ANY(path)`. `UNION` instead of `UNION ALL` stops only fully duplicate rows, which a cycle through a depth or path column never produces.
+- **Window frames**: `first_value`, `last_value`, and `nth_value` read the frame, which by default ends at the current row's last peer, so `last_value` returns the current row. Give it `ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING` to read the partition.
 - **Correlated scalar subqueries** in the select list run once per outer row; check `loops`.
 - **OR across columns** defeats a single index; `UNION ALL` of indexable branches works when the branches cannot overlap.
 - **Batching**: `= ANY(<one array parameter>)` keeps the statement text stable across list lengths; worth it when lists are large or vary widely, and unnecessary under a small page cap. Placeholder syntax is the driver's (`$1` in asyncpg, `%s` in psycopg); chunk lists in the tens of thousands.
@@ -86,12 +88,10 @@ Run `EXPLAIN` as the service's role (`SET LOCAL ROLE <role>` inside a transactio
 - Repeated rollups belong in a continuous aggregate (the Move rung) rather than a request-time `GROUP BY`.
 - Compressed chunks read fastest when filters match `segmentby` columns and the sort matches `orderby`.
 
-## Sessions, pooling, transactions
+## Sessions and transactions
 
 - Transaction pooling (PgBouncer) breaks session state: use `SET LOCAL` inside the transaction, transaction-scoped advisory locks (`pg_advisory_xact_lock`), and driver settings for prepared statements (see `sqlalchemy.md`).
-- Keep transactions free of network calls (HTTP, Kafka, S3). A session idle in transaction holds its snapshot, blocks vacuum cleanup database-wide, and holds its locks; `idle_in_transaction_session_timeout` caps the damage.
-- `work_mem` applies per sort or hash node, per query; raise it per transaction, not globally.
-- Total connections = pool size × processes × services; keep it under `max_connections` with headroom for migrations and admin.
+- Keep transactions free of network calls (HTTP, Kafka, S3). An open transaction holds its locks and keeps vacuum from removing the dead rows only it can still see. Timeouts and the connection budget are in [operations.md](operations.md).
 
 ## postgres-mcp (when configured)
 

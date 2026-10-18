@@ -1,6 +1,6 @@
 # SQLAlchemy 2.0 reference
 
-Consult on demand from `postgres`. Covers SQLAlchemy 2.0 async with psycopg 3 or asyncpg, Alembic, and raw asyncpg. Check loader and dialect options against the installed version (`uv pip show sqlalchemy` or the lockfile).
+Consult on demand from `postgres`. Covers SQLAlchemy 2.0 async with psycopg 3 or asyncpg, and raw asyncpg. Check loader and dialect options against the installed version (`uv pip show sqlalchemy` or the lockfile).
 
 ## Seeing the SQL
 
@@ -45,5 +45,4 @@ When a repository runs each service as its own database role (its `AGENTS.md` or
 
 ## Alembic
 
-- Index on a live table: `op.create_index(..., postgresql_concurrently=True)` inside `with op.get_context().autocommit_block():`, since `CONCURRENTLY` cannot run in a transaction.
-- Keep schema changes compatible with the previous app version: add, backfill in throttled batches, switch reads, then drop in a later release.
+Migrations, including Alembic recipes, live in [migrations.md](migrations.md).

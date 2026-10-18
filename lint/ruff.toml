@@ -1,0 +1,10 @@
+target-version = "py312"
+
+[lint]
+ignore = ["E501"]
+select = ["E", "F", "B", "BLE", "ASYNC", "DTZ", "UP", "ANN", "RUF", "C901", "S110", "S112", "TRY002", "TRY004", "TRY201", "TRY203", "TRY400"]
+
+[lint.mccabe]
+max-complexity = 10
+
+[format]
