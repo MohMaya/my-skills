@@ -94,9 +94,9 @@ playwright-cli run-code "async page => {
 ## Wait Strategies
 
 ```bash
-# Wait for network idle
+# Wait for the element that signals ready (auto-waiting locator)
 playwright-cli run-code "async page => {
-  await page.waitForLoadState('networkidle');
+  await page.getByRole('heading', { name: 'Dashboard' }).waitFor();
 }"
 
 # Wait for specific element

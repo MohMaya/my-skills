@@ -57,3 +57,7 @@ The SDK approach means:
 - No conditional logic in test setup
 - Easier to see which endpoints a test exercises
 - Type safety per endpoint
+
+## Fakes carry the full response shape
+
+A fake returns the full shape of the real response, built from a typed factory (`createMockUser({ name: "Test User" })`). A partial stub passes while production code crashes on the field it left out.

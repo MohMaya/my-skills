@@ -1,4 +1,4 @@
-Last verified: 2026-07-14
+Last verified: 2026-10-18
 
 # Judge Calibration Protocol
 
@@ -35,6 +35,23 @@ a judge calibrated against a different notion of
 "pass" than the one used to build goldens will
 silently diverge from what the harness is supposed
 to measure.
+
+Before those labels count as ground truth, have a
+second labeler label an overlapping subset (enough
+items to include both classes) and report Cohen's
+kappa, the chance-corrected agreement between two
+labelers (1 is complete agreement, 0 is chance):
+
+```python
+from sklearn.metrics import cohen_kappa_score
+
+kappa = cohen_kappa_score(labeler_a, labeler_b)
+```
+
+Agree the kappa bar with whoever owns the eval
+harness, as with the TPR/TNR bar. Below it, tighten
+the rubric and relabel; a judge cannot be more
+reliable than the labels it is scored against.
 
 ## 2. Split
 

@@ -21,6 +21,7 @@ Characteristics:
 - Survives internal refactors
 - Describes WHAT, not HOW
 - One logical assertion per test
+- Passes alone and in random order
 
 ## Bad Tests
 

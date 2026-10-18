@@ -42,6 +42,8 @@ Push too little down and the top bloats; push too much and you hide material the
 
 **Co-location** is the within-file companion: where the ladder decides _how far down_ a piece sits, co-location decides _what sits beside it_ once there. Keep a concept's definition, rules, and caveats under one heading rather than scattered, so reading one part brings its neighbours with it. The test: the document should read like documentation written for the agent. Grouped material reads that way; scattered material does not. (Distinct from duplication: that repeats one meaning in two places; scattering fragments one meaning across many.)
 
+**Position** is the third within-file lever, for long prompts and documents: models attend most to the start and the end and least to the middle. Put the instruction that must hold at the start, and restate it in one line just before the task. In a system prompt or any template filled per request, order static content before dynamic: Anthropic's prompt cache matches a byte-identical prefix (tools, then system, then messages), so a timestamp or per-request value early in the prompt invalidates everything after it.
+
 **Sprawl** is the failure mode here: a document simply too long, even when every line is live and unique. Attention thins across the excess, and every extra line is one more to keep relevant. The cure is the ladder: disclose reference behind pointers, and split by branch or sequence so each path carries only what it needs.
 
 ## Steps and completion criteria

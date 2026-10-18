@@ -40,7 +40,7 @@ A LONG, numbered list of user stories. Each user story should be in the format o
 1. As a mobile bank customer, I want to see balance on my accounts, so that I can make better informed decisions about my spending
 </user-story-example>
 
-This list of user stories should be extremely extensive and cover all aspects of the feature.
+This list of user stories should be extremely extensive and cover all aspects of the feature: for each actor, the happy path, error, empty/boundary, authorization, and concurrency cases.
 
 ## Implementation Decisions
 
@@ -53,6 +53,8 @@ A list of implementation decisions that were made. This can include:
 - Schema changes
 - API contracts
 - Specific interactions
+
+Every number in a requirement names its source; none is invented. Turn an unmeasurable requirement ("fast") into a measured target, or into an open question under Further Notes. Write state-dependent behaviour as While <state>, when <event>, the system shall <response> rows.
 
 Do NOT include specific file paths or code snippets. They may end up being outdated very quickly.
 

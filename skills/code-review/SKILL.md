@@ -1,6 +1,6 @@
 ---
 name: code-review
-description: "Review the changes since a fixed point (commit, branch, tag, or merge-base) along two axes: Standards (does the code follow this repo's documented coding standards?) and Spec (does the code match what the originating issue/spec asked for?). Runs both reviews in parallel sub-agents and reports them side by side. Use when the user wants to review a branch, a PR, work-in-progress changes, or asks to \"review since X\"."
+description: "Review the changes since a fixed point (commit, branch, tag, or merge-base) along two axes: Standards (does the code follow this repo's documented coding standards?) and Spec (does the code match what the originating issue/spec asked for?). Runs both reviews in parallel sub-agents and reports them side by side. Use when the user wants to review a branch, a PR, work-in-progress changes, or asks to \"review since X\"; and when responding to review comments on your own change."
 ---
 
 Two-axis review of the diff between `HEAD` and a fixed point the user supplies:
@@ -87,3 +87,12 @@ A change can pass one axis and fail the other:
 - Code that does exactly what the issue asked but breaks the project's conventions → **Spec pass, Standards fail.**
 
 Reporting them separately stops one axis from masking the other.
+
+## Responding to a review
+
+When the comments are on your own change:
+
+- Verify each comment against the code before acting. A comment the code contradicts gets evidence, not a change.
+- Reply per item with the change, `file:line`, and tests run. Leave out praise and thanks.
+- When you cannot verify, say what blocked it.
+- Push back once, with evidence and a recommended alternative.
