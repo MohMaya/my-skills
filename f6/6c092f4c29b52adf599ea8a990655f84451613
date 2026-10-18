@@ -1,0 +1,492 @@
+skills/unlazy/scripts/lib/regex-worker.mjs
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-9
+skills/userinterface-wiki/rules/container-guard-initial-zero.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-25
+skills/userinterface-wiki/rules/physics-spring-for-overshoot.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-23
+skills/real-sound/templates/prompts/designer.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-49
+skills/pe-review/SKILL.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 30-31
+skills/unlazy/scripts/dispatch-check.mjs
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-139
+skills/userinterface-wiki/rules/easing-for-state-change.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-27
+skills/userinterface-wiki/rules/spring-for-interruptible.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-27
+skills/userinterface-wiki/rules/type-no-font-synthesis.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-18
+skills/userinterface-wiki/rules/a11y-toggle-setting.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-30
+skills/userinterface-wiki/rules/easing-linear-only-progress.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-21
+skills/userinterface-wiki/rules/mode-wait-doubles-duration.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-25
+skills/unlazy/tests/hardening-tests.mjs
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-1423
+.skill-lock.json
+  s_f16178bc6c18a1::t_791bde6c8903f8 859-893
+  s_f16178bc6c18a1::t_911f33773d50cb 858
+skills/userinterface-wiki/rules/ux-fitts-hit-area.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-32
+skills/userinterface-wiki/rules/visual-concentric-radius.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-40
+skills/userinterface-wiki/rules/appropriate-no-punishing.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-27
+skills/userinterface-wiki/rules/ux-doherty-under-400ms.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-30
+skills/userinterface-wiki/rules/a11y-visual-equivalent.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-36
+skills/userinterface-wiki/rules/visual-consistent-spacing-scale.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-35
+skills/userinterface-wiki/rules/transition-name-unique.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-24
+skills/userinterface-wiki/rules/visual-layered-shadows.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-30
+skills/userinterface-wiki/rules/native-backdrop-styling.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-27
+skills/real-sound/references/sound-design.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-123
+skills/userinterface-wiki/rules/prefetch-trajectory-over-hover.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-32
+skills/userinterface-wiki/rules/none-keyboard-navigation.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-32
+skills/userinterface-wiki/rules/native-selection-styling.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-18
+skills/userinterface-wiki/rules/type-oldstyle-nums-for-prose.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-21
+skills/userinterface-wiki/rules/param-filter-frequency-range.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-21
+skills/userinterface-wiki/rules/container-use-resize-observer.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-48
+AGENTS.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 74-76
+skills/userinterface-wiki/rules/timing-consistent.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-24
+skills/real-sound/scripts/analyze.py
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-268
+skills/unlazy/SECURITY.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-72
+skills/userinterface-wiki/rules/exit-key-required.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-29
+skills/userinterface-wiki/rules/appropriate-no-decorative.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-21
+skills/writing-taste/references/studies/2026-10-18-everything-rhymes-with-porcelain.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-42
+skills/unlazy/references/token-economy.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-48
+skills/real-sound/SKILL.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-198
+skills/userinterface-wiki/rules/type-optical-sizing-auto.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-25
+skills/userinterface-wiki/rules/visual-border-alpha-colors.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-25
+skills/userinterface-wiki/rules/mode-pop-layout-for-lists.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-25
+skills/userinterface-wiki/rules/ux-pareto-prioritize-features.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-36
+skills/userinterface-wiki/rules/pseudo-position-relative-parent.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-33
+skills/userinterface-wiki/rules/easing-no-linear-motion.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-22
+skills/userinterface-wiki/rules/presence-hook-in-child.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-31
+skills/userinterface-wiki/rules/timing-no-entrance-context-menu.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-22
+skills/real-sound/scripts/credits.py
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-213
+skills/userinterface-wiki/rules/prefetch-touch-fallback.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-34
+skills/unlazy/tests/stress-tests.mjs
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-715
+skills/userinterface-wiki/rules/ux-aesthetic-usability.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-32
+skills/userinterface-wiki/rules/morphing-three-lines.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-32
+skills/unlazy/.github/workflows/test.yml
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-50
+skills/unlazy/references/parallel.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-133
+skills/real-sound/scripts/arrange.py
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-351
+skills/userinterface-wiki/rules/exit-prop-required.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-33
+skills/real-sound/templates/audit_entry.json
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-16
+skills/userinterface-wiki/rules/design-noise-for-percussion.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-26
+skills/userinterface-wiki/rules/context-reuse-single.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-30
+skills/userinterface-wiki/rules/ux-progressive-disclosure.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-41
+skills/userinterface-wiki/rules/transition-over-js-library.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-32
+skills/unlazy/research/validation-protocol.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-81
+skills/userinterface-wiki/rules/easing-exit-ease-in.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-21
+skills/userinterface-wiki/rules/impl-default-subtle.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-21
+skills/real-sound/templates/design_fragment.json
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-81
+skills/userinterface-wiki/rules/ux-hicks-minimize-choices.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-45
+skills/userinterface-wiki/rules/visual-shadow-matches-elevation.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-23
+skills/userinterface-wiki/rules/presence-disable-interactions.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-31
+skills/unlazy/tests/run-tests.mjs
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-659
+skills/userinterface-wiki/rules/visual-shadow-direction.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-25
+skills/userinterface-wiki/rules/duration-max-300ms.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-21
+skills/userinterface-wiki/rules/type-slashed-zero.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-17
+skills/real-sound/templates/manifest_entry.json
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-42
+skills/userinterface-wiki/rules/physics-active-state.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-23
+skills/userinterface-wiki/rules/none-context-menu-entrance.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-25
+skills/userinterface-wiki/rules/pseudo-hit-target-expansion.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-31
+skills/userinterface-wiki/rules/type-font-display-swap.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-28
+skills/userinterface-wiki/rules/ux-teslers-complexity.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-28
+skills/userinterface-wiki/rules/morphing-use-collapsed.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-33
+skills/userinterface-wiki/rules/type-antialiased-on-retina.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-18
+skills/userinterface-wiki/rules/exit-matches-initial.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-29
+skills/userinterface-wiki/rules/ux-doherty-perceived-speed.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-29
+skills/pe-build/SKILL.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 71
+skills/real-sound/references/troubleshooting.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-66
+skills/unlazy/scripts/stop-hook.mjs
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-211
+skills/unlazy/CHANGELOG.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-114
+skills/userinterface-wiki/rules/pseudo-content-required.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-28
+skills/userinterface-wiki/rules/context-cleanup-nodes.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-25
+skills/unlazy/templates/PLAN.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-116
+skills/userinterface-wiki/rules/pseudo-first-line-styling.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-27
+skills/unlazy/references/dispatch.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-82
+skills/unlazy/references/gates.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-149
+skills/userinterface-wiki/rules/a11y-reduced-motion-check.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-30
+skills/userinterface-wiki/rules/ux-serial-position.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-31
+skills/earshot/SKILL.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-179
+skills/unlazy/LICENSE
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-21
+skills/userinterface-wiki/rules/mode-sync-layout-conflict.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-29
+skills/userinterface-wiki/rules/morphing-spring-rotation.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-23
+skills/userinterface-wiki/rules/ux-cognitive-load-reduce.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-49
+skills/userinterface-wiki/rules/duration-shorten-before-curve.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-21
+skills/userinterface-wiki/rules/native-placeholder-styling.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-27
+skills/real-sound/scripts/mix.py
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-690
+skills/userinterface-wiki/rules/pseudo-over-dom-node.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-32
+skills/userinterface-wiki/rules/transition-name-cleanup.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-28
+skills/real-sound/templates/prompts/music_supervisor.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-50
+skills/real-sound/templates/prompts/licence_audit.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-44
+skills/userinterface-wiki/rules/type-letter-spacing-uppercase.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-28
+skills/real-sound/scripts/audit.py
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-400
+skills/unlazy/templates/gates-leaf.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-51
+skills/unlazy/tests/dispatch-tests.mjs
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-707
+skills/userinterface-wiki/rules/ux-millers-chunking.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-23
+skills/real-sound/scripts/mux.mjs
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-72
+skills/userinterface-wiki/rules/container-overflow-hidden.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-25
+skills/userinterface-wiki/rules/morphing-strokelinecap-round.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-21
+skills/userinterface-wiki/rules/prefetch-hit-slop.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-27
+skills/unlazy/package.json
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-13
+skills/real-sound/templates/prompts/critic_edges.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-33
+skills/userinterface-wiki/rules/physics-no-excessive-stagger.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-22
+skills/userinterface-wiki/rules/nested-propagate-required.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-41
+skills/userinterface-wiki/rules/visual-button-shadow-anatomy.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-49
+skills/unlazy/agents/openai.yaml
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-6
+skills/userinterface-wiki/rules/ux-goal-gradient-progress.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-33
+skills/real-sound/templates/prompts/critic_sync.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-40
+skills/unlazy/SKILL.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-104
+check.sh
+  s_f16178bc6c18a1::t_791bde6c8903f8 17
+skills/real-sound/references/licences.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-94
+skills/userinterface-wiki/rules/type-text-wrap-pretty.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-16
+skills/userinterface-wiki/rules/param-reasonable-gain.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-21
+skills/userinterface-wiki/rules/appropriate-errors-warnings.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-18
+skills/real-sound/templates/SOUND_BRIEF.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-79
+skills/userinterface-wiki/rules/appropriate-no-high-frequency.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-28
+skills/userinterface-wiki/rules/ux-similarity-consistency.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-35
+skills/unlazy/scripts/gate-check.mjs
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-960
+skills/userinterface-wiki/rules/exit-requires-wrapper.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-27
+skills/userinterface-wiki/rules/ux-postels-accept-messy-input.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-45
+skills/userinterface-wiki/rules/ux-pragnanz-simplify.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-33
+skills/unlazy/tests/contract-tests.mjs
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-127
+skills/userinterface-wiki/rules/ux-fitts-target-size.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-31
+skills/unlazy/CONTRIBUTING.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-66
+skills/userinterface-wiki/rules/ux-von-restorff-emphasis.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-29
+skills/userinterface-wiki/rules/visual-animate-shadow-pseudo.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-49
+skills/userinterface-wiki/rules/physics-subtle-deformation.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-22
+skills/userinterface-wiki/rules/appropriate-confirmations-only.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-19
+skills/unlazy/tests/self-check.mjs
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-366
+skills/real-sound/references/design-format.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-251
+skills/userinterface-wiki/rules/staging-dim-background.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-22
+skills/real-sound/scripts/qa.py
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-965
+skills/userinterface-wiki/rules/visual-no-pure-black-shadow.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-25
+skills/userinterface-wiki/rules/timing-under-300ms.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-22
+skills/userinterface-wiki/rules/param-q-value-range.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-21
+skills/userinterface-wiki/rules/staging-one-focal-point.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-24
+skills/writing-taste/SKILL.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 25,32,46-47,74
+skills/unlazy/scripts/lib/check-supervisor.mjs
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-46
+skills/userinterface-wiki/rules/presence-safe-to-remove.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-37
+skills/userinterface-wiki/rules/transition-name-required.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-27
+skills/userinterface-wiki/rules/ux-jakobs-familiar-patterns.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-37
+skills/userinterface-wiki/rules/type-variable-weight-continuous.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-23
+skills/userinterface-wiki/rules/envelope-no-zero-target.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-21
+skills/userinterface-wiki/rules/container-callback-ref.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-31
+skills/userinterface-wiki/rules/morphing-aria-hidden.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-21
+skills/real-sound/references/process.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-135
+skills/unlazy/scripts/lib/dispatch.mjs
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-293
+skills/userinterface-wiki/rules/prefetch-keyboard-tab.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-19
+skills/writing-taste/references/tastemakers.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 21-22,26-27
+skills/userinterface-wiki/rules/container-transition-delay.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-21
+skills/userinterface-wiki/rules/pseudo-z-index-layering.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-37
+skills/userinterface-wiki/rules/morphing-group-variants.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-33
+skills/userinterface-wiki/rules/easing-natural-decay.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-22
+skills/userinterface-wiki/rules/transition-style-pseudo-elements.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-24
+skills/userinterface-wiki/rules/impl-preload-audio.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-34
+skills/userinterface-wiki/rules/spring-for-gestures.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-27
+skills/unlazy/tests/lint-tests.mjs
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-398
+skills/userinterface-wiki/rules/type-text-wrap-balance-headings.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-21
+skills/unlazy/scripts/lib/gates.mjs
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-953
+skills/userinterface-wiki/rules/morphing-jump-non-grouped.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-29
+skills/userinterface-wiki/rules/envelope-exponential-decay.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-21
+skills/userinterface-wiki/rules/type-opentype-contextual-alternates.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-15
+skills/userinterface-wiki/rules/spring-params-balanced.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-29
+skills/real-sound/templates/prompts/critic_director.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-36
+skills/userinterface-wiki/rules/type-underline-offset.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-25
+skills/real-sound/templates/prompts/critic_tonal.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-36
+skills/real-sound/templates/arc.json
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-7
+skills/real-sound/scripts/master.py
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-342
+skills/real-sound/templates/prompts/fixer.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-51
+skills/userinterface-wiki/rules/_template.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-24
+skills/userinterface-wiki/rules/container-two-div-pattern.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-35
+skills/userinterface-wiki/rules/morphing-consistent-viewbox.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-23
+skills/userinterface-wiki/rules/prefetch-use-selectively.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-13
+skills/userinterface-wiki/rules/type-proper-fractions.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-15
+skills/userinterface-wiki/rules/weight-duration-matches-action.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-29
+skills/userinterface-wiki/AGENTS.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-3749
+skills/userinterface-wiki/rules/prefetch-not-everything.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-22
+skills/real-sound/templates/prompts/critic_masking.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-34
+skills/userinterface-wiki/rules/context-resume-suspended.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-28
+skills/userinterface-wiki/rules/param-click-duration.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-21
+skills/pe-design/references/brief/index.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 97-98
+skills/real-sound/scripts/variant.py
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-320
+skills/unlazy/scripts/install-hooks.mjs
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-205
+skills/userinterface-wiki/rules/design-oscillator-for-tonal.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-22
+skills/userinterface-wiki/rules/ux-common-region-boundaries.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-50
+skills/unlazy/README.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-244
+skills/real-sound/scripts/licences.py
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-122
+skills/userinterface-wiki/SKILL.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-253
+skills/unlazy/references/method.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-49
+skills/userinterface-wiki/rules/duration-small-state.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-15
+skills/userinterface-wiki/rules/staging-z-index-hierarchy.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-22
+skills/userinterface-wiki/rules/container-no-excessive-use.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-13
+skills/userinterface-wiki/rules/type-tabular-nums-for-data.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-21
+skills/userinterface-wiki/rules/a11y-volume-control.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-28
+skills/real-sound/templates/prompts/sourcing.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-60
+skills/userinterface-wiki/rules/type-disambiguation-stylistic-set.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-15
+skills/userinterface-wiki/rules/type-justify-with-hyphens.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-24
+skills/userinterface-wiki/rules/morphing-reduced-motion.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-28
+skills/userinterface-wiki/rules/ux-proximity-grouping.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-38
+skills/userinterface-wiki/rules/_sections.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-66
+skills/unlazy/scripts/lib/process-tree.mjs
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-161
+skills/userinterface-wiki/rules/weight-match-action.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-32
+skills/real-sound/templates/cues.json
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-29
+skills/unlazy/.gitignore
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-7
+skills/userinterface-wiki/rules/impl-reset-current-time.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-26
+skills/userinterface-wiki/rules/ux-peak-end-finish-strong.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-35
+skills/userinterface-wiki/rules/ux-uniform-connectedness.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-43
+skills/userinterface-wiki/rules/duration-press-hover.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-21
+skills/userinterface-wiki/rules/nested-consistent-timing.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-25
+skills/userinterface-wiki/rules/spring-preserves-velocity.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-28
+skills/unlazy/templates/gates-node.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-51
+skills/userinterface-wiki/rules/design-filter-for-character.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-25
+skills/unlazy/scripts/gate-lint.mjs
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-245
+skills/userinterface-wiki/rules/pseudo-marker-styling.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-28
+skills/userinterface-wiki/rules/easing-entrance-ease-out.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-21
+skills/pe-review/references/experience-rubric.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 69-84
+skills/userinterface-wiki/rules/ux-zeigarnik-show-incomplete.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-36
+skills/userinterface-wiki/rules/envelope-set-initial-value.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-22
+skills/userinterface-wiki/rules/none-high-frequency.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-29
+skills/userinterface-wiki/rules/easing-transition-ease-in-out.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-15
+skills/unlazy/references/orchestration.md
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-107
+skills/real-sound/templates/sounddesign.json
+  s_f16178bc6c18a1::t_791bde6c8903f8 1-22
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f66c092f4c29b52adf599ea8a990655f84451613",
+  "prompts": {},
+  "sessions": {
+    "s_f16178bc6c18a1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "fce56075-34a5-4c90-b862-1ff1e768a006",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Shivanshu Chaudhary <shivanshuchaudhary97@gmail.com>"
+    }
+  }
+}
