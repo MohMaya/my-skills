@@ -1,6 +1,6 @@
 # SQLAlchemy 2.0 reference
 
-Consult on demand from `query-design`. Covers SQLAlchemy 2.0 async with psycopg 3 or asyncpg, Alembic, and raw asyncpg. Check loader and dialect options against the installed version (`uv pip show sqlalchemy` or the lockfile).
+Consult on demand from `postgres`. Covers SQLAlchemy 2.0 async with psycopg 3 or asyncpg, Alembic, and raw asyncpg. Check loader and dialect options against the installed version (`uv pip show sqlalchemy` or the lockfile).
 
 ## Seeing the SQL
 

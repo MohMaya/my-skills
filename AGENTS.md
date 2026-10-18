@@ -58,7 +58,7 @@ Matt Pocock's skills and ours live together in `~/.agents/skills`. Load the matc
 | A design question a throwaway build answers fastest | `prototype` |
 | A bug or regression whose cause is unknown | `diagnosing-bugs` |
 | New behavior or a bug fix in a repository with a test runner | `tdd`; its refactor stage is `bar-raiser` |
-| Any SQL statement or ORM query | `query-design` |
+| Any SQL statement or ORM query | `postgres` |
 | UI brief, build, review, or verification | `pe-design`, `pe-build`, `pe-review`, `pe-verify` |
 | Facts about an API or library | `research` |
 | A PR body | `pr` |
