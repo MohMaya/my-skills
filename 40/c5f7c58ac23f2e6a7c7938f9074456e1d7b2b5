@@ -1,0 +1,1772 @@
+.skill-lock.json
+  h_22370449f3812f 858-1505
+skills/amazon-bedrock/.aws-skill-metadata
+  h_22370449f3812f 1
+skills/amazon-bedrock/SKILL.md
+  h_22370449f3812f 1-395
+skills/amazon-bedrock/assets/kb_shim.py.tmpl
+  h_22370449f3812f 1-80
+skills/amazon-bedrock/assets/lambda_shim.py.tmpl
+  h_22370449f3812f 1-158
+skills/amazon-bedrock/assets/tool_schema.json.tmpl
+  h_22370449f3812f 1-12
+skills/amazon-bedrock/references/agentcore-credentials-and-security.md
+  h_22370449f3812f 1-126
+skills/amazon-bedrock/references/agentcore-gateway.md
+  h_22370449f3812f 1-106
+skills/amazon-bedrock/references/agentcore-harness.md
+  h_22370449f3812f 1-274
+skills/amazon-bedrock/references/agentcore-memory-observability.md
+  h_22370449f3812f 1-113
+skills/amazon-bedrock/references/agentcore-payments-setup-script.md
+  h_22370449f3812f 1-315
+skills/amazon-bedrock/references/agentcore-payments-wiring.md
+  h_22370449f3812f 1-334
+skills/amazon-bedrock/references/agentcore-payments.md
+  h_22370449f3812f 1-399
+skills/amazon-bedrock/references/agentcore-registry-evaluations.md
+  h_22370449f3812f 1-132
+skills/amazon-bedrock/references/agentcore-runtime-container-build.md
+  h_22370449f3812f 1-254
+skills/amazon-bedrock/references/agentcore-runtime.md
+  h_22370449f3812f 1-124
+skills/amazon-bedrock/references/agents-and-action-groups.md
+  h_22370449f3812f 1-209
+skills/amazon-bedrock/references/bedrock-agents-to-agentcore-harness/cli.md
+  h_22370449f3812f 1-36
+skills/amazon-bedrock/references/bedrock-agents-to-agentcore-harness/deploy.md
+  h_22370449f3812f 1-110
+skills/amazon-bedrock/references/bedrock-agents-to-agentcore-harness/discovery.md
+  h_22370449f3812f 1-36
+skills/amazon-bedrock/references/bedrock-agents-to-agentcore-harness/eligibility.md
+  h_22370449f3812f 1-35
+skills/amazon-bedrock/references/bedrock-agents-to-agentcore-harness/mapping.md
+  h_22370449f3812f 1-62
+skills/amazon-bedrock/references/cost-tracking.md
+  h_22370449f3812f 1-107
+skills/amazon-bedrock/references/guardrails.md
+  h_22370449f3812f 1-220
+skills/amazon-bedrock/references/knowledge-bases-decision-guide.md
+  h_22370449f3812f 1-23
+skills/amazon-bedrock/references/knowledge-bases-retrieval.md
+  h_22370449f3812f 1-132
+skills/amazon-bedrock/references/knowledge-bases-setup.md
+  h_22370449f3812f 1-260
+skills/amazon-bedrock/references/managed-knowledge-bases-retrieval.md
+  h_22370449f3812f 1-101
+skills/amazon-bedrock/references/managed-knowledge-bases-setup.md
+  h_22370449f3812f 1-130
+skills/amazon-bedrock/references/migrate-bedrock-agents-to-agentcore-harness.md
+  h_22370449f3812f 1-98
+skills/amazon-bedrock/references/model-invocation.md
+  h_22370449f3812f 1-190
+skills/amazon-bedrock/references/model-migration.md
+  h_22370449f3812f 1-73
+skills/amazon-bedrock/references/model-selection-guide.md
+  h_22370449f3812f 1-92
+skills/amazon-bedrock/references/prompt-caching.md
+  h_22370449f3812f 1-122
+skills/amazon-bedrock/references/prompt-engineering-by-model.md
+  h_22370449f3812f 1-143
+skills/amazon-bedrock/references/quota-health.md
+  h_22370449f3812f 1-92
+skills/amazon-bedrock/references/sdk-converse-api-python.md
+  h_22370449f3812f 1-155
+skills/amazon-bedrock/references/sdk-converse-api-typescript.md
+  h_22370449f3812f 1-176
+skills/amazon-bedrock/scripts/fetch_bedrock_agent.py
+  h_22370449f3812f 1-343
+skills/angular-architect/SKILL.md
+  h_22370449f3812f 1-157
+skills/angular-architect/references/components.md
+  h_22370449f3812f 1-297
+skills/angular-architect/references/ngrx.md
+  h_22370449f3812f 1-401
+skills/angular-architect/references/routing.md
+  h_22370449f3812f 1-361
+skills/angular-architect/references/rxjs.md
+  h_22370449f3812f 1-319
+skills/angular-architect/references/testing.md
+  h_22370449f3812f 1-405
+skills/api-design-principles/SKILL.md
+  h_22370449f3812f 1-110
+skills/api-design-principles/assets/api-design-checklist.md
+  h_22370449f3812f 1-155
+skills/api-design-principles/assets/rest-api-template.py
+  h_22370449f3812f 1-182
+skills/api-design-principles/references/details.md
+  h_22370449f3812f 1-413
+skills/api-design-principles/references/graphql-schema-design.md
+  h_22370449f3812f 1-583
+skills/api-design-principles/references/rest-best-practices.md
+  h_22370449f3812f 1-408
+skills/api-designer/SKILL.md
+  h_22370449f3812f 1-222
+skills/api-designer/references/error-handling.md
+  h_22370449f3812f 1-541
+skills/api-designer/references/openapi.md
+  h_22370449f3812f 1-824
+skills/api-designer/references/pagination.md
+  h_22370449f3812f 1-494
+skills/api-designer/references/rest-patterns.md
+  h_22370449f3812f 1-335
+skills/api-designer/references/versioning.md
+  h_22370449f3812f 1-391
+skills/architecture-designer/SKILL.md
+  h_22370449f3812f 1-121
+skills/architecture-designer/references/adr-template.md
+  h_22370449f3812f 1-116
+skills/architecture-designer/references/architecture-patterns.md
+  h_22370449f3812f 1-111
+skills/architecture-designer/references/database-selection.md
+  h_22370449f3812f 1-102
+skills/architecture-designer/references/nfr-checklist.md
+  h_22370449f3812f 1-112
+skills/architecture-designer/references/system-design.md
+  h_22370449f3812f 1-100
+skills/architecture-patterns/SKILL.md
+  h_22370449f3812f 1-164
+skills/architecture-patterns/references/advanced-patterns.md
+  h_22370449f3812f 1-391
+skills/architecture-patterns/references/details.md
+  h_22370449f3812f 1-335
+skills/atlassian-mcp/SKILL.md
+  h_22370449f3812f 1-129
+skills/atlassian-mcp/references/authentication-patterns.md
+  h_22370449f3812f 1-520
+skills/atlassian-mcp/references/common-workflows.md
+  h_22370449f3812f 1-660
+skills/atlassian-mcp/references/confluence-operations.md
+  h_22370449f3812f 1-528
+skills/atlassian-mcp/references/jira-queries.md
+  h_22370449f3812f 1-516
+skills/atlassian-mcp/references/mcp-server-setup.md
+  h_22370449f3812f 1-292
+skills/auth-implementation-patterns/SKILL.md
+  h_22370449f3812f 1-83
+skills/auth-implementation-patterns/references/details.md
+  h_22370449f3812f 1-560
+skills/aws-ai-ml/.aws-skill-metadata
+  h_22370449f3812f 1
+skills/aws-ai-ml/SKILL.md
+  h_22370449f3812f 1-49
+skills/aws-ai-ml/references/dataset-evaluation/overview.md
+  h_22370449f3812f 1-69
+skills/aws-ai-ml/references/dataset-evaluation/references/custom-scorer-evaluation-dataset-formats.md
+  h_22370449f3812f 1-95
+skills/aws-ai-ml/references/dataset-evaluation/references/strategy_data_requirements.md
+  h_22370449f3812f 1-244
+skills/aws-ai-ml/references/dataset-evaluation/scripts/format_detector.py
+  h_22370449f3812f 1-774
+skills/aws-ai-ml/references/dataset-transformation/code_templates/transformation.py
+  h_22370449f3812f 1-45
+skills/aws-ai-ml/references/dataset-transformation/overview.md
+  h_22370449f3812f 1-232
+skills/aws-ai-ml/references/dataset-transformation/references/code_output_guide.md
+  h_22370449f3812f 1-72
+skills/aws-ai-ml/references/dataset-transformation/references/dataset_transformation_code.md
+  h_22370449f3812f 1-140
+skills/aws-ai-ml/references/dataset-transformation/references/sagemaker_dataset_formats.md
+  h_22370449f3812f 1-154
+skills/aws-ai-ml/references/dataset-transformation/scripts/transformation_tools.py
+  h_22370449f3812f 1-152
+skills/aws-ai-ml/references/directory-management/overview.md
+  h_22370449f3812f 1-37
+skills/aws-ai-ml/references/endpoint-diagnostics/overview.md
+  h_22370449f3812f 1-77
+skills/aws-ai-ml/references/endpoint-diagnostics/references/minimum_iam_policy.md
+  h_22370449f3812f 1-37
+skills/aws-ai-ml/references/endpoint-diagnostics/scripts/collect_diagnostics.py
+  h_22370449f3812f 1-351
+skills/aws-ai-ml/references/finetuning-technique/overview.md
+  h_22370449f3812f 1-45
+skills/aws-ai-ml/references/finetuning-technique/references/finetune_technique_selection_guide.md
+  h_22370449f3812f 1-64
+skills/aws-ai-ml/references/finetuning-technique/scripts/get_recipes.py
+  h_22370449f3812f 1-32
+skills/aws-ai-ml/references/finetuning/code_templates/dpo.py
+  h_22370449f3812f 1-170
+skills/aws-ai-ml/references/finetuning/code_templates/rlaif_builtin.py
+  h_22370449f3812f 1-171
+skills/aws-ai-ml/references/finetuning/code_templates/rlaif_custom_prompt.py
+  h_22370449f3812f 1-184
+skills/aws-ai-ml/references/finetuning/code_templates/rlvr.py
+  h_22370449f3812f 1-184
+skills/aws-ai-ml/references/finetuning/code_templates/sft.py
+  h_22370449f3812f 1-160
+skills/aws-ai-ml/references/finetuning/overview.md
+  h_22370449f3812f 1-216
+skills/aws-ai-ml/references/finetuning/references/code_output_guide.md
+  h_22370449f3812f 1-76
+skills/aws-ai-ml/references/finetuning/references/continuous_customization.md
+  h_22370449f3812f 1-201
+skills/aws-ai-ml/references/finetuning/references/eula_links.md
+  h_22370449f3812f 1-37
+skills/aws-ai-ml/references/finetuning/references/rlaif_guide.md
+  h_22370449f3812f 1-92
+skills/aws-ai-ml/references/finetuning/references/rlvr_reward_function.md
+  h_22370449f3812f 1-185
+skills/aws-ai-ml/references/finetuning/scripts/mlflow_reference.py
+  h_22370449f3812f 1-27
+skills/aws-ai-ml/references/finetuning/templates/nova_rlvr_reward_function_source_template.py
+  h_22370449f3812f 1-358
+skills/aws-ai-ml/references/finetuning/templates/rlvr_reward_function_source_template.py
+  h_22370449f3812f 1-251
+skills/aws-ai-ml/references/manage-mlflow/overview.md
+  h_22370449f3812f 1-86
+skills/aws-ai-ml/references/manage-mlflow/references/app-creation-workflow.md
+  h_22370449f3812f 1-76
+skills/aws-ai-ml/references/manage-mlflow/references/app-deletion-workflow.md
+  h_22370449f3812f 1-64
+skills/aws-ai-ml/references/manage-mlflow/references/app-discovery-workflow.md
+  h_22370449f3812f 1-29
+skills/aws-ai-ml/references/manage-mlflow/references/app-update-workflow.md
+  h_22370449f3812f 1-42
+skills/aws-ai-ml/references/manage-mlflow/references/sm-mlflow-guide.md
+  h_22370449f3812f 1-14
+skills/aws-ai-ml/references/model-deployment/code_templates/deploy-jumpstart-sagemaker.py
+  h_22370449f3812f 1-177
+skills/aws-ai-ml/references/model-deployment/code_templates/deploy-nova-bedrock.py
+  h_22370449f3812f 1-73
+skills/aws-ai-ml/references/model-deployment/code_templates/deploy-nova-sagemaker.py
+  h_22370449f3812f 1-74
+skills/aws-ai-ml/references/model-deployment/code_templates/deploy-oss-bedrock.py
+  h_22370449f3812f 1-130
+skills/aws-ai-ml/references/model-deployment/code_templates/deploy-oss-sagemaker.py
+  h_22370449f3812f 1-84
+skills/aws-ai-ml/references/model-deployment/code_templates/optimize-benchmark.py
+  h_22370449f3812f 1-114
+skills/aws-ai-ml/references/model-deployment/code_templates/optimize-huggingface-to-s3.py
+  h_22370449f3812f 1-48
+skills/aws-ai-ml/references/model-deployment/code_templates/optimize-recommendation.py
+  h_22370449f3812f 1-144
+skills/aws-ai-ml/references/model-deployment/overview.md
+  h_22370449f3812f 1-221
+skills/aws-ai-ml/references/model-deployment/references/code_output_guide.md
+  h_22370449f3812f 1-76
+skills/aws-ai-ml/references/model-deployment/references/deploy-jumpstart-sagemaker.md
+  h_22370449f3812f 1-265
+skills/aws-ai-ml/references/model-deployment/references/deploy-nova-bedrock.md
+  h_22370449f3812f 1-127
+skills/aws-ai-ml/references/model-deployment/references/deploy-nova-sagemaker.md
+  h_22370449f3812f 1-150
+skills/aws-ai-ml/references/model-deployment/references/deploy-oss-bedrock.md
+  h_22370449f3812f 1-144
+skills/aws-ai-ml/references/model-deployment/references/deploy-oss-sagemaker.md
+  h_22370449f3812f 1-212
+skills/aws-ai-ml/references/model-deployment/references/model-licenses.md
+  h_22370449f3812f 1-49
+skills/aws-ai-ml/references/model-deployment/references/optimization/benchmark-workflow.md
+  h_22370449f3812f 1-135
+skills/aws-ai-ml/references/model-deployment/references/optimization/benchmarking-guidance.md
+  h_22370449f3812f 1-63
+skills/aws-ai-ml/references/model-deployment/references/optimization/huggingface-to-s3.md
+  h_22370449f3812f 1-48
+skills/aws-ai-ml/references/model-deployment/references/optimization/interpreting-results.md
+  h_22370449f3812f 1-105
+skills/aws-ai-ml/references/model-deployment/references/optimization/recommendation-deploy.md
+  h_22370449f3812f 1-11
+skills/aws-ai-ml/references/model-deployment/references/optimization/recommendation-options.md
+  h_22370449f3812f 1-51
+skills/aws-ai-ml/references/model-deployment/references/optimization/recommendation-workflow.md
+  h_22370449f3812f 1-149
+skills/aws-ai-ml/references/model-evaluation/code_templates/custom_scorer_evaluator.py
+  h_22370449f3812f 1-95
+skills/aws-ai-ml/references/model-evaluation/code_templates/llmaaj_evaluator.py
+  h_22370449f3812f 1-101
+skills/aws-ai-ml/references/model-evaluation/overview.md
+  h_22370449f3812f 1-109
+skills/aws-ai-ml/references/model-evaluation/references/code_output_guide.md
+  h_22370449f3812f 1-80
+skills/aws-ai-ml/references/model-evaluation/references/create-reward-function.md
+  h_22370449f3812f 1-67
+skills/aws-ai-ml/references/model-evaluation/references/custom-lambda-scorer.md
+  h_22370449f3812f 1-142
+skills/aws-ai-ml/references/model-evaluation/references/custom-scorer-evaluation.md
+  h_22370449f3812f 1-234
+skills/aws-ai-ml/references/model-evaluation/references/evaluation-type-guide.md
+  h_22370449f3812f 1-151
+skills/aws-ai-ml/references/model-evaluation/references/llmaaj-builtin-evaluation.md
+  h_22370449f3812f 1-59
+skills/aws-ai-ml/references/model-evaluation/references/llmaaj-custom-evaluation.md
+  h_22370449f3812f 1-65
+skills/aws-ai-ml/references/model-evaluation/references/llmaaj-evaluation.md
+  h_22370449f3812f 1-297
+skills/aws-ai-ml/references/model-evaluation/references/supported-judge-models.md
+  h_22370449f3812f 1-32
+skills/aws-ai-ml/references/model-evaluation/scripts/nova_reward_function_source_template.py
+  h_22370449f3812f 1-364
+skills/aws-ai-ml/references/model-evaluation/scripts/reward_function_source_template.py
+  h_22370449f3812f 1-246
+skills/aws-ai-ml/references/model-evaluation/scripts/validate_custom_metrics.py
+  h_22370449f3812f 1-120
+skills/aws-ai-ml/references/model-selection/overview.md
+  h_22370449f3812f 1-190
+skills/aws-ai-ml/references/model-selection/references/benchmarks/agentic-index.md
+  h_22370449f3812f 1-44
+skills/aws-ai-ml/references/model-selection/references/benchmarks/coding-index.md
+  h_22370449f3812f 1-44
+skills/aws-ai-ml/references/model-selection/references/benchmarks/gpqa.md
+  h_22370449f3812f 1-44
+skills/aws-ai-ml/references/model-selection/references/benchmarks/hle.md
+  h_22370449f3812f 1-44
+skills/aws-ai-ml/references/model-selection/references/benchmarks/ifbench.md
+  h_22370449f3812f 1-44
+skills/aws-ai-ml/references/model-selection/references/benchmarks/intelligence-index.md
+  h_22370449f3812f 1-44
+skills/aws-ai-ml/references/model-selection/references/benchmarks/mmmu-pro.md
+  h_22370449f3812f 1-44
+skills/aws-ai-ml/references/model-selection/references/benchmarks/tau2.md
+  h_22370449f3812f 1-44
+skills/aws-ai-ml/references/model-selection/references/model-licenses.md
+  h_22370449f3812f 1-37
+skills/aws-ai-ml/references/model-selection/references/model-selection.md
+  h_22370449f3812f 1-107
+skills/aws-ai-ml/references/model-selection/references/select-for-deployment.md
+  h_22370449f3812f 1-364
+skills/aws-ai-ml/references/model-selection/scripts/filter_deployable_models.py
+  h_22370449f3812f 1-281
+skills/aws-ai-ml/references/model-selection/scripts/get_deployable_models.py
+  h_22370449f3812f 1-594
+skills/aws-ai-ml/references/model-selection/scripts/get_model_names.py
+  h_22370449f3812f 1-50
+skills/aws-ai-ml/references/model-selection/scripts/search_deployable_models.py
+  h_22370449f3812f 1-929
+skills/aws-ai-ml/references/planning/overview.md
+  h_22370449f3812f 1-165
+skills/aws-ai-ml/references/planning/references/deploy-base-model-plan.md
+  h_22370449f3812f 1-8
+skills/aws-ai-ml/references/planning/references/evaluate-first-plan.md
+  h_22370449f3812f 1-22
+skills/aws-ai-ml/references/planning/references/input-output-contracts.md
+  h_22370449f3812f 1-17
+skills/aws-ai-ml/references/planning/references/model-customization-plan.md
+  h_22370449f3812f 1-15
+skills/aws-ai-ml/references/planning/references/region-availability.md
+  h_22370449f3812f 1-31
+skills/aws-ai-ml/references/planning/references/skill-routing-constraints.md
+  h_22370449f3812f 1-68
+skills/aws-ai-ml/references/processing-jobs/code_templates/dataset_definition_processing.py
+  h_22370449f3812f 1-127
+skills/aws-ai-ml/references/processing-jobs/code_templates/framework_processing.py
+  h_22370449f3812f 1-101
+skills/aws-ai-ml/references/processing-jobs/code_templates/script_processing.py
+  h_22370449f3812f 1-99
+skills/aws-ai-ml/references/processing-jobs/code_templates/spark_processing.py
+  h_22370449f3812f 1-118
+skills/aws-ai-ml/references/processing-jobs/overview.md
+  h_22370449f3812f 1-98
+skills/aws-ai-ml/references/processing-jobs/references/configuration.md
+  h_22370449f3812f 1-67
+skills/aws-ai-ml/references/processing-jobs/references/troubleshooting.md
+  h_22370449f3812f 1-36
+skills/aws-ai-ml/references/sdk-getting-started/overview.md
+  h_22370449f3812f 1-16
+skills/aws-ai-ml/references/sdk-getting-started/references/execution-role-setup.md
+  h_22370449f3812f 1-49
+skills/aws-ai-ml/references/sdk-getting-started/references/sagemaker-python-sdk-setup.md
+  h_22370449f3812f 1-69
+skills/aws-ai-ml/references/training-jobs/code_templates/custom_training.py
+  h_22370449f3812f 1-175
+skills/aws-ai-ml/references/training-jobs/code_templates/jumpstart_training.py
+  h_22370449f3812f 1-158
+skills/aws-ai-ml/references/training-jobs/code_templates/recipe_training.py
+  h_22370449f3812f 1-163
+skills/aws-ai-ml/references/training-jobs/overview.md
+  h_22370449f3812f 1-114
+skills/aws-ai-ml/references/training-jobs/references/configuration.md
+  h_22370449f3812f 1-54
+skills/aws-ai-ml/references/training-jobs/references/troubleshooting.md
+  h_22370449f3812f 1-64
+skills/aws-ai-ml/references/use-case-specification/overview.md
+  h_22370449f3812f 1-40
+skills/aws-ai-ml/references/use-case-specification/references/spec-for-deployment.md
+  h_22370449f3812f 1-86
+skills/aws-ai-ml/references/use-case-specification/references/spec-for-finetuning.md
+  h_22370449f3812f 1-57
+skills/aws-auth/.aws-skill-metadata
+  h_22370449f3812f 1
+skills/aws-auth/SKILL.md
+  h_22370449f3812f 1-127
+skills/aws-auth/references/api-authorization.md
+  h_22370449f3812f 1-110
+skills/aws-auth/references/identity-pools.md
+  h_22370449f3812f 1-110
+skills/aws-auth/references/lambda-triggers.md
+  h_22370449f3812f 1-160
+skills/aws-auth/references/managed-login-oauth.md
+  h_22370449f3812f 1-299
+skills/aws-auth/references/passkeys.md
+  h_22370449f3812f 1-122
+skills/aws-auth/references/threat-protection.md
+  h_22370449f3812f 1-156
+skills/aws-auth/references/tokens-and-sessions.md
+  h_22370449f3812f 1-206
+skills/aws-auth/references/troubleshooting.md
+  h_22370449f3812f 1-63
+skills/aws-auth/references/user-pools.md
+  h_22370449f3812f 1-168
+skills/aws-billing-and-cost-management/.aws-skill-metadata
+  h_22370449f3812f 1
+skills/aws-billing-and-cost-management/SKILL.md
+  h_22370449f3812f 1-163
+skills/aws-billing-and-cost-management/references/budgets.md
+  h_22370449f3812f 1-50
+skills/aws-billing-and-cost-management/references/cost-audit.md
+  h_22370449f3812f 1-75
+skills/aws-billing-and-cost-management/references/cost-explorer.md
+  h_22370449f3812f 1-130
+skills/aws-billing-and-cost-management/references/cost-optimization-hub.md
+  h_22370449f3812f 1-140
+skills/aws-billing-and-cost-management/references/cur-athena.md
+  h_22370449f3812f 1-103
+skills/aws-billing-and-cost-management/references/deterministic-calculations.md
+  h_22370449f3812f 1-62
+skills/aws-billing-and-cost-management/references/ebs-optimization.md
+  h_22370449f3812f 1-49
+skills/aws-billing-and-cost-management/references/ec2-rightsizing.md
+  h_22370449f3812f 1-86
+skills/aws-billing-and-cost-management/references/free-tier.md
+  h_22370449f3812f 1-34
+skills/aws-billing-and-cost-management/references/lambda-optimization.md
+  h_22370449f3812f 1-46
+skills/aws-billing-and-cost-management/references/pricing-lookup.md
+  h_22370449f3812f 1-78
+skills/aws-billing-and-cost-management/references/rds-optimization.md
+  h_22370449f3812f 1-39
+skills/aws-billing-and-cost-management/references/reserved-instances.md
+  h_22370449f3812f 1-62
+skills/aws-billing-and-cost-management/references/savings-plans.md
+  h_22370449f3812f 1-69
+skills/aws-billing-and-cost-management/references/service-optimization.md
+  h_22370449f3812f 1-58
+skills/aws-blocks/.aws-skill-metadata
+  h_22370449f3812f 1
+skills/aws-blocks/SKILL.md
+  h_22370449f3812f 1-127
+skills/aws-cdk/.aws-skill-metadata
+  h_22370449f3812f 1
+skills/aws-cdk/SKILL.md
+  h_22370449f3812f 1-91
+skills/aws-cdk/references/bootstrap-and-project-setup.md
+  h_22370449f3812f 1-257
+skills/aws-cdk/references/compliance-and-drift.md
+  h_22370449f3812f 1-193
+skills/aws-cdk/references/construct-patterns.md
+  h_22370449f3812f 1-315
+skills/aws-cdk/references/fast-deployments.md
+  h_22370449f3812f 1-191
+skills/aws-cdk/references/import-and-migrate.md
+  h_22370449f3812f 1-184
+skills/aws-cdk/references/refactor-and-prevent-replacement.md
+  h_22370449f3812f 1-198
+skills/aws-cdk/references/troubleshooting-credentials.md
+  h_22370449f3812f 1-183
+skills/aws-cdk/references/troubleshooting-deployment.md
+  h_22370449f3812f 1-309
+skills/aws-cdk/references/troubleshooting-synth.md
+  h_22370449f3812f 1-274
+skills/aws-cdk/references/v1-to-v2-migration.md
+  h_22370449f3812f 1-119
+skills/aws-cloudformation/.aws-skill-metadata
+  h_22370449f3812f 1
+skills/aws-cloudformation/SKILL.md
+  h_22370449f3812f 1-251
+skills/aws-cloudformation/references/author-cloudformation-best-practices.script.md
+  h_22370449f3812f 1-165
+skills/aws-cloudformation/references/check-cloudformation-template-compliance.script.md
+  h_22370449f3812f 1-154
+skills/aws-cloudformation/references/cloudformation-language-server.md
+  h_22370449f3812f 1-177
+skills/aws-cloudformation/references/cloudformation-pre-deploy-validation.script.md
+  h_22370449f3812f 1-268
+skills/aws-cloudformation/references/deploy-with-express-mode.script.md
+  h_22370449f3812f 1-250
+skills/aws-cloudformation/references/lookup-resource-properties.script.md
+  h_22370449f3812f 1-122
+skills/aws-cloudformation/references/persist-template-context.script.md
+  h_22370449f3812f 1-307
+skills/aws-cloudformation/references/retrieve-template-context.script.md
+  h_22370449f3812f 1-357
+skills/aws-cloudformation/references/security-considerations.md
+  h_22370449f3812f 1-51
+skills/aws-cloudformation/references/template-safety-guidance.md
+  h_22370449f3812f 1-174
+skills/aws-cloudformation/references/troubleshoot-deployment.script.md
+  h_22370449f3812f 1-191
+skills/aws-cloudformation/references/troubleshoot-failed-stack.script.md
+  h_22370449f3812f 1-129
+skills/aws-cloudformation/references/validate-with-cfn-lint.script.md
+  h_22370449f3812f 1-133
+skills/aws-cloudformation/references/validate-with-cloudformation-validate.script.md
+  h_22370449f3812f 1-173
+skills/aws-cloudformation/references/validation-tool-selection.md
+  h_22370449f3812f 1-44
+skills/aws-compute/.aws-skill-metadata
+  h_22370449f3812f 1
+skills/aws-compute/SKILL.md
+  h_22370449f3812f 1-97
+skills/aws-compute/references/ami-management.md
+  h_22370449f3812f 1-52
+skills/aws-compute/references/auto-scaling.md
+  h_22370449f3812f 1-114
+skills/aws-compute/references/instance-selection.md
+  h_22370449f3812f 1-63
+skills/aws-compute/references/provisioning.md
+  h_22370449f3812f 1-85
+skills/aws-compute/references/systems-manager.md
+  h_22370449f3812f 1-61
+skills/aws-compute/references/troubleshooting.md
+  h_22370449f3812f 1-54
+skills/aws-containers/.aws-skill-metadata
+  h_22370449f3812f 1
+skills/aws-containers/SKILL.md
+  h_22370449f3812f 1-88
+skills/aws-containers/references/action-logs.md
+  h_22370449f3812f 1-241
+skills/aws-containers/references/beanstalk-cluster-mode.md
+  h_22370449f3812f 1-350
+skills/aws-containers/references/beanstalk-configuration.md
+  h_22370449f3812f 1-144
+skills/aws-containers/references/beanstalk-platforms.md
+  h_22370449f3812f 1-55
+skills/aws-containers/references/beanstalk.md
+  h_22370449f3812f 1-41
+skills/aws-containers/references/ecr.md
+  h_22370449f3812f 1-126
+skills/aws-containers/references/ecs-managing-compute.md
+  h_22370449f3812f 1-81
+skills/aws-containers/references/ecs-workloads.md
+  h_22370449f3812f 1-275
+skills/aws-containers/references/ecs.md
+  h_22370449f3812f 1-19
+skills/aws-containers/references/eks-auto-mode.md
+  h_22370449f3812f 1-55
+skills/aws-containers/references/eks-capabilities.md
+  h_22370449f3812f 1-15
+skills/aws-containers/references/eks-control-plane.md
+  h_22370449f3812f 1-24
+skills/aws-containers/references/eks-load-balancer-controller.md
+  h_22370449f3812f 1-238
+skills/aws-containers/references/eks-managing-compute.md
+  h_22370449f3812f 1-132
+skills/aws-containers/references/eks-networking.md
+  h_22370449f3812f 1-50
+skills/aws-containers/references/eks.md
+  h_22370449f3812f 1-22
+skills/aws-database/.aws-skill-metadata
+  h_22370449f3812f 1
+skills/aws-database/SKILL.md
+  h_22370449f3812f 1-73
+skills/aws-database/assets/aurora-dsql.md
+  h_22370449f3812f 1-19
+skills/aws-database/assets/aurora-mysql.md
+  h_22370449f3812f 1-20
+skills/aws-database/assets/aurora-postgresql.md
+  h_22370449f3812f 1-19
+skills/aws-database/assets/documentdb.md
+  h_22370449f3812f 1-19
+skills/aws-database/assets/dynamodb.md
+  h_22370449f3812f 1-19
+skills/aws-database/assets/elasticache.md
+  h_22370449f3812f 1-21
+skills/aws-database/assets/keyspaces.md
+  h_22370449f3812f 1-20
+skills/aws-database/assets/memorydb.md
+  h_22370449f3812f 1-18
+skills/aws-database/assets/neptune.md
+  h_22370449f3812f 1-20
+skills/aws-database/assets/odb-aws.md
+  h_22370449f3812f 1-19
+skills/aws-database/assets/rds-db2.md
+  h_22370449f3812f 1-18
+skills/aws-database/assets/rds-mariadb.md
+  h_22370449f3812f 1-18
+skills/aws-database/assets/rds-mysql.md
+  h_22370449f3812f 1-18
+skills/aws-database/assets/rds-oracle.md
+  h_22370449f3812f 1-18
+skills/aws-database/assets/rds-postgresql.md
+  h_22370449f3812f 1-18
+skills/aws-database/assets/rds-sqlserver.md
+  h_22370449f3812f 1-18
+skills/aws-database/assets/timestream.md
+  h_22370449f3812f 1-19
+skills/aws-database/references/handoff.md
+  h_22370449f3812f 1-48
+skills/aws-database/references/report-issue.md
+  h_22370449f3812f 1-59
+skills/aws-database/references/select.md
+  h_22370449f3812f 1-243
+skills/aws-deployment/.aws-skill-metadata
+  h_22370449f3812f 1
+skills/aws-deployment/SKILL.md
+  h_22370449f3812f 1-100
+skills/aws-deployment/references/codeartifact.md
+  h_22370449f3812f 1-147
+skills/aws-deployment/references/codebuild.md
+  h_22370449f3812f 1-179
+skills/aws-deployment/references/codeconnections.md
+  h_22370449f3812f 1-172
+skills/aws-deployment/references/codedeploy.md
+  h_22370449f3812f 1-257
+skills/aws-deployment/references/codepipeline.md
+  h_22370449f3812f 1-350
+skills/aws-deployment/references/troubleshooting.md
+  h_22370449f3812f 1-116
+skills/aws-iam/.aws-skill-metadata
+  h_22370449f3812f 1
+skills/aws-iam/SKILL.md
+  h_22370449f3812f 1-107
+skills/aws-iam/references/aws-iam-policy-generation.md
+  h_22370449f3812f 1-505
+skills/aws-iam/references/aws-iam-role-management.md
+  h_22370449f3812f 1-108
+skills/aws-iam/references/common-pitfalls.md
+  h_22370449f3812f 1-172
+skills/aws-iam/references/service-authorization.md
+  h_22370449f3812f 1-84
+skills/aws-messaging-and-streaming/.aws-skill-metadata
+  h_22370449f3812f 1
+skills/aws-messaging-and-streaming/SKILL.md
+  h_22370449f3812f 1-139
+skills/aws-networking/.aws-skill-metadata
+  h_22370449f3812f 1
+skills/aws-networking/SKILL.md
+  h_22370449f3812f 1-111
+skills/aws-observability/.aws-skill-metadata
+  h_22370449f3812f 1
+skills/aws-observability/SKILL.md
+  h_22370449f3812f 1-294
+skills/aws-observability/assets/cloudwatch/alarm-template.ts
+  h_22370449f3812f 1-105
+skills/aws-observability/assets/cloudwatch/otel-config.yaml
+  h_22370449f3812f 1-64
+skills/aws-observability/references/cloudwatch-omni/agent-evaluation.md
+  h_22370449f3812f 1-751
+skills/aws-observability/references/cloudwatch-omni/alerts.md
+  h_22370449f3812f 1-1786
+skills/aws-observability/references/cloudwatch-omni/concepts.md
+  h_22370449f3812f 1-302
+skills/aws-observability/references/cloudwatch-omni/context-graph.md
+  h_22370449f3812f 1-536
+skills/aws-observability/references/cloudwatch-omni/dashboards.md
+  h_22370449f3812f 1-1272
+skills/aws-observability/references/cloudwatch-omni/programmatic-access.md
+  h_22370449f3812f 1-72
+skills/aws-observability/references/cloudwatch-omni/query/promql-metrics.md
+  h_22370449f3812f 1-882
+skills/aws-observability/references/cloudwatch-omni/query/sql-logs-traces.md
+  h_22370449f3812f 1-861
+skills/aws-observability/references/cloudwatch-omni/query/views.md
+  h_22370449f3812f 1-245
+skills/aws-observability/references/cloudwatch/alarms.md
+  h_22370449f3812f 1-270
+skills/aws-observability/references/cloudwatch/cloudtrail.md
+  h_22370449f3812f 1-142
+skills/aws-observability/references/cloudwatch/dashboards.md
+  h_22370449f3812f 1-157
+skills/aws-observability/references/cloudwatch/dynamic-instrumentation.md
+  h_22370449f3812f 1-572
+skills/aws-observability/references/cloudwatch/dynamic-instrumentation/breakpoint-creation.md
+  h_22370449f3812f 1-359
+skills/aws-observability/references/cloudwatch/dynamic-instrumentation/call-tree-and-directions.md
+  h_22370449f3812f 1-166
+skills/aws-observability/references/cloudwatch/dynamic-instrumentation/snapshot-parsing.md
+  h_22370449f3812f 1-82
+skills/aws-observability/references/cloudwatch/log-insights.md
+  h_22370449f3812f 1-254
+skills/aws-observability/references/cloudwatch/metrics.md
+  h_22370449f3812f 1-192
+skills/aws-observability/references/cloudwatch/synthetics.md
+  h_22370449f3812f 1-135
+skills/aws-observability/references/cloudwatch/tracing.md
+  h_22370449f3812f 1-260
+skills/aws-observability/references/cloudwatch/troubleshooting.md
+  h_22370449f3812f 1-133
+skills/aws-observability/scripts/cloudwatch-omni/capture_dataset_from_traces.py
+  h_22370449f3812f 1-461
+skills/aws-observability/scripts/cloudwatch-omni/evaluate_traces.py
+  h_22370449f3812f 1-982
+skills/aws-observability/scripts/cloudwatch-omni/test_evaluate_traces.py
+  h_22370449f3812f 1-316
+skills/aws-observability/scripts/cloudwatch/di_app_signals_client.py
+  h_22370449f3812f 1-58
+skills/aws-observability/scripts/cloudwatch/di_capture.py
+  h_22370449f3812f 1-210
+skills/aws-observability/scripts/cloudwatch/di_constants.py
+  h_22370449f3812f 1-13
+skills/aws-observability/scripts/cloudwatch/di_crud_rendering.py
+  h_22370449f3812f 1-372
+skills/aws-observability/scripts/cloudwatch/di_crud_tools.py
+  h_22370449f3812f 1-709
+skills/aws-observability/scripts/cloudwatch/di_error_translation.py
+  h_22370449f3812f 1-155
+skills/aws-observability/scripts/cloudwatch/di_formatting.py
+  h_22370449f3812f 1-25
+skills/aws-observability/scripts/cloudwatch/di_gateway.py
+  h_22370449f3812f 1-153
+skills/aws-observability/scripts/cloudwatch/di_instrumentation.py
+  h_22370449f3812f 1-275
+skills/aws-observability/scripts/cloudwatch/di_location.py
+  h_22370449f3812f 1-399
+skills/aws-observability/scripts/cloudwatch/di_logs_client.py
+  h_22370449f3812f 1-83
+skills/aws-observability/scripts/cloudwatch/di_region.py
+  h_22370449f3812f 1-47
+skills/aws-observability/scripts/cloudwatch/di_result.py
+  h_22370449f3812f 1-44
+skills/aws-observability/scripts/cloudwatch/di_session.py
+  h_22370449f3812f 1-46
+skills/aws-observability/scripts/cloudwatch/di_snapshot_parsing.py
+  h_22370449f3812f 1-304
+skills/aws-observability/scripts/cloudwatch/di_snapshot_queries.py
+  h_22370449f3812f 1-82
+skills/aws-observability/scripts/cloudwatch/di_snapshot_rendering.py
+  h_22370449f3812f 1-311
+skills/aws-observability/scripts/cloudwatch/di_snapshot_tools.py
+  h_22370449f3812f 1-265
+skills/aws-observability/scripts/cloudwatch/di_snapshots.py
+  h_22370449f3812f 1-303
+skills/aws-observability/scripts/cloudwatch/di_status_assessment.py
+  h_22370449f3812f 1-144
+skills/aws-observability/scripts/cloudwatch/di_status_rendering.py
+  h_22370449f3812f 1-354
+skills/aws-observability/scripts/cloudwatch/di_status_tools.py
+  h_22370449f3812f 1-359
+skills/aws-observability/scripts/cloudwatch/di_validation.py
+  h_22370449f3812f 1-294
+skills/aws-sdk-js-v3-usage/.aws-skill-metadata
+  h_22370449f3812f 1
+skills/aws-sdk-js-v3-usage/SKILL.md
+  h_22370449f3812f 1-258
+skills/aws-sdk-js-v3-usage/references/clients.md
+  h_22370449f3812f 1-143
+skills/aws-sdk-js-v3-usage/references/credentials.md
+  h_22370449f3812f 1-117
+skills/aws-sdk-js-v3-usage/references/dynamodb.md
+  h_22370449f3812f 1-104
+skills/aws-sdk-js-v3-usage/references/effective-practices.md
+  h_22370449f3812f 1-81
+skills/aws-sdk-js-v3-usage/references/error-handling.md
+  h_22370449f3812f 1-59
+skills/aws-sdk-js-v3-usage/references/lambda.md
+  h_22370449f3812f 1-72
+skills/aws-sdk-js-v3-usage/references/performance.md
+  h_22370449f3812f 1-68
+skills/aws-sdk-js-v3-usage/references/s3.md
+  h_22370449f3812f 1-87
+skills/aws-sdk-js-v3-usage/references/schemas.md
+  h_22370449f3812f 1-38
+skills/aws-sdk-js-v3-usage/references/sigv4a.md
+  h_22370449f3812f 1-51
+skills/aws-sdk-js-v3-usage/references/typescript.md
+  h_22370449f3812f 1-31
+skills/aws-sdk-python-usage/.aws-skill-metadata
+  h_22370449f3812f 1
+skills/aws-sdk-python-usage/SKILL.md
+  h_22370449f3812f 1-267
+skills/aws-sdk-python-usage/references/configuration.md
+  h_22370449f3812f 1-151
+skills/aws-sdk-python-usage/references/credentials.md
+  h_22370449f3812f 1-127
+skills/aws-sdk-python-usage/references/dynamodb.md
+  h_22370449f3812f 1-295
+skills/aws-sdk-python-usage/references/error-handling.md
+  h_22370449f3812f 1-139
+skills/aws-sdk-python-usage/references/pagination.md
+  h_22370449f3812f 1-104
+skills/aws-sdk-python-usage/references/s3.md
+  h_22370449f3812f 1-223
+skills/aws-sdk-python-usage/references/waiters.md
+  h_22370449f3812f 1-121
+skills/aws-sdk-swift-usage/.aws-skill-metadata
+  h_22370449f3812f 1
+skills/aws-sdk-swift-usage/SKILL.md
+  h_22370449f3812f 1-187
+skills/aws-security/.aws-skill-metadata
+  h_22370449f3812f 1
+skills/aws-security/SKILL.md
+  h_22370449f3812f 1-115
+skills/aws-security/references/detective-configuration.md
+  h_22370449f3812f 1-127
+skills/aws-security/references/detective-investigations.md
+  h_22370449f3812f 1-97
+skills/aws-security/references/detective.md
+  h_22370449f3812f 1-68
+skills/aws-security/references/guardduty-configuration.md
+  h_22370449f3812f 1-152
+skills/aws-security/references/guardduty-findings.md
+  h_22370449f3812f 1-128
+skills/aws-security/references/guardduty.md
+  h_22370449f3812f 1-80
+skills/aws-security/references/inspector-configuration.md
+  h_22370449f3812f 1-132
+skills/aws-security/references/inspector-findings.md
+  h_22370449f3812f 1-115
+skills/aws-security/references/inspector.md
+  h_22370449f3812f 1-77
+skills/aws-security/references/macie-configuration.md
+  h_22370449f3812f 1-158
+skills/aws-security/references/macie-findings.md
+  h_22370449f3812f 1-124
+skills/aws-security/references/macie.md
+  h_22370449f3812f 1-72
+skills/aws-security/references/organization-policies.md
+  h_22370449f3812f 1-58
+skills/aws-security/references/security-hub-configuration.md
+  h_22370449f3812f 1-159
+skills/aws-security/references/security-hub-cspm-configuration.md
+  h_22370449f3812f 1-137
+skills/aws-security/references/security-hub-cspm-findings.md
+  h_22370449f3812f 1-117
+skills/aws-security/references/security-hub-cspm.md
+  h_22370449f3812f 1-108
+skills/aws-security/references/security-hub-findings.md
+  h_22370449f3812f 1-147
+skills/aws-security/references/security-hub.md
+  h_22370449f3812f 1-91
+skills/aws-security/references/security-lake-configuration.md
+  h_22370449f3812f 1-132
+skills/aws-security/references/security-lake-sources.md
+  h_22370449f3812f 1-117
+skills/aws-security/references/security-lake.md
+  h_22370449f3812f 1-53
+skills/aws-security/references/services-overview.md
+  h_22370449f3812f 1-110
+skills/aws-serverless/.aws-skill-metadata
+  h_22370449f3812f 1
+skills/aws-serverless/SKILL.md
+  h_22370449f3812f 1-222
+skills/aws-serverless/assets/powertools-handler.py
+  h_22370449f3812f 1-50
+skills/aws-serverless/references/api-gateway.md
+  h_22370449f3812f 1-150
+skills/aws-serverless/references/architecture.md
+  h_22370449f3812f 1-121
+skills/aws-serverless/references/compute-decision-edge-cases.md
+  h_22370449f3812f 1-77
+skills/aws-serverless/references/concurrency.md
+  h_22370449f3812f 1-86
+skills/aws-serverless/references/deployment.md
+  h_22370449f3812f 1-94
+skills/aws-serverless/references/event-sources.md
+  h_22370449f3812f 1-165
+skills/aws-serverless/references/lambda.md
+  h_22370449f3812f 1-191
+skills/aws-serverless/references/orchestration.md
+  h_22370449f3812f 1-157
+skills/aws-serverless/references/production.md
+  h_22370449f3812f 1-156
+skills/aws-serverless/references/troubleshooting.md
+  h_22370449f3812f 1-184
+skills/aws-storage/.aws-skill-metadata
+  h_22370449f3812f 1
+skills/aws-storage/SKILL.md
+  h_22370449f3812f 1-181
+skills/aws-storage/references/data-movement-and-protection-knowledge.md
+  h_22370449f3812f 1-56
+skills/aws-storage/references/ebs-knowledge.md
+  h_22370449f3812f 1-45
+skills/aws-storage/references/efs-knowledge.md
+  h_22370449f3812f 1-34
+skills/aws-storage/references/fsx-lustre-knowledge.md
+  h_22370449f3812f 1-46
+skills/aws-storage/references/fsx-ontap-knowledge.md
+  h_22370449f3812f 1-46
+skills/aws-storage/references/fsx-openzfs-knowledge.md
+  h_22370449f3812f 1-44
+skills/aws-storage/references/fsx-windows-knowledge.md
+  h_22370449f3812f 1-43
+skills/aws-storage/references/s3-express-knowledge.md
+  h_22370449f3812f 1-35
+skills/aws-storage/references/s3-files-knowledge.md
+  h_22370449f3812f 1-43
+skills/aws-storage/references/s3-general-purpose-knowledge.md
+  h_22370449f3812f 1-39
+skills/aws-storage/references/s3-tables-knowledge.md
+  h_22370449f3812f 1-45
+skills/aws-storage/references/s3-vectors-knowledge.md
+  h_22370449f3812f 1-43
+skills/aws-well-architected-review/.aws-skill-metadata
+  h_22370449f3812f 1
+skills/aws-well-architected-review/SKILL.md
+  h_22370449f3812f 1-137
+skills/aws-well-architected-review/assets/report-template.md
+  h_22370449f3812f 1-135
+skills/aws-well-architected-review/references/discovery-procedure.md
+  h_22370449f3812f 1-54
+skills/aws-well-architected-review/references/evaluation-procedure.md
+  h_22370449f3812f 1-115
+skills/aws-well-architected-review/references/lens-guidance.md
+  h_22370449f3812f 1-26
+skills/aws-well-architected-review/references/phase-live-inventory.md
+  h_22370449f3812f 1-208
+skills/aws-well-architected-review/references/review-modes.md
+  h_22370449f3812f 1-40
+skills/aws-well-architected-review/references/risk-assessment.md
+  h_22370449f3812f 1-39
+skills/aws-well-architected-review/references/security-considerations.md
+  h_22370449f3812f 1-23
+skills/chaos-engineer/SKILL.md
+  h_22370449f3812f 1-187
+skills/chaos-engineer/references/chaos-tools.md
+  h_22370449f3812f 1-511
+skills/chaos-engineer/references/experiment-design.md
+  h_22370449f3812f 1-229
+skills/chaos-engineer/references/game-days.md
+  h_22370449f3812f 1-434
+skills/chaos-engineer/references/infrastructure-chaos.md
+  h_22370449f3812f 1-348
+skills/chaos-engineer/references/kubernetes-chaos.md
+  h_22370449f3812f 1-432
+skills/cli-developer/SKILL.md
+  h_22370449f3812f 1-118
+skills/cli-developer/references/design-patterns.md
+  h_22370449f3812f 1-221
+skills/cli-developer/references/go-cli.md
+  h_22370449f3812f 1-540
+skills/cli-developer/references/node-cli.md
+  h_22370449f3812f 1-383
+skills/cli-developer/references/python-cli.md
+  h_22370449f3812f 1-422
+skills/cli-developer/references/ux-patterns.md
+  h_22370449f3812f 1-448
+skills/cloud-architect/SKILL.md
+  h_22370449f3812f 1-221
+skills/cloud-architect/references/aws.md
+  h_22370449f3812f 1-394
+skills/cloud-architect/references/azure.md
+  h_22370449f3812f 1-562
+skills/cloud-architect/references/cost.md
+  h_22370449f3812f 1-582
+skills/cloud-architect/references/gcp.md
+  h_22370449f3812f 1-633
+skills/cloud-architect/references/multi-cloud.md
+  h_22370449f3812f 1-483
+skills/code-documenter/SKILL.md
+  h_22370449f3812f 1-156
+skills/code-documenter/references/api-docs-fastapi-django.md
+  h_22370449f3812f 1-166
+skills/code-documenter/references/api-docs-nestjs-express.md
+  h_22370449f3812f 1-220
+skills/code-documenter/references/coverage-reports.md
+  h_22370449f3812f 1-125
+skills/code-documenter/references/documentation-systems.md
+  h_22370449f3812f 1-333
+skills/code-documenter/references/interactive-api-docs.md
+  h_22370449f3812f 1-531
+skills/code-documenter/references/python-docstrings.md
+  h_22370449f3812f 1-121
+skills/code-documenter/references/typescript-jsdoc.md
+  h_22370449f3812f 1-145
+skills/code-documenter/references/user-guides-tutorials.md
+  h_22370449f3812f 1-530
+skills/code-reviewer/SKILL.md
+  h_22370449f3812f 1-124
+skills/code-reviewer/references/common-issues.md
+  h_22370449f3812f 1-142
+skills/code-reviewer/references/feedback-examples.md
+  h_22370449f3812f 1-144
+skills/code-reviewer/references/receiving-feedback.md
+  h_22370449f3812f 1-238
+skills/code-reviewer/references/report-template.md
+  h_22370449f3812f 1-109
+skills/code-reviewer/references/review-checklist.md
+  h_22370449f3812f 1-88
+skills/code-reviewer/references/spec-compliance-review.md
+  h_22370449f3812f 1-258
+skills/cpp-pro/SKILL.md
+  h_22370449f3812f 1-120
+skills/cpp-pro/references/build-tooling.md
+  h_22370449f3812f 1-440
+skills/cpp-pro/references/concurrency.md
+  h_22370449f3812f 1-437
+skills/cpp-pro/references/memory-performance.md
+  h_22370449f3812f 1-397
+skills/cpp-pro/references/modern-cpp.md
+  h_22370449f3812f 1-304
+skills/cpp-pro/references/templates.md
+  h_22370449f3812f 1-357
+skills/csharp-developer/SKILL.md
+  h_22370449f3812f 1-130
+skills/csharp-developer/references/aspnet-core.md
+  h_22370449f3812f 1-394
+skills/csharp-developer/references/blazor.md
+  h_22370449f3812f 1-553
+skills/csharp-developer/references/entity-framework.md
+  h_22370449f3812f 1-409
+skills/csharp-developer/references/modern-csharp.md
+  h_22370449f3812f 1-248
+skills/csharp-developer/references/performance.md
+  h_22370449f3812f 1-498
+skills/database-optimizer/SKILL.md
+  h_22370449f3812f 1-152
+skills/database-optimizer/references/index-strategies.md
+  h_22370449f3812f 1-331
+skills/database-optimizer/references/monitoring-analysis.md
+  h_22370449f3812f 1-501
+skills/database-optimizer/references/mysql-tuning.md
+  h_22370449f3812f 1-452
+skills/database-optimizer/references/postgresql-tuning.md
+  h_22370449f3812f 1-413
+skills/database-optimizer/references/query-optimization.md
+  h_22370449f3812f 1-251
+skills/debugging-wizard/SKILL.md
+  h_22370449f3812f 1-110
+skills/debugging-wizard/references/common-patterns.md
+  h_22370449f3812f 1-132
+skills/debugging-wizard/references/debugging-tools.md
+  h_22370449f3812f 1-140
+skills/debugging-wizard/references/quick-fixes.md
+  h_22370449f3812f 1-177
+skills/debugging-wizard/references/strategies.md
+  h_22370449f3812f 1-142
+skills/debugging-wizard/references/systematic-debugging.md
+  h_22370449f3812f 1-367
+skills/devops-engineer/SKILL.md
+  h_22370449f3812f 1-151
+skills/devops-engineer/references/deployment-strategies.md
+  h_22370449f3812f 1-241
+skills/devops-engineer/references/docker-patterns.md
+  h_22370449f3812f 1-113
+skills/devops-engineer/references/github-actions.md
+  h_22370449f3812f 1-139
+skills/devops-engineer/references/gitlab-ci.md
+  h_22370449f3812f 1-192
+skills/devops-engineer/references/incident-response.md
+  h_22370449f3812f 1-331
+skills/devops-engineer/references/kubernetes.md
+  h_22370449f3812f 1-154
+skills/devops-engineer/references/platform-engineering.md
+  h_22370449f3812f 1-417
+skills/devops-engineer/references/release-automation.md
+  h_22370449f3812f 1-527
+skills/devops-engineer/references/terraform-iac.md
+  h_22370449f3812f 1-141
+skills/django-expert/SKILL.md
+  h_22370449f3812f 1-165
+skills/django-expert/references/authentication.md
+  h_22370449f3812f 1-145
+skills/django-expert/references/drf-serializers.md
+  h_22370449f3812f 1-148
+skills/django-expert/references/models-orm.md
+  h_22370449f3812f 1-151
+skills/django-expert/references/testing-django.md
+  h_22370449f3812f 1-204
+skills/django-expert/references/viewsets-views.md
+  h_22370449f3812f 1-153
+skills/django-storages-s3/SKILL.md
+  h_22370449f3812f 1-135
+skills/django-storages-s3/references/configuration.md
+  h_22370449f3812f 1-181
+skills/django-storages-s3/references/custom-backends.md
+  h_22370449f3812f 1-156
+skills/django-storages-s3/references/presigned-urls.md
+  h_22370449f3812f 1-104
+skills/django-storages-s3/references/testing-storages.md
+  h_22370449f3812f 1-108
+skills/dotnet-core-expert/SKILL.md
+  h_22370449f3812f 1-143
+skills/dotnet-core-expert/references/authentication.md
+  h_22370449f3812f 1-546
+skills/dotnet-core-expert/references/clean-architecture.md
+  h_22370449f3812f 1-455
+skills/dotnet-core-expert/references/cloud-native.md
+  h_22370449f3812f 1-548
+skills/dotnet-core-expert/references/entity-framework.md
+  h_22370449f3812f 1-440
+skills/dotnet-core-expert/references/minimal-apis.md
+  h_22370449f3812f 1-319
+skills/embedded-systems/SKILL.md
+  h_22370449f3812f 1-172
+skills/embedded-systems/references/communication-protocols.md
+  h_22370449f3812f 1-411
+skills/embedded-systems/references/memory-optimization.md
+  h_22370449f3812f 1-467
+skills/embedded-systems/references/microcontroller-programming.md
+  h_22370449f3812f 1-394
+skills/embedded-systems/references/power-optimization.md
+  h_22370449f3812f 1-441
+skills/embedded-systems/references/rtos-patterns.md
+  h_22370449f3812f 1-313
+skills/error-handling-patterns/SKILL.md
+  h_22370449f3812f 1-121
+skills/error-handling-patterns/references/details.md
+  h_22370449f3812f 1-516
+skills/fastapi-expert/SKILL.md
+  h_22370449f3812f 1-190
+skills/fastapi-expert/references/async-sqlalchemy.md
+  h_22370449f3812f 1-146
+skills/fastapi-expert/references/authentication.md
+  h_22370449f3812f 1-159
+skills/fastapi-expert/references/endpoints-routing.md
+  h_22370449f3812f 1-142
+skills/fastapi-expert/references/migration-from-django.md
+  h_22370449f3812f 1-997
+skills/fastapi-expert/references/pydantic-v2.md
+  h_22370449f3812f 1-135
+skills/fastapi-expert/references/testing-async.md
+  h_22370449f3812f 1-159
+skills/feature-forge/SKILL.md
+  h_22370449f3812f 1-103
+skills/feature-forge/references/acceptance-criteria.md
+  h_22370449f3812f 1-104
+skills/feature-forge/references/ears-syntax.md
+  h_22370449f3812f 1-99
+skills/feature-forge/references/interview-questions.md
+  h_22370449f3812f 1-150
+skills/feature-forge/references/pre-discovery-subagents.md
+  h_22370449f3812f 1-54
+skills/feature-forge/references/specification-template.md
+  h_22370449f3812f 1-103
+skills/fine-tuning-expert/SKILL.md
+  h_22370449f3812f 1-167
+skills/fine-tuning-expert/references/dataset-preparation.md
+  h_22370449f3812f 1-540
+skills/fine-tuning-expert/references/deployment-optimization.md
+  h_22370449f3812f 1-673
+skills/fine-tuning-expert/references/evaluation-metrics.md
+  h_22370449f3812f 1-597
+skills/fine-tuning-expert/references/hyperparameter-tuning.md
+  h_22370449f3812f 1-565
+skills/fine-tuning-expert/references/lora-peft.md
+  h_22370449f3812f 1-347
+skills/flutter-expert/SKILL.md
+  h_22370449f3812f 1-142
+skills/flutter-expert/references/bloc-state.md
+  h_22370449f3812f 1-259
+skills/flutter-expert/references/gorouter-navigation.md
+  h_22370449f3812f 1-119
+skills/flutter-expert/references/performance.md
+  h_22370449f3812f 1-99
+skills/flutter-expert/references/project-structure.md
+  h_22370449f3812f 1-118
+skills/flutter-expert/references/riverpod-state.md
+  h_22370449f3812f 1-130
+skills/flutter-expert/references/widget-patterns.md
+  h_22370449f3812f 1-123
+skills/fullstack-guardian/SKILL.md
+  h_22370449f3812f 1-110
+skills/fullstack-guardian/references/api-design-standards.md
+  h_22370449f3812f 1-307
+skills/fullstack-guardian/references/architecture-decisions.md
+  h_22370449f3812f 1-350
+skills/fullstack-guardian/references/backend-patterns.md
+  h_22370449f3812f 1-237
+skills/fullstack-guardian/references/common-patterns.md
+  h_22370449f3812f 1-134
+skills/fullstack-guardian/references/deliverables-checklist.md
+  h_22370449f3812f 1-354
+skills/fullstack-guardian/references/design-template.md
+  h_22370449f3812f 1-91
+skills/fullstack-guardian/references/error-handling.md
+  h_22370449f3812f 1-135
+skills/fullstack-guardian/references/frontend-patterns.md
+  h_22370449f3812f 1-340
+skills/fullstack-guardian/references/integration-patterns.md
+  h_22370449f3812f 1-333
+skills/fullstack-guardian/references/security-checklist.md
+  h_22370449f3812f 1-106
+skills/game-developer/SKILL.md
+  h_22370449f3812f 1-166
+skills/game-developer/references/ecs-patterns.md
+  h_22370449f3812f 1-501
+skills/game-developer/references/multiplayer-networking.md
+  h_22370449f3812f 1-475
+skills/game-developer/references/performance-optimization.md
+  h_22370449f3812f 1-422
+skills/game-developer/references/unity-patterns.md
+  h_22370449f3812f 1-271
+skills/game-developer/references/unreal-cpp.md
+  h_22370449f3812f 1-352
+skills/golang-pro/SKILL.md
+  h_22370449f3812f 1-127
+skills/golang-pro/references/concurrency.md
+  h_22370449f3812f 1-329
+skills/golang-pro/references/generics.md
+  h_22370449f3812f 1-442
+skills/golang-pro/references/interfaces.md
+  h_22370449f3812f 1-432
+skills/golang-pro/references/project-structure.md
+  h_22370449f3812f 1-477
+skills/golang-pro/references/testing.md
+  h_22370449f3812f 1-451
+skills/graphql-architect/SKILL.md
+  h_22370449f3812f 1-151
+skills/graphql-architect/references/federation.md
+  h_22370449f3812f 1-418
+skills/graphql-architect/references/migration-from-rest.md
+  h_22370449f3812f 1-1141
+skills/graphql-architect/references/resolvers.md
+  h_22370449f3812f 1-425
+skills/graphql-architect/references/schema-design.md
+  h_22370449f3812f 1-393
+skills/graphql-architect/references/security.md
+  h_22370449f3812f 1-569
+skills/graphql-architect/references/subscriptions.md
+  h_22370449f3812f 1-510
+skills/java-architect/SKILL.md
+  h_22370449f3812f 1-137
+skills/java-architect/references/jpa-optimization.md
+  h_22370449f3812f 1-393
+skills/java-architect/references/reactive-webflux.md
+  h_22370449f3812f 1-356
+skills/java-architect/references/spring-boot-setup.md
+  h_22370449f3812f 1-269
+skills/java-architect/references/spring-security.md
+  h_22370449f3812f 1-445
+skills/java-architect/references/testing-patterns.md
+  h_22370449f3812f 1-500
+skills/javascript-pro/SKILL.md
+  h_22370449f3812f 1-137
+skills/javascript-pro/references/async-patterns.md
+  h_22370449f3812f 1-334
+skills/javascript-pro/references/browser-apis.md
+  h_22370449f3812f 1-398
+skills/javascript-pro/references/modern-syntax.md
+  h_22370449f3812f 1-272
+skills/javascript-pro/references/modules.md
+  h_22370449f3812f 1-357
+skills/javascript-pro/references/node-essentials.md
+  h_22370449f3812f 1-471
+skills/kotlin-specialist/SKILL.md
+  h_22370449f3812f 1-152
+skills/kotlin-specialist/references/android-compose.md
+  h_22370449f3812f 1-419
+skills/kotlin-specialist/references/coroutines-flow.md
+  h_22370449f3812f 1-276
+skills/kotlin-specialist/references/dsl-idioms.md
+  h_22370449f3812f 1-421
+skills/kotlin-specialist/references/ktor-server.md
+  h_22370449f3812f 1-426
+skills/kotlin-specialist/references/multiplatform-kmp.md
+  h_22370449f3812f 1-380
+skills/kubernetes-specialist/SKILL.md
+  h_22370449f3812f 1-246
+skills/kubernetes-specialist/references/configuration.md
+  h_22370449f3812f 1-446
+skills/kubernetes-specialist/references/cost-optimization.md
+  h_22370449f3812f 1-458
+skills/kubernetes-specialist/references/custom-operators.md
+  h_22370449f3812f 1-563
+skills/kubernetes-specialist/references/gitops.md
+  h_22370449f3812f 1-530
+skills/kubernetes-specialist/references/helm-charts.md
+  h_22370449f3812f 1-912
+skills/kubernetes-specialist/references/multi-cluster.md
+  h_22370449f3812f 1-507
+skills/kubernetes-specialist/references/networking.md
+  h_22370449f3812f 1-447
+skills/kubernetes-specialist/references/service-mesh.md
+  h_22370449f3812f 1-459
+skills/kubernetes-specialist/references/storage.md
+  h_22370449f3812f 1-535
+skills/kubernetes-specialist/references/troubleshooting.md
+  h_22370449f3812f 1-414
+skills/kubernetes-specialist/references/workloads.md
+  h_22370449f3812f 1-377
+skills/laravel-specialist/SKILL.md
+  h_22370449f3812f 1-267
+skills/laravel-specialist/references/eloquent.md
+  h_22370449f3812f 1-351
+skills/laravel-specialist/references/livewire.md
+  h_22370449f3812f 1-512
+skills/laravel-specialist/references/queues.md
+  h_22370449f3812f 1-423
+skills/laravel-specialist/references/routing.md
+  h_22370449f3812f 1-362
+skills/laravel-specialist/references/testing.md
+  h_22370449f3812f 1-522
+skills/launch-with-aws/.aws-skill-metadata
+  h_22370449f3812f 1
+skills/launch-with-aws/SKILL.md
+  h_22370449f3812f 1-277
+skills/launch-with-aws/references/launchwithaws-2026-06-15.json
+  h_22370449f3812f 1-1169
+skills/launch-with-aws/scripts/archive.py
+  h_22370449f3812f 1-495
+skills/launch-with-aws/scripts/auth.py
+  h_22370449f3812f 1-493
+skills/launch-with-aws/scripts/auth_callback_server.py
+  h_22370449f3812f 1-105
+skills/launch-with-aws/scripts/launch_api_client.py
+  h_22370449f3812f 1-277
+skills/launch-with-aws/scripts/launch_config.py
+  h_22370449f3812f 1-381
+skills/launch-with-aws/scripts/launch_with_aws.py
+  h_22370449f3812f 1-395
+skills/legacy-modernizer/SKILL.md
+  h_22370449f3812f 1-142
+skills/legacy-modernizer/references/legacy-testing.md
+  h_22370449f3812f 1-381
+skills/legacy-modernizer/references/migration-strategies.md
+  h_22370449f3812f 1-423
+skills/legacy-modernizer/references/refactoring-patterns.md
+  h_22370449f3812f 1-395
+skills/legacy-modernizer/references/strangler-fig-pattern.md
+  h_22370449f3812f 1-281
+skills/legacy-modernizer/references/system-assessment.md
+  h_22370449f3812f 1-487
+skills/mcp-developer/SKILL.md
+  h_22370449f3812f 1-148
+skills/mcp-developer/references/protocol.md
+  h_22370449f3812f 1-244
+skills/mcp-developer/references/python-sdk.md
+  h_22370449f3812f 1-367
+skills/mcp-developer/references/resources.md
+  h_22370449f3812f 1-554
+skills/mcp-developer/references/tools.md
+  h_22370449f3812f 1-480
+skills/mcp-developer/references/typescript-sdk.md
+  h_22370449f3812f 1-350
+skills/microservices-architect/SKILL.md
+  h_22370449f3812f 1-169
+skills/microservices-architect/references/communication.md
+  h_22370449f3812f 1-499
+skills/microservices-architect/references/data.md
+  h_22370449f3812f 1-721
+skills/microservices-architect/references/decomposition.md
+  h_22370449f3812f 1-344
+skills/microservices-architect/references/observability.md
+  h_22370449f3812f 1-805
+skills/microservices-architect/references/patterns.md
+  h_22370449f3812f 1-603
+skills/microservices-patterns/SKILL.md
+  h_22370449f3812f 1-90
+skills/microservices-patterns/references/details.md
+  h_22370449f3812f 1-480
+skills/ml-pipeline/SKILL.md
+  h_22370449f3812f 1-163
+skills/ml-pipeline/references/experiment-tracking.md
+  h_22370449f3812f 1-833
+skills/ml-pipeline/references/feature-engineering.md
+  h_22370449f3812f 1-631
+skills/ml-pipeline/references/model-validation.md
+  h_22370449f3812f 1-978
+skills/ml-pipeline/references/pipeline-orchestration.md
+  h_22370449f3812f 1-907
+skills/ml-pipeline/references/training-pipelines.md
+  h_22370449f3812f 1-782
+skills/monitoring-expert/SKILL.md
+  h_22370449f3812f 1-181
+skills/monitoring-expert/references/alerting-rules.md
+  h_22370449f3812f 1-141
+skills/monitoring-expert/references/application-profiling.md
+  h_22370449f3812f 1-331
+skills/monitoring-expert/references/capacity-planning.md
+  h_22370449f3812f 1-344
+skills/monitoring-expert/references/dashboards.md
+  h_22370449f3812f 1-126
+skills/monitoring-expert/references/opentelemetry.md
+  h_22370449f3812f 1-123
+skills/monitoring-expert/references/performance-testing.md
+  h_22370449f3812f 1-269
+skills/monitoring-expert/references/prometheus-metrics.md
+  h_22370449f3812f 1-136
+skills/monitoring-expert/references/structured-logging.md
+  h_22370449f3812f 1-142
+skills/nestjs-expert/SKILL.md
+  h_22370449f3812f 1-211
+skills/nestjs-expert/references/authentication.md
+  h_22370449f3812f 1-166
+skills/nestjs-expert/references/controllers-routing.md
+  h_22370449f3812f 1-111
+skills/nestjs-expert/references/dtos-validation.md
+  h_22370449f3812f 1-153
+skills/nestjs-expert/references/migration-from-express.md
+  h_22370449f3812f 1-1237
+skills/nestjs-expert/references/services-di.md
+  h_22370449f3812f 1-140
+skills/nestjs-expert/references/testing-patterns.md
+  h_22370449f3812f 1-186
+skills/nextjs-developer/SKILL.md
+  h_22370449f3812f 1-148
+skills/nextjs-developer/references/app-router.md
+  h_22370449f3812f 1-311
+skills/nextjs-developer/references/data-fetching.md
+  h_22370449f3812f 1-482
+skills/nextjs-developer/references/deployment.md
+  h_22370449f3812f 1-545
+skills/nextjs-developer/references/server-actions.md
+  h_22370449f3812f 1-462
+skills/nextjs-developer/references/server-components.md
+  h_22370449f3812f 1-384
+skills/pandas-pro/SKILL.md
+  h_22370449f3812f 1-183
+skills/pandas-pro/references/aggregation-groupby.md
+  h_22370449f3812f 1-545
+skills/pandas-pro/references/data-cleaning.md
+  h_22370449f3812f 1-500
+skills/pandas-pro/references/dataframe-operations.md
+  h_22370449f3812f 1-420
+skills/pandas-pro/references/merging-joining.md
+  h_22370449f3812f 1-596
+skills/pandas-pro/references/performance-optimization.md
+  h_22370449f3812f 1-597
+skills/php-pro/SKILL.md
+  h_22370449f3812f 1-211
+skills/php-pro/references/async-patterns.md
+  h_22370449f3812f 1-412
+skills/php-pro/references/laravel-patterns.md
+  h_22370449f3812f 1-377
+skills/php-pro/references/modern-php-features.md
+  h_22370449f3812f 1-323
+skills/php-pro/references/symfony-patterns.md
+  h_22370449f3812f 1-466
+skills/php-pro/references/testing-quality.md
+  h_22370449f3812f 1-466
+skills/playwright-expert/SKILL.md
+  h_22370449f3812f 1-174
+skills/playwright-expert/references/api-mocking.md
+  h_22370449f3812f 1-140
+skills/playwright-expert/references/configuration.md
+  h_22370449f3812f 1-155
+skills/playwright-expert/references/debugging-flaky.md
+  h_22370449f3812f 1-150
+skills/playwright-expert/references/page-object-model.md
+  h_22370449f3812f 1-152
+skills/playwright-expert/references/selectors-locators.md
+  h_22370449f3812f 1-119
+skills/postgres-pro/SKILL.md
+  h_22370449f3812f 1-157
+skills/postgres-pro/references/extensions.md
+  h_22370449f3812f 1-404
+skills/postgres-pro/references/jsonb.md
+  h_22370449f3812f 1-321
+skills/postgres-pro/references/maintenance.md
+  h_22370449f3812f 1-481
+skills/postgres-pro/references/performance.md
+  h_22370449f3812f 1-265
+skills/postgres-pro/references/replication.md
+  h_22370449f3812f 1-446
+skills/prompt-engineer/SKILL.md
+  h_22370449f3812f 1-139
+skills/prompt-engineer/references/context-management.md
+  h_22370449f3812f 1-198
+skills/prompt-engineer/references/evaluation-frameworks.md
+  h_22370449f3812f 1-778
+skills/prompt-engineer/references/prompt-optimization.md
+  h_22370449f3812f 1-560
+skills/prompt-engineer/references/prompt-patterns.md
+  h_22370449f3812f 1-506
+skills/prompt-engineer/references/structured-outputs.md
+  h_22370449f3812f 1-720
+skills/prompt-engineer/references/system-prompts.md
+  h_22370449f3812f 1-544
+skills/python-pro/SKILL.md
+  h_22370449f3812f 1-182
+skills/python-pro/references/async-patterns.md
+  h_22370449f3812f 1-356
+skills/python-pro/references/packaging.md
+  h_22370449f3812f 1-460
+skills/python-pro/references/standard-library.md
+  h_22370449f3812f 1-378
+skills/python-pro/references/testing.md
+  h_22370449f3812f 1-404
+skills/python-pro/references/type-system.md
+  h_22370449f3812f 1-290
+skills/rag-architect/SKILL.md
+  h_22370449f3812f 1-203
+skills/rag-architect/references/chunking-strategies.md
+  h_22370449f3812f 1-878
+skills/rag-architect/references/embedding-models.md
+  h_22370449f3812f 1-561
+skills/rag-architect/references/rag-evaluation.md
+  h_22370449f3812f 1-833
+skills/rag-architect/references/retrieval-optimization.md
+  h_22370449f3812f 1-795
+skills/rag-architect/references/vector-databases.md
+  h_22370449f3812f 1-589
+skills/rails-expert/SKILL.md
+  h_22370449f3812f 1-159
+skills/rails-expert/references/active-record.md
+  h_22370449f3812f 1-244
+skills/rails-expert/references/api-development.md
+  h_22370449f3812f 1-401
+skills/rails-expert/references/background-jobs.md
+  h_22370449f3812f 1-272
+skills/rails-expert/references/hotwire-turbo.md
+  h_22370449f3812f 1-228
+skills/rails-expert/references/rspec-testing.md
+  h_22370449f3812f 1-367
+skills/react-expert/SKILL.md
+  h_22370449f3812f 1-154
+skills/react-expert/references/hooks-patterns.md
+  h_22370449f3812f 1-162
+skills/react-expert/references/migration-class-to-modern.md
+  h_22370449f3812f 1-1119
+skills/react-expert/references/performance.md
+  h_22370449f3812f 1-168
+skills/react-expert/references/react-19-features.md
+  h_22370449f3812f 1-174
+skills/react-expert/references/server-components.md
+  h_22370449f3812f 1-143
+skills/react-expert/references/state-management.md
+  h_22370449f3812f 1-171
+skills/react-expert/references/testing-react.md
+  h_22370449f3812f 1-174
+skills/react-native-expert/SKILL.md
+  h_22370449f3812f 1-190
+skills/react-native-expert/references/expo-router.md
+  h_22370449f3812f 1-187
+skills/react-native-expert/references/list-optimization.md
+  h_22370449f3812f 1-204
+skills/react-native-expert/references/platform-handling.md
+  h_22370449f3812f 1-188
+skills/react-native-expert/references/project-structure.md
+  h_22370449f3812f 1-171
+skills/react-native-expert/references/storage-hooks.md
+  h_22370449f3812f 1-173
+skills/rust-engineer/SKILL.md
+  h_22370449f3812f 1-172
+skills/rust-engineer/references/async.md
+  h_22370449f3812f 1-458
+skills/rust-engineer/references/error-handling.md
+  h_22370449f3812f 1-334
+skills/rust-engineer/references/ownership.md
+  h_22370449f3812f 1-278
+skills/rust-engineer/references/testing.md
+  h_22370449f3812f 1-470
+skills/rust-engineer/references/traits.md
+  h_22370449f3812f 1-413
+skills/salesforce-developer/SKILL.md
+  h_22370449f3812f 1-208
+skills/salesforce-developer/references/apex-development.md
+  h_22370449f3812f 1-786
+skills/salesforce-developer/references/deployment-devops.md
+  h_22370449f3812f 1-860
+skills/salesforce-developer/references/integration-patterns.md
+  h_22370449f3812f 1-948
+skills/salesforce-developer/references/lightning-web-components.md
+  h_22370449f3812f 1-905
+skills/salesforce-developer/references/soql-sosl.md
+  h_22370449f3812f 1-680
+skills/secure-code-guardian/SKILL.md
+  h_22370449f3812f 1-196
+skills/secure-code-guardian/references/authentication.md
+  h_22370449f3812f 1-136
+skills/secure-code-guardian/references/input-validation.md
+  h_22370449f3812f 1-146
+skills/secure-code-guardian/references/owasp-prevention.md
+  h_22370449f3812f 1-135
+skills/secure-code-guardian/references/security-headers.md
+  h_22370449f3812f 1-133
+skills/secure-code-guardian/references/xss-csrf.md
+  h_22370449f3812f 1-157
+skills/security-reviewer/SKILL.md
+  h_22370449f3812f 1-108
+skills/security-reviewer/references/infrastructure-security.md
+  h_22370449f3812f 1-268
+skills/security-reviewer/references/penetration-testing.md
+  h_22370449f3812f 1-268
+skills/security-reviewer/references/report-template.md
+  h_22370449f3812f 1-170
+skills/security-reviewer/references/sast-tools.md
+  h_22370449f3812f 1-117
+skills/security-reviewer/references/secret-scanning.md
+  h_22370449f3812f 1-125
+skills/security-reviewer/references/vulnerability-patterns.md
+  h_22370449f3812f 1-152
+skills/shopify-expert/SKILL.md
+  h_22370449f3812f 1-189
+skills/shopify-expert/references/app-development.md
+  h_22370449f3812f 1-894
+skills/shopify-expert/references/checkout-customization.md
+  h_22370449f3812f 1-874
+skills/shopify-expert/references/liquid-templating.md
+  h_22370449f3812f 1-690
+skills/shopify-expert/references/performance-optimization.md
+  h_22370449f3812f 1-722
+skills/shopify-expert/references/storefront-api.md
+  h_22370449f3812f 1-936
+skills/signing-in-to-aws/.aws-skill-metadata
+  h_22370449f3812f 1
+skills/signing-in-to-aws/SKILL.md
+  h_22370449f3812f 1-105
+skills/spark-engineer/SKILL.md
+  h_22370449f3812f 1-153
+skills/spark-engineer/references/partitioning-caching.md
+  h_22370449f3812f 1-543
+skills/spark-engineer/references/performance-tuning.md
+  h_22370449f3812f 1-544
+skills/spark-engineer/references/rdd-operations.md
+  h_22370449f3812f 1-599
+skills/spark-engineer/references/spark-sql-dataframes.md
+  h_22370449f3812f 1-474
+skills/spark-engineer/references/streaming-patterns.md
+  h_22370449f3812f 1-786
+skills/spec-miner/SKILL.md
+  h_22370449f3812f 1-113
+skills/spec-miner/references/analysis-checklist.md
+  h_22370449f3812f 1-65
+skills/spec-miner/references/analysis-process.md
+  h_22370449f3812f 1-70
+skills/spec-miner/references/ears-format.md
+  h_22370449f3812f 1-86
+skills/spec-miner/references/specification-template.md
+  h_22370449f3812f 1-100
+skills/spring-boot-engineer/SKILL.md
+  h_22370449f3812f 1-200
+skills/spring-boot-engineer/references/cloud.md
+  h_22370449f3812f 1-498
+skills/spring-boot-engineer/references/data.md
+  h_22370449f3812f 1-381
+skills/spring-boot-engineer/references/security.md
+  h_22370449f3812f 1-459
+skills/spring-boot-engineer/references/testing.md
+  h_22370449f3812f 1-545
+skills/spring-boot-engineer/references/web.md
+  h_22370449f3812f 1-295
+skills/sql-optimization-patterns/SKILL.md
+  h_22370449f3812f 1-214
+skills/sql-optimization-patterns/references/details.md
+  h_22370449f3812f 1-290
+skills/sql-pro/SKILL.md
+  h_22370449f3812f 1-134
+skills/sql-pro/references/database-design.md
+  h_22370449f3812f 1-402
+skills/sql-pro/references/dialect-differences.md
+  h_22370449f3812f 1-419
+skills/sql-pro/references/optimization.md
+  h_22370449f3812f 1-384
+skills/sql-pro/references/query-patterns.md
+  h_22370449f3812f 1-285
+skills/sql-pro/references/window-functions.md
+  h_22370449f3812f 1-328
+skills/sre-engineer/SKILL.md
+  h_22370449f3812f 1-186
+skills/sre-engineer/references/automation-toil.md
+  h_22370449f3812f 1-492
+skills/sre-engineer/references/error-budget-policy.md
+  h_22370449f3812f 1-334
+skills/sre-engineer/references/incident-chaos.md
+  h_22370449f3812f 1-576
+skills/sre-engineer/references/monitoring-alerting.md
+  h_22370449f3812f 1-424
+skills/sre-engineer/references/slo-sli-management.md
+  h_22370449f3812f 1-238
+skills/swift-expert/SKILL.md
+  h_22370449f3812f 1-168
+skills/swift-expert/references/async-concurrency.md
+  h_22370449f3812f 1-360
+skills/swift-expert/references/memory-performance.md
+  h_22370449f3812f 1-377
+skills/swift-expert/references/protocol-oriented.md
+  h_22370449f3812f 1-354
+skills/swift-expert/references/swiftui-patterns.md
+  h_22370449f3812f 1-291
+skills/swift-expert/references/testing-patterns.md
+  h_22370449f3812f 1-399
+skills/terraform-engineer/SKILL.md
+  h_22370449f3812f 1-149
+skills/terraform-engineer/references/best-practices.md
+  h_22370449f3812f 1-583
+skills/terraform-engineer/references/module-patterns.md
+  h_22370449f3812f 1-297
+skills/terraform-engineer/references/providers.md
+  h_22370449f3812f 1-452
+skills/terraform-engineer/references/state-management.md
+  h_22370449f3812f 1-371
+skills/terraform-engineer/references/testing.md
+  h_22370449f3812f 1-486
+skills/test-master/SKILL.md
+  h_22370449f3812f 1-99
+skills/test-master/references/automation-frameworks.md
+  h_22370449f3812f 1-294
+skills/test-master/references/e2e-testing.md
+  h_22370449f3812f 1-128
+skills/test-master/references/integration-testing.md
+  h_22370449f3812f 1-120
+skills/test-master/references/performance-testing.md
+  h_22370449f3812f 1-118
+skills/test-master/references/qa-methodology.md
+  h_22370449f3812f 1-247
+skills/test-master/references/security-testing.md
+  h_22370449f3812f 1-127
+skills/test-master/references/tdd-iron-laws.md
+  h_22370449f3812f 1-174
+skills/test-master/references/test-reports.md
+  h_22370449f3812f 1-104
+skills/test-master/references/testing-anti-patterns.md
+  h_22370449f3812f 1-231
+skills/test-master/references/unit-testing.md
+  h_22370449f3812f 1-113
+skills/the-fool/SKILL.md
+  h_22370449f3812f 1-125
+skills/the-fool/references/dialectic-synthesis.md
+  h_22370449f3812f 1-151
+skills/the-fool/references/evidence-audit.md
+  h_22370449f3812f 1-196
+skills/the-fool/references/mode-selection-guide.md
+  h_22370449f3812f 1-96
+skills/the-fool/references/pre-mortem-analysis.md
+  h_22370449f3812f 1-187
+skills/the-fool/references/red-team-adversarial.md
+  h_22370449f3812f 1-162
+skills/the-fool/references/socratic-questioning.md
+  h_22370449f3812f 1-134
+skills/typescript-pro/SKILL.md
+  h_22370449f3812f 1-150
+skills/typescript-pro/references/advanced-types.md
+  h_22370449f3812f 1-259
+skills/typescript-pro/references/configuration.md
+  h_22370449f3812f 1-445
+skills/typescript-pro/references/patterns.md
+  h_22370449f3812f 1-484
+skills/typescript-pro/references/type-guards.md
+  h_22370449f3812f 1-352
+skills/typescript-pro/references/utility-types.md
+  h_22370449f3812f 1-329
+skills/vue-expert-js/SKILL.md
+  h_22370449f3812f 1-172
+skills/vue-expert-js/references/component-architecture.md
+  h_22370449f3812f 1-219
+skills/vue-expert-js/references/composables-patterns.md
+  h_22370449f3812f 1-183
+skills/vue-expert-js/references/jsdoc-typing.md
+  h_22370449f3812f 1-535
+skills/vue-expert-js/references/state-management.md
+  h_22370449f3812f 1-249
+skills/vue-expert-js/references/testing-patterns.md
+  h_22370449f3812f 1-237
+skills/vue-expert/SKILL.md
+  h_22370449f3812f 1-103
+skills/vue-expert/references/build-tooling.md
+  h_22370449f3812f 1-480
+skills/vue-expert/references/components.md
+  h_22370449f3812f 1-448
+skills/vue-expert/references/composition-api.md
+  h_22370449f3812f 1-299
+skills/vue-expert/references/mobile-hybrid.md
+  h_22370449f3812f 1-636
+skills/vue-expert/references/nuxt.md
+  h_22370449f3812f 1-669
+skills/vue-expert/references/state-management.md
+  h_22370449f3812f 1-449
+skills/vue-expert/references/typescript.md
+  h_22370449f3812f 1-584
+skills/websocket-engineer/SKILL.md
+  h_22370449f3812f 1-173
+skills/websocket-engineer/references/alternatives.md
+  h_22370449f3812f 1-391
+skills/websocket-engineer/references/patterns.md
+  h_22370449f3812f 1-400
+skills/websocket-engineer/references/protocol.md
+  h_22370449f3812f 1-195
+skills/websocket-engineer/references/scaling.md
+  h_22370449f3812f 1-333
+skills/websocket-engineer/references/security.md
+  h_22370449f3812f 1-474
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "40c5f7c58ac23f2e6a7c7938f9074456e1d7b2b5",
+  "prompts": {},
+  "humans": {
+    "h_22370449f3812f": {
+      "author": "Shivanshu Chaudhary <shivanshuchaudhary97@gmail.com>"
+    }
+  }
+}
