@@ -3,7 +3,8 @@
 
 Runs the linters and type checkers a project already configures on the
 Python, TypeScript, Go, and Rust files changed in the working tree, then
-holds every changed function to a cyclomatic-complexity ratchet. Unfixable
+holds every changed function to a cyclomatic-complexity ratchet. A skill freshly
+installed from `.skill-lock.json` is third-party code and is skipped. Unfixable
 errors block the stop and go back to the agent as the reason; a clean tree,
 an unconfigured project, a timeout, or a retry after a block lets the turn
 end.
@@ -275,6 +276,57 @@ def changed_files(root: Path) -> list[Path]:
     return sorted({root / n for n in names if (root / n).is_file()})
 
 
+def vendored_skills(root: Path) -> set[str]:
+    """Freshly installed third-party skills: a lock entry with a source, nothing committed.
+
+    A vendored skill this repository has committed, and so may have edited, stays gated.
+    """
+    try:
+        skills = json.loads((root / ".skill-lock.json").read_text()).get("skills", {})
+    except (OSError, ValueError, AttributeError):
+        return set()
+    if not isinstance(skills, dict):
+        return set()
+    return {
+        name
+        for name, entry in skills.items()
+        if isinstance(entry, dict)
+        and entry.get("sourceUrl")
+        and not committed(root, f"skills/{name}")
+    }
+
+
+def committed(root: Path, path: str) -> bool:
+    """Whether HEAD holds any file under path; an unreadable repository counts as yes."""
+    try:
+        r = subprocess.run(
+            ["git", "ls-tree", "-r", "--name-only", "HEAD", "--", path],
+            capture_output=True,
+            text=True,
+            cwd=root,
+            timeout=10,
+        )
+    except (subprocess.SubprocessError, OSError):
+        return True
+    if r.returncode == 0:
+        return bool(r.stdout.strip())
+    head = subprocess.run(
+        ["git", "rev-parse", "--verify", "--quiet", "HEAD"], capture_output=True, cwd=root
+    )
+    return head.returncode == 0
+
+
+def gated_files(root: Path) -> list[Path]:
+    """Changed files the gate holds to its checks, without freshly vendored skills."""
+    vendored = vendored_skills(root)
+
+    def is_vendored(f: Path) -> bool:
+        parts = f.relative_to(root).parts
+        return len(parts) > 2 and parts[0] == "skills" and parts[1] in vendored
+
+    return [f for f in changed_files(root) if not is_vendored(f)]
+
+
 def config_dir(file: Path, root: Path, checker: Checker) -> Path | None:
     """Nearest directory from the file up to the repo root that configures the checker."""
     for d in (file.parent, *file.parent.parents):
@@ -430,7 +482,7 @@ def check_project(
 
 
 def gate(root: Path, deadline: float) -> list[str]:
-    files = changed_files(root)
+    files = gated_files(root)
     found = [
         check_project(checker, project, group, root, deadline)
         for checker in CHECKERS
