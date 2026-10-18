@@ -282,6 +282,24 @@ class PreToolTest(Gate):
         self.record()
         self.assertEqual(self.tool("git commit -m change").returncode, 2)
 
+    def test_shell_operators_inside_a_quoted_message_are_message_text(self) -> None:
+        self.stage()
+        self.record()
+        (self.repo / "app.py").write_text("x = 3  # unstaged\n")
+        for command in (
+            'git commit -m "first part; second part"',
+            "git commit -m 'pipe | and paren ) and && inside'",
+            'git commit -m "subject\n\nbody line; more body"',
+        ):
+            with self.subTest(command=command):
+                self.assertEqual(self.tool(command).returncode, 0)
+
+    def test_a_hash_inside_a_message_word_is_not_a_comment(self) -> None:
+        self.stage()
+        self.record()
+        (self.repo / "app.py").write_text("x = 3  # unreviewed\n")
+        self.assertEqual(self.tool("git commit -m fix#12 -a").returncode, 2)
+
     def test_commit_all_is_judged_on_the_working_tree(self) -> None:
         self.stage()
         self.record()
