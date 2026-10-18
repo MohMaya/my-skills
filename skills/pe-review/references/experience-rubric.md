@@ -66,6 +66,22 @@ Trace the path through arrival, uncertainty, commitment, high-stakes action, and
 - Do payment, deletion, privacy, permission, or irreversible moments provide proportionate reassurance?
 - Do delays and errors acknowledge the user's situation without false promises?
 
+## State completeness
+
+Premium is judged on evidence of care, and that evidence lives in the states a happy-path screen review never visits. A user sees screen 80 beside screen 1 and remembers the worst moment, not the home screen. Run these on the primary path for every screen and change review; each failed check is a finding.
+
+| # | Rule | How you check it | Default severity |
+| --- | --- | --- | --- |
+| S1 | Every action answers three questions: what just happened, can I take it back, what do I do next. | List each user action on the primary path in a table with those three columns, citing the visible feedback, the undo/cancel/back path, and the next affordance (file:line or screenshot). A blank cell fails. A missing take-back is acceptable only for an irreversible action that confirms first. | P1 when status or next step is blank; P2 for take-back |
+| S2 | No action ends in nothing. A rejected, too-short, empty, or no-op outcome states why in product terms and offers a next action. | Trigger each non-success outcome of the primary path. Any terminal state with no reason, or with zero actionable controls besides dismiss, fails. | P1 |
+| S3 | One condition, one pattern. The same domain state (limit reached, no access, expired, offline) renders through one component with one copy string everywhere it appears. | Search the codebase for the state's copy and its component; two implementations, or two wordings, fails. A quantified limit shows used/total and the concrete reset or renewal date, never a bare "you've used all your X". | P2 |
+| S4 | The product reads as one product. Navigation, terminology, and repeated controls stay put across screens. | Walk the whole primary path end to end, not screen by screen, and list every spot where navigation moves, a term changes, or one control has two looks or behaviours. Navigation comes from a shared layout, not per-screen copies. Each item is a finding; users underreport this slowdown, so do not wait for complaints. | P2; P1 for moved navigation |
+| S5 | Break it on purpose, and design failure to the success screen's standard. | Cut the network mid-flow, fail the server and payment calls, and empty every list. Each resulting state needs the specific cause, preserved input, and a reachable recovery (`harden/resilience-matrix.md` in pe-build lists the matrix). A raw error, spinner forever, or blank region fails. | P1 |
+| S6 | High-stakes failures reassure before they explain. When money, data, or access is at risk, the failure says what happened, whether the user's money or data is safe, the one next step, and a support path, in place. | Force a declined payment, failed save, and failed deletion. Any of the four parts missing fails; a support path behind more than one tap fails. | P1 |
+| S7 | No design theater. Every affordance a plan, brief, or PR claims (status, undo, recovery) exists in the rendered UI. | For each claimed affordance, cite where it renders. A claim with no rendered location is a finding against the claim. | P1 |
+
+These sharpen Nielsen heuristics 1, 3, 4, and 9 above: score those from these checks rather than from a glance. Make failure states clear and calm, not cute; a playful failure is a deliberate brand choice, never the default.
+
 ## Product specificity
 
 Ask whether an unrelated product could reuse the composition, interaction, language, and visual treatment unchanged. Look for:

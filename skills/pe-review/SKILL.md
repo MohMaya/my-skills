@@ -27,8 +27,8 @@ reference files — load only what the mode needs.
 
 | Mode | When | Load |
 | --- | --- | --- |
-| **change** | A diff, branch, PR, or "review my changes" is named. Always wins over screen when both could apply. | `change-review.md`, `scope-resolution.md`, `removed-signals.md`. Runs alongside the `bar-raiser` skill and the `reviewer` subagent (correctness, tests, security), never instead of them. |
-| **screen** | A screen, page, site, or screenshot; "review this UI." | `screen-review.md`, `experience-rubric.md`, `technical-rubric.md` |
+| **change** | A diff, branch, PR, or "review my changes" is named. Always wins over screen when both could apply. | `change-review.md`, `scope-resolution.md`, `removed-signals.md`, and the State completeness checks in `experience-rubric.md` for any UI the diff touches. Runs alongside the `bar-raiser` skill and the `reviewer` subagent (correctness, tests, security), never instead of them. |
+| **screen** | A screen, page, site, or screenshot; "review this UI." | `screen-review.md`, `experience-rubric.md` (its State completeness checks run on every screen), `technical-rubric.md` |
 | **improve** | "Audit this and give me a roadmap", "improve the app" — whole-surface improvement, delivered as self-contained plans another agent executes. Explicit invocation only. | `audit-method.md`, `plan-template.md` |
 | **guidelines** | "Check against best practices / the guidelines"; terse file:line lint of UI code. | `web-interface-guidelines.md` (a pinned copy of the upstream Vercel Web Interface Guidelines; its header names the re-sync source) |
 | **stress** | "Does this component survive?" — render one component in every hostile state. Explicit invocation only. | `stress.md`, `stress-scenarios.md`. The harness page lives in scratch space or on a `prototype/<name>` branch, outside the feature diff, and is removed before any commit. |
