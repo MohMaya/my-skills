@@ -1,75 +1,48 @@
 ---
-title: Use React DOM Resource Hints
+title: Use Resource Hints
 impact: HIGH
 impactDescription: reduces load time for critical resources
 tags: rendering, preload, preconnect, prefetch, resource-hints
 ---
 
-## Use React DOM Resource Hints
+## Use Resource Hints
 
-**Impact: HIGH (reduces load time for critical resources)**
+Hint the browser about resources it will need. Which tool to use depends on when you know about the resource:
 
-React DOM provides APIs to hint the browser about resources it will need. These are especially useful in server components to start loading resources before the client even receives the HTML.
+- **Known at build time (first paint):** put `<link>` tags in `index.html`. Render-time calls run only after the JS bundle has loaded, so they cannot help the first request. Vite already emits `modulepreload` for entry chunks.
+- **Known only at runtime:** call React DOM's resource APIs from components or handlers. React 19 adds the matching `<link>` to the document head.
 
-- **`prefetchDNS(href)`**: Resolve DNS for a domain you expect to connect to
-- **`preconnect(href)`**: Establish connection (DNS + TCP + TLS) to a server
-- **`preload(href, options)`**: Fetch a resource (stylesheet, font, script, image) you'll use soon
-- **`preloadModule(href)`**: Fetch an ES module you'll use soon
-- **`preinit(href, options)`**: Fetch and evaluate a stylesheet or script
-- **`preinitModule(href)`**: Fetch and evaluate an ES module
+**Example (`index.html`: preconnect and preload a critical font):**
 
-**Example (preconnect to third-party APIs):**
+```html
+<link rel="preconnect" href="https://api.example.com" crossorigin />
+<link rel="preload" href="/fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
+```
+
+**Example (runtime: preconnect to a third-party origin once a feature needs it):**
 
 ```tsx
 import { preconnect, prefetchDNS } from 'react-dom'
 
-export default function App() {
-  prefetchDNS('https://analytics.example.com')
-  preconnect('https://api.example.com')
-
-  return <main>{/* content */}</main>
-}
-```
-
-**Example (preload critical fonts and styles):**
-
-```tsx
-import { preload, preinit } from 'react-dom'
-
-export default function RootLayout({ children }) {
-  // Preload font file
-  preload('/fonts/inter.woff2', { as: 'font', type: 'font/woff2', crossOrigin: 'anonymous' })
-
-  // Fetch and apply critical stylesheet immediately
-  preinit('/styles/critical.css', { as: 'style' })
-
-  return (
-    <html>
-      <body>{children}</body>
-    </html>
-  )
-}
-```
-
-**Example (preload modules for code-split routes):**
-
-```tsx
-import { preloadModule, preinitModule } from 'react-dom'
-
-function Navigation() {
-  const preloadDashboard = () => {
-    preloadModule('/dashboard.js', { as: 'script' })
+function CheckoutButton({ onClick }: { onClick: () => void }) {
+  const warm = () => {
+    prefetchDNS('https://payments.example.com')
+    preconnect('https://payments.example.com')
   }
 
-  return (
-    <nav>
-      <a href="/dashboard" onMouseEnter={preloadDashboard}>
-        Dashboard
-      </a>
-    </nav>
-  )
+  return <button onMouseEnter={warm} onFocus={warm} onClick={onClick}>Pay</button>
 }
 ```
+
+**Example (runtime: preload a module for a likely next navigation):**
+
+```tsx
+import { preloadModule } from 'react-dom'
+
+preloadModule('/assets/dashboard.js', { as: 'script' })
+```
+
+Vite hashes chunk file names, so for route code prefer [router preloading](./bundle-preload.md) over hand-written URLs.
 
 **When to use each:**
 

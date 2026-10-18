@@ -2,21 +2,25 @@
 title: Preload Based on User Intent
 impact: MEDIUM
 impactDescription: reduces perceived latency
-tags: bundle, preload, user-intent, hover
+tags: bundle, preload, user-intent, hover, tanstack-router
 ---
 
 ## Preload Based on User Intent
 
 Preload heavy bundles before they're needed to reduce perceived latency.
 
-**Example (preload on hover/focus):**
+**Routes:** set `defaultPreload: 'intent'` on the router. Hovering or focusing a `<Link>` then loads the route's code and loader data before the click.
+
+```tsx
+const router = createRouter({ routeTree, defaultPreload: 'intent' })
+```
+
+**Example (preload a non-route module on hover/focus):**
 
 ```tsx
 function EditorButton({ onClick }: { onClick: () => void }) {
   const preload = () => {
-    if (typeof window !== 'undefined') {
-      void import('./monaco-editor')
-    }
+    void import('./monaco-editor')
   }
 
   return (
@@ -36,7 +40,7 @@ function EditorButton({ onClick }: { onClick: () => void }) {
 ```tsx
 function FlagsProvider({ children, flags }: Props) {
   useEffect(() => {
-    if (flags.editorEnabled && typeof window !== 'undefined') {
+    if (flags.editorEnabled) {
       void import('./monaco-editor').then(mod => mod.init())
     }
   }, [flags.editorEnabled])
@@ -47,4 +51,4 @@ function FlagsProvider({ children, flags }: Props) {
 }
 ```
 
-The `typeof window !== 'undefined'` check prevents bundling preloaded modules for SSR, optimizing server bundle size and build speed.
+The browser caches the module, so a later `React.lazy(() => import('./monaco-editor'))` resolves without another network request.

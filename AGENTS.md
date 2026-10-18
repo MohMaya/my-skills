@@ -110,7 +110,7 @@ A test exists to fail when behavior breaks. Name the bug it would catch before y
 New repositories adopt the lint baselines in `~/.agents/lint/`.
 
 - TypeScript: strict mode, no `any`, no `as` casts to quiet the compiler.
-- Web: React with Vite and TanStack (Router, Query). TanStack APIs move fast, so check them against current docs before use.
+- Web: client-rendered React with Vite and TanStack (Router, Query), deployed as a static build to Cloudflare (Workers static assets for new projects, as Cloudflare recommends; existing Pages projects stay on Pages); `react-performance` holds its performance rules. TanStack APIs move fast, so check them against current docs before use.
 - Mobile: React Native with Expo and Expo Router.
 - Python: `uv` and type hints.
 - Go: the standard library first, explicit error returns, `context.Context` through every IO call.

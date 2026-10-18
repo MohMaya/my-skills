@@ -2,22 +2,21 @@
 title: Defer State Reads to Usage Point
 impact: MEDIUM
 impactDescription: avoids unnecessary subscriptions
-tags: rerender, searchParams, localStorage, optimization
+tags: rerender, search-params, localStorage, optimization
 ---
 
 ## Defer State Reads to Usage Point
 
-Don't subscribe to dynamic state (searchParams, localStorage) if you only read it inside callbacks.
+Don't subscribe to dynamic state (search params, localStorage) if you only read it inside callbacks.
 
-**Incorrect (subscribes to all searchParams changes):**
+**Incorrect (subscribes to all search param changes):**
 
 ```tsx
 function ShareButton({ chatId }: { chatId: string }) {
-  const searchParams = useSearchParams()
+  const search = useSearch({ strict: false })
 
   const handleShare = () => {
-    const ref = searchParams.get('ref')
-    shareChat(chatId, { ref })
+    shareChat(chatId, { ref: search.ref })
   }
 
   return <button onClick={handleShare}>Share</button>
@@ -28,9 +27,9 @@ function ShareButton({ chatId }: { chatId: string }) {
 
 ```tsx
 function ShareButton({ chatId }: { chatId: string }) {
+  const router = useRouter()
   const handleShare = () => {
-    const params = new URLSearchParams(window.location.search)
-    const ref = params.get('ref')
+    const { ref } = router.state.location.search
     shareChat(chatId, { ref })
   }
 

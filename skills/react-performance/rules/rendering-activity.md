@@ -23,4 +23,4 @@ function Dropdown({ isOpen }: Props) {
 }
 ```
 
-Avoids expensive re-renders and state loss.
+Avoids expensive re-renders and state loss. While hidden, effect cleanups run and the subtree re-renders at low priority; effects run again when it becomes visible. Requires React 19.2+.
