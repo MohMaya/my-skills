@@ -1,0 +1,33 @@
+claude/agents/planner.md
+  s_f16178bc6c18a1::t_389665aad3c013 10
+claude/agents/reviewer.md
+  s_f16178bc6c18a1::t_389665aad3c013 10
+skills/postgres/references/postgres.md
+  s_f16178bc6c18a1::t_9d889e995b8bba 1-98
+AGENTS.md
+  s_f16178bc6c18a1::t_389665aad3c013 61
+skills/postgres/references/sqlalchemy.md
+  s_f16178bc6c18a1::t_9d889e995b8bba 1-49
+skills/bar-raiser/references/catalogue.md
+  s_f16178bc6c18a1::t_389665aad3c013 44-45,76
+skills/postgres/SKILL.md
+  s_f16178bc6c18a1::t_389665aad3c013 1-133
+skills/bar-raiser/SKILL.md
+  s_f16178bc6c18a1::t_389665aad3c013 22,33,93
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "918a6501d5bc8a72747f075ac0ff87d34116b096",
+  "prompts": {},
+  "sessions": {
+    "s_f16178bc6c18a1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "fce56075-34a5-4c90-b862-1ff1e768a006",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Shivanshu Chaudhary <shivanshuchaudhary97@gmail.com>"
+    }
+  }
+}
