@@ -47,6 +47,7 @@ from __future__ import annotations
 
 import argparse
 import contextlib
+import itertools
 import json
 import os
 import re
@@ -501,11 +502,19 @@ def shell_words(text: str) -> list[str]:
 
 
 def clause(command: str, start: int) -> list[str]:
-    """The words of one simple command, without shell redirections such as `2>&1`."""
-    text = REDIRECTION.sub(
-        " ", re.split(r"[;|)]|&&|(?<![<>])&(?![\d>])", command[start:], maxsplit=1)[0]
-    )
-    return shell_words(text)
+    """The words of one simple command, without shell redirections such as `2>&1`.
+
+    An operator inside a quoted word with other text (`-m "a; b"`) stays message text;
+    a quoted word made only of operator characters still ends the command.
+    """
+    text = REDIRECTION.sub(" ", command[start:])
+    lexer = shlex.shlex(text, posix=True, punctuation_chars=";&|()")
+    lexer.whitespace_split = True
+    lexer.commenters = ""
+    try:
+        return list(itertools.takewhile(lambda w: w.strip(";&|()") != "", lexer))
+    except ValueError:
+        return shell_words(re.split(r"[;|)]|&&|(?<![<>])&(?![\d>])", text, maxsplit=1)[0])
 
 
 def directory_at(command: str, cwd: Path, end: int) -> Path:
