@@ -58,7 +58,13 @@ Matt Pocock's skills and ours live together in `~/.agents/skills`. Load the matc
 | A design question a throwaway build answers fastest | `prototype` |
 | A bug or regression whose cause is unknown | `diagnosing-bugs` |
 | New behavior or a bug fix in a repository with a test runner | `tdd`; its refactor stage is `bar-raiser` |
-| Any SQL statement or ORM query | `postgres` |
+| A new service, data flow, or feature that adds a store, queue, workflow, or external dependency | `system-design` |
+| Any SQL statement, ORM query, schema change, or migration | `postgres` |
+| An HTTP, realtime, CLI, or MCP interface contract | `api-design` |
+| Authentication, authorization, secrets, or untrusted input | `security` |
+| What production code measures, alerts on, and proves before launch | `operability` |
+| Go, Rust, Swift, or FastAPI code | `go`, `rust` (`gpui` for desktop UI), `write-swift`, `fastapi` |
+| An AWS service | the `aws-mcp` server: `search_documentation` (topic `agent_skills`) for the skill name, then `retrieve_skill` |
 | UI brief, build, review, or verification | `pe-design`, `pe-build`, `pe-review`, `pe-verify` |
 | Facts about an API or library | `research` |
 | A PR body | `pr` |
@@ -101,6 +107,8 @@ A test exists to fail when behavior breaks. Name the bug it would catch before y
 
 ## Stack defaults
 
+New repositories adopt the lint baselines in `~/.agents/lint/`.
+
 - TypeScript: strict mode, no `any`, no `as` casts to quiet the compiler.
 - Web: React with Vite and TanStack (Router, Query). TanStack APIs move fast, so check them against current docs before use.
 - Mobile: React Native with Expo and Expo Router.
@@ -138,7 +146,7 @@ UI follows an approved design:
 - Use `gh-stack` for dependent PRs and `cubic-review` for Cubic findings.
 - Linear tracks work: a parent issue for the outcome, sub-issues for shippable slices. Notion holds specs and decisions. Link them rather than copying.
 - Use `gh` for GitHub. Read live state from PostHog (analytics, flags, errors), Railway, Cloudflare, Firebase, Figma, and Mobbin through their MCP servers or CLIs rather than guessing it.
-- Production code ships with its logs, metrics, and error tracking in the same change. Schema changes stay compatible with the previous app version.
+- Production code ships with its logs, metrics, and error tracking in the same change; `operability` decides what they cover. Schema changes stay compatible with the previous app version.
 
 ## Talking to Shiv
 

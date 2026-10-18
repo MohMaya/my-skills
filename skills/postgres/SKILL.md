@@ -1,13 +1,15 @@
 ---
 name: postgres
-description: Intent-first design of SQL and ORM queries, from what the caller needs to a statement proven equivalent and measured. Use before writing or changing any SQL statement or ORM query, and when a query, endpoint, or job is slow: N+1, EXPLAIN plans, indexes, pagination, counts, or pg_stat_statements.
+description: Postgres queries, schema, migrations, and operations. Use before writing or changing a SQL statement or ORM query; when a query, endpoint, or job is slow (N+1, EXPLAIN, indexes, pagination); when designing a table or schema; when writing a migration, DDL, or backfill; and when operating Postgres (vacuum, bloat, locks, wraparound, replication, monitoring).
 ---
 
-# Query design
+# Postgres
+
+One owner for Postgres: queries and ORM access, schema, migrations, operations. The query workflow (steps 1–6) is the spine; `schema`, `migrate`, and `operate` carry their own steps in their references.
 
 A query answers a question someone downstream asked. Optimize the question before the SQL: establish the **intent**, justify every element against it, rebuild from the cheapest design that still answers it, then prove **equivalence** and measure. An index on a query nobody needs is waste with a write cost.
 
-**Dvandva.** Run `dvandva` before you produce a query.
+**Dvandva.** Run `dvandva` before you produce a query, schema, migration, or runbook change.
 
 ## Modes
 
@@ -16,9 +18,15 @@ A query answers a question someone downstream asked. Optimize the question befor
 | **write** | A new query, repository method, loader, or relationship | 1–4; 5 against the spec's fixtures; 6 when it sits on a request path or a per-row loop |
 | **optimize** | An existing query, endpoint, or job is slow or suspicious | 1–6; step 5 compares old and new |
 | **audit** | "What is slow in this service?" | Rank statements by `total_exec_time` in `pg_stat_statements` (and traces when Datadog is wired), then run **optimize** on the top paths in order |
+| **schema** | A new table, key, or constraint set, or a column-type decision | Steps and rules in [references/schema.md](references/schema.md); step 1 supplies the access paths |
+| **migrate** | DDL, an index build, or a backfill on a live database | Steps and rules in [references/migrations.md](references/migrations.md) |
+| **operate** | Vacuum, bloat, locks, wraparound, replication, connections, or monitoring on a running database | Steps and rules in [references/operations.md](references/operations.md) |
+
+**Boundaries.** Wire contracts (the HTTP cursor contract) belong to `api-design`; authn, authz, and secrets to `security`; SLOs, alerts, runbooks, and restore drills to `operability`; choosing a datastore or topology to `system-design`; FastAPI handlers to `fastapi`.
 
 ## Safety
 
+- Every value reaches SQL as a bound parameter; identifiers (table, column, sort key) cannot be bound, so they come from an allowlist.
 - Inspect through a read-only role with `statement_timeout` set, on staging or a branch holding production-shaped data.
 - `EXPLAIN ANALYZE` executes the statement. Run DML under `BEGIN … ROLLBACK`, and only off production; rollback leaves sequences advanced and keeps any external side effect a trigger caused.
 - On production, plain `EXPLAIN` plus catalog and statistics views are the default; anything heavier needs Shiv's approval.
@@ -127,7 +135,10 @@ Open with what the query is for and what changed. Then: what was removed and why
 
 ## Tools
 
-- [references/postgres.md](references/postgres.md): diagnostics with safety labels, plan reading, index design, query shapes, TimescaleDB, pooling.
-- [references/sqlalchemy.md](references/sqlalchemy.md): SQLAlchemy 2.0 async, psycopg, asyncpg, Alembic.
+- [references/postgres.md](references/postgres.md): diagnostics with safety labels, plan reading, index design, query shapes, TimescaleDB, sessions and transactions.
+- [references/sqlalchemy.md](references/sqlalchemy.md): SQLAlchemy 2.0 async, psycopg, asyncpg.
+- [references/schema.md](references/schema.md): types, keys, constraints, JSONB, partitioning.
+- [references/migrations.md](references/migrations.md): expand/contract, lock levels, concurrent DDL, backfills, Alembic.
+- [references/operations.md](references/operations.md): autovacuum, wraparound, bloat, replication, connections, settings, alerts.
 - The PostgreSQL manual for the server's major version: the Tiger docs MCP's `search_docs` when configured, otherwise `postgresql.org/docs/<major>`.
 - `postgres-mcp`, when configured for the project: hypothetical indexes, workload index advice, database health.

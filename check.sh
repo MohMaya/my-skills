@@ -1,11 +1,14 @@
 #!/usr/bin/env bash
-# Fail when a tracked or new file names a path that exists on only one machine:
+# Fail when a skill's frontmatter would not load, or when a tracked or new file
+# names a path that exists on only one machine:
 # absolute home, volume, or system-temp paths, Windows drive paths, and
 # home-relative paths outside the directories this setup and its plugins own.
 # Run locally or in CI. Safe to re-run.
 
 set -euo pipefail
 cd "$(dirname "$0")"
+
+python3 check_skills.py
 
 home='(~|\$HOME)/'
 owned='\.(agents|claude|supermemory-claude)([/.,;:]|$)'

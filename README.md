@@ -13,7 +13,7 @@ bash ~/.agents/sync.sh
 
 Then, once per machine, add the MCP servers it needs. `mcp.json` records every server's URL, and which Claude plugin provides it.
 
-Update third-party skills with `npx skills@latest update -g`, then commit `skills/` and `.skill-lock.json`.
+Update third-party skills with `npx skills@latest update -g`, then commit `skills/` and `.skill-lock.json`. Several third-party skills carry local edits, so read the update's diff and restore any edit it overwrote. AWS skills are not installed here: the `aws-mcp` server serves them live through `retrieve_skill`.
 
 Re-run `sync.sh` after every `git pull`. It is safe to repeat. It runs `claude-setup-sync.sh`, which you can also run alone after changing Claude settings or plugins.
 
@@ -22,11 +22,12 @@ Re-run `sync.sh` after every `git pull`. It is safe to repeat. It runs `claude-s
 | Path | Holds |
 | ---- | ----- |
 | `AGENTS.md` | The kernel every harness loads: only what a model cannot infer |
-| `skills/` | 74 skills: ours plus Matt Pocock's full set, pinned in `.skill-lock.json` |
+| `skills/` | One owner skill per concern: ours plus third-party skills pinned in `.skill-lock.json` |
+| `lint/` | Baseline lint and type-checker configs a new repository adopts |
 | `hooks/` | Turn-end gate (lint, types, complexity ratchet), bar-raiser review gate, git-bypass guard, secret-path guard |
 | `claude/` | Claude Code subagents (`agents/`), settings every machine shares, merged key by key (Opus main, Sonnet subagents, Fable advisor), and the status line |
 | `claude-setup-sync.sh` | Applies `claude/`, installs the shared plugins, and installs the Python packages plugin servers need |
-| `check.sh` | Fails on any machine-specific path, so the setup works on every machine; CI runs it on each push |
+| `check.sh` | Fails on a skill frontmatter that would not load, and on any machine-specific path, so the setup works on every machine; CI runs it on each push |
 | `mcp.json` | Record of every MCP server and its URL; not synced |
 | `evals/` | Real past commits replayed as tasks; run after every model or kernel change |
 
