@@ -1,0 +1,19 @@
+.skill-lock.json
+  s_f16178bc6c18a1::t_06779343319d2f 915
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "4b48514e53b7d5dd0a0f30102526631277092f9d",
+  "prompts": {},
+  "sessions": {
+    "s_f16178bc6c18a1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "fce56075-34a5-4c90-b862-1ff1e768a006",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Shivanshu Chaudhary <shivanshuchaudhary97@gmail.com>"
+    }
+  }
+}

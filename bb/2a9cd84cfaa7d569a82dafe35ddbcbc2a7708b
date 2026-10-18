@@ -1,0 +1,57 @@
+skills/react-performance/rules/bundle-conditional.md
+  s_f16178bc6c18a1::t_90644e0b4f19a8 22
+  s_f16178bc6c18a1::t_ef2ecad5ebc4d4 1-14,16-21,23,25-30
+  s_f16178bc6c18a1::t_432f557c2235ae 15,24
+skills/react-performance/rules/js-cache-function-results.md
+  s_f16178bc6c18a1::t_7c2e7a5b9e671a 1-78
+skills/react-performance/rules/bundle-dynamic-imports.md
+  s_f16178bc6c18a1::t_ef2ecad5ebc4d4 1-35
+skills/pe-build/references/craft/ui/finishing.md
+  s_f16178bc6c18a1::t_8f2ff9708d94d6 65
+skills/react-performance/rules/async-cheap-condition-before-await.md
+  s_f16178bc6c18a1::t_7c2e7a5b9e671a 1-37
+skills/react-performance/rules/rendering-resource-hints.md
+  s_f16178bc6c18a1::t_7c2e7a5b9e671a 1-56
+skills/react-performance/rules/bundle-analyzable-paths.md
+  s_f16178bc6c18a1::t_ef2ecad5ebc4d4 1-38
+skills/react-performance/rules/rendering-activity.md
+  s_f16178bc6c18a1::t_7c2e7a5b9e671a 1-25
+  s_f16178bc6c18a1::t_9b729a5c79d994 26
+skills/react-performance/rules/async-suspense-boundaries.md
+  s_f16178bc6c18a1::t_ef2ecad5ebc4d4 1-63
+skills/react-performance/rules/rerender-defer-reads.md
+  s_f16178bc6c18a1::t_90644e0b4f19a8 31
+  s_f16178bc6c18a1::t_7c2e7a5b9e671a 1-30,32-38
+skills/react-performance/rules/advanced-event-handler-refs.md
+  s_f16178bc6c18a1::t_90644e0b4f19a8 15,26,33,45
+  s_f16178bc6c18a1::t_7c2e7a5b9e671a 1-14,16-25,27-32,34-44,46-55
+skills/react-performance/rules/client-event-listeners.md
+  s_f16178bc6c18a1::t_9b729a5c79d994 1-63
+skills/react-performance/rules/rendering-script-defer-async.md
+  s_f16178bc6c18a1::t_7c2e7a5b9e671a 1-37
+skills/react-performance/rules/async-dependencies.md
+  s_f16178bc6c18a1::t_90644e0b4f19a8 1-33
+skills/react-performance/rules/bundle-preload.md
+  s_f16178bc6c18a1::t_ef2ecad5ebc4d4 1-47
+skills/react-performance/SKILL.md
+  s_f16178bc6c18a1::t_640d73a08b8f08 32
+  s_f16178bc6c18a1::t_d7622e248032cb 1-31,33-103
+skills/react-performance/rules/bundle-defer-third-party.md
+  s_f16178bc6c18a1::t_ef2ecad5ebc4d4 1-46
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "bb2a9cd84cfaa7d569a82dafe35ddbcbc2a7708b",
+  "prompts": {},
+  "sessions": {
+    "s_f16178bc6c18a1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "fce56075-34a5-4c90-b862-1ff1e768a006",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Shivanshu Chaudhary <shivanshuchaudhary97@gmail.com>"
+    }
+  }
+}
