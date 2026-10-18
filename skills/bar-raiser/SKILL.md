@@ -19,7 +19,7 @@ Sweep depth scales with blast radius, and nothing is exempt:
 | A feature or refactor | Every catalogue section, against the diff and the modules it touches |
 | A new service, data model, public API, migration, or infrastructure | Everything below, including numbers and the failure walkthrough for every external call |
 
-One owner per concern: SQL and ORM queries go through `query-design`, whose findings count here; module depth and seams use the `codebase-design` vocabulary; UI goes to `pe-review`; Cubic findings to `cubic-review`.
+One owner per concern: SQL and ORM queries go through `postgres`, whose findings count here; module depth and seams use the `codebase-design` vocabulary; UI goes to `pe-review`; Cubic findings to `cubic-review`.
 
 ## Evidence gate
 
@@ -30,7 +30,7 @@ Before accepting a removal or calling work redundant, cheaper, bounded, safe, id
 1. **Separate correctness from cost.** Prove the observable result and account for the work needed to produce it. Equal outputs and passing tests alone say nothing about rows scanned, bytes transferred, allocations, lock duration, or external effects.
 2. **Trace the whole path.** For each boundary, record what enters, what leaves, and where filtering, deduplication, sorting, limiting, validation, or retries actually happen. Work eliminated downstream may already have consumed upstream resources.
 3. **Prove the bound.** Name the constraint, limit, or algorithm that enforces it. A bounded number of parents does not bound their children or historical rows. Small fixtures, current observations, and “usually a handful” are assumptions, not enforced bounds.
-4. **Try to falsify the claim.** Construct a valid counterexample: large history or fan-out, duplicates, empty inputs, concurrent calls, or partial failure as applicable. For a check that refuses input, probe one input from every class it claims to refuse (wrong type or prefix, malformed characters, bad checksum, surrounding whitespace, empty, oversized), choosing inputs its tests did not. For SQL changes, obtain `query-design` evidence for both semantics and execution cost. Test the claimed invariant at the boundary where it matters; final-output assertions can hide excessive intermediate work.
+4. **Try to falsify the claim.** Construct a valid counterexample: large history or fan-out, duplicates, empty inputs, concurrent calls, or partial failure as applicable. For a check that refuses input, probe one input from every class it claims to refuse (wrong type or prefix, malformed characters, bad checksum, surrounding whitespace, empty, oversized), choosing inputs its tests did not. For SQL changes, obtain `postgres` evidence for both semantics and execution cost. Test the claimed invariant at the boundary where it matters; final-output assertions can hide excessive intermediate work.
 5. **Check the final diff.** Simplification edits invalidate the affected review conclusions. Re-read the changed path and rerun the evidence those edits could invalidate before assigning a verdict. Record the reviewed revision or diff and any remaining material uncertainty.
 
 For example, a Python `set` proves final uniqueness; it does not make SQL `DISTINCT` redundant in cost. The driver may transfer and materialize every duplicate first. Conversely, a database uniqueness constraint may prove that the query cannot return duplicates. Choose from the caller's required cardinality and measured plan; neither “always keep DISTINCT” nor “always remove it” is a review rule.
@@ -90,7 +90,7 @@ Missing evidence is an open verification gap, not a reason to mark a section cle
 
 Report:
 
-1. Four header lines: `Snapshot:` the tree you reviewed; `Verdict: excellent` or `Verdict: below bar`; `Skills:` the workflow skills the work used (such as `tdd`, `diagnosing-bugs`, `query-design`); `Tests:` the bug each new test catches, or why the change needs none.
+1. Four header lines: `Snapshot:` the tree you reviewed; `Verdict: excellent` or `Verdict: below bar`; `Skills:` the workflow skills the work used (such as `tdd`, `diagnosing-bugs`, `postgres`); `Tests:` the bug each new test catches, or why the change needs none.
 2. Findings, most severe first: `file:line`, smell, why (with source), ideal, decision and first step, proof, evidence tier.
 3. Proposals outside the change's scope.
 4. The reviewed revision or diff, evidence for material claims, and what was not checked and why.

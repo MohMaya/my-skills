@@ -1,5 +1,5 @@
 ---
-name: query-design
+name: postgres
 description: Intent-first design of SQL and ORM queries, from what the caller needs to a statement proven equivalent and measured. Use before writing or changing any SQL statement or ORM query, and when a query, endpoint, or job is slow: N+1, EXPLAIN plans, indexes, pagination, counts, or pg_stat_statements.
 ---
 

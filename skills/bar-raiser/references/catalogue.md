@@ -41,8 +41,8 @@ Price every hop before judging a design. Orders of magnitude:
 - **Invariant held only in application code**: uniqueness, non-null, ranges, references, one-active-per-parent. → `NOT NULL`, `CHECK`, `UNIQUE` (partial when scoped), foreign keys, exclusion constraints. A second writer or a race cannot bypass the database. `[pe]`
 - **Check-then-act race**: select to see if it exists, then insert or update. → A constraint plus `INSERT … ON CONFLICT`, or one conditional `UPDATE … WHERE`. `[pe]`
 - **Read-modify-write without concurrency control.** → A version column (optimistic) or `SELECT … FOR UPDATE`, or a single atomic statement. `[pe]`
-- **N+1 or unbounded reads, missing or misordered indexes, offset pagination at depth.** → `query-design`. (TigerStyle: put a limit on everything)
-- **A parent/page bound presented as a bound on joined children or history.** → State the output grain and prove each fan-out bound from constraints or query shape; exercise a parent with a large valid history. (`query-design`, TigerStyle)
+- **N+1 or unbounded reads, missing or misordered indexes, offset pagination at depth.** → `postgres`. (TigerStyle: put a limit on everything)
+- **A parent/page bound presented as a bound on joined children or history.** → State the output grain and prove each fan-out bound from constraints or query shape; exercise a parent with a large valid history. (`postgres`, TigerStyle)
 - **Transaction held across a network call** (HTTP, LLM, queue, user wait): holds locks and the snapshot, stalls vacuum, and couples the database to someone else's latency. → Atomic phases between foreign calls, with recovery points. (Brandur-idem, Brandur-queues)
 - **Table-as-queue without care**: long transactions, no `SKIP LOCKED`, no watch on transaction age. → `FOR UPDATE SKIP LOCKED`, short transactions, alerts on oldest transaction age. (Brandur-queues)
 - **Breaking migration**: a schema change the previous app version cannot run against, or a non-resumable backfill. → Expand, backfill in resumable batches, switch reads, contract in a later release. `[pe]`
@@ -73,7 +73,7 @@ Price every hop before judging a design. Orders of magnitude:
 - **Quadratic work hidden in nested loops or repeated linear lookups.** → A set or map, or sort once. `[pe]`
 - **Allocation or dynamic dispatch in a measured hot loop.** → Table-driven or batched data layouts, applied only where measurement shows the loop is hot. (Muratori)
 - **A performance claim without method.** → Fixed hardware, repetitions, warm-up, and stated limits, or it is an anecdote. (Dicken-bench)
-- **Downstream cleanup used to justify removing an upstream bound**: application sets, filters, sorts, or slices preserve the answer after excess rows or bytes have already crossed a boundary. → Prove result semantics and end-to-end resource cost separately; measure at the boundary where the work occurs. Fewer operators or lines do not prove less work. (`query-design`, Dicken-bench)
+- **Downstream cleanup used to justify removing an upstream bound**: application sets, filters, sorts, or slices preserve the answer after excess rows or bytes have already crossed a boundary. → Prove result semantics and end-to-end resource cost separately; measure at the boundary where the work occurs. Fewer operators or lines do not prove less work. (`postgres`, Dicken-bench)
 
 ## Code design
 
