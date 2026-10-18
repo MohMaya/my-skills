@@ -1,6 +1,6 @@
 ---
 name: git-guardrails-claude-code
-description: Set up Claude Code hooks to block dangerous git commands (push, reset --hard, clean, branch -D, etc.) before they execute. Use when user wants to prevent destructive git operations, add git safety hooks, or block git push/reset in Claude Code.
+description: Set up Claude Code hooks to block destructive git commands (force push, reset --hard, clean, branch -D, etc.) before they execute. Use when user wants to prevent destructive git operations or add git safety hooks in Claude Code.
 ---
 
 # Setup Git Guardrails
@@ -11,7 +11,7 @@ Sets up a PreToolUse hook that intercepts and blocks dangerous git commands befo
 
 ## What Gets Blocked
 
-- `git push` (all variants including `--force`)
+- Pushes that rewrite or delete remote history: `--force` (and `--force-with-lease`), `-f`/`-d` alone or bundled (`-fu`), `--delete`, `--mirror`, `--prune`, and `+ref` or `:ref` refspecs (a plain push passes; `~/.agents/hooks/review-gate.py` gates it on a review)
 - `git reset --hard`
 - `git clean -f` / `git clean -fd`
 - `git branch -D`
@@ -91,7 +91,7 @@ Ask if user wants to add or remove any patterns from the blocked list. Edit the 
 Run a quick test:
 
 ```bash
-echo '{"tool_input":{"command":"git push origin main"}}' | <path-to-script>
+echo '{"tool_input":{"command":"git push --force origin main"}}' | <path-to-script>
 ```
 
 Should exit with code 2 and print a BLOCKED message to stderr.
