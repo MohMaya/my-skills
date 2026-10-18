@@ -36,3 +36,23 @@ The sources behind the catalogue's tags. Rules in the catalogue are paraphrased;
 | Spolsky | Joel Spolsky, [Things you should never do, part I](https://www.joelonsoftware.com/2000/04/06/things-you-should-never-do-part-i/) | Why whole-product rewrites fail |
 | Pocock | Matt Pocock, [skills](https://github.com/mattpocock/skills) (`codebase-design`) | Deletion test; one adapter is a hypothetical seam |
 | Dean | Jeff Dean, [Latency numbers every programmer should know](https://gist.github.com/jboner/2841832) | Orders of magnitude per operation |
+| Fowler-monolith | Martin Fowler, [Monolith first](https://martinfowler.com/bliki/MonolithFirst.html) | Split once boundaries are stable; the cost of distribution |
+| Fowler-strangler | Martin Fowler, [Strangler fig application](https://martinfowler.com/bliki/StranglerFigApplication.html) | Replace piece by piece; retire the transitional code |
+| Feathers | Michael Feathers, *Working Effectively with Legacy Code*; [Characterization testing](https://michaelfeathers.silvrback.com/characterization-testing) | Pin current behavior with tests before changing it |
+| Scientist | GitHub, [Scientist](https://github.blog/engineering/infrastructure/scientist/) | Run old and new paths, return the old result, compare |
+| Kleppmann-schema | Martin Kleppmann, [Schema evolution in Avro, Protocol Buffers and Thrift](https://martin.kleppmann.com/2012/12/05/schema-evolution-in-avro-protocol-buffers-thrift.html) | Old and new readers and writers coexisting; defaults, skipped unknown fields |
+| Temporal | Temporal, [Workflows](https://docs.temporal.io/workflows) | Durable execution and timers per workflow instance |
+| AWS-retries | Marc Brooker, [Timeouts, retries, and backoff with jitter](https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/) | Client errors are not retried; local retry limits; one retry layer |
+| AWS-health | Amazon Builders' Library, [Implementing health checks](https://aws.amazon.com/builders-library/implementing-health-checks/) | Local checks for load balancers; dependency checks cascade |
+| AWS-fairness | Amazon Builders' Library, [Fairness in multi-tenant systems](https://aws.amazon.com/builders-library/fairness-in-multi-tenant-systems/) | Per-tenant quotas keep one tenant from exhausting shared capacity |
+| AWS-deploy | Amazon Builders' Library, [Automating safe, hands-off deployments](https://aws.amazon.com/builders-library/automating-safe-hands-off-deployments/) | Staged waves, post-deploy alarms, automatic rollback |
+| AWS-restore | AWS Well-Architected, [REL09-BP04 Perform periodic recovery of the data](https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/rel_backing_up_data_periodic_recovery_testing_data.html) | Restore drills that validate data and measure RTO and RPO |
+| SQS-DLQ | AWS, [Using dead-letter queues in Amazon SQS](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html) | Isolating unprocessed messages; alarming on the DLQ |
+| SQS-visibility | AWS, [Amazon SQS visibility timeout](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html) | A short timeout redelivers messages still in processing |
+| Lambda-SQS | AWS, [Handling errors for an SQS event source in Lambda](https://docs.aws.amazon.com/lambda/latest/dg/services-sqs-errorhandling.html) | Partial batch responses; a failed batch redelivers every message |
+| Azure-async | Microsoft, [Asynchronous request-reply pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/asynchronous-request-reply) | 202 Accepted plus a pollable status endpoint for long work |
+| Go-errors | Go Blog, [Working with errors in Go 1.13](https://go.dev/blog/go1.13-errors) | Wrapping keeps the cause chain reachable |
+| Wlaschin | Scott Wlaschin, [Railway oriented programming](https://fsharpforfunandprofit.com/rop/) | Expected failures as typed values on an error track |
+| typescript-eslint | typescript-eslint, [no-misused-promises](https://typescript-eslint.io/rules/no-misused-promises/) | An async callback passed to `forEach` leaves its promise unawaited |
+| Docker-bp | Docker, [Building best practices](https://docs.docker.com/build/building/best-practices/) | Digest-pinned bases, non-root `USER`, `.dockerignore` |
+| Terraform-lifecycle | HashiCorp, [The lifecycle meta-argument](https://developer.hashicorp.com/terraform/language/meta-arguments/lifecycle) | `prevent_destroy`; in-place-impossible changes replace the resource |

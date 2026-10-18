@@ -1,12 +1,13 @@
-Last verified: 2026-07-14
+Last verified: 2026-10-18
 
 # Grader Templates
 
-Runnable examples for the four grader shapes named
+Runnable examples for the grader shapes named
 in `SKILL.md`'s Graders section: schema-compliance,
-exact-match with normalization, execution-based, and
-LLM-judge. Every grader returns a binary pass/fail —
-never a Likert score — per `SKILL.md`.
+exact-match with normalization, execution-based,
+LLM-judge, and pairwise LLM-judge. Every grader returns a binary pass/fail —
+never a Likert score — per `SKILL.md`; the pairwise grader
+returns candidate, baseline, or tie.
 Wire each one to exactly one failure bucket from
 error analysis; don't blend buckets into one grader.
 
@@ -209,3 +210,51 @@ grading state, it's an operational failure. Never catch it
 and coerce to `False`; log it and re-run the judge call or
 route the item to human review instead.
 
+## Pairwise LLM-Judge Template
+
+For "which response is better" criteria. Judges favor
+whichever response sits in a fixed slot, so the grader
+runs both orders and counts only a winner both orders
+agree on. Calibrate it per `SKILL.md`'s Judge
+calibration section like any other judge, with the
+human labels recording the preferred response.
+
+```python
+PAIRWISE_PROMPT = """You are comparing two responses on
+the following criterion: {criterion}
+
+Task: {task}
+Response A: {first}
+Response B: {second}
+
+Output exactly one letter, A or B, for the response that
+better meets the criterion, with no other text.
+Verdict:"""
+
+def _pick(prompt: str, judge_client) -> str:
+    verdict = judge_client.complete(prompt, temperature=0).strip().upper()
+    if verdict not in ("A", "B"):
+        raise JudgeParseError(f"unparseable judge verdict: {verdict!r}")
+    return verdict
+
+def grade_pairwise(task: str, candidate: str, baseline: str,
+                   criterion: str, judge_client) -> str:
+    """Returns "candidate", "baseline", or "tie". A verdict
+    that flips when the order flips is position bias, so it
+    is a tie, never a win for either side.
+    """
+    forward = _pick(PAIRWISE_PROMPT.format(
+        criterion=criterion, task=task,
+        first=candidate, second=baseline), judge_client)
+    swapped = _pick(PAIRWISE_PROMPT.format(
+        criterion=criterion, task=task,
+        first=baseline, second=candidate), judge_client)
+    if forward == "A" and swapped == "B":
+        return "candidate"
+    if forward == "B" and swapped == "A":
+        return "baseline"
+    return "tie"
+```
+
+Report wins, losses, and ties per bucket; a tie is
+not a pass.

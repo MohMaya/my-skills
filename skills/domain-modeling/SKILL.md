@@ -59,6 +59,8 @@ When domain relationships are being discussed, stress-test them with specific sc
 
 When the user states how something works, check whether the code agrees. If you find a contradiction, surface it: "Your code cancels entire Orders, but you just said partial cancellation is possible. Which is right?"
 
+When mining an existing codebase for the model, cite `file:line` for every observation and label it fact or inference. For each status or state field, extract its states and a transition table with locations.
+
 ### Update GLOSSARY.md inline
 
 When a term is resolved, update `GLOSSARY.md` right there. Don't batch these up: capture them as they happen. Use the format in [GLOSSARY-FORMAT.md](./GLOSSARY-FORMAT.md).

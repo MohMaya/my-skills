@@ -27,12 +27,17 @@ Price every hop before judging a design. Orders of magnitude:
 - **Junk-drawer module** (`utils`, `common`, `helpers`) or import cycles. → Move each function to its one real owner; break cycles by inverting the dependency. `[pe]`
 - **Business logic in handlers, components, or hooks.** → A service with an IO-free core, called by thin adapters. (matklad-test)
 - **Distributed monolith**: services that deploy together, share tables, or call each other in synchronous chains. → A modular monolith, or real entity boundaries talking through asynchronous, idempotent messages. (Helland, Nygard)
+- **Service split with no named benefit**: a new service whose reason is none of independent scaling, a separate team, failure isolation, or deploy cadence. → A module in the modular monolith until one of the four is named and measured. (Fowler-monolith)
+- **Unversioned message schema**: a published event or message with no version, or a consumer that rejects the previous version. → Versioned schemas; consumers accept N-1 and ignore unknown fields. (Kleppmann-schema)
+- **Per-entity timers, waits, or multi-step flows hand-rolled** as polling sweeps over rows or saga tables. → One durable workflow per entity. (kernel, Temporal)
 - **Dual write**: commit to the database, then publish to a queue or a second store. → Transactional outbox or change data capture. (Kleppmann, outbox)
 - **Outbox without idempotent consumers**: the relay can deliver twice and the consumer applies twice. → A dedupe key per message, recorded atomically with its effect. (outbox, Helland)
 - **Cross-entity atomicity assumed**: one request updating several aggregates or services as if in one transaction. → Atomicity inside one entity; a workflow of idempotent steps with recorded intents and compensations across entities. (Helland, Brandur-idem)
 - **Derived copy updated in-request** (cache, search index, counter) with no reconciliation. → Derive it from the log of changes, with staleness made explicit and a rebuild path. (Helland, Kleppmann)
 - **Invisible boundary**: layering that exists only in someone's head. → An architecture document with a codemap and the invariants stated as absences, enforced by an import lint or test. (matklad-arch)
 - **Configuration as an unreviewed control surface**: flags and config changed live without staging. → Config reviewed, staged, and rolled out like code. (Luu-postmortem)
+- **A wire contract decided in code** (an error shape, a pagination scheme, a version, a retry header chosen ad hoc per handler). → The contract designed through `api-design`; its rules count here.
+- **An auth path, secret, or untrusted input changed without the security walk.** → `security`'s checklist sections the diff touches; its findings count here.
 
 ## Data and persistence
 
@@ -55,11 +60,19 @@ Price every hop before judging a design. Orders of magnitude:
 - **Fresh timeouts at every hop.** → One deadline propagated end to end. (SRE-cascade)
 - **Retries without jitter.** → Capped exponential backoff with full jitter. (Brooker-jitter)
 - **Retries without a budget, or at several layers.** → Retry at one layer, under a per-process budget. (SRE-overload, Brooker-metastable)
+- **Retrying a non-transient error** (validation, auth, any other 4xx, a bug). → Retry only timeouts, connection errors, 429, 502, 503, and 504, honouring `Retry-After`; surface everything else. (AWS-retries)
 - **Retrying a non-idempotent effect.** → An idempotency key stored with the result, so a retry returns the first outcome. (Brandur-idem)
 - **Unbounded queue, buffer, batch, or fan-out.** → A bound on each, rejecting or shedding when full. (TigerStyle, SRE-overload)
 - **No backpressure or load shedding.** → Bounded concurrency; reject early with an explicit "overloaded, retry later". (SRE-overload)
 - **A sustaining loop**: retries, cache misses, or queue growth that keep the system down after the trigger passes. → Name the loop and cap it (budgets, breakers, shedding). (Brooker-metastable)
 - **One pool shared by unrelated dependencies.** → Bulkheads: a pool per dependency. (Nygard)
+- **One tenant able to exhaust a shared pool, queue, or rate.** → A per-tenant quota that rejects the excess. (AWS-fairness)
+- **Liveness probe that checks a dependency, or readiness probe that checks downstream services** beyond the service's own hard dependencies. → Liveness checks the process; readiness checks its own hard dependencies. A shared outage must not restart or de-register the fleet. (AWS-health)
+- **Async consumer with no dead-letter destination, or a DLQ with no depth or age alarm.** → A DLQ per queue, with an alarm on its depth and oldest-message age. (SQS-DLQ)
+- **Batch consumer that fails the whole batch on one bad record.** → Report partial failures per record, so only the failed ones are redelivered. (Lambda-SQS)
+- **Lease or visibility timeout shorter than worst-case processing.** → A timeout above the maximum processing time including retries, or a heartbeat that extends it. (SQS-visibility)
+- **Slow work inside the request cycle** (export, report, third-party sync). → Accept, return a job id, and expose a status the caller can poll. (Azure-async)
+- **A backup never restored.** → A scheduled restore drill that validates the data and measures the actual RTO and RPO. (AWS-restore)
 - **Works only with a warm cache.** → Capacity for a cold start, and a ramped warm-up. (SRE-cascade)
 - **Risky change without a kill switch, canary, or rollback.** → A flag and a staged rollout. `[pe]`
 - **A human step as the only safeguard.** → Automate the guard. (Luu-postmortem)
@@ -85,6 +98,11 @@ Price every hop before judging a design. Orders of magnitude:
 - **Hand-rolled check beside an existing parser** for the same value (an ID, email, money amount). → Reuse the codebase's parser; search for one by the value's type and format before accepting a new check. (King)
 - **Illegal states representable**: two nullable fields where exactly one must be set, flags that contradict. → A tagged union or a state machine. (King)
 - **Swallowed error**: empty catch, catch-and-log, ignored return codes. Mishandled errors are behind most catastrophic failures. → Handle it or fail loudly with a specific message. (Luu-testing)
+- **Error logged at several layers** (log, rethrow, log again up the stack). → Log once, where it is handled. `[pe]`
+- **Wrapped error that drops its cause** (`raise New()` inside `except`, `%v` in `fmt.Errorf`, `new Error(msg)` in a catch). → Keep the cause chain: `raise … from err`, `%w`, `{ cause: err }`. (Go-errors)
+- **Expected failures thrown as exceptions** (not found, invalid input, insufficient funds). → Typed results for expected outcomes; exceptions for bugs. (Wlaschin)
+- **`forEach(async …)` or an unawaited async call in a loop** whose result matters. → `for…of` with `await`, or `Promise.all`. (typescript-eslint)
+- **Event handler whose write re-fires its own trigger** (database trigger, webhook, change listener). → A re-entrancy guard, or a write that is a no-op when the value is unchanged. `[pe]`
 - **Global mutable state or singletons.** → Values passed explicitly; dependencies injected. (Hickey)
 - **Temporal coupling**: methods that must be called in a fixed order. → One operation, or types that make the wrong order unrepresentable. (Ousterhout)
 - **Branching mixed with work deep in the call tree.** → Decisions in the parent, straight-line leaves. (TigerStyle, matklad-ifs)
@@ -96,7 +114,7 @@ Price every hop before judging a design. Orders of magnitude:
 - **Free-text logs without request context.** → One wide structured event per request per service, built up through the request and emitted once. (Majors)
 - **Unbounded-cardinality metric labels.** → High-cardinality fields on events, not metrics. (Majors)
 - **No trace or request id across async hops.** → Propagate it through every queue and job, and put it on every event. `[pe]`
-- **A named failure mode with no alert.** → An alert per failure mode and per sustaining loop. (Luu-postmortem)
+- **A named failure mode with no SLO, alert, or runbook.** → An alert per failure mode and per sustaining loop, each with a runbook; `operability` owns the design. (Luu-postmortem)
 - **Production code without its logs, metrics, and error tracking.** → They ship in the same change (kernel).
 
 ## Testing
@@ -109,7 +127,18 @@ Price every hop before judging a design. Orders of magnitude:
 ## Evolution
 
 - **Big-bang rewrite.** → Strangle one boundary at a time; replace a bad data model or boundary as its own migration. (Spolsky)
+- **Behavior change to untested legacy code.** → Characterization tests pinning current behavior land first, in their own commit. (Feathers)
+- **Cutover without a numeric rollback trigger, an owner, and a ramp.** → Write all three: the metric and threshold that roll back, one named owner, and steps such as 1/5/25/50/100%. (AWS-deploy)
+- **Traffic flipped to the new path without comparing.** → A shadow run: return the old result, compute the new, and compare. (Scientist)
+- **Legacy path, flag, or adapter with no deletion date.** → A dated deletion, ticketed with the cutover. (Fowler-strangler)
 - **Speculative generality**: a seam, plugin point, or option with one real case. → Delete it until the second case exists. (Pocock, kernel)
 - **Tidying mixed into a behavior change.** → Separate commits. (Beck)
 - **A review verdict reused after simplification edits, or prior approval treated as proof.** → Reopen the affected claims and verify the final diff; challenge the reviewer's own rationale with a counterexample. `[pe]`
 - **Tactical patching**: "clean it up later," repeated. → Spend design effort on every change; the debt compounds. (Ousterhout)
+
+## Delivery
+
+- **Production image not pinned by digest or version, running as root, or with `.env` in the build context.** → A pinned base, a non-root `USER`, and a `.dockerignore`. (Docker-bp)
+- **Infrastructure plan that destroys or replaces a data-holding resource** (database, bucket, volume, queue). → Explicit acceptance before apply, and deletion protection on the resource. (Terraform-lifecycle)
+- **Deploy with no post-deploy check of error rate and latency.** → An automated check after each stage that rolls back on breach. (AWS-deploy)
+- **Deploy PR without the rollback command.** → The command and how to verify it worked, written before the deploy. `[pe]`

@@ -83,6 +83,8 @@ Why bother: a minimal repro shrinks the hypothesis space in Phase 3 (fewer movin
 
 Done when **every remaining element is load-bearing**: removing any one of them makes the loop go green.
 
+Read recent changes before hypothesising: `git log -p --follow -- <file>`, and `git diff` against the last good revision.
+
 Do not proceed until you have reproduced **and** minimised.
 
 ## Phase 3: Hypothesise
@@ -90,6 +92,8 @@ Do not proceed until you have reproduced **and** minimised.
 Generate **3–5 ranked hypotheses** before testing any of them. Single-hypothesis generation anchors on the first plausible idea.
 
 Each hypothesis must be **falsifiable**: state the prediction it makes.
+
+Find a working sibling implementation or the last-good version, and diff it against the broken one. Every difference is a candidate hypothesis.
 
 > Format: "If <X> is the cause, then <changing Y> will make the bug disappear / <changing Z> will make it worse."
 
@@ -99,7 +103,7 @@ If you cannot state the prediction, the hypothesis is a vibe: discard or sharpen
 
 ## Phase 4: Instrument
 
-Each probe must map to a specific prediction from Phase 3. **Change one variable at a time.**
+Each probe must map to a specific prediction from Phase 3. **Change one variable at a time.** Trace backward from the symptom to the first value that diverged from expected.
 
 Tool preference:
 
@@ -126,6 +130,8 @@ If a correct seam exists:
 3. Apply the fix.
 4. Watch it pass.
 5. Re-run the Phase 1 feedback loop against the original (un-minimised) scenario.
+
+After three failed fixes at different places, stop patching: the cause is structural. Report it as an architecture finding and propose the structural change.
 
 ## Phase 6: Cleanup
 
