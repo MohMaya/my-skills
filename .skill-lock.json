@@ -56,15 +56,6 @@
       "installedAt": "2026-07-10T03:15:24.856Z",
       "updatedAt": "2026-10-17T14:11:50.593Z"
     },
-    "vercel-react-best-practices": {
-      "source": "vercel-labs/agent-skills",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/vercel-labs/agent-skills.git",
-      "skillPath": "skills/react-best-practices/SKILL.md",
-      "skillFolderHash": "343db72180d05814949fef7d46be96b5c6ee86b3",
-      "installedAt": "2026-05-03T16:53:07.866Z",
-      "updatedAt": "2026-09-25T22:39:13.522Z"
-    },
     "ai-sdk": {
       "source": "vercel/ai",
       "sourceType": "github",

@@ -62,7 +62,7 @@ For a full document navigation, prefetch on intent with the Speculation Rules AP
 </script>
 ```
 
-A route module preloaded by hand, outside a router, is [bundle preload](../../../../vercel-react-best-practices/rules/bundle-preload.md).
+A route module preloaded by hand, outside a router, is [bundle preload](../../../../react-performance/rules/bundle-preload.md).
 
 Do: `defaultPreload: "intent"` in the app, or a document prefetch at moderate eagerness for multi-page navigations.
 
