@@ -144,7 +144,7 @@ UI follows an approved design:
 - Squash-merge and delete the branch.
 - Use `gh-stack` for dependent PRs and `cubic-review` for Cubic findings.
 - Linear tracks work: a parent issue for the outcome, sub-issues for shippable slices. Notion holds specs and decisions. Link them rather than copying.
-- Use `gh` for GitHub. Read live state from PostHog (analytics, flags, errors), Railway, Cloudflare, Firebase, Figma, and Mobbin through their MCP servers or CLIs rather than guessing it.
+- Use `gh` for GitHub. Read live state from PostHog (analytics, flags, errors), Railway, Cloudflare, Firebase, Figma, and Mobbin through their MCP servers or CLIs rather than guessing it. A recurring run re-reads each fact it states from its source, the prior day included for late-posting data. That read alone supplies the draft, tally, and wording.
 - Production code ships with its logs, metrics, and error tracking in the same change; `operability` decides what they cover. Schema changes stay compatible with the previous app version.
 
 ## Talking to Shiv
