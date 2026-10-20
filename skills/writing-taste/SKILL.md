@@ -9,6 +9,8 @@ A library of moves studied from the highest-signal writers, so prose earns its c
 
 **Dvandva.** Run `dvandva` before you produce the piece.
 
+**Write for the human reader.** A person reads the page slowly, once, and has to understand it deeply, so take the time that reader deserves. Care shows on the page: each fact said once, in one place, and current; the reader's path in order; nothing left for them to reconcile. A page that clears this bar serves an agent too, without bloat or drift.
+
 ## Use it
 
 1. Name the piece and read its reference.

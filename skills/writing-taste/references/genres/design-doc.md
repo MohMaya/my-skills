@@ -47,4 +47,5 @@ Skip a part that does not apply. A concern with no impact is one line that says 
 - Assumptions nobody has tested are listed. Open questions have owners; answered ones are gone from the list.
 - Code, decorators, and full schemas appear only where they decide a trade-off or bind another team.
 - The doc was rewritten. Strikethroughs and ticket-numbered bolt-on sections are not history; they are an unrevised draft.
+- After every round of edits, the whole doc was reread top to bottom from the human reader's seat: each fact appears once and matches the latest decision.
 - HLD and LLD are separate documents when the scope is a platform, with the marker between them.
