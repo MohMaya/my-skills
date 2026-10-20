@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """Turn-end quality gate for the Claude Code Stop hook.
 
-Runs the linters and type checkers a project already configures on the
-Python, TypeScript, Go, and Rust files changed in the working tree, then
-holds every changed function to a cyclomatic-complexity ratchet. A skill freshly
-installed from `.skill-lock.json` is third-party code and is skipped. Unfixable
-errors block the stop and go back to the agent as the reason; a clean tree,
-an unconfigured project, a timeout, or a retry after a block lets the turn
-end.
+Runs the linters and type checkers a project already configures on the Python,
+TypeScript, Go, and Rust files changed in the working tree, holds every changed
+function to a cyclomatic-complexity ratchet, and rejects new vacuous names. A
+skill freshly installed from `.skill-lock.json` is third-party code and is
+skipped. Unfixable errors block the stop and go back to the agent as the reason;
+a clean tree, an unconfigured project, a timeout, or a retry after a block lets
+the turn end.
 
 Each checker runs from the nearest directory that configures it, so
 monorepo packages use their own config. TypeScript tools and the Python
@@ -43,6 +43,7 @@ TS = (".ts", ".tsx", ".mts", ".cts")
 JS = TS + (".js", ".jsx", ".mjs", ".cjs")
 GO = (".go",)
 RS = (".rs",)
+SWIFT = (".swift",)
 
 # A changed function may not exceed this cyclomatic complexity unless it was
 # already over it at HEAD and did not get worse.
@@ -481,6 +482,31 @@ def check_project(
     return f"=== {checker.tool} ({where}) ===\n{truncate(output)}"
 
 
+def naming(root: Path, files: list[Path], deadline: float) -> str | None:
+    """New names in changed files, checked by the naming skill's gate."""
+    rels = [
+        str(f.relative_to(root))
+        for f in files
+        if f.suffix.lower() in PY + JS + GO + RS + SWIFT
+    ]
+    script = Path(__file__).with_name("naming-gate.py")
+    timeout = min(TOOL_TIMEOUT, deadline - time.monotonic())
+    if not rels or timeout <= 1 or not script.is_file():
+        return None
+    try:
+        result = subprocess.run(
+            [sys.executable, str(script), *rels],
+            cwd=root,
+            capture_output=True,
+            text=True,
+            timeout=timeout,
+        )
+    except (subprocess.SubprocessError, OSError):
+        return None
+    output = result.stdout.strip()
+    return output if result.returncode == 1 and output else None
+
+
 def gate(root: Path, deadline: float) -> list[str]:
     files = gated_files(root)
     found = [
@@ -489,6 +515,7 @@ def gate(root: Path, deadline: float) -> list[str]:
         for project, group in checker_groups(checker, files, root).items()
     ]
     found.append(complexity(root, files, deadline))
+    found.append(naming(root, files, deadline))
     return [f for f in found if f]
 
 

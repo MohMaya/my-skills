@@ -106,7 +106,12 @@ Price every hop before judging a design. Orders of magnitude:
 - **Global mutable state or singletons.** → Values passed explicitly; dependencies injected. (Hickey)
 - **Temporal coupling**: methods that must be called in a fixed order. → One operation, or types that make the wrong order unrepresentable. (Ousterhout)
 - **Branching mixed with work deep in the call tree.** → Decisions in the parent, straight-line leaves. (TigerStyle, matklad-ifs)
+- **Vague name**: `data`, `info`, `result`, `item`, `handle`, `manager`. → Name the role at the use site: `unpaidInvoices`, `retryDelayMs`, `documentCount`. (Ousterhout, Clean-Code)
+- **Name that restates type, scope, or a noise word**: `userArray`, `UserData`, `User.userName`, `invoiceService.sendInvoice`. → Keep only words the call site does not already carry. (Clean-Code, Swift-API, Google-Go)
+- **Name that lies about cost or effect**: `get` doing IO, `isOpen` returning a count, `checkX` mutating, `load` that is pure. → Match the verb to the semantics: `fetch`, `count`, `verify`, `read`. (Swift-API, Google-Go)
+- **Two names for one concept, or one name for two**: `fetch`/`get`/`retrieve` for one operation, `block` for a file block and a disk block. → One word per concept, recorded in `GLOSSARY.md`. (Clean-Code, Evans)
 - **A name that is hard to choose.** → Treat it as a design signal: the thing likely does two jobs. (Ousterhout)
+- **A banned name in new code**: `data`, `tmp`, `foo`, `UserManager`, `processData`. → The turn-end gate rejects it; rename by role.
 - **Unasserted invariant at a boundary or state transition.** → An assertion on both sides of the boundary, covering what must not happen as well as what must. (TigerStyle)
 
 ## Operability

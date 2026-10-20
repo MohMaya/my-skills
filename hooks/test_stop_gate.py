@@ -2,6 +2,7 @@ import importlib.util
 import subprocess
 import sys
 import tempfile
+import time
 import unittest
 from pathlib import Path
 
@@ -14,13 +15,13 @@ spec.loader.exec_module(stop_gate)
 
 class StopRootTest(unittest.TestCase):
     def setUp(self) -> None:
-        self.tmp = tempfile.TemporaryDirectory()
-        self.repo = Path(self.tmp.name).resolve() / "repo"
+        self.scratch = tempfile.TemporaryDirectory()
+        self.repo = Path(self.scratch.name).resolve() / "repo"
         self.repo.mkdir()
         subprocess.run(["git", "init", "-q"], cwd=self.repo, check=True)
 
     def tearDown(self) -> None:
-        self.tmp.cleanup()
+        self.scratch.cleanup()
 
     def test_cursor_payload_checks_the_workspace_root(self) -> None:
         payload = {"cwd": "", "workspace_roots": [str(self.repo)], "loop_count": 0}
@@ -40,8 +41,8 @@ class StopRootTest(unittest.TestCase):
 
 class GatedFilesTest(unittest.TestCase):
     def setUp(self) -> None:
-        self.tmp = tempfile.TemporaryDirectory()
-        self.repo = Path(self.tmp.name).resolve() / "repo"
+        self.scratch = tempfile.TemporaryDirectory()
+        self.repo = Path(self.scratch.name).resolve() / "repo"
         (self.repo / "skills" / "vendored" / "scripts").mkdir(parents=True)
         (self.repo / "skills" / "ours").mkdir(parents=True)
         subprocess.run(["git", "init", "-q"], cwd=self.repo, check=True)
@@ -50,7 +51,7 @@ class GatedFilesTest(unittest.TestCase):
         (self.repo / "app.py").write_text("x = 1\n")
 
     def tearDown(self) -> None:
-        self.tmp.cleanup()
+        self.scratch.cleanup()
 
     def gated(self) -> list[str]:
         return [str(f.relative_to(self.repo)) for f in stop_gate.gated_files(self.repo)]
@@ -92,6 +93,39 @@ class GatedFilesTest(unittest.TestCase):
     def test_a_malformed_lock_vendors_nothing(self) -> None:
         (self.repo / ".skill-lock.json").write_text("{not json")
         self.assertIn("skills/vendored/scripts/tool.js", self.gated())
+
+
+class NamingTest(unittest.TestCase):
+    def setUp(self) -> None:
+        self.scratch = tempfile.TemporaryDirectory()
+        self.repo = Path(self.scratch.name).resolve() / "repo"
+        self.repo.mkdir()
+        subprocess.run(["git", "init", "-q"], cwd=self.repo, check=True)
+
+    def tearDown(self) -> None:
+        self.scratch.cleanup()
+
+    def test_a_vacuous_name_in_a_changed_file_is_reported(self) -> None:
+        bad = "data"
+        (self.repo / "app.ts").write_text(f"const {bad} = 1\n")
+        found = stop_gate.naming(
+            self.repo, [self.repo / "app.ts"], time.monotonic() + 30
+        )
+        self.assertIsNotNone(found)
+        assert found is not None
+        self.assertIn("app.ts:1", found)
+
+    def test_a_clean_file_passes(self) -> None:
+        (self.repo / "app.ts").write_text("const unpaidInvoices = 1\n")
+        self.assertIsNone(
+            stop_gate.naming(self.repo, [self.repo / "app.ts"], time.monotonic() + 30)
+        )
+
+    def test_the_turn_gate_includes_naming(self) -> None:
+        bad = "data"
+        (self.repo / "app.ts").write_text(f"const {bad} = 1\n")
+        found = stop_gate.gate(self.repo, time.monotonic() + 30)
+        self.assertTrue(any("=== naming ===" in entry for entry in found))
 
 
 if __name__ == "__main__":

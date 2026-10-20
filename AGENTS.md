@@ -53,6 +53,7 @@ Matt Pocock's skills and ours live together in `~/.agents/skills`. Load the matc
 | Case | Skill |
 | --- | --- |
 | Any substantive artifact: writing, code, email, doc, ticket, chat, or decision | `dvandva`, before you produce it |
+| Any new name: variable, function, type, file, branch, ticket, or domain concept | `naming`; `domain-modeling` when it names a domain term |
 | A product or design decision is still open | `grilling`; `domain-modeling` for terms, glossary, and ADRs |
 | A module interface or seam is in question | `codebase-design` |
 | A design question a throwaway build answers fastest | `prototype` |
@@ -87,6 +88,7 @@ Spend effort on reading and understanding, and keep the diff small. Choose the s
 5. Write the minimum new code.
 
 - Match the surrounding code's patterns, naming, package manager, and test runner where they meet the bar; where they fall below it, raise them through `bar-raiser` rather than copy them. A new dependency needs a stated reason.
+- Name by role, not by type, shape, or scope: `elapsedDays`, not `d`; `unpaidInvoices`, not `data`. A name you cannot choose precisely is a design signal: the thing does two jobs. The turn-end gate rejects the vacuous names in `hooks/naming-gate.py`, with `naming: ignore <reason>` as the only escape; `naming` holds the procedure.
 - Parse untrusted input into domain types at the boundary, then trust those types inside.
 - Keep every function at cyclomatic complexity 10 or below. Move branches into data (lookup tables, state machines, discriminated unions), into types parsed once at the boundary, or into one shared guard. The turn-end gate rejects new functions over 10 and changes that make an over-limit function worse.
 - Change an internal API by migrating every caller and deleting the old path in the same change.

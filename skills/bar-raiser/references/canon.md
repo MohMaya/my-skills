@@ -15,6 +15,10 @@ The sources behind the catalogue's tags. Rules in the catalogue are paraphrased;
 | matklad-ifs | Alex Kladov, [Push ifs up and fors down](https://matklad.github.io/2023/11/15/push-ifs-up-and-fors-down.html) | Decisions in parents, batches at the bottom |
 | matklad-test | Alex Kladov, [How to test](https://matklad.github.io/2021/05/31/how-to-test.html) | Boundary tests, IO-free cores, no mocks |
 | Ousterhout | John Ousterhout, *A Philosophy of Software Design* | Deep modules, information leakage, design it twice |
+| Clean-Code | Robert C. Martin, *Clean Code*, ch. 2 | Intention-revealing names, one word per concept, no noise words |
+| Swift-API | Swift, [API Design Guidelines](https://www.swift.org/documentation/api-design-guidelines/) | Clarity at the use site; name by role; omit needless words |
+| Google-Go | Google, [Go Style Decisions](https://google.github.io/styleguide/go/decisions) | Scope-proportional names; no repetition of the package name; consistent spelling |
+| Evans | Eric Evans, *Domain-Driven Design* | Ubiquitous language inside a bounded context |
 | Hickey | Rich Hickey, [Simple Made Easy](https://github.com/matthiasn/talk-transcripts/blob/master/Hickey_Rich/SimpleMadeEasy.md) | Simple versus easy; braided constructs |
 | King | Alexis King, [Parse, don't validate](https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/) | Parsers return stronger types; shotgun parsing |
 | Brandur-idem | Brandur Leach, [Implementing Stripe-like idempotency keys in Postgres](https://brandur.org/idempotency-keys) | Atomic phases, recovery points, staged jobs |
