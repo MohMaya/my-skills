@@ -16,7 +16,7 @@ Every request moves through four states, each entered through one guard: unauthe
 | **build** | Adding or changing login, sessions, tokens, OAuth, authorization, secrets, or an input path | 0–4 |
 | **review** | A diff or module for security | 5 |
 
-One owner per concern: SQL values go through `postgres` (bound parameters); status codes and error shapes through `api-design`; log and alert design through `operability`; the verdict through `bar-raiser`. The `guard-protected-paths.sh` hook already blocks agent writes to secret files.
+One owner per concern: SQL values go through `postgres` (bound parameters); status codes and error shapes through `api-design`; log and alert design through `operability`; a full audit or pen test through `security-audit`; the verdict through `bar-raiser`. The `guard-protected-paths.sh` hook already blocks agent writes to secret files.
 
 ## 0. Mandate
 
