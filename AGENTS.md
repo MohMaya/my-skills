@@ -63,6 +63,7 @@ Matt Pocock's skills and ours live together in `~/.agents/skills`. Load the matc
 | Any SQL statement, ORM query, schema change, or migration | `postgres` |
 | An HTTP, realtime, CLI, or MCP interface contract | `api-design` |
 | Authentication, authorization, secrets, or untrusted input | `security` |
+| A codebase-wide security audit, pen test, or vulnerability review of an API, service, CLI, or daemon | `security-audit`; guidance by default, the full six-phase workflow only when Shiv asks for an audit or report |
 | What production code measures, alerts on, and proves before launch | `operability` |
 | Go, Rust, Swift, or FastAPI code | `go`, `rust` (`gpui` for desktop UI), `write-swift`, `fastapi` |
 | An AWS service | the `aws-mcp` server: `search_documentation` (topic `agent_skills`) for the skill name, then `retrieve_skill` |
