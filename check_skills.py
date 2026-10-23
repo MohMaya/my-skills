@@ -13,6 +13,8 @@ for skill in sorted(pathlib.Path("skills").glob("*/SKILL.md")):
     desc: str = fields.get("description", "").strip()
     if name != skill.parent.name:
         errors.append(f"{skill}: name {name!r} differs from its directory")
+    if "disable-model-invocation" in fields:
+        errors.append(f"{skill}: disable-model-invocation locks the skill away from agents; delete the line")
     if not desc:
         errors.append(f"{skill}: no description")
     elif desc[0] not in "\"'>|" and ": " in desc:

@@ -1,7 +1,6 @@
 ---
 name: cubic-review
 description: Work through cubic's AI review findings on a PR or a whole stack — judge each one, fix what is real, verify, commit, push, then answer every thread in place with the fix or the pushback. Use when cubic has reviewed a PR, when asked to address or clear cubic comments, or when closing out a stack cubic reviewed.
-disable-model-invocation: true
 ---
 
 # cubic-review
